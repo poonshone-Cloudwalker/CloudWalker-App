@@ -82,6 +82,7 @@
     "js/features/370-v09-phase-6-credible-feedback-on.js",
     "js/features/380-v09-phase-7-habit-offline-and.js",
     "js/features/390-v09-phase-8-ready-for-many.js",
+    "js/features/400-flashcards.js",
     "js/boot.js"
   ]
 }

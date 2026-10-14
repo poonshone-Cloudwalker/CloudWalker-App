@@ -1,0 +1,13 @@
+1 nav: after Study comes ["#/flashcards","Flashcards"]
+2 deck, all certifications: new/learning/known = 770/0/0 | 770 terms in this deck. 0 due for review now.
+3 deck, CDL: new/learning/known = 70/0/0 | pressed: CDL | focus kept on chip: CDL | list items: 70
+4 study: #/flashcards/study | Card 1 of 20 | Agent Studio | progress 0
+5 flipped by keyboard: focus on fc-back | definition shown: true
+  Tab reaches: Again
+6 after Again: Card 2 of 21 | Agentic AI | focus on fc-flip
+7 card 5 is the missed term again: true | Card 5 of 21 | Agent Studio
+8 phone width: overflow 0 | grade grid columns after flip: 2
+9 deck after 5 grades: new/learning/known = 66/4/0 | 70 terms in this deck. 0 due for review now.
+10 after restart: new/learning/known = 66/4/0 | exam kept: CDL
+11 after import merge: new/learning/known = 66/3/1 | exam still: CDL
+errors: none

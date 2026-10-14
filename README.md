@@ -54,6 +54,34 @@ registerFeature({
 
 The features up to V09.1 still use the older pattern of wrapping an earlier function (`const _x = fn; fn = …`). That still works, but new code should use `registerFeature`.
 
+## Example feature: flashcards
+
+`src/js/features/400-flashcards.js` is the first feature built only on `registerFeature`. Copy its shape for a new feature:
+
+```js
+const FC_SESSION_MAX = 20;                       // feature constants: prefix them, the scope is shared
+let FC = { session: null };                      // screen state that isn't saved
+function fcData() { return (S.ws.flashcards ||= { exam: '', cards: {}, updated: 0 }); }   // saved state, created on demand
+
+registerFeature({
+  id: 'flashcards',
+  css: `.fc-card{min-height:260px} @media (prefers-reduced-motion:no-preference){ … }`,
+  views: { flashcards: arg => arg === 'study' ? fcStudyView() : fcDeckView() },   // #/flashcards and #/flashcards/study
+  nav: [{ route: 'flashcards', label: 'Flashcards', group: 'Certify', after: 'study', icon: '<rect …/>' }],
+  actions: {
+    'flashcards-flip': () => { FC.session.flipped = true; render(); $('#fc-back')?.focus(); },   // move focus yourself after render()
+    'flashcards-grade': data => { fcGrade(data.grade); render(); $('#fc-flip')?.focus(); },      // data-grade="good" arrives as data.grade
+  },
+  mergeImport(w) { /* per card id: take w.flashcards.cards[id] only when its updated is newer */ },
+});
+```
+
+Points worth copying:
+- **Read existing data; don't copy it.** Terms come from `glTerms()`, the glossary's merged view, so imported glossary terms show up automatically. Intervals reuse the retention engine's `LADDER`.
+- **Create saved data on demand.** `fcData()` creates the data the first time it's needed. The feature still works after a workspace restore replaces `S.ws`, and people who never open it keep an unchanged workspace. Because of that, flashcards needs no `onBoot`.
+- **Use buttons for choices.** The API routes clicks, so the certification picker is a row of `aria-pressed` buttons rather than a `<select>`.
+- **Test against the real build.** `tests/suite/flashcards.js` is the matching test. It uses the real build, covers keyboard use, and checks saving across a restart and import merge.
+
 ## Adding content without touching code
 
 The content-pack system (Content updates page) carries questions, lessons, labs and exam profiles, merged by id. For new exams and question fixes, ship a pack rather than editing `src/content/bank/`. Packs need no rebuild and users can see what changed before it merges.
