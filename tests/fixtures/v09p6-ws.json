@@ -1,0 +1,939 @@
+{
+  "format": "cloudwalker-workspace",
+  "version": 4,
+  "app": "BluePrint CloudWalker Trainer",
+  "progress": {
+    "answers": {
+      "comptia-secplus-150": [
+        {
+          "t": 1791844297149,
+          "choice": 0,
+          "correct": false,
+          "mode": "learn",
+          "ms": 457
+        }
+      ],
+      "comptia-secplus-039": [
+        {
+          "t": 1791844297604,
+          "choice": 1,
+          "correct": false,
+          "mode": "learn",
+          "ms": 226
+        }
+      ],
+      "comptia-secplus-123": [
+        {
+          "t": 1791844298182,
+          "choice": 2,
+          "correct": false,
+          "mode": "learn",
+          "ms": 223
+        }
+      ],
+      "comptia-secplus-086": [
+        {
+          "t": 1791844298620,
+          "choice": 3,
+          "correct": false,
+          "mode": "learn",
+          "ms": 215
+        }
+      ],
+      "comptia-secplus-194": [
+        {
+          "t": 1791936481766,
+          "choice": 0,
+          "correct": true,
+          "mode": "learn",
+          "ms": 405
+        }
+      ],
+      "comptia-secplus-063": [
+        {
+          "t": 1791936482188,
+          "choice": 0,
+          "correct": false,
+          "mode": "learn",
+          "ms": 119
+        }
+      ],
+      "comptia-secplus-108": [
+        {
+          "t": 1791936482605,
+          "choice": 3,
+          "correct": false,
+          "mode": "learn",
+          "ms": 118
+        }
+      ],
+      "comptia-secplus-125": [
+        {
+          "t": 1791936483017,
+          "choice": 3,
+          "correct": false,
+          "mode": "learn",
+          "ms": 120
+        }
+      ],
+      "comptia-secplus-091": [
+        {
+          "t": 1791936483457,
+          "choice": 2,
+          "correct": false,
+          "mode": "learn",
+          "ms": 133
+        }
+      ],
+      "comptia-secplus-136": [
+        {
+          "t": 1791936483896,
+          "choice": 1,
+          "correct": true,
+          "mode": "learn",
+          "ms": 125
+        }
+      ],
+      "comptia-secplus-051": [
+        {
+          "t": 1791936484331,
+          "choice": 3,
+          "correct": false,
+          "mode": "learn",
+          "ms": 123
+        }
+      ],
+      "comptia-secplus-003": [
+        {
+          "t": 1791936484764,
+          "choice": 3,
+          "correct": false,
+          "mode": "learn",
+          "ms": 127
+        }
+      ],
+      "comptia-secplus-107": [
+        {
+          "t": 1791936485205,
+          "choice": 3,
+          "correct": false,
+          "mode": "learn",
+          "ms": 124
+        }
+      ],
+      "comptia-secplus-034": [
+        {
+          "t": 1791936485651,
+          "choice": 2,
+          "correct": false,
+          "mode": "learn",
+          "ms": 123
+        }
+      ],
+      "comptia-secplus-111": [
+        {
+          "t": 1791936486119,
+          "choice": 3,
+          "correct": true,
+          "mode": "learn",
+          "ms": 133
+        }
+      ],
+      "comptia-secplus-014": [
+        {
+          "t": 1791936486595,
+          "choice": 0,
+          "correct": true,
+          "mode": "learn",
+          "ms": 138
+        }
+      ]
+    },
+    "flags": [],
+    "confidence": {
+      "comptia-secplus-194": "high",
+      "comptia-secplus-063": "high",
+      "comptia-secplus-108": "high",
+      "comptia-secplus-125": "high",
+      "comptia-secplus-091": "high",
+      "comptia-secplus-136": "high",
+      "comptia-secplus-051": "high",
+      "comptia-secplus-003": "high",
+      "comptia-secplus-107": "high",
+      "comptia-secplus-034": "high",
+      "comptia-secplus-111": "high",
+      "comptia-secplus-014": "high"
+    },
+    "sessions": []
+  },
+  "workspace": {
+    "adrs": [
+      {
+        "id": "ADR-001",
+        "title": "Use managed Kafka for events",
+        "status": "Proposed",
+        "date": "2026-10-12",
+        "deciders": "",
+        "context": "",
+        "decision": "",
+        "rationale": "",
+        "businessDrivers": [],
+        "constraints": [],
+        "options": [
+          {
+            "name": "",
+            "summary": "",
+            "pros": "",
+            "cons": "",
+            "rejectedWhy": ""
+          },
+          {
+            "name": "",
+            "summary": "",
+            "pros": "",
+            "cons": "",
+            "rejectedWhy": ""
+          }
+        ],
+        "chosen": -1,
+        "tradeoffs": "",
+        "risks": [],
+        "consequencesPos": "",
+        "consequencesNeg": "",
+        "followUps": [],
+        "reviewTrigger": "",
+        "related": "",
+        "providers": [],
+        "lenses": [],
+        "services": [],
+        "links": "",
+        "source": "",
+        "template": "",
+        "updated": 1791844300256
+      }
+    ],
+    "portfolio": [],
+    "labs": [
+      {
+        "id": "LAB-001",
+        "sid": "lab-01",
+        "t": 1791841992567,
+        "sections": {
+          "requirements": "Peak 50k RPS, no oversell, RTO 5 min.",
+          "architecture": "Global load balancer, Cloud Run in 3 regions.",
+          "data": "Spanner multi-region for inventory.",
+          "security": "Tokenize cards.",
+          "reliability": "Three regions.",
+          "cost": "Autoscale.",
+          "tradeoffs": "Spanner costs more."
+        },
+        "rubric": {
+          "0": 1,
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 1,
+          "8": 1,
+          "9": 1
+        },
+        "score": 100,
+        "minutes": 30,
+        "updated": 1791841992567
+      }
+    ],
+    "labDrafts": {
+      "lab-01": {
+        "sections": {},
+        "rubric": {},
+        "phase": "write",
+        "started": 0
+      }
+    },
+    "interview": {
+      "answers": [
+        {
+          "id": "IA-001",
+          "qid": "iq-42",
+          "t": 1791841992567,
+          "text": "I coordinate vendors and stakeholders.",
+          "scores": {
+            "clarity": 4,
+            "tradeoffs": 4,
+            "business": 4,
+            "security": 4,
+            "communication": 4
+          },
+          "seconds": 120,
+          "updated": 1791841992567
+        }
+      ],
+      "stories": [
+        {
+          "id": "STAR-001",
+          "title": "Consolidating file servers",
+          "source": "Previous career experience",
+          "seed": "",
+          "competencies": [],
+          "situation": "We had twelve regional offices running separate file servers with no consistent backup and frequent outages during the busy season.",
+          "task": "I was asked to design and lead a migration of every office to one managed storage service within one quarter.",
+          "action": "I inventoried data, picked a managed file service, planned waves by office size, and ran a pilot with two offices before the rest.",
+          "result": "All 12 offices moved in 10 weeks, outages dropped by 80 percent and storage cost fell 25 percent.",
+          "translation": "",
+          "status": "ready",
+          "adrIds": [],
+          "pfIds": [],
+          "labIds": [],
+          "updated": 1791841992567
+        }
+      ],
+      "boards": [
+        {
+          "id": "WB-001",
+          "pid": "wb-01",
+          "t": 1791841992567,
+          "notes": "Base62 keys, Bigtable, CDN for redirects.",
+          "checks": {
+            "0": true,
+            "1": true,
+            "2": true,
+            "3": true,
+            "4": true,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": true,
+            "9": true,
+            "10": true,
+            "11": true
+          },
+          "seconds": 900,
+          "updated": 1791841992567
+        }
+      ],
+      "exec": [
+        {
+          "id": "EX-001",
+          "tid": "ex-01",
+          "aud": "cto",
+          "t": 1791841992567,
+          "text": "Two regions cut recovery from hours to minutes for about 1.5x cost.",
+          "scores": {
+            "clarity": 4,
+            "tradeoffs": 4,
+            "business": 4,
+            "security": 4,
+            "communication": 4
+          },
+          "updated": 1791841992567
+        }
+      ]
+    },
+    "career": {
+      "profile": {
+        "name": "",
+        "headline": "",
+        "focusExam": "",
+        "weeklyHours": 10,
+        "links": "",
+        "background": "",
+        "backgroundOther": "",
+        "years": "",
+        "targetRole": "",
+        "clouds": [],
+        "industry": "",
+        "priorExperience": "",
+        "targetExam": "",
+        "examDate": ""
+      },
+      "roles": [],
+      "weeks": {},
+      "milestones": [],
+      "apps": []
+    },
+    "srs": {
+      "comptia-secplus-150": {
+        "stage": 0,
+        "due": 1791858697149,
+        "last": 1791844297149,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791844297149,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "comptia-secplus-039": {
+        "stage": 0,
+        "due": 1791858697604,
+        "last": 1791844297604,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791844297604,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "comptia-secplus-123": {
+        "stage": 0,
+        "due": 1791858698182,
+        "last": 1791844298182,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791844298182,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "comptia-secplus-086": {
+        "stage": 0,
+        "due": 1791858698620,
+        "last": 1791844298620,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791844298620,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "comptia-secplus-194": {
+        "stage": 2,
+        "due": 1792195681943,
+        "last": 1791936481943,
+        "lapses": 0,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936481943,
+            "g": 4,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "comptia-secplus-063": {
+        "stage": 0,
+        "due": 1791950882366,
+        "last": 1791936482366,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936482366,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "comptia-secplus-108": {
+        "stage": 0,
+        "due": 1791950882776,
+        "last": 1791936482776,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936482776,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "comptia-secplus-125": {
+        "stage": 0,
+        "due": 1791950883196,
+        "last": 1791936483196,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936483196,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "comptia-secplus-091": {
+        "stage": 0,
+        "due": 1791950883644,
+        "last": 1791936483644,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936483644,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "comptia-secplus-136": {
+        "stage": 2,
+        "due": 1792022884078,
+        "last": 1791936484078,
+        "lapses": 0,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936484078,
+            "g": 4,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": true
+      },
+      "comptia-secplus-051": {
+        "stage": 0,
+        "due": 1791950884509,
+        "last": 1791936484509,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936484509,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "comptia-secplus-003": {
+        "stage": 0,
+        "due": 1791950884945,
+        "last": 1791936484945,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936484945,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "comptia-secplus-107": {
+        "stage": 0,
+        "due": 1791950885394,
+        "last": 1791936485394,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936485394,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "comptia-secplus-034": {
+        "stage": 0,
+        "due": 1791950885843,
+        "last": 1791936485843,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936485843,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "comptia-secplus-111": {
+        "stage": 2,
+        "due": 1792022886312,
+        "last": 1791936486312,
+        "lapses": 0,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936486312,
+            "g": 4,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": true
+      },
+      "comptia-secplus-014": {
+        "stage": 2,
+        "due": 1792195686777,
+        "last": 1791936486777,
+        "lapses": 0,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936486777,
+            "g": 4,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      }
+    },
+    "recallLog": [],
+    "trail": {
+      "study": {
+        "label": "Learn: SY0-701",
+        "href": "#/run",
+        "t": 1791936486944
+      },
+      "artifact": {
+        "label": "ADR-001: Use managed Kafka for events",
+        "href": "#/adr/ADR-001",
+        "t": 1791936480411
+      },
+      "story": {
+        "label": "Consolidating file servers",
+        "href": "#/interview/story/STAR-001",
+        "t": 1791936472979
+      }
+    },
+    "glossary": {
+      "terms": [],
+      "cross_cloud": [],
+      "_v": 1
+    },
+    "outputs": [],
+    "reflections": [],
+    "exportLog": [],
+    "panels": {
+      "adr:ADR-001": "write",
+      "story:STAR-001": "write"
+    },
+    "schemaVersion": 4,
+    "contentEdits": {},
+    "reports": [],
+    "contentEditsV": 0,
+    "lessons": {},
+    "lessonReview": {},
+    "aiFeedback": {
+      "adr:ADR-001": {
+        "kind": "adr",
+        "id": "ADR-001",
+        "t": 1791936470221,
+        "updated": 1791936470221,
+        "model": "test-model",
+        "host": "ai.example.test",
+        "scores": {
+          "clarity": 2,
+          "alternatives": 2,
+          "trade-off-reasoning": 2,
+          "risk-awareness": 2
+        },
+        "strengths": [
+          "Names a global entry point"
+        ],
+        "gaps": [
+          "No numbers for <b>RTO</b> testing"
+        ],
+        "nextStep": "Add a failover test plan.",
+        "aiPct": 33,
+        "selfPct": 6,
+        "hash": "a97e8q",
+        "disputed": false
+      },
+      "lab:LAB-001": {
+        "kind": "lab",
+        "id": "LAB-001",
+        "t": 1791936471589,
+        "updated": 1791936478844,
+        "model": "test-model",
+        "host": "ai.example.test",
+        "scores": {
+          "r1": 2,
+          "r2": 2,
+          "r3": 2,
+          "r4": 2,
+          "r5": 2,
+          "r6": 2,
+          "r7": 2,
+          "r8": 2,
+          "r9": 2,
+          "r10": 2
+        },
+        "strengths": [
+          "Names a global entry point"
+        ],
+        "gaps": [
+          "No numbers for <b>RTO</b> testing"
+        ],
+        "nextStep": "Add a failover test plan.",
+        "aiPct": 33,
+        "selfPct": 100,
+        "hash": "1pcae6k",
+        "disputed": true
+      },
+      "story:STAR-001": {
+        "kind": "story",
+        "id": "STAR-001",
+        "t": 1791936472962,
+        "updated": 1791936472962,
+        "model": "test-model",
+        "host": "ai.example.test",
+        "scores": {
+          "situation": 2,
+          "task": 2,
+          "action": 2,
+          "result": 2,
+          "relevance": 2
+        },
+        "strengths": [
+          "Names a global entry point"
+        ],
+        "gaps": [
+          "No numbers for <b>RTO</b> testing"
+        ],
+        "nextStep": "Add a failover test plan.",
+        "aiPct": 33,
+        "selfPct": 100,
+        "hash": "1bllb6e",
+        "disputed": false
+      },
+      "exec:EX-001": {
+        "kind": "exec",
+        "id": "EX-001",
+        "t": 1791936474353,
+        "updated": 1791936474353,
+        "model": "test-model",
+        "host": "ai.example.test",
+        "scores": {
+          "clarity": 2,
+          "tradeoffs": 2,
+          "business": 2,
+          "security": 2,
+          "communication": 2
+        },
+        "strengths": [
+          "Names a global entry point"
+        ],
+        "gaps": [
+          "No numbers for <b>RTO</b> testing"
+        ],
+        "nextStep": "Add a failover test plan.",
+        "aiPct": 33,
+        "selfPct": 100,
+        "hash": "wfkjbn",
+        "disputed": false
+      },
+      "wb:WB-001": {
+        "kind": "wb",
+        "id": "WB-001",
+        "t": 1791936475710,
+        "updated": 1791936475710,
+        "model": "test-model",
+        "host": "ai.example.test",
+        "scores": {
+          "c1": 2,
+          "c2": 2,
+          "c3": 2,
+          "c4": 2,
+          "c5": 2,
+          "c6": 2,
+          "c7": 2,
+          "c8": 2,
+          "c9": 2,
+          "c10": 2
+        },
+        "strengths": [
+          "Names a global entry point"
+        ],
+        "gaps": [
+          "No numbers for <b>RTO</b> testing"
+        ],
+        "nextStep": "Add a failover test plan.",
+        "aiPct": 33,
+        "selfPct": 100,
+        "hash": "rin0qt",
+        "disputed": false
+      },
+      "iq:IA-001": {
+        "kind": "iq",
+        "id": "IA-001",
+        "t": 1791936477097,
+        "updated": 1791936477097,
+        "model": "test-model",
+        "host": "ai.example.test",
+        "scores": {
+          "clarity": 2,
+          "tradeoffs": 2,
+          "business": 2,
+          "security": 2,
+          "communication": 2
+        },
+        "strengths": [
+          "Names a global entry point"
+        ],
+        "gaps": [
+          "No numbers for <b>RTO</b> testing"
+        ],
+        "nextStep": "Add a failover test plan.",
+        "aiPct": 33,
+        "selfPct": 100,
+        "hash": "1jmpev5",
+        "disputed": false
+      }
+    },
+    "calibLog": [
+      {
+        "t": 1791936470221,
+        "key": "adr:ADR-001",
+        "kind": "adr",
+        "self": 6,
+        "ref": 33,
+        "src": "ai"
+      },
+      {
+        "t": 1791936471589,
+        "key": "lab:LAB-001",
+        "kind": "lab",
+        "self": 100,
+        "ref": 33,
+        "src": "ai"
+      },
+      {
+        "t": 1791936472962,
+        "key": "story:STAR-001",
+        "kind": "story",
+        "self": 100,
+        "ref": 33,
+        "src": "ai"
+      },
+      {
+        "t": 1791936474353,
+        "key": "exec:EX-001",
+        "kind": "exec",
+        "self": 100,
+        "ref": 33,
+        "src": "ai"
+      },
+      {
+        "t": 1791936475710,
+        "key": "wb:WB-001",
+        "kind": "wb",
+        "self": 100,
+        "ref": 33,
+        "src": "ai"
+      },
+      {
+        "t": 1791936477097,
+        "key": "iq:IA-001",
+        "kind": "iq",
+        "self": 100,
+        "ref": 33,
+        "src": "ai"
+      }
+    ],
+    "outcomes": [],
+    "readinessLog": [
+      {
+        "d": "2026-10-13",
+        "code": "SY0-701",
+        "score": 3,
+        "verdict": "none",
+        "t": 1791936487078
+      }
+    ],
+    "habit": {
+      "goal": {
+        "type": "cards",
+        "value": 20,
+        "updated": 0
+      },
+      "days": {},
+      "weekNotes": {},
+      "remind": {
+        "on": false,
+        "time": "19:00",
+        "lastNotified": "",
+        "updated": 0
+      },
+      "startedAt": 1791864000000
+    },
+    "packs": [],
+    "packContent": {
+      "questions": {},
+      "lessons": {},
+      "labs": {},
+      "examProfiles": {},
+      "exams": {},
+      "retired": {
+        "questions": [],
+        "lessons": []
+      }
+    }
+  },
+  "drafts": {
+    "iq": {
+      "ex-01:cto": {
+        "text": "",
+        "phase": "answer",
+        "scores": {},
+        "started": 1791936465883
+      },
+      "iq-42": {
+        "text": "",
+        "followText": "",
+        "phase": "answer",
+        "scores": {},
+        "started": 1791936466504,
+        "fu": "What has been hardest to learn technically?"
+      }
+    },
+    "wb": {
+      "wb-01": {
+        "notes": "",
+        "checks": {},
+        "started": 0
+      }
+    }
+  },
+  "userBank": {
+    "exams": [],
+    "questions": []
+  },
+  "exported_at": "2026-10-14T00:08:09.278Z",
+  "queues_snapshot": {
+    "generated": 1791936489290,
+    "missed": [
+      "comptia-secplus-123",
+      "comptia-secplus-150",
+      "comptia-secplus-039",
+      "comptia-secplus-086",
+      "comptia-secplus-107",
+      "comptia-secplus-108",
+      "comptia-secplus-125",
+      "comptia-secplus-003",
+      "comptia-secplus-034",
+      "comptia-secplus-051",
+      "comptia-secplus-063",
+      "comptia-secplus-091"
+    ],
+    "low": [],
+    "due": []
+  }
+}

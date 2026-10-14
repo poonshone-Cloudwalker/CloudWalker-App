@@ -1,0 +1,9 @@
+v08 file: version 3 answers 4 adrs 1 stories 0 adr keys id,title,status,date,deciders,context,decision,rationale,businessDrivers,constraints,options,chosen,tradeoffs,risks,consequencesPos,consequencesNeg,followUps,reviewTrigger,related,providers,lenses,services,links,source,template,updated
+import notice: Import complete. | Upgraded this file from version 3 to version 4. 1 added, 0 updated (newer copy), 0 unchanged, 0 kept (your copy was newer), 0 rejected. 4 answers added, 0 flags and 0 confidence ratings merged.
+progress line: 4 answers, 0 flags, 0 confidence ratings, and 0 sessions.
+after reload: 4 answers, 0 flags, 0 confidence ratings, and 0 sessions.
+ADR list has ADR-001: true
+v09 export: version 4 schema 4 userBank true adr ids ADR-001 answers 4
+v4 round trip notice: Import complete. | 1 added, 0 updated (newer copy), 0 unchanged, 0 kept (your copy was newer), 0 rejected. 4 answers added, 0 flags and 0 confidence ratings merged.
+v99 notice: Couldn't import v99.json. | This file was made by a newer version of CloudWalker (schema 99). This copy reads up to schema 4.
+errors []

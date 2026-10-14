@@ -1,3 +1,4 @@
 dist/
 ref.html
 node_modules/
+tests/.work/

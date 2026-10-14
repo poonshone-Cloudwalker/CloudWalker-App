@@ -1,0 +1,7 @@
+1 nav: after Study comes "Hello test" | boot hook ran: true
+1b refused features: registerFeature: clash: the route "settings" already exists. | registerFeature: badaction: action names must start with "badaction-" so they cannot collide with built-in buttons ("go" does not).
+1c settings page intact: true
+2 view and action: Count: 3 | css: dashed | current nav: page
+3 saved across reload: Count: 3
+4 import merge (newer wins): Count: 42
+errors: none

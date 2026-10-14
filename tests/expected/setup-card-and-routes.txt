@@ -1,0 +1,10 @@
+a direct settings visit not redirected: true
+b existing user dashboard setup card: true
+c after Not now card gone: true
+d no background seeds heading: From your previous experience | hint: true
+e path without setup: Tell us where you are headed
+f skip -> /dashboard | status: Setup skipped. You can personalise any time from Career → Pr
+g AWS → AWS Certified Cloud Practitioner > CompTIA Security+ (V7) > AWS Certified Solutions Architect – Associate > AWS Certified Security – Specialty
+g Microsoft Azure → Microsoft Azure > Microsoft Azure Fundamentals > CompTIA Security+ (V7) > Microsoft Azure Administrator > Security exam for Microsoft Azure > Microsoft retired this exam on August 31, 2026. Check Microsoft Learn for the current Azure security credential. > Microsoft Learn
+g Google Cloud → Google Cloud Digital Leader > CompTIA Security+ (V7) > Google Cloud Associate Cloud Engineer > Google Cloud Professional Cloud Security Engineer
+errors []

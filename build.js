@@ -2,10 +2,12 @@
 /* CloudWalker build: stitches src/ back into one offline HTML file.
  *   node build.js                     build dist/BluePrint_CloudWalker.html
  *   node build.js --verify <file>     also check the output is byte-identical to <file>
+ *   node build.js --src <dir> --out <file>   build another source folder (used by the tests)
  * Checks every run: manifest files exist, JSON content parses, the app script compiles,
  * no \uXXXX escapes in source, and the bank chunks keep their order. */
 const fs = require('fs'), path = require('path'), zlib = require('zlib');
-const ROOT = __dirname, SRC = path.join(ROOT, 'src');
+const arg = k => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : null; };
+const ROOT = __dirname, SRC = path.resolve(arg('--src') || path.join(ROOT, 'src'));
 const M = JSON.parse(fs.readFileSync(path.join(SRC, 'manifest.json'), 'utf8'));
 const read = rel => { const f = path.join(SRC, rel); if (!fs.existsSync(f)) throw new Error(`manifest lists a missing file: src/${rel}`); return fs.readFileSync(f, 'utf8'); };
 const errs = [];
@@ -23,8 +25,9 @@ const seen = new Set(); for (const p of [...M.css, ...M.js.map(p => p.json || p)
 for (const dir of ['css', 'js/core', 'js/features']) { const d = path.join(SRC, dir); if (fs.existsSync(d)) for (const f of fs.readdirSync(d)) if (!seen.has(`${dir}/${f}`)) errs.push(`src/${dir}/${f} is not in manifest.json, so it would be left out`); }
 if (errs.length) { console.error('Build failed:\n  ' + errs.join('\n  ')); process.exit(1); }
 
-const dest = path.join(ROOT, M.output); fs.mkdirSync(path.dirname(dest), { recursive: true }); fs.writeFileSync(dest, out);
+const dest = path.resolve(arg('--out') || path.join(ROOT, M.output)); fs.mkdirSync(path.dirname(dest), { recursive: true }); fs.writeFileSync(dest, out);
+const STATIC = path.join(SRC, 'static'); if (fs.existsSync(STATIC)) for (const f of fs.readdirSync(STATIC)) fs.copyFileSync(path.join(STATIC, f), path.join(path.dirname(dest), f)); /* service worker and other files served next to the app */
 const kb = n => (n / 1024).toFixed(0) + ' KB';
-console.log(`Built ${M.output}: ${kb(Buffer.byteLength(out))} (${kb(zlib.gzipSync(out).length)} gzipped) from ${M.css.length} CSS, ${M.js.length} JS and ${M.bank.chunks.length + 1} bank files.`);
+console.log(`Built ${path.relative(process.cwd(), dest) || dest}: ${kb(Buffer.byteLength(out))} (${kb(zlib.gzipSync(out).length)} gzipped) from ${M.css.length} CSS, ${M.js.length} JS and ${M.bank.chunks.length + 1} bank files.`);
 const v = process.argv.indexOf('--verify');
 if (v > 0) { const ref = fs.readFileSync(process.argv[v + 1], 'utf8'); if (ref === out) console.log('Verify: identical to ' + path.basename(process.argv[v + 1]) + '.'); else { let i = 0; while (ref[i] === out[i]) i++; console.error(`Verify: differs at byte ${i}: …${JSON.stringify(out.slice(i, i + 60))} vs …${JSON.stringify(ref.slice(i, i + 60))}`); process.exit(2); } }

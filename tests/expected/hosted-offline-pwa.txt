@@ -1,0 +1,9 @@
+1 hosted status: Ready for offline use
+2 manifest: {"href":"blob:","name":"CloudWalker","start":"http://localhost:8731/","icons":"192x192,512x512","display":"standalone"}
+3 caches: [ 'cloudwalker-v09-shell-1:http://localhost:8731/' ]
+4 offline reload title: Install & offline · CloudWalker | main has content: true
+5 remind checked: true
+6 notifications: [["CloudWalker: time to review","Your daily goal is not met yet."]]
+   still one per day: 1
+7 minutes tracked: Daily goal: 2 of 30 minutes
+errors: none

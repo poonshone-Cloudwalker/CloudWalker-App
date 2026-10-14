@@ -1,0 +1,26 @@
+1 sha256 parity: true
+2 tampered: Checksum does not match the content. The file may be damaged | merge button: 0
+3 preview chip: Checksum verified | rows: Questions 1 1 1 0 1 | Lessons 1 0 0 0 0 | Labs 1 0 0 0 0 | Exam profiles 1 0 0 0 1
+   rejected reasons: cw-pack-q-0002: approved items need "lastReviewed" (YYYY-MM-DD), the day a person reviewed them | undefined
+4 merged: Demo pack 2026.10.1. Dismiss | ?
+5 lesson: true | link: 1
+6 lab: true
+7 content: Draft · 35 Retired · 1
+8 after reload lesson: true
+   retired kept: Retired · 1
+9 url v2 rows: Questions 0 0 1 2 1 | Lessons 0 1 0 0 0 | Labs 0 0 0 1 0 | Exam profiles 0 0 0 1 1
+   installed: Demo pack cw-demo 2026.10.2 just now Questions: +0 ~0 −1 Lessons: +0 ~1
+10 older version refused: older than the installed 2026.10.2.
+11 csv report: 1 questions checked: 1 valid, 0 with errors, 0 warnings.
+12 bad csv: 2 questions checked: 1 valid, 1 with errors, 2 warnings. | 
+   report md: true
+13 built pack preview: Checksum verified | Questions 1 0 0 0 0
+14 sync collect: 5 records lab_drafts,profile,readiness_snapshots,habit_settings,installed_packs | active local | remote not-configured | tables 36
+15 apply LWW: [{"applied":1,"skipped":0,"conflicts":0,"unknown":0},{"applied":0,"skipped":1,"conflicts":1,"unknown":0},{"applied":0,"skipped":0,"conflicts":0,"unknown":1}]
+16 remote stub: Cloud sync is not configured in this version.
+17 sync card: Sync | This device only |  | conflict items 2
+   after resolve: 0
+   outcome visible: true
+18 overflow #/packs 0
+18 overflow #/settings 0
+errors: none

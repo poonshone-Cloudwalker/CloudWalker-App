@@ -1,0 +1,2 @@
+x4-count=50 x4-min=90 =on =on =on
+x4-count=10 x4-min=12 =on =on =on

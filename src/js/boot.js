@@ -10,7 +10,7 @@ bootBankAsync((i, n) => { const p = Math.round(i / n * 100); const b = $('#bootB
   .finally(() => {
     S.bootTimings = { bankMs: Math.round(performance.now() - BOOT_T0) }; const tx = $('#bootText'); if (tx) tx.textContent = 'Loading your saved work…';
     persistBoot().catch(e => { PERSIST.status = 'blocked'; PERSIST.reason = String(e && e.message || e); }).finally(() => {
-      S.booting = false; prefsBoot(); applyTheme(); renderSessionMini(); p2AfterBoot(); p4AfterBoot(); lastRoute = location.hash; render(); persistAfterBoot();
+      S.booting = false; prefsBoot(); applyTheme(); renderSessionMini(); p2AfterBoot(); p4AfterBoot(); featuresAfterBoot(); lastRoute = location.hash; render(); persistAfterBoot();
       if (S.bootError) $('#main').insertAdjacentHTML('afterbegin', `<div class="page">${emptyState('The embedded question bank could not be loaded', String(S.bootError.message || S.bootError) + '. Import a question bank JSON from Settings to continue.', '<a class="btn primary" href="#/settings">Open settings</a>')}</div>`);
       S.bootTimings.readyMs = Math.round(performance.now() - BOOT_T0); performance.mark('cw-ready');
     });

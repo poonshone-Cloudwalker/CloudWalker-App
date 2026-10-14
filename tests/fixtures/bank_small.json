@@ -1,0 +1,2 @@
+{"format":"blueprint-question-bank","exams":[{"code":"TST-001","name":"Test Exam (TST-001)","vendor":"Other","tier":"custom","domain_weights":{"1":100}}],
+"questions":[{"id":"tst-q-001","exam":"Test Exam (TST-001)","exam_code":"TST-001","domain":"1. Basics","question":"Which colour is the sky on a clear day?","options":["Blue","Green","Red","Purple"],"correct_index":0,"difficulty":"easy","question_type":"concept"}]}

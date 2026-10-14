@@ -1,10 +1,12 @@
 <!doctype html>
 <!--
 ==============================================================================
- README · BluePrint CloudWalker Trainer V09
+ README · BluePrint CloudWalker Trainer V10
 ==============================================================================
  One static HTML file: cloud certification prep, lessons, labs, ADRs, interview
- practice and career outputs. No build step, no server code, no account.
+ practice and career outputs. No server code, no account.
+ THIS FILE IS BUILT. Edit the source folder (src/) and run `node build.js`;
+ changes made here are lost on the next build. See README.md in the source.
  Practice material written for this app; not affiliated with any exam vendor.
 
  ARCHITECTURE
@@ -17,8 +19,12 @@
    HTML string; render() paints it; clicks are delegated by data-action.
  · V09.1: pack exams keep their tier and domain weights; draft pack questions
    join practice only when S.ws.includeDrafts is true (Content updates page).
- · Features were added in phases V09-P1..P9 as modules placed just before the
-   Boot section. Each module wraps earlier functions instead of editing them.
+ · Source layout (V10): src/shell (page markup), src/css, src/js/core,
+   src/js/features, src/js/boot.js and src/content (bank, glossary). The JS
+   files are ordered pieces of one scope, listed in src/manifest.json.
+ · Features up to V09.1 wrap earlier functions. New features call
+   registerFeature({ id, views, nav, actions, css, onBoot, mergeImport })
+   from their own file in src/js/features (see js/core/205-feature-api.js).
  · Boot paints first, then parses the embedded bank in idle-time chunks
    (script.bank-chunk, 100 rows each) with a progress bar, then restores the
    saved workspace from IndexedDB and renders.

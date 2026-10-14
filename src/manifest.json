@@ -57,6 +57,7 @@
     "js/core/180-view-settings.js",
     "js/core/190-import-export.js",
     "js/core/200-events.js",
+    "js/core/205-feature-api.js",
     "js/features/210-phase-2-content.js",
     "js/features/220-phase-2-career-command-center.js",
     "js/features/230-phase-2-binding-and-events.js",

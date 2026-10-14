@@ -1,0 +1,269 @@
+{
+  "format": "cloudwalker-workspace",
+  "version": 4,
+  "app": "BluePrint CloudWalker Trainer",
+  "progress": {
+    "answers": {
+      "comptia-secplus-165": [
+        {
+          "t": 1791936196034,
+          "choice": 0,
+          "correct": false,
+          "mode": "learn",
+          "ms": 408
+        }
+      ],
+      "comptia-secplus-156": [
+        {
+          "t": 1791936196493,
+          "choice": 1,
+          "correct": true,
+          "mode": "learn",
+          "ms": 227
+        }
+      ],
+      "comptia-secplus-142": [
+        {
+          "t": 1791936196941,
+          "choice": 2,
+          "correct": false,
+          "mode": "learn",
+          "ms": 220
+        }
+      ],
+      "comptia-secplus-042": [
+        {
+          "t": 1791936197380,
+          "choice": 3,
+          "correct": false,
+          "mode": "learn",
+          "ms": 220
+        }
+      ]
+    },
+    "flags": [],
+    "confidence": {},
+    "sessions": []
+  },
+  "workspace": {
+    "adrs": [
+      {
+        "id": "ADR-001",
+        "title": "Use managed Kafka for events",
+        "status": "Proposed",
+        "date": "2026-10-13",
+        "deciders": "",
+        "context": "",
+        "decision": "",
+        "rationale": "",
+        "businessDrivers": [],
+        "constraints": [],
+        "options": [
+          {
+            "name": "",
+            "summary": "",
+            "pros": "",
+            "cons": "",
+            "rejectedWhy": ""
+          },
+          {
+            "name": "",
+            "summary": "",
+            "pros": "",
+            "cons": "",
+            "rejectedWhy": ""
+          }
+        ],
+        "chosen": -1,
+        "tradeoffs": "",
+        "risks": [],
+        "consequencesPos": "",
+        "consequencesNeg": "",
+        "followUps": [],
+        "reviewTrigger": "",
+        "related": "",
+        "providers": [],
+        "lenses": [],
+        "services": [],
+        "links": "",
+        "source": "",
+        "template": "",
+        "updated": 1791936199015
+      }
+    ],
+    "portfolio": [],
+    "labs": [],
+    "labDrafts": {},
+    "interview": {
+      "answers": [],
+      "stories": [],
+      "boards": [],
+      "exec": []
+    },
+    "career": {
+      "profile": {
+        "name": "",
+        "headline": "",
+        "focusExam": "",
+        "weeklyHours": 10,
+        "links": "",
+        "background": "",
+        "backgroundOther": "",
+        "years": "",
+        "targetRole": "",
+        "clouds": [],
+        "industry": "",
+        "priorExperience": "",
+        "targetExam": "",
+        "examDate": ""
+      },
+      "roles": [],
+      "weeks": {},
+      "milestones": [],
+      "apps": []
+    },
+    "srs": {
+      "comptia-secplus-165": {
+        "stage": 0,
+        "due": 1791950596034,
+        "last": 1791936196034,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936196034,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "comptia-secplus-156": {
+        "stage": 1,
+        "due": 1792022596493,
+        "last": 1791936196493,
+        "lapses": 0,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936196493,
+            "g": 3,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "comptia-secplus-142": {
+        "stage": 0,
+        "due": 1791950596941,
+        "last": 1791936196941,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936196941,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "comptia-secplus-042": {
+        "stage": 0,
+        "due": 1791950597380,
+        "last": 1791936197380,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936197380,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      }
+    },
+    "recallLog": [],
+    "trail": {
+      "study": {
+        "label": "Learn: SY0-701",
+        "href": "#/run",
+        "t": 1791936197607
+      },
+      "artifact": {
+        "label": "ADR-001: Untitled",
+        "href": "#/adr/ADR-001",
+        "t": 1791936198368
+      }
+    },
+    "glossary": {
+      "terms": [],
+      "cross_cloud": [],
+      "_v": 2
+    },
+    "outputs": [],
+    "reflections": [],
+    "exportLog": [],
+    "panels": {
+      "adr:ADR-001": "write"
+    },
+    "schemaVersion": 4,
+    "contentEdits": {},
+    "reports": [],
+    "contentEditsV": 0,
+    "lessons": {},
+    "lessonReview": {},
+    "aiFeedback": {},
+    "calibLog": [],
+    "outcomes": [],
+    "readinessLog": [],
+    "habit": {
+      "goal": {
+        "type": "cards",
+        "value": 20,
+        "updated": 0
+      },
+      "days": {},
+      "weekNotes": {},
+      "remind": {
+        "on": false,
+        "time": "19:00",
+        "lastNotified": "",
+        "updated": 0
+      },
+      "startedAt": 1791864000000
+    },
+    "packs": [],
+    "packContent": {
+      "questions": {},
+      "lessons": {},
+      "labs": {},
+      "examProfiles": {},
+      "exams": {},
+      "retired": {
+        "questions": [],
+        "lessons": []
+      }
+    }
+  },
+  "drafts": {
+    "iq": {},
+    "wb": {}
+  },
+  "userBank": {
+    "exams": [],
+    "questions": []
+  },
+  "exported_at": "2026-10-14T00:03:28.709Z",
+  "queues_snapshot": {
+    "generated": 1791936208717,
+    "missed": [
+      "comptia-secplus-042",
+      "comptia-secplus-142",
+      "comptia-secplus-165"
+    ],
+    "low": [],
+    "due": []
+  }
+}

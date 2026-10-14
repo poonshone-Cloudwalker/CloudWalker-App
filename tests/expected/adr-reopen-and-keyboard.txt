@@ -1,0 +1,4 @@
+ADR text after reopen: Pick Aurora over self-managed PostgreSQL
+study focus: AIB-C01 — AWS
+pill reachable by Tab: true
+errors []

@@ -1,0 +1,2 @@
+any: 200 questions eligible. 1% of them you have seen before.
+never seen: 199 questions eligible. 0% of them you have seen before.

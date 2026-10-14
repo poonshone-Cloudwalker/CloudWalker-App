@@ -1,0 +1,839 @@
+{
+  "format": "cloudwalker-workspace",
+  "version": 4,
+  "app": "BluePrint CloudWalker Trainer",
+  "progress": {
+    "answers": {
+      "fnd-q-04": [
+        {
+          "t": 1791936445389,
+          "choice": 2,
+          "correct": false,
+          "mode": "learn",
+          "ms": 510
+        }
+      ],
+      "fnd-q-05": [
+        {
+          "t": 1791936445699,
+          "choice": 3,
+          "correct": false,
+          "mode": "learn",
+          "ms": 133
+        }
+      ],
+      "fnd-q-06": [
+        {
+          "t": 1791936446009,
+          "choice": 1,
+          "correct": false,
+          "mode": "learn",
+          "ms": 138
+        }
+      ],
+      "fnd-q-07": [
+        {
+          "t": 1791936446307,
+          "choice": 0,
+          "correct": true,
+          "mode": "learn",
+          "ms": 132
+        }
+      ],
+      "fnd-q-23": [
+        {
+          "t": 1791936446610,
+          "choice": 3,
+          "correct": false,
+          "mode": "learn",
+          "ms": 136
+        }
+      ],
+      "aws-saa-c03-003": [
+        {
+          "t": 1791936449022,
+          "choice": 1,
+          "correct": false,
+          "mode": "learn",
+          "ms": 535
+        }
+      ],
+      "aws-saa-c03-043": [
+        {
+          "t": 1791936449350,
+          "choice": 0,
+          "correct": false,
+          "mode": "learn",
+          "ms": 140
+        }
+      ],
+      "aws-saa-c03-025": [
+        {
+          "t": 1791936449667,
+          "choice": 0,
+          "correct": false,
+          "mode": "learn",
+          "ms": 143
+        }
+      ],
+      "aws-saa-c03-048": [
+        {
+          "t": 1791936449983,
+          "choice": 3,
+          "correct": false,
+          "mode": "learn",
+          "ms": 141
+        }
+      ],
+      "aws-saa-c03-006": [
+        {
+          "t": 1791936450301,
+          "choice": 1,
+          "correct": false,
+          "mode": "learn",
+          "ms": 143
+        }
+      ]
+    },
+    "flags": [],
+    "confidence": {},
+    "sessions": [
+      {
+        "id": "r1791936444879",
+        "mode": "learn",
+        "examCode": null,
+        "title": "Lesson check: IP addresses and CIDR blocks",
+        "exam": null,
+        "started": 1791936444879,
+        "ended": 1791936446813,
+        "total": 5,
+        "answered": 5,
+        "correct": 1,
+        "byDomain": {
+          "FOUND: 0. Cloud foundations": {
+            "total": 5,
+            "correct": 1
+          }
+        },
+        "ids": [
+          "fnd-q-04",
+          "fnd-q-05",
+          "fnd-q-06",
+          "fnd-q-07",
+          "fnd-q-23"
+        ],
+        "responses": {
+          "fnd-q-04": {
+            "choice": 2,
+            "answer": 2,
+            "correct": false,
+            "perm": [
+              2,
+              3,
+              1,
+              0
+            ]
+          },
+          "fnd-q-05": {
+            "choice": 3,
+            "answer": 3,
+            "correct": false,
+            "perm": [
+              2,
+              3,
+              0,
+              1
+            ]
+          },
+          "fnd-q-06": {
+            "choice": 1,
+            "answer": 1,
+            "correct": false,
+            "perm": [
+              1,
+              0,
+              2,
+              3
+            ]
+          },
+          "fnd-q-07": {
+            "choice": 0,
+            "answer": 0,
+            "correct": true,
+            "perm": [
+              2,
+              0,
+              1,
+              3
+            ]
+          },
+          "fnd-q-23": {
+            "choice": 3,
+            "answer": 3,
+            "correct": false,
+            "perm": [
+              3,
+              1,
+              0,
+              2
+            ]
+          }
+        },
+        "timed": false,
+        "minutes": 0,
+        "sim": false,
+        "passPct": null,
+        "time": {
+          "fnd-q-04": 687,
+          "fnd-q-05": 305,
+          "fnd-q-06": 304,
+          "fnd-q-07": 299,
+          "fnd-q-23": 339
+        },
+        "perm": {
+          "fnd-q-04": [
+            2,
+            3,
+            1,
+            0
+          ],
+          "fnd-q-05": [
+            2,
+            3,
+            0,
+            1
+          ],
+          "fnd-q-06": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "fnd-q-07": [
+            2,
+            0,
+            1,
+            3
+          ],
+          "fnd-q-23": [
+            3,
+            1,
+            0,
+            2
+          ]
+        },
+        "flags": [],
+        "seenBefore": 0,
+        "lessonId": "fnd-2",
+        "asked": 5,
+        "lessonMissed": [
+          "fnd-q-04",
+          "fnd-q-05",
+          "fnd-q-06",
+          "fnd-q-23"
+        ]
+      },
+      {
+        "id": "r1791936448486",
+        "mode": "learn",
+        "examCode": "SAA-C03",
+        "title": "Lesson check: Securing AWS workloads",
+        "exam": "SAA-C03",
+        "started": 1791936448486,
+        "ended": 1791936450515,
+        "total": 5,
+        "answered": 5,
+        "correct": 0,
+        "byDomain": {
+          "SAA-C03: 1. Design Secure Architectures": {
+            "total": 5,
+            "correct": 0
+          }
+        },
+        "ids": [
+          "aws-saa-c03-003",
+          "aws-saa-c03-043",
+          "aws-saa-c03-025",
+          "aws-saa-c03-048",
+          "aws-saa-c03-006"
+        ],
+        "responses": {
+          "aws-saa-c03-003": {
+            "choice": 1,
+            "answer": 1,
+            "correct": false,
+            "perm": [
+              1,
+              3,
+              0,
+              2
+            ]
+          },
+          "aws-saa-c03-043": {
+            "choice": 0,
+            "answer": 0,
+            "correct": false,
+            "perm": [
+              2,
+              0,
+              1,
+              3
+            ]
+          },
+          "aws-saa-c03-025": {
+            "choice": 0,
+            "answer": 0,
+            "correct": false,
+            "perm": [
+              0,
+              2,
+              1,
+              3
+            ]
+          },
+          "aws-saa-c03-048": {
+            "choice": 3,
+            "answer": 3,
+            "correct": false,
+            "perm": [
+              0,
+              3,
+              2,
+              1
+            ]
+          },
+          "aws-saa-c03-006": {
+            "choice": 1,
+            "answer": 1,
+            "correct": false,
+            "perm": [
+              1,
+              0,
+              2,
+              3
+            ]
+          }
+        },
+        "timed": false,
+        "minutes": 0,
+        "sim": false,
+        "passPct": null,
+        "time": {
+          "aws-saa-c03-003": 724,
+          "aws-saa-c03-043": 314,
+          "aws-saa-c03-025": 318,
+          "aws-saa-c03-048": 316,
+          "aws-saa-c03-006": 357
+        },
+        "perm": {
+          "aws-saa-c03-003": [
+            1,
+            3,
+            0,
+            2
+          ],
+          "aws-saa-c03-043": [
+            2,
+            0,
+            1,
+            3
+          ],
+          "aws-saa-c03-025": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "aws-saa-c03-048": [
+            0,
+            3,
+            2,
+            1
+          ],
+          "aws-saa-c03-006": [
+            1,
+            0,
+            2,
+            3
+          ]
+        },
+        "flags": [],
+        "seenBefore": 0,
+        "lessonId": "les-saa-1",
+        "asked": 5,
+        "lessonMissed": [
+          "aws-saa-c03-003",
+          "aws-saa-c03-043",
+          "aws-saa-c03-025",
+          "aws-saa-c03-048",
+          "aws-saa-c03-006"
+        ]
+      }
+    ]
+  },
+  "workspace": {
+    "adrs": [],
+    "portfolio": [],
+    "labs": [],
+    "labDrafts": {},
+    "interview": {
+      "answers": [],
+      "stories": [],
+      "boards": [],
+      "exec": []
+    },
+    "career": {
+      "profile": {
+        "name": "",
+        "headline": "",
+        "focusExam": "SAA-C03",
+        "weeklyHours": 8,
+        "links": "",
+        "background": "pm",
+        "backgroundOther": "",
+        "years": "10+",
+        "targetRole": "architect",
+        "clouds": [
+          "aws"
+        ],
+        "industry": "",
+        "priorExperience": "",
+        "targetExam": "SAA-C03",
+        "examDate": "2026-12-13",
+        "onboardedAt": 1791936442512
+      },
+      "roles": [],
+      "weeks": {},
+      "milestones": [],
+      "apps": []
+    },
+    "srs": {
+      "fnd-q-04": {
+        "stage": 0,
+        "due": 1791950845389,
+        "last": 1791936445389,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936445389,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "fnd-q-05": {
+        "stage": 0,
+        "due": 1791950845699,
+        "last": 1791936445699,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936445699,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "fnd-q-06": {
+        "stage": 0,
+        "due": 1791950846009,
+        "last": 1791936446009,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936446009,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "fnd-q-07": {
+        "stage": 1,
+        "due": 1792022846307,
+        "last": 1791936446307,
+        "lapses": 0,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936446307,
+            "g": 3,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "fnd-q-23": {
+        "stage": 0,
+        "due": 1791950846610,
+        "last": 1791936446610,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936446610,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "aws-saa-c03-003": {
+        "stage": 0,
+        "due": 1791950849022,
+        "last": 1791936449022,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936449022,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "aws-saa-c03-043": {
+        "stage": 0,
+        "due": 1791950849351,
+        "last": 1791936449351,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936449351,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "aws-saa-c03-025": {
+        "stage": 0,
+        "due": 1791950849668,
+        "last": 1791936449668,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936449668,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "aws-saa-c03-048": {
+        "stage": 0,
+        "due": 1791950849983,
+        "last": 1791936449983,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936449983,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      },
+      "aws-saa-c03-006": {
+        "stage": 0,
+        "due": 1791950850301,
+        "last": 1791936450301,
+        "lapses": 1,
+        "reviews": 1,
+        "hist": [
+          {
+            "t": 1791936450301,
+            "g": 1,
+            "mode": "mcq"
+          }
+        ],
+        "weakAdj": false
+      }
+    },
+    "recallLog": [],
+    "trail": {
+      "study": {
+        "label": "Lesson check: Securing AWS workloads",
+        "href": "#/run",
+        "t": 1791936450317
+      }
+    },
+    "glossary": {
+      "terms": [],
+      "cross_cloud": []
+    },
+    "outputs": [],
+    "reflections": [],
+    "exportLog": [],
+    "panels": {},
+    "schemaVersion": 4,
+    "contentEdits": {},
+    "reports": [],
+    "contentEditsV": 0,
+    "habit": {
+      "goal": {
+        "type": "cards",
+        "value": 20,
+        "updated": 0
+      },
+      "days": {},
+      "weekNotes": {},
+      "remind": {
+        "on": false,
+        "time": "19:00",
+        "lastNotified": "",
+        "updated": 0
+      },
+      "startedAt": 1791864000000
+    },
+    "plan": {
+      "code": "SAA-C03",
+      "examDate": "2026-12-13",
+      "weeklyHours": 8,
+      "created": 1791936442514,
+      "start": 1791864000000,
+      "end": 1797138000000,
+      "weeks": [
+        {
+          "start": 1791864000000,
+          "end": 1792468800000,
+          "minutes": 480,
+          "practiceQs": 204,
+          "sims": 0,
+          "reviewMin": 72,
+          "domainQs": {
+            "1. Design Secure Architectures": 61,
+            "2. Design Resilient Architectures": 53,
+            "3. Design High-Performing Architectures": 49,
+            "4. Design Cost-Optimized Architectures": 41
+          }
+        },
+        {
+          "start": 1792468800000,
+          "end": 1793073600000,
+          "minutes": 480,
+          "practiceQs": 204,
+          "sims": 0,
+          "reviewMin": 72,
+          "domainQs": {
+            "1. Design Secure Architectures": 61,
+            "2. Design Resilient Architectures": 53,
+            "3. Design High-Performing Architectures": 49,
+            "4. Design Cost-Optimized Architectures": 41
+          }
+        },
+        {
+          "start": 1793073600000,
+          "end": 1793678400000,
+          "minutes": 480,
+          "practiceQs": 204,
+          "sims": 0,
+          "reviewMin": 72,
+          "domainQs": {
+            "1. Design Secure Architectures": 61,
+            "2. Design Resilient Architectures": 53,
+            "3. Design High-Performing Architectures": 49,
+            "4. Design Cost-Optimized Architectures": 41
+          }
+        },
+        {
+          "start": 1793678400000,
+          "end": 1794283200000,
+          "minutes": 480,
+          "practiceQs": 204,
+          "sims": 0,
+          "reviewMin": 72,
+          "domainQs": {
+            "1. Design Secure Architectures": 61,
+            "2. Design Resilient Architectures": 53,
+            "3. Design High-Performing Architectures": 49,
+            "4. Design Cost-Optimized Architectures": 41
+          }
+        },
+        {
+          "start": 1794283200000,
+          "end": 1794888000000,
+          "minutes": 480,
+          "practiceQs": 204,
+          "sims": 0,
+          "reviewMin": 72,
+          "domainQs": {
+            "1. Design Secure Architectures": 61,
+            "2. Design Resilient Architectures": 53,
+            "3. Design High-Performing Architectures": 49,
+            "4. Design Cost-Optimized Architectures": 41
+          }
+        },
+        {
+          "start": 1794888000000,
+          "end": 1795492800000,
+          "minutes": 480,
+          "practiceQs": 156,
+          "sims": 1,
+          "reviewMin": 72,
+          "domainQs": {
+            "1. Design Secure Architectures": 47,
+            "2. Design Resilient Architectures": 41,
+            "3. Design High-Performing Architectures": 37,
+            "4. Design Cost-Optimized Architectures": 31
+          }
+        },
+        {
+          "start": 1795492800000,
+          "end": 1796097600000,
+          "minutes": 480,
+          "practiceQs": 156,
+          "sims": 1,
+          "reviewMin": 72,
+          "domainQs": {
+            "1. Design Secure Architectures": 47,
+            "2. Design Resilient Architectures": 41,
+            "3. Design High-Performing Architectures": 37,
+            "4. Design Cost-Optimized Architectures": 31
+          }
+        },
+        {
+          "start": 1796097600000,
+          "end": 1796702400000,
+          "minutes": 480,
+          "practiceQs": 132,
+          "sims": 1,
+          "reviewMin": 72,
+          "domainQs": {
+            "1. Design Secure Architectures": 40,
+            "2. Design Resilient Architectures": 34,
+            "3. Design High-Performing Architectures": 32,
+            "4. Design Cost-Optimized Architectures": 26
+          }
+        },
+        {
+          "start": 1796702400000,
+          "end": 1797138000000,
+          "minutes": 346,
+          "practiceQs": 61,
+          "sims": 1,
+          "reviewMin": 52,
+          "domainQs": {
+            "1. Design Secure Architectures": 18,
+            "2. Design Resilient Architectures": 16,
+            "3. Design High-Performing Architectures": 15,
+            "4. Design Cost-Optimized Architectures": 12
+          }
+        }
+      ],
+      "weightSource": "official",
+      "domains": [
+        {
+          "name": "1. Design Secure Architectures",
+          "weight": 0.3,
+          "acc": null,
+          "seen": 0,
+          "factor": 1,
+          "share": 0.3
+        },
+        {
+          "name": "2. Design Resilient Architectures",
+          "weight": 0.26,
+          "acc": null,
+          "seen": 0,
+          "factor": 1,
+          "share": 0.26
+        },
+        {
+          "name": "3. Design High-Performing Architectures",
+          "weight": 0.24,
+          "acc": null,
+          "seen": 0,
+          "factor": 1,
+          "share": 0.24
+        },
+        {
+          "name": "4. Design Cost-Optimized Architectures",
+          "weight": 0.2,
+          "acc": null,
+          "seen": 0,
+          "factor": 1,
+          "share": 0.2
+        }
+      ],
+      "simLen": 130,
+      "warning": "At 8 h a week the plan needs more time than you have in 2 weeks. About 9 h a week, or a later exam date, would fit.",
+      "replans": [],
+      "lastCheck": 1791936442514
+    },
+    "lessons": {
+      "fnd-2": {
+        "checks": [
+          {
+            "t": 1791936446814,
+            "score": 1,
+            "total": 5,
+            "asked": 5
+          }
+        ],
+        "readAt": 1791936444879,
+        "updated": 1791936446814
+      },
+      "les-saa-1": {
+        "checks": [
+          {
+            "t": 1791936450515,
+            "score": 0,
+            "total": 5,
+            "asked": 5
+          }
+        ],
+        "readAt": 1791936448486,
+        "updated": 1791936450515
+      }
+    },
+    "readinessLog": [
+      {
+        "d": "2026-10-13",
+        "code": "SAA-C03",
+        "score": 0,
+        "verdict": "none",
+        "t": 1791936443337
+      }
+    ],
+    "lessonReview": {},
+    "aiFeedback": {},
+    "calibLog": [],
+    "outcomes": [],
+    "packs": []
+  },
+  "drafts": {
+    "iq": {},
+    "wb": {}
+  },
+  "userBank": {
+    "exams": [],
+    "questions": []
+  },
+  "exported_at": "2026-10-14T00:07:33.679Z",
+  "queues_snapshot": {
+    "generated": 1791936453696,
+    "missed": [
+      "aws-saa-c03-003",
+      "aws-saa-c03-006",
+      "aws-saa-c03-025",
+      "aws-saa-c03-043",
+      "aws-saa-c03-048",
+      "fnd-q-04",
+      "fnd-q-05",
+      "fnd-q-06",
+      "fnd-q-23"
+    ],
+    "low": [],
+    "due": []
+  }
+}

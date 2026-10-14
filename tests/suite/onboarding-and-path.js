@@ -1,0 +1,45 @@
+const { chromium } = require('playwright'); const fs=require('fs');
+const U='__CW_APP__';
+const dir=__dirname+'/pq1'; fs.rmSync(dir,{recursive:true,force:true});
+const errs=[]; const txt=async p=>(await p.locator('main').innerText());
+const iso=d=>{const x=new Date(Date.now()+d*864e5);return x.toISOString().slice(0,10)};
+(async()=>{
+ let ctx=await chromium.launchPersistentContext(dir,{viewport:{width:820,height:1100}});let p=ctx.pages()[0]||await ctx.newPage();p.on('pageerror',e=>errs.push(e.message));
+ await p.goto(U);await p.waitForTimeout(1200);
+ console.log('1 first run route:',p.url().split('#')[1]);
+ await p.locator('input[name="background"][value="pm"]').check();await p.waitForTimeout(200);
+ await p.fill('#ob-ind','retail');await p.click('[data-action="ob-next"]');
+ await p.locator('input[name="years"][value="10+"]').check();await p.click('[data-action="ob-next"]');
+ await p.locator('input[name="targetRole"][value="architect"]').check();await p.click('[data-action="ob-next"]');
+ await p.locator('input[data-ob="clouds"][value="aws"]').check();await p.waitForTimeout(150);await p.locator('input[data-ob="clouds"][value="gcp"]').check();await p.click('[data-action="ob-next"]');
+ await p.fill('#ob-hours','8');await p.selectOption('#ob-exam','SAA-C03');await p.fill('#ob-date',iso(60));await p.waitForTimeout(100);
+ await p.click('[data-action="ob-finish"]');await p.waitForTimeout(800);
+ let t=await txt(p); console.log('2 path route:',p.url().split('#')[1]);
+ const sec=await p.locator('main section.card').allInnerTexts();
+ for(const s of sec.slice(0,2)) console.log('   ', s.split('\n').filter(l=>/^(AWS|Google|Microsoft|.*(Cloud Practitioner|Solutions Architect|Digital Leader|Associate Cloud Engineer|Professional Cloud Architect))/.test(l)).slice(0,5).join(' | '));
+ console.log('   SAP note:',/SAP-C03/.test(t));
+ await p.goto(U+'#/plan');await p.waitForTimeout(600);t=await txt(p);
+ console.log('3 plan:',(t.match(/SAA-C03 · [^\n]*/)||[''])[0],'|',(t.match(/\d+ days? to go/)||[''])[0],'| weights:',/official exam guide/.test(t)?'official':'equal','| weeks rows:',(await p.locator('#h-wks ~ div tbody tr').count()));
+ console.log('   this week:',(t.match(/Practice questions\n[^\n]*/)||[''])[0].replace('\n',' '));
+ await p.goto(U+'#/interview/stories');await p.waitForTimeout(500);t=await txt(p);
+ console.log('4 seeds heading:',(t.match(/From your [^\n]*/)||['none'])[0],'| first seed:',(t.match(/Multi-site[^\n]*/)||['none'])[0]);
+ await p.goto(U+'#/interview/q/iq-42');await p.waitForTimeout(500);t=await txt(p);
+ console.log('5 iq-42:',(t.match(/How does your[^\n?]*\?/)||['none'])[0]);
+ console.log('   strong:',(t.match(/Maps [^\n]*/)||['(strong answer not visible on this view)'])[0].slice(0,160));
+ await p.goto(U+'#/dashboard');await p.waitForTimeout(500);t=await txt(p);
+ console.log('6 dashboard plan card:',/This week's study plan/.test(t), '| setup card:',/Make CloudWalker yours/.test(t));
+ // change background in profile -> developer seeds
+ await p.goto(U+'#/career/profile');await p.waitForTimeout(500);
+ await p.selectOption('#pr-bg','developer');await p.waitForTimeout(600);
+ await p.goto(U+'#/interview/stories');await p.waitForTimeout(500);t=await txt(p);
+ console.log('7 after profile change:',(t.match(/From your [^\n]*/)||['none'])[0],'|',/Fixing a production performance problem/.test(t));
+ await p.waitForTimeout(1600); await ctx.close();
+ // reopen 10 days later -> auto re-plan
+ ctx=await chromium.launchPersistentContext(dir,{viewport:{width:820,height:1100}});p=ctx.pages()[0]||await ctx.newPage();p.on('pageerror',e=>errs.push(e.message));
+ await p.clock.install({time:new Date(Date.now()+10*864e5)});
+ await p.goto(U+'#/plan');await p.waitForTimeout(1500);t=await txt(p);
+ console.log('8 replan:',(t.match(/Re-planned[^\n]*\n?[^\n]*/)||['none'])[0].replace(/\n/g,' ').slice(0,220));
+ console.log('   warning:',(t.match(/At \d+ h a week[^\n]*/)||['none'])[0]);
+ await ctx.close();
+ console.log('errors',errs);
+})();
