@@ -1,0 +1,33 @@
+/* ---------- Design tokens ---------- */
+:root{
+  --color-bg:#f4f8fc; --color-surface:#ffffff; --color-surface-2:#eef5fb; --color-surface-offset:#e3eef8;
+  --color-text:#123047; --color-text-muted:#44596b; --color-text-faint:#526a7e; /* V09 P9: AA on every light surface */
+  --color-primary:#4b9cd3; --color-primary-hover:#2f83bd; --color-primary-active:#216d9f; --color-primary-highlight:#d7ebf8;
+  --color-primary-ink:#1f6a9e; /* AA-safe primary for text on light surfaces */
+  --color-on-primary:#0b2a40;
+  --color-success:#276b4d; --color-success-bg:#e6f3ec;
+  --color-warning:#8a5a12; --color-warning-bg:#fbf1e1;
+  --color-error:#a23b39; --color-error-bg:#f8e7e6;
+  --color-border:rgba(18,48,71,.12); --color-divider:rgba(18,48,71,.08);
+  --shadow-1:0 1px 2px rgba(18,48,71,.06),0 2px 8px rgba(18,48,71,.04);
+  --shadow-2:0 8px 28px rgba(18,48,71,.12);
+  --grid-line:rgba(75,156,211,.11);
+  --font-display:"General Sans","Satoshi",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-body:"Satoshi",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --r-sm:6px; --r-md:10px; --r-lg:14px;
+  --sidebar-w:252px;
+  color-scheme:light;
+}
+:root[data-theme="dark"]{
+  --color-bg:#0c1722; --color-surface:#112131; --color-surface-2:#16304a; --color-surface-offset:#1a3955;
+  --color-text:#eaf4fb; --color-text-muted:#a8bfd1; --color-text-faint:#94adc0;
+  --color-primary:#69b3e7; --color-primary-hover:#8ac4ee; --color-primary-active:#4e9ed8; --color-primary-highlight:rgba(105,179,231,.15);
+  --color-primary-ink:#8ac4ee; --color-on-primary:#07192a;
+  --color-success:#6cc79b; --color-success-bg:rgba(108,199,155,.13);
+  --color-warning:#e0ad5c; --color-warning-bg:rgba(224,173,92,.13);
+  --color-error:#f2a3a1; --color-error-bg:rgba(242,163,161,.13);
+  --color-border:rgba(234,244,251,.12); --color-divider:rgba(234,244,251,.08);
+  --shadow-1:0 1px 2px rgba(0,0,0,.3); --shadow-2:0 12px 32px rgba(0,0,0,.45);
+  --grid-line:rgba(105,179,231,.10);
+  color-scheme:dark;
+}

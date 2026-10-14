@@ -1,0 +1,9 @@
+/* ---------- Brand identity (cloud, blueprint grid, route to a waypoint) ---------- */
+.brand-mark{width:36px;height:36px;border-radius:9px}
+.brand-name .bn-1{display:block;font-family:var(--font-display);font-weight:700;font-size:1.06rem;letter-spacing:-.01em;color:var(--color-text);line-height:1.1}
+.brand-name .bn-2{display:block;font-family:var(--font-display);font-weight:600;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--color-primary-ink);margin-top:2px}
+.topbar-brand{display:flex;align-items:center;gap:9px;min-width:0;min-height:44px;color:inherit;text-decoration:none;flex:1 1 auto}
+.topbar .tb-mark{width:30px;height:30px;flex:none;border-radius:8px}
+.topbar .brand-name .bn-1{font-size:.98rem}.topbar .brand-name .bn-2{font-size:.6rem}
+@media (max-width:380px){.topbar .brand-name .bn-2{display:none}}
+

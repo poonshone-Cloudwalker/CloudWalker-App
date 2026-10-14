@@ -1,0 +1,38 @@
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell" id="shell">
+  <header class="topbar">
+    <button class="btn ghost icon-btn" id="menuBtn" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <a class="topbar-brand" href="#/dashboard" aria-label="BluePrint CloudWalker home"><svg class="brand-mark tb-mark" aria-hidden="true" focusable="false" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#4b9cd3"/><defs><clipPath id="cw-tb"><path d="M15 47 H49 A9.5 9.5 0 0 0 51.2 28.3 A15.5 15.5 0 0 0 21.6 24.4 A11.5 11.5 0 0 0 15 47 Z"/></clipPath></defs><g transform="translate(0 2.5)"><path d="M15 47 H49 A9.5 9.5 0 0 0 51.2 28.3 A15.5 15.5 0 0 0 21.6 24.4 A11.5 11.5 0 0 0 15 47 Z" fill="#ffffff"/><g clip-path="url(#cw-tb)"><path d="M21.5 48 L30.5 31.5 H33.5 L42.5 48 Z" fill="#0f2b46"/><path d="M32 45.6 V34" stroke="#ffffff" stroke-width="1.7" stroke-dasharray="3 2.4" stroke-linecap="round"/></g><circle cx="32" cy="26.6" r="4.4" fill="#ffffff" stroke="#0f2b46" stroke-width="2.1"/><circle cx="32" cy="26.6" r="1.5" fill="#0f2b46"/><path d="M15 47 H49 A9.5 9.5 0 0 0 51.2 28.3 A15.5 15.5 0 0 0 21.6 24.4 A11.5 11.5 0 0 0 15 47 Z" fill="none" stroke="#0f2b46" stroke-width="3.4" stroke-linejoin="round"/></g></svg><span class="brand-name"><span class="bn-1">BluePrint</span><span class="bn-2">CloudWalker</span></span></a>
+    <div class="save-pill" hidden></div>
+    <span class="spacer"></span>
+    <button class="btn ghost icon-btn theme-toggle" aria-label="Switch to dark theme"></button>
+  </header>
+  <div class="scrim" id="scrim"></div>
+  <nav class="sidebar" id="sidebar" aria-label="Primary">
+    <div class="brand">
+      <svg class="brand-mark" aria-hidden="true" focusable="false" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#4b9cd3"/><defs><clipPath id="cw-sb"><path d="M15 47 H49 A9.5 9.5 0 0 0 51.2 28.3 A15.5 15.5 0 0 0 21.6 24.4 A11.5 11.5 0 0 0 15 47 Z"/></clipPath></defs><g transform="translate(0 2.5)"><path d="M15 47 H49 A9.5 9.5 0 0 0 51.2 28.3 A15.5 15.5 0 0 0 21.6 24.4 A11.5 11.5 0 0 0 15 47 Z" fill="#ffffff"/><g clip-path="url(#cw-sb)"><path d="M21.5 48 L30.5 31.5 H33.5 L42.5 48 Z" fill="#0f2b46"/><path d="M32 45.6 V34" stroke="#ffffff" stroke-width="1.7" stroke-dasharray="3 2.4" stroke-linecap="round"/></g><circle cx="32" cy="26.6" r="4.4" fill="#ffffff" stroke="#0f2b46" stroke-width="2.1"/><circle cx="32" cy="26.6" r="1.5" fill="#0f2b46"/><path d="M15 47 H49 A9.5 9.5 0 0 0 51.2 28.3 A15.5 15.5 0 0 0 21.6 24.4 A11.5 11.5 0 0 0 15 47 Z" fill="none" stroke="#0f2b46" stroke-width="3.4" stroke-linejoin="round"/></g></svg>
+      <span class="brand-name" title="BluePrint CloudWalker: cloud architect career command center"><span class="bn-1">BluePrint</span><span class="bn-2">CloudWalker</span></span>
+    </div>
+    <ul class="nav" id="nav"></ul>
+    <div class="sidebar-foot">
+      <div class="save-pill side" hidden></div>
+      <div class="session-mini" id="sessionMini" aria-live="polite"></div>
+      <button class="btn ghost theme-toggle" style="justify-content:flex-start" aria-label="Switch to dark theme"></button>
+      <button class="btn ghost" id="collapseBtn" style="justify-content:flex-start" aria-label="Collapse sidebar" aria-pressed="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg><span class="nav-label">Collapse</span>
+      </button>
+    </div>
+  </nav>
+  <main id="main" tabindex="-1"></main>
+  <nav class="bottom-nav" id="bottomNav" aria-label="Quick navigation"></nav>
+</div>
+<dialog id="dlg" aria-labelledby="dlgTitle"><div class="dlg-head"><h2 id="dlgTitle" style="font-size:1.05rem"></h2><span class="spacer"></span><button class="btn ghost icon-btn" id="dlgClose" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><div class="dlg-body" id="dlgBody"></div></dialog>
+<div id="live" class="sr-only" aria-live="polite"></div>
+<input type="file" id="fileBank" accept="application/json,.json" class="sr-only" tabindex="-1" aria-hidden="true">
+<input type="file" id="fileWorkspace" accept="application/json,.json" class="sr-only" tabindex="-1" aria-hidden="true">
+<input type="file" id="fileProgress" accept="application/json,.json" class="sr-only" tabindex="-1" aria-hidden="true">

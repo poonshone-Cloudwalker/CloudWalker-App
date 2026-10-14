@@ -1,0 +1,22 @@
+/* ---------- Phase 5: glossary ---------- */
+.gl-filters{display:flex;flex-direction:column;gap:12px}
+.gl-filters input[type=search]{font-size:1.05rem;min-height:48px}
+.gl-chips .chip{min-height:40px}
+.gl-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+.gl-card{display:flex;flex-direction:column;gap:6px;padding:14px 16px;border-radius:var(--r-lg);background:var(--color-surface);border:1px solid var(--color-divider)}
+.gl-head{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.gl-term{font-weight:700;font-size:1.05rem;color:var(--color-text);text-decoration:none;min-height:32px;display:inline-flex;align-items:center}
+.gl-term:hover{color:var(--color-primary-ink);text-decoration:underline}
+.gl-def{margin:0;line-height:1.5}
+.gl-meta{color:var(--color-text-muted)}
+.gl-alias{margin:0}
+.gl-rel{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.chip.linkchip{text-decoration:none;color:var(--color-text);border:1px solid var(--color-border);min-height:32px}
+.chip.cl-gcp{background:#e3eef8;color:#1f4f75}.chip.cl-azure{background:#e5eefb;color:#1f4a8a}.chip.cl-aws{background:#fbf0e3;color:#7a4a12}.chip.cl-neutral{background:var(--color-surface-2)}
+[data-theme="dark"] .chip.cl-gcp,[data-theme="dark"] .chip.cl-azure,[data-theme="dark"] .chip.cl-aws{background:var(--color-surface-2);color:var(--color-text)}
+table.gl-x{min-width:720px}
+table.gl-x th[scope=row]{text-align:left;white-space:normal}
+@media (max-width:560px){.gl-list{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media print{.sidebar,.topbar{display:none}.shell{display:block}}
+
