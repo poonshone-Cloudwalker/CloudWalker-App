@@ -1,0 +1,115 @@
+{
+ "document": "content-src/bootcamp/Cloud_Architect_Operator_Bootcamp.md",
+ "generated_by": "tools/bootcamp-extract.js",
+ "scale": {
+  "min": 0,
+  "max": 4,
+  "meanings": [
+   {
+    "score": 0,
+    "meaning": "absent/unsafe"
+   },
+   {
+    "score": 1,
+    "meaning": "incomplete and largely unverified"
+   },
+   {
+    "score": 2,
+    "meaning": "functional happy path with material gaps"
+   },
+   {
+    "score": 3,
+    "meaning": "tested, documented, and safe for the stated scope"
+   },
+   {
+    "score": 4,
+    "meaning": "robust evidence, negative/failure testing, thoughtful tradeoffs, and clear improvement path"
+   }
+  ]
+ },
+ "dimensions": [
+  {
+   "key": "correctness",
+   "tracker_field": "score_correctness",
+   "label": "Correctness",
+   "evidence_to_inspect": "Tests, expected behavior, reproducible commands"
+  },
+  {
+   "key": "security",
+   "tracker_field": "score_security",
+   "label": "Security",
+   "evidence_to_inspect": "Least privilege, data handling, secrets, negative tests"
+  },
+  {
+   "key": "resilience",
+   "tracker_field": "score_resilience",
+   "label": "Resilience",
+   "evidence_to_inspect": "Fault behavior, recovery, backup/restore or rollback"
+  },
+  {
+   "key": "operational_quality",
+   "tracker_field": "score_operations",
+   "label": "Operational quality",
+   "evidence_to_inspect": "Observability, runbook, clear ownership, actionable alerts"
+  },
+  {
+   "key": "cost",
+   "tracker_field": "score_cost",
+   "label": "Cost",
+   "evidence_to_inspect": "Estimates/limits, resource scope, cleanup proof, waste analysis"
+  },
+  {
+   "key": "automation",
+   "tracker_field": "score_automation",
+   "label": "Automation",
+   "evidence_to_inspect": "Idempotence, CI, scripts, machine-checkable guardrails"
+  },
+  {
+   "key": "communication",
+   "tracker_field": "score_communication",
+   "label": "Communication",
+   "evidence_to_inspect": "ADR/report quality, diagrams, audience-appropriate explanation"
+  }
+ ],
+ "max_total": 28,
+ "gate": {
+  "min_total": 20,
+  "no_zero_in": [
+   "security",
+   "cost"
+  ],
+  "all_acceptance_tests_pass": true,
+  "text": "Suggested gate: at least 20/28, no 0 in security or cost, all acceptance tests pass.",
+  "note": "A numerical score never overrides an unsafe deployment."
+ },
+ "tracker": {
+  "file": "progress/tracker.csv",
+  "columns": [
+   "level",
+   "lab_id",
+   "status",
+   "started",
+   "completed",
+   "score_correctness",
+   "score_security",
+   "score_resilience",
+   "score_operations",
+   "score_cost",
+   "score_automation",
+   "score_communication",
+   "validation_command",
+   "evidence_link",
+   "cleanup_verified",
+   "reviewer_notes"
+  ],
+  "example_row": "1,01-linux-processes,not-started,,,,,,,,,,,,,",
+  "statuses": [
+   "not-started",
+   "in-progress",
+   "blocked",
+   "passed",
+   "rework"
+  ],
+  "privacy_note": "Record evidence in a private/local tracker if it would reveal account IDs, internal names, or security-sensitive details. Do not commit real cloud identifiers or raw incident logs to a public portfolio."
+ }
+}

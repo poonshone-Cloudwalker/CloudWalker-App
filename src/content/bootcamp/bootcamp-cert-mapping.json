@@ -1,0 +1,270 @@
+{
+ "source": "content-src/bootcamp/cert-mapping.json",
+ "_about": "Manual mapping from certification weak areas to bootcamp labs. A quiz domain matches a topic when its name contains one of the topic's keywords (case-insensitive). Labs are listed in the order they are recommended. This is editorial guidance, not a statement from any exam guide.",
+ "version": 1,
+ "weak_threshold": {
+  "min_attempts": 3,
+  "max_accuracy": 70
+ },
+ "topics": [
+  {
+   "key": "iam",
+   "label": "Identity and access",
+   "keywords": [
+    "identity",
+    "access",
+    "iam",
+    "entra",
+    "secure architectures"
+   ],
+   "labs": [
+    "2.01",
+    "2.03",
+    "5.01",
+    "5.06",
+    "E5",
+    "8.02",
+    "8.04"
+   ]
+  },
+  {
+   "key": "security",
+   "label": "Security engineering",
+   "keywords": [
+    "secur",
+    "threat",
+    "vulnerab",
+    "trust",
+    "protect"
+   ],
+   "labs": [
+    "5.07",
+    "5.02",
+    "5.03",
+    "5.05",
+    "5.08",
+    "1.06",
+    "1.05",
+    "E5"
+   ]
+  },
+  {
+   "key": "governance",
+   "label": "Governance and guardrails",
+   "keywords": [
+    "governance",
+    "compliance",
+    "oversight",
+    "responsible"
+   ],
+   "labs": [
+    "5.06",
+    "7.03",
+    "7.06",
+    "2.07",
+    "7.01",
+    "8.05",
+    "E7"
+   ]
+  },
+  {
+   "key": "networking",
+   "label": "Networking and DNS",
+   "keywords": [
+    "network",
+    "vpc",
+    "interconnect",
+    "hybrid",
+    "dns",
+    "connectivity"
+   ],
+   "labs": [
+    "1.04",
+    "2.04",
+    "5.04",
+    "8.06",
+    "8.03",
+    "1.03",
+    "8.05",
+    "E1"
+   ]
+  },
+  {
+   "key": "reliability",
+   "label": "Reliability and operations",
+   "keywords": [
+    "resilien",
+    "reliab",
+    "continuity",
+    "operation",
+    "monitor",
+    "troubleshoot",
+    "recover",
+    "high-performing",
+    "scaling"
+   ],
+   "labs": [
+    "4.01",
+    "4.03",
+    "4.04",
+    "4.05",
+    "4.02",
+    "4.07",
+    "6.03",
+    "E4",
+    "E6"
+   ]
+  },
+  {
+   "key": "cost",
+   "label": "Cost and FinOps",
+   "keywords": [
+    "cost",
+    "billing",
+    "pricing",
+    "financ"
+   ],
+   "labs": [
+    "4.06",
+    "2.07",
+    "2.06",
+    "8.08"
+   ]
+  },
+  {
+   "key": "delivery",
+   "label": "Delivery and automation",
+   "keywords": [
+    "deploy",
+    "implement",
+    "provision",
+    "devops",
+    "automat",
+    "configur"
+   ],
+   "labs": [
+    "3.01",
+    "3.02",
+    "3.04",
+    "3.05",
+    "3.07",
+    "3.03",
+    "3.06",
+    "3.08",
+    "E3"
+   ]
+  },
+  {
+   "key": "data",
+   "label": "Data and storage",
+   "keywords": [
+    "data",
+    "storage",
+    "database"
+   ],
+   "labs": [
+    "2.02",
+    "2.08",
+    "4.04",
+    "6.05",
+    "8.07",
+    "1.08",
+    "5.02"
+   ]
+  },
+  {
+   "key": "architecture",
+   "label": "Architecture and design",
+   "keywords": [
+    "architect",
+    "design",
+    "planning",
+    "solution",
+    "modernize",
+    "process"
+   ],
+   "labs": [
+    "6.01",
+    "6.02",
+    "6.03",
+    "6.04",
+    "6.08",
+    "6.06",
+    "6.07",
+    "E6"
+   ]
+  },
+  {
+   "key": "platform",
+   "label": "Platform engineering",
+   "keywords": [
+    "platform",
+    "environment",
+    "provisioning"
+   ],
+   "labs": [
+    "7.02",
+    "7.03",
+    "7.04",
+    "7.05",
+    "7.01",
+    "7.07",
+    "7.08",
+    "E7"
+   ]
+  },
+  {
+   "key": "multicloud",
+   "label": "Multi-cloud and hybrid",
+   "keywords": [
+    "hybrid",
+    "multi-cloud",
+    "multicloud"
+   ],
+   "labs": [
+    "8.01",
+    "8.03",
+    "8.06",
+    "8.08",
+    "8.05",
+    "8.07",
+    "E8"
+   ]
+  },
+  {
+   "key": "leadership",
+   "label": "Leadership and communication",
+   "keywords": [
+    "leader",
+    "strategy",
+    "transformation",
+    "readiness",
+    "business value",
+    "program management",
+    "managing implementation"
+   ],
+   "labs": [
+    "9.01",
+    "9.02",
+    "9.04",
+    "9.05",
+    "9.07",
+    "9.08",
+    "9.03",
+    "9.06",
+    "E9"
+   ]
+  }
+ ],
+ "vendor_labs": {
+  "_about": "Extra labs for a weak domain in an exam for this cloud (gcp, azure), after the topic labs. The exam's cloud comes from its exam profile, or from its vendor name.",
+  "gcp": [
+   "8.02",
+   "8.03"
+  ],
+  "azure": [
+   "8.04",
+   "8.05"
+  ]
+ }
+}

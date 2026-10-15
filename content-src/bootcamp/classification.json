@@ -1,0 +1,491 @@
+{
+ "_about": "Editorial classification used for filters and recommendations. It is not part of the source document: vendors, domains, cloud mode and portfolio categories were assigned by reading each brief. cloud_mode \"optional-cloud\" means the brief names an opt-in sandbox step; no lab requires cloud for its offline make validate.",
+ "labs": {
+  "1.01": {
+   "vendors": ["local"],
+   "domains": ["linux", "diagnostics"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["repository", "operations"]
+  },
+  "1.02": {
+   "vendors": ["local"],
+   "domains": ["linux", "security"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["repository", "security"]
+  },
+  "1.03": {
+   "vendors": ["local"],
+   "domains": ["networking", "diagnostics"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["repository"]
+  },
+  "1.04": {
+   "vendors": ["local"],
+   "domains": ["networking", "diagnostics"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["repository"]
+  },
+  "1.05": {
+   "vendors": ["local"],
+   "domains": ["networking", "security", "diagnostics"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["repository", "security"]
+  },
+  "1.06": {
+   "vendors": ["local"],
+   "domains": ["security", "automation"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["repository", "security"]
+  },
+  "1.07": {
+   "vendors": ["local"],
+   "domains": ["automation", "observability"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["repository", "operations"]
+  },
+  "1.08": {
+   "vendors": ["local"],
+   "domains": ["data", "diagnostics"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["repository"]
+  },
+  "E1": {
+   "vendors": ["local"],
+   "domains": ["networking", "security", "diagnostics"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["repository", "operations"]
+  },
+  "2.01": {
+   "vendors": ["aws"],
+   "domains": ["iam", "security"],
+   "cloud_mode": "optional-cloud",
+   "portfolio_categories": ["security"]
+  },
+  "2.02": {
+   "vendors": ["aws"],
+   "domains": ["data", "security"],
+   "cloud_mode": "optional-cloud",
+   "portfolio_categories": ["security"]
+  },
+  "2.03": {
+   "vendors": ["aws"],
+   "domains": ["iam", "security"],
+   "cloud_mode": "optional-cloud",
+   "portfolio_categories": ["security"]
+  },
+  "2.04": {
+   "vendors": ["aws"],
+   "domains": ["networking"],
+   "cloud_mode": "optional-cloud",
+   "portfolio_categories": ["repository"]
+  },
+  "2.05": {
+   "vendors": ["aws"],
+   "domains": ["security", "observability", "incident"],
+   "cloud_mode": "optional-cloud",
+   "portfolio_categories": ["security", "operations"]
+  },
+  "2.06": {
+   "vendors": ["aws"],
+   "domains": ["automation"],
+   "cloud_mode": "optional-cloud",
+   "portfolio_categories": ["repository"]
+  },
+  "2.07": {
+   "vendors": ["aws"],
+   "domains": ["finops", "governance"],
+   "cloud_mode": "optional-cloud",
+   "portfolio_categories": ["repository"]
+  },
+  "2.08": {
+   "vendors": ["aws"],
+   "domains": ["data", "security", "iac"],
+   "cloud_mode": "optional-cloud",
+   "portfolio_categories": ["security"]
+  },
+  "E2": {
+   "vendors": ["aws"],
+   "domains": ["data", "security"],
+   "cloud_mode": "optional-cloud",
+   "portfolio_categories": ["security", "repository"]
+  },
+  "3.01": {
+   "vendors": ["local"],
+   "domains": ["iac"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["repository"]
+  },
+  "3.02": {
+   "vendors": ["aws"],
+   "domains": ["iac", "security"],
+   "cloud_mode": "optional-cloud",
+   "portfolio_categories": ["repository", "platform"]
+  },
+  "3.03": {
+   "vendors": ["local"],
+   "domains": ["containers", "security"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["repository"]
+  },
+  "3.04": {
+   "vendors": ["local"],
+   "domains": ["ci-cd", "security"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["repository"]
+  },
+  "3.05": {
+   "vendors": ["local"],
+   "domains": ["ci-cd", "containers"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["repository"]
+  },
+  "3.06": {
+   "vendors": ["local"],
+   "domains": ["iac", "security"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["security"]
+  },
+  "3.07": {
+   "vendors": ["local"],
+   "domains": ["ci-cd", "reliability"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["operations"]
+  },
+  "3.08": {
+   "vendors": ["local"],
+   "domains": ["ci-cd", "security"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["security"]
+  },
+  "E3": {
+   "vendors": ["local"],
+   "domains": ["containers", "ci-cd"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["repository"]
+  },
+  "4.01": {
+   "vendors": ["local"],
+   "domains": ["reliability", "observability"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["operations"]
+  },
+  "4.02": {
+   "vendors": ["local"],
+   "domains": ["observability"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["operations"]
+  },
+  "4.03": {
+   "vendors": ["local"],
+   "domains": ["incident", "observability"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["operations"]
+  },
+  "4.04": {
+   "vendors": ["local", "aws"],
+   "domains": ["reliability", "data", "security"],
+   "cloud_mode": "optional-cloud",
+   "portfolio_categories": ["operations"]
+  },
+  "4.05": {
+   "vendors": ["local"],
+   "domains": ["reliability", "architecture"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["operations", "case-study"]
+  },
+  "4.06": {
+   "vendors": ["local"],
+   "domains": ["finops"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["operations"]
+  },
+  "4.07": {
+   "vendors": ["local"],
+   "domains": ["reliability", "architecture"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["operations"]
+  },
+  "4.08": {
+   "vendors": ["aws"],
+   "domains": ["observability", "iac"],
+   "cloud_mode": "optional-cloud",
+   "portfolio_categories": ["operations"]
+  },
+  "E4": {
+   "vendors": ["local"],
+   "domains": ["reliability", "observability", "incident"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["operations"]
+  },
+  "5.01": {
+   "vendors": ["aws"],
+   "domains": ["iam", "security"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["security"]
+  },
+  "5.02": {
+   "vendors": ["aws"],
+   "domains": ["security", "data", "iac"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["security"]
+  },
+  "5.03": {
+   "vendors": ["local"],
+   "domains": ["security", "ci-cd"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["security"]
+  },
+  "5.04": {
+   "vendors": ["aws"],
+   "domains": ["networking", "security", "iac"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["security"]
+  },
+  "5.05": {
+   "vendors": ["aws"],
+   "domains": ["security", "observability"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["security"]
+  },
+  "5.06": {
+   "vendors": ["local"],
+   "domains": ["governance", "iac"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["security", "platform"]
+  },
+  "5.07": {
+   "vendors": ["local"],
+   "domains": ["security", "architecture"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["security", "case-study"]
+  },
+  "5.08": {
+   "vendors": ["local", "aws"],
+   "domains": ["security", "incident", "iam"],
+   "cloud_mode": "optional-cloud",
+   "portfolio_categories": ["security", "operations"]
+  },
+  "E5": {
+   "vendors": ["aws"],
+   "domains": ["iam", "security", "data", "iac"],
+   "cloud_mode": "optional-cloud",
+   "portfolio_categories": ["security"]
+  },
+  "6.01": {
+   "vendors": ["local"],
+   "domains": ["architecture", "communication"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["case-study"]
+  },
+  "6.02": {
+   "vendors": ["local"],
+   "domains": ["architecture"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["case-study"]
+  },
+  "6.03": {
+   "vendors": ["local"],
+   "domains": ["architecture", "reliability"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["case-study"]
+  },
+  "6.04": {
+   "vendors": ["local"],
+   "domains": ["migration", "architecture"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["case-study"]
+  },
+  "6.05": {
+   "vendors": ["local"],
+   "domains": ["migration", "data"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["case-study", "operations"]
+  },
+  "6.06": {
+   "vendors": ["local"],
+   "domains": ["architecture", "communication"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["case-study"]
+  },
+  "6.07": {
+   "vendors": ["local"],
+   "domains": ["architecture", "reliability"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["case-study"]
+  },
+  "6.08": {
+   "vendors": ["local"],
+   "domains": ["architecture", "security", "communication"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["case-study"]
+  },
+  "E6": {
+   "vendors": ["local"],
+   "domains": ["architecture", "reliability"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["case-study"]
+  },
+  "7.01": {
+   "vendors": ["aws"],
+   "domains": ["platform", "governance"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["platform"]
+  },
+  "7.02": {
+   "vendors": ["local"],
+   "domains": ["platform", "containers", "ci-cd"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["platform"]
+  },
+  "7.03": {
+   "vendors": ["local"],
+   "domains": ["platform", "governance"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["platform"]
+  },
+  "7.04": {
+   "vendors": ["local"],
+   "domains": ["platform", "iac"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["platform"]
+  },
+  "7.05": {
+   "vendors": ["local"],
+   "domains": ["platform", "automation"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["platform"]
+  },
+  "7.06": {
+   "vendors": ["local"],
+   "domains": ["platform", "governance"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["platform"]
+  },
+  "7.07": {
+   "vendors": ["local"],
+   "domains": ["platform", "observability"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["platform"]
+  },
+  "7.08": {
+   "vendors": ["local"],
+   "domains": ["platform", "reliability"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["platform"]
+  },
+  "E7": {
+   "vendors": ["local", "aws"],
+   "domains": ["platform", "governance", "containers"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["platform"]
+  },
+  "8.01": {
+   "vendors": ["multi-cloud", "aws", "gcp", "azure"],
+   "domains": ["multi-cloud", "architecture"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["multicloud"]
+  },
+  "8.02": {
+   "vendors": ["gcp"],
+   "domains": ["iam", "multi-cloud"],
+   "cloud_mode": "optional-cloud",
+   "portfolio_categories": ["multicloud"]
+  },
+  "8.03": {
+   "vendors": ["gcp", "aws"],
+   "domains": ["networking", "data", "multi-cloud"],
+   "cloud_mode": "optional-cloud",
+   "portfolio_categories": ["multicloud"]
+  },
+  "8.04": {
+   "vendors": ["azure"],
+   "domains": ["iam", "multi-cloud"],
+   "cloud_mode": "optional-cloud",
+   "portfolio_categories": ["multicloud"]
+  },
+  "8.05": {
+   "vendors": ["azure", "aws", "gcp"],
+   "domains": ["networking", "governance", "multi-cloud"],
+   "cloud_mode": "optional-cloud",
+   "portfolio_categories": ["multicloud"]
+  },
+  "8.06": {
+   "vendors": ["local", "multi-cloud"],
+   "domains": ["networking", "iam", "multi-cloud"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["multicloud"]
+  },
+  "8.07": {
+   "vendors": ["multi-cloud"],
+   "domains": ["data", "governance", "multi-cloud"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["multicloud", "security"]
+  },
+  "8.08": {
+   "vendors": ["multi-cloud"],
+   "domains": ["architecture", "finops", "multi-cloud"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["multicloud", "case-study"]
+  },
+  "E8": {
+   "vendors": ["multi-cloud", "aws", "gcp", "azure"],
+   "domains": ["multi-cloud", "iam", "networking", "governance"],
+   "cloud_mode": "optional-cloud",
+   "portfolio_categories": ["multicloud"]
+  },
+  "9.01": {
+   "vendors": ["local"],
+   "domains": ["leadership", "architecture", "communication"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["leadership"]
+  },
+  "9.02": {
+   "vendors": ["local"],
+   "domains": ["leadership", "communication"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["leadership"]
+  },
+  "9.03": {
+   "vendors": ["local"],
+   "domains": ["leadership"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["leadership"]
+  },
+  "9.04": {
+   "vendors": ["local"],
+   "domains": ["leadership", "incident"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["leadership", "operations"]
+  },
+  "9.05": {
+   "vendors": ["local"],
+   "domains": ["incident", "leadership"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["leadership", "operations"]
+  },
+  "9.06": {
+   "vendors": ["local"],
+   "domains": ["communication", "architecture"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["leadership", "case-study"]
+  },
+  "9.07": {
+   "vendors": ["local"],
+   "domains": ["leadership", "migration"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["leadership"]
+  },
+  "9.08": {
+   "vendors": ["local"],
+   "domains": ["leadership", "platform"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["leadership"]
+  },
+  "E9": {
+   "vendors": ["local"],
+   "domains": ["leadership", "incident", "migration"],
+   "cloud_mode": "local-only",
+   "portfolio_categories": ["leadership", "case-study"]
+  }
+ }
+}

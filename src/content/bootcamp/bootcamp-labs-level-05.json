@@ -1,0 +1,579 @@
+{
+ "document": "content-src/bootcamp/Cloud_Architect_Operator_Bootcamp.md",
+ "generated_by": "tools/bootcamp-extract.js",
+ "level": 5,
+ "labs": [
+  {
+   "id": "5.01",
+   "slug": "iam-least-privilege",
+   "level": 5,
+   "level_title": "Secure the system",
+   "title": "IAM least privilege",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/05-cloud-security/labs/01-iam-least-privilege",
+   "dir_source": "derived-from-title",
+   "scenario": "Batch job only needs a narrow S3 prefix.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "policies/",
+    "tests/test_policy.py"
+   ],
+   "tasks": [
+    "Generate/test policy against allowed and denied action/resource pairs."
+   ],
+   "failure_drill": {
+    "fault": "Inject wildcard.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Positive and negative authorization matrix passes.",
+    "Wildcard is rejected."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "aws"
+   ],
+   "domains": [
+    "iam",
+    "security"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "security"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "iam"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "5.01 IAM least privilege: batch job only needs a narrow S3 prefix.",
+    "terminal_work_and_failure_drill": "Generate/test policy against allowed and denied action/resource pairs; inject wildcard.",
+    "starter_files": "`policies/`, `tests/test_policy.py`",
+    "validator_and_acceptance": "Positive and negative authorization matrix passes; wildcard is rejected."
+   }
+  },
+  {
+   "id": "5.02",
+   "slug": "encryption-decisions",
+   "level": 5,
+   "level_title": "Secure the system",
+   "title": "Encryption decisions",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/05-cloud-security/labs/02-encryption-decisions",
+   "dir_source": "derived-from-title",
+   "scenario": "Data has distinct sensitivity classes.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "infra/",
+    "docs/data-classification.md",
+    "tests/"
+   ],
+   "tasks": [
+    "Terraform design for encryption at rest/in transit, key ownership and rotation."
+   ],
+   "failure_drill": {
+    "fault": "Inject plaintext config fixture.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Static plan checks encryption settings.",
+    "ADR explains key and recovery tradeoffs."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "aws"
+   ],
+   "domains": [
+    "security",
+    "data",
+    "iac"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "security"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "security",
+    "data"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "5.02 Encryption decisions: data has distinct sensitivity classes.",
+    "terminal_work_and_failure_drill": "Terraform design for encryption at rest/in transit, key ownership and rotation; inject plaintext config fixture.",
+    "starter_files": "`infra/`, `docs/data-classification.md`, `tests/`",
+    "validator_and_acceptance": "Static plan checks encryption settings; ADR explains key and recovery tradeoffs."
+   }
+  },
+  {
+   "id": "5.03",
+   "slug": "secret-handling",
+   "level": 5,
+   "level_title": "Secure the system",
+   "title": "Secret handling",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/05-cloud-security/labs/03-secret-handling",
+   "dir_source": "derived-from-title",
+   "scenario": "Deploy pipeline must not expose a dummy credential.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "app/",
+    "scripts/secret_check.py",
+    "tests/"
+   ],
+   "tasks": [
+    "Use local secret fixture or managed secret reference.",
+    "Scan Git/history/log outputs."
+   ],
+   "failure_drill": {
+    "fault": "Inject canary.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Canaries never appear in logs/artifact.",
+    "Scanner catches fixture exposure."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "security",
+    "ci-cd"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "security"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "security"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "5.03 Secret handling: deploy pipeline must not expose a dummy credential.",
+    "terminal_work_and_failure_drill": "Use local secret fixture or managed secret reference; scan Git/history/log outputs; inject canary.",
+    "starter_files": "`app/`, `scripts/secret_check.py`, `tests/`",
+    "validator_and_acceptance": "Canaries never appear in logs/artifact; scanner catches fixture exposure."
+   }
+  },
+  {
+   "id": "5.04",
+   "slug": "network-segmentation",
+   "level": 5,
+   "level_title": "Secure the system",
+   "title": "Network segmentation",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/05-cloud-security/labs/04-network-segmentation",
+   "dir_source": "derived-from-title",
+   "scenario": "App, data, and admin paths must be distinct.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "infra/",
+    "tests/network_policy/"
+   ],
+   "tasks": [
+    "Terraform security-group/NACL intent and path tests."
+   ],
+   "failure_drill": {
+    "fault": "Inject broad ingress.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Policy graph rejects unintended flows and permits only declared paths."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "aws"
+   ],
+   "domains": [
+    "networking",
+    "security",
+    "iac"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "security"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "networking"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "5.04 Network segmentation: app, data, and admin paths must be distinct.",
+    "terminal_work_and_failure_drill": "Terraform security-group/NACL intent and path tests; inject broad ingress.",
+    "starter_files": "`infra/`, `tests/network_policy/`",
+    "validator_and_acceptance": "Policy graph rejects unintended flows and permits only declared paths."
+   }
+  },
+  {
+   "id": "5.05",
+   "slug": "detection-engineering",
+   "level": 5,
+   "level_title": "Secure the system",
+   "title": "Detection engineering",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/05-cloud-security/labs/05-detection-engineering",
+   "dir_source": "derived-from-title",
+   "scenario": "Suspicious role use should create a useful finding.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "fixtures/events/",
+    "src/detect.py",
+    "tests/"
+   ],
+   "tasks": [
+    "Parse synthetic CloudTrail events, normalize and correlate."
+   ],
+   "failure_drill": {
+    "fault": "Inject benign lookalike.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "True/false positive fixtures produce expected severity and explanation."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "aws"
+   ],
+   "domains": [
+    "security",
+    "observability"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "security"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "security"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "5.05 Detection engineering: suspicious role use should create a useful finding.",
+    "terminal_work_and_failure_drill": "Parse synthetic CloudTrail events, normalize and correlate; inject benign lookalike.",
+    "starter_files": "`fixtures/events/`, `src/detect.py`, `tests/`",
+    "validator_and_acceptance": "True/false positive fixtures produce expected severity and explanation."
+   }
+  },
+  {
+   "id": "5.06",
+   "slug": "governance-guardrail",
+   "level": 5,
+   "level_title": "Secure the system",
+   "title": "Governance guardrail",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/05-cloud-security/labs/06-governance-guardrail",
+   "dir_source": "derived-from-title",
+   "scenario": "Prevent public storage and unapproved regions.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "policy/",
+    "infra/",
+    "tests/"
+   ],
+   "tasks": [
+    "Write policy-as-code checks for Terraform plan."
+   ],
+   "failure_drill": {
+    "fault": "Inject violating resource.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "`make policy` rejects violations and emits actionable location/rule."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "governance",
+    "iac"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "security",
+    "platform"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "iam",
+    "governance"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "5.06 Governance guardrail: prevent public storage and unapproved regions.",
+    "terminal_work_and_failure_drill": "Write policy-as-code checks for Terraform plan; inject violating resource.",
+    "starter_files": "`policy/`, `infra/`, `tests/`",
+    "validator_and_acceptance": "`make policy` rejects violations and emits actionable location/rule."
+   }
+  },
+  {
+   "id": "5.07",
+   "slug": "threat-model",
+   "level": 5,
+   "level_title": "Secure the system",
+   "title": "Threat model",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/05-cloud-security/labs/07-threat-model",
+   "dir_source": "derived-from-title",
+   "scenario": "Public API handles sensitive synthetic data.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "docs/threat-model.md",
+    "diagrams/",
+    "tests/"
+   ],
+   "tasks": [
+    "Draw trust boundaries, identify abuse cases, map controls/tests."
+   ],
+   "failure_drill": {
+    "fault": "Inject missing auth assumption.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Review checklist links each high-priority threat to a control and validation."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "security",
+    "architecture"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "security",
+    "case-study"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "security"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "5.07 Threat model: public API handles sensitive synthetic data.",
+    "terminal_work_and_failure_drill": "Draw trust boundaries, identify abuse cases, map controls/tests; inject missing auth assumption.",
+    "starter_files": "`docs/threat-model.md`, `diagrams/`, `tests/`",
+    "validator_and_acceptance": "Review checklist links each high-priority threat to a control and validation."
+   }
+  },
+  {
+   "id": "5.08",
+   "slug": "security-incident",
+   "level": 5,
+   "level_title": "Secure the system",
+   "title": "Security incident",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/05-cloud-security/labs/08-security-incident",
+   "dir_source": "derived-from-title",
+   "scenario": "Leaked dummy key is suspected active.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "scripts/respond.sh",
+    "docs/runbook.md",
+    "tests/"
+   ],
+   "tasks": [
+    "Revoke/rotate in local simulation or disposable account.",
+    "Inspect audit evidence."
+   ],
+   "failure_drill": {
+    "fault": "Inject delayed detection.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Exercise checklist proves containment, rotation, scope check, and post-incident report."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "optional-cloud",
+   "vendors": [
+    "local",
+    "aws"
+   ],
+   "domains": [
+    "security",
+    "incident",
+    "iam"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "security",
+    "operations"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "security"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "5.08 Security incident: leaked dummy key is suspected active.",
+    "terminal_work_and_failure_drill": "Revoke/rotate in local simulation or disposable account; inspect audit evidence; inject delayed detection.",
+    "starter_files": "`scripts/respond.sh`, `docs/runbook.md`, `tests/`",
+    "validator_and_acceptance": "Exercise checklist proves containment, rotation, scope check, and post-incident report."
+   }
+  }
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "document": "content-src/bootcamp/Cloud_Architect_Operator_Bootcamp.md",
+ "generated_by": "tools/bootcamp-extract.js",
+ "title": "Cloud Architect Operator Bootcamp",
+ "tagline": "Terminal-first • evidence-led • production judgment",
+ "purpose": "A career-changer pathway toward strong cloud architecture, security, automation, platform engineering, and technical leadership. The aim is not certification recall: every level makes you design, build, secure, operate, recover, explain, and improve a system.",
+ "scope_note": "This is a curriculum blueprint with 72 lab briefs and nine fully specified capstone-style example labs. Cloud spend and service availability vary by account, region, and date; use the safety gates below, verify current provider behavior, and never run a lab in a production account.",
+ "operating_contract": {
+  "intro": "Each lab begins with its scenario and constraints. Every learner submission includes:",
+  "items": [
+   "Working terminal evidence: commands, scripts, config, and reproducible results—not console screenshots.",
+   "Deterministic tests: `make validate` (or documented equivalent) exits nonzero on a failed requirement and avoids depending on live cloud state unless the lab explicitly tests a disposable deployment.",
+   "A failure drill: inject the named fault in a disposable environment, capture symptoms, diagnosis, recovery, and residual risk.",
+   "One decision record (`docs/adr/0001-*.md`) or the specifically requested runbook/incident report. Include context, decision, alternatives, consequences, and evidence.",
+   "A cleanup command and a post-cleanup check. Cloud labs must have a time limit, budget/alert where available, region allowlist, resource inventory, and teardown proof.",
+   "A short `REPORT.md`: what worked, what did not, test output, cost-control evidence, and next improvement."
+  ],
+  "acceptance_gate": "Clean checkout → documented setup → `make validate` passes → failure drill is reproducible → cleanup completes → no lab-owned resources remain → required evidence and ADR/runbook/report exist. Each lab's brief adds its own acceptance tests. If a test requires cloud credentials, it must also have a deterministic offline/unit mode.",
+  "safety": "Use a dedicated sandbox account/project/subscription, least-privilege lab role, synthetic data, no public ingress unless explicitly required, no real secrets in Git, region allowlists, short TTLs, and teardown even after a failed apply. Budget alerts are not hard spending caps. Never assume a destroy command succeeded—query and verify."
+ },
+ "pacing": "Progress by evidence, not calendar. Complete a level's eight labs in any order, then its exemplar as the level gate. A learner may split cloud labs across sessions; each session starts with a preflight and ends with cleanup verification.",
+ "directory_structure": "cloud-architect-operator-bootcamp/\n├── README.md\n├── Makefile\n├── .gitignore\n├── progress/\n│   ├── tracker.csv\n│   └── evidence-index.md\n├── standards/\n│   ├── lab-contract.md\n│   ├── scoring-rubric.md\n│   ├── cost-and-teardown.md\n│   ├── security-baseline.md\n│   └── templates/\n│       ├── LAB-README.template.md\n│       ├── ADR.template.md\n│       ├── RUNBOOK.template.md\n│       └── INCIDENT.template.md\n├── levels/\n│   ├── 01-operator-foundations/\n│   │   ├── README.md\n│   │   ├── labs/01-linux-processes/ ... labs/08-sql-audit/\n│   │   └── exemplar/01-dns-tls-diagnostics/\n│   ├── 02-aws-foundations/ (labs/01..08, exemplar/01-safe-s3-inventory)\n│   ├── 03-repeatable-delivery/ (labs/01..08, exemplar/01-container-to-pipeline)\n│   ├── 04-reliability-operations/ (labs/01..08, exemplar/01-slo-failure-drill)\n│   ├── 05-cloud-security/ (labs/01..08, exemplar/01-least-privilege-data-path)\n│   ├── 06-architecture-decisions/ (labs/01..08, exemplar/01-resilient-service-design)\n│   ├── 07-platform-engineering/ (labs/01..08, exemplar/01-guardrailed-golden-path)\n│   ├── 08-clouds-hybrid/ (labs/01..08, exemplar/01-provider-capability-map)\n│   └── 09-architecture-leadership/ (labs/01..08, exemplar/01-review-and-crisis)\n└── portfolio/\n    ├── README.md\n    ├── architecture-decisions/\n    ├── diagrams/\n    ├── operational-evidence/\n    └── case-studies/",
+ "directory_note": "Each `labs/NN-slug/` is independently runnable and contains `README.md`, `src/` or `app/`, `tests/`, `scripts/`, `docs/`, and—only where needed—`infra/`. Keep generated state, credentials, plans containing sensitive values, logs with identifiers, and `.env` files out of Git. Pin tool versions and provider versions; commit lock files where appropriate.",
+ "lab_readme_template": "# Lab NN — Title\n\n## Scenario and constraints\nWho needs what? State scale, availability, data sensitivity, budget/time limit,\nregions, permissions, and what is explicitly out of scope.\n\n## Learning objectives\n- Observable objective 1\n- Observable objective 2\n\n## Prerequisites and safety\nTool versions, sandbox identity, allowed regions, expected spend class, TTL,\ncredential check, and stop/cleanup rule. Never paste credentials into logs.\n\n## Starter repository\nList every relevant starter file and its purpose.\n\n## Tasks (terminal-first)\nNumbered commands/tasks, expected outputs, and where learner judgment is required.\n\n## Failure injection\nFault, safe injection command, expected symptom, diagnosis evidence, recovery,\nand how to restore the baseline. State what must never be injected in production.\n\n## Deliverables\nCode/config, tests, ADR or runbook or incident report, REPORT.md, and evidence paths.\n\n## Validation and acceptance\n`make validate`; unit/format/lint/security/policy tests; cloud integration checks;\nexplicit expected results and failure exit behavior.\n\n## Cost controls and cleanup\nPreflight; budget/alert if available; region/TTL/tagging; exact destroy command;\npost-destroy inventory query; evidence that no lab-owned resources remain.\n\n## Scoring (0–4 each)\nCorrectness, security, resilience, operational quality, cost, automation,\ncommunication. Explain what 0, 2, and 4 mean for this lab.",
+ "catalog_note": "The common operating contract above applies to **every** lab below: scenario + constraints, terminal tasks, failure drill, ADR/runbook/report, cleanup/cost controls, grading, and acceptance gate. Every brief lists its own starter directory, deterministic validator idea, and additional acceptance evidence. For every lab, implement `make validate` as an offline deterministic check plus an explicitly named, optional sandbox integration target. Use test fixtures, local emulators, mocks, or static policy tests for repeatability; never make routine validation create cloud resources.",
+ "exemplar_note": "Each exemplar is a model of the expected depth and can be copied into its indicated directory. Use local/unit validation by default; cloud deployment is an opt-in, sandbox-only integration exercise. Do not paste output containing account IDs or private endpoints into public evidence.",
+ "validation": {
+  "intro": "The catalog's per-lab validation column names the lab-specific check. Implement this common pipeline consistently:",
+  "makefile": ".PHONY: validate test lint policy integration clean\nvalidate: lint test policy\nlint:\n\t# formatters, static checks, shellcheck/ruff/terraform fmt as applicable\n\ntest:\n\t# offline deterministic tests; no credentials or cloud writes\n\npolicy:\n\t# IaC, IAM, secret, container, and documentation safety checks\n\nintegration:\n\t# opt-in only; requires sandbox preflight, explicit confirmation, and TTL\n\nclean:\n\t# remove local artifacts created by this lab only",
+  "layers_and_rules": "Validation layers: (1) formatting/type/syntax, (2) unit tests with fixed fixtures, (3) security/policy negative tests, (4) reproducibility from clean checkout, (5) optional sandbox integration with explicit identity/region/resource boundary, (6) post-cleanup inventory assertion. Use pinned tools, fixed timestamps where relevant, deterministic sorting, and clear nonzero exit codes. Never make a validator silently skip a failed security check. Tests should cover both compliant and deliberately noncompliant fixtures. Treat cloud integration checks as evidence, not a substitute for deterministic unit tests."
+ },
+ "cost_and_teardown": {
+  "before_write": [
+   "Confirm sandbox account/project/subscription and principal via provider CLI; compare against an explicit local allowlist. If any identity value is unexpected or absent, stop.",
+   "Set an approved region/location allowlist. Keep default validation plan-only and offline.",
+   "Review `terraform plan` and estimate resource classes, data transfer, storage retention, logs, and possible idle time. Pricing changes; use the provider's current pricing source for a real estimate and record date/assumptions.",
+   "Apply resource tags/labels: `owner`, `bootcamp`, `lab`, `created_at`, `expires_at`, `environment`. Do not put secrets or personal data in tags.",
+   "Set a short TTL and a budget notification where available. Alerts are not hard caps. Avoid managed services with minimum charges, NAT gateways, public IPs, high-volume logs, GPUs, and cross-region/cross-cloud transfer unless a lab explicitly justifies them.",
+   "Use least-privilege, temporary credentials, no root/admin identity, and a clean `git status`. Never put credentials in Terraform variables committed to Git or shell history."
+  ],
+  "apply_operate": "Capture plan, resource inventory, and start time. Use low-volume synthetic data, bounded test duration, and explicit resource names. Stop immediately if resources exceed the approved scope.",
+  "teardown": "Run the lab-specific cleanup or `terraform destroy` from the same workspace; empty versioned object stores only when they are lab-owned and the procedure is documented. Then independently query inventory by lab tag/name and region. Check orphaned snapshots, logs, addresses, disks, versions, IAM bindings, and non-default networking resources as relevant. Save sanitized teardown evidence. `cleanup_verified=true` only after no lab-owned billable resources remain. If deletion fails, mark blocked, escalate through the sandbox owner, and do not claim cleanup success.",
+  "guard_scripts": "`scripts/preflight.sh` validates explicit provider/profile/project/subscription, allowlisted region, required lab ID and expiry, and rejects production-like identities; `scripts/teardown-check.sh` compares pre/post inventory snapshots for remaining lab-owned resources. Keep provider-specific resource discovery explicit and reviewed—never assume one generic tag query finds every resource."
+ },
+ "portfolio": {
+  "intro": "Publish a curated set, not raw account dumps:",
+  "artifacts": [
+   {
+    "key": "case-study",
+    "title": "Architecture case study",
+    "guidance": "anonymized problem, requirements, diagram source/render, options considered, ADR, failure analysis, accepted risks, and revisit triggers."
+   },
+   {
+    "key": "repository",
+    "title": "Working repository",
+    "guidance": "reproducible local setup, deterministic tests, pinned dependencies, CI, security checks, and clear cleanup path."
+   },
+   {
+    "key": "security",
+    "title": "Security evidence",
+    "guidance": "threat model, least-privilege authorization matrix, negative tests, sanitized detection example, and remediation record."
+   },
+   {
+    "key": "operations",
+    "title": "Operations evidence",
+    "guidance": "SLI/SLO definition, alert/runbook pair, synthetic incident timeline, restore test, RTO/RPO assumptions, and post-incident actions."
+   },
+   {
+    "key": "platform",
+    "title": "Platform artifact",
+    "guidance": "golden-path template, policy-as-code fixtures, exception expiry workflow, developer documentation, and versioning plan."
+   },
+   {
+    "key": "multicloud",
+    "title": "Multi-cloud judgment",
+    "guidance": "dated, sourced capability matrix that distinguishes true equivalence from superficially similar service names; explain provider-specific choices and exit costs."
+   },
+   {
+    "key": "leadership",
+    "title": "Leadership samples",
+    "guidance": "one-page executive brief, design review decision log, mentoring plan, and crisis tabletop with facts separated from hypotheses."
+   },
+   {
+    "key": "evidence-index",
+    "title": "Evidence index",
+    "guidance": "link each claim to a test, command transcript, ADR, or report. Sanitize account IDs, internal hostnames, personal data, credentials, and non-public incident details. Never claim a live production deployment or measured outcome unless the artifact proves it."
+   }
+  ],
+  "story_questions": [
+   "What was the constraint?",
+   "What did you choose and reject?",
+   "How did you test security and failure behavior?",
+   "What did it cost to operate?",
+   "How do you know cleanup/recovery worked?",
+   "What evidence would make you change the decision?"
+  ]
+ }
+}

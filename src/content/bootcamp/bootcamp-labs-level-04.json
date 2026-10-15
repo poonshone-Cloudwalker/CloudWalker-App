@@ -1,0 +1,576 @@
+{
+ "document": "content-src/bootcamp/Cloud_Architect_Operator_Bootcamp.md",
+ "generated_by": "tools/bootcamp-extract.js",
+ "level": 4,
+ "labs": [
+  {
+   "id": "4.01",
+   "slug": "sli-slo-design",
+   "level": 4,
+   "level_title": "Operate and recover",
+   "title": "SLI/SLO design",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/04-reliability-operations/labs/01-sli-slo-design",
+   "dir_source": "derived-from-title",
+   "scenario": "Checkout latency matters more than host CPU.",
+   "constraints": "Use synthetic data.",
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "data/requests.csv",
+    "src/slo.py",
+    "tests/"
+   ],
+   "tasks": [
+    "Calculate availability/latency indicators and error budget in Python."
+   ],
+   "failure_drill": {
+    "fault": "Inject bad window boundary.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Known dataset yields fixed SLI/error budget.",
+    "Edge intervals tested."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "reliability",
+    "observability"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "operations"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "reliability"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "4.01 SLI/SLO design: checkout latency matters more than host CPU; use synthetic data.",
+    "terminal_work_and_failure_drill": "Calculate availability/latency indicators and error budget in Python; inject bad window boundary.",
+    "starter_files": "`data/requests.csv`, `src/slo.py`, `tests/`",
+    "validator_and_acceptance": "Known dataset yields fixed SLI/error budget; edge intervals tested."
+   }
+  },
+  {
+   "id": "4.02",
+   "slug": "alert-quality",
+   "level": 4,
+   "level_title": "Operate and recover",
+   "title": "Alert quality",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/04-reliability-operations/labs/02-alert-quality",
+   "dir_source": "derived-from-title",
+   "scenario": "On-call is flooded by CPU alerts with no user impact.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "alerts/",
+    "scripts/alert_lint.py",
+    "tests/"
+   ],
+   "tasks": [
+    "Evaluate alert fixtures for symptom/actionability."
+   ],
+   "failure_drill": {
+    "fault": "Inject duplicate/noisy alert.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Lint flags no owner/runbook or absent threshold rationale.",
+    "Clean alert passes."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "observability"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "operations"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "reliability"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "4.02 Alert quality: on-call is flooded by CPU alerts with no user impact.",
+    "terminal_work_and_failure_drill": "Evaluate alert fixtures for symptom/actionability; inject duplicate/noisy alert.",
+    "starter_files": "`alerts/`, `scripts/alert_lint.py`, `tests/`",
+    "validator_and_acceptance": "Lint flags no owner/runbook or absent threshold rationale; clean alert passes."
+   }
+  },
+  {
+   "id": "4.03",
+   "slug": "incident-timeline",
+   "level": 4,
+   "level_title": "Operate and recover",
+   "title": "Incident timeline",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/04-reliability-operations/labs/03-incident-timeline",
+   "dir_source": "derived-from-title",
+   "scenario": "Intermittent 5xx after a release.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "fixtures/",
+    "scripts/timeline.py",
+    "docs/incident.md"
+   ],
+   "tasks": [
+    "Parse synthetic logs/events, correlate UTC timeline."
+   ],
+   "failure_drill": {
+    "fault": "Inject clock skew/missing timestamp.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Deterministic correlation and missing-data annotation pass."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "incident",
+    "observability"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "operations"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "reliability"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "4.03 Incident timeline: intermittent 5xx after a release.",
+    "terminal_work_and_failure_drill": "Parse synthetic logs/events, correlate UTC timeline; inject clock skew/missing timestamp.",
+    "starter_files": "`fixtures/`, `scripts/timeline.py`, `docs/incident.md`",
+    "validator_and_acceptance": "Deterministic correlation and missing-data annotation pass."
+   }
+  },
+  {
+   "id": "4.04",
+   "slug": "backup-restore",
+   "level": 4,
+   "level_title": "Operate and recover",
+   "title": "Backup restore",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/04-reliability-operations/labs/04-backup-restore",
+   "dir_source": "derived-from-title",
+   "scenario": "A service owner needs evidence, not a green backup job.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "scripts/backup.sh",
+    "scripts/restore.sh",
+    "tests/"
+   ],
+   "tasks": [
+    "Create/restore encrypted local test data.",
+    "AWS optional isolated integration."
+   ],
+   "failure_drill": {
+    "fault": "Inject corrupt backup.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Restored checksum matches.",
+    "Corrupt backup is rejected.",
+    "Recovery time recorded."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "optional-cloud",
+   "vendors": [
+    "local",
+    "aws"
+   ],
+   "domains": [
+    "reliability",
+    "data",
+    "security"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "operations"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "reliability",
+    "data"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "4.04 Backup restore: a service owner needs evidence, not a green backup job.",
+    "terminal_work_and_failure_drill": "Create/restore encrypted local test data; AWS optional isolated integration; inject corrupt backup.",
+    "starter_files": "`scripts/backup.sh`, `scripts/restore.sh`, `tests/`",
+    "validator_and_acceptance": "Restored checksum matches; corrupt backup is rejected; recovery time recorded."
+   }
+  },
+  {
+   "id": "4.05",
+   "slug": "dr-objective",
+   "level": 4,
+   "level_title": "Operate and recover",
+   "title": "DR objective",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/04-reliability-operations/labs/05-dr-objective",
+   "dir_source": "derived-from-title",
+   "scenario": "Choose recovery approach under RTO/RPO and budget limits.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "data/dependencies.json",
+    "src/dr_model.py",
+    "tests/"
+   ],
+   "tasks": [
+    "Model recovery tiers and dependency sequence in Python."
+   ],
+   "failure_drill": {
+    "fault": "Inject unavailable dependency.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Scenario tests flag unmet RTO/RPO.",
+    "Report names critical path and assumptions."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "reliability",
+    "architecture"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "operations",
+    "case-study"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "reliability"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "4.05 DR objective: choose recovery approach under RTO/RPO and budget limits.",
+    "terminal_work_and_failure_drill": "Model recovery tiers and dependency sequence in Python; inject unavailable dependency.",
+    "starter_files": "`data/dependencies.json`, `src/dr_model.py`, `tests/`",
+    "validator_and_acceptance": "Scenario tests flag unmet RTO/RPO; report names critical path and assumptions."
+   }
+  },
+  {
+   "id": "4.06",
+   "slug": "finops-allocation",
+   "level": 4,
+   "level_title": "Operate and recover",
+   "title": "FinOps allocation",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/04-reliability-operations/labs/06-finops-allocation",
+   "dir_source": "derived-from-title",
+   "scenario": "Untagged spend obscures service ownership.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "data/cost.csv",
+    "src/allocate.py",
+    "tests/"
+   ],
+   "tasks": [
+    "Parse synthetic CUR-like CSV, allocate shared costs with documented rule."
+   ],
+   "failure_drill": {
+    "fault": "Inject missing owner.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Totals reconcile exactly.",
+    "Unallocated share visible.",
+    "No fabricated savings claims."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "finops"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "operations"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "cost"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "4.06 FinOps allocation: untagged spend obscures service ownership.",
+    "terminal_work_and_failure_drill": "Parse synthetic CUR-like CSV, allocate shared costs with documented rule; inject missing owner.",
+    "starter_files": "`data/cost.csv`, `src/allocate.py`, `tests/`",
+    "validator_and_acceptance": "Totals reconcile exactly; unallocated share visible; no fabricated savings claims."
+   }
+  },
+  {
+   "id": "4.07",
+   "slug": "capacity-and-scaling",
+   "level": 4,
+   "level_title": "Operate and recover",
+   "title": "Capacity and scaling",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/04-reliability-operations/labs/07-capacity-and-scaling",
+   "dir_source": "derived-from-title",
+   "scenario": "Traffic peak causes queue growth.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "src/queue_model.py",
+    "tests/",
+    "docs/runbook.md"
+   ],
+   "tasks": [
+    "Simulate throughput/queue and scaling response."
+   ],
+   "failure_drill": {
+    "fault": "Inject slow dependency.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Deterministic load profile identifies saturation and recommended intervention."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "reliability",
+    "architecture"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "operations"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "reliability"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "4.07 Capacity and scaling: traffic peak causes queue growth.",
+    "terminal_work_and_failure_drill": "Simulate throughput/queue and scaling response; inject slow dependency.",
+    "starter_files": "`src/queue_model.py`, `tests/`, `docs/runbook.md`",
+    "validator_and_acceptance": "Deterministic load profile identifies saturation and recommended intervention."
+   }
+  },
+  {
+   "id": "4.08",
+   "slug": "aws-operational-alarm",
+   "level": 4,
+   "level_title": "Operate and recover",
+   "title": "AWS operational alarm",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/04-reliability-operations/labs/08-aws-operational-alarm",
+   "dir_source": "derived-from-title",
+   "scenario": "Detect a deliberately disabled control in sandbox.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "infra/",
+    "scripts/",
+    "tests/"
+   ],
+   "tasks": [
+    "Terraform/CLI deploy a low-cost metric/log alarm or validate equivalent config."
+   ],
+   "failure_drill": {
+    "fault": "Inject missing metric.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Static tests and optional live alarm check.",
+    "Cleanup and no-data behavior documented."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "optional-cloud",
+   "vendors": [
+    "aws"
+   ],
+   "domains": [
+    "observability",
+    "iac"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "operations"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [],
+   "source_row": {
+    "scenario_and_constraints": "4.08 AWS operational alarm: detect a deliberately disabled control in sandbox.",
+    "terminal_work_and_failure_drill": "Terraform/CLI deploy a low-cost metric/log alarm or validate equivalent config; inject missing metric.",
+    "starter_files": "`infra/`, `scripts/`, `tests/`",
+    "validator_and_acceptance": "Static tests and optional live alarm check; cleanup and no-data behavior documented."
+   }
+  }
+ ]
+}

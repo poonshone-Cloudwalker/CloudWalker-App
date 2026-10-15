@@ -83,6 +83,83 @@
     "js/features/380-v09-phase-7-habit-offline-and.js",
     "js/features/390-v09-phase-8-ready-for-many.js",
     "js/features/400-flashcards.js",
+    {
+      "json": "content/bootcamp/bootcamp-levels.json",
+      "prefix": "const BC_LEVELS_DOC = ",
+      "suffix": ";\n"
+    },
+    {
+      "json": "content/bootcamp/bootcamp-labs-level-01.json",
+      "prefix": "const BC_LABS_01 = ",
+      "suffix": ";\n"
+    },
+    {
+      "json": "content/bootcamp/bootcamp-labs-level-02.json",
+      "prefix": "const BC_LABS_02 = ",
+      "suffix": ";\n"
+    },
+    {
+      "json": "content/bootcamp/bootcamp-labs-level-03.json",
+      "prefix": "const BC_LABS_03 = ",
+      "suffix": ";\n"
+    },
+    {
+      "json": "content/bootcamp/bootcamp-labs-level-04.json",
+      "prefix": "const BC_LABS_04 = ",
+      "suffix": ";\n"
+    },
+    {
+      "json": "content/bootcamp/bootcamp-labs-level-05.json",
+      "prefix": "const BC_LABS_05 = ",
+      "suffix": ";\n"
+    },
+    {
+      "json": "content/bootcamp/bootcamp-labs-level-06.json",
+      "prefix": "const BC_LABS_06 = ",
+      "suffix": ";\n"
+    },
+    {
+      "json": "content/bootcamp/bootcamp-labs-level-07.json",
+      "prefix": "const BC_LABS_07 = ",
+      "suffix": ";\n"
+    },
+    {
+      "json": "content/bootcamp/bootcamp-labs-level-08.json",
+      "prefix": "const BC_LABS_08 = ",
+      "suffix": ";\n"
+    },
+    {
+      "json": "content/bootcamp/bootcamp-labs-level-09.json",
+      "prefix": "const BC_LABS_09 = ",
+      "suffix": ";\n"
+    },
+    {
+      "json": "content/bootcamp/bootcamp-exemplars.json",
+      "prefix": "const BC_EXEMPLARS_DOC = ",
+      "suffix": ";\n"
+    },
+    {
+      "json": "content/bootcamp/bootcamp-rubric.json",
+      "prefix": "const BC_RUBRIC_DOC = ",
+      "suffix": ";\n"
+    },
+    {
+      "json": "content/bootcamp/bootcamp-framework.json",
+      "prefix": "const BC_FRAMEWORK_DOC = ",
+      "suffix": ";\n"
+    },
+    {
+      "json": "content/bootcamp/bootcamp-cert-mapping.json",
+      "prefix": "const BC_MAPPING_DOC = ",
+      "suffix": ";\n"
+    },
+    "js/features/410-bootcamp-content.js",
+    "js/features/420-bootcamp-state.js",
+    "js/features/430-bootcamp-recommend.js",
+    "js/features/440-bootcamp-views.js",
+    "js/features/450-bootcamp-lab-view.js",
+    "js/features/460-bootcamp-pages.js",
+    "js/features/490-bootcamp-register.js",
     "js/boot.js"
   ]
 }

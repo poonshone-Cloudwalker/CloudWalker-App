@@ -1,0 +1,574 @@
+{
+ "document": "content-src/bootcamp/Cloud_Architect_Operator_Bootcamp.md",
+ "generated_by": "tools/bootcamp-extract.js",
+ "level": 9,
+ "labs": [
+  {
+   "id": "9.01",
+   "slug": "design-review-facilitation",
+   "level": 9,
+   "level_title": "Lead architecture",
+   "title": "Design review facilitation",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/09-architecture-leadership/labs/01-design-review-facilitation",
+   "dir_source": "derived-from-title",
+   "scenario": "Teams disagree on synchronous vs asynchronous design.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "review/",
+    "scripts/check_evidence.py",
+    "tests/"
+   ],
+   "tasks": [
+    "Build agenda, decision log, and terminal-checkable evidence bundle."
+   ],
+   "failure_drill": {
+    "fault": "Inject unresolved dependency.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Required risks/options/owners/decision date present.",
+    "Dissent and follow-up captured."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "leadership",
+    "architecture",
+    "communication"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "leadership"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "leadership"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "9.01 Design review facilitation: teams disagree on synchronous vs asynchronous design.",
+    "terminal_work_and_failure_drill": "Build agenda, decision log, and terminal-checkable evidence bundle; inject unresolved dependency.",
+    "starter_files": "`review/`, `scripts/check_evidence.py`, `tests/`",
+    "validator_and_acceptance": "Required risks/options/owners/decision date present; dissent and follow-up captured."
+   }
+  },
+  {
+   "id": "9.02",
+   "slug": "executive-brief",
+   "level": 9,
+   "level_title": "Lead architecture",
+   "title": "Executive brief",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/09-architecture-leadership/labs/02-executive-brief",
+   "dir_source": "derived-from-title",
+   "scenario": "Leadership needs a decision under uncertainty in one page.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "brief/",
+    "data/assumptions.yaml",
+    "tests/"
+   ],
+   "tasks": [
+    "Generate concise Markdown from evidence."
+   ],
+   "failure_drill": {
+    "fault": "Inject changed cost/risk assumption.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Word/section limits, recommendation, tradeoff, decision requested, confidence and caveats checked."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "leadership",
+    "communication"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "leadership"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "leadership"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "9.02 Executive brief: leadership needs a decision under uncertainty in one page.",
+    "terminal_work_and_failure_drill": "Generate concise Markdown from evidence; inject changed cost/risk assumption.",
+    "starter_files": "`brief/`, `data/assumptions.yaml`, `tests/`",
+    "validator_and_acceptance": "Word/section limits, recommendation, tradeoff, decision requested, confidence and caveats checked."
+   }
+  },
+  {
+   "id": "9.03",
+   "slug": "mentoring-plan",
+   "level": 9,
+   "level_title": "Lead architecture",
+   "title": "Mentoring plan",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/09-architecture-leadership/labs/03-mentoring-plan",
+   "dir_source": "derived-from-title",
+   "scenario": "A junior engineer needs a safe path to own an operational task.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "mentoring/",
+    "tests/checklist_test.py"
+   ],
+   "tasks": [
+    "Create staged tasks, review checklist, and pair-session notes."
+   ],
+   "failure_drill": {
+    "fault": "Inject a risky task without guardrails.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Tasks have success criteria, rollback/safety boundary, feedback point, and ownership progression."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "leadership"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "leadership"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "leadership"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "9.03 Mentoring plan: a junior engineer needs a safe path to own an operational task.",
+    "terminal_work_and_failure_drill": "Create staged tasks, review checklist, and pair-session notes; inject a risky task without guardrails.",
+    "starter_files": "`mentoring/`, `tests/checklist_test.py`",
+    "validator_and_acceptance": "Tasks have success criteria, rollback/safety boundary, feedback point, and ownership progression."
+   }
+  },
+  {
+   "id": "9.04",
+   "slug": "crisis-command",
+   "level": 9,
+   "level_title": "Lead architecture",
+   "title": "Crisis command",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/09-architecture-leadership/labs/04-crisis-command",
+   "dir_source": "derived-from-title",
+   "scenario": "Synthetic regional impairment impacts customer requests.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "incident/",
+    "scripts/tabletop.py",
+    "tests/"
+   ],
+   "tasks": [
+    "Run tabletop through CLI timeline tool.",
+    "Assign incident roles/comms."
+   ],
+   "failure_drill": {
+    "fault": "Inject conflicting signal.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Timeline has decisions, owner, next update, customer impact, and recovery evidence."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "leadership",
+    "incident"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "leadership",
+    "operations"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "leadership"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "9.04 Crisis command: synthetic regional impairment impacts customer requests.",
+    "terminal_work_and_failure_drill": "Run tabletop through CLI timeline tool; assign incident roles/comms; inject conflicting signal.",
+    "starter_files": "`incident/`, `scripts/tabletop.py`, `tests/`",
+    "validator_and_acceptance": "Timeline has decisions, owner, next update, customer impact, and recovery evidence."
+   }
+  },
+  {
+   "id": "9.05",
+   "slug": "post-incident-learning",
+   "level": 9,
+   "level_title": "Lead architecture",
+   "title": "Post-incident learning",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/09-architecture-leadership/labs/05-post-incident-learning",
+   "dir_source": "derived-from-title",
+   "scenario": "Avoid blame and produce measurable corrective actions.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "incident/",
+    "scripts/action_lint.py",
+    "tests/"
+   ],
+   "tasks": [
+    "Parse timeline and action list."
+   ],
+   "failure_drill": {
+    "fault": "Inject vague action (“improve monitoring”).",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Every action has owner, due date, verification, priority.",
+    "Report separates facts/hypotheses."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "incident",
+    "leadership"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "leadership",
+    "operations"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "leadership"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "9.05 Post-incident learning: avoid blame and produce measurable corrective actions.",
+    "terminal_work_and_failure_drill": "Parse timeline and action list; inject vague action (“improve monitoring”).",
+    "starter_files": "`incident/`, `scripts/action_lint.py`, `tests/`",
+    "validator_and_acceptance": "Every action has owner, due date, verification, priority; report separates facts/hypotheses."
+   }
+  },
+  {
+   "id": "9.06",
+   "slug": "architecture-portfolio-defense",
+   "level": 9,
+   "level_title": "Lead architecture",
+   "title": "Architecture portfolio defense",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/09-architecture-leadership/labs/06-architecture-portfolio-defense",
+   "dir_source": "derived-from-title",
+   "scenario": "Interviewer challenges a prior design choice.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "portfolio/",
+    "scripts/verify_links.py",
+    "tests/"
+   ],
+   "tasks": [
+    "Prepare evidence index and adversarial Q&A."
+   ],
+   "failure_drill": {
+    "fault": "Inject requirement change.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Every claim links to artifact/test.",
+    "Response names tradeoff and condition to revisit."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "communication",
+    "architecture"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "leadership",
+    "case-study"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "leadership"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "9.06 Architecture portfolio defense: interviewer challenges a prior design choice.",
+    "terminal_work_and_failure_drill": "Prepare evidence index and adversarial Q&A; inject requirement change.",
+    "starter_files": "`portfolio/`, `scripts/verify_links.py`, `tests/`",
+    "validator_and_acceptance": "Every claim links to artifact/test; response names tradeoff and condition to revisit."
+   }
+  },
+  {
+   "id": "9.07",
+   "slug": "cross-team-migration-leadership",
+   "level": 9,
+   "level_title": "Lead architecture",
+   "title": "Cross-team migration leadership",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/09-architecture-leadership/labs/07-cross-team-migration-leadership",
+   "dir_source": "derived-from-title",
+   "scenario": "Three teams have conflicting cutover windows.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "migration/",
+    "src/readiness.py",
+    "tests/"
+   ],
+   "tasks": [
+    "Build dependency graph and comms plan."
+   ],
+   "failure_drill": {
+    "fault": "Inject missed readiness gate.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Cutover cannot proceed on failed gate.",
+    "Decision owner, rollback, and escalation explicit."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "leadership",
+    "migration"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "leadership"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "leadership"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "9.07 Cross-team migration leadership: three teams have conflicting cutover windows.",
+    "terminal_work_and_failure_drill": "Build dependency graph and comms plan; inject missed readiness gate.",
+    "starter_files": "`migration/`, `src/readiness.py`, `tests/`",
+    "validator_and_acceptance": "Cutover cannot proceed on failed gate; decision owner, rollback, and escalation explicit."
+   }
+  },
+  {
+   "id": "9.08",
+   "slug": "technical-strategy",
+   "level": 9,
+   "level_title": "Lead architecture",
+   "title": "Technical strategy",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/09-architecture-leadership/labs/08-technical-strategy",
+   "dir_source": "derived-from-title",
+   "scenario": "Propose a 12-month platform investment under fixed capacity.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "strategy/",
+    "data/options.yaml",
+    "tests/"
+   ],
+   "tasks": [
+    "Prioritize outcomes, risks, sequencing, and measures."
+   ],
+   "failure_drill": {
+    "fault": "Inject staffing reduction.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Plan has explicit non-goals, measurable outcomes, dependencies, and re-prioritization logic."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "leadership",
+    "platform"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "leadership"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "leadership"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "9.08 Technical strategy: propose a 12-month platform investment under fixed capacity.",
+    "terminal_work_and_failure_drill": "Prioritize outcomes, risks, sequencing, and measures; inject staffing reduction.",
+    "starter_files": "`strategy/`, `data/options.yaml`, `tests/`",
+    "validator_and_acceptance": "Plan has explicit non-goals, measurable outcomes, dependencies, and re-prioritization logic."
+   }
+  }
+ ]
+}

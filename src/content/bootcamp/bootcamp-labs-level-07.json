@@ -1,0 +1,577 @@
+{
+ "document": "content-src/bootcamp/Cloud_Architect_Operator_Bootcamp.md",
+ "generated_by": "tools/bootcamp-extract.js",
+ "level": 7,
+ "labs": [
+  {
+   "id": "7.01",
+   "slug": "landing-zone-blueprint",
+   "level": 7,
+   "level_title": "Build a platform",
+   "title": "Landing-zone blueprint",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/07-platform-engineering/labs/01-landing-zone-blueprint",
+   "dir_source": "derived-from-title",
+   "scenario": "New team needs isolated accounts and common controls.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "infra/modules/",
+    "docs/landing-zone.md",
+    "tests/"
+   ],
+   "tasks": [
+    "Terraform structure and account vending contract.",
+    "No org-wide apply in learner account."
+   ],
+   "failure_drill": {
+    "fault": null,
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Static tests verify boundaries, baseline controls, ownership, and bootstrap sequence."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "aws"
+   ],
+   "domains": [
+    "platform",
+    "governance"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "platform"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "governance",
+    "platform"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "7.01 Landing-zone blueprint: new team needs isolated accounts and common controls.",
+    "terminal_work_and_failure_drill": "Terraform structure and account vending contract; no org-wide apply in learner account.",
+    "starter_files": "`infra/modules/`, `docs/landing-zone.md`, `tests/`",
+    "validator_and_acceptance": "Static tests verify boundaries, baseline controls, ownership, and bootstrap sequence."
+   }
+  },
+  {
+   "id": "7.02",
+   "slug": "golden-path-service",
+   "level": 7,
+   "level_title": "Build a platform",
+   "title": "Golden path service",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/07-platform-engineering/labs/02-golden-path-service",
+   "dir_source": "derived-from-title",
+   "scenario": "Developers need a secure deployable starter.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "templates/service/",
+    "scripts/new-service.sh",
+    "tests/"
+   ],
+   "tasks": [
+    "Generate service skeleton, container, pipeline, IaC module."
+   ],
+   "failure_drill": {
+    "fault": "Inject insecure default.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Generated sample builds/tests.",
+    "Required security and operations files exist."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "platform",
+    "containers",
+    "ci-cd"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "platform"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "platform"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "7.02 Golden path service: developers need a secure deployable starter.",
+    "terminal_work_and_failure_drill": "Generate service skeleton, container, pipeline, IaC module; inject insecure default.",
+    "starter_files": "`templates/service/`, `scripts/new-service.sh`, `tests/`",
+    "validator_and_acceptance": "Generated sample builds/tests; required security and operations files exist."
+   }
+  },
+  {
+   "id": "7.03",
+   "slug": "policy-as-code",
+   "level": 7,
+   "level_title": "Build a platform",
+   "title": "Policy as code",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/07-platform-engineering/labs/03-policy-as-code",
+   "dir_source": "derived-from-title",
+   "scenario": "Enforce tags, approved region, encryption, and no public exposure.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "policy/",
+    "fixtures/plans/",
+    "tests/"
+   ],
+   "tasks": [
+    "Conftest/OPA or equivalent over plan JSON."
+   ],
+   "failure_drill": {
+    "fault": "Inject each violation.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Each rule has passing/failing fixtures and remediation text."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "platform",
+    "governance"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "platform"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "governance",
+    "platform"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "7.03 Policy as code: enforce tags, approved region, encryption, and no public exposure.",
+    "terminal_work_and_failure_drill": "Conftest/OPA or equivalent over plan JSON; inject each violation.",
+    "starter_files": "`policy/`, `fixtures/plans/`, `tests/`",
+    "validator_and_acceptance": "Each rule has passing/failing fixtures and remediation text."
+   }
+  },
+  {
+   "id": "7.04",
+   "slug": "module-release-lifecycle",
+   "level": 7,
+   "level_title": "Build a platform",
+   "title": "Module release lifecycle",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/07-platform-engineering/labs/04-module-release-lifecycle",
+   "dir_source": "derived-from-title",
+   "scenario": "Module consumers need safe version upgrades.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "modules/",
+    "CHANGELOG.md",
+    "tests/"
+   ],
+   "tasks": [
+    "Semantic version, changelog, compatibility tests."
+   ],
+   "failure_drill": {
+    "fault": "Inject breaking output change.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Compatibility test detects breaking interface.",
+    "Upgrade notes include migration path."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "platform",
+    "iac"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "platform"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "platform"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "7.04 Module release lifecycle: module consumers need safe version upgrades.",
+    "terminal_work_and_failure_drill": "Semantic version, changelog, compatibility tests; inject breaking output change.",
+    "starter_files": "`modules/`, `CHANGELOG.md`, `tests/`",
+    "validator_and_acceptance": "Compatibility test detects breaking interface; upgrade notes include migration path."
+   }
+  },
+  {
+   "id": "7.05",
+   "slug": "self-service-workflow",
+   "level": 7,
+   "level_title": "Build a platform",
+   "title": "Self-service workflow",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/07-platform-engineering/labs/05-self-service-workflow",
+   "dir_source": "derived-from-title",
+   "scenario": "Developer requests a dev environment with bounded scope.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "cli/",
+    "schemas/",
+    "tests/"
+   ],
+   "tasks": [
+    "CLI-driven config validation and plan generation."
+   ],
+   "failure_drill": {
+    "fault": "Inject oversized/invalid request.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Bad request rejected before cloud call.",
+    "Valid request produces reviewable plan."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "platform",
+    "automation"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "platform"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "platform"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "7.05 Self-service workflow: developer requests a dev environment with bounded scope.",
+    "terminal_work_and_failure_drill": "CLI-driven config validation and plan generation; inject oversized/invalid request.",
+    "starter_files": "`cli/`, `schemas/`, `tests/`",
+    "validator_and_acceptance": "Bad request rejected before cloud call; valid request produces reviewable plan."
+   }
+  },
+  {
+   "id": "7.06",
+   "slug": "exception-process",
+   "level": 7,
+   "level_title": "Build a platform",
+   "title": "Exception process",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/07-platform-engineering/labs/06-exception-process",
+   "dir_source": "derived-from-title",
+   "scenario": "Legacy app needs temporary policy exception.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "exceptions/",
+    "policy/",
+    "tests/"
+   ],
+   "tasks": [
+    "Implement expiring exception schema, owner, rationale, compensating control."
+   ],
+   "failure_drill": {
+    "fault": "Inject expired exception.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Expired/unowned exceptions fail.",
+    "Audit trail and expiry date required."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "platform",
+    "governance"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "platform"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "governance"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "7.06 Exception process: legacy app needs temporary policy exception.",
+    "terminal_work_and_failure_drill": "Implement expiring exception schema, owner, rationale, compensating control; inject expired exception.",
+    "starter_files": "`exceptions/`, `policy/`, `tests/`",
+    "validator_and_acceptance": "Expired/unowned exceptions fail; audit trail and expiry date required."
+   }
+  },
+  {
+   "id": "7.07",
+   "slug": "platform-observability",
+   "level": 7,
+   "level_title": "Build a platform",
+   "title": "Platform observability",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/07-platform-engineering/labs/07-platform-observability",
+   "dir_source": "derived-from-title",
+   "scenario": "Platform team needs adoption and failure signals without surveillance.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "events/",
+    "src/metrics.py",
+    "tests/"
+   ],
+   "tasks": [
+    "Parse synthetic platform events, aggregate service-level metrics."
+   ],
+   "failure_drill": {
+    "fault": "Inject missing telemetry.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Metrics disclose denominators and privacy boundaries.",
+    "Missing data is surfaced."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "platform",
+    "observability"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "platform"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "platform"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "7.07 Platform observability: platform team needs adoption and failure signals without surveillance.",
+    "terminal_work_and_failure_drill": "Parse synthetic platform events, aggregate service-level metrics; inject missing telemetry.",
+    "starter_files": "`events/`, `src/metrics.py`, `tests/`",
+    "validator_and_acceptance": "Metrics disclose denominators and privacy boundaries; missing data is surfaced."
+   }
+  },
+  {
+   "id": "7.08",
+   "slug": "platform-upgrade",
+   "level": 7,
+   "level_title": "Build a platform",
+   "title": "Platform upgrade",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/07-platform-engineering/labs/08-platform-upgrade",
+   "dir_source": "derived-from-title",
+   "scenario": "Provider/module change may affect many teams.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "matrix/",
+    "scripts/rollout.py",
+    "tests/"
+   ],
+   "tasks": [
+    "Simulate version matrix and staged rollout."
+   ],
+   "failure_drill": {
+    "fault": "Inject incompatible consumer.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Blocked consumer is identified.",
+    "Canary/rollback gates and owner comms included."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "platform",
+    "reliability"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "platform"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "platform"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "7.08 Platform upgrade: provider/module change may affect many teams.",
+    "terminal_work_and_failure_drill": "Simulate version matrix and staged rollout; inject incompatible consumer.",
+    "starter_files": "`matrix/`, `scripts/rollout.py`, `tests/`",
+    "validator_and_acceptance": "Blocked consumer is identified; canary/rollback gates and owner comms included."
+   }
+  }
+ ]
+}

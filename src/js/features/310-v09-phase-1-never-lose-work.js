@@ -14,7 +14,7 @@
  * Workspace files: migrateWorkspace() upgrades version 1–3 files to version 4 before
  * merging; version 4 files from a newer schema are refused with a plain message.
  */
-const APP_VERSION = 'V10';
+const APP_VERSION = 'V10.1';
 const WS_SCHEMA = 4;
 const IDB_NAME = 'cloudwalker', IDB_STORE = 'kv', BACKUP_KEEP = 7, SAVE_DEBOUNCE = 1500, SAVE_QUICK = 250, SAVE_MAX_WAIT = 5000;
 const PERSIST = { status: 'init', reason: '', db: null, savedAt: 0, lastJson: null, pristine: null, timer: null, writing: false, again: false, disabled: false, bytes: 0, persisted: null, estimate: null, backups: [], restoredFrom: null, otherTab: 0 };

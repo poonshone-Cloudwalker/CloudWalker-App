@@ -1,0 +1,799 @@
+{
+ "document": "content-src/bootcamp/Cloud_Architect_Operator_Bootcamp.md",
+ "generated_by": "tools/bootcamp-extract.js",
+ "exemplars": [
+  {
+   "id": "E1",
+   "slug": "dns-tls-diagnostics",
+   "level": 1,
+   "level_title": "Operator foundations",
+   "title": "DNS and TLS diagnostic CLI",
+   "kind": "exemplar",
+   "source_type": "exemplar",
+   "dir": "levels/01-operator-foundations/exemplar/01-dns-tls-diagnostics",
+   "dir_source": "document",
+   "scenario": "A small support team gets intermittent “site unavailable” reports. Build a safe diagnostic that separates resolver, TCP, HTTP, and certificate symptoms. Linux/macOS terminal, Python 3, Git; network tests only to an explicitly approved target. Never collect cookies, auth headers, or private key material.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "README.md  Makefile  .gitignore",
+    "src/diagnose.py",
+    "fixtures/dns-ok.txt fixtures/dns-nxdomain.txt fixtures/tls-ok.txt fixtures/tls-expired.txt",
+    "tests/test_diagnose.py",
+    "docs/adr/0001-diagnostic-boundaries.md docs/runbook.md REPORT.md",
+    "scripts/validate.sh"
+   ],
+   "starter_tree": "levels/01-operator-foundations/exemplar/01-dns-tls-diagnostics/\n├── README.md  Makefile  .gitignore\n├── src/diagnose.py\n├── fixtures/dns-ok.txt fixtures/dns-nxdomain.txt fixtures/tls-ok.txt fixtures/tls-expired.txt\n├── tests/test_diagnose.py\n├── docs/adr/0001-diagnostic-boundaries.md docs/runbook.md REPORT.md\n└── scripts/validate.sh",
+   "tasks": [
+    "Implement `python -m src.diagnose --target example.test --fixture-dir fixtures --json`; fixture mode must not access the network.",
+    "Optional `--live` requires explicit allowlisted hostname and bounded timeout.",
+    "Use `dig`/`getent` and `curl`/`openssl` only in live mode; classify each layer and redact target credentials/query strings.",
+    "Add a Git commit sequence demonstrating tests before the feature and an ADR explaining why fixture mode is default."
+   ],
+   "failure_drill": {
+    "fault": null,
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": "Restore the passing fixture.",
+    "steps": [
+     "Substitute the NXDOMAIN fixture, then the expired-certificate fixture.",
+     "Confirm the tool distinguishes DNS from TLS, returns nonzero for a failed diagnostic, and does not emit secrets.",
+     "Restore the passing fixture."
+    ]
+   },
+   "deliverables": [
+    "Source",
+    "Fixtures",
+    "Tests",
+    "ADR",
+    "Runbook",
+    "REPORT with sample terminal output and limitations"
+   ],
+   "validation_and_acceptance": [
+    "`make validate` runs formatting/compile checks and `python -m unittest discover -s tests -v`.",
+    "Tests assert stable JSON keys, error classifications, bounded timeout configuration, correct exit codes, and redaction.",
+    "`make validate` must pass offline; malformed fixtures must fail safely, not crash with a traceback."
+   ],
+   "acceptance": "A reviewer can clone and run tests without credentials; the two injected faults produce distinct, reproducible diagnoses.",
+   "cost_controls_and_cleanup": [
+    "No cloud resources.",
+    "Remove temp files; `git status --short` is clean except intentional source/docs.",
+    "Live targets are allowlisted and opt-in."
+   ],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "networking",
+    "security",
+    "diagnostics"
+   ],
+   "portfolio_value": "high",
+   "portfolio_categories": [
+    "repository",
+    "operations"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "networking"
+   ]
+  },
+  {
+   "id": "E2",
+   "slug": "safe-s3-inventory",
+   "level": 2,
+   "level_title": "AWS foundations",
+   "title": "Safe AWS S3 inventory (read-only)",
+   "kind": "exemplar",
+   "source_type": "exemplar",
+   "dir": "levels/02-aws-foundations/exemplar/01-safe-s3-inventory",
+   "dir_source": "document",
+   "scenario": "An auditor needs a concise inventory of a designated sandbox bucket's public-access block, encryption, versioning, and lifecycle posture. No object bodies, no writes, no bucket creation by default. AWS CLI profile and region must be explicitly supplied; only a sandbox allowlisted bucket is eligible for optional live mode.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "README.md Makefile config/allowlist.json",
+    "src/audit.py scripts/preflight.sh",
+    "fixtures/bucket-good.json fixtures/bucket-risky.json",
+    "tests/test_audit.py tests/test_preflight.py",
+    "docs/adr/0001-read-only-inventory.md docs/runbook.md REPORT.md"
+   ],
+   "starter_tree": "levels/02-aws-foundations/exemplar/01-safe-s3-inventory/\n├── README.md Makefile config/allowlist.json\n├── src/audit.py scripts/preflight.sh\n├── fixtures/bucket-good.json fixtures/bucket-risky.json\n├── tests/test_audit.py tests/test_preflight.py\n└── docs/adr/0001-read-only-inventory.md docs/runbook.md REPORT.md",
+   "tasks": [
+    "`scripts/preflight.sh PROFILE REGION` checks `aws sts get-caller-identity`, exact approved account placeholder from local config, region allowlist, and explicit bucket allowlist before any API calls.",
+    "`python -m src.audit --fixture fixtures/bucket-risky.json --json` produces deterministic findings.",
+    "Live mode invokes only read APIs (`get-public-access-block`, `get-bucket-encryption`, `get-bucket-versioning`, `get-bucket-lifecycle-configuration`); handle absent configuration separately from AccessDenied.",
+    "Never infer public access solely from one setting."
+   ],
+   "failure_drill": {
+    "fault": null,
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": [
+     "Change active profile or region in a test stub and prove preflight blocks live mode.",
+     "Use the risky fixture and confirm findings include remediation and evidence source.",
+     "Simulate AccessDenied; report “unknown,” not “secure.”"
+    ]
+   },
+   "deliverables": [
+    "CLI",
+    "Tests",
+    "Account/region preflight",
+    "ADR",
+    "Runbook",
+    "Sanitized sample report"
+   ],
+   "validation_and_acceptance": [
+    "`make validate` runs unit tests against checked-in JSON and asserts zero write API names in the command allowlist, stable JSON ordering, fail-closed identity, and correct distinction among compliant, misconfigured, and unknown.",
+    "Optional `make integration` requires explicit environment confirmation and emits no object contents."
+   ],
+   "acceptance": "Wrong identity prevents all API operations; offline tests work with no AWS credentials.",
+   "cost_controls_and_cleanup": [
+    "Default lab is read-only and has no resource creation.",
+    "If a dedicated test bucket is authorized separately, Terraform owns it; apply only after review, use tags/TTL, and destroy plus list-bucket verification.",
+    "No public ACL/policy."
+   ],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "optional-cloud",
+   "vendors": [
+    "aws"
+   ],
+   "domains": [
+    "data",
+    "security"
+   ],
+   "portfolio_value": "high",
+   "portfolio_categories": [
+    "security",
+    "repository"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": []
+  },
+  {
+   "id": "E3",
+   "slug": "container-to-pipeline",
+   "level": 3,
+   "level_title": "Repeatable delivery",
+   "title": "Container to repeatable delivery pipeline",
+   "kind": "exemplar",
+   "source_type": "exemplar",
+   "dir": "levels/03-repeatable-delivery/exemplar/01-container-to-pipeline",
+   "dir_source": "document",
+   "scenario": "A two-person team must ship a tiny HTTP health service consistently. Build locally first; optional AWS deploy is out of scope. Image runs non-root, has no embedded secrets, and can be rolled back by immutable digest.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "app/server.py app/requirements.txt",
+    "Dockerfile .dockerignore Makefile",
+    "tests/test_health.py scripts/build-test.sh scripts/promote.sh",
+    ".github/workflows/ci.yml release/manifest.schema.json",
+    "docs/adr/0001-immutable-artifacts.md docs/runbook.md REPORT.md"
+   ],
+   "starter_tree": "levels/03-repeatable-delivery/exemplar/01-container-to-pipeline/\n├── app/server.py app/requirements.txt\n├── Dockerfile .dockerignore Makefile\n├── tests/test_health.py scripts/build-test.sh scripts/promote.sh\n├── .github/workflows/ci.yml release/manifest.schema.json\n└── docs/adr/0001-immutable-artifacts.md docs/runbook.md REPORT.md",
+   "tasks": [
+    "Implement `/healthz`; use a pinned base image tag/digest policy, non-root user, minimal build context, deterministic unit tests, image build, container smoke test, and digest-based release manifest.",
+    "CI runs tests, image build, config checks, and secret scan.",
+    "Promotion copies the digest into a release manifest; it must not rebuild."
+   ],
+   "failure_drill": {
+    "fault": null,
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": "Restore source and confirm previous known-good digest remains usable.",
+    "steps": [
+     "Make health check fail and verify the deploy/smoke script refuses promotion.",
+     "Modify a manifest digest and prove integrity validation fails.",
+     "Restore source and confirm previous known-good digest remains usable."
+    ]
+   },
+   "deliverables": [
+    "App",
+    "Dockerfile",
+    "Pipeline",
+    "Manifest",
+    "Tests",
+    "ADR",
+    "Rollback runbook",
+    "Report with image digest"
+   ],
+   "validation_and_acceptance": [
+    "`make validate` runs unit tests, Dockerfile/pipeline static checks, build and smoke test when Docker is available; a no-Docker unit target is documented.",
+    "Assertions: non-root user, health endpoint responds, no `.env`/credentials in build context, failed health prevents promotion, digest unchanged between environments."
+   ],
+   "acceptance": "Clean checkout test/build path works and injected unhealthy image cannot be promoted.",
+   "cost_controls_and_cleanup": [
+    "Local images/containers only; `make clean` stops/removes named lab container and image.",
+    "Verify no running container remains.",
+    "CI uses no paid cloud runner assumption; do not commit secrets."
+   ],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "containers",
+    "ci-cd"
+   ],
+   "portfolio_value": "high",
+   "portfolio_categories": [
+    "repository"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "delivery"
+   ]
+  },
+  {
+   "id": "E4",
+   "slug": "slo-failure-drill",
+   "level": 4,
+   "level_title": "Operate and recover",
+   "title": "SLO and failure drill with synthetic telemetry",
+   "kind": "exemplar",
+   "source_type": "exemplar",
+   "dir": "levels/04-reliability-operations/exemplar/01-slo-failure-drill",
+   "dir_source": "document",
+   "scenario": "An API owner has synthetic request records and wants a user-facing availability/latency SLO, a useful alert, and a blameless incident report. No live monitoring deployment. Dataset is synthetic and time-bounded.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "data/requests.csv data/alerts.json",
+    "src/slo.py src/timeline.py tests/test_slo.py tests/test_timeline.py",
+    "scripts/inject_failure.py Makefile",
+    "docs/slo.md docs/runbook.md docs/incident-report.md REPORT.md"
+   ],
+   "starter_tree": "levels/04-reliability-operations/exemplar/01-slo-failure-drill/\n├── data/requests.csv data/alerts.json\n├── src/slo.py src/timeline.py tests/test_slo.py tests/test_timeline.py\n├── scripts/inject_failure.py Makefile\n└── docs/slo.md docs/runbook.md docs/incident-report.md REPORT.md",
+   "tasks": [
+    "Calculate request-based availability and p95 latency by fixed window, document denominator/exclusions, and calculate remaining error budget from an explicitly declared target in `docs/slo.md`.",
+    "Generate a timeline from UTC event fixtures.",
+    "Alert rule must identify customer symptom, owner, threshold rationale, and runbook.",
+    "Do not claim SLO targets as industry standards; label them as exercise assumptions."
+   ],
+   "failure_drill": {
+    "fault": null,
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": [
+     "`python scripts/inject_failure.py --profile elevated-5xx --output /tmp/requests.csv` adds a deterministic burst; show SLI/error-budget change and produce a timeline.",
+     "Then inject missing timestamps and verify they are counted/reported rather than silently discarded."
+    ]
+   },
+   "deliverables": [
+    "Code",
+    "Tests",
+    "SLO definition",
+    "Actionable runbook",
+    "Incident report",
+    "ADR on measurement choices",
+    "Sanitized graph/table in REPORT"
+   ],
+   "validation_and_acceptance": [
+    "`make validate` tests fixed expected counts, percentile convention, empty windows, timezone handling, malformed data, and deterministic output.",
+    "Failure dataset must breach the exercise threshold; baseline must not.",
+    "Report contains impact, timeline, detection, response, recovery, contributing factors, and owned follow-ups."
+   ],
+   "acceptance": "Baseline and injected-failure outputs are reproducible from a fresh checkout.",
+   "cost_controls_and_cleanup": [
+    "Local fixtures only; remove temp outputs with `make clean`.",
+    "No cloud service is created."
+   ],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "reliability",
+    "observability",
+    "incident"
+   ],
+   "portfolio_value": "high",
+   "portfolio_categories": [
+    "operations"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "reliability"
+   ]
+  },
+  {
+   "id": "E5",
+   "slug": "least-privilege-data-path",
+   "level": 5,
+   "level_title": "Secure the system",
+   "title": "Least-privilege S3 data path",
+   "kind": "exemplar",
+   "source_type": "exemplar",
+   "dir": "levels/05-cloud-security/exemplar/01-least-privilege-data-path",
+   "dir_source": "document",
+   "scenario": "A batch role reads and writes only its own synthetic prefix in an approved sandbox bucket. The lab teaches policy design, not production key administration. No public access; no real data; live apply requires reviewed sandbox account and budget controls.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "infra/main.tf infra/variables.tf infra/outputs.tf",
+    "policies/batch-role.json policy-tests/matrix.yaml",
+    "scripts/check_policy.py tests/test_policy.py",
+    "docs/threat-model.md docs/adr/0001-data-access.md docs/runbook.md REPORT.md"
+   ],
+   "starter_tree": "levels/05-cloud-security/exemplar/01-least-privilege-data-path/\n├── infra/main.tf infra/variables.tf infra/outputs.tf\n├── policies/batch-role.json policy-tests/matrix.yaml\n├── scripts/check_policy.py tests/test_policy.py\n└── docs/threat-model.md docs/adr/0001-data-access.md docs/runbook.md REPORT.md",
+   "tasks": [
+    "Define a Terraform-managed private bucket with encryption and public-access blocks, plus a role policy scoped to the named bucket prefix and required actions only.",
+    "Write an authorization matrix of allowed and denied actions/resources.",
+    "Keep state remote-backend configuration as a documented example, not a hard-coded backend with learner credentials.",
+    "Run static policy tests before any optional apply."
+   ],
+   "failure_drill": {
+    "fault": null,
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": "Restore the least-privilege policy.",
+    "steps": [
+     "Inject `Resource: \"*\"` or an extra destructive action into a policy fixture.",
+     "Validation must fail and show which matrix case violates the boundary.",
+     "Restore the least-privilege policy.",
+     "In optional sandbox mode, test denied access using a separate test principal only if explicitly authorized; never use production identities."
+    ]
+   },
+   "deliverables": [
+    "Terraform",
+    "Policy matrix/tests",
+    "Threat model",
+    "ADR",
+    "Runbook",
+    "Sanitized plan summary",
+    "Cleanup evidence"
+   ],
+   "validation_and_acceptance": [
+    "`make validate` runs Terraform fmt/validate, plan/policy static checks, and Python matrix tests; no credentials required.",
+    "Assert public access blocked, encryption configured, actions/resources constrained, all deny cases remain denied.",
+    "Live mode requires preflight, reviewed plan, TTL, and explicit confirmation."
+   ],
+   "acceptance": "Wildcard injection fails before apply; no secrets/state are committed.",
+   "cost_controls_and_cleanup": [
+    "Plan-only by default.",
+    "If applied, use Terraform destroy, then independently query bucket/object versions and IAM attachments; empty versioned contents via a separately reviewed cleanup script before destroy.",
+    "Record cleanup proof.",
+    "Do not delete resources not created by this lab."
+   ],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "optional-cloud",
+   "vendors": [
+    "aws"
+   ],
+   "domains": [
+    "iam",
+    "security",
+    "data",
+    "iac"
+   ],
+   "portfolio_value": "high",
+   "portfolio_categories": [
+    "security"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "iam",
+    "security"
+   ]
+  },
+  {
+   "id": "E6",
+   "slug": "resilient-service-design",
+   "level": 6,
+   "level_title": "Architect deliberately",
+   "title": "Resilient service architecture decision",
+   "kind": "exemplar",
+   "source_type": "exemplar",
+   "dir": "levels/06-architecture-decisions/exemplar/01-resilient-service-design",
+   "dir_source": "document",
+   "scenario": "A fictional order API must tolerate one-zone impairment, meet an exercise-defined recovery objective, and operate with a small team. Workload and traffic figures are invented exercise inputs, clearly labeled; no live service is required.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "requirements/brief.md requirements/assumptions.yaml",
+    "src/failure_model.py src/cost_model.py tests/",
+    "diagrams/architecture.mmd docs/adr/0001-topology.md",
+    "docs/review.md docs/runbook.md REPORT.md"
+   ],
+   "starter_tree": "levels/06-architecture-decisions/exemplar/01-resilient-service-design/\n├── requirements/brief.md requirements/assumptions.yaml\n├── src/failure_model.py src/cost_model.py tests/\n├── diagrams/architecture.mmd docs/adr/0001-topology.md\n└── docs/review.md docs/runbook.md REPORT.md",
+   "tasks": [
+    "Extract functional/NFR requirements and unresolved assumptions; compare at least two topologies; model dependency and failure-domain propagation; diagram identity, data, network, and observability flows; state RTO/RPO, recovery steps, and cost drivers.",
+    "The model is a decision aid, not a reliability prediction.",
+    "Include trigger conditions to revisit the ADR."
+   ],
+   "failure_drill": {
+    "fault": null,
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": [
+     "Mark one zone unavailable and then make the shared database dependency unavailable.",
+     "Verify the model shows the first recovery path and the second as a hard limit; revise the design or explicitly accept the gap.",
+     "Do not represent unmodeled services as highly available."
+    ]
+   },
+   "deliverables": [
+    "Requirements",
+    "Diagram source",
+    "Executable model/tests",
+    "ADR",
+    "Review notes",
+    "Runbook",
+    "Report"
+   ],
+   "validation_and_acceptance": [
+    "`make validate` validates requirements/ADR metadata, diagram source presence, and deterministic failure-model fixtures.",
+    "Tests assert declared objectives against exercise scenarios, identify single points of failure, and reject unknown dependency ownership.",
+    "Review checklist includes tradeoffs and residual risks."
+   ],
+   "acceptance": "Reviewer can change a stated assumption and see which recommendation or risk changes.",
+   "cost_controls_and_cleanup": [
+    "No cloud deployment.",
+    "If the learner adds an optional Terraform proof, it must be separately scoped, low-cost, plan-reviewed, tagged, time-limited, and destroyed with inventory verification."
+   ],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "architecture",
+    "reliability"
+   ],
+   "portfolio_value": "high",
+   "portfolio_categories": [
+    "case-study"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "reliability",
+    "architecture"
+   ]
+  },
+  {
+   "id": "E7",
+   "slug": "guardrailed-golden-path",
+   "level": 7,
+   "level_title": "Build a platform",
+   "title": "Guardrailed golden path",
+   "kind": "exemplar",
+   "source_type": "exemplar",
+   "dir": "levels/07-platform-engineering/exemplar/01-guardrailed-golden-path",
+   "dir_source": "document",
+   "scenario": "A platform team wants a repeatable starter for small internal APIs. It must make safe defaults easy, permit documented exceptions, and keep validation local. No organization-wide policy or account vending apply.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "templates/service/{app/,Dockerfile,Makefile,README.md}",
+    "modules/aws-service/ (Terraform module and examples)",
+    "policy/{policy.rego,tests/fixtures/}",
+    "scripts/new-service.sh scripts/validate-generated.sh",
+    "docs/adr/0001-golden-path.md docs/exception-process.md REPORT.md"
+   ],
+   "starter_tree": "levels/07-platform-engineering/exemplar/01-guardrailed-golden-path/\n├── templates/service/{app/,Dockerfile,Makefile,README.md}\n├── modules/aws-service/ (Terraform module and examples)\n├── policy/{policy.rego,tests/fixtures/}\n├── scripts/new-service.sh scripts/validate-generated.sh\n└── docs/adr/0001-golden-path.md docs/exception-process.md REPORT.md",
+   "tasks": [
+    "`new-service.sh NAME` safely creates a starter from a template; validate input and refuse overwrite.",
+    "Template includes health check, non-root container, tests, CI, runbook, ownership, and Terraform module interface.",
+    "Policy tests check region, tags, encryption, and no public exposure.",
+    "Exceptions require owner, rationale, compensating control, expiry, and review date."
+   ],
+   "failure_drill": {
+    "fault": null,
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": [
+     "Generate a service with an invalid name, attempt overwrite, introduce a public ingress fixture, and add an expired exception.",
+     "Each must fail with actionable output before cloud calls."
+    ]
+   },
+   "deliverables": [
+    "Template",
+    "Module contract",
+    "Policy and tests",
+    "Exception workflow",
+    "ADR",
+    "Developer README",
+    "Report with generation transcript"
+   ],
+   "validation_and_acceptance": [
+    "`make validate` generates a temp service, runs its tests, checks generated files, runs policy fixtures, verifies idempotent behavior, and cleans temp dirs.",
+    "Passing and failing fixtures cover each rule.",
+    "No cloud credential is needed."
+   ],
+   "acceptance": "One command creates a working safe starter; violations fail closed with a fix hint.",
+   "cost_controls_and_cleanup": [
+    "Local-only.",
+    "Optional Terraform example is plan-only; any live test uses sandbox preflight, budget notification, TTL tags, and verified destroy.",
+    "Never run generated infrastructure automatically as part of `new-service.sh`."
+   ],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local",
+    "aws"
+   ],
+   "domains": [
+    "platform",
+    "governance",
+    "containers"
+   ],
+   "portfolio_value": "high",
+   "portfolio_categories": [
+    "platform"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "governance",
+    "platform"
+   ]
+  },
+  {
+   "id": "E8",
+   "slug": "provider-capability-map",
+   "level": 8,
+   "level_title": "Compare providers",
+   "title": "Provider capability and hybrid decision map",
+   "kind": "exemplar",
+   "source_type": "exemplar",
+   "dir": "levels/08-clouds-hybrid/exemplar/01-provider-capability-map",
+   "dir_source": "document",
+   "scenario": "A fictional enterprise is evaluating whether one new workload should stay on AWS, use GCP, use Azure, or connect to an on-prem dependency. Focus on identity, network, governance, logging, key management, data transfer, and exit strategy. No provider resources are created by default.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "data/capabilities.yaml data/assumptions.yaml",
+    "scripts/validate_matrix.py scripts/preflight-aws.sh scripts/preflight-gcp.sh scripts/preflight-azure.sh",
+    "infra/aws/ infra/gcp/ infra/azure/ (plan-only examples)",
+    "docs/mapping.md docs/adr/0001-provider-choice.md docs/runbook.md REPORT.md"
+   ],
+   "starter_tree": "levels/08-clouds-hybrid/exemplar/01-provider-capability-map/\n├── data/capabilities.yaml data/assumptions.yaml\n├── scripts/validate_matrix.py scripts/preflight-aws.sh scripts/preflight-gcp.sh scripts/preflight-azure.sh\n├── infra/aws/ infra/gcp/ infra/azure/ (plan-only examples)\n└── docs/mapping.md docs/adr/0001-provider-choice.md docs/runbook.md REPORT.md",
+   "tasks": [
+    "Build a sourced capability matrix across AWS IAM/VPC/CloudTrail/KMS, GCP IAM/VPC/Audit Logs/Cloud KMS, and Azure Entra ID/VNet/Activity Logs/Key Vault, noting scope and non-equivalence rather than claiming universal parity.",
+    "Use Terraform provider-specific examples and CLI preflights (`aws sts`, `gcloud auth list`/project, `az account show`) that fail closed on unexpected identity/project/subscription.",
+    "Record verification date/source for mutable capabilities and treat CLI output as sensitive metadata."
+   ],
+   "failure_drill": {
+    "fault": null,
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": [
+     "Feed each preflight a wrong identity/project/subscription fixture and prove it blocks before Terraform apply.",
+     "Inject a false “equivalent” matrix row; schema validation must require a caveat/evidence field.",
+     "Simulate hybrid DNS forwarding failure in local fixtures and document the boundary."
+    ]
+   },
+   "deliverables": [
+    "Matrix with sources/date",
+    "Terraform examples",
+    "CLI preflight scripts",
+    "Hybrid DNS diagram",
+    "ADR and report"
+   ],
+   "validation_and_acceptance": [
+    "`make validate` checks YAML schema, required evidence fields, deterministic scoring inputs, and Terraform formatting/validation where providers are available.",
+    "Offline mode requires no login.",
+    "Each cloud's live plan is separate, opt-in, region-scoped, and never applied by the default target."
+   ],
+   "acceptance": "Recommendation names provider-specific dependencies, operational burden, portability limits, and conditions that would change the choice.",
+   "cost_controls_and_cleanup": [
+    "Default no resources.",
+    "Any optional proof uses one provider at a time, dedicated sandbox, budget alert, TTL, provider preflight, and exact Terraform destroy plus provider CLI inventory check.",
+    "Avoid cross-cloud data transfer during testing."
+   ],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "optional-cloud",
+   "vendors": [
+    "multi-cloud",
+    "aws",
+    "gcp",
+    "azure"
+   ],
+   "domains": [
+    "multi-cloud",
+    "iam",
+    "networking",
+    "governance"
+   ],
+   "portfolio_value": "high",
+   "portfolio_categories": [
+    "multicloud"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "multicloud"
+   ]
+  },
+  {
+   "id": "E9",
+   "slug": "review-and-crisis",
+   "level": 9,
+   "level_title": "Lead architecture",
+   "title": "Design review and crisis response",
+   "kind": "exemplar",
+   "source_type": "exemplar",
+   "dir": "levels/09-architecture-leadership/exemplar/01-review-and-crisis",
+   "dir_source": "document",
+   "scenario": "You are the architecture lead for a fictional checkout service. Reviewers dispute the proposed migration, then a simulated regional impairment occurs during cutover. There is no real customer or cloud system. Communicate for engineers, incident responders, and executives.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "review/brief.md review/options.yaml review/agenda.md",
+    "incident/events.yaml scripts/tabletop.py scripts/check_actions.py",
+    "docs/adr/0001-cutover-strategy.md docs/incident-report.md",
+    "docs/executive-brief.md portfolio/evidence-index.md REPORT.md"
+   ],
+   "starter_tree": "levels/09-architecture-leadership/exemplar/01-review-and-crisis/\n├── review/brief.md review/options.yaml review/agenda.md\n├── incident/events.yaml scripts/tabletop.py scripts/check_actions.py\n├── docs/adr/0001-cutover-strategy.md docs/incident-report.md\n└── docs/executive-brief.md portfolio/evidence-index.md REPORT.md",
+   "tasks": [
+    "Prepare a time-boxed review agenda, requirements/assumptions, options, decision criteria, dissent log, and go/no-go gates.",
+    "Execute a terminal tabletop that advances synthetic events and requires role, decision, owner, next update, and evidence for each action.",
+    "Produce a concise executive brief with impact, recommendation, tradeoff, uncertainty, and decision requested.",
+    "Avoid invented customer impact or financial figures: use scenario data and label it."
+   ],
+   "failure_drill": {
+    "fault": null,
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": [
+     "Inject conflicting telemetry and a missed cutover readiness gate.",
+     "Operator must pause or roll back according to declared criteria, state what is known/unknown, assign incident roles, and issue the next update.",
+     "Then run the post-incident action linter against one vague corrective action and improve it to have owner, due date, verification, and priority."
+    ]
+   },
+   "deliverables": [
+    "Review pack",
+    "ADR",
+    "Tabletop transcript",
+    "Incident report",
+    "Executive brief",
+    "Evidence index",
+    "Mentoring reflection"
+   ],
+   "validation_and_acceptance": [
+    "`make validate` checks required review/ADR/report fields, verifies every action has owner/verification, confirms a failed readiness gate blocks cutover, and checks evidence links resolve locally.",
+    "Tabletop transcript must contain timeline, decision rationale, recovery signal, and customer-safe update.",
+    "Executive brief stays within the exercise's one-page/word-limit rule."
+   ],
+   "acceptance": "A second person can run the tabletop and reach the same declared go/no-go outcome from the evidence.",
+   "cost_controls_and_cleanup": [
+    "No cloud resources; delete generated temporary event transcripts if they contain sensitive practice notes.",
+    "Public portfolio uses synthetic names only."
+   ],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "leadership",
+    "incident",
+    "migration"
+   ],
+   "portfolio_value": "high",
+   "portfolio_categories": [
+    "leadership",
+    "case-study"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "leadership"
+   ]
+  }
+ ]
+}

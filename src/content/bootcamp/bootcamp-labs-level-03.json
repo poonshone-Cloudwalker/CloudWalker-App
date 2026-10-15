@@ -1,0 +1,570 @@
+{
+ "document": "content-src/bootcamp/Cloud_Architect_Operator_Bootcamp.md",
+ "generated_by": "tools/bootcamp-extract.js",
+ "level": 3,
+ "labs": [
+  {
+   "id": "3.01",
+   "slug": "terraform-foundations",
+   "level": 3,
+   "level_title": "Repeatable delivery",
+   "title": "Terraform foundations",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/03-repeatable-delivery/labs/01-terraform-foundations",
+   "dir_source": "derived-from-title",
+   "scenario": "Create a local-only reproducible module before cloud use.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "infra/main.tf",
+    "variables.tf",
+    "tests/"
+   ],
+   "tasks": [
+    "`terraform fmt/validate/plan`."
+   ],
+   "failure_drill": {
+    "fault": "Inject invalid variable and drift in local fixture.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Terraform validate and plan assertions.",
+    "No provider credentials/resource required."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "iac"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "repository"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "delivery"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "3.01 Terraform foundations: create a local-only reproducible module before cloud use.",
+    "terminal_work_and_failure_drill": "`terraform fmt/validate/plan`; inject invalid variable and drift in local fixture.",
+    "starter_files": "`infra/main.tf`, `variables.tf`, `tests/`",
+    "validator_and_acceptance": "Terraform validate and plan assertions; no provider credentials/resource required."
+   }
+  },
+  {
+   "id": "3.02",
+   "slug": "aws-module-contract",
+   "level": 3,
+   "level_title": "Repeatable delivery",
+   "title": "AWS module contract",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/03-repeatable-delivery/labs/02-aws-module-contract",
+   "dir_source": "derived-from-title",
+   "scenario": "Team needs a versioned S3 module with safe defaults.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "infra/modules/bucket/",
+    "tests/"
+   ],
+   "tasks": [
+    "Terraform module, variables/outputs, validation and static policy checks."
+   ],
+   "failure_drill": {
+    "fault": "Inject public access config.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Plan JSON assertions reject unsafe public access and missing encryption/versioning settings."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "optional-cloud",
+   "vendors": [
+    "aws"
+   ],
+   "domains": [
+    "iac",
+    "security"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "repository",
+    "platform"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "delivery"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "3.02 AWS module contract: team needs a versioned S3 module with safe defaults.",
+    "terminal_work_and_failure_drill": "Terraform module, variables/outputs, validation and static policy checks; inject public access config.",
+    "starter_files": "`infra/modules/bucket/`, `tests/`",
+    "validator_and_acceptance": "Plan JSON assertions reject unsafe public access and missing encryption/versioning settings."
+   }
+  },
+  {
+   "id": "3.03",
+   "slug": "containerize-a-small-service",
+   "level": 3,
+   "level_title": "Repeatable delivery",
+   "title": "Containerize a small service",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/03-repeatable-delivery/labs/03-containerize-a-small-service",
+   "dir_source": "derived-from-title",
+   "scenario": "Build must be reproducible and non-root.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "app/",
+    "Dockerfile",
+    ".dockerignore",
+    "tests/"
+   ],
+   "tasks": [
+    "Docker build, inspect image, run tests."
+   ],
+   "failure_drill": {
+    "fault": "Inject bad health endpoint or root user.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Build test, non-root config assertion, health check and container smoke test pass."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "containers",
+    "security"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "repository"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "delivery"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "3.03 Containerize a small service: build must be reproducible and non-root.",
+    "terminal_work_and_failure_drill": "Docker build, inspect image, run tests; inject bad health endpoint or root user.",
+    "starter_files": "`app/`, `Dockerfile`, `.dockerignore`, `tests/`",
+    "validator_and_acceptance": "Build test, non-root config assertion, health check and container smoke test pass."
+   }
+  },
+  {
+   "id": "3.04",
+   "slug": "ci-quality-gate",
+   "level": 3,
+   "level_title": "Repeatable delivery",
+   "title": "CI quality gate",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/03-repeatable-delivery/labs/04-ci-quality-gate",
+   "dir_source": "derived-from-title",
+   "scenario": "Changes must fail before merge when tests/security checks fail.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    ".github/workflows/ci.yml",
+    "Makefile",
+    "tests/"
+   ],
+   "tasks": [
+    "Pipeline YAML, lint/test/scan/plan stages."
+   ],
+   "failure_drill": {
+    "fault": "Inject failing test and unsafe IaC fixture.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Local CI-equivalent target proves fail-closed ordering.",
+    "Workflow syntax/policy tests pass."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "ci-cd",
+    "security"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "repository"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "delivery"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "3.04 CI quality gate: changes must fail before merge when tests/security checks fail.",
+    "terminal_work_and_failure_drill": "Pipeline YAML, lint/test/scan/plan stages; inject failing test and unsafe IaC fixture.",
+    "starter_files": "`.github/workflows/ci.yml`, `Makefile`, `tests/`",
+    "validator_and_acceptance": "Local CI-equivalent target proves fail-closed ordering; workflow syntax/policy tests pass."
+   }
+  },
+  {
+   "id": "3.05",
+   "slug": "artifact-promotion",
+   "level": 3,
+   "level_title": "Repeatable delivery",
+   "title": "Artifact promotion",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/03-repeatable-delivery/labs/05-artifact-promotion",
+   "dir_source": "derived-from-title",
+   "scenario": "Same image digest moves dev→stage.",
+   "constraints": "No rebuild between environments.",
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "scripts/promote.sh",
+    "release/manifest.json",
+    "tests/"
+   ],
+   "tasks": [
+    "Tag by digest, generate manifest/SBOM."
+   ],
+   "failure_drill": {
+    "fault": "Inject tag-only mismatch.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Test asserts digest equality and rejects mutable `latest` promotion."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "ci-cd",
+    "containers"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "repository"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "delivery"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "3.05 Artifact promotion: same image digest moves dev→stage; no rebuild between environments.",
+    "terminal_work_and_failure_drill": "Tag by digest, generate manifest/SBOM; inject tag-only mismatch.",
+    "starter_files": "`scripts/promote.sh`, `release/manifest.json`, `tests/`",
+    "validator_and_acceptance": "Test asserts digest equality and rejects mutable `latest` promotion."
+   }
+  },
+  {
+   "id": "3.06",
+   "slug": "terraform-state-hygiene",
+   "level": 3,
+   "level_title": "Repeatable delivery",
+   "title": "Terraform state hygiene",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/03-repeatable-delivery/labs/06-terraform-state-hygiene",
+   "dir_source": "derived-from-title",
+   "scenario": "A team needs collaboration without leaking state.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "infra/backend.tf.example",
+    "docs/state.md",
+    "tests/"
+   ],
+   "tasks": [
+    "Local state inspection, backend design, locking/secret review."
+   ],
+   "failure_drill": {
+    "fault": "Inject sensitive variable in plan fixture.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Static checks prohibit committed state/secrets and document state recovery/locking."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "iac",
+    "security"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "security"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "delivery"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "3.06 Terraform state hygiene: a team needs collaboration without leaking state.",
+    "terminal_work_and_failure_drill": "Local state inspection, backend design, locking/secret review; inject sensitive variable in plan fixture.",
+    "starter_files": "`infra/backend.tf.example`, `docs/state.md`, `tests/`",
+    "validator_and_acceptance": "Static checks prohibit committed state/secrets and document state recovery/locking."
+   }
+  },
+  {
+   "id": "3.07",
+   "slug": "deployment-rollback",
+   "level": 3,
+   "level_title": "Repeatable delivery",
+   "title": "Deployment rollback",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/03-repeatable-delivery/labs/07-deployment-rollback",
+   "dir_source": "derived-from-title",
+   "scenario": "A bad release must be rolled back with evidence.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "scripts/deploy.sh",
+    "scripts/rollback.sh",
+    "tests/"
+   ],
+   "tasks": [
+    "Scripted local/container deployment versions."
+   ],
+   "failure_drill": {
+    "fault": "Inject failed health check.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Test confirms failed health check restores previous digest and records event."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "ci-cd",
+    "reliability"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "operations"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "delivery"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "3.07 Deployment rollback: a bad release must be rolled back with evidence.",
+    "terminal_work_and_failure_drill": "Scripted local/container deployment versions; inject failed health check.",
+    "starter_files": "`scripts/deploy.sh`, `scripts/rollback.sh`, `tests/`",
+    "validator_and_acceptance": "Test confirms failed health check restores previous digest and records event."
+   }
+  },
+  {
+   "id": "3.08",
+   "slug": "release-provenance",
+   "level": 3,
+   "level_title": "Repeatable delivery",
+   "title": "Release provenance",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/03-repeatable-delivery/labs/08-release-provenance",
+   "dir_source": "derived-from-title",
+   "scenario": "Produce verifiable build metadata for a small service.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "scripts/release.sh",
+    "release/",
+    "tests/"
+   ],
+   "tasks": [
+    "Generate checksums, metadata, signed attestations in an optional local workflow."
+   ],
+   "failure_drill": {
+    "fault": "Inject checksum mismatch.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Deterministic checksum verification rejects altered artifact.",
+    "Provenance fields complete."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "ci-cd",
+    "security"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "security"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "delivery"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "3.08 Release provenance: produce verifiable build metadata for a small service.",
+    "terminal_work_and_failure_drill": "Generate checksums, metadata, signed attestations in an optional local workflow; inject checksum mismatch.",
+    "starter_files": "`scripts/release.sh`, `release/`, `tests/`",
+    "validator_and_acceptance": "Deterministic checksum verification rejects altered artifact; provenance fields complete."
+   }
+  }
+ ]
+}

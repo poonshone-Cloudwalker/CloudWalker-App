@@ -1,0 +1,576 @@
+{
+ "document": "content-src/bootcamp/Cloud_Architect_Operator_Bootcamp.md",
+ "generated_by": "tools/bootcamp-extract.js",
+ "level": 6,
+ "labs": [
+  {
+   "id": "6.01",
+   "slug": "requirements-discovery",
+   "level": 6,
+   "level_title": "Architect deliberately",
+   "title": "Requirements discovery",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/06-architecture-decisions/labs/01-requirements-discovery",
+   "dir_source": "derived-from-title",
+   "scenario": "Product brief omits latency and data residency.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "brief/",
+    "docs/requirements.md",
+    "tests/"
+   ],
+   "tasks": [
+    "Convert synthetic interview notes into measurable NFRs and assumptions."
+   ],
+   "failure_drill": {
+    "fault": "Inject conflicting stakeholder statement.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Schema/checklist validates units, owner, measurement method, unresolved assumptions."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "architecture",
+    "communication"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "case-study"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "architecture"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "6.01 Requirements discovery: product brief omits latency and data residency.",
+    "terminal_work_and_failure_drill": "Convert synthetic interview notes into measurable NFRs and assumptions; inject conflicting stakeholder statement.",
+    "starter_files": "`brief/`, `docs/requirements.md`, `tests/`",
+    "validator_and_acceptance": "Schema/checklist validates units, owner, measurement method, unresolved assumptions."
+   }
+  },
+  {
+   "id": "6.02",
+   "slug": "options-analysis",
+   "level": 6,
+   "level_title": "Architect deliberately",
+   "title": "Options analysis",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/06-architecture-decisions/labs/02-options-analysis",
+   "dir_source": "derived-from-title",
+   "scenario": "Choose managed database vs self-managed under staffing limit.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "data/options.json",
+    "src/decision.py",
+    "tests/"
+   ],
+   "tasks": [
+    "Build weighted decision model with sensitivity analysis."
+   ],
+   "failure_drill": {
+    "fault": "Inject changed workload assumption.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Ranking reproducible.",
+    "Sensitivity output shows when recommendation changes.",
+    "ADR present."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "architecture"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "case-study"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "architecture"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "6.02 Options analysis: choose managed database vs self-managed under staffing limit.",
+    "terminal_work_and_failure_drill": "Build weighted decision model with sensitivity analysis; inject changed workload assumption.",
+    "starter_files": "`data/options.json`, `src/decision.py`, `tests/`",
+    "validator_and_acceptance": "Ranking reproducible; sensitivity output shows when recommendation changes; ADR present."
+   }
+  },
+  {
+   "id": "6.03",
+   "slug": "resilience-topology",
+   "level": 6,
+   "level_title": "Architect deliberately",
+   "title": "Resilience topology",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/06-architecture-decisions/labs/03-resilience-topology",
+   "dir_source": "derived-from-title",
+   "scenario": "Service must survive one AZ failure within stated RTO.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "architecture/",
+    "src/failure_model.py",
+    "tests/"
+   ],
+   "tasks": [
+    "Model dependency graph and failure domains."
+   ],
+   "failure_drill": {
+    "fault": "Inject shared single point of failure.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Failure test identifies blast radius and checks RTO assumptions."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "architecture",
+    "reliability"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "case-study"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "reliability",
+    "architecture"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "6.03 Resilience topology: service must survive one AZ failure within stated RTO.",
+    "terminal_work_and_failure_drill": "Model dependency graph and failure domains; inject shared single point of failure.",
+    "starter_files": "`architecture/`, `src/failure_model.py`, `tests/`",
+    "validator_and_acceptance": "Failure test identifies blast radius and checks RTO assumptions."
+   }
+  },
+  {
+   "id": "6.04",
+   "slug": "migration-waves",
+   "level": 6,
+   "level_title": "Architect deliberately",
+   "title": "Migration waves",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/06-architecture-decisions/labs/04-migration-waves",
+   "dir_source": "derived-from-title",
+   "scenario": "Legacy service has undocumented dependencies.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "data/dependencies.csv",
+    "src/waves.py",
+    "tests/"
+   ],
+   "tasks": [
+    "Parse synthetic dependency inventory, group waves, identify rollback checkpoints."
+   ],
+   "failure_drill": {
+    "fault": "Inject missing owner.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Every component mapped to wave/owner/rollback.",
+    "Unknowns explicitly blocked."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "migration",
+    "architecture"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "case-study"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "architecture"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "6.04 Migration waves: legacy service has undocumented dependencies.",
+    "terminal_work_and_failure_drill": "Parse synthetic dependency inventory, group waves, identify rollback checkpoints; inject missing owner.",
+    "starter_files": "`data/dependencies.csv`, `src/waves.py`, `tests/`",
+    "validator_and_acceptance": "Every component mapped to wave/owner/rollback; unknowns explicitly blocked."
+   }
+  },
+  {
+   "id": "6.05",
+   "slug": "data-migration",
+   "level": 6,
+   "level_title": "Architect deliberately",
+   "title": "Data migration",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/06-architecture-decisions/labs/05-data-migration",
+   "dir_source": "derived-from-title",
+   "scenario": "Cutover requires integrity and bounded downtime.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "scripts/reconcile.py",
+    "docs/cutover.md",
+    "tests/"
+   ],
+   "tasks": [
+    "Write checksum/reconciliation and dual-run plan."
+   ],
+   "failure_drill": {
+    "fault": "Inject row mismatch.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Test catches mismatch.",
+    "Go/no-go criteria and rollback trigger are explicit."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "migration",
+    "data"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "case-study",
+    "operations"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "data"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "6.05 Data migration: cutover requires integrity and bounded downtime.",
+    "terminal_work_and_failure_drill": "Write checksum/reconciliation and dual-run plan; inject row mismatch.",
+    "starter_files": "`scripts/reconcile.py`, `docs/cutover.md`, `tests/`",
+    "validator_and_acceptance": "Test catches mismatch; go/no-go criteria and rollback trigger are explicit."
+   }
+  },
+  {
+   "id": "6.06",
+   "slug": "adr-quality",
+   "level": 6,
+   "level_title": "Architect deliberately",
+   "title": "ADR quality",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/06-architecture-decisions/labs/06-adr-quality",
+   "dir_source": "derived-from-title",
+   "scenario": "A prior decision lacks alternatives and consequences.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "docs/adr/",
+    "scripts/adr_lint.py",
+    "tests/"
+   ],
+   "tasks": [
+    "Lint ADR front matter/content.",
+    "Revise one decision with evidence and revisit trigger."
+   ],
+   "failure_drill": {
+    "fault": null,
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Linter rejects missing fields.",
+    "ADR distinguishes fact, assumption, and judgment."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "architecture",
+    "communication"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "case-study"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "architecture"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "6.06 ADR quality: a prior decision lacks alternatives and consequences.",
+    "terminal_work_and_failure_drill": "Lint ADR front matter/content; revise one decision with evidence and revisit trigger.",
+    "starter_files": "`docs/adr/`, `scripts/adr_lint.py`, `tests/`",
+    "validator_and_acceptance": "Linter rejects missing fields; ADR distinguishes fact, assumption, and judgment."
+   }
+  },
+  {
+   "id": "6.07",
+   "slug": "capacity-design",
+   "level": 6,
+   "level_title": "Architect deliberately",
+   "title": "Capacity design",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/06-architecture-decisions/labs/07-capacity-design",
+   "dir_source": "derived-from-title",
+   "scenario": "Peak event increases load 5x (exercise-defined synthetic factor).",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "src/capacity.py",
+    "data/load.csv",
+    "tests/"
+   ],
+   "tasks": [
+    "Model stateless/stateful bottlenecks and queueing."
+   ],
+   "failure_drill": {
+    "fault": "Inject dependency latency.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Tests assert constraints and reveal bottleneck.",
+    "Assumptions clearly stated."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "architecture",
+    "reliability"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "case-study"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "architecture"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "6.07 Capacity design: peak event increases load 5x (exercise-defined synthetic factor).",
+    "terminal_work_and_failure_drill": "Model stateless/stateful bottlenecks and queueing; inject dependency latency.",
+    "starter_files": "`src/capacity.py`, `data/load.csv`, `tests/`",
+    "validator_and_acceptance": "Tests assert constraints and reveal bottleneck; assumptions clearly stated."
+   }
+  },
+  {
+   "id": "6.08",
+   "slug": "architecture-review",
+   "level": 6,
+   "level_title": "Architect deliberately",
+   "title": "Architecture review",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/06-architecture-decisions/labs/08-architecture-review",
+   "dir_source": "derived-from-title",
+   "scenario": "Proposed diagram hides identity and failure paths.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "diagrams/",
+    "docs/review.md",
+    "tests/"
+   ],
+   "tasks": [
+    "Validate diagram source/annotations and run architecture fitness checks."
+   ],
+   "failure_drill": {
+    "fault": "Inject missing trust boundary.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Checklist requires flows, trust zones, dependencies, failure domains, owners, and tradeoffs."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "architecture",
+    "security",
+    "communication"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "case-study"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "architecture"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "6.08 Architecture review: proposed diagram hides identity and failure paths.",
+    "terminal_work_and_failure_drill": "Validate diagram source/annotations and run architecture fitness checks; inject missing trust boundary.",
+    "starter_files": "`diagrams/`, `docs/review.md`, `tests/`",
+    "validator_and_acceptance": "Checklist requires flows, trust zones, dependencies, failure domains, owners, and tradeoffs."
+   }
+  }
+ ]
+}

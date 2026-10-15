@@ -1,0 +1,300 @@
+{
+ "document": "content-src/bootcamp/Cloud_Architect_Operator_Bootcamp.md",
+ "generated_by": "tools/bootcamp-extract.js",
+ "levels": [
+  {
+   "level": 1,
+   "title": "Operator foundations",
+   "catalog_title": "Operator foundations",
+   "outcome": "Diagnose a host/network path, automate a repeatable local task, and explain evidence",
+   "main_tools": [
+    "Bash",
+    "Linux",
+    "dig",
+    "curl",
+    "OpenSSL",
+    "Git",
+    "Python",
+    "SQLite/SQL"
+   ],
+   "promotion_evidence": [
+    "Reproducible CLI repo",
+    "tested parser",
+    "DNS/HTTP/TLS diagnostic report"
+   ],
+   "dir": "levels/01-operator-foundations",
+   "lab_ids": [
+    "1.01",
+    "1.02",
+    "1.03",
+    "1.04",
+    "1.05",
+    "1.06",
+    "1.07",
+    "1.08"
+   ],
+   "exemplar_id": "E1",
+   "exemplar_title": "DNS and TLS diagnostic CLI",
+   "lab_brief_count": 8
+  },
+  {
+   "level": 2,
+   "title": "AWS foundations",
+   "catalog_title": "AWS foundations and CLI operations",
+   "outcome": "Navigate account/region/identity safely and perform read-only then disposable AWS operations",
+   "main_tools": [
+    "AWS CLI",
+    "IAM",
+    "CloudTrail concepts",
+    "S3",
+    "VPC primitives"
+   ],
+   "promotion_evidence": [
+    "Account preflight",
+    "least-privilege policy",
+    "resource inventory",
+    "teardown proof"
+   ],
+   "dir": "levels/02-aws-foundations",
+   "lab_ids": [
+    "2.01",
+    "2.02",
+    "2.03",
+    "2.04",
+    "2.05",
+    "2.06",
+    "2.07",
+    "2.08"
+   ],
+   "exemplar_id": "E2",
+   "exemplar_title": "Safe AWS S3 inventory (read-only)",
+   "lab_brief_count": 8
+  },
+  {
+   "level": 3,
+   "title": "Repeatable delivery",
+   "catalog_title": "Terraform, CI/CD, containers, repeatable delivery",
+   "outcome": "Build and promote an artifact through tested CI, Terraform, and containers",
+   "main_tools": [
+    "Terraform",
+    "Git",
+    "Docker",
+    "CI",
+    "AWS"
+   ],
+   "promotion_evidence": [
+    "Plan review",
+    "immutable image",
+    "pipeline tests",
+    "rollback path"
+   ],
+   "dir": "levels/03-repeatable-delivery",
+   "lab_ids": [
+    "3.01",
+    "3.02",
+    "3.03",
+    "3.04",
+    "3.05",
+    "3.06",
+    "3.07",
+    "3.08"
+   ],
+   "exemplar_id": "E3",
+   "exemplar_title": "Container to repeatable delivery pipeline",
+   "lab_brief_count": 8
+  },
+  {
+   "level": 4,
+   "title": "Operate and recover",
+   "catalog_title": "Observability, SRE, incidents, backup, DR, FinOps",
+   "outcome": "Set useful service objectives, detect faults, restore data, and explain cost",
+   "main_tools": [
+    "CloudWatch/CLI",
+    "SRE methods",
+    "backups",
+    "DR",
+    "FinOps"
+   ],
+   "promotion_evidence": [
+    "SLO/alert pack",
+    "incident timeline",
+    "restore evidence",
+    "cost report"
+   ],
+   "dir": "levels/04-reliability-operations",
+   "lab_ids": [
+    "4.01",
+    "4.02",
+    "4.03",
+    "4.04",
+    "4.05",
+    "4.06",
+    "4.07",
+    "4.08"
+   ],
+   "exemplar_id": "E4",
+   "exemplar_title": "SLO and failure drill with synthetic telemetry",
+   "lab_brief_count": 8
+  },
+  {
+   "level": 5,
+   "title": "Secure the system",
+   "catalog_title": "Cloud security engineering",
+   "outcome": "Apply identity, encryption, secrets, segmentation, detection, and governance controls",
+   "main_tools": [
+    "IAM",
+    "KMS",
+    "Secrets Manager",
+    "VPC",
+    "AWS Config/CloudTrail concepts"
+   ],
+   "promotion_evidence": [
+    "Threat model",
+    "negative tests",
+    "detection evidence",
+    "remediation record"
+   ],
+   "dir": "levels/05-cloud-security",
+   "lab_ids": [
+    "5.01",
+    "5.02",
+    "5.03",
+    "5.04",
+    "5.05",
+    "5.06",
+    "5.07",
+    "5.08"
+   ],
+   "exemplar_id": "E5",
+   "exemplar_title": "Least-privilege S3 data path",
+   "lab_brief_count": 8
+  },
+  {
+   "level": 6,
+   "title": "Architect deliberately",
+   "catalog_title": "Architecture requirements, tradeoffs, resilience, migration, ADRs",
+   "outcome": "Turn requirements into documented, tested tradeoffs and migration plans",
+   "main_tools": [
+    "C4/diagrams-as-code",
+    "Terraform",
+    "ADRs",
+    "load/failure tests"
+   ],
+   "promotion_evidence": [
+    "Options analysis",
+    "architecture tests",
+    "migration/rollback plan"
+   ],
+   "dir": "levels/06-architecture-decisions",
+   "lab_ids": [
+    "6.01",
+    "6.02",
+    "6.03",
+    "6.04",
+    "6.05",
+    "6.06",
+    "6.07",
+    "6.08"
+   ],
+   "exemplar_id": "E6",
+   "exemplar_title": "Resilient service architecture decision",
+   "lab_brief_count": 8
+  },
+  {
+   "level": 7,
+   "title": "Build a platform",
+   "catalog_title": "Platform engineering",
+   "outcome": "Offer safe, paved paths with policy guardrails and self-service evidence",
+   "main_tools": [
+    "Terraform modules",
+    "OPA/Conftest or Checkov",
+    "CI",
+    "AWS"
+   ],
+   "promotion_evidence": [
+    "Versioned golden path",
+    "policy tests",
+    "developer docs",
+    "exception workflow"
+   ],
+   "dir": "levels/07-platform-engineering",
+   "lab_ids": [
+    "7.01",
+    "7.02",
+    "7.03",
+    "7.04",
+    "7.05",
+    "7.06",
+    "7.07",
+    "7.08"
+   ],
+   "exemplar_id": "E7",
+   "exemplar_title": "Guardrailed golden path",
+   "lab_brief_count": 8
+  },
+  {
+   "level": 8,
+   "title": "Compare providers",
+   "catalog_title": "Google Cloud, Azure, multi-cloud, hybrid, vendor strategy",
+   "outcome": "Map equivalent primitives and design hybrid/multi-cloud deliberately",
+   "main_tools": [
+    "Terraform",
+    "gcloud",
+    "Azure CLI",
+    "AWS CLI"
+   ],
+   "promotion_evidence": [
+    "Capability matrix",
+    "identity/network mapping",
+    "provider-specific lab evidence"
+   ],
+   "dir": "levels/08-clouds-hybrid",
+   "lab_ids": [
+    "8.01",
+    "8.02",
+    "8.03",
+    "8.04",
+    "8.05",
+    "8.06",
+    "8.07",
+    "8.08"
+   ],
+   "exemplar_id": "E8",
+   "exemplar_title": "Provider capability and hybrid decision map",
+   "lab_brief_count": 8
+  },
+  {
+   "level": 9,
+   "title": "Lead architecture",
+   "catalog_title": "Architecture leadership",
+   "outcome": "Facilitate decisions, reviews, incidents, and executive communication",
+   "main_tools": [
+    "Git",
+    "docs",
+    "diagrams",
+    "tabletop scripts",
+    "evidence-based review"
+   ],
+   "promotion_evidence": [
+    "Architecture review pack",
+    "executive brief",
+    "coaching plan",
+    "crisis simulation"
+   ],
+   "dir": "levels/09-architecture-leadership",
+   "lab_ids": [
+    "9.01",
+    "9.02",
+    "9.03",
+    "9.04",
+    "9.05",
+    "9.06",
+    "9.07",
+    "9.08"
+   ],
+   "exemplar_id": "E9",
+   "exemplar_title": "Design review and crisis response",
+   "lab_brief_count": 8
+  }
+ ]
+}

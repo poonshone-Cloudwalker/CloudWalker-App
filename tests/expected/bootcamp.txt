@@ -1,0 +1,48 @@
+1 single file: 1 html file | external scripts: 0 | bootcamp documents embedded: 14 | lab ids embedded: 81
+  nav: after "Architecture lab" comes "Bootcamp"
+2 dashboard: labs 81 | passed 0 | exemplars 0 / 9 | next: 1.01 · Linux process triage
+  library: levels 9 | rows per level (all/exemplar): 9/1 9/1 9/1 9/1 9/1 9/1 9/1 9/1 9/1 | Showing 81 of 81 labs.
+  level 2 card: Level 2AWS foundations0 of 9 passed | Outcome: Navigate account/region/identity safely and perform read-only then disposable AWS operations. | Main tools: | Promotion evidence: Account preflight; least-privilege policy; resource inventory; teardown proof. | 8 lab briefs · Exemplar: Safe AWS S3 inventory (read-only) · levels/02-aws-foundations/ | tools: AWS CLI, IAM, CloudTrail concepts, S3, VPC primitives
+  filters: kind=exemplar: 9 of 81, kind=lab: 72 of 81, kind=all: 81 of 81, cloud=local-only: 62 of 81, cloud=optional-cloud: 19 of 81, cloud=all: 81 of 81, vendor=aws: 24 of 81, vendor=gcp: 5 of 81, vendor=azure: 4 of 81, vendor=multi-cloud: 5 of 81, vendor=local: 56 of 81, vendor=all: 81 of 81, domain=security: 25 of 81, domain=all: 81 of 81, portfolio=leadership: 9 of 81 | focus stays on chip: leadership
+3 exemplar E1: EXEMPLAR 1 · ID E1 | DNS and TLS diagnostic CLI | chips: Exemplar · level gate, Local only, Not started | starter tree shown: 1 | deliverables: 6
+  brief 1.04: LAB 1.04 | DNS investigation | chips: Local only, Not started | starter tree shown: 0 | contract fallback for deliverables: 1
+  sections: Scenario and constraints / Prerequisites and safety / Starter files / Tasks (terminal-first) / Failure drill / Deliverables / Validation and acceptance / Cost controls and cleanup / Portfolio value / Related certifications / Related quiz domains / As written in the curriculum
+  failure drill: Fault named in the brief: Inject NXDOMAIN/stale-answer fixture.
+4 status by keyboard: In progress | focus on bc-status-in-progress | started date set: true
+  gate with cost 0: Suggested gate: not met yet · score 19 / 28 |  | ✓ All seven dimensions scored | ○ Total 19 of 28 (needs 20 or more) | ○ 0 in cost
+  gate after cost 3 and validation ticked: Suggested gate: met · score 22 / 28 | evidence count: 1 of 11 | focus on bc-ev-validation
+  typing keeps focus: bc-f-reviewer_notes
+  after passing: Passed | gate: Suggested gate: met · score 22 / 28 | evidence 8 of 11 | portfolio: Portfolio-ready | completed date set: true
+  dashboard passed/in progress/blocked: 1/0/1 | incomplete: 2.03 · IAM policy review Blocked | portfolio-ready: 1.04 · DNS investigation
+  averages: Correctness 4.0 / 4 · 1 lab; Security 3.0 / 4 · 1 lab; Resilience 3.0 / 4 · 1 lab; Operational quality 3.0 / 4 · 1 lab; Cost 3.0 / 4 · 1 lab; Automation 3.0 / 4 · 1 lab; Communication 3.0 / 4 · 1 lab
+  activity: Status: Blocked / Portfolio: Portfolio-ready / Status: Passed / Confidence updated
+  after restart: Passed | make validate | Parser covers A, AAAA, CNAME, TXT, <b>NXDOMAIN</b>. | cleanup true | evidence 8 of 11
+5 tracker row 1.04: 1.04 DNS investigation Passed 22 Met 8 / 11 Verified Portfolio-ready
+  export: cloudwalker-bootcamp-<stamp>.json | format cloudwalker-bootcamp-progress v1 | labs saved 1.04,2.03 | 1.04: passed 22/28 portfolio-ready portfolio_ready=true cleanup=true evidence 8 | has timestamps: true
+  tracker.csv: tracker.csv | rows 81 | header matches the curriculum
+  csv 1.04: 1,04-dns-investigation,passed,<date>,<date>,4,3,3,3,3,3,3,make validate,levels/01-operator-foundations/labs/04-dns-investigation,true,"Parser covers A, AAAA, CNAME, TXT, <b>NXDOMAIN</b>." | csv E1: 1,exemplar/01-dns-tls-diagnostics,not-started,,,,,,,,,,,,,
+6 import on a new device: Imported: 2 new lab records, 0 updated, 0 kept because the copy here is newer or the same.
+  1.04 here: Passed | Parser covers A, AAAA, CNAME, TXT, <b>NXDOMAIN</b>. | portfolio Portfolio-ready | notes escaped: true
+  merge: Imported: 2 new lab records, 1 updated, 1 kept because the copy here is newer or the same. 1 record is for labs this version does not know; it is kept. 2 skipped because they were malformed: |  | 4.01 has an unknown status "done" | 4.02 has score_cost outside 0–4
+  1.04 kept (local newer): 1.04 DNS investigation Passed 22 Met 8 / 11 Verified Portfolio-ready
+  2.03 taken (import newer): 2.03 IAM policy review Passed 4 (1/7) Not yet 0 / 11 No –
+7 not JSON: That file is not valid JSON, so nothing was imported.
+7 wrong format: Expected a bootcamp progress file (format "cloudwalker-bootcamp-progress") or a workspace file. This file's format is "blueprint-progress", so nothing was imported.
+7 newer version: The file was made by a newer version of CloudWalker (format version 9). Update the app, then import it again.
+7 labs is a list: The bootcamp section of the file is malformed ("labs" must be an object keyed by lab id), so nothing was imported.
+  nothing changed: 1.04 Passed
+  workspace export from Settings: cloudwalker-workspace | bootcamp labs inside: 1.04,10.01,2.03,3.01 | unknown fields kept: {"kept":true} {"from":"newer app"}
+9 weak areas: SAA-C03 · Design Secure Architectures 0% over 4 answers
+  topics: Topics: Identity and access, Security engineering, Architecture and design | first labs: 2.01 · Identity and account preflight, 5.01 · IAM least privilege, 5.06 · Governance guardrail, Exemplar 5 · Least-privilege S3 data path
+  focus topics from import: Networking and DNS
+  after picking Identity and access: Identity and access,Networking and DNS | focus on bc-focus-iam | groups [ 'Networking and DNS', 'Identity and access' ]
+  dashboard suggestions: 2.01 · Identity and account preflight, 5.01 · IAM least privilege, 5.06 · Governance guardrail
+  5.07 related certifications: SY0-701, CDL, ACE, PCA, SAA-C03 | weak areas it practises: 1
+  2.03 (AWS-only) related certifications: SAA-C03
+10 phone overflow on six pages: 0,0,0,0,0,0
+  workspace import on device A: 2.03 Passed (was Blocked; the import is newer) | 1.04 Passed | 3.01 In progress
+8 invalid JSON: build stopped: src/content/bootcamp/bootcamp-labs-level-03.json: invalid JSON (Unexpected token ',', ..." "labs": [,
+  bad structure: alert 1 | bootcamp-labs-level-03.json: lab 3.01 appears twice. / bootcamp-labs-level-03.json: lab 3.05 has no title. / bootcamp-levels.json: level 3 lists 3.03, which is not in the lab files. / bootcamp-cert-mapping.json: topic delivery lists 3.03, which is not a lab. | console reported it: true
+  rest of the app still works: Study
+  no network requests while using the Bootcamp: none
+errors: none

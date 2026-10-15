@@ -22,7 +22,7 @@ const out = read(M.head) + css + read(M.body) + bank + '<script>\n' + js + '</sc
 try { new Function(js); } catch (e) { errs.push(`app script does not compile: ${e.message}`); }
 for (const [name, text] of [['css', css], ['js', js]]) { const m = text.match(/\\u[0-9a-fA-F]{4}/); if (m) errs.push(`${name} contains a \\uXXXX escape near "${text.slice(Math.max(0, m.index - 30), m.index + 10)}"`); }
 const seen = new Set(); for (const p of [...M.css, ...M.js.map(p => p.json || p)]) { if (seen.has(p)) errs.push(`manifest lists ${p} twice`); seen.add(p); }
-for (const dir of ['css', 'js/core', 'js/features']) { const d = path.join(SRC, dir); if (fs.existsSync(d)) for (const f of fs.readdirSync(d)) if (!seen.has(`${dir}/${f}`)) errs.push(`src/${dir}/${f} is not in manifest.json, so it would be left out`); }
+for (const dir of ['css', 'js/core', 'js/features', 'content/bootcamp']) { const d = path.join(SRC, dir); if (fs.existsSync(d)) for (const f of fs.readdirSync(d)) if (!seen.has(`${dir}/${f}`)) errs.push(`src/${dir}/${f} is not in manifest.json, so it would be left out`); }
 if (errs.length) { console.error('Build failed:\n  ' + errs.join('\n  ')); process.exit(1); }
 
 const dest = path.resolve(arg('--out') || path.join(ROOT, M.output)); fs.mkdirSync(path.dirname(dest), { recursive: true }); fs.writeFileSync(dest, out);

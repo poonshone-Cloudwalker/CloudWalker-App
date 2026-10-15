@@ -1,0 +1,578 @@
+{
+ "document": "content-src/bootcamp/Cloud_Architect_Operator_Bootcamp.md",
+ "generated_by": "tools/bootcamp-extract.js",
+ "level": 2,
+ "labs": [
+  {
+   "id": "2.01",
+   "slug": "identity-and-account-preflight",
+   "level": 2,
+   "level_title": "AWS foundations",
+   "title": "Identity and account preflight",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/02-aws-foundations/labs/01-identity-and-account-preflight",
+   "dir_source": "derived-from-title",
+   "scenario": "Contractor must prove account/role/region before any write.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "scripts/preflight.sh",
+    "config/regions.txt",
+    "tests/test_preflight.py"
+   ],
+   "tasks": [
+    "AWS CLI STS identity, region checks, allowlist."
+   ],
+   "failure_drill": {
+    "fault": "Inject wrong profile/region.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Stub CLI JSON.",
+    "Wrong identity/region fails closed.",
+    "No write API called."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "optional-cloud",
+   "vendors": [
+    "aws"
+   ],
+   "domains": [
+    "iam",
+    "security"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "security"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "iam"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "2.01 Identity and account preflight: contractor must prove account/role/region before any write.",
+    "terminal_work_and_failure_drill": "AWS CLI STS identity, region checks, allowlist; inject wrong profile/region.",
+    "starter_files": "`scripts/preflight.sh`, `config/regions.txt`, `tests/test_preflight.py`",
+    "validator_and_acceptance": "Stub CLI JSON; wrong identity/region fails closed; no write API called."
+   }
+  },
+  {
+   "id": "2.02",
+   "slug": "s3-inventory",
+   "level": 2,
+   "level_title": "AWS foundations",
+   "title": "S3 inventory",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/02-aws-foundations/labs/02-s3-inventory",
+   "dir_source": "derived-from-title",
+   "scenario": "Audit a designated sandbox bucket without reading object bodies.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "scripts/s3_audit.py",
+    "fixtures/s3-*.json",
+    "tests/test_s3_audit.py"
+   ],
+   "tasks": [
+    "CLI list, classify public/encryption/versioning metadata."
+   ],
+   "failure_drill": {
+    "fault": "Simulate access denied.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Fixture tests identify missing controls.",
+    "Command is read-only.",
+    "Report omits object data."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "optional-cloud",
+   "vendors": [
+    "aws"
+   ],
+   "domains": [
+    "data",
+    "security"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "security"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "data"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "2.02 S3 inventory: audit a designated sandbox bucket without reading object bodies.",
+    "terminal_work_and_failure_drill": "CLI list, classify public/encryption/versioning metadata; simulate access denied.",
+    "starter_files": "`scripts/s3_audit.py`, `fixtures/s3-*.json`, `tests/test_s3_audit.py`",
+    "validator_and_acceptance": "Fixture tests identify missing controls; command is read-only; report omits object data."
+   }
+  },
+  {
+   "id": "2.03",
+   "slug": "iam-policy-review",
+   "level": 2,
+   "level_title": "AWS foundations",
+   "title": "IAM policy review",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/02-aws-foundations/labs/03-iam-policy-review",
+   "dir_source": "derived-from-title",
+   "scenario": "A report role has excessive actions.",
+   "constraints": "No policy attachment changes.",
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "policies/role.json",
+    "scripts/iam_review.py",
+    "tests/test_iam_review.py"
+   ],
+   "tasks": [
+    "Parse policy JSON, enumerate wildcard/resource scope, run IAM Access Analyzer only if available."
+   ],
+   "failure_drill": {
+    "fault": null,
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Deterministic policy fixtures flag `*`.",
+    "Remediation policy narrows actions/resources."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "optional-cloud",
+   "vendors": [
+    "aws"
+   ],
+   "domains": [
+    "iam",
+    "security"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "security"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "iam"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "2.03 IAM policy review: a report role has excessive actions; no policy attachment changes.",
+    "terminal_work_and_failure_drill": "Parse policy JSON, enumerate wildcard/resource scope, run IAM Access Analyzer only if available.",
+    "starter_files": "`policies/role.json`, `scripts/iam_review.py`, `tests/test_iam_review.py`",
+    "validator_and_acceptance": "Deterministic policy fixtures flag `*`; remediation policy narrows actions/resources."
+   }
+  },
+  {
+   "id": "2.04",
+   "slug": "vpc-route-reasoning",
+   "level": 2,
+   "level_title": "AWS foundations",
+   "title": "VPC route reasoning",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/02-aws-foundations/labs/04-vpc-route-reasoning",
+   "dir_source": "derived-from-title",
+   "scenario": "App subnet cannot reach a private dependency.",
+   "constraints": "No public exposure.",
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "fixtures/network.json",
+    "src/route_trace.py",
+    "tests/test_routes.py"
+   ],
+   "tasks": [
+    "Inspect VPC/subnet/route JSON.",
+    "Build route graph and trace simulated paths."
+   ],
+   "failure_drill": {
+    "fault": null,
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Unit graph tests classify reachable/unreachable.",
+    "No AWS mutation in validation."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "optional-cloud",
+   "vendors": [
+    "aws"
+   ],
+   "domains": [
+    "networking"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "repository"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "networking"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "2.04 VPC route reasoning: app subnet cannot reach a private dependency; no public exposure.",
+    "terminal_work_and_failure_drill": "Inspect VPC/subnet/route JSON; build route graph and trace simulated paths.",
+    "starter_files": "`fixtures/network.json`, `src/route_trace.py`, `tests/test_routes.py`",
+    "validator_and_acceptance": "Unit graph tests classify reachable/unreachable; no AWS mutation in validation."
+   }
+  },
+  {
+   "id": "2.05",
+   "slug": "cloudtrail-evidence",
+   "level": 2,
+   "level_title": "AWS foundations",
+   "title": "CloudTrail evidence",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/02-aws-foundations/labs/05-cloudtrail-evidence",
+   "dir_source": "derived-from-title",
+   "scenario": "Answer who changed a synthetic resource in a time window.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "scripts/change_timeline.py",
+    "fixtures/events.json",
+    "tests/test_timeline.py"
+   ],
+   "tasks": [
+    "AWS CLI lookup-events or fixture mode."
+   ],
+   "failure_drill": {
+    "fault": "Inject empty/late event data.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Stable event ordering/time-window filters and empty-result handling pass."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "optional-cloud",
+   "vendors": [
+    "aws"
+   ],
+   "domains": [
+    "security",
+    "observability",
+    "incident"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "security",
+    "operations"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [],
+   "source_row": {
+    "scenario_and_constraints": "2.05 CloudTrail evidence: answer who changed a synthetic resource in a time window.",
+    "terminal_work_and_failure_drill": "AWS CLI lookup-events or fixture mode; inject empty/late event data.",
+    "starter_files": "`scripts/change_timeline.py`, `fixtures/events.json`, `tests/test_timeline.py`",
+    "validator_and_acceptance": "Stable event ordering/time-window filters and empty-result handling pass."
+   }
+  },
+  {
+   "id": "2.06",
+   "slug": "cli-pagination",
+   "level": 2,
+   "level_title": "AWS foundations",
+   "title": "CLI pagination",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/02-aws-foundations/labs/06-cli-pagination",
+   "dir_source": "derived-from-title",
+   "scenario": "Inventory resources beyond first page in a sandbox account.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "scripts/inventory.py",
+    "fixtures/pages/",
+    "tests/test_inventory.py"
+   ],
+   "tasks": [
+    "Use paginators/output JSON."
+   ],
+   "failure_drill": {
+    "fault": "Inject repeated token/partial page fixture.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Fixture verifies all pages, deduplication, and loop guard."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "optional-cloud",
+   "vendors": [
+    "aws"
+   ],
+   "domains": [
+    "automation"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "repository"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "cost"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "2.06 CLI pagination: inventory resources beyond first page in a sandbox account.",
+    "terminal_work_and_failure_drill": "Use paginators/output JSON; inject repeated token/partial page fixture.",
+    "starter_files": "`scripts/inventory.py`, `fixtures/pages/`, `tests/test_inventory.py`",
+    "validator_and_acceptance": "Fixture verifies all pages, deduplication, and loop guard."
+   }
+  },
+  {
+   "id": "2.07",
+   "slug": "tag-policy",
+   "level": 2,
+   "level_title": "AWS foundations",
+   "title": "Tag policy",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/02-aws-foundations/labs/07-tag-policy",
+   "dir_source": "derived-from-title",
+   "scenario": "Cost report cannot attribute untagged resources.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "config/required-tags.json",
+    "scripts/tag_audit.py",
+    "tests/test_tags.py"
+   ],
+   "tasks": [
+    "Enumerate chosen resource types.",
+    "Emit CSV."
+   ],
+   "failure_drill": {
+    "fault": "Inject missing/invalid tags.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Test fixtures report missing keys and stable CSV.",
+    "Do not mutate tags."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "optional-cloud",
+   "vendors": [
+    "aws"
+   ],
+   "domains": [
+    "finops",
+    "governance"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "repository"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "governance",
+    "cost"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "2.07 Tag policy: cost report cannot attribute untagged resources.",
+    "terminal_work_and_failure_drill": "Enumerate chosen resource types; emit CSV; inject missing/invalid tags.",
+    "starter_files": "`config/required-tags.json`, `scripts/tag_audit.py`, `tests/test_tags.py`",
+    "validator_and_acceptance": "Test fixtures report missing keys and stable CSV; do not mutate tags."
+   }
+  },
+  {
+   "id": "2.08",
+   "slug": "safe-s3-lifecycle",
+   "level": 2,
+   "level_title": "AWS foundations",
+   "title": "Safe S3 lifecycle",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/02-aws-foundations/labs/08-safe-s3-lifecycle",
+   "dir_source": "derived-from-title",
+   "scenario": "Synthetic archive objects need retention and deletion policy.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "infra/",
+    "scripts/check_bucket.py",
+    "tests/test_bucket_policy.py"
+   ],
+   "tasks": [
+    "Use a disposable bucket only in optional integration mode.",
+    "Inspect lifecycle/versioning."
+   ],
+   "failure_drill": {
+    "fault": "Inject policy mismatch.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Static policy tests enforce encryption, block-public-access and lifecycle.",
+    "Integration teardown verified."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "optional-cloud",
+   "vendors": [
+    "aws"
+   ],
+   "domains": [
+    "data",
+    "security",
+    "iac"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "security"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "data"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "2.08 Safe S3 lifecycle: synthetic archive objects need retention and deletion policy.",
+    "terminal_work_and_failure_drill": "Use a disposable bucket only in optional integration mode; inspect lifecycle/versioning; inject policy mismatch.",
+    "starter_files": "`infra/`, `scripts/check_bucket.py`, `tests/test_bucket_policy.py`",
+    "validator_and_acceptance": "Static policy tests enforce encryption, block-public-access and lifecycle; integration teardown verified."
+   }
+  }
+ ]
+}

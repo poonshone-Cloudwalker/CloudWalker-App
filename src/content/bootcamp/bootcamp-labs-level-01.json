@@ -1,0 +1,575 @@
+{
+ "document": "content-src/bootcamp/Cloud_Architect_Operator_Bootcamp.md",
+ "generated_by": "tools/bootcamp-extract.js",
+ "level": 1,
+ "labs": [
+  {
+   "id": "1.01",
+   "slug": "linux-process-triage",
+   "level": 1,
+   "level_title": "Operator foundations",
+   "title": "Linux process triage",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/01-operator-foundations/labs/01-linux-processes",
+   "dir_source": "document",
+   "scenario": "A local service is slow.",
+   "constraints": "No root access, synthetic logs only.",
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "scripts/triage.sh",
+    "fixtures/process.log",
+    "tests/test_triage.py"
+   ],
+   "tasks": [
+    "Use `ps`, `/proc`, `ss`, `journalctl` where available."
+   ],
+   "failure_drill": {
+    "fault": "Induce a CPU-bound test process and diagnose safely.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Assert required fields and exit codes on fixture.",
+    "Output identifies PID/state and next action."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "linux",
+    "diagnostics"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "repository",
+    "operations"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [],
+   "source_row": {
+    "scenario_and_constraints": "1.01 Linux process triage: a local service is slow; no root access, synthetic logs only.",
+    "terminal_work_and_failure_drill": "Use `ps`, `/proc`, `ss`, `journalctl` where available; induce a CPU-bound test process and diagnose safely.",
+    "starter_files": "`scripts/triage.sh`, `fixtures/process.log`, `tests/test_triage.py`",
+    "validator_and_acceptance": "Assert required fields and exit codes on fixture; output identifies PID/state and next action."
+   }
+  },
+  {
+   "id": "1.02",
+   "slug": "filesystem-and-permissions",
+   "level": 1,
+   "level_title": "Operator foundations",
+   "title": "Filesystem and permissions",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/01-operator-foundations/labs/02-filesystem-and-permissions",
+   "dir_source": "derived-from-title",
+   "scenario": "A batch job cannot read its input.",
+   "constraints": "Do not change global permissions.",
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "scripts/check_permissions.sh",
+    "fixtures/tree/",
+    "tests/test_permissions.py"
+   ],
+   "tasks": [
+    "Use `find`, `stat`, `chmod` in a temp tree."
+   ],
+   "failure_drill": {
+    "fault": "Inject owner/mode mismatch and restore least privilege.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Temp-dir tests detect expected denial and verify no world-writable files."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "linux",
+    "security"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "repository",
+    "security"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [],
+   "source_row": {
+    "scenario_and_constraints": "1.02 Filesystem and permissions: a batch job cannot read its input; do not change global permissions.",
+    "terminal_work_and_failure_drill": "Use `find`, `stat`, `chmod` in a temp tree; inject owner/mode mismatch and restore least privilege.",
+    "starter_files": "`scripts/check_permissions.sh`, `fixtures/tree/`, `tests/test_permissions.py`",
+    "validator_and_acceptance": "Temp-dir tests detect expected denial and verify no world-writable files."
+   }
+  },
+  {
+   "id": "1.03",
+   "slug": "network-path",
+   "level": 1,
+   "level_title": "Operator foundations",
+   "title": "Network path",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/01-operator-foundations/labs/03-network-path",
+   "dir_source": "derived-from-title",
+   "scenario": "An internal API times out.",
+   "constraints": "Only local or approved public targets.",
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "scripts/netcheck.sh",
+    "tests/test_netcheck.py"
+   ],
+   "tasks": [
+    "`ip`, `ss`, `curl`, `nc`/`timeout`."
+   ],
+   "failure_drill": {
+    "fault": "Inject closed-port and DNS-failure fixtures, distinguish layers.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Mock command outputs.",
+    "Classification and bounded timeout assertions pass."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "networking",
+    "diagnostics"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "repository"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "networking"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "1.03 Network path: an internal API times out; only local or approved public targets.",
+    "terminal_work_and_failure_drill": "`ip`, `ss`, `curl`, `nc`/`timeout`; inject closed-port and DNS-failure fixtures, distinguish layers.",
+    "starter_files": "`scripts/netcheck.sh`, `tests/test_netcheck.py`",
+    "validator_and_acceptance": "Mock command outputs; classification and bounded timeout assertions pass."
+   }
+  },
+  {
+   "id": "1.04",
+   "slug": "dns-investigation",
+   "level": 1,
+   "level_title": "Operator foundations",
+   "title": "DNS investigation",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/01-operator-foundations/labs/04-dns-investigation",
+   "dir_source": "derived-from-title",
+   "scenario": "A migration changed a record.",
+   "constraints": "Use a named test domain or local resolver.",
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "scripts/dns_report.py",
+    "fixtures/dig-*.txt",
+    "tests/test_dns_report.py"
+   ],
+   "tasks": [
+    "`dig`/`getent`, TTL and record parsing."
+   ],
+   "failure_drill": {
+    "fault": "Inject NXDOMAIN/stale-answer fixture.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Fixture-backed parser checks A/AAAA/CNAME/TXT and failure classification."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "networking",
+    "diagnostics"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "repository"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "networking"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "1.04 DNS investigation: a migration changed a record; use a named test domain or local resolver.",
+    "terminal_work_and_failure_drill": "`dig`/`getent`, TTL and record parsing; inject NXDOMAIN/stale-answer fixture.",
+    "starter_files": "`scripts/dns_report.py`, `fixtures/dig-*.txt`, `tests/test_dns_report.py`",
+    "validator_and_acceptance": "Fixture-backed parser checks A/AAAA/CNAME/TXT and failure classification."
+   }
+  },
+  {
+   "id": "1.05",
+   "slug": "http-tls-probe",
+   "level": 1,
+   "level_title": "Operator foundations",
+   "title": "HTTP/TLS probe",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/01-operator-foundations/labs/05-http-tls-probe",
+   "dir_source": "derived-from-title",
+   "scenario": "A client reports certificate errors.",
+   "constraints": "No credential collection.",
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "scripts/tls_probe.sh",
+    "fixtures/tls/",
+    "tests/test_tls_probe.py"
+   ],
+   "tasks": [
+    "`curl -v`, `openssl s_client`.",
+    "Inspect chain/expiry/hostname on controlled endpoint or fixtures."
+   ],
+   "failure_drill": {
+    "fault": null,
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Offline parser detects expiry/hostname/chain cases.",
+    "Output redacts sensitive headers."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "networking",
+    "security",
+    "diagnostics"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "repository",
+    "security"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "security"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "1.05 HTTP/TLS probe: a client reports certificate errors; no credential collection.",
+    "terminal_work_and_failure_drill": "`curl -v`, `openssl s_client`; inspect chain/expiry/hostname on controlled endpoint or fixtures.",
+    "starter_files": "`scripts/tls_probe.sh`, `fixtures/tls/`, `tests/test_tls_probe.py`",
+    "validator_and_acceptance": "Offline parser detects expiry/hostname/chain cases; output redacts sensitive headers."
+   }
+  },
+  {
+   "id": "1.06",
+   "slug": "git-recovery",
+   "level": 1,
+   "level_title": "Operator foundations",
+   "title": "Git recovery",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/01-operator-foundations/labs/06-git-recovery",
+   "dir_source": "derived-from-title",
+   "scenario": "A teammate committed an accidental secret-like dummy string.",
+   "constraints": "No real secret.",
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "scripts/secret_scan.py",
+    "fixtures/dummy-leak.txt",
+    ".git/hooks/"
+   ],
+   "tasks": [
+    "Branch, revert, cherry-pick, history scan."
+   ],
+   "failure_drill": {
+    "fault": "Inject a fixture leak and practice safe remediation, not history rewriting as sole fix.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Test catches fixture token.",
+    "Clean sample passes.",
+    "Repo has remediation note and reviewable history."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "security",
+    "automation"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "repository",
+    "security"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "security"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "1.06 Git recovery: a teammate committed an accidental secret-like dummy string; no real secret.",
+    "terminal_work_and_failure_drill": "Branch, revert, cherry-pick, history scan; inject a fixture leak and practice safe remediation, not history rewriting as sole fix.",
+    "starter_files": "`scripts/secret_scan.py`, `fixtures/dummy-leak.txt`, `.git/hooks/`",
+    "validator_and_acceptance": "Test catches fixture token; clean sample passes; repo has remediation note and reviewable history."
+   }
+  },
+  {
+   "id": "1.07",
+   "slug": "python-log-utility",
+   "level": 1,
+   "level_title": "Operator foundations",
+   "title": "Python log utility",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/01-operator-foundations/labs/07-python-log-utility",
+   "dir_source": "derived-from-title",
+   "scenario": "Ops needs a deterministic summary of mixed-format synthetic logs.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "src/logsum.py",
+    "fixtures/app.log",
+    "tests/test_logsum.py"
+   ],
+   "tasks": [
+    "Build CLI with `argparse`, parsing, JSON output."
+   ],
+   "failure_drill": {
+    "fault": "Inject malformed lines and timezone edge.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Fixed fixtures produce byte-stable JSON.",
+    "Malformed input is counted and handled."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "automation",
+    "observability"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "repository",
+    "operations"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [],
+   "source_row": {
+    "scenario_and_constraints": "1.07 Python log utility: ops needs a deterministic summary of mixed-format synthetic logs.",
+    "terminal_work_and_failure_drill": "Build CLI with `argparse`, parsing, JSON output; inject malformed lines and timezone edge.",
+    "starter_files": "`src/logsum.py`, `fixtures/app.log`, `tests/test_logsum.py`",
+    "validator_and_acceptance": "Fixed fixtures produce byte-stable JSON; malformed input is counted and handled."
+   }
+  },
+  {
+   "id": "1.08",
+   "slug": "sql-audit",
+   "level": 1,
+   "level_title": "Operator foundations",
+   "title": "SQL audit",
+   "kind": "lab",
+   "source_type": "lab-brief",
+   "dir": "levels/01-operator-foundations/labs/08-sql-audit",
+   "dir_source": "document",
+   "scenario": "Investigate duplicate or orphaned synthetic order rows.",
+   "constraints": null,
+   "learning_objectives": [],
+   "prerequisites_and_safety": [],
+   "starter_files": [
+    "sql/schema.sql",
+    "sql/audit.sql",
+    "tests/test_sql.py"
+   ],
+   "tasks": [
+    "SQLite schema, joins, constraints, transaction."
+   ],
+   "failure_drill": {
+    "fault": "Inject duplicate/orphan input and demonstrate rollback.",
+    "safe_injection": null,
+    "expected_symptom": null,
+    "diagnosis_evidence": null,
+    "recovery": null,
+    "restore_baseline": null,
+    "steps": []
+   },
+   "deliverables": [],
+   "validation_and_acceptance": [
+    "Build temporary DB.",
+    "Assert counts and constraints.",
+    "Rerun is deterministic."
+   ],
+   "acceptance": null,
+   "cost_controls_and_cleanup": [],
+   "scoring_dimensions": [
+    "correctness",
+    "security",
+    "resilience",
+    "operational_quality",
+    "cost",
+    "automation",
+    "communication"
+   ],
+   "cloud_required": false,
+   "cloud_mode": "local-only",
+   "vendors": [
+    "local"
+   ],
+   "domains": [
+    "data",
+    "diagnostics"
+   ],
+   "portfolio_value": "standard",
+   "portfolio_categories": [
+    "repository"
+   ],
+   "related_certs": null,
+   "related_quiz_domains": [
+    "data"
+   ],
+   "source_row": {
+    "scenario_and_constraints": "1.08 SQL audit: investigate duplicate or orphaned synthetic order rows.",
+    "terminal_work_and_failure_drill": "SQLite schema, joins, constraints, transaction; inject duplicate/orphan input and demonstrate rollback.",
+    "starter_files": "`sql/schema.sql`, `sql/audit.sql`, `tests/test_sql.py`",
+    "validator_and_acceptance": "Build temporary DB; assert counts and constraints; rerun is deterministic."
+   }
+  }
+ ]
+}
