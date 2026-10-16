@@ -2,3 +2,5 @@ dist/
 ref.html
 node_modules/
 tests/.work/
+
+_site/
