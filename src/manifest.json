@@ -160,6 +160,17 @@
     "js/features/450-bootcamp-lab-view.js",
     "js/features/460-bootcamp-pages.js",
     "js/features/490-bootcamp-register.js",
+    {
+      "json": "content/atlas/atlas-matrices.json",
+      "prefix": "const ATLAS_MATRICES = ",
+      "suffix": ";\n"
+    },
+    {
+      "json": "content/atlas/atlas-reference.json",
+      "prefix": "const ATLAS_REFERENCE = ",
+      "suffix": ";\n"
+    },
+    "js/features/500-decision-atlas.js",
     "js/boot.js"
   ]
 }

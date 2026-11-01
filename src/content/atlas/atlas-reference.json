@@ -1,0 +1,90 @@
+{
+  "sixStepMethod": [
+    { "step": 1, "title": "Extract hard constraints", "what": "Compliance, latency, data residency, RPO/RTO, budget ceilings, existing commitments. Separate them from preferences (\"would like\")." },
+    { "step": 2, "title": "Separate requirements from assumptions", "what": "Write down anything you are assuming (traffic, team skills). Exam scenarios usually state what matters; do not import extra facts." },
+    { "step": 3, "title": "Generate candidates", "what": "Use the matrices: requirement -> candidate -> why it fits." },
+    { "step": 4, "title": "Eliminate with disqualifiers", "what": "For each candidate, check \"When not to choose it\". One violated hard constraint eliminates it." },
+    { "step": 5, "title": "Compare the nearest alternative", "what": "Name what the runner-up would do better; this is often the trap option." },
+    { "step": 6, "title": "Verify", "what": "List the fact you would check in documentation and the test that would prove the design works." }
+  ],
+  "distinctions": [
+    ["Hard constraint", "Preference"],
+    ["Requirement", "Assumption"],
+    ["Product capability", "Supported configuration"],
+    ["Configuration success", "Operational proof"],
+    ["Default", "Maximum"],
+    ["Recommendation", "Requirement"],
+    ["Provider SLA", "Application SLO"],
+    ["Availability", "Trusted recovery"]
+  ],
+  "managedServicesPrinciple": "Managed services are a conditional preference, not an exam law. Prefer a managed option when it satisfies every hard requirement and removes operational work your team does not need to own. Reject it when a constraint (protocol, OS access, data residency, licensing, cost at scale) rules it out. The same applies to \"newest name\" and \"Google-native\": choose them only when they meet the requirements.",
+  "conflicts": [
+    { "id": "K01", "topic": "CDL blueprint: PDF vs HTML guide", "conflict": "PDF guide (footer 'launched on August 12, 2026'): 18/18/18/18/10. HTML guide page: 17/16/16/17/17 with older product names.", "handling": "The certification page states the new exam version is live as of August 12, 2026 and links the PDF; this publication follows the PDF. If you sat or scheduled an exam governed by the older version, use the HTML weights.", "sources": ["S018", "S017", "S002"] },
+    { "id": "K02", "topic": "'GKE Enterprise' naming", "conflict": "GKE Enterprise release notes say GKE is a single offering without editions or tiers; the CDL guide still lists 'GKE Enterprise' as a hybrid/multicloud product.", "handling": "Recognise 'GKE Enterprise' and 'Anthos' as earlier names for GKE's fleet/multi-cluster capabilities; Anthos clusters are now Google Distributed Cloud. Treat as successor/rebrand, not a one-to-one rename.", "sources": ["S055", "S018"] },
+    { "id": "K03", "topic": "PAA beta vs GA terms", "conflict": "Beta: 3 h, ~80 items, US$120, English, results end of October, labs due 31 Dec 2026. GA exam announced for mid-November; GA logistics not yet published at retrieval.", "handling": "All PAA logistics are flagged change-sensitive; re-check the page before registering.", "sources": ["S016", "S001"] },
+    { "id": "K04", "topic": "Looker Studio vs Data Studio", "conflict": "Product documentation states 'Looker Studio is now called Data Studio'; the ADP guide uses 'Looker Studio'.", "handling": "Both names shown; expect guide wording on the exam until the guide is revised.", "sources": ["S192", "S021"] },
+    { "id": "K05", "topic": "Partner Interconnect capacity range", "conflict": "Original stated 50 Mbps-50 Gbps; the range was not located in the retrieved overview page.", "handling": "Removed from memorization tables; marked 'verify'.", "sources": ["S148"] }
+  ],
+  "mandatoryReviewIssues": [
+    { "num": 1, "issue": "Pub/Sub retention (p. 21)", "auditRows": "A121 (incorrect)", "resolvedIn": "PDE §8; Atlas X03" },
+    { "num": 2, "issue": "Kubernetes probes (p. 19)", "auditRows": "A110 (incorrect)", "resolvedIn": "PCD §8; Atlas X01" },
+    { "num": 3, "issue": "Precision and recall (p. 28)", "auditRows": "A160 (incorrect)", "resolvedIn": "PMLE §8; Atlas X11" },
+    { "num": 4, "issue": "Agentic Architect requirements (pp. 32-33)", "auditRows": "A002 (incomplete), A180 (incomplete), A181 (correct), A185 (correct)", "resolvedIn": "PAA §1; PAA §13; Part I · Landscape" },
+    { "num": 5, "issue": "CDL blueprint weights (pp. 4-5)", "auditRows": "A010 (conflicting), A017 (conflicting), A196 (incomplete)", "resolvedIn": "CDL §12; CDL §2; Part I · Conflicts K01; Part IV · Sources" },
+    { "num": 6, "issue": "Budget-based shutdown (p. 9)", "auditRows": "A014 (incomplete), A041 (incomplete)", "resolvedIn": "ACE §5, §7; Atlas X10; CDL §7; Atlas X10 cost box" },
+    { "num": 7, "issue": "Sampling settings and factuality (p. 7)", "auditRows": "A031 (incorrect), A032 (incomplete)", "resolvedIn": "GAIL §6; GAIL §7; Atlas X11" },
+    { "num": 8, "issue": "Alerting rules (p. 23)", "auditRows": "A132 (incorrect)", "resolvedIn": "PCDOE §7; Atlas X08" },
+    { "num": 9, "issue": "Blue/green rollback (p. 22)", "auditRows": "A131 (incomplete)", "resolvedIn": "PCDOE §5; Atlas X09" },
+    { "num": 10, "issue": "PDE scoring inference (p. 20)", "auditRows": "A120 (unverifiable), A194 (ambiguous)", "resolvedIn": "PDE §1; Part IV · Final review" },
+    { "num": 11, "issue": "Security controls and guarantees", "auditRows": "A084, A085, A086, A140, A141, A142, A143, A147, A183, A184 (various)", "resolvedIn": "Atlas X07; Atlas X09; Atlas X11; PAA §5; PAA §7; Atlas X12; PCA §7; PCSE §5; Atlas X06; PCSE §4; Atlas X06; PCSE §7" },
+    { "num": 12, "issue": "Network and availability shorthand", "auditRows": "A064, A081, A082, A083, A088, A102, A145, A150, A151, A152, A154, A156, A157 (various)", "resolvedIn": "ADP §5; Atlas X05; PCA §8; Atlas X05; PCA §8; PCDBE §8; PCA §8; PCNE §8; Atlas X05; PCDBE §8; PCNE §4; PCNE §5; PCNE §8" }
+  ],
+  "reviewRoutes": [
+    { "cert": "CDL", "name": "Cloud Digital Leader", "heaviestSections": "1 (18.0), 2 (18.0)", "atlasEntries": ["X01", "X02", "X04", "X06", "X08", "X10", "X11"] },
+    { "cert": "GAIL", "name": "Generative AI Leader", "heaviestSections": "2 (35.0), 1 (30.0)", "atlasEntries": ["X11", "X12"] },
+    { "cert": "ACE", "name": "Associate Cloud Engineer", "heaviestSections": "2 (30.0), 3 (30.0)", "atlasEntries": ["X01", "X02", "X05", "X06", "X08", "X10"] },
+    { "cert": "ADP", "name": "Associate Data Practitioner", "heaviestSections": "1 (30.0), 2 (27.0)", "atlasEntries": ["X03", "X04", "X06", "X10"] },
+    { "cert": "AGWA", "name": "Associate Google Workspace Administrator", "heaviestSections": "2 (23.0), 1 (20.0)", "atlasEntries": [] },
+    { "cert": "PCA", "name": "Professional Cloud Architect", "heaviestSections": "1 (25.0), 2 (17.5)", "atlasEntries": ["X01", "X02", "X05", "X06", "X07", "X08", "X09", "X10", "X11"] },
+    { "cert": "PCDBE", "name": "Professional Cloud Database Engineer", "heaviestSections": "1 (32.0), 2 (25.0)", "atlasEntries": ["X02", "X10"] },
+    { "cert": "PCD", "name": "Professional Cloud Developer", "heaviestSections": "1 (32.0), 3 (24.0)", "atlasEntries": ["X01", "X02", "X03", "X07", "X08", "X09"] },
+    { "cert": "PDE", "name": "Professional Data Engineer", "heaviestSections": "2 (25.0), 1 (22.0)", "atlasEntries": ["X02", "X04", "X06", "X07", "X08", "X09", "X10", "X11"] },
+    { "cert": "PCDOE", "name": "Professional Cloud DevOps Engineer", "heaviestSections": "2 (25.0), 4 (25.0)", "atlasEntries": ["X06", "X07", "X08", "X09", "X10"] },
+    { "cert": "PCSE", "name": "Professional Cloud Security Engineer", "heaviestSections": "1 (25.0), 3 (23.0)", "atlasEntries": ["X05", "X06", "X07", "X08", "X09", "X12"] },
+    { "cert": "PCNE", "name": "Professional Cloud Network Engineer", "heaviestSections": "1 (21.0), 2 (20.0)", "atlasEntries": ["X05", "X06", "X08"] },
+    { "cert": "PMLE", "name": "Professional Machine Learning Engineer", "heaviestSections": "3 (21.0), 4 (20.0)", "atlasEntries": ["X11", "X12"] },
+    { "cert": "PSOE", "name": "Professional Security Operations Engineer", "heaviestSections": "4 (22.0), 5 (21.0)", "atlasEntries": ["X06", "X08"] },
+    { "cert": "PAA", "name": "Professional Agentic Architect", "heaviestSections": "3 (33.0), 4 (22.0)", "atlasEntries": ["X01", "X11", "X12"] }
+  ],
+  "errorLogTemplate": {
+    "columns": ["Date", "Question / situation ID", "Wrong mental model (what I believed)", "Corrected rule", "Evidence (source ID / test)", "Transfer test (a new case that would expose the same error)", "Re-tested on / result"],
+    "note": "Record every miss. The transfer test is the important column: a new situation that would expose the same model.",
+    "workedExample": {
+      "question": "Q-ACE-04",
+      "wrongMentalModel": "All audit logs are on by default.",
+      "correctedRule": "Admin Activity is always on; Data Access is off by default except BigQuery.",
+      "evidence": "[S099] [S100]",
+      "transferTest": "An investigation needs to know who read a Cloud Storage object last week. Was it logged?"
+    }
+  },
+  "readinessRubric": {
+    "statuses": ["Not yet demonstrated", "Demonstrated with assistance", "Demonstrated independently", "Demonstrated under changed constraints"],
+    "caution": "These are learning rubrics for self-assessment and mentoring. They are not Google scoring models and are not validated predictors of passing an exam. A strong quiz score does not offset a \"Not yet demonstrated\" in hands-on execution or troubleshooting; treat any such gap as open.",
+    "dimensions": [
+      { "dimension": "Conceptual understanding", "meaning": "Explains the concept, its purpose and its limits in your own words.", "evidence": "Explanation without notes; correct limits stated (e.g. \"a budget does not cap spend\")." },
+      { "dimension": "Exam-style reasoning", "meaning": "Selects the best option and explains why each alternative fails.", "evidence": "Error log with corrected rules; reasoning written for every option." },
+      { "dimension": "Hands-on execution", "meaning": "Implements and verifies in a sandbox following current docs.", "evidence": "Exercise evidence: commands, outputs, positive and negative tests." },
+      { "dimension": "Troubleshooting", "meaning": "Diagnoses a fault from symptoms and restores service safely.", "evidence": "Operate-table drills; timeline of diagnosis; rollback evidence." },
+      { "dimension": "Architecture judgment", "meaning": "Chooses under conflicting constraints and documents trade-offs.", "evidence": "ADR with eliminated options and verification plan." },
+      { "dimension": "Communication and evidence", "meaning": "Explains a decision to the right audience with sources.", "evidence": "Briefing or ADR reviewed by someone else; cited sources." }
+    ]
+  },
+  "portfolioGuidance": {
+    "title": "Label your work honestly",
+    "categories": [
+      { "category": "Simulated", "examples": "Tabletops, ADRs, designs, question explanations.", "howToPresent": "Label as \"design exercise\" or \"tabletop\". Do not describe as implemented." },
+      { "category": "Sandbox", "examples": "Built and tested in a personal or training project.", "howToPresent": "Label as \"sandbox implementation\"; include evidence and cleanup; state scale limits." },
+      { "category": "Production", "examples": "Operated with real users under change control.", "howToPresent": "Describe only with employer permission; no confidential details; state your actual role." }
+    ]
+  }
+}
