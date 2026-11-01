@@ -203,8 +203,9 @@ VIEWS.privacy = () => `<div class="page-head"><div><h1>Privacy</h1><p class="mut
     <li>One small preference entry (focus certification, theme, last study area) is kept in this browser's local storage. You can turn it off in Settings.</li>
     <li>Workspace and export files are created only when you choose to download them, and stay wherever you save them.</li></ul></section>
   <section class="card" style="margin-bottom:16px"><h2>Network requests</h2><ul class="small">
-    <li>Studying works offline. When you are online, the page asks Fontshare (api.fontshare.com) for two web fonts; that request shows your IP address to Fontshare. If it fails, the app uses your system fonts.</li>
-    <li>Links to official exam pages and documentation open only when you tap them.</li>
+    <li>Studying — answering questions, reviewing, flashcards, the Decision Atlas, the error log — works fully offline once the page is loaded. The app makes no request of its own to study with you; it asks nothing of any third party and loads no remote fonts, scripts, or trackers while you work.</li>
+    <li>Loading the page the first time, or from a hosted link (such as a GitHub Pages URL), is itself a network request to whoever is hosting it, the same as any web page. Once loaded, the offline service worker (see Install) can check for a newer version in the background.</li>
+    <li>Links to official exam pages, documentation, and external sources (including the Atlas's source register) open only when you tap them, and then in a new tab under your browser's own controls.</li>
     <li>Optional features such as AI feedback or sync are not enabled in this version. If they are added, they will stay off until you configure them, and this page will say what they send.</li></ul></section>
   <section class="card"><h2>Your controls</h2><p class="small">Download everything as a workspace file, or delete everything this app stored on this device, from <a href="#/settings">Settings</a> → Saved on this device.</p></section>`;
 NAV.push(['about', 'About & privacy', 'Data']);

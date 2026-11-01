@@ -8,7 +8,7 @@
  * date, timers or random shuffles, so they only have to finish without page errors. */
 const fs = require('fs'), path = require('path'), http = require('http'), { spawn, execFileSync } = require('child_process');
 const ROOT = path.resolve(__dirname, '..'), SUITE = path.join(__dirname, 'suite'), WORK = path.join(__dirname, '.work'), EXP = path.join(__dirname, 'expected');
-const SMOKE = ['backups-and-fast-close', 'onboarding-and-path', 'content-review', 'exam-formats-and-sim', 'exam-timer-and-ordering', 'lessons-and-foundations', 'ai-feedback-and-calibration', 'habits-and-calendar', 'practice-bank-packs'];
+const SMOKE = ['backups-and-fast-close', 'onboarding-and-path', 'content-review', 'exam-formats-and-sim', 'exam-timer-and-ordering', 'lessons-and-foundations', 'ai-feedback-and-calibration', 'habits-and-calendar', 'practice-bank-packs', 'decision-atlas'];
 const args = process.argv.slice(2), update = args.includes('--update'), words = args.filter(a => !a.startsWith('--'));
 if (!args.includes('--no-build')) execFileSync('node', [path.join(ROOT, 'build.js')], { stdio: 'inherit' });
 const M = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/manifest.json'), 'utf8')); const DIST = path.join(ROOT, M.output);

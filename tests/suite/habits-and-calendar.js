@@ -30,7 +30,12 @@ const errs=[]; const txt=async p=>(await p.locator('main').innerText());
  const [dm]=await Promise.all([p.waitForEvent('download'),p.click('[data-action="p7-wk-md"]')]);const md=fs.readFileSync(await dm.path(),'utf8');console.log('7 md:',dm.suggestedFilename(),'| has table',/\| Week of \| Answers/.test(md),'| note',/My note: Two morning/.test(md));
  // install page on file://
  await p.goto(U+'#/install');await p.waitForTimeout(400);t=await txt(p);console.log('8 install file:',(t.match(/Opened as a file|Ready for offline use|not found/)||['?'])[0],'| explains:',/Browsers do not let a file install itself/.test(t));
- const [ds]=await Promise.all([p.waitForEvent('download'),p.click('[data-action="p7-sw-dl"]')]);console.log('   sw download:',ds.suggestedFilename(),fs.readFileSync(await ds.path(),'utf8')===fs.readFileSync('/mnt/user-data/outputs/cloudwalker-sw.js','utf8'));
+ // The service worker file is generated client-side on download, not shipped as a repo file to diff
+ // against — compare two downloads for determinism and sanity-check the content instead of relying
+ // on a path outside the repository.
+ const [ds]=await Promise.all([p.waitForEvent('download'),p.click('[data-action="p7-sw-dl"]')]);const swA=fs.readFileSync(await ds.path(),'utf8');
+ const [ds2]=await Promise.all([p.waitForEvent('download'),p.click('[data-action="p7-sw-dl"]')]);const swB=fs.readFileSync(await ds2.path(),'utf8');
+ console.log('   sw download:',ds.suggestedFilename(),'deterministic:',swA===swB,'| looks like a service worker:',/self\.addEventListener/.test(swA));
  for(const r of ['#/today','#/weekly','#/install','#/dashboard']){await p.setViewportSize({width:390,height:900});await p.goto(U+r);await p.waitForTimeout(400);console.log('9 overflow',r,await p.evaluate(()=>document.documentElement.scrollWidth-innerWidth));}
  await p.goto(U+'#/today');await p.waitForTimeout(300);await p.screenshot({path:__dirname+'/today390.png',fullPage:true});
  await ctx.close(); console.log('errors:',errs.length?errs:'none');

@@ -170,6 +170,11 @@
       "prefix": "const ATLAS_REFERENCE = ",
       "suffix": ";\n"
     },
+    {
+      "json": "content/atlas/atlas-sources.json",
+      "prefix": "const ATLAS_SOURCES = ",
+      "suffix": ";\n"
+    },
     "js/features/500-decision-atlas.js",
     "js/boot.js"
   ]

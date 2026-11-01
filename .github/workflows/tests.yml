@@ -1,0 +1,47 @@
+# Runs the Playwright regression suite (tests/run.js) against a fresh build.
+# Triggers: every pull request, and every push to main (so the gate the Pages
+# workflow depends on — see pages.yml's "test" job — always has a fresh result
+# for the commit it is about to publish). Never anything else.
+name: Tests
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # Requires a committed package-lock.json pinning the Playwright version
+      # used by tests/run.js. If package-lock.json is missing or out of date,
+      # this step fails fast rather than silently installing an unpinned
+      # Playwright — see README.md "Known limitation" before relying on this.
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium (matching the pinned Playwright version)
+        run: npx playwright install --with-deps chromium
+
+      - name: Build and run the test suite
+        run: node tests/run.js
+
+      - name: Upload failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-failure-output
+          path: tests/.work/*.out.txt
+          retention-days: 7
+          if-no-files-found: ignore

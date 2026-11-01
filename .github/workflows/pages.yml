@@ -1,4 +1,6 @@
-# Builds the app from src/ and publishes it to GitHub Pages on every push to main.
+# Builds the app from src/ and publishes it to GitHub Pages on every push to main,
+# but only once the regression suite (tests/run.js) has passed for that commit.
+# Never triggers on pull_request, so a PR can never publish.
 # The site gets two files: index.html (the app) and cloudwalker-sw.js (offline support).
 # One-time setup: repository Settings → Pages → Source: "GitHub Actions".
 name: Publish to GitHub Pages
@@ -14,7 +16,32 @@ concurrency:
   group: pages
   cancel-in-progress: true
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      # Requires a committed package-lock.json — see README.md "Known limitation".
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Chromium (matching the pinned Playwright version)
+        run: npx playwright install --with-deps chromium
+      - name: Build and run the test suite
+        run: node tests/run.js
+      - name: Upload failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages-test-failure-output
+          path: tests/.work/*.out.txt
+          retention-days: 7
+          if-no-files-found: ignore
   build:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

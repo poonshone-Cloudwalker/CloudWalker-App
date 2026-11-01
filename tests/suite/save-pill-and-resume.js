@@ -2,7 +2,12 @@ const { chromium } = require('playwright');
 const U='__CW_APP__';
 const dir=__dirname+'/prof9'; require('fs').rmSync(dir,{recursive:true,force:true});
 const errs=[];
-async function open(){const ctx=await chromium.launchPersistentContext(dir,{viewport:{width:820,height:1100},acceptDownloads:true});const p=ctx.pages()[0]||await ctx.newPage();p.on('pageerror',e=>errs.push(e.message));return [ctx,p];}
+async function open(){const ctx=await chromium.launchPersistentContext(dir,{viewport:{width:820,height:1100},acceptDownloads:true});const p=ctx.pages()[0]||await ctx.newPage();
+ // navigator.storage.estimate()'s quota reflects the host machine's free disk space, which varies
+ // across runners/sandboxes. Pin it to a fixed value so the printed "Available to this site" line
+ // is deterministic without masking a real regression in how usage is computed or displayed.
+ await p.addInitScript(()=>{ if(navigator.storage&&navigator.storage.estimate){ const orig=navigator.storage.estimate.bind(navigator.storage); navigator.storage.estimate=async()=>{ const r=await orig().catch(()=>({})); return {...r,quota:10737418240}; }; } });
+ p.on('pageerror',e=>errs.push(e.message));return [ctx,p];}
 const pill=async p=>(await p.locator('.topbar .save-pill').innerText().catch(()=>'' )) || await p.locator('.save-pill').first().textContent();
 (async()=>{
  let [ctx,p]=await open();

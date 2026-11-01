@@ -1,0 +1,17 @@
+{
+  "name": "cloudwalker-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "BluePrint CloudWalker certification trainer — builds to a single offline HTML file.",
+  "scripts": {
+    "build": "node build.js",
+    "test": "node tests/run.js",
+    "test:ci": "node tests/run.js --no-build"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

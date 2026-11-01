@@ -2,15 +2,69 @@
   {
     "id": "X01",
     "title": "Compute Engine, GKE or Cloud Run",
-    "relevantTo": ["ACE", "PCA", "PCD", "PCDOE", "PCNE"],
+    "relevantTo": [
+      "ACE",
+      "PCA",
+      "PCD",
+      "PCDOE",
+      "PCNE"
+    ],
     "intro": "Start from the operational contract you need to own (OS, cluster, or only the container), then check state, protocol, scaling-to-zero and team skills. \"Managed\" is not automatically correct: a constraint such as a kernel module, a GPU driver, or a long-lived TCP protocol can rule a managed option out.",
     "matrix": [
-      { "requirement": "Stateless HTTP container, spiky traffic, scale to zero", "candidate": "Cloud Run service", "whyFits": "No cluster to operate; request-driven autoscaling; revisions with traffic splitting [S057] [S058]", "whenNot": "You need privileged containers, custom kernel settings or node-level daemons", "nearestAlt": "GKE Autopilot", "verify": "Request timeout, concurrency, minimum instances, cold-start tolerance" },
-      { "requirement": "Many microservices, Kubernetes APIs, shared platform team", "candidate": "GKE Autopilot", "whyFits": "Kubernetes API with Google-managed nodes and per-Pod billing [S053]", "whenNot": "Workloads need node-level customisation Autopilot disallows", "nearestAlt": "GKE Standard", "verify": "Autopilot workload restrictions for your Pods" },
-      { "requirement": "Specialised node configuration, DaemonSets, custom node images", "candidate": "GKE Standard", "whyFits": "Full control of node pools [S054]", "whenNot": "Team cannot staff node upgrades and capacity planning", "nearestAlt": "GKE Autopilot", "verify": "Node upgrade strategy; maintenance windows" },
-      { "requirement": "Lift-and-shift VM, licensed OS, stateful single host", "candidate": "Compute Engine VM (MIG where possible)", "whyFits": "OS-level control; MIG adds autohealing and rolling updates [S061]", "whenNot": "Workload is a stateless container with no OS dependency", "nearestAlt": "Cloud Run or GKE", "verify": "Licensing, disk type, snapshot schedule" },
-      { "requirement": "Fault-tolerant batch at lowest cost", "candidate": "Spot VMs (or Spot Pods)", "whyFits": "Deep discount for preemptible capacity [S060]", "whenNot": "Job cannot checkpoint or tolerate termination at any time", "nearestAlt": "Standard VMs with committed use discounts", "verify": "Checkpointing; retry policy; regional capacity" },
-      { "requirement": "Small event-triggered function", "candidate": "Cloud Run functions", "whyFits": "Minimal packaging, event triggers [S059]", "whenNot": "Long-running or multi-endpoint service", "nearestAlt": "Cloud Run service", "verify": "Trigger type, runtime, timeout" }
+      {
+        "requirement": "Stateless HTTP container, spiky traffic, scale to zero",
+        "candidate": "Cloud Run service",
+        "whyFits": "No cluster to operate; request-driven autoscaling; revisions with traffic splitting [S057] [S058]",
+        "whenNot": "You need privileged containers, custom kernel settings or node-level daemons",
+        "nearestAlt": "GKE Autopilot",
+        "verify": "Request timeout, concurrency, minimum instances, cold-start tolerance",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Many microservices, Kubernetes APIs, shared platform team",
+        "candidate": "GKE Autopilot",
+        "whyFits": "Kubernetes API with Google-managed nodes and per-Pod billing [S053]",
+        "whenNot": "Workloads need node-level customisation Autopilot disallows",
+        "nearestAlt": "GKE Standard",
+        "verify": "Autopilot workload restrictions for your Pods",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Specialised node configuration, DaemonSets, custom node images",
+        "candidate": "GKE Standard",
+        "whyFits": "Full control of node pools [S054]",
+        "whenNot": "Team cannot staff node upgrades and capacity planning",
+        "nearestAlt": "GKE Autopilot",
+        "verify": "Node upgrade strategy; maintenance windows",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Lift-and-shift VM, licensed OS, stateful single host",
+        "candidate": "Compute Engine VM (MIG where possible)",
+        "whyFits": "OS-level control; MIG adds autohealing and rolling updates [S061]",
+        "whenNot": "Workload is a stateless container with no OS dependency",
+        "nearestAlt": "Cloud Run or GKE",
+        "verify": "Licensing, disk type, snapshot schedule",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Fault-tolerant batch at lowest cost",
+        "candidate": "Spot VMs (or Spot Pods)",
+        "whyFits": "Deep discount for preemptible capacity [S060]",
+        "whenNot": "Job cannot checkpoint or tolerate termination at any time",
+        "nearestAlt": "Standard VMs with committed use discounts",
+        "verify": "Checkpointing; retry policy; regional capacity",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Small event-triggered function",
+        "candidate": "Cloud Run functions",
+        "whyFits": "Minimal packaging, event triggers [S059]",
+        "whenNot": "Long-running or multi-endpoint service",
+        "nearestAlt": "Cloud Run service",
+        "verify": "Trigger type, runtime, timeout",
+        "status": "source-linked"
+      }
     ],
     "failureModes": [
       "Choosing Cloud Run for a workload that needs a persistent local filesystem or long-lived non-HTTP connections without checking the platform contract.",
@@ -24,21 +78,91 @@
       "For GKE, confirm whether Autopilot permits every Pod spec you need [S053].",
       "Load-test scale-out and scale-in, including cold start."
     ],
-    "sources": ["S057", "S053", "S054", "S061", "S060", "S059"]
+    "sources": [
+      "S057",
+      "S053",
+      "S054",
+      "S061",
+      "S060",
+      "S059"
+    ]
   },
   {
     "id": "X02",
     "title": "Choosing a database or storage service",
-    "relevantTo": ["ACE", "ADP", "PCA", "PCDBE", "PDE", "PCD"],
+    "relevantTo": [
+      "ACE",
+      "ADP",
+      "PCA",
+      "PCDBE",
+      "PDE",
+      "PCD"
+    ],
     "intro": "Decide from the access pattern, consistency need, scale and geography, and operations budget, in that order. Product names come last. \"Global\" and \"relational\" together point to Spanner only if you also need horizontal write scale; otherwise Cloud SQL or AlloyDB may be simpler and cheaper.",
     "matrix": [
-      { "requirement": "Relational, regional, standard OLTP, existing MySQL/PostgreSQL/SQL Server", "candidate": "Cloud SQL", "whyFits": "Managed engines with HA (regional) and read replicas [S176] [S177]", "whenNot": "Write throughput or size exceeds a single primary", "nearestAlt": "AlloyDB or Spanner", "verify": "Edition, HA configuration, PITR settings [S178]" },
-      { "requirement": "PostgreSQL-compatible, high performance, mixed analytical reads", "candidate": "AlloyDB for PostgreSQL", "whyFits": "PostgreSQL compatibility with a managed high-performance architecture [S179]", "whenNot": "Workload needs multi-region strong consistency for writes", "nearestAlt": "Spanner", "verify": "Extensions and version compatibility" },
-      { "requirement": "Relational, horizontal write scale, strong consistency, multi-region", "candidate": "Spanner", "whyFits": "Horizontally scalable relational database with strong consistency [S175]", "whenNot": "Small regional app where cost and simplicity dominate", "nearestAlt": "Cloud SQL", "verify": "Schema design to avoid hotspots [S174]; SLA by configuration [S173]" },
-      { "requirement": "Very high-throughput key/wide-column, time series, low latency", "candidate": "Bigtable", "whyFits": "Scales by nodes; single-row-key access [S181]", "whenNot": "Need multi-row transactions or ad hoc SQL joins", "nearestAlt": "Spanner or BigQuery", "verify": "Row-key design; replication consistency [S180]" },
-      { "requirement": "Document data for mobile/web apps", "candidate": "Firestore", "whyFits": "Serverless document database with client SDKs [S182]", "whenNot": "Heavy relational joins or analytics", "nearestAlt": "Cloud SQL / BigQuery", "verify": "Write-rate guidance per document and index" },
-      { "requirement": "Analytical SQL over large datasets", "candidate": "BigQuery", "whyFits": "Serverless warehouse; partitioning and clustering control cost [S170] [S171]", "whenNot": "Row-at-a-time OLTP updates", "nearestAlt": "Cloud SQL / Spanner", "verify": "Pricing model (on-demand vs editions); quotas [S172]" },
-      { "requirement": "Unstructured objects, backups, data lake files", "candidate": "Cloud Storage", "whyFits": "Classes by access frequency; strong consistency for object operations [S183] [S184]", "whenNot": "Low-latency random record updates", "nearestAlt": "Database service", "verify": "Minimum storage durations; Autoclass suitability [S185]" }
+      {
+        "requirement": "Relational, regional, standard OLTP, existing MySQL/PostgreSQL/SQL Server",
+        "candidate": "Cloud SQL",
+        "whyFits": "Managed engines with HA (regional) and read replicas [S176] [S177]",
+        "whenNot": "Write throughput or size exceeds a single primary",
+        "nearestAlt": "AlloyDB or Spanner",
+        "verify": "Edition, HA configuration, PITR settings [S178]",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "PostgreSQL-compatible, high performance, mixed analytical reads",
+        "candidate": "AlloyDB for PostgreSQL",
+        "whyFits": "PostgreSQL compatibility with a managed high-performance architecture [S179]",
+        "whenNot": "Workload needs multi-region strong consistency for writes",
+        "nearestAlt": "Spanner",
+        "verify": "Extensions and version compatibility",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Relational, horizontal write scale, strong consistency, multi-region",
+        "candidate": "Spanner",
+        "whyFits": "Horizontally scalable relational database with strong consistency [S175]",
+        "whenNot": "Small regional app where cost and simplicity dominate",
+        "nearestAlt": "Cloud SQL",
+        "verify": "Schema design to avoid hotspots [S174]; SLA by configuration [S173]",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Very high-throughput key/wide-column, time series, low latency",
+        "candidate": "Bigtable",
+        "whyFits": "Scales by nodes; single-row-key access [S181]",
+        "whenNot": "Need multi-row transactions or ad hoc SQL joins",
+        "nearestAlt": "Spanner or BigQuery",
+        "verify": "Row-key design; replication consistency [S180]",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Document data for mobile/web apps",
+        "candidate": "Firestore",
+        "whyFits": "Serverless document database with client SDKs [S182]",
+        "whenNot": "Heavy relational joins or analytics",
+        "nearestAlt": "Cloud SQL / BigQuery",
+        "verify": "Write-rate guidance per document and index",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Analytical SQL over large datasets",
+        "candidate": "BigQuery",
+        "whyFits": "Serverless warehouse; partitioning and clustering control cost [S170] [S171]",
+        "whenNot": "Row-at-a-time OLTP updates",
+        "nearestAlt": "Cloud SQL / Spanner",
+        "verify": "Pricing model (on-demand vs editions); quotas [S172]",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Unstructured objects, backups, data lake files",
+        "candidate": "Cloud Storage",
+        "whyFits": "Classes by access frequency; strong consistency for object operations [S183] [S184]",
+        "whenNot": "Low-latency random record updates",
+        "nearestAlt": "Database service",
+        "verify": "Minimum storage durations; Autoclass suitability [S185]",
+        "status": "source-linked"
+      }
     ],
     "failureModes": [
       "Picking Spanner because a prompt says \"global\" when reads are global but writes are regional and modest.",
@@ -52,21 +176,91 @@
       "Run a schema/key-design review against the product best-practice page.",
       "Estimate cost with the pricing calculator and record assumptions."
     ],
-    "sources": ["S175", "S176", "S179", "S181", "S182", "S171", "S183"]
+    "sources": [
+      "S175",
+      "S176",
+      "S179",
+      "S181",
+      "S182",
+      "S171",
+      "S183"
+    ]
   },
   {
     "id": "X03",
     "title": "Pub/Sub, Eventarc, Cloud Tasks, Cloud Scheduler or Workflows",
-    "relevantTo": ["PCD", "PCA", "PDE", "PCDOE", "PAA"],
+    "relevantTo": [
+      "PCD",
+      "PCA",
+      "PDE",
+      "PCDOE",
+      "PAA"
+    ],
     "intro": "Ask who controls delivery: the publisher (Tasks: explicit invocation of a specific endpoint), the subscriber (Pub/Sub: fan-out, decoupled consumers), an event source (Eventarc routing), time (Scheduler), or a process definition (Workflows: ordered steps with state).",
     "matrix": [
-      { "requirement": "Fan-out events to independent consumers", "candidate": "Pub/Sub topic with subscriptions", "whyFits": "Decouples publishers from subscribers; each subscription gets every message [S040]", "whenNot": "Caller needs control over which endpoint runs and when", "nearestAlt": "Cloud Tasks", "verify": "At-least-once delivery semantics; idempotent consumers" },
-      { "requirement": "Dispatch work to a specific handler with rate limits and scheduled delivery", "candidate": "Cloud Tasks", "whyFits": "Explicit invocation, per-queue rate control [S046]", "whenNot": "Many unknown consumers need the same event", "nearestAlt": "Pub/Sub", "verify": "Queue rate and retry configuration" },
-      { "requirement": "React to Google Cloud resource events (e.g. object finalized, audit log entry)", "candidate": "Eventarc trigger", "whyFits": "Routes events in CloudEvents format to targets [S047]", "whenNot": "You need custom ordering or replay controls beyond the trigger", "nearestAlt": "Pub/Sub directly", "verify": "Event types supported; trigger region" },
-      { "requirement": "Run something on a cron schedule", "candidate": "Cloud Scheduler", "whyFits": "Managed cron targeting HTTP, Pub/Sub [S049]", "whenNot": "Multi-step logic with branching and retries", "nearestAlt": "Scheduler + Workflows", "verify": "Time zone; retry config" },
-      { "requirement": "Orchestrate ordered API calls with state, retries and branching", "candidate": "Workflows", "whyFits": "Declarative steps with error handling [S048]", "whenNot": "Heavy data transformation", "nearestAlt": "Dataflow / managed Airflow", "verify": "Step limits; connector availability" },
-      { "requirement": "Poison messages must not block processing", "candidate": "Pub/Sub dead-letter topic", "whyFits": "Moves messages after max delivery attempts [S044]", "whenNot": "Messages must never leave the main path", "nearestAlt": "Application-level error queue", "verify": "Pub/Sub service agent permissions on DLQ" },
-      { "requirement": "Strict processing order per key", "candidate": "Pub/Sub ordering keys", "whyFits": "Ordered delivery per key in a region [S045]", "whenNot": "Global total order is required", "nearestAlt": "Single-writer design or a database sequence", "verify": "Throughput impact; failure handling of ordered keys" }
+      {
+        "requirement": "Fan-out events to independent consumers",
+        "candidate": "Pub/Sub topic with subscriptions",
+        "whyFits": "Decouples publishers from subscribers; each subscription gets every message [S040]",
+        "whenNot": "Caller needs control over which endpoint runs and when",
+        "nearestAlt": "Cloud Tasks",
+        "verify": "At-least-once delivery semantics; idempotent consumers",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Dispatch work to a specific handler with rate limits and scheduled delivery",
+        "candidate": "Cloud Tasks",
+        "whyFits": "Explicit invocation, per-queue rate control [S046]",
+        "whenNot": "Many unknown consumers need the same event",
+        "nearestAlt": "Pub/Sub",
+        "verify": "Queue rate and retry configuration",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "React to Google Cloud resource events (e.g. object finalized, audit log entry)",
+        "candidate": "Eventarc trigger",
+        "whyFits": "Routes events in CloudEvents format to targets [S047]",
+        "whenNot": "You need custom ordering or replay controls beyond the trigger",
+        "nearestAlt": "Pub/Sub directly",
+        "verify": "Event types supported; trigger region",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Run something on a cron schedule",
+        "candidate": "Cloud Scheduler",
+        "whyFits": "Managed cron targeting HTTP, Pub/Sub [S049]",
+        "whenNot": "Multi-step logic with branching and retries",
+        "nearestAlt": "Scheduler + Workflows",
+        "verify": "Time zone; retry config",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Orchestrate ordered API calls with state, retries and branching",
+        "candidate": "Workflows",
+        "whyFits": "Declarative steps with error handling [S048]",
+        "whenNot": "Heavy data transformation",
+        "nearestAlt": "Dataflow / managed Airflow",
+        "verify": "Step limits; connector availability",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Poison messages must not block processing",
+        "candidate": "Pub/Sub dead-letter topic",
+        "whyFits": "Moves messages after max delivery attempts [S044]",
+        "whenNot": "Messages must never leave the main path",
+        "nearestAlt": "Application-level error queue",
+        "verify": "Pub/Sub service agent permissions on DLQ",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Strict processing order per key",
+        "candidate": "Pub/Sub ordering keys",
+        "whyFits": "Ordered delivery per key in a region [S045]",
+        "whenNot": "Global total order is required",
+        "nearestAlt": "Single-writer design or a database sequence",
+        "verify": "Throughput impact; failure handling of ordered keys",
+        "status": "source-linked"
+      }
     ],
     "failureModes": [
       "Treating Pub/Sub as exactly-once by default; exactly-once delivery is an opt-in subscription feature with conditions [S043].",
@@ -80,20 +274,82 @@
       "Test replay with seek/snapshot where required [S042].",
       "Confirm IAM for the service agents that deliver events."
     ],
-    "sources": ["S046", "S040", "S047", "S048", "S049", "S044", "S045", "S043"]
+    "sources": [
+      "S046",
+      "S040",
+      "S047",
+      "S048",
+      "S049",
+      "S044",
+      "S045",
+      "S043"
+    ]
   },
   {
     "id": "X04",
     "title": "Data processing: Dataflow, managed Spark, BigQuery, Dataform, Datastream",
-    "relevantTo": ["ADP", "PDE", "PMLE", "PCA"],
+    "relevantTo": [
+      "ADP",
+      "PDE",
+      "PMLE",
+      "PCA"
+    ],
     "intro": "Choose by processing model (streaming vs batch), existing code (Beam, Spark, SQL), and where the data already lives. Moving data to the engine is often the most expensive decision.",
     "matrix": [
-      { "requirement": "Unified streaming and batch pipelines with windowing", "candidate": "Dataflow (Apache Beam)", "whyFits": "Managed autoscaling Beam runner [S186]", "whenNot": "Team has a large Spark codebase and no Beam skills", "nearestAlt": "Managed Spark", "verify": "Windowing/trigger design; late-data handling" },
-      { "requirement": "Existing Spark/Hadoop jobs", "candidate": "Managed Spark (Dataproc / Serverless for Apache Spark)", "whyFits": "Runs existing Spark with minimal change [S187]", "whenNot": "Pure SQL transforms on data already in BigQuery", "nearestAlt": "BigQuery SQL / Dataform", "verify": "Cluster vs serverless; job dependencies" },
-      { "requirement": "SQL transformations inside the warehouse with version control", "candidate": "Dataform", "whyFits": "Manages SQL workflows, dependencies and assertions in BigQuery [S189]", "whenNot": "Transformations need non-SQL code", "nearestAlt": "Dataflow / Spark", "verify": "Repository and release configuration" },
-      { "requirement": "Change data capture from operational databases", "candidate": "Datastream", "whyFits": "Serverless CDC into BigQuery/Cloud Storage [S190]", "whenNot": "One-time migration with cutover", "nearestAlt": "Database Migration Service", "verify": "Source DB configuration (binlog/WAL)" },
-      { "requirement": "One-time or continuous database migration", "candidate": "Database Migration Service", "whyFits": "Managed migration to Cloud SQL/AlloyDB [S191]", "whenNot": "Ongoing analytics replication", "nearestAlt": "Datastream", "verify": "Supported source/target versions" },
-      { "requirement": "Orchestrate multi-system batch DAGs", "candidate": "Managed Apache Airflow (Cloud Composer)", "whyFits": "Airflow DAGs with operators [S188]", "whenNot": "A few sequential API calls", "nearestAlt": "Workflows", "verify": "Environment cost; DAG ownership" }
+      {
+        "requirement": "Unified streaming and batch pipelines with windowing",
+        "candidate": "Dataflow (Apache Beam)",
+        "whyFits": "Managed autoscaling Beam runner [S186]",
+        "whenNot": "Team has a large Spark codebase and no Beam skills",
+        "nearestAlt": "Managed Spark",
+        "verify": "Windowing/trigger design; late-data handling",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Existing Spark/Hadoop jobs",
+        "candidate": "Managed Spark (Dataproc / Serverless for Apache Spark)",
+        "whyFits": "Runs existing Spark with minimal change [S187]",
+        "whenNot": "Pure SQL transforms on data already in BigQuery",
+        "nearestAlt": "BigQuery SQL / Dataform",
+        "verify": "Cluster vs serverless; job dependencies",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "SQL transformations inside the warehouse with version control",
+        "candidate": "Dataform",
+        "whyFits": "Manages SQL workflows, dependencies and assertions in BigQuery [S189]",
+        "whenNot": "Transformations need non-SQL code",
+        "nearestAlt": "Dataflow / Spark",
+        "verify": "Repository and release configuration",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Change data capture from operational databases",
+        "candidate": "Datastream",
+        "whyFits": "Serverless CDC into BigQuery/Cloud Storage [S190]",
+        "whenNot": "One-time migration with cutover",
+        "nearestAlt": "Database Migration Service",
+        "verify": "Source DB configuration (binlog/WAL)",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "One-time or continuous database migration",
+        "candidate": "Database Migration Service",
+        "whyFits": "Managed migration to Cloud SQL/AlloyDB [S191]",
+        "whenNot": "Ongoing analytics replication",
+        "nearestAlt": "Datastream",
+        "verify": "Supported source/target versions",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Orchestrate multi-system batch DAGs",
+        "candidate": "Managed Apache Airflow (Cloud Composer)",
+        "whyFits": "Airflow DAGs with operators [S188]",
+        "whenNot": "A few sequential API calls",
+        "nearestAlt": "Workflows",
+        "verify": "Environment cost; DAG ownership",
+        "status": "source-linked"
+      }
     ],
     "failureModes": [
       "Rewriting working Spark jobs into Beam without a business reason.",
@@ -105,22 +361,99 @@
       "Test with representative late and duplicate events.",
       "Check the current product name in the docs; several have been renamed (see K-conflicts)."
     ],
-    "sources": ["S186", "S187", "S171", "S189", "S190", "S188", "S191"]
+    "sources": [
+      "S186",
+      "S187",
+      "S171",
+      "S189",
+      "S190",
+      "S188",
+      "S191"
+    ]
   },
   {
     "id": "X05",
     "title": "Network connectivity",
-    "relevantTo": ["PCNE", "PCA", "ACE", "PCSE"],
+    "relevantTo": [
+      "PCNE",
+      "PCA",
+      "ACE",
+      "PCSE"
+    ],
     "intro": "Separate four questions: hybrid connectivity (VPN, Interconnect), VPC-to-VPC (peering, Network Connectivity Center, Shared VPC), service access (Private Service Connect, private services access), and egress (Cloud NAT). Then check routing (Cloud Router, BGP) and SLA topology.",
     "matrix": [
-      { "requirement": "Encrypted hybrid link quickly, moderate bandwidth", "candidate": "HA VPN", "whyFits": "IPsec over the internet; 99.99% SLA only with the documented HA topology [S149] [S150]", "whenNot": "Sustained high bandwidth or private (non-internet) path needed", "nearestAlt": "Interconnect", "verify": "Two tunnels/interfaces per topology; BGP sessions" },
-      { "requirement": "High bandwidth private hybrid link, colocation available", "candidate": "Dedicated Interconnect", "whyFits": "Direct physical connection [S147]", "whenNot": "No presence at a colocation facility", "nearestAlt": "Partner Interconnect", "verify": "Topology for 99.9% vs 99.99% [S144] [S145]" },
-      { "requirement": "Private hybrid link through a service provider", "candidate": "Partner Interconnect", "whyFits": "Provider supplies connectivity [S148]", "whenNot": "You need full control of the physical link", "nearestAlt": "Dedicated Interconnect", "verify": "Capacity options with the provider (K05: verify range)" },
-      { "requirement": "Connect a few VPCs with low latency", "candidate": "VPC Network Peering", "whyFits": "Private RFC 1918 routing between VPCs [S161]", "whenNot": "Transitive routing among many VPCs is required (peering is not transitive)", "nearestAlt": "Network Connectivity Center", "verify": "Overlapping ranges; peering limits" },
-      { "requirement": "Hub-and-spoke across many VPCs and hybrid sites", "candidate": "Network Connectivity Center", "whyFits": "Central hub for spokes [S162]", "whenNot": "Two VPCs only", "nearestAlt": "Peering", "verify": "Spoke types supported; route exchange" },
-      { "requirement": "Centralised network administration for many projects", "candidate": "Shared VPC", "whyFits": "Host project owns network; service projects use subnets [S165]", "whenNot": "Teams require fully independent networks", "nearestAlt": "Separate VPCs + NCC", "verify": "Subnet-level IAM (networkUser)" },
-      { "requirement": "Consume a managed or producer service privately", "candidate": "Private Service Connect", "whyFits": "Endpoint in your VPC; no peering of ranges [S163]", "whenNot": "Service supports only private services access", "nearestAlt": "Private services access [S164]", "verify": "Producer support; DNS" },
-      { "requirement": "Private VMs need outbound internet", "candidate": "Cloud NAT", "whyFits": "Managed outbound NAT without external IPs [S166]", "whenNot": "Inbound connections are needed", "nearestAlt": "Load balancer", "verify": "Port allocation; logging" }
+      {
+        "requirement": "Encrypted hybrid link quickly, moderate bandwidth",
+        "candidate": "HA VPN",
+        "whyFits": "IPsec over the internet; 99.99% SLA only with the documented HA topology [S149] [S150]",
+        "whenNot": "Sustained high bandwidth or private (non-internet) path needed",
+        "nearestAlt": "Interconnect",
+        "verify": "Two tunnels/interfaces per topology; BGP sessions",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "High bandwidth private hybrid link, colocation available",
+        "candidate": "Dedicated Interconnect",
+        "whyFits": "Direct physical connection [S147]",
+        "whenNot": "No presence at a colocation facility",
+        "nearestAlt": "Partner Interconnect",
+        "verify": "Topology for 99.9% vs 99.99% [S144] [S145]",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Private hybrid link through a service provider",
+        "candidate": "Partner Interconnect",
+        "whyFits": "Provider supplies connectivity [S148]",
+        "whenNot": "You need full control of the physical link",
+        "nearestAlt": "Dedicated Interconnect",
+        "verify": "Capacity options with the provider (K05: verify range)",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Connect a few VPCs with low latency",
+        "candidate": "VPC Network Peering",
+        "whyFits": "Private RFC 1918 routing between VPCs [S161]",
+        "whenNot": "Transitive routing among many VPCs is required (peering is not transitive)",
+        "nearestAlt": "Network Connectivity Center",
+        "verify": "Overlapping ranges; peering limits",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Hub-and-spoke across many VPCs and hybrid sites",
+        "candidate": "Network Connectivity Center",
+        "whyFits": "Central hub for spokes [S162]",
+        "whenNot": "Two VPCs only",
+        "nearestAlt": "Peering",
+        "verify": "Spoke types supported; route exchange",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Centralised network administration for many projects",
+        "candidate": "Shared VPC",
+        "whyFits": "Host project owns network; service projects use subnets [S165]",
+        "whenNot": "Teams require fully independent networks",
+        "nearestAlt": "Separate VPCs + NCC",
+        "verify": "Subnet-level IAM (networkUser)",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Consume a managed or producer service privately",
+        "candidate": "Private Service Connect",
+        "whyFits": "Endpoint in your VPC; no peering of ranges [S163]",
+        "whenNot": "Service supports only private services access",
+        "nearestAlt": "Private services access [S164]",
+        "verify": "Producer support; DNS",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Private VMs need outbound internet",
+        "candidate": "Cloud NAT",
+        "whyFits": "Managed outbound NAT without external IPs [S166]",
+        "whenNot": "Inbound connections are needed",
+        "nearestAlt": "Load balancer",
+        "verify": "Port allocation; logging",
+        "status": "source-linked"
+      }
     ],
     "failureModes": [
       "Claiming a 99.99% SLA from a topology that does not meet the documented requirements.",
@@ -134,22 +467,105 @@
       "Run Connectivity Tests for each critical path.",
       "Validate MTU end to end."
     ],
-    "sources": ["S149", "S150", "S147", "S148", "S144", "S145", "S161", "S162", "S163", "S164", "S165", "S166"]
+    "sources": [
+      "S149",
+      "S150",
+      "S147",
+      "S148",
+      "S144",
+      "S145",
+      "S161",
+      "S162",
+      "S163",
+      "S164",
+      "S165",
+      "S166"
+    ]
   },
   {
     "id": "X06",
     "title": "Authentication, authorization, organization policy and perimeters",
-    "relevantTo": ["ACE", "PCSE", "PCA", "AGWA", "PAA"],
+    "relevantTo": [
+      "ACE",
+      "PCSE",
+      "PCA",
+      "AGWA",
+      "PAA"
+    ],
     "intro": "Four distinct controls are often confused. Authentication proves who the principal is. IAM allow/deny decides what that principal may do on a resource. Organization policy constrains how resources may be configured regardless of IAM. VPC Service Controls limits data movement across a service perimeter even for authorized principals.",
     "matrix": [
-      { "requirement": "Grant least privilege for a task", "candidate": "Predefined IAM role at the lowest resource level", "whyFits": "Inherited downward; narrow scope [S116]", "whenNot": "No predefined role fits without excess permissions", "nearestAlt": "Custom role [S117]", "verify": "Policy Analyzer / recommender output" },
-      { "requirement": "Block a permission regardless of grants", "candidate": "IAM deny policy", "whyFits": "Deny is evaluated before allow [S112]", "whenNot": "You want to restrict configuration values, not permissions", "nearestAlt": "Organization policy", "verify": "Supported permissions for deny" },
-      { "requirement": "Time- or attribute-bound access", "candidate": "IAM Conditions", "whyFits": "Conditional role bindings [S118]", "whenNot": "Access needs approval workflow", "nearestAlt": "Privileged Access Manager [S119]", "verify": "Condition attributes supported by the service" },
-      { "requirement": "Prevent service-account key creation organisation-wide", "candidate": "Organization policy constraint", "whyFits": "Constrains configuration [S121]", "whenNot": "Legacy workloads still need keys (plan exceptions)", "nearestAlt": "Tag-scoped exceptions", "verify": "Inherited policy and exceptions" },
-      { "requirement": "External workloads (CI, other clouds) call Google APIs", "candidate": "Workload Identity Federation", "whyFits": "Short-lived credentials, no keys [S120]", "whenNot": "Provider cannot issue OIDC/SAML tokens", "nearestAlt": "Service-account key with rotation (last resort)", "verify": "Attribute mapping and conditions" },
-      { "requirement": "Reduce data exfiltration from managed services", "candidate": "VPC Service Controls perimeter", "whyFits": "Restricts API access across the perimeter [S110]", "whenNot": "Problem is over-broad IAM within the project", "nearestAlt": "IAM + deny policies", "verify": "Dry-run mode results; ingress/egress rules" },
-      { "requirement": "Limit which principals a policy can ever grant", "candidate": "Principal access boundary", "whyFits": "Bounds resources a principal can access [S113]", "whenNot": "Simple project-level restriction suffices", "nearestAlt": "Deny policy", "verify": "Current support and limits (change-sensitive)" },
-      { "requirement": "User access to internal web apps without VPN", "candidate": "Identity-Aware Proxy", "whyFits": "Identity- and context-aware access [S123]", "whenNot": "Non-HTTP protocols without TCP forwarding support", "nearestAlt": "VPN", "verify": "Firewall allows IAP ranges" }
+      {
+        "requirement": "Grant least privilege for a task",
+        "candidate": "Predefined IAM role at the lowest resource level",
+        "whyFits": "Inherited downward; narrow scope [S116]",
+        "whenNot": "No predefined role fits without excess permissions",
+        "nearestAlt": "Custom role [S117]",
+        "verify": "Policy Analyzer / recommender output",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Block a permission regardless of grants",
+        "candidate": "IAM deny policy",
+        "whyFits": "Deny is evaluated before allow [S112]",
+        "whenNot": "You want to restrict configuration values, not permissions",
+        "nearestAlt": "Organization policy",
+        "verify": "Supported permissions for deny",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Time- or attribute-bound access",
+        "candidate": "IAM Conditions",
+        "whyFits": "Conditional role bindings [S118]",
+        "whenNot": "Access needs approval workflow",
+        "nearestAlt": "Privileged Access Manager [S119]",
+        "verify": "Condition attributes supported by the service",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Prevent service-account key creation organisation-wide",
+        "candidate": "Organization policy constraint",
+        "whyFits": "Constrains configuration [S121]",
+        "whenNot": "Legacy workloads still need keys (plan exceptions)",
+        "nearestAlt": "Tag-scoped exceptions",
+        "verify": "Inherited policy and exceptions",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "External workloads (CI, other clouds) call Google APIs",
+        "candidate": "Workload Identity Federation",
+        "whyFits": "Short-lived credentials, no keys [S120]",
+        "whenNot": "Provider cannot issue OIDC/SAML tokens",
+        "nearestAlt": "Service-account key with rotation (last resort)",
+        "verify": "Attribute mapping and conditions",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Reduce data exfiltration from managed services",
+        "candidate": "VPC Service Controls perimeter",
+        "whyFits": "Restricts API access across the perimeter [S110]",
+        "whenNot": "Problem is over-broad IAM within the project",
+        "nearestAlt": "IAM + deny policies",
+        "verify": "Dry-run mode results; ingress/egress rules",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Limit which principals a policy can ever grant",
+        "candidate": "Principal access boundary",
+        "whyFits": "Bounds resources a principal can access [S113]",
+        "whenNot": "Simple project-level restriction suffices",
+        "nearestAlt": "Deny policy",
+        "verify": "Current support and limits (change-sensitive)",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "User access to internal web apps without VPN",
+        "candidate": "Identity-Aware Proxy",
+        "whyFits": "Identity- and context-aware access [S123]",
+        "whenNot": "Non-HTTP protocols without TCP forwarding support",
+        "nearestAlt": "VPN",
+        "verify": "Firewall allows IAP ranges",
+        "status": "source-linked"
+      }
     ],
     "failureModes": [
       "Using VPC Service Controls to fix an IAM over-grant.",
@@ -163,19 +579,74 @@
       "Use Policy Troubleshooter for denied access.",
       "Audit key creation via audit logs."
     ],
-    "sources": ["S116", "S112", "S118", "S113", "S119", "S120", "S121", "S110", "S123"]
+    "sources": [
+      "S116",
+      "S112",
+      "S118",
+      "S113",
+      "S119",
+      "S120",
+      "S121",
+      "S110",
+      "S123"
+    ]
   },
   {
     "id": "X07",
     "title": "Encryption keys and secrets",
-    "relevantTo": ["PCSE", "ACE", "PCD", "PCA"],
+    "relevantTo": [
+      "PCSE",
+      "ACE",
+      "PCD",
+      "PCA"
+    ],
     "intro": "Separate encryption keys (KMS: you control key lifecycle and access) from secrets (Secret Manager: stores credentials, versions them, controls access). Destruction and retention decisions are irreversible in practice; they belong in change-controlled runbooks, not exercises.",
     "matrix": [
-      { "requirement": "Default encryption is acceptable", "candidate": "Google-managed encryption", "whyFits": "No key management overhead", "whenNot": "Compliance requires customer control over key lifecycle", "nearestAlt": "CMEK", "verify": "Regulatory requirement text" },
-      { "requirement": "Customer-controlled key lifecycle and revocation", "candidate": "Cloud KMS CMEK", "whyFits": "Rotation schedules, IAM on keys [S114]", "whenNot": "Requirement forbids Google holding key material", "nearestAlt": "Cloud EKM (external)", "verify": "Service CMEK support; key location" },
-      { "requirement": "Store API keys, passwords, certificates", "candidate": "Secret Manager", "whyFits": "Versioned secrets with IAM and audit [S124]", "whenNot": "Data encryption at scale", "nearestAlt": "KMS envelope encryption", "verify": "Rotation process; access logging" },
-      { "requirement": "Supply your own key per request (Storage/Compute)", "candidate": "CSEK", "whyFits": "Key supplied with requests [S125]", "whenNot": "You cannot guarantee key availability; loss means data loss", "nearestAlt": "CMEK", "verify": "Key backup process" },
-      { "requirement": "Retire a key version", "candidate": "Disable, then schedule destruction", "whyFits": "Destruction is scheduled and irreversible after the pending period [S115]", "whenNot": "Any data may still depend on the version", "nearestAlt": "Disable only", "verify": "Inventory of dependent data; scheduled-destruction duration" }
+      {
+        "requirement": "Default encryption is acceptable",
+        "candidate": "Google-managed encryption",
+        "whyFits": "No key management overhead",
+        "whenNot": "Compliance requires customer control over key lifecycle",
+        "nearestAlt": "CMEK",
+        "verify": "Regulatory requirement text",
+        "status": "unverified"
+      },
+      {
+        "requirement": "Customer-controlled key lifecycle and revocation",
+        "candidate": "Cloud KMS CMEK",
+        "whyFits": "Rotation schedules, IAM on keys [S114]",
+        "whenNot": "Requirement forbids Google holding key material",
+        "nearestAlt": "Cloud EKM (external)",
+        "verify": "Service CMEK support; key location",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Store API keys, passwords, certificates",
+        "candidate": "Secret Manager",
+        "whyFits": "Versioned secrets with IAM and audit [S124]",
+        "whenNot": "Data encryption at scale",
+        "nearestAlt": "KMS envelope encryption",
+        "verify": "Rotation process; access logging",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Supply your own key per request (Storage/Compute)",
+        "candidate": "CSEK",
+        "whyFits": "Key supplied with requests [S125]",
+        "whenNot": "You cannot guarantee key availability; loss means data loss",
+        "nearestAlt": "CMEK",
+        "verify": "Key backup process",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Retire a key version",
+        "candidate": "Disable, then schedule destruction",
+        "whyFits": "Destruction is scheduled and irreversible after the pending period [S115]",
+        "whenNot": "Any data may still depend on the version",
+        "nearestAlt": "Disable only",
+        "verify": "Inventory of dependent data; scheduled-destruction duration",
+        "status": "source-linked"
+      }
     ],
     "failureModes": [
       "Destroying a key version still protecting data, making it unrecoverable.",
@@ -187,20 +658,80 @@
       "Test secret rotation in a non-production project.",
       "Review KMS audit logs for decrypt calls by unexpected principals."
     ],
-    "sources": ["S114", "S115", "S124", "S125", "S130"]
+    "sources": [
+      "S114",
+      "S115",
+      "S124",
+      "S125",
+      "S130"
+    ]
   },
   {
     "id": "X08",
     "title": "Monitoring, logging, detection and incident response",
-    "relevantTo": ["ACE", "PCDOE", "PCSE", "PSOE", "PCA"],
+    "relevantTo": [
+      "ACE",
+      "PCDOE",
+      "PCSE",
+      "PSOE",
+      "PCA"
+    ],
     "intro": "Monitoring tells you a service is unhealthy; logs explain why; detection finds adversary behaviour; incident response coordinates people. Alert on symptoms users feel (SLO burn), investigate with logs and traces, and keep audit logs as evidence.",
     "matrix": [
-      { "requirement": "Page humans only for user-visible problems", "candidate": "SLO burn-rate alerts", "whyFits": "Symptom-based, tunable precision/recall [S091] [S096]", "whenNot": "No SLO defined yet", "nearestAlt": "Uptime checks + error-rate thresholds", "verify": "Lookback windows and burn thresholds" },
-      { "requirement": "External availability check", "candidate": "Uptime check", "whyFits": "Probes from multiple locations [S102]", "whenNot": "Internal-only service without a reachable endpoint", "nearestAlt": "Synthetic monitor inside VPC", "verify": "Check regions and alert policy" },
-      { "requirement": "Count events from logs", "candidate": "Log-based metric", "whyFits": "Turns log entries into time series [S101]", "whenNot": "Application can emit metrics directly", "nearestAlt": "Custom metrics", "verify": "Filter accuracy; cardinality" },
-      { "requirement": "Retain logs longer or centralise", "candidate": "Log Router sinks to buckets/BigQuery/Storage", "whyFits": "Route and retain per policy [S098] [S097]", "whenNot": "Logs contain data that must not leave a region", "nearestAlt": "Regional log buckets", "verify": "Sink permissions; exclusions" },
-      { "requirement": "Who read sensitive data", "candidate": "Data Access audit logs", "whyFits": "Records data reads [S100]", "whenNot": "Cost/volume of enabling everywhere", "nearestAlt": "Enable selectively per service", "verify": "Enabled per service; BigQuery on by default" },
-      { "requirement": "Detect misconfigurations and threats", "candidate": "Security Command Center", "whyFits": "Findings across the organization [S127]", "whenNot": "Need custom detection over logs", "nearestAlt": "Google SecOps rules (YARA-L) [S131]", "verify": "Tier and enabled detectors" }
+      {
+        "requirement": "Page humans only for user-visible problems",
+        "candidate": "SLO burn-rate alerts",
+        "whyFits": "Symptom-based, tunable precision/recall [S091] [S096]",
+        "whenNot": "No SLO defined yet",
+        "nearestAlt": "Uptime checks + error-rate thresholds",
+        "verify": "Lookback windows and burn thresholds",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "External availability check",
+        "candidate": "Uptime check",
+        "whyFits": "Probes from multiple locations [S102]",
+        "whenNot": "Internal-only service without a reachable endpoint",
+        "nearestAlt": "Synthetic monitor inside VPC",
+        "verify": "Check regions and alert policy",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Count events from logs",
+        "candidate": "Log-based metric",
+        "whyFits": "Turns log entries into time series [S101]",
+        "whenNot": "Application can emit metrics directly",
+        "nearestAlt": "Custom metrics",
+        "verify": "Filter accuracy; cardinality",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Retain logs longer or centralise",
+        "candidate": "Log Router sinks to buckets/BigQuery/Storage",
+        "whyFits": "Route and retain per policy [S098] [S097]",
+        "whenNot": "Logs contain data that must not leave a region",
+        "nearestAlt": "Regional log buckets",
+        "verify": "Sink permissions; exclusions",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Who read sensitive data",
+        "candidate": "Data Access audit logs",
+        "whyFits": "Records data reads [S100]",
+        "whenNot": "Cost/volume of enabling everywhere",
+        "nearestAlt": "Enable selectively per service",
+        "verify": "Enabled per service; BigQuery on by default",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Detect misconfigurations and threats",
+        "candidate": "Security Command Center",
+        "whyFits": "Findings across the organization [S127]",
+        "whenNot": "Need custom detection over logs",
+        "nearestAlt": "Google SecOps rules (YARA-L) [S131]",
+        "verify": "Tier and enabled detectors",
+        "status": "source-linked"
+      }
     ],
     "failureModes": [
       "Alerting on CPU instead of user-facing symptoms, producing noise.",
@@ -213,20 +744,84 @@
       "Confirm audit log types enabled per critical service.",
       "Run a tabletop incident with roles (incident commander, comms, ops)."
     ],
-    "sources": ["S090", "S091", "S097", "S098", "S099", "S100", "S101", "S102", "S127", "S131"]
+    "sources": [
+      "S090",
+      "S091",
+      "S097",
+      "S098",
+      "S099",
+      "S100",
+      "S101",
+      "S102",
+      "S127",
+      "S131"
+    ]
   },
   {
     "id": "X09",
     "title": "Supply chain, deployment and rollback",
-    "relevantTo": ["PCD", "PCDOE", "PCSE", "ACE"],
+    "relevantTo": [
+      "PCD",
+      "PCDOE",
+      "PCSE",
+      "ACE"
+    ],
     "intro": "A safe release is traceable (provenance), gated (policy), gradual (canary), observable, and reversible. Rollback is a pre-built path, not an improvisation.",
     "matrix": [
-      { "requirement": "Only trusted images reach production GKE/Cloud Run", "candidate": "Binary Authorization", "whyFits": "Policy enforcement on deploy [S111]", "whenNot": "No attestation process exists yet", "nearestAlt": "Admission policies + manual review", "verify": "Policy mode (dry run vs enforce); break-glass" },
-      { "requirement": "Prove how an artifact was built", "candidate": "Build provenance (SLSA)", "whyFits": "Verifiable build metadata [S106] [S108]", "whenNot": "Builds happen outside a supported builder", "nearestAlt": "Signed attestations from your CI", "verify": "Provenance verification step" },
-      { "requirement": "Find vulnerable dependencies in images", "candidate": "Artifact Analysis scanning", "whyFits": "Vulnerability findings on images [S107]", "whenNot": "Need runtime threat detection", "nearestAlt": "SCC / runtime tools", "verify": "Scan coverage and severity gating" },
-      { "requirement": "Promote releases through environments", "candidate": "Cloud Deploy", "whyFits": "Delivery pipelines with promotion and rollback [S105]", "whenNot": "Single environment, simple service", "nearestAlt": "Cloud Run revisions + traffic split", "verify": "Approval and verification steps" },
-      { "requirement": "Gradually expose a new version", "candidate": "Canary with traffic splitting", "whyFits": "Limits blast radius [S094] [S058]", "whenNot": "Change is a schema migration that is not backward compatible", "nearestAlt": "Expand/contract migration", "verify": "Canary metrics and automatic abort criteria" },
-      { "requirement": "Recover from a bad release fast", "candidate": "Roll back to last known good", "whyFits": "Mitigation before diagnosis [S095]", "whenNot": "Release included irreversible data changes", "nearestAlt": "Roll forward with fix", "verify": "Rollback rehearsed; data compatibility" }
+      {
+        "requirement": "Only trusted images reach production GKE/Cloud Run",
+        "candidate": "Binary Authorization",
+        "whyFits": "Policy enforcement on deploy [S111]",
+        "whenNot": "No attestation process exists yet",
+        "nearestAlt": "Admission policies + manual review",
+        "verify": "Policy mode (dry run vs enforce); break-glass",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Prove how an artifact was built",
+        "candidate": "Build provenance (SLSA)",
+        "whyFits": "Verifiable build metadata [S106] [S108]",
+        "whenNot": "Builds happen outside a supported builder",
+        "nearestAlt": "Signed attestations from your CI",
+        "verify": "Provenance verification step",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Find vulnerable dependencies in images",
+        "candidate": "Artifact Analysis scanning",
+        "whyFits": "Vulnerability findings on images [S107]",
+        "whenNot": "Need runtime threat detection",
+        "nearestAlt": "SCC / runtime tools",
+        "verify": "Scan coverage and severity gating",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Promote releases through environments",
+        "candidate": "Cloud Deploy",
+        "whyFits": "Delivery pipelines with promotion and rollback [S105]",
+        "whenNot": "Single environment, simple service",
+        "nearestAlt": "Cloud Run revisions + traffic split",
+        "verify": "Approval and verification steps",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Gradually expose a new version",
+        "candidate": "Canary with traffic splitting",
+        "whyFits": "Limits blast radius [S094] [S058]",
+        "whenNot": "Change is a schema migration that is not backward compatible",
+        "nearestAlt": "Expand/contract migration",
+        "verify": "Canary metrics and automatic abort criteria",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Recover from a bad release fast",
+        "candidate": "Roll back to last known good",
+        "whyFits": "Mitigation before diagnosis [S095]",
+        "whenNot": "Release included irreversible data changes",
+        "nearestAlt": "Roll forward with fix",
+        "verify": "Rollback rehearsed; data compatibility",
+        "status": "source-linked"
+      }
     ],
     "failureModes": [
       "Canary without defined abort metrics.",
@@ -239,43 +834,154 @@
       "In a sandbox, try to deploy an image that violates the configured admission policy (for example, one missing a required attestation); confirm the enforcement mode, exemptions and break-glass path. Test continuous-validation logging separately: a logged violation is not a blocked deployment [S111] [S209].",
       "Check that deployed images are pinned by digest."
     ],
-    "sources": ["S105", "S106", "S107", "S108", "S111", "S094", "S095", "S058"]
+    "sources": [
+      "S105",
+      "S106",
+      "S107",
+      "S108",
+      "S111",
+      "S094",
+      "S095",
+      "S058"
+    ]
   },
   {
     "id": "X10",
     "title": "SLI, SLO, SLA, backup, RTO/RPO and cost controls",
-    "relevantTo": ["PCDOE", "PCA", "PCDBE", "ACE", "CDL"],
+    "relevantTo": [
+      "PCDOE",
+      "PCA",
+      "PCDBE",
+      "ACE",
+      "CDL"
+    ],
     "intro": "An SLI is a measurement; an SLO is an internal target for it; an SLA is a contract with consequences. RPO is how much data you can lose; RTO is how long recovery may take. Backups protect against corruption and deletion; replication protects against infrastructure failure and may replicate corruption.",
     "matrix": [
-      { "requirement": "Define reliability target for a user journey", "candidate": "SLI + SLO with error budget", "whyFits": "Balances velocity and reliability [S092]", "whenNot": "No measurable user-facing signal", "nearestAlt": "Start with request success/latency SLIs", "verify": "SLI measured where users experience it" },
-      { "requirement": "Contractual commitment to customers", "candidate": "SLA (looser than SLO)", "whyFits": "Leaves margin before penalties [S092]", "whenNot": "Internal service with no contract", "nearestAlt": "SLO only", "verify": "Legal review; exclusions" },
-      { "requirement": "Recover from accidental deletion/corruption", "candidate": "Backups / point-in-time recovery", "whyFits": "Restore to earlier state [S178]", "whenNot": "Need near-zero RTO from zone failure", "nearestAlt": "HA / replication", "verify": "Restore tested; retention" },
-      { "requirement": "Survive zone or region failure", "candidate": "Multi-zone / multi-region architecture", "whyFits": "Matches RTO/RPO tier [S104]", "whenNot": "Cost exceeds the business value of downtime", "nearestAlt": "Backup-and-restore DR", "verify": "DR drill results" },
-      { "requirement": "Be notified when spending rises", "candidate": "Cloud Billing budget + alerts", "whyFits": "Notifies at thresholds; does not cap spend [S065]", "whenNot": "You need a hard stop", "nearestAlt": "Spend cap (where eligible) or automation", "verify": "Notification delay [S067]" },
-      { "requirement": "Hard stop on spending for eligible services", "candidate": "Spend cap (where available)", "whyFits": "Caps spend for supported services [S068]", "whenNot": "Services in scope are not eligible", "nearestAlt": "Programmatic billing disable (last resort)", "verify": "Eligibility list (change-sensitive)" },
-      { "requirement": "Best-effort automated shutdown (sandbox only)", "candidate": "Disable billing via automation", "whyFits": "Stops billable services after a delay [S066]", "whenNot": "Production data must survive; active commitments block it", "nearestAlt": "Budget alerts + human decision", "verify": "Accrued charges are still billed; resources may be deleted [S207]" }
+      {
+        "requirement": "Define reliability target for a user journey",
+        "candidate": "SLI + SLO with error budget",
+        "whyFits": "Balances velocity and reliability [S092]",
+        "whenNot": "No measurable user-facing signal",
+        "nearestAlt": "Start with request success/latency SLIs",
+        "verify": "SLI measured where users experience it",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Contractual commitment to customers",
+        "candidate": "SLA (looser than SLO)",
+        "whyFits": "Leaves margin before penalties [S092]",
+        "whenNot": "Internal service with no contract",
+        "nearestAlt": "SLO only",
+        "verify": "Legal review; exclusions",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Recover from accidental deletion/corruption",
+        "candidate": "Backups / point-in-time recovery",
+        "whyFits": "Restore to earlier state [S178]",
+        "whenNot": "Need near-zero RTO from zone failure",
+        "nearestAlt": "HA / replication",
+        "verify": "Restore tested; retention",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Survive zone or region failure",
+        "candidate": "Multi-zone / multi-region architecture",
+        "whyFits": "Matches RTO/RPO tier [S104]",
+        "whenNot": "Cost exceeds the business value of downtime",
+        "nearestAlt": "Backup-and-restore DR",
+        "verify": "DR drill results",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Be notified when spending rises",
+        "candidate": "Cloud Billing budget + alerts",
+        "whyFits": "Notifies at thresholds; does not cap spend [S065]",
+        "whenNot": "You need a hard stop",
+        "nearestAlt": "Spend cap (where eligible) or automation",
+        "verify": "Notification delay [S067]",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Hard stop on spending for eligible services",
+        "candidate": "Spend cap (where available)",
+        "whyFits": "Caps spend for supported services [S068]",
+        "whenNot": "Services in scope are not eligible",
+        "nearestAlt": "Programmatic billing disable (last resort)",
+        "verify": "Eligibility list (change-sensitive)",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Best-effort automated shutdown (sandbox only)",
+        "candidate": "Disable billing via automation",
+        "whyFits": "Stops billable services after a delay [S066]",
+        "whenNot": "Production data must survive; active commitments block it",
+        "nearestAlt": "Budget alerts + human decision",
+        "verify": "Accrued charges are still billed; resources may be deleted [S207]",
+        "status": "source-linked"
+      }
     ],
     "tables": [
       {
         "title": "Time-based error budget, 30-day window (43,200 minutes)",
-        "columns": ["SLO", "Allowed bad minutes = 43,200 x (1 - SLO)", "Approx."],
+        "columns": [
+          "SLO",
+          "Allowed bad minutes = 43,200 x (1 - SLO)",
+          "Approx."
+        ],
         "rows": [
-          ["99%", "432 min", "7.2 h"],
-          ["99.5%", "216 min", "3.6 h"],
-          ["99.9%", "43.2 min", "43.2 min"],
-          ["99.95%", "21.6 min", "21.6 min"],
-          ["99.99%", "4.32 min", "4.3 min"],
-          ["99.999%", "0.432 min", "25.9 s"]
+          [
+            "99%",
+            "432 min",
+            "7.2 h"
+          ],
+          [
+            "99.5%",
+            "216 min",
+            "3.6 h"
+          ],
+          [
+            "99.9%",
+            "43.2 min",
+            "43.2 min"
+          ],
+          [
+            "99.95%",
+            "21.6 min",
+            "21.6 min"
+          ],
+          [
+            "99.99%",
+            "4.32 min",
+            "4.3 min"
+          ],
+          [
+            "99.999%",
+            "0.432 min",
+            "25.9 s"
+          ]
         ],
         "note": "Time-based SLIs only. 30 days x 24 h x 60 min = 43,200 min; budget = 43,200 x (1 - SLO) bad minutes. For a request-based SLI the budget is a share of eligible requests: (1 - SLO) x eligible requests; for example, 0.1% of 2,000,000 requests = 2,000 failed requests. Do not convert a request-based or latency SLO into minutes [S092] [S208]."
       },
       {
         "title": "Cost controls compared",
-        "columns": ["Control", "What it does and risks"],
+        "columns": [
+          "Control",
+          "What it does and risks"
+        ],
         "rows": [
-          ["Budget", "Notification only; spending continues [S065]"],
-          ["Spend cap", "Stops spend on eligible services only; check eligibility [S068]"],
-          ["Disable billing", "Stops billable services after a delay and can shut down and delete resources. It does not erase charges already incurred, and active or pending commitments prevent it [S066] [S207]."]
+          [
+            "Budget",
+            "Notification only; spending continues [S065]"
+          ],
+          [
+            "Spend cap",
+            "Stops spend on eligible services only; check eligibility [S068]"
+          ],
+          [
+            "Disable billing",
+            "Stops billable services after a delay and can shut down and delete resources. It does not erase charges already incurred, and active or pending commitments prevent it [S066] [S207]."
+          ]
         ]
       }
     ],
@@ -290,21 +996,91 @@
       "Restore a backup into an isolated project and time it.",
       "Record budget thresholds and who receives notifications."
     ],
-    "sources": ["S092", "S096", "S104", "S178", "S065", "S068", "S066", "S067"]
+    "sources": [
+      "S092",
+      "S096",
+      "S104",
+      "S178",
+      "S065",
+      "S068",
+      "S066",
+      "S067"
+    ]
   },
   {
     "id": "X11",
     "title": "Prompting, grounding, tuning, evaluation and metrics",
-    "relevantTo": ["GAIL", "PMLE", "PAA", "CDL"],
+    "relevantTo": [
+      "GAIL",
+      "PMLE",
+      "PAA",
+      "CDL"
+    ],
     "intro": "Escalate in order of cost and risk: prompt design, then grounding/retrieval for facts, then tuning for consistent style or task behaviour. Evaluate each step against a fixed set with explicit metrics. Grounding addresses knowledge; tuning addresses behaviour.",
     "matrix": [
-      { "requirement": "Change output style or format quickly", "candidate": "Prompt design and parameters", "whyFits": "Cheapest, reversible [S070]", "whenNot": "Model consistently fails the task despite prompt iteration", "nearestAlt": "Tuning", "verify": "Temperature/top-p effect on evaluation set" },
-      { "requirement": "Answers must cite current enterprise facts", "candidate": "Grounding / retrieval-augmented generation", "whyFits": "Connects responses to sources [S072]", "whenNot": "Problem is tone or format, not knowledge", "nearestAlt": "Prompting or tuning", "verify": "Retrieval quality; citation accuracy" },
-      { "requirement": "Consistent task-specific behaviour at scale", "candidate": "Supervised tuning", "whyFits": "Teaches patterns from examples [S073]", "whenNot": "Facts change frequently", "nearestAlt": "Grounding", "verify": "Training data quality; evaluation before/after" },
-      { "requirement": "Compare model or prompt versions", "candidate": "Gen AI evaluation service", "whyFits": "Metric-based and model-based evaluation [S074]", "whenNot": "No representative evaluation dataset", "nearestAlt": "Build a golden set first", "verify": "Metric definitions; human review sample" },
-      { "requirement": "Classifier where false positives are costly", "candidate": "Optimise precision", "whyFits": "Precision = TP/(TP+FP) [S082]", "whenNot": "Missing positives is costlier", "nearestAlt": "Optimise recall", "verify": "Threshold chosen on validation data" },
-      { "requirement": "Detect drift in production", "candidate": "Model monitoring", "whyFits": "Skew/drift detection [S075]", "whenNot": "Batch model rarely re-scored", "nearestAlt": "Scheduled evaluation", "verify": "Baseline dataset; alert thresholds" },
-      { "requirement": "Filter prompt injection / unsafe content", "candidate": "Model Armor", "whyFits": "Screens prompts and responses [S076]", "whenNot": "Risk is in tool permissions, not content", "nearestAlt": "Least-privilege tool design", "verify": "Policy templates; false-positive rate" }
+      {
+        "requirement": "Change output style or format quickly",
+        "candidate": "Prompt design and parameters",
+        "whyFits": "Cheapest, reversible [S070]",
+        "whenNot": "Model consistently fails the task despite prompt iteration",
+        "nearestAlt": "Tuning",
+        "verify": "Temperature/top-p effect on evaluation set",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Answers must cite current enterprise facts",
+        "candidate": "Grounding / retrieval-augmented generation",
+        "whyFits": "Connects responses to sources [S072]",
+        "whenNot": "Problem is tone or format, not knowledge",
+        "nearestAlt": "Prompting or tuning",
+        "verify": "Retrieval quality; citation accuracy",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Consistent task-specific behaviour at scale",
+        "candidate": "Supervised tuning",
+        "whyFits": "Teaches patterns from examples [S073]",
+        "whenNot": "Facts change frequently",
+        "nearestAlt": "Grounding",
+        "verify": "Training data quality; evaluation before/after",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Compare model or prompt versions",
+        "candidate": "Gen AI evaluation service",
+        "whyFits": "Metric-based and model-based evaluation [S074]",
+        "whenNot": "No representative evaluation dataset",
+        "nearestAlt": "Build a golden set first",
+        "verify": "Metric definitions; human review sample",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Classifier where false positives are costly",
+        "candidate": "Optimise precision",
+        "whyFits": "Precision = TP/(TP+FP) [S082]",
+        "whenNot": "Missing positives is costlier",
+        "nearestAlt": "Optimise recall",
+        "verify": "Threshold chosen on validation data",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Detect drift in production",
+        "candidate": "Model monitoring",
+        "whyFits": "Skew/drift detection [S075]",
+        "whenNot": "Batch model rarely re-scored",
+        "nearestAlt": "Scheduled evaluation",
+        "verify": "Baseline dataset; alert thresholds",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Filter prompt injection / unsafe content",
+        "candidate": "Model Armor",
+        "whyFits": "Screens prompts and responses [S076]",
+        "whenNot": "Risk is in tool permissions, not content",
+        "nearestAlt": "Least-privilege tool design",
+        "verify": "Policy templates; false-positive rate",
+        "status": "source-linked"
+      }
     ],
     "failureModes": [
       "Tuning to fix stale facts.",
@@ -317,21 +1093,91 @@
       "Check citation correctness on a sample.",
       "Red-team prompts for injection, aligned to SAIF [S081]."
     ],
-    "sources": ["S070", "S072", "S073", "S074", "S082", "S075", "S076", "S081"]
+    "sources": [
+      "S070",
+      "S072",
+      "S073",
+      "S074",
+      "S082",
+      "S075",
+      "S076",
+      "S081"
+    ]
   },
   {
     "id": "X12",
     "title": "Agent identity, tools, memory and evaluation",
-    "relevantTo": ["PAA", "GAIL", "PMLE", "PCSE"],
+    "relevantTo": [
+      "PAA",
+      "GAIL",
+      "PMLE",
+      "PCSE"
+    ],
     "intro": "An agent is a principal that acts. Give it its own identity, the narrowest tools, explicit memory boundaries, human approval for consequential actions, and an evaluation harness. Several agent-platform features are new and change-sensitive; items marked verify were not doc-verified in this pass.",
     "matrix": [
-      { "requirement": "Agent calls Google Cloud APIs", "candidate": "Dedicated service account or agent identity (verify current feature)", "whyFits": "Auditable, least privilege [S081]", "whenNot": "Shared identity across agents", "nearestAlt": "Per-agent service accounts", "verify": "Roles granted; audit log attribution [S099]" },
-      { "requirement": "Expose tools to many agents in a standard way", "candidate": "Model Context Protocol (MCP) servers", "whyFits": "Standard tool interface [S079]", "whenNot": "Single internal function call", "nearestAlt": "Direct function tools in ADK [S078]", "verify": "Tool auth and input validation" },
-      { "requirement": "Agents from different systems collaborate", "candidate": "Agent2Agent (A2A) protocol", "whyFits": "Interoperable agent communication [S080]", "whenNot": "All agents in one codebase", "nearestAlt": "Multi-agent within ADK", "verify": "Authentication between agents" },
-      { "requirement": "Consequential or irreversible action", "candidate": "Human-in-the-loop approval", "whyFits": "Limits harm from errors and injection", "whenNot": "Low-risk read-only action", "nearestAlt": "Automated with logging", "verify": "Approval audit trail" },
-      { "requirement": "Retain context across sessions", "candidate": "Managed memory (verify current Memory Bank behaviour)", "whyFits": "Personalisation and continuity", "whenNot": "Data must not persist (privacy)", "nearestAlt": "Session-only state", "verify": "Retention, deletion, and data residency" },
-      { "requirement": "Deploy and scale agents", "candidate": "Managed agent runtime (verify current product behaviour)", "whyFits": "Managed hosting [S077]", "whenNot": "Custom infra requirements", "nearestAlt": "Cloud Run / GKE", "verify": "Region, quotas, identity" },
-      { "requirement": "Measure agent quality", "candidate": "Trajectory and outcome evaluation", "whyFits": "Checks tool choice and final answer [S074]", "whenNot": "No test scenarios exist", "nearestAlt": "Build scenario suite first", "verify": "Pass rate per scenario; regressions" }
+      {
+        "requirement": "Agent calls Google Cloud APIs",
+        "candidate": "Dedicated service account or agent identity (verify current feature)",
+        "whyFits": "Auditable, least privilege [S081]",
+        "whenNot": "Shared identity across agents",
+        "nearestAlt": "Per-agent service accounts",
+        "verify": "Roles granted; audit log attribution [S099]",
+        "status": "needs-review"
+      },
+      {
+        "requirement": "Expose tools to many agents in a standard way",
+        "candidate": "Model Context Protocol (MCP) servers",
+        "whyFits": "Standard tool interface [S079]",
+        "whenNot": "Single internal function call",
+        "nearestAlt": "Direct function tools in ADK [S078]",
+        "verify": "Tool auth and input validation",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Agents from different systems collaborate",
+        "candidate": "Agent2Agent (A2A) protocol",
+        "whyFits": "Interoperable agent communication [S080]",
+        "whenNot": "All agents in one codebase",
+        "nearestAlt": "Multi-agent within ADK",
+        "verify": "Authentication between agents",
+        "status": "source-linked"
+      },
+      {
+        "requirement": "Consequential or irreversible action",
+        "candidate": "Human-in-the-loop approval",
+        "whyFits": "Limits harm from errors and injection",
+        "whenNot": "Low-risk read-only action",
+        "nearestAlt": "Automated with logging",
+        "verify": "Approval audit trail",
+        "status": "unverified"
+      },
+      {
+        "requirement": "Retain context across sessions",
+        "candidate": "Managed memory (verify current Memory Bank behaviour)",
+        "whyFits": "Personalisation and continuity",
+        "whenNot": "Data must not persist (privacy)",
+        "nearestAlt": "Session-only state",
+        "verify": "Retention, deletion, and data residency",
+        "status": "needs-review"
+      },
+      {
+        "requirement": "Deploy and scale agents",
+        "candidate": "Managed agent runtime (verify current product behaviour)",
+        "whyFits": "Managed hosting [S077]",
+        "whenNot": "Custom infra requirements",
+        "nearestAlt": "Cloud Run / GKE",
+        "verify": "Region, quotas, identity",
+        "status": "needs-review"
+      },
+      {
+        "requirement": "Measure agent quality",
+        "candidate": "Trajectory and outcome evaluation",
+        "whyFits": "Checks tool choice and final answer [S074]",
+        "whenNot": "No test scenarios exist",
+        "nearestAlt": "Build scenario suite first",
+        "verify": "Pass rate per scenario; regressions",
+        "status": "source-linked"
+      }
     ],
     "failureModes": [
       "Agent with broad write roles exposed to prompt injection via retrieved content.",
@@ -344,6 +1190,15 @@
       "Inject a malicious instruction in retrieved content (sandbox) and confirm containment.",
       "Check launch stage of every agent feature in the docs before relying on it."
     ],
-    "sources": ["S078", "S079", "S080", "S077", "S076", "S081", "S118", "S099"]
+    "sources": [
+      "S078",
+      "S079",
+      "S080",
+      "S077",
+      "S076",
+      "S081",
+      "S118",
+      "S099"
+    ]
   }
 ]
