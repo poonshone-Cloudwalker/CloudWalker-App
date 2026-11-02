@@ -28,7 +28,8 @@ const pill=async p=>(await p.locator('.topbar .save-pill').innerText().catch(()=
  await p.goto(U+'#/dashboard');await p.waitForTimeout(600);
  console.log('4 resume banner:',await p.locator('.resume-banner').count(), (await p.locator('.resume-banner').innerText().catch(()=>'')).replace(/\n/g,' '));
  await p.goto(U+'#/settings');await p.waitForTimeout(1200);
- const st=await p.locator('#p1card').innerText(); console.log('5 settings card:',st.replace(/\n+/g,' | ').slice(0,700));
+ /* Saved and used sizes vary from run to run (3/10 KB or 4/18 KB), so they are masked like the quota above */
+ const st=await p.locator('#p1card').innerText(); console.log('5 settings card:',st.replace(/\n+/g,' | ').replace(/(Saved data|Storage used by this site) \| \d+ KB/g,'$1 | N KB').slice(0,700));
  const qp=await p.locator('main').innerText(); console.log('   quiz progress line:',(qp.match(/\d+ answers, \d+ flags[^.]*\./)||[''])[0]);
  await ctx.close();
  console.log('errors',errs);
