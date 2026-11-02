@@ -29,8 +29,18 @@
  *   practice: { <entryId>: { seen, correct, completions, lastScore, updated } },
  *   errorlog: { entries: [ { id, date, questionId, wrongModel, correctedRule, evidence, transferTest, retested, updated } ],
  *               deleted: { <id>: deletedAtMillis } },
+ *   review: { <cardId>: { stage 0-5, due, last, lapses, reviews, hist: [{t, g}], req } },   // scheduled review, see below
  *   updated
  * }
+ * Scheduled review: Atlas misses are brought back on the same interval ladder the question bank uses
+ * (LADDER in 250-phase-3-hardening.js, grades 1 Again / 2 Hard / 3 Good / 4 Easy). The bank's own store
+ * (S.ws.srs) is keyed by bank question ids and tied to bank lookups, so Atlas cards live in their own
+ * store here instead of risking that engine. Card ids: 'm-<entryId>-<rowIndex>' for a matrix row
+ * (`req` snapshots the requirement text so a card is ignored if the row's content later changes) and
+ * 'e-<errorLogId>' for an error-log entry. Differences from the bank scheduler, on purpose: no weak-domain
+ * interval shortening (Atlas has no per-domain accuracy), and a correct answer given before a card is due
+ * (e.g. in the practice drill) does not push it further out, because early success is not evidence of
+ * retention at the scheduled interval.
  * The practice quiz session itself (current question order, position, generated options) is screen state,
  * not saved. */
 
@@ -41,8 +51,9 @@ const atlasSafeStr = (v, max) => typeof v === 'string' ? v.slice(0, max) : '';
 const atlasSafeNum = (v, lo, hi) => Number.isFinite(v) && v >= lo && v <= hi ? v : null;
 
 function atlasData() {
-  const d = (S.ws.atlas ||= { practice: {}, errorlog: { entries: [], deleted: {} }, updated: 0 });
+  const d = (S.ws.atlas ||= { practice: {}, errorlog: { entries: [], deleted: {} }, review: {}, updated: 0 });
   if (!d.practice || typeof d.practice !== 'object') d.practice = {};
+  if (!d.review || typeof d.review !== 'object' || Array.isArray(d.review)) d.review = {};
   if (!d.errorlog || typeof d.errorlog !== 'object' || !Array.isArray(d.errorlog.entries)) d.errorlog = { entries: [], deleted: {} };
   if (!d.errorlog.deleted || typeof d.errorlog.deleted !== 'object') d.errorlog.deleted = {};
   return d;
@@ -83,7 +94,7 @@ function atlasMissingSources() {
   return [...cited].filter(id => !reg[id]).sort();
 }
 
-let AT = { session: null };
+let AT = { session: null, review: null };
 
 /* ---------- Practice (Decision Recall Drill, "Architect mode") */
 function atlasShuffle(arr) { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));[a[i], a[j]] = [a[j], a[i]]; } return a; }
@@ -104,6 +115,7 @@ function atlasAnswer(id, choice) {
   const e = atlasEntry(id); if (!e) return; const row = e.matrix[s.order[s.i]]; if (!row) return;
   if (!s.options || !s.options.includes(choice)) return; // guards a malformed/foreign choice value
   s.picked = choice; s.total++; if (choice === row.candidate) s.correct++;
+  atlasReviewSchedule('m-' + id + '-' + s.order[s.i], choice === row.candidate ? 3 : 1, row.requirement, { early: true });
 }
 function atlasNext(id) {
   const s = AT.session; if (!s || s.id !== id || !s.picked) return; // can't advance an unanswered question
@@ -117,6 +129,117 @@ function atlasNext(id) {
   } else {
     s.options = atlasOptionsFor(atlasEntry(id), s.order[s.i]); // generated once per question, not on every render
   }
+}
+
+/* ---------- Scheduled review */
+const ATLAS_REVIEW_SESSION_MAX = 10;
+function atlasStepCard(c, g, now) {
+  if (g === 1) { c.stage = 0; c.lapses++; } else if (g === 2) c.stage = Math.max(1, c.stage); else if (g === 3) c.stage = Math.min(5, c.stage + 1); else c.stage = Math.min(5, c.stage + 2);
+  c.due = now + LADDER[c.stage][0]; c.last = now; c.reviews++;
+  c.hist.push({ t: now, g }); if (c.hist.length > 12) c.hist.shift();
+}
+function atlasReviewSchedule(cardId, g, req, opts) {
+  if (!atlasSafeId(cardId) || !(g >= 1 && g <= 4)) return;
+  const d = atlasData(); const now = Date.now();
+  let c = d.review[cardId];
+  if (c && opts && opts.early && c.due > now && g >= 3) return; // correct before due: not evidence of retention at the scheduled interval
+  if (!c) c = d.review[cardId] = { stage: 0, due: 0, last: 0, lapses: 0, reviews: 0, hist: [], req: atlasSafeStr(req, 200) };
+  atlasStepCard(c, g, now); d.updated = now; markDirty(); persistSoon(SAVE_QUICK);
+}
+/* Entries logged before scheduled review existed have no card. Created lazily and idempotently with
+ * last:0, so any real card for the same entry (e.g. from an import) always wins a merge. Deliberately does
+ * not mark the workspace dirty: it is derived data and is rebuilt identically on the next load. */
+function atlasBackfillCards() {
+  const d = atlasData(); const now = Date.now();
+  for (const e of d.errorlog.entries) { const id = 'e-' + e.id; if (atlasSafeId(id) && !d.review[id]) d.review[id] = { stage: 0, due: now, last: 0, lapses: 0, reviews: 0, hist: [], req: '' }; }
+}
+/* Resolve a card to its live content, or null when the card no longer applies (row removed/changed, entry deleted). */
+function atlasCardContent(cardId, c) {
+  if (cardId.startsWith('m-')) {
+    const k = cardId.lastIndexOf('-'); const e = atlasEntry(cardId.slice(2, k)); const idx = Number(cardId.slice(k + 1));
+    const row = e && Number.isInteger(idx) ? e.matrix[idx] : null;
+    if (!row || (c.req && c.req !== atlasSafeStr(row.requirement, 200))) return null;
+    return { kind: 'm', e, row, idx };
+  }
+  if (cardId.startsWith('e-')) {
+    const entry = atlasData().errorlog.entries.find(x => x.id === cardId.slice(2));
+    return entry ? { kind: 'e', entry } : null;
+  }
+  return null;
+}
+function atlasDueCards(now) {
+  atlasBackfillCards(); now = now ?? Date.now(); // read the clock after the backfill stamps its cards, so a backfilled card is never a millisecond in the future
+  const out = [];
+  for (const [id, c] of Object.entries(atlasData().review)) { if (!(c.due <= now)) continue; const ct = atlasCardContent(id, c); if (ct) out.push({ id, c, ct }); }
+  return out.sort((a, b) => a.c.due - b.c.due);
+}
+function atlasNextDueAt(now = Date.now()) {
+  let t = null; for (const [id, c] of Object.entries(atlasData().review)) { if (c.due > now && atlasCardContent(id, c) && (t === null || c.due < t)) t = c.due; } return t;
+}
+function atlasReviewPrep(s) {
+  while (s.i < s.queue.length) {
+    const id = s.queue[s.i]; const c = atlasData().review[id]; const ct = c && atlasCardContent(id, c);
+    if (ct) { s.picked = null; s.revealed = false; s.graded = false; s.options = ct.kind === 'm' ? atlasOptionsFor(ct.e, ct.idx) : null; return; }
+    s.i++; // card vanished mid-session (deleted entry, changed row): skip it
+  }
+}
+function atlasReviewBuild() {
+  const due = atlasDueCards(); const s = AT.review = { queue: due.slice(0, ATLAS_REVIEW_SESSION_MAX).map(x => x.id), totalDue: due.length, i: 0, done: 0, recalled: 0, picked: null, revealed: false, graded: false, options: null };
+  atlasReviewPrep(s); return s;
+}
+function atlasReviewAnswer(candidate) {
+  const s = AT.review; if (!s || s.i >= s.queue.length || s.picked || !s.options || !s.options.includes(candidate)) return;
+  const id = s.queue[s.i]; const c = atlasData().review[id]; const ct = c && atlasCardContent(id, c); if (!ct || ct.kind !== 'm') return;
+  const good = candidate === ct.row.candidate; s.picked = candidate; s.done++; if (good) s.recalled++;
+  atlasReviewSchedule(id, good ? 3 : 1, ct.row.requirement);
+}
+function atlasReviewReveal() { const s = AT.review; if (s && s.i < s.queue.length && !s.revealed) s.revealed = true; }
+function atlasReviewGrade(g) {
+  const s = AT.review; if (!s || s.i >= s.queue.length || !s.revealed || s.graded || !(g >= 1 && g <= 4)) return;
+  const id = s.queue[s.i]; const c = atlasData().review[id]; if (!c || !atlasCardContent(id, c)) return;
+  s.graded = true; s.done++; if (g >= 3) s.recalled++; atlasReviewSchedule(id, g, '');
+}
+function atlasReviewNext() {
+  const s = AT.review; if (!s || s.i >= s.queue.length || !(s.picked || s.graded)) return; // can't skip an unanswered card
+  s.i++; atlasReviewPrep(s);
+}
+function atlasReviewView() {
+  const back = '<a class="btn sm ghost" href="#/atlas">← Atlas</a>';
+  const s = AT.review || atlasReviewBuild();
+  if (!s.queue.length || s.i >= s.queue.length) {
+    if (s.done > 0) return `<div class="run-head">${back}</div><div class="page-head"><div><h1>Scheduled review — done</h1></div></div>
+      <section class="card"><h2 id="h-atlas-rdone" tabindex="-1">Recalled ${s.recalled} of ${s.done}</h2>
+      <p class="small muted">Misses come back sooner and recalled items come back later, on the same interval ladder as the question bank. This is a scheduling aid, not a readiness score.</p>
+      <div class="row" style="margin-top:12px"><button class="btn primary" data-action="atlas-review-start">Check for more due</button><a class="btn ghost" href="#/atlas">Back to the Atlas</a></div></section>`;
+    const next = atlasNextDueAt();
+    return `<div class="run-head">${back}</div><div class="page-head"><div><h1>Scheduled review</h1></div></div>
+      ${emptyState('Nothing due', next ? `Your next Atlas review is due ${fmtDue(next)}.` : 'Miss a question in the Decision Recall Drill, or log a miss in the error log, and it will be scheduled here.', '<a class="btn primary" href="#/atlas">Back to the Atlas</a>')}`;
+  }
+  const id = s.queue[s.i]; const c = atlasData().review[id]; const ct = c && atlasCardContent(id, c);
+  if (!ct) return `<div class="run-head">${back}</div>${emptyState('This card is no longer available', 'It was removed or changed.', '<button class="btn primary" data-action="atlas-review-start">Reload the queue</button>')}`;
+  const head = `<div class="run-head">${back}<span class="chip">Card ${s.i + 1} of ${s.queue.length}${s.totalDue > s.queue.length ? ` (${s.totalDue} due in all)` : ''}</span></div>
+    <div class="page-head"><div><h1>Scheduled review</h1><p class="muted">${ct.kind === 'm' ? `${esc(ct.e.id)} · ${esc(ct.e.title)}` : 'From your error log'}</p></div></div>
+    <div class="bar" role="progressbar" aria-label="Review progress" aria-valuemin="0" aria-valuemax="${s.queue.length}" aria-valuenow="${s.i}"><i style="width:${Math.round(s.i / s.queue.length * 100)}%"></i></div>`;
+  if (ct.kind === 'm') {
+    const row = ct.row;
+    return `${head}<section class="card" style="margin-top:16px" aria-labelledby="atlas-req">
+      <p class="small muted" style="margin:0">Requirement</p><h2 id="atlas-req" tabindex="-1" style="margin:4px 0 12px">${esc(row.requirement)}</h2>
+      ${!s.picked ? `<div class="row" style="flex-direction:column;gap:8px" role="group" aria-label="Candidates">${(s.options || []).map(o => `<button class="btn" style="justify-content:flex-start;text-align:left" data-action="atlas-review-answer" data-candidate="${esc(o)}">${esc(o)}</button>`).join('')}</div>`
+      : `<p><strong>You picked:</strong> ${esc(s.picked)} — ${s.picked === row.candidate ? 'correct.' : `the matrix's candidate was ${esc(row.candidate)}.`}</p>
+        <div class="atlas-feedback" style="margin-top:8px"><p><strong>Why it fits:</strong> ${atlasLinkSources(row.whyFits)}</p><p><strong>When not to choose it:</strong> ${atlasLinkSources(row.whenNot)}</p><p><strong>What to verify:</strong> ${atlasLinkSources(row.verify)}</p><p style="margin-top:6px">${atlasStatusChip(row.status)}</p></div>
+        <div class="row" style="margin-top:12px"><button class="btn primary" id="atlas-rnext" data-action="atlas-review-next">${s.i + 1 < s.queue.length ? 'Next card' : 'Finish'}</button></div>`}</section>`;
+  }
+  const en = ct.entry;
+  return `${head}<section class="card" style="margin-top:16px" aria-labelledby="atlas-req">
+    <p class="small muted" style="margin:0">${en.questionId ? `Situation: ${esc(en.questionId)}` : 'An earlier miss'}</p>
+    <h2 id="atlas-req" tabindex="-1" style="margin:4px 0 8px">What is the corrected rule?</h2>
+    <p class="small"><strong>You once believed:</strong> ${esc(en.wrongModel)}</p>
+    ${en.transferTest ? `<p class="small"><strong>Apply it to this case:</strong> ${esc(en.transferTest)}</p>` : ''}
+    ${!s.revealed ? `<div class="row" style="margin-top:12px"><button class="btn primary" data-action="atlas-review-reveal">Show the corrected rule</button></div>`
+    : `<div class="atlas-feedback" style="margin-top:8px"><p><strong>Corrected rule:</strong> ${esc(en.correctedRule)}</p>${en.evidence ? `<p class="small muted">Evidence: ${atlasLinkSources(en.evidence)}</p>` : ''}</div>
+      ${!s.graded ? `<p class="small" style="margin-top:10px">How well did you recall it?</p><div class="row" style="gap:8px;flex-wrap:wrap" role="group" aria-label="Grade your recall">
+        ${[[1, 'Again'], [2, 'Hard'], [3, 'Good'], [4, 'Easy']].map(([g, l]) => `<button class="btn" data-action="atlas-review-grade" data-g="${g}">${l}</button>`).join('')}</div>`
+      : `<div class="row" style="margin-top:12px"><button class="btn primary" id="atlas-rnext" data-action="atlas-review-next">${s.i + 1 < s.queue.length ? 'Next card' : 'Finish'}</button></div>`}`}</section>`;
 }
 
 /* ---------- Views */
@@ -133,13 +256,14 @@ function atlasListView() {
       <p class="small" style="margin:6px 0 0">${esc(e.intro.slice(0, 140))}${e.intro.length > 140 ? '…' : ''}</p>
     </a>`;
   }).join('');
-  const missing = atlasMissingSources();
+  const missing = atlasMissingSources(); const dueN = atlasDueCards().length; const nextAt = dueN ? null : atlasNextDueAt();
   return `<div class="page-head"><div><h1>Decision Atlas</h1><p class="muted">Twelve cross-certification decision matrices from the Field Reference. Each gives a candidate for a requirement, why it fits, when not to choose it, the nearest alternative, and what to verify before you commit. The Decision Recall Drill below lets you practise picking the right candidate before reading the answer — it is a service-selection recall drill, not a validated architecture-readiness assessment.</p></div></div>
   <section class="card" aria-labelledby="h-atlas-signals"><h2 id="h-atlas-signals">Row status labels used on this page</h2>
     <p class="small muted">Each row's status is a fact recorded about that row, not a guess from its wording — never color alone.</p>
     <div class="row" style="gap:8px;flex-wrap:wrap;margin-top:8px">${atlasStatusChip('source-linked')}${atlasStatusChip('needs-review')}${atlasStatusChip('unverified')}${atlasStatusChip('verified')}</div></section>
   <section class="card" style="margin-top:16px" aria-labelledby="h-atlas-tools"><h2 id="h-atlas-tools">Related tools</h2>
     <div class="grid g-2" style="margin-top:8px">
+      <a class="card" href="#/atlas/review" id="atlas-review-tile"><h3 style="margin:0">Scheduled review${dueN ? ` · ${dueN} due` : ''}</h3><p class="small muted" style="margin:6px 0 0">${dueN ? 'Atlas questions you missed and error-log entries come back here on a spaced schedule.' : nextAt ? `Nothing due now. Next: ${esc(fmtDue(nextAt))}.` : 'Nothing scheduled yet. Misses in the drill and entries in the error log are scheduled automatically.'}</p></a>
       <a class="card" href="#/atlas/conflicts"><h3 style="margin:0">Conflict &amp; Correction (K01–K05)</h3><p class="small muted" style="margin:6px 0 0">Documented disagreements between official sources, and how this edition handles each one — including which ones are still unresolved.</p></a>
       <a class="card" href="#/atlas/errorlog"><h3 style="margin:0">Error log</h3><p class="small muted" style="margin:6px 0 0">Log a wrong mental model, its corrected rule, and a transfer test that would expose the same error again.</p></a>
     </div>
@@ -278,6 +402,7 @@ function atlasErrorLogAdd() {
     evidence: atlasSafeStr(ev ? ev.value.trim() : '', 300), transferTest: atlasSafeStr(tt ? tt.value.trim() : '', 2000), retested: '', updated: now,
   });
   delete d.errorlog.deleted[id]; // a freshly created entry can't be shadowed by a stale tombstone of the same id
+  d.review['e-' + id] = { stage: 0, due: now + LADDER[0][0], last: now, lapses: 0, reviews: 0, hist: [], req: '' }; // first review later today
   d.updated = now; markDirty(); persistSoon(SAVE_QUICK);
   [q, wm, cr, ev, tt].forEach(el => { if (el) el.value = ''; });
   render(); showStatus('Logged.');
@@ -287,6 +412,7 @@ function atlasErrorLogDelete(id) {
   const d = atlasData(); const now = Date.now();
   d.errorlog.entries = d.errorlog.entries.filter(e => e.id !== id);
   d.errorlog.deleted[id] = now; // tombstone: an older import of this entry must not resurrect it
+  delete d.review['e-' + id];
   d.updated = now; markDirty(); persistSoon(SAVE_QUICK); render();
 }
 function atlasErrorLogView() {
@@ -346,6 +472,8 @@ registerFeature({
 .field{display:flex;flex-direction:column;gap:4px;font-size:.9rem}.field input,.field textarea{font:inherit;padding:8px;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);color:inherit}`,
   views: {
     atlas: arg => {
+      if (arg === 'review') return atlasReviewView();
+      AT.review = null; // leaving the review route discards its screen state (card progress is already saved per card)
       if (!arg) return atlasListView();
       if (arg === 'conflicts') return atlasConflictsView();
       if (arg === 'errorlog') return atlasErrorLogView();
@@ -360,6 +488,11 @@ registerFeature({
     'atlas-practice-start': (data) => { atlasBuildSession(data.id); go('atlas', data.id + '/practice'); },
     'atlas-practice-answer': (data) => { atlasAnswer(data.id, data.candidate); render(); $('#atlas-next')?.focus(); },
     'atlas-practice-next': (data) => { atlasNext(data.id); render(); ($('#atlas-req') || $('#h-atlas-done') || $('main h1'))?.focus(); },
+    'atlas-review-start': () => { AT.review = null; render(); ($('#atlas-req') || $('main h1'))?.focus(); },
+    'atlas-review-answer': (data) => { atlasReviewAnswer(data.candidate); render(); $('#atlas-rnext')?.focus(); },
+    'atlas-review-reveal': () => { atlasReviewReveal(); render(); },
+    'atlas-review-grade': (data) => { atlasReviewGrade(Number(data.g)); render(); $('#atlas-rnext')?.focus(); },
+    'atlas-review-next': () => { atlasReviewNext(); render(); ($('#atlas-req') || $('#h-atlas-rdone') || $('main h1'))?.focus(); },
     'atlas-errorlog-add': () => atlasErrorLogAdd(),
     'atlas-errorlog-delete': (data) => atlasErrorLogDelete(data.id),
   },
@@ -407,6 +540,23 @@ registerFeature({
       }
       d.errorlog.entries = [...byId.values()].filter(e => { const t = d.errorlog.deleted[e.id]; return t == null || t < e.updated; }).sort((a, b) => (b.updated || 0) - (a.updated || 0));
     }
-    d.updated = Math.max(d.updated || 0, atlasSafeNum(x.updated, 0, now + 86400000) || 0); AT.session = null;
+    /* Scheduled-review cards: merge by id, the card with the newer `last` wins whole (a tie keeps the local
+     * copy, so re-importing the same file is a no-op). Every field is range-checked; anything malformed is skipped. */
+    if (x.review && typeof x.review === 'object' && !Array.isArray(x.review)) {
+      const DAYMS = 86400000;
+      for (const [id, c] of Object.entries(x.review)) {
+        if (!atlasSafeId(id) || !/^[me]-/.test(id) || !c || typeof c !== 'object') continue;
+        const stage = atlasSafeNum(c.stage, 0, 5), due = atlasSafeNum(c.due, 0, now + 800 * DAYMS), last = atlasSafeNum(c.last, 0, now + DAYMS);
+        const lapses = atlasSafeNum(c.lapses, 0, 1e6), reviews = atlasSafeNum(c.reviews, 0, 1e6);
+        if (stage == null || !Number.isInteger(stage) || due == null || last == null || lapses == null || reviews == null || !Number.isInteger(lapses) || !Number.isInteger(reviews)) continue;
+        const hist = (Array.isArray(c.hist) ? c.hist : []).slice(-12).map(h => h && typeof h === 'object' ? { t: atlasSafeNum(h.t, 0, now + DAYMS), g: atlasSafeNum(h.g, 1, 4) } : null).filter(h => h && h.t != null && h.g != null && Number.isInteger(h.g));
+        const cur = d.review[id];
+        if (!cur || last > (cur.last || 0)) d.review[id] = { stage, due, last, lapses, reviews, hist, req: atlasSafeStr(c.req, 200) };
+      }
+    }
+    /* A card for an error-log entry that no longer exists (deleted here, or never imported) is dropped, so a
+     * stale import can't bring a deleted entry's review back. */
+    for (const id of Object.keys(d.review)) if (id.startsWith('e-') && !d.errorlog.entries.some(e => 'e-' + e.id === id)) delete d.review[id];
+    d.updated = Math.max(d.updated || 0, atlasSafeNum(x.updated, 0, now + 86400000) || 0); AT.session = null; AT.review = null;
   },
 });
