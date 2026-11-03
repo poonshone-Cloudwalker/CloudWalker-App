@@ -1,0 +1,35 @@
+ok  nav entry follows Decision Atlas
+ok  index lists three exams
+ok  index: CLF says no practice questions yet
+ok  index: SAA shows its 200 questions
+ok  index: AIB shows 13 tasks
+ok  CLF: four domains with official weights
+ok  CLF: 19 task statements
+ok  CLF: no Practice button and no per-task counts
+ok  CLF: says nothing is covered
+ok  CLF: pass mark and status from the profile
+ok  CLF: task opens to knowledge and skills
+ok  SAA: 14 tasks
+ok  SAA: per-task counts match the bank mapping
+ok  SAA: swapped 3.1/3.2 labels are mapped by name
+ok  SAA: questions outside official tasks reported (1.4 and 2.3)
+ok  SAA: counted + outside = bank total
+ok  SAA: has Practice button
+ok  AIB: 13 tasks, no per-task counts
+ok  AIB: explains why counts are not shown
+ok  AIB: pass mark not published, beta shown
+ok  AIB: tasks without detail say so
+ok  unknown code: safe message, nothing injected
+ok  facts table has AIF-C01
+ok  facts table has SOA-C03
+ok  facts table has DVA-C03
+ok  facts table has SAP-C03
+ok  facts table has MLE-C01
+ok  facts table has ME1-C02
+ok  facts table has MLS-C01
+ok  facts: MLS-C01 retired, MLE-C01 retiring, ME1-C02 beta
+ok  facts: pass marks filled from catalog
+ok  facts: AIB pass mark no longer asserted
+ok  facts: blueprint links only where a blueprint exists
+ok  facts: catalog-sourced rows are labelled
+all ok
