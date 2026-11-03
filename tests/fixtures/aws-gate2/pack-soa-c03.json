@@ -1,0 +1,1430 @@
+{
+  "format": "cloudwalker-content-pack",
+  "packId": "aws-soa-c03-practice",
+  "packVersion": "2026.11.1",
+  "title": "AWS CloudOps Engineer - Associate (SOA-C03) practice pack",
+  "publishedAt": "2026-11-03",
+  "minAppSchema": 1,
+  "checksum": {
+    "alg": "SHA-256",
+    "value": "99a4f7f90ef249b090360a7e99561541553b5fdc7a3e00e8c40e7811c88e9d79"
+  },
+  "content": {
+    "exams": [
+      {
+        "code": "SOA-C03",
+        "name": "AWS Certified CloudOps Engineer - Associate",
+        "vendor": "AWS",
+        "tier": "associate",
+        "id_prefix": "aws-soa-c03",
+        "domain_weights": {
+          "1": 22,
+          "2": 22,
+          "3": 22,
+          "4": 16,
+          "5": 18
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "aws-soa-c03-001",
+        "exam_code": "SOA-C03",
+        "domain": "1. Monitoring, Logging, Analysis, Remediation, and Performance Optimization",
+        "domain_number": 1,
+        "subdomain": "1.1 Implement metrics, alarms, and filters by using AWS monitoring and logging services.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "Amazon CloudWatch",
+          "Amazon SNS"
+        ],
+        "tags": [
+          "composite-alarms",
+          "alert-noise"
+        ],
+        "question": "When one backend dependency fails, five CloudWatch metric alarms fire and on-call engineers are paged five times for one incident. The team wants a single page, sent only when the high-latency alarm and the high-error-rate alarm are both in ALARM state. What should the CloudOps engineer configure?",
+        "options": [
+          "Increase the number of evaluation periods on each of the five metric alarms",
+          "A shared CloudWatch dashboard that displays all five alarms side by side",
+          "A composite alarm that requires both alarms to be in ALARM, with alerts set only on it",
+          "An EventBridge rule that forwards every state change from all five alarms to one SNS topic"
+        ],
+        "correct_index": 2,
+        "correct_rationale": "A composite alarm evaluates the states of other alarms. Its rule can require that all referenced alarms are in ALARM, and AWS describes setting up alerts only for the composite alarm to reduce alarm noise.",
+        "distractor_rationales": [
+          "More evaluation periods delays each alarm but still produces five separate notifications per incident.",
+          "A dashboard helps people see the alarms together, but it does not change who gets paged or how often.",
+          "",
+          "Forwarding every state change to one topic still delivers five messages, and it ignores the AND condition."
+        ],
+        "distractor_summary": "Each distractor changes timing, display or routing; only a composite alarm adds the AND logic and a single alert.",
+        "docLinks": [
+          {
+            "title": "Using Amazon CloudWatch alarms - Amazon CloudWatch",
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html"
+          },
+          {
+            "title": "Create a composite alarm - Amazon CloudWatch",
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Composite_Alarm.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-002",
+        "exam_code": "SOA-C03",
+        "domain": "1. Monitoring, Logging, Analysis, Remediation, and Performance Optimization",
+        "domain_number": 1,
+        "subdomain": "1.1 Implement metrics, alarms, and filters by using AWS monitoring and logging services.",
+        "question_type": "scenario",
+        "difficulty": "easy",
+        "services": [
+          "Amazon CloudWatch",
+          "Amazon EC2"
+        ],
+        "tags": [
+          "cloudwatch-agent",
+          "in-guest-metrics"
+        ],
+        "question": "A CloudOps engineer must alarm on memory utilization and disk usage inside the operating system of a fleet of EC2 instances. The metrics that EC2 publishes to CloudWatch by default do not include this in-guest data. What should the engineer do?",
+        "options": [
+          "Install and configure the CloudWatch agent on the instances to collect in-guest metrics",
+          "Turn on AWS CloudTrail data events for the account so that each instance is recorded",
+          "Create VPC flow logs for the instances' subnets and a metric filter on the log group",
+          "Enable Amazon EC2 automatic recovery on each instance and alarm on the recovery events"
+        ],
+        "correct_index": 0,
+        "correct_rationale": "The CloudWatch agent collects internal system-level metrics from EC2 instances, including in-guest metrics, in addition to the standard EC2 metrics. Alarms can then use those metrics.",
+        "distractor_rationales": [
+          "",
+          "CloudTrail records actions taken through the console, CLI, SDKs and APIs. It does not collect operating system metrics.",
+          "Flow logs capture information about IP traffic to and from network interfaces, not memory or disk usage.",
+          "Automatic recovery acts when a system status check fails. It does not publish memory or disk metrics."
+        ],
+        "distractor_summary": "CloudTrail, flow logs and recovery each observe something else; only the agent reads inside the guest OS.",
+        "docLinks": [
+          {
+            "title": "Collect metrics, logs, and traces using the CloudWatch agent - Amazon CloudWatch",
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html"
+          },
+          {
+            "title": "What Is AWS CloudTrail? - AWS CloudTrail",
+            "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html"
+          },
+          {
+            "title": "Logging IP traffic using VPC Flow Logs - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html"
+          },
+          {
+            "title": "Automatic instance recovery - Amazon Elastic Compute Cloud",
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-003",
+        "exam_code": "SOA-C03",
+        "domain": "1. Monitoring, Logging, Analysis, Remediation, and Performance Optimization",
+        "domain_number": 1,
+        "subdomain": "1.2 Identify and remediate issues by using monitoring and availability metrics.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "AWS Config",
+          "AWS Systems Manager"
+        ],
+        "tags": [
+          "config-remediation",
+          "automation-runbooks"
+        ],
+        "question": "AWS Config rules already flag noncompliant resources in an account. The security lead wants noncompliant resources fixed by a managed AWS mechanism tied to those rules, without the team building and running its own polling script. What should the CloudOps engineer configure?",
+        "options": [
+          "A CloudFormation StackSet that redeploys every flagged resource each night",
+          "An AWS CloudTrail trail that reverts each change recorded in Event history",
+          "A CloudWatch composite alarm with an EC2 action that runs on each finding",
+          "Remediation actions on the Config rules that use Systems Manager Automation documents"
+        ],
+        "correct_index": 3,
+        "correct_rationale": "AWS Config remediates noncompliant resources by using Systems Manager Automation documents associated with the rules. Config provides managed automation documents, and you can also create custom ones.",
+        "distractor_rationales": [
+          "StackSets create, update or delete stacks across accounts and Regions. They do not act on Config rule evaluations, and a nightly redeploy is a blunt tool.",
+          "CloudTrail records events, and Event history is a searchable record of management events. It does not undo changes.",
+          "Composite alarms evaluate alarm states and cannot perform EC2 actions. They are not linked to Config findings.",
+          ""
+        ],
+        "distractor_summary": "The distractors deploy, record or alarm; only Config remediation with Automation documents fixes flagged resources.",
+        "docLinks": [
+          {
+            "title": "Remediating Noncompliant Resources with AWS Config - AWS Config",
+            "url": "https://docs.aws.amazon.com/config/latest/developerguide/remediation.html"
+          },
+          {
+            "title": "AWS Systems Manager Automation - AWS Systems Manager",
+            "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation.html"
+          },
+          {
+            "title": "Managing stacks across accounts and Regions with StackSets - AWS CloudFormation",
+            "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html"
+          },
+          {
+            "title": "Using Amazon CloudWatch alarms - Amazon CloudWatch",
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-004",
+        "exam_code": "SOA-C03",
+        "domain": "1. Monitoring, Logging, Analysis, Remediation, and Performance Optimization",
+        "domain_number": 1,
+        "subdomain": "1.3 Implement performance optimization strategies for compute, storage, and database resources.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "Amazon EBS"
+        ],
+        "tags": [
+          "gp3",
+          "volume-types",
+          "cost-optimization"
+        ],
+        "question": "A database runs on a 200 GiB gp2 volume. CloudWatch shows the volume repeatedly running out of burst credits, and the workload needs a steady 6,000 IOPS. The team does not need more storage and does not want to pay for extra capacity only to raise performance. What should the CloudOps engineer do?",
+        "options": [
+          "Grow the gp2 volume until its size-based baseline IOPS reaches the required level",
+          "Modify the volume to gp3 and provision 6,000 IOPS",
+          "Move the database files to an instance store volume on a larger instance type",
+          "Snapshot the volume and restore the snapshot to a new gp2 volume of the same size"
+        ],
+        "correct_index": 1,
+        "correct_rationale": "gp3 lets you scale performance independently of volume size, and gp3 does not use burst credits. A 200 GiB gp3 volume can be provisioned above its 3,000 IOPS baseline (up to 500 IOPS per GiB) without adding capacity.",
+        "distractor_rationales": [
+          "Growing gp2 raises IOPS only by adding capacity, which is the cost the team wants to avoid.",
+          "",
+          "Instance store data is temporary and is lost when the instance stops, which is unsafe for database files.",
+          "A new gp2 volume of the same size has the same baseline and the same burst behavior."
+        ],
+        "distractor_summary": "Bigger gp2, same-size gp2 and instance store all miss the goal; gp3 decouples IOPS from size.",
+        "docLinks": [
+          {
+            "title": "Amazon EBS General Purpose SSD volumes - Amazon EBS",
+            "url": "https://docs.aws.amazon.com/ebs/latest/userguide/general-purpose.html"
+          },
+          {
+            "title": "Instance store temporary block storage for EC2 instances - Amazon Elastic Compute Cloud",
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-005",
+        "exam_code": "SOA-C03",
+        "domain": "1. Monitoring, Logging, Analysis, Remediation, and Performance Optimization",
+        "domain_number": 1,
+        "subdomain": "1.3 Implement performance optimization strategies for compute, storage, and database resources.",
+        "question_type": "scenario",
+        "difficulty": "hard",
+        "services": [
+          "Amazon RDS",
+          "AWS Lambda",
+          "Amazon RDS Proxy"
+        ],
+        "tags": [
+          "rds-proxy",
+          "connection-pooling"
+        ],
+        "question": "A Lambda-based API opens a new database connection on each invocation. During traffic spikes, the RDS for MySQL instance shows high CPU and memory from connection churn, and some new connections are refused. Read and write traffic are both affected. The team wants a fix with minimal code changes. What should the CloudOps engineer do?",
+        "options": [
+          "Add a read replica and point the Lambda function at the replica endpoint",
+          "Raise the Lambda function's memory so each invocation can open connections faster",
+          "Put Amazon RDS Proxy in front of the DB instance and use the proxy endpoint",
+          "Change the DB instance storage to gp3 and provision more IOPS and throughput"
+        ],
+        "correct_index": 2,
+        "correct_rationale": "RDS Proxy keeps a pool of database connections and reuses them, which avoids the memory and CPU overhead of opening a new connection each time. Most applications can use it with no code changes beyond the endpoint.",
+        "distractor_rationales": [
+          "A read replica is read-only, so writes cannot move to it, and each invocation would still open new connections.",
+          "More function memory does not reduce how many new database connections are opened.",
+          "",
+          "Storage IOPS do not address the CPU and memory cost of opening connections."
+        ],
+        "distractor_summary": "Replicas, function memory and storage miss the cause; pooling connections with RDS Proxy addresses the churn.",
+        "docLinks": [
+          {
+            "title": "Amazon RDS Proxy - Amazon Relational Database Service",
+            "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html"
+          },
+          {
+            "title": "Working with DB instance read replicas - Amazon Relational Database Service",
+            "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html"
+          },
+          {
+            "title": "Amazon EBS General Purpose SSD volumes - Amazon EBS",
+            "url": "https://docs.aws.amazon.com/ebs/latest/userguide/general-purpose.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-006",
+        "exam_code": "SOA-C03",
+        "domain": "2. Reliability and Business Continuity",
+        "domain_number": 2,
+        "subdomain": "2.1 Implement scalability and elasticity.",
+        "question_type": "scenario",
+        "difficulty": "easy",
+        "services": [
+          "Amazon EC2 Auto Scaling",
+          "Amazon CloudWatch"
+        ],
+        "tags": [
+          "target-tracking",
+          "scaling-policies"
+        ],
+        "question": "An Auto Scaling group uses step scaling with three CloudWatch alarms that engineers tune by hand. The team wants the group to hold average CPU utilization near 50 percent and wants AWS to create and manage the alarms. What should the CloudOps engineer configure?",
+        "options": [
+          "A target tracking policy on average CPU utilization with a target value of 50",
+          "A step scaling policy with more step adjustments for each size of alarm breach",
+          "A CloudWatch composite alarm that combines the three alarms into one scaling trigger",
+          "A simple scaling policy with a longer cooldown period between scaling activities"
+        ],
+        "correct_index": 0,
+        "correct_rationale": "With target tracking you select a metric and a target value, and Amazon EC2 Auto Scaling creates and manages the CloudWatch alarms. AWS strongly recommends target tracking for metrics such as average CPU utilization.",
+        "distractor_rationales": [
+          "",
+          "With step scaling you still create and manage the CloudWatch alarms yourself.",
+          "Composite alarms cannot perform Auto Scaling actions.",
+          "Simple scaling also relies on alarms you manage, and a cooldown only spaces out scaling activities."
+        ],
+        "distractor_summary": "Step, simple and composite options all leave alarm management with the team; target tracking hands it to AWS.",
+        "docLinks": [
+          {
+            "title": "Target tracking scaling policies for Amazon EC2 Auto Scaling - Amazon EC2 Auto Scaling",
+            "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html"
+          },
+          {
+            "title": "Step and simple scaling policies for Amazon EC2 Auto Scaling - Amazon EC2 Auto Scaling",
+            "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html"
+          },
+          {
+            "title": "Using Amazon CloudWatch alarms - Amazon CloudWatch",
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-007",
+        "exam_code": "SOA-C03",
+        "domain": "2. Reliability and Business Continuity",
+        "domain_number": 2,
+        "subdomain": "2.1 Implement scalability and elasticity.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "Amazon RDS"
+        ],
+        "tags": [
+          "read-replicas",
+          "database-scaling"
+        ],
+        "question": "Business reporting queries slow down an RDS for PostgreSQL production instance during working hours. The reports can tolerate data that is slightly behind production. Which change offloads this load with the least impact on the application's writes?",
+        "options": [
+          "Put RDS Proxy in front of the instance and connect the reporting tool through it",
+          "Increase the backup retention period so that reports can read from automated backups",
+          "Create an AWS Backup plan that takes snapshots of the instance every hour",
+          "Create a read replica and point the reporting tool at the replica's endpoint"
+        ],
+        "correct_index": 3,
+        "correct_rationale": "AWS lists running business reporting queries against a read replica, rather than the production instance, as a read replica use case. Replication is asynchronous, which is acceptable because the reports tolerate slightly stale data.",
+        "distractor_rationales": [
+          "RDS Proxy pools connections, but the reporting queries would still run on the production instance.",
+          "Automated backups support restores. They are not a queryable endpoint for reports.",
+          "Snapshots protect data. Querying them would first require restoring to a new instance each time.",
+          ""
+        ],
+        "distractor_summary": "Proxy, retention and snapshots leave queries on production or need restores; a replica serves reads directly.",
+        "docLinks": [
+          {
+            "title": "Working with DB instance read replicas - Amazon Relational Database Service",
+            "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html"
+          },
+          {
+            "title": "Amazon RDS Proxy - Amazon Relational Database Service",
+            "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html"
+          },
+          {
+            "title": "What is AWS Backup? - AWS Backup",
+            "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-008",
+        "exam_code": "SOA-C03",
+        "domain": "2. Reliability and Business Continuity",
+        "domain_number": 2,
+        "subdomain": "2.2 Implement highly available and resilient environments.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "Elastic Load Balancing",
+          "Amazon EC2"
+        ],
+        "tags": [
+          "alb-health-checks",
+          "security-groups"
+        ],
+        "question": "New EC2 targets registered in an Application Load Balancer target group stay unhealthy. The application answers correctly when tested from inside each instance. The health check uses HTTP on port 8080. Which configuration issue explains this behavior?",
+        "options": [
+          "The instances lack an IAM role that lets them report health to Elastic Load Balancing",
+          "The instance security group does not allow port 8080 from the load balancer",
+          "The target group has no registered targets, so the load balancer returns HTTP 503",
+          "The Auto Scaling group uses target tracking instead of a step scaling policy"
+        ],
+        "correct_index": 1,
+        "correct_rationale": "The security group associated with an instance must allow traffic from the load balancer on the health check port and protocol. If it does not, health checks fail even though the application works locally.",
+        "distractor_rationales": [
+          "The load balancer sends health check requests to the targets. Targets do not need a role to report their health.",
+          "",
+          "The scenario states that targets are registered. HTTP 503 with no registered targets is a different symptom.",
+          "The scaling policy type controls capacity changes. It does not affect whether health checks reach the targets."
+        ],
+        "distractor_summary": "Only the security group blocks the health check path; the other options describe unrelated settings or symptoms.",
+        "docLinks": [
+          {
+            "title": "Troubleshoot your Application Load Balancers - Elastic Load Balancing",
+            "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-troubleshooting.html"
+          },
+          {
+            "title": "Health checks for Application Load Balancer target groups - Elastic Load Balancing",
+            "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-009",
+        "exam_code": "SOA-C03",
+        "domain": "2. Reliability and Business Continuity",
+        "domain_number": 2,
+        "subdomain": "2.2 Implement highly available and resilient environments.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "Amazon Route 53",
+          "Amazon S3"
+        ],
+        "tags": [
+          "failover-routing",
+          "health-checks"
+        ],
+        "question": "A company hosts its website in one Region and keeps a static maintenance page in an S3 bucket configured as a website. DNS must send users to the maintenance page only when the primary site is unhealthy, without anyone taking manual action. Which configuration meets this requirement?",
+        "options": [
+          "Serve all traffic through a CloudFront distribution that uses the S3 bucket as its only origin",
+          "An AWS Backup plan that copies the website content to the S3 bucket every hour",
+          "Route 53 failover routing with a health check on the primary and the bucket as secondary",
+          "A CloudWatch alarm on the site that emails the on-call engineer through an SNS topic"
+        ],
+        "correct_index": 2,
+        "correct_rationale": "Failover routing sends traffic to a resource when it is healthy and to a different resource when the first is unhealthy. The secondary record can point to an S3 bucket set up as a website, and Route 53 health checks decide which is healthy.",
+        "distractor_rationales": [
+          "A distribution with only the bucket as origin would serve the maintenance page all the time.",
+          "Copying content to the bucket does not change where DNS sends users.",
+          "",
+          "An email alert requires a person to act, which the requirement rules out."
+        ],
+        "distractor_summary": "CloudFront-only, backups and email alerts do not switch DNS on health; failover routing does.",
+        "docLinks": [
+          {
+            "title": "Failover routing - Amazon Route 53",
+            "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-failover.html"
+          },
+          {
+            "title": "Creating Amazon Route 53 health checks - Amazon Route 53",
+            "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html"
+          },
+          {
+            "title": "What is Amazon CloudFront? - Amazon CloudFront",
+            "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-010",
+        "exam_code": "SOA-C03",
+        "domain": "2. Reliability and Business Continuity",
+        "domain_number": 2,
+        "subdomain": "2.3 Implement backup and restore strategies.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "AWS Backup"
+        ],
+        "tags": [
+          "backup-plans",
+          "cross-region-backup"
+        ],
+        "question": "Teams back up EC2, EBS, RDS and DynamoDB resources with their own scripts. The company now needs one schedule, a copy of each backup in a second Region, and a single place where auditors can review backup policies. What should the CloudOps engineer implement?",
+        "options": [
+          "AWS Backup plans assigned to the resources, with cross-Region copy in the plan",
+          "An S3 Lifecycle configuration that transitions all backup files to a colder storage class",
+          "Separate Systems Manager Automation runbooks for each service, run on a schedule",
+          "CloudFormation StackSets that deploy each team's backup scripts into a second Region"
+        ],
+        "correct_index": 0,
+        "correct_rationale": "AWS Backup centrally manages backup policies, called backup plans, across AWS services. Backups can be copied to other Regions automatically as part of a scheduled backup plan.",
+        "distractor_rationales": [
+          "",
+          "S3 Lifecycle manages objects in S3 buckets. It does not back up EC2, RDS or DynamoDB resources.",
+          "Per-service runbooks keep custom logic in many places and give auditors no single backup policy.",
+          "Deploying the same scripts to more Regions multiplies the scripts. It does not centralize policy."
+        ],
+        "distractor_summary": "Lifecycle, runbooks and StackSets keep backups scattered; AWS Backup plans centralize schedule, copy and audit.",
+        "docLinks": [
+          {
+            "title": "What is AWS Backup? - AWS Backup",
+            "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"
+          },
+          {
+            "title": "Managing the lifecycle of objects - Amazon Simple Storage Service",
+            "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html"
+          },
+          {
+            "title": "AWS Systems Manager Automation - AWS Systems Manager",
+            "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation.html"
+          },
+          {
+            "title": "Managing stacks across accounts and Regions with StackSets - AWS CloudFormation",
+            "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-011",
+        "exam_code": "SOA-C03",
+        "domain": "2. Reliability and Business Continuity",
+        "domain_number": 2,
+        "subdomain": "2.3 Implement backup and restore strategies.",
+        "question_type": "scenario",
+        "difficulty": "hard",
+        "services": [
+          "Amazon RDS"
+        ],
+        "tags": [
+          "point-in-time-restore",
+          "rpo"
+        ],
+        "question": "At 14:20 a faulty deployment deleted rows in an RDS for MySQL production database that has automated backups enabled. The team needs the data as it existed at 14:15 and must leave the current instance untouched while it investigates. What should the CloudOps engineer do?",
+        "options": [
+          "Promote the existing read replica to a standalone instance and copy the rows back",
+          "Restore to a point in time of 14:15 as a new DB instance, then copy the rows back",
+          "Restore last night's automated snapshot over the production instance in place",
+          "Roll the production instance back in place to 14:15 by using its latest restorable time"
+        ],
+        "correct_index": 1,
+        "correct_rationale": "Point-in-time restore creates a new DB instance at the chosen time without modifying the source instance. RDS uploads transaction logs every five minutes, so 14:15 is within the restorable window here.",
+        "distractor_rationales": [
+          "RDS updates the replica whenever the primary changes, so the replica has already applied the deletes as well.",
+          "",
+          "Last night's snapshot loses the day's legitimate changes, and the plan overwrites the instance the team must keep.",
+          "A point-in-time restore does not modify the source instance in place; it creates a new instance."
+        ],
+        "distractor_summary": "The replica copied the deletes and the other two touch production; point-in-time restore to a new instance fits.",
+        "docLinks": [
+          {
+            "title": "Restoring a DB instance to a specified time for Amazon RDS - Amazon Relational Database Service",
+            "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIT.html"
+          },
+          {
+            "title": "Working with DB instance read replicas - Amazon Relational Database Service",
+            "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-012",
+        "exam_code": "SOA-C03",
+        "domain": "3. Deployment, Provisioning, and Automation",
+        "domain_number": 3,
+        "subdomain": "3.1 Provision and maintain cloud resources.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "AWS CloudFormation"
+        ],
+        "tags": [
+          "stacksets",
+          "multi-account"
+        ],
+        "question": "A platform team must deploy one CloudFormation template, which creates an IAM role and an SNS topic, into 40 member accounts across three Regions. Future template updates must roll out in a single operation from an administrator account. What should the team use?",
+        "options": [
+          "AWS RAM to share the stack from the administrator account with each member account",
+          "A Systems Manager maintenance window that runs a Patch Manager task in each account",
+          "Separate stacks that each account team creates and updates by hand from the template",
+          "CloudFormation StackSets that target the 40 accounts and the three Regions"
+        ],
+        "correct_index": 3,
+        "correct_rationale": "StackSets let you create, update or delete stacks across multiple accounts and Regions with a single operation, from an administrator account that manages the template.",
+        "distractor_rationales": [
+          "AWS RAM makes an existing resource usable by other accounts. It does not create stacks in them.",
+          "Patch Manager applies operating system patches to managed nodes. It does not deploy templates.",
+          "Manual per-account stacks fail the single-operation requirement and invite drift between accounts.",
+          ""
+        ],
+        "distractor_summary": "RAM shares, Patch Manager patches and manual stacks do not scale; StackSets deploy across accounts and Regions at once.",
+        "docLinks": [
+          {
+            "title": "Managing stacks across accounts and Regions with StackSets - AWS CloudFormation",
+            "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html"
+          },
+          {
+            "title": "What is AWS Resource Access Manager? - AWS Resource Access Manager",
+            "url": "https://docs.aws.amazon.com/ram/latest/userguide/what-is.html"
+          },
+          {
+            "title": "AWS Systems Manager Patch Manager - AWS Systems Manager",
+            "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-013",
+        "exam_code": "SOA-C03",
+        "domain": "3. Deployment, Provisioning, and Automation",
+        "domain_number": 3,
+        "subdomain": "3.1 Provision and maintain cloud resources.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "AWS RAM",
+          "Amazon VPC"
+        ],
+        "tags": [
+          "resource-sharing",
+          "shared-subnets"
+        ],
+        "question": "A networking account owns a central VPC. Application teams in other accounts of the same organization must launch EC2 instances into its subnets without creating VPCs of their own, and the network team must keep control of routing. What should the network team do?",
+        "options": [
+          "Create a VPC peering connection from the central VPC to a new VPC in each account",
+          "Deploy a StackSet that builds a copy of the central VPC in every application account",
+          "Share the subnets with the application accounts by using AWS Resource Access Manager",
+          "Create gateway VPC endpoints in the central VPC for each of the application accounts"
+        ],
+        "correct_index": 2,
+        "correct_rationale": "AWS RAM shares resources across accounts in an organization. When a subnet is shared, users in the other account see it in their VPC console and can use it, while the owning account retains full ownership of the shared resource.",
+        "distractor_rationales": [
+          "Peering requires each account to own a VPC, which the requirement rules out.",
+          "Copying the VPC into every account removes central control and creates many separate networks.",
+          "",
+          "Gateway endpoints provide private access to Amazon S3 and DynamoDB. They do not let other accounts launch into subnets."
+        ],
+        "distractor_summary": "Peering and copies create more VPCs and endpoints do something else; RAM subnet sharing keeps one central VPC.",
+        "docLinks": [
+          {
+            "title": "What is AWS Resource Access Manager? - AWS Resource Access Manager",
+            "url": "https://docs.aws.amazon.com/ram/latest/userguide/what-is.html"
+          },
+          {
+            "title": "Gateway endpoints - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html"
+          },
+          {
+            "title": "Managing stacks across accounts and Regions with StackSets - AWS CloudFormation",
+            "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-014",
+        "exam_code": "SOA-C03",
+        "domain": "3. Deployment, Provisioning, and Automation",
+        "domain_number": 3,
+        "subdomain": "3.1 Provision and maintain cloud resources.",
+        "question_type": "scenario",
+        "difficulty": "easy",
+        "services": [
+          "EC2 Image Builder"
+        ],
+        "tags": [
+          "golden-ami",
+          "image-pipelines"
+        ],
+        "question": "Teams launch EC2 instances from a golden AMI that one engineer rebuilds by hand each month, and new instances often start without recent OS patches. The company wants patched, up-to-date images produced automatically on a schedule. Which service should the CloudOps engineer use?",
+        "options": [
+          "EC2 Image Builder with a scheduled pipeline",
+          "An AWS Backup plan that creates an AMI of a running instance every night",
+          "Systems Manager Patch Manager to scan the instances already running in the fleet",
+          "A CloudFormation StackSet that copies the current golden AMI into each Region"
+        ],
+        "correct_index": 0,
+        "correct_rationale": "EC2 Image Builder automates creating custom, secure, up-to-date server images, and its pipelines can automate updates and system patching on a schedule.",
+        "distractor_rationales": [
+          "",
+          "A nightly AMI of a running instance captures whatever state it has, patched or not. It is not a controlled build.",
+          "Patch Manager patches running managed nodes. It does not produce a new golden image for future launches.",
+          "Copying the current AMI spreads the same unpatched image to more Regions."
+        ],
+        "distractor_summary": "Backups, patching live nodes and copying AMIs do not build new patched images; Image Builder pipelines do.",
+        "docLinks": [
+          {
+            "title": "What is Image Builder? - EC2 Image Builder",
+            "url": "https://docs.aws.amazon.com/imagebuilder/latest/userguide/what-is-image-builder.html"
+          },
+          {
+            "title": "AWS Systems Manager Patch Manager - AWS Systems Manager",
+            "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager.html"
+          },
+          {
+            "title": "What is AWS Backup? - AWS Backup",
+            "url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-015",
+        "exam_code": "SOA-C03",
+        "domain": "3. Deployment, Provisioning, and Automation",
+        "domain_number": 3,
+        "subdomain": "3.2 Automate the management of existing resources.",
+        "question_type": "scenario",
+        "difficulty": "hard",
+        "services": [
+          "Amazon EventBridge",
+          "AWS Lambda"
+        ],
+        "tags": [
+          "eventbridge-troubleshooting",
+          "resource-based-policy"
+        ],
+        "question": "An EventBridge rule matches EC2 instance state-change events, and its metrics confirm that the rule is matching. The rule's target Lambda function is never invoked. No IAM execution role is configured on the target. What should the CloudOps engineer check first?",
+        "options": [
+          "Test the rule's event pattern against sample events in the EventBridge Sandbox",
+          "Whether the function's resource-based policy allows EventBridge to invoke it",
+          "Increase the Lambda function's timeout and memory so that it can finish running",
+          "Whether the function is subscribed to the SNS topic that EventBridge publishes to"
+        ],
+        "correct_index": 1,
+        "correct_rationale": "For Lambda targets with no IAM execution role, EventBridge relies on the resource-based policy on the function. AWS lists missing permissions as a reason a matched rule does not invoke a Lambda function.",
+        "distractor_rationales": [
+          "The metrics already show the pattern matches, so testing the pattern does not explain the missing invocation.",
+          "",
+          "The function is never invoked, so its timeout and memory never come into play.",
+          "EventBridge invokes Lambda targets directly. No SNS subscription is involved."
+        ],
+        "distractor_summary": "The pattern works and runtime settings never apply; the missing piece is permission to invoke the function.",
+        "docLinks": [
+          {
+            "title": "Troubleshooting Amazon EventBridge - Amazon EventBridge",
+            "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-troubleshooting.html"
+          },
+          {
+            "title": "Using resource-based policies for Amazon EventBridge - Amazon EventBridge",
+            "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-use-resource-based.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-016",
+        "exam_code": "SOA-C03",
+        "domain": "3. Deployment, Provisioning, and Automation",
+        "domain_number": 3,
+        "subdomain": "3.2 Automate the management of existing resources.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "Amazon S3",
+          "Amazon EventBridge",
+          "Amazon SQS"
+        ],
+        "tags": [
+          "s3-event-notifications",
+          "event-driven"
+        ],
+        "question": "Each new object in an S3 bucket must be processed by consumers that read from an existing SQS FIFO queue. When the team adds the FIFO queue as the destination of an S3 event notification, the configuration is rejected. What should the CloudOps engineer do?",
+        "options": [
+          "Update the FIFO queue's access policy so that the S3 service principal can send messages",
+          "Recreate the queue as a standard queue with the same name and point the consumers at it",
+          "Turn on S3 Versioning for the bucket so that each new object write produces an event",
+          "Enable Amazon EventBridge for the bucket and add a rule that targets the FIFO queue"
+        ],
+        "correct_index": 3,
+        "correct_rationale": "SQS FIFO queues are not supported as S3 event notification destinations. AWS directs you to use Amazon EventBridge to send S3 events to an SQS FIFO queue.",
+        "distractor_rationales": [
+          "The rejection is about the destination type, so changing the queue policy does not make a FIFO queue supported.",
+          "This abandons the FIFO queue that the existing consumers read from, which the requirement keeps.",
+          "Versioning keeps object versions. It does not change which destinations event notifications support.",
+          ""
+        ],
+        "distractor_summary": "Permissions, queue swaps and versioning do not lift the destination limit; EventBridge routes S3 events to FIFO.",
+        "docLinks": [
+          {
+            "title": "Amazon S3 Event Notifications - Amazon Simple Storage Service",
+            "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/EventNotifications.html"
+          },
+          {
+            "title": "Using resource-based policies for Amazon EventBridge - Amazon EventBridge",
+            "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-use-resource-based.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-017",
+        "exam_code": "SOA-C03",
+        "domain": "4. Security and Compliance",
+        "domain_number": 4,
+        "subdomain": "4.1 Implement and manage security and compliance tools and policies.",
+        "question_type": "concept",
+        "difficulty": "medium",
+        "services": [
+          "AWS Organizations",
+          "AWS IAM"
+        ],
+        "tags": [
+          "scp",
+          "policy-evaluation"
+        ],
+        "question": "An SCP attached at the organization root denies ec2:TerminateInstances. An administrator in the management account can still terminate instances. A developer in a member account who has the AdministratorAccess policy cannot. Which statement explains both results?",
+        "options": [
+          "The SCP is still propagating and will reach the management account within a few hours",
+          "Permissions boundaries in the management account take priority over every SCP",
+          "SCPs skip the management account, and in member accounts they cap even full IAM rights",
+          "SCPs grant permissions in the management account and deny them in member accounts"
+        ],
+        "correct_index": 2,
+        "correct_rationale": "SCPs do not affect users or roles in the management account. In member accounts, an SCP sets the maximum available permissions, so its deny applies even when an identity policy allows everything.",
+        "distractor_rationales": [
+          "Propagation is not the cause. SCPs do not apply to the management account at all.",
+          "Permissions boundaries are not why the management account is unaffected; SCPs simply exclude it.",
+          "",
+          "SCPs never grant permissions anywhere. They only set limits."
+        ],
+        "distractor_summary": "Timing, boundaries and grants are all wrong mechanisms; SCPs exclude the management account and cap member accounts.",
+        "docLinks": [
+          {
+            "title": "Service control policies (SCPs) - AWS Organizations",
+            "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html"
+          },
+          {
+            "title": "Policy evaluation logic - AWS Identity and Access Management",
+            "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-018",
+        "exam_code": "SOA-C03",
+        "domain": "4. Security and Compliance",
+        "domain_number": 4,
+        "subdomain": "4.1 Implement and manage security and compliance tools and policies.",
+        "question_type": "concept",
+        "difficulty": "easy",
+        "services": [
+          "IAM Access Analyzer"
+        ],
+        "tags": [
+          "external-access",
+          "access-audit"
+        ],
+        "question": "A security review must list every S3 bucket and IAM role in the organization that an entity outside the organization can access. Which AWS capability produces findings for this?",
+        "options": [
+          "IAM Access Analyzer with an external access analyzer",
+          "AWS Trusted Advisor checks run from the Trusted Advisor console in each account",
+          "VPC flow logs collected from every VPC and published to CloudWatch Logs",
+          "AWS CloudTrail Event history searched for the last 90 days in each Region"
+        ],
+        "correct_index": 0,
+        "correct_rationale": "IAM Access Analyzer external access analyzers identify resources, such as S3 buckets and IAM roles, that are shared with an external entity, and generate a finding for each.",
+        "distractor_rationales": [
+          "",
+          "Trusted Advisor gives best-practice recommendations. It is not the service that analyzes resource policies for external access.",
+          "Flow logs record IP traffic. They do not analyze who is granted access by resource policies.",
+          "Event history shows management events that happened. It does not evaluate which resources are shared."
+        ],
+        "distractor_summary": "Trusted Advisor, flow logs and Event history do not analyze sharing; Access Analyzer finds external access.",
+        "docLinks": [
+          {
+            "title": "Using AWS Identity and Access Management Access Analyzer - AWS Identity and Access Management",
+            "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+          },
+          {
+            "title": "AWS Trusted Advisor - AWS Support",
+            "url": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html"
+          },
+          {
+            "title": "Logging IP traffic using VPC Flow Logs - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html"
+          },
+          {
+            "title": "What Is AWS CloudTrail? - AWS CloudTrail",
+            "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-019",
+        "exam_code": "SOA-C03",
+        "domain": "4. Security and Compliance",
+        "domain_number": 4,
+        "subdomain": "4.2 Implement strategies to protect data and infrastructure.",
+        "question_type": "scenario",
+        "difficulty": "hard",
+        "services": [
+          "Amazon EBS",
+          "AWS KMS"
+        ],
+        "tags": [
+          "snapshot-sharing",
+          "encryption-at-rest"
+        ],
+        "question": "A CloudOps engineer must share an encrypted EBS snapshot with a partner's AWS account. The snapshot is encrypted with the default AWS managed key, and sharing fails. Which requirement must be met for the partner to use a shared encrypted snapshot?",
+        "options": [
+          "Make the snapshot public first, and then let the partner account copy it",
+          "The snapshot must use a customer managed key that is also shared with the partner",
+          "Enable block public access for EBS snapshots, and then retry the private share",
+          "Share the default AWS managed key with the partner account, and keep the snapshot"
+        ],
+        "correct_index": 1,
+        "correct_rationale": "Snapshots encrypted with the default AWS managed key cannot be shared. Only snapshots encrypted with a customer managed key can be shared, and that key must be shared with the other account too.",
+        "distractor_rationales": [
+          "Only unencrypted snapshots can be shared publicly, and public sharing would expose the data to everyone.",
+          "",
+          "Block public access prevents public sharing. It does not make an AWS managed key snapshot shareable.",
+          "Snapshots encrypted with the default AWS managed key can't be shared, so the snapshot itself must change."
+        ],
+        "distractor_summary": "Public sharing, block public access and the AWS managed key all fail; a shared customer managed key is required.",
+        "docLinks": [
+          {
+            "title": "Share an Amazon EBS snapshot with other AWS accounts - Amazon EBS",
+            "url": "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modifying-snapshot-permissions.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-020",
+        "exam_code": "SOA-C03",
+        "domain": "4. Security and Compliance",
+        "domain_number": 4,
+        "subdomain": "4.2 Implement strategies to protect data and infrastructure.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "AWS Secrets Manager"
+        ],
+        "tags": [
+          "secrets",
+          "rotation"
+        ],
+        "question": "An application reads RDS database credentials from a configuration file on each server. Security requires removing the hard-coded credentials and replacing them on a regular schedule without redeploying the servers. What should the CloudOps engineer implement?",
+        "options": [
+          "Encrypt the configuration file with a KMS key, and rotate that key every year",
+          "Store the credentials in a versioned S3 bucket that the servers read at boot",
+          "Bake the credentials into the golden AMI that EC2 Image Builder produces",
+          "Secrets Manager with automatic rotation, retrieved by the application at runtime"
+        ],
+        "correct_index": 3,
+        "correct_rationale": "Secrets Manager replaces hard-coded credentials with runtime retrieval, and an automatic rotation schedule replaces long-term secrets with short-term ones.",
+        "distractor_rationales": [
+          "Encrypting the file keeps a long-term password in place. Rotating the encryption key does not change the database password.",
+          "A bucket still stores a static password, and nothing rotates it in the database.",
+          "Baking credentials into an image hard-codes them again and requires a rebuild to change them.",
+          ""
+        ],
+        "distractor_summary": "Encrypted files, buckets and images all keep static passwords; Secrets Manager retrieves and rotates them.",
+        "docLinks": [
+          {
+            "title": "What is AWS Secrets Manager? - AWS Secrets Manager",
+            "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"
+          },
+          {
+            "title": "Rotate AWS Secrets Manager secrets - AWS Secrets Manager",
+            "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-021",
+        "exam_code": "SOA-C03",
+        "domain": "5. Networking and Content Delivery",
+        "domain_number": 5,
+        "subdomain": "5.1 Implement and optimize networking features and connectivity.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "Amazon VPC",
+          "Amazon S3"
+        ],
+        "tags": [
+          "gateway-endpoints",
+          "network-cost"
+        ],
+        "question": "EC2 instances in private subnets copy several terabytes a day to S3 buckets in the same Region through a NAT gateway, and NAT data processing charges are high. Which change reduces this cost the most while the instances stay private?",
+        "options": [
+          "Move the instances to public subnets and assign each instance a public IPv4 address",
+          "Create an interface VPC endpoint for S3 in each Availability Zone used by the instances",
+          "Add a gateway VPC endpoint for S3 to the route tables of the private subnets",
+          "Replace the NAT gateway with an egress-only internet gateway for the private subnets"
+        ],
+        "correct_index": 2,
+        "correct_rationale": "A gateway endpoint gives private access to S3 without an internet gateway or NAT device, and there is no additional charge for gateway endpoints. Adding it to the subnet route tables sends S3 traffic past the NAT gateway.",
+        "distractor_rationales": [
+          "Public subnets with public addresses break the requirement that the instances stay private.",
+          "An interface endpoint also avoids the NAT gateway, but it carries an additional cost that a gateway endpoint does not.",
+          "",
+          "An egress-only internet gateway carries IPv6 traffic only, so it does not replace IPv4 NAT."
+        ],
+        "distractor_summary": "Public subnets break privacy, interface endpoints cost more, egress-only is IPv6; the gateway endpoint is free.",
+        "docLinks": [
+          {
+            "title": "Gateway endpoints - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html"
+          },
+          {
+            "title": "Gateway endpoints for Amazon S3 - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html"
+          },
+          {
+            "title": "Enable outbound IPv6 traffic using an egress-only internet gateway - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-022",
+        "exam_code": "SOA-C03",
+        "domain": "5. Networking and Content Delivery",
+        "domain_number": 5,
+        "subdomain": "5.1 Implement and optimize networking features and connectivity.",
+        "question_type": "concept",
+        "difficulty": "easy",
+        "services": [
+          "Amazon VPC"
+        ],
+        "tags": [
+          "ipv6",
+          "egress-only-internet-gateway"
+        ],
+        "question": "Instances in a dual-stack VPC must reach the internet over IPv6, but the internet must not be able to start IPv6 connections to them. Which VPC component meets this requirement?",
+        "options": [
+          "A NAT gateway in a public subnet, with a route from the private subnets",
+          "An egress-only internet gateway, with an IPv6 route from the subnets to it",
+          "A gateway VPC endpoint attached to the route tables of the instances' subnets",
+          "AWS Global Accelerator, with the instances registered as accelerator endpoints"
+        ],
+        "correct_index": 1,
+        "correct_rationale": "An egress-only internet gateway allows outbound IPv6 communication from instances and prevents the internet from initiating IPv6 connections with them.",
+        "distractor_rationales": [
+          "AWS documents the NAT gateway as the outbound-only option for IPv4. The egress-only internet gateway is the IPv6 option.",
+          "",
+          "Gateway endpoints reach Amazon S3 and DynamoDB. They do not provide general internet access.",
+          "Global Accelerator brings inbound user traffic to endpoints, which is the opposite of the requirement."
+        ],
+        "distractor_summary": "NAT is the IPv4 answer, endpoints are service-only and Global Accelerator is inbound; IPv6 outbound-only needs egress-only IGW.",
+        "docLinks": [
+          {
+            "title": "Enable outbound IPv6 traffic using an egress-only internet gateway - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html"
+          },
+          {
+            "title": "Gateway endpoints - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html"
+          },
+          {
+            "title": "What is AWS Global Accelerator? - AWS Global Accelerator",
+            "url": "https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-023",
+        "exam_code": "SOA-C03",
+        "domain": "5. Networking and Content Delivery",
+        "domain_number": 5,
+        "subdomain": "5.2 Configure domains, DNS services, and content delivery.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "AWS Global Accelerator"
+        ],
+        "tags": [
+          "static-anycast-ip",
+          "content-distribution"
+        ],
+        "question": "A game service runs behind Network Load Balancers in two Regions. Enterprise customers must allow-list a small, fixed set of IP addresses in their firewalls, and players should enter the AWS network at a location close to them. What should the CloudOps engineer use?",
+        "options": [
+          "Route 53 failover routing with one record for each Region's Network Load Balancer",
+          "A NAT gateway with an Elastic IP address in each Region as the client entry point",
+          "An Elastic IP address on one EC2 instance in each Region as the client entry point",
+          "AWS Global Accelerator with the two Network Load Balancers as endpoints"
+        ],
+        "correct_index": 3,
+        "correct_rationale": "Global Accelerator provides static IP addresses that are anycast from the AWS edge network, and its standard accelerator endpoints can be Network Load Balancers in one or more Regions.",
+        "distractor_rationales": [
+          "DNS records point clients at the load balancers' own addresses, so customers do not get a small fixed set to allow-list.",
+          "A NAT gateway provides outbound-only IPv4 connectivity for instances. It is not an entry point for client traffic.",
+          "Single instances with Elastic IPs bypass the load balancers and do not give an entry point near each player.",
+          ""
+        ],
+        "distractor_summary": "DNS, NAT and single Elastic IPs miss fixed entry IPs or edge entry; Global Accelerator provides both.",
+        "docLinks": [
+          {
+            "title": "What is AWS Global Accelerator? - AWS Global Accelerator",
+            "url": "https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html"
+          },
+          {
+            "title": "Enable outbound IPv6 traffic using an egress-only internet gateway - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html"
+          },
+          {
+            "title": "Failover routing - Amazon Route 53",
+            "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-failover.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-024",
+        "exam_code": "SOA-C03",
+        "domain": "5. Networking and Content Delivery",
+        "domain_number": 5,
+        "subdomain": "5.3 Troubleshoot network connectivity issues.",
+        "question_type": "scenario",
+        "difficulty": "hard",
+        "services": [
+          "Amazon VPC"
+        ],
+        "tags": [
+          "network-acls",
+          "stateless-filtering"
+        ],
+        "question": "A custom network ACL on a public subnet allows inbound TCP 443 from 0.0.0.0/0, and its only outbound rule allows TCP 443 to 0.0.0.0/0. The web server's security group allows inbound 443. Client HTTPS connections to the server time out. What change fixes the issue?",
+        "options": [
+          "Add an outbound network ACL rule that allows response traffic back to the clients' source ports",
+          "Add an outbound security group rule that allows TCP 443 to 0.0.0.0/0 for the server",
+          "Add a second inbound network ACL rule that allows TCP 443 with a lower rule number",
+          "Attach an egress-only internet gateway to the VPC and route the subnet through it"
+        ],
+        "correct_index": 0,
+        "correct_rationale": "Network ACLs are stateless, so allowing inbound traffic does not automatically allow the responses. Responses leave toward the clients' source ports, not port 443, so the outbound rules must allow them.",
+        "distractor_rationales": [
+          "",
+          "Security groups are stateful, so responses to allowed inbound traffic already pass the security group.",
+          "Inbound 443 is already allowed. A duplicate inbound rule does not touch the blocked responses.",
+          "An egress-only internet gateway carries outbound IPv6 only and does not change NACL evaluation."
+        ],
+        "distractor_summary": "The security group and inbound rules are fine; the stateless NACL is dropping the outbound responses.",
+        "docLinks": [
+          {
+            "title": "Control subnet traffic with network access control lists - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html"
+          },
+          {
+            "title": "Control traffic to your AWS resources using security groups - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html"
+          },
+          {
+            "title": "Enable outbound IPv6 traffic using an egress-only internet gateway - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-soa-c03-025",
+        "exam_code": "SOA-C03",
+        "domain": "5. Networking and Content Delivery",
+        "domain_number": 5,
+        "subdomain": "5.3 Troubleshoot network connectivity issues.",
+        "question_type": "scenario",
+        "difficulty": "hard",
+        "services": [
+          "Amazon VPC",
+          "Amazon S3",
+          "AWS Direct Connect"
+        ],
+        "tags": [
+          "hybrid-connectivity",
+          "interface-endpoints"
+        ],
+        "question": "On-premises servers connect to a VPC over AWS Direct Connect and must reach Amazon S3 privately through that connection. Requests that the servers send toward the VPC's existing S3 gateway endpoint fail. What should the CloudOps engineer do?",
+        "options": [
+          "Edit the gateway endpoint policy so that it allows all principals and all S3 actions",
+          "Add the S3 prefix list route from the VPC route table to the on-premises router",
+          "Create an S3 interface VPC endpoint and have the on-premises servers use it",
+          "Add a NAT gateway to the VPC so on-premises traffic can reach the gateway endpoint"
+        ],
+        "correct_index": 2,
+        "correct_rationale": "Gateway endpoints do not allow access from on-premises networks. For that scenario AWS states that you must use an interface endpoint, which is available for an additional cost.",
+        "distractor_rationales": [
+          "The policy controls what is allowed through the endpoint. It cannot lift the restriction on traffic from on premises.",
+          "Copying the route to on premises does not change that gateway endpoints do not accept on-premises traffic.",
+          "",
+          "A NAT gateway does not make a gateway endpoint reachable from on premises."
+        ],
+        "distractor_summary": "Policies, routes and NAT cannot extend a gateway endpoint on premises; an interface endpoint is required.",
+        "docLinks": [
+          {
+            "title": "Gateway endpoints for Amazon S3 - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html"
+          },
+          {
+            "title": "Gateway endpoints - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html"
+          },
+          {
+            "title": "What is Direct Connect? - AWS Direct Connect",
+            "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html"
+          }
+        ],
+        "examGuideVersion": "SOA-C03 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "les-soa-1",
+        "exam": "SOA-C03",
+        "domain": "1. Monitoring, Logging, Analysis, Remediation, and Performance Optimization",
+        "title": "Alarm on the right signal, then let AWS fix it",
+        "body": [
+          "Start by checking that the metric exists. EC2 publishes its standard metrics by default, but memory and disk usage inside the operating system come from the CloudWatch agent, which collects in-guest system-level metrics. No metric means no alarm.",
+          "Next, cut the noise. A metric alarm watches one metric or expression against a threshold. When one failure trips several alarms, create a composite alarm whose rule references them, for example ALARM only when every child is in ALARM, and send alerts only from the composite. Composite alarms can notify SNS and create OpsItems or incidents, but they cannot perform EC2 or Auto Scaling actions, so keep those on metric alarms.",
+          "Then automate the response. AWS Config remediates noncompliant resources with Systems Manager Automation documents; managed documents exist, and you can write custom ones. Automation also ships predefined runbooks for common tasks such as restarting EC2 instances. Finally, tune the resource itself: gp3 volumes scale IOPS and throughput independently of size and do not burst, and RDS Proxy pools database connections so that bursts of short-lived clients stop exhausting the instance."
+        ],
+        "decisions": [
+          [
+            "Need memory or disk usage inside EC2",
+            "CloudWatch agent",
+            "CloudTrail data events or flow logs"
+          ],
+          [
+            "One incident pages people through several alarms",
+            "Composite alarm with alerts on it only",
+            "Longer evaluation periods on every alarm"
+          ],
+          [
+            "Config rule flags resources that should be fixed",
+            "Config remediation with an Automation document",
+            "A custom polling script"
+          ],
+          [
+            "Volume needs more IOPS but not more space",
+            "Modify to gp3 and provision IOPS",
+            "Grow the gp2 volume"
+          ],
+          [
+            "Serverless clients overwhelm DB connections",
+            "RDS Proxy",
+            "A read replica for all traffic"
+          ]
+        ],
+        "traps": [
+          "Adding an EC2 or Auto Scaling action to a composite alarm. Composites cannot perform those actions.",
+          "Expecting a metric filter or CloudTrail to supply in-guest memory data. That comes from the agent.",
+          "Treating gp3 like gp2. gp3 has a fixed 3,000 IOPS baseline and no burst credits to watch."
+        ],
+        "links": [
+          {
+            "title": "Collect metrics, logs, and traces using the CloudWatch agent - Amazon CloudWatch",
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html"
+          },
+          {
+            "title": "Using Amazon CloudWatch alarms - Amazon CloudWatch",
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html"
+          },
+          {
+            "title": "Create a composite alarm - Amazon CloudWatch",
+            "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Composite_Alarm.html"
+          },
+          {
+            "title": "Remediating Noncompliant Resources with AWS Config - AWS Config",
+            "url": "https://docs.aws.amazon.com/config/latest/developerguide/remediation.html"
+          },
+          {
+            "title": "AWS Systems Manager Automation - AWS Systems Manager",
+            "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation.html"
+          },
+          {
+            "title": "Amazon EBS General Purpose SSD volumes - Amazon EBS",
+            "url": "https://docs.aws.amazon.com/ebs/latest/userguide/general-purpose.html"
+          },
+          {
+            "title": "Amazon RDS Proxy - Amazon Relational Database Service",
+            "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html"
+          }
+        ],
+        "origin": "generated-practice",
+        "reviewStatus": "draft"
+      },
+      {
+        "id": "les-soa-5",
+        "exam": "SOA-C03",
+        "domain": "5. Networking and Content Delivery",
+        "title": "Trace the packet: routes, filters, endpoints, edge",
+        "body": [
+          "When a connection fails, follow its path in order. First the route: does the subnet route table send the traffic where you expect? A gateway endpoint for S3 or DynamoDB adds a prefix-list route to the route tables you select, and it has no additional charge, so it is the usual fix for NAT gateway charges on S3 traffic from the same Region.",
+          "Next the filters. Security groups are stateful: responses to allowed requests return automatically. Network ACLs are stateless and are evaluated as traffic enters and leaves the subnet, so an inbound allow does not cover the response; the outbound rules must allow it too. VPC Flow Logs capture information about IP traffic to and from network interfaces and help show where traffic stops.",
+          "Then the boundary. Gateway endpoints do not accept traffic from on-premises networks, peered VPCs in other Regions or a transit gateway; those paths need an interface endpoint, at extra cost. For outbound-only IPv6, use an egress-only internet gateway; for IPv4, a NAT gateway. At the edge, CloudFront caches content close to users, while Global Accelerator gives static anycast IP addresses in front of load balancers in one or more Regions."
+        ],
+        "decisions": [
+          [
+            "Private subnets send heavy S3 traffic through NAT",
+            "Gateway VPC endpoint for S3",
+            "An interface endpoint in every AZ"
+          ],
+          [
+            "On-premises servers need private S3 access",
+            "S3 interface endpoint",
+            "The existing gateway endpoint"
+          ],
+          [
+            "Inbound allowed in the NACL but replies time out",
+            "Outbound NACL rule for the responses",
+            "Another security group rule"
+          ],
+          [
+            "Outbound-only internet access over IPv6",
+            "Egress-only internet gateway",
+            "NAT gateway"
+          ],
+          [
+            "Clients must allow-list fixed IPs for a multi-Region app",
+            "AWS Global Accelerator",
+            "Route 53 failover records"
+          ]
+        ],
+        "traps": [
+          "Fixing a NACL problem in the security group. Security groups are already stateful.",
+          "Routing on-premises traffic to a gateway endpoint. It does not accept that traffic.",
+          "Using an egress-only internet gateway for IPv4. It handles IPv6 only.",
+          "Expecting DNS routing alone to give clients a small fixed set of IP addresses to allow-list."
+        ],
+        "links": [
+          {
+            "title": "Control subnet traffic with network access control lists - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html"
+          },
+          {
+            "title": "Control traffic to your AWS resources using security groups - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html"
+          },
+          {
+            "title": "Gateway endpoints - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html"
+          },
+          {
+            "title": "Gateway endpoints for Amazon S3 - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html"
+          },
+          {
+            "title": "Enable outbound IPv6 traffic using an egress-only internet gateway - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html"
+          },
+          {
+            "title": "What is AWS Global Accelerator? - AWS Global Accelerator",
+            "url": "https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html"
+          },
+          {
+            "title": "Logging IP traffic using VPC Flow Logs - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html"
+          }
+        ],
+        "origin": "generated-practice",
+        "reviewStatus": "draft"
+      }
+    ],
+    "examProfiles": {}
+  }
+}

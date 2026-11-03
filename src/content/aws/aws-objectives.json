@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "note": "Task statements transcribed from the supplied Gate 1 files (retrieved 2026-11-02 from the official AWS exam guides). service_references was not carried over: it holds only category names keyed by relative page links, not service lists.",
+ "note": "Task statements transcribed from the supplied Gate 1 and Gate 2 files (retrieved 2026-11-02 and 2026-11-03 from the official AWS exam guides). CLF-C02, AIF-C01, SOA-C03, DVA-C03, DEA-C01, SCS-C03 and SAP-C03 come from the Gate 2 objectives files; SAA-C03 and AIB-C01 from the Gate 1 files. service_references was not carried over.",
  "exams": {
   "CLF-C02": {
    "guideUrl": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html",
-   "retrieved": "2026-11-02",
+   "retrieved": "2026-11-03",
    "domains": [
     {
      "n": 1,
@@ -317,6 +317,214 @@
         "Identifying the benefits of being an AWS Partner (for example, partner training and certification, partner events, partner volume discounts)",
         "Identifying the key services that AWS Marketplace offers (for example, cost management, governance and entitlement)",
         "Identifying technical assistance options available at AWS (for example, AWS Professional Services, AWS solutions architects)"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "AIF-C01": {
+   "guideUrl": "https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01.html",
+   "retrieved": "2026-11-03",
+   "domains": [
+    {
+     "n": 1,
+     "name": "Fundamentals of AI and ML",
+     "weight": 20,
+     "tasks": [
+      {
+       "id": "1.1",
+       "text": "Explain basic AI concepts and terminologies",
+       "knowledge": [],
+       "skills": [
+        "Define basic AI terms (for example, AI, ML, deep learning, neural networks, computer vision, natural language processing [NLP], model, algorithm, training and inferencing, bias, fairness, fit, large language model [LLM], generative AI [GenAI], agentic AI).",
+        "Describe the similarities and differences between AI, ML, GenAI, deep learning, and agentic AI.",
+        "Describe various types of inferencing (for example, batch, real-time, asynchronous, serverless).",
+        "Describe the different types of data in AI models (for example, labeled and unlabeled, tabular, time-series, image, text, structured and unstructured).",
+        "Describe different types of AI/ML learning (for example, supervised learning, unsupervised learning, reinforcement learning methods)."
+       ]
+      },
+      {
+       "id": "1.2",
+       "text": "Identify practical use cases for AI",
+       "knowledge": [],
+       "skills": [
+        "Recognize applications where AI/ML can provide value (for example, assist human decision making, solution scalability, automation).",
+        "Determine when AI/ML solutions are not appropriate (for example, cost-benefit analyses, situations when a specific outcome is needed instead of a prediction).",
+        "Select the appropriate AI/ML techniques for specific use cases (for example, regression, classification, clustering).",
+        "Identify examples of real-world AI applications (for example, computer vision, NLP, speech recognition, recommendation systems, fraud detection, forecasting, knowledge bases, agentic AI).",
+        "Explain the capabilities of AWS managed AI/ML services (for example, Amazon SageMaker AI, Amazon Transcribe, Amazon Translate, Amazon Comprehend, Amazon Lex, Amazon Polly).",
+        "Identify when traditional ML models or foundation models (FMs) are appropriate for a specific use case (for example, based on regulatory concerns, explainability requirements, operational constraints)."
+       ]
+      },
+      {
+       "id": "1.3",
+       "text": "Describe the AI/ML development lifecycle",
+       "knowledge": [],
+       "skills": [
+        "Describe and differentiate components of an AI/ML pipeline.",
+        "Describe sources of FM models (for example, open source pre-trained models, training custom models).",
+        "Describe methods to use a model in production (for example, managed API service, self-hosted API).",
+        "Identify relevant AWS services and features for each stage of an AI/ML pipeline (for example, Amazon Bedrock, Amazon Quick, Kiro, SageMaker AI).",
+        "Describe fundamental concepts of ML operations (MLOps) (for example, experimentation, repeatable processes, scalable systems, managing technical debt, achieving production readiness, model monitoring, model re-training).",
+        "Describe model performance metrics (for example, accuracy, precision, recall, F1 score) and business metrics (for example, cost per user, development costs, customer feedback, return on investment [ROI]) to evaluate ML models."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Fundamentals of GenAI",
+     "weight": 24,
+     "tasks": [
+      {
+       "id": "2.1",
+       "text": "Explain the basic concepts of generative AI (GenAI)",
+       "knowledge": [],
+       "skills": [
+        "Define foundational GenAI concepts (for example, tokens, chunking, embeddings, vectors, prompt engineering, transformer-based large language models [LLMs], foundation models [FMs], multi-modal models, diffusion models).",
+        "Identify potential use cases for GenAI models (for example, image, video, and audio generation; summarization; AI assistants; translation; code generation; customer service agents; search; recommendation engines).",
+        "Describe the FM lifecycle (for example, data selection, model selection, pre-training, fine-tuning, evaluation, deployment, feedback).",
+        "Describe the token-based pricing model and its effect on cost and performance for inference.",
+        "Describe the role of context engineering in FM applications.",
+        "Define foundational agentic AI concepts (for example, multi-agent system patterns for complex AI applications, Model Context Protocol [MCP] and its role in connecting agents to external systems, multi-agent communication patterns, memory management, tool usage, and workflow orchestration)."
+       ]
+      },
+      {
+       "id": "2.2",
+       "text": "Understand the capabilities and limitations of GenAI for solving business problems",
+       "knowledge": [],
+       "skills": [
+        "Describe the advantages of GenAI (for example, adaptability, responsiveness, conversational capabilities, ability to generate content).",
+        "Identify disadvantages of GenAI solutions (for example, hallucinations, interpretability, inaccuracy, nondeterminism).",
+        "Identify factors to consider when selecting GenAI models (for example, model types, performance requirements, capabilities, constraints, compliance, cost, latency, model complexity).",
+        "Determine business value and metrics for GenAI applications (for example, cross-domain performance, ROI, efficiency, conversion rate, average revenue per user, accuracy, customer lifetime value)."
+       ]
+      },
+      {
+       "id": "2.3",
+       "text": "Describe AWS infrastructure and technologies for building GenAI applications",
+       "knowledge": [],
+       "skills": [
+        "Identify AWS services and features to develop GenAI applications (for example, Amazon Bedrock, Amazon SageMaker AI, SageMaker JumpStart, Amazon Quick, Kiro, Strands Agents, Amazon Bedrock AgentCore).",
+        "Describe the advantages of using AWS GenAI services to build applications (for example, accessibility, lower barrier to entry, efficiency, cost-effectiveness, speed to market, ability to meet business objectives).",
+        "Describe the benefits of AWS infrastructure for GenAI applications (for example, security, compliance, responsibility, safety).",
+        "Describe cost tradeoffs of AWS GenAI services (for example, responsiveness, availability, redundancy, performance, regional coverage, token-based pricing, provision throughput, custom models)."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Applications of Foundation Models",
+     "weight": 28,
+     "tasks": [
+      {
+       "id": "3.1",
+       "text": "Describe design considerations for applications that use foundation models (FMs)",
+       "knowledge": [],
+       "skills": [
+        "Identify selection criteria to choose FMs (for example, cost, modality, latency, multi-lingual, model size, model complexity, customization, input/output length, prompt caching).",
+        "Describe the effect of inference parameters on model responses (for example, temperature, input/output length).",
+        "Define Retrieval Augmented Generation (RAG) and describe its business applications (for example, Amazon Bedrock Knowledge Bases).",
+        "Identify AWS services that help store embeddings within vector databases (for example, Amazon OpenSearch Service, Amazon Aurora, Amazon Neptune, Amazon RDS for PostgreSQL).",
+        "Explain the cost tradeoffs of various approaches to FM customization (for example, pre-training, fine-tuning, in-context learning, RAG, model distillation).",
+        "Define the role of AI agents and describe AI agents' business applications."
+       ]
+      },
+      {
+       "id": "3.2",
+       "text": "Choose effective prompt engineering techniques",
+       "knowledge": [],
+       "skills": [
+        "Define the concepts and constructs of prompt engineering (for example, context, instruction, negative prompts).",
+        "Define techniques for prompt engineering (for example, chain-of-thought, zero-shot, single-shot, few-shot, prompt templates).",
+        "Identify and describe the benefits and best practices for prompt engineering (for example, response quality improvement, experimentation, guardrails, discovery, specificity and concision, using multiple comments).",
+        "Define potential risks and limitations of prompt engineering (for example, exposure, poisoning, hijacking, jailbreaking).",
+        "Describe prompt versioning and management strategies that use Amazon Bedrock Prompt Management."
+       ]
+      },
+      {
+       "id": "3.3",
+       "text": "Describe the training and fine-tuning process for FMs",
+       "knowledge": [],
+       "skills": [
+        "Describe the key elements of training an FM (for example, pre-training, fine-tuning, continuous pre-training, distillation).",
+        "Define methods for fine-tuning an FM (for example, instruction tuning, adapting models for specific domains, transfer learning, continuous pre-training).",
+        "Describe how to prepare data to fine-tune an FM (for example, data curation, governance, size, labeling, representativeness, reinforcement learning from human feedback [RLHF])."
+       ]
+      },
+      {
+       "id": "3.4",
+       "text": "Describe methods to evaluate FM performance",
+       "knowledge": [],
+       "skills": [
+        "Determine approaches to evaluate FM performance (for example, human-in-the-loop evaluation, benchmark datasets, Amazon Bedrock Model Evaluation).",
+        "Identify relevant metrics to assess FM performance (for example, Recall-Oriented Understudy for Gisting Evaluation [ROUGE], Bilingual Evaluation Understudy [BLEU], BERTScore, LLM-as-a-judge).",
+        "Determine whether an FM effectively meets business objectives (for example, productivity, user engagement, task engineering).",
+        "Identify approaches to evaluate the performance of applications built with FM (for example, RAG, agents, workflows).",
+        "Identify business objective alignment metrics for AI applications (for example, task completion rate, user satisfaction, cost per interaction)."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Guidelines for Responsible AI",
+     "weight": 14,
+     "tasks": [
+      {
+       "id": "4.1",
+       "text": "Explain the development of AI systems that are responsible",
+       "knowledge": [],
+       "skills": [
+        "Identify features of responsible AI (for example, bias, fairness, inclusivity, robustness, safety, veracity).",
+        "Explain how to use tools to identify features of responsible AI (for example, Amazon Bedrock Guardrails).",
+        "Define responsible practices to select a model (for example, environmental considerations, sustainability).",
+        "Identify legal risks of working with generative AI (GenAI) (for example, intellectual property infringement claims, biased model outputs, loss of customer trust, end user risk, hallucinations).",
+        "Identify characteristics of datasets (for example, inclusivity, diversity, curated data sources, balanced datasets).",
+        "Describe effects of bias and variance (for example, effects on demographic groups, inaccuracy, overfitting, underfitting).",
+        "Describe tools to detect and monitor bias, trustworthiness, and truthfulness (for example, analyzing label quality, human audits, subgroup analysis)."
+       ]
+      },
+      {
+       "id": "4.2",
+       "text": "Recognize the importance of transparent and explainable models",
+       "knowledge": [],
+       "skills": [
+        "Describe the differences between models that are transparent and explainable and models that are not transparent and explainable.",
+        "Describe tools to identify transparent and explainable models (for example, Amazon SageMaker Model Cards, Amazon Bedrock Model Evaluations, open source models, data, licensing).",
+        "Identify tradeoffs between model safety and transparency (for example, measure interpretability and performance).",
+        "Describe principles of human-centered design for explainable AI (for example, user-feedback mechanisms, AI decision transparency)."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Security, Compliance, and Governance for AI Solutions",
+     "weight": 14,
+     "tasks": [
+      {
+       "id": "5.1",
+       "text": "Explain methods to secure AI systems",
+       "knowledge": [],
+       "skills": [
+        "Identify AWS services and features to secure AI systems (for example, IAM roles, policies, and permissions; encryption; Amazon Macie; AWS PrivateLink; AWS shared responsibility model; Amazon Bedrock AgentCore Identity; Policy in AgentCore; Amazon Bedrock Guardrails).",
+        "Describe the concept of source citation and documenting data origins (for example, data lineage, data cataloging, Amazon SageMaker Model Cards).",
+        "Describe best practices for secure data engineering (for example, assessing data quality, implementing privacy-enhancing technologies, data access control, data integrity).",
+        "Describe security and privacy considerations for AI systems (for example, application security, threat detection, vulnerability management, infrastructure protection, prompt injection, encryption at rest and in transit, data leakage prevention, output filtering and validation, audit trail and logging requirements for AI interactions, toxicity).",
+        "Describe hallucination detection methods and grounding techniques to improve output accuracy (for example, Retrieval Augmented Generation [RAG] grounding, output validation, confidence scoring)."
+       ]
+      },
+      {
+       "id": "5.2",
+       "text": "Recognize governance and compliance regulations for AI systems",
+       "knowledge": [],
+       "skills": [
+        "Identify AWS services and features to assist with governance and regulation compliance (for example, AWS Config, Amazon Inspector, AWS Artifact, AWS CloudTrail, AWS Trusted Advisor).",
+        "Describe data governance strategies (for example, data lifecycles, logging, residency, monitoring, observation, retention).",
+        "Describe processes to follow governance protocols (for example, policies, review cadence, review strategies, governance frameworks such as the Generative AI Security Scoping Matrix, transparency standards, team training requirements)."
        ]
       }
      ]
@@ -652,6 +860,1187 @@
         "Reviewing existing workloads for network optimizations",
         "Selecting an appropriate throttling strategy",
         "Selecting the appropriate bandwidth allocation for a network device (for example, a single VPN compared with multiple VPNs, Direct Connect speed)"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "SOA-C03": {
+   "guideUrl": "https://docs.aws.amazon.com/aws-certification/latest/sysops-administrator-associate-03/sysops-administrator-associate-03.html",
+   "retrieved": "2026-11-03",
+   "domains": [
+    {
+     "n": 1,
+     "name": "Monitoring, Logging, Analysis, Remediation, and Performance Optimization",
+     "weight": 22,
+     "tasks": [
+      {
+       "id": "1.1",
+       "text": "Implement metrics, alarms, and filters by using AWS monitoring and logging services",
+       "knowledge": [],
+       "skills": [
+        "Skill 1.1.1: Use AWS services (for example, Amazon CloudWatch, AWS CloudTrail, Amazon Managed Service for Prometheus) to configure monitoring and logging for workloads (for example, serverless, compute, AI).",
+        "Skill 1.1.2: Configure and manage the CloudWatch agent to collect metrics and logs from EC2 instances, Amazon ECS clusters, or Amazon EKS clusters.",
+        "Skill 1.1.3: Configure, identify, and troubleshoot CloudWatch alarms that can invoke AWS services directly or through Amazon EventBridge (for example, by creating composite alarms and identifying their invokable actions).",
+        "Skill 1.1.4: Create, implement, and manage customizable and shareable CloudWatch dashboards that display metrics and alarms for AWS resources across multiple accounts and AWS Regions.",
+        "Skill 1.1.5: Configure AWS services to send notifications to Amazon SNS and to invoke alarms that send notifications to Amazon SNS."
+       ]
+      },
+      {
+       "id": "1.2",
+       "text": "Identify and remediate issues by using monitoring and availability metrics",
+       "knowledge": [],
+       "skills": [
+        "Skill 1.2.1: Analyze performance metrics and automate remediation strategies by using AWS services and functionality (for example, CloudWatch, Lambda, AWS Systems Manager, CloudTrail, Kiro, AWS DevOps Agent).",
+        "Skill 1.2.2: Use EventBridge to route, enrich, and deliver events, and troubleshoot any issues with event bus rules.",
+        "Skill 1.2.3: Create or run custom and predefined Systems Manager Automation runbooks (for example, by using AWS SDKs or custom scripts) to automate tasks and streamline processes on AWS."
+       ]
+      },
+      {
+       "id": "1.3",
+       "text": "Implement performance optimization strategies for compute, storage, and database resources",
+       "knowledge": [],
+       "skills": [
+        "Skill 1.3.1: Optimize compute resources and remediate performance problems by using performance metrics, resource tags, and AWS tools.",
+        "Skill 1.3.2: Analyze Amazon EBS performance metrics, troubleshoot issues, and optimize volume types to improve performance and reduce cost.",
+        "Skill 1.3.3: Implement and optimize S3 performance strategies (for example, AWS DataSync, S3 Transfer Acceleration, multipart uploads, S3 Lifecycle policies) to enhance data transfer, storage efficiency, and access patterns.",
+        "Skill 1.3.4: Evaluate and select shared storage solutions (for example, Amazon EFS, Amazon FSx, Amazon S3 Files), and optimize the solutions (for example, EFS lifecycle policies) for specific use cases and requirements.",
+        "Skill 1.3.5: Monitor Amazon RDS metrics (for example, Amazon RDS Performance Insights, CloudWatch alarms) and modify configurations to increase performance efficiency (for example, Performance Insights proactive recommendations, RDS Proxy).",
+        "Skill 1.3.6: Implement, monitor, and optimize EC2 instances and their associated storage and networking capabilities (for example, EC2 placement groups)."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Reliability and Business Continuity",
+     "weight": 22,
+     "tasks": [
+      {
+       "id": "2.1",
+       "text": "Implement scalability and elasticity",
+       "knowledge": [],
+       "skills": [
+        "Skill 2.1.1: Configure and manage scaling mechanisms in compute environments.",
+        "Skill 2.1.2: Implement caching by using AWS services to enhance dynamic scalability (for example, Amazon CloudFront, Amazon ElastiCache).",
+        "Skill 2.1.3: Configure and manage scaling in AWS managed databases (for example, Amazon RDS, DynamoDB)."
+       ]
+      },
+      {
+       "id": "2.2",
+       "text": "Implement highly available and resilient environments",
+       "knowledge": [],
+       "skills": [
+        "Skill 2.2.1: Configure and troubleshoot Elastic Load Balancing (ELB) and Amazon Route 53 health checks.",
+        "Skill 2.2.2: Configure fault-tolerant systems (for example, Multi-AZ deployments)."
+       ]
+      },
+      {
+       "id": "2.3",
+       "text": "Implement backup and restore strategies",
+       "knowledge": [],
+       "skills": [
+        "Skill 2.3.1: Automate snapshots and backups for AWS resources (for example, EC2 instances, RDS DB instances, EBS volumes, S3 buckets, DynamoDB tables) by using AWS services (for example, AWS Backup).",
+        "Skill 2.3.2: Use various methods to restore databases (for example, point-in-time restore) to meet recovery time objective (RTO), recovery point objective (RPO), and cost requirements.",
+        "Skill 2.3.3: Implement versioning for storage services (for example, Amazon S3, Amazon FSx).",
+        "Skill 2.3.4: Follow disaster recovery procedures and best practices (for example, backup and restore, pilot light, warm standby, active/active)."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Deployment, Provisioning, and Automation",
+     "weight": 22,
+     "tasks": [
+      {
+       "id": "3.1",
+       "text": "Provision and maintain cloud resources",
+       "knowledge": [],
+       "skills": [
+        "Skill 3.1.1: Create and manage AMIs and container images (for example, EC2 Image Builder).",
+        "Skill 3.1.2: Create and manage AWS resources by using CloudFormation and the AWS CDK.",
+        "Skill 3.1.3: Identify and remediate deployment issues (for example, subnet sizing issues, CloudFormation errors, permissions issues).",
+        "Skill 3.1.4: Provision and share resources across multiple Regions and accounts (for example, AWS Resource Access Manager [AWS RAM], CloudFormation StackSets).",
+        "Skill 3.1.5: Implement deployment strategies and services.",
+        "Skill 3.1.6: Use and manage third-party tools to automate resource deployment (for example, Terraform, Git)."
+       ]
+      },
+      {
+       "id": "3.2",
+       "text": "Automate the management of existing resources",
+       "knowledge": [],
+       "skills": [
+        "Skill 3.2.1: Use AWS services to automate operational processes (for example, Systems Manager).",
+        "Skill 3.2.2: Implement event-driven automation by using AWS services and features (for example, Lambda, S3 Event Notifications, EventBridge, AWS DevOps Agent)."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Security and Compliance",
+     "weight": 16,
+     "tasks": [
+      {
+       "id": "4.1",
+       "text": "Implement and manage security and compliance tools and policies",
+       "knowledge": [],
+       "skills": [
+        "Skill 4.1.1: Implement IAM features (for example, password policies, multi-factor authentication [MFA], roles, federated identity, resource policies, policy conditions).",
+        "Skill 4.1.2: Troubleshoot and audit access issues by using AWS tools (for example, CloudTrail, IAM Access Analyzer, IAM policy simulator).",
+        "Skill 4.1.3: Implement multi-account strategies securely (for example, AWS Organizations, service control policies, IAM Identity Center).",
+        "Skill 4.1.4: Implement remediation based on the results of AWS Trusted Advisor security checks.",
+        "Skill 4.1.5: Enforce compliance requirements and continuous monitoring (for example, Region and service selections, AWS Config conformance packs)."
+       ]
+      },
+      {
+       "id": "4.2",
+       "text": "Implement strategies to protect data and infrastructure",
+       "knowledge": [],
+       "skills": [
+        "Skill 4.2.1: Implement and enforce a data classification scheme.",
+        "Skill 4.2.2: Implement, configure, and troubleshoot encryption at rest (for example, AWS KMS).",
+        "Skill 4.2.3: Implement, configure, and troubleshoot encryption in transit (for example, AWS Certificate Manager [ACM]).",
+        "Skill 4.2.4: Securely store secrets by using AWS services.",
+        "Skill 4.2.5: Configure reports and remediate findings from AWS services (for example, AWS Security Hub, Amazon GuardDuty, AWS Config, Amazon Inspector, AWS Security Agent)."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Networking and Content Delivery",
+     "weight": 18,
+     "tasks": [
+      {
+       "id": "5.1",
+       "text": "Implement and optimize networking features and connectivity",
+       "knowledge": [],
+       "skills": [
+        "Skill 5.1.1: Configure a VPC (for example, subnets, route tables, network ACLs, security groups, NAT gateways, internet gateway, egress-only internet gateway).",
+        "Skill 5.1.2: Configure private networking connectivity (for example, VPC endpoints, AWS PrivateLink, VPC peering).",
+        "Skill 5.1.3: Audit AWS network protection services (for example, Route 53 Resolver DNS Firewall, AWS WAF, AWS Shield, AWS Network Firewall) in a single account.",
+        "Skill 5.1.4: Optimize the cost of network architectures."
+       ]
+      },
+      {
+       "id": "5.2",
+       "text": "Configure domains, DNS services, and content delivery",
+       "knowledge": [],
+       "skills": [
+        "Skill 5.2.1: Configure DNS (for example, Route 53 Resolver).",
+        "Skill 5.2.2: Implement Route 53 routing policies, configurations, and query logging.",
+        "Skill 5.2.3: Configure content and service distribution (for example, CloudFront, AWS Global Accelerator)."
+       ]
+      },
+      {
+       "id": "5.3",
+       "text": "Troubleshoot network connectivity issues",
+       "knowledge": [],
+       "skills": [
+        "Skill 5.3.1: Troubleshoot VPC configurations (for example, subnets, route tables, network ACLs, security groups, transit gateways, NAT gateways).",
+        "Skill 5.3.2: Collect and interpret networking logs to troubleshoot issues (for example, VPC flow logs, ELB access logs, AWS WAF web ACL logs, CloudFront logs, container logs).",
+        "Skill 5.3.3: Identify and remediate CloudFront caching issues.",
+        "Skill 5.3.4: Identify and troubleshoot hybrid connectivity issues and private connectivity issues.",
+        "Skill 5.3.5: Configure and analyze CloudWatch network monitoring services."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "DVA-C03": {
+   "guideUrl": "https://docs.aws.amazon.com/aws-certification/latest/developer-associate-03/developer-associate-03.html",
+   "retrieved": "2026-11-03",
+   "domains": [
+    {
+     "n": 1,
+     "name": "Development with AWS Services",
+     "weight": 30,
+     "tasks": [
+      {
+       "id": "1.1",
+       "text": "Develop code for applications that are hosted on AWS",
+       "knowledge": [],
+       "skills": [
+        "Skill 1.1.1: Identify tightly coupled and loosely coupled systems, and use AWS services to decouple system components.",
+        "Skill 1.1.2: Choose between synchronous and asynchronous patterns (for example, Amazon API Gateway synchronous invocation, Amazon SQS based asynchronous processing, Amazon EventBridge event-driven workflows).",
+        "Skill 1.1.3: Create and maintain fault-tolerant and resilient applications (for example, by configuring retry with backoff, graceful degradation).",
+        "Skill 1.1.4: Create, extend, and maintain APIs (for example, configure response/request transformations, by enforcing validation rules).",
+        "Skill 1.1.5: Develop code that interacts with AWS services by using APIs and AWS SDKs.",
+        "Skill 1.1.6: Manage streaming data by using AWS services.",
+        "Skill 1.1.7: Serialize and deserialize data to integrate application code with AWS services.",
+        "Skill 1.1.8: Implement event-driven patterns (for example, by using EventBridge, Amazon S3 Event Notifications, Amazon SQS, Amazon SNS).",
+        "Skill 1.1.9: Use AI-assisted development tools to generate, review, and optimize code (for example, spec-driven code generation, automated code reviews, intelligent code completion, refactoring suggestions, security scanning).",
+        "Skill 1.1.10: Integrate managed AWS AI services into applications."
+       ]
+      },
+      {
+       "id": "1.2",
+       "text": "Develop code for AWS Lambda",
+       "knowledge": [],
+       "skills": [
+        "Skill 1.2.1: Grant Lambda functions access to private resources in VPCs.",
+        "Skill 1.2.2: Configure Lambda functions by defining environment variables and parameters (for example, memory, concurrency, timeout, runtime, handler, layers, extensions).",
+        "Skill 1.2.3: Handle event lifecycles and errors (for example, by using Lambda destinations, dead-letter queues).",
+        "Skill 1.2.4: Integrate Lambda functions with AWS services by using code, event source mappings, and destinations (for example, API Gateway, Amazon DynamoDB)."
+       ]
+      },
+      {
+       "id": "1.3",
+       "text": "Use data stores during application development",
+       "knowledge": [],
+       "skills": [
+        "Skill 1.3.1: Manage data lifecycles (for example, by using Amazon S3 Lifecycle policies, TTL, retention periods).",
+        "Skill 1.3.2: Choose AWS data stores (for example, Amazon ElastiCache, DynamoDB, Amazon S3, Amazon RDS) based on access patterns.",
+        "Skill 1.3.3: Determine the appropriate caching solution based on data store selection.",
+        "Skill 1.3.4: Configure DynamoDB to support applications (for example, by selecting high-cardinality partition keys, applying read consistency models, performing query and scan operations, by defining keys, attributes, and indexes)."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Security",
+     "weight": 26,
+     "tasks": [
+      {
+       "id": "2.1",
+       "text": "Implement authentication and authorization mechanisms for applications and AWS services",
+       "knowledge": [],
+       "skills": [
+        "Skill 2.1.1: Implement identity federation.",
+        "Skill 2.1.2: Implement access control (for example, fine-grained permissions, security tokens, MFA).",
+        "Skill 2.1.3: Configure programmatic access to AWS.",
+        "Skill 2.1.4: Use presigned URLs to provide secure, time-limited access (for example, by using Amazon S3 and Amazon CloudFront).",
+        "Skill 2.1.5: Make authenticated calls to AWS services.",
+        "Skill 2.1.6: Define permissions for IAM principals (for example, users, roles, services) and resources.",
+        "Skill 2.1.7: Assume an IAM role."
+       ]
+      },
+      {
+       "id": "2.2",
+       "text": "Implement encryption and manage sensitive data by using AWS services",
+       "knowledge": [],
+       "skills": [
+        "Skill 2.2.1: Apply encryption at rest and in transit.",
+        "Skill 2.2.2: Manage certificates by using AWS services (for example, AWS Certificate Manager, AWS Private CA).",
+        "Skill 2.2.3: Select and apply client-side or server-side encryption.",
+        "Skill 2.2.4: Use encryption keys to encrypt and decrypt data.",
+        "Skill 2.2.5: Generate certificates and SSH keys for development purposes.",
+        "Skill 2.2.6: Identify, mask, and limit access to sensitive data (for example, personally identifiable information [PII], protected health information [PHI]) by using AWS services.",
+        "Skill 2.2.7: Use secret management services to secure sensitive data."
+       ]
+      },
+      {
+       "id": "2.3",
+       "text": "Identify and mitigate security risks associated with using and integrating AI services into application development",
+       "knowledge": [],
+       "skills": [
+        "Skill 2.3.1: Request and manage access to AI services.",
+        "Skill 2.3.2: Use data privacy controls to transmit data to AI services (for example, by using VPC endpoints to establish private connectivity, ensuring that inputs and outputs are not used to train AI models).",
+        "Skill 2.3.3: Filter and control AI model inputs and outputs (for example, by applying content filtering, sensitive information detection, PII/PHI redaction, denied topic policies, prompt injection and manipulation protection).",
+        "Skill 2.3.4: Secure AI agent interactions (for example, by using tool-use authorization, session isolation, human-in-the-loop approval flows for sensitive actions).",
+        "Skill 2.3.5: Protect sensitive content in monitoring logs during interactions with AI services."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Testing and Deployment",
+     "weight": 22,
+     "tasks": [
+      {
+       "id": "3.1",
+       "text": "Prepare application artifacts to be deployed to AWS",
+       "knowledge": [],
+       "skills": [
+        "Skill 3.1.1: Manage dependencies for code modules (for example, environment variables, configuration files, container images) within packages.",
+        "Skill 3.1.2: Build and manage container images for deployment (for example, by using Amazon ECR, Docker files, container image tagging, lifecycle policies).",
+        "Skill 3.1.3: Use code repositories in deployment environments.",
+        "Skill 3.1.4: Manage environment-specific application configuration by using AWS services (for example, AWS AppConfig, AWS Systems Manager Parameter Store, AWS Secrets Manager, Amazon API Gateway, AWS Lambda).",
+        "Skill 3.1.5: Use API Gateway features and resources (for example, stage-specific URLs, endpoints)."
+       ]
+      },
+      {
+       "id": "3.2",
+       "text": "Implement and automate application testing in AWS environments",
+       "knowledge": [],
+       "skills": [
+        "Skill 3.2.1: Develop and validate tests (for example, by using AWS SAM, AWS CDK, AWS CloudFormation).",
+        "Skill 3.2.2: Use mock APIs for external dependencies by using AWS services and tools (for example, API Gateway).",
+        "Skill 3.2.3: Create application test events (for example, by using JSON payloads to test Lambda functions and API Gateway APIs).",
+        "Skill 3.2.4: Create and configure application environments (for example, Lambda aliases, container image tags, AWS Amplify branches, AWS Copilot environments, API Gateway APIs).",
+        "Skill 3.2.5: Use AWS AI tools to generate tests and automate repetitive testing workflows (for example, automated test execution, test result analysis, regression testing automation, test coverage)."
+       ]
+      },
+      {
+       "id": "3.3",
+       "text": "Deploy code by using AWS continuous integration and continuous delivery (CI/CD) services",
+       "knowledge": [],
+       "skills": [
+        "Skill 3.3.1: Use Lambda deployment packaging methods to optimize deployment efficiency (for example, .zip files, container images, layers).",
+        "Skill 3.3.2: Deploy containerized applications by using AWS container orchestration services (for example, Amazon ECS task definitions, Amazon EKS manifests, AWS Fargate launch types, rolling updates).",
+        "Skill 3.3.3: Use infrastructure as code (IaC) templates (for example, CloudFormation templates, AWS SAM templates).",
+        "Skill 3.3.4: Deploy application revisions to target environments by using AWS CodeDeploy.",
+        "Skill 3.3.5: Use AWS CodePipeline to orchestrate CI/CD pipelines (for example, invoke pipelines from linked code repositories, orchestrate progression through multiple environments).",
+        "Skill 3.3.6: Implement deployment strategies for application releases (for example, blue/green, canary, rolling).",
+        "Skill 3.3.7: Implement automatic or manual rollback by using AWS services (for example, CloudFormation, CodeDeploy).",
+        "Skill 3.3.8: Use source control features to manage application versions and releases (for example, labels, branches).",
+        "Skill 3.3.9: Use AWS AI tools to support CI/CD workflows (for example, automated deployment approvals, environment provisioning, post-deployment validation)."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Troubleshooting and Optimization",
+     "weight": 22,
+     "tasks": [
+      {
+       "id": "4.1",
+       "text": "Assist in a root cause analysis",
+       "knowledge": [],
+       "skills": [
+        "Skill 4.1.1: Debug application code and service integration issues to identify defects.",
+        "Skill 4.1.2: Interpret application metrics, logs, and traces.",
+        "Skill 4.1.3: Query logs to find relevant data.",
+        "Skill 4.1.4: Troubleshoot deployment failures by using output logs.",
+        "Skill 4.1.5: Use AWS AI tools to analyze errors and to generate troubleshooting suggestions."
+       ]
+      },
+      {
+       "id": "4.2",
+       "text": "Apply logging, monitoring, and observability best practices",
+       "knowledge": [],
+       "skills": [
+        "Skill 4.2.1: Implement effective logging strategies to record application behavior and state (for example, by using structured logging for application events and user actions).",
+        "Skill 4.2.2: Implement code that emits custom metrics.",
+        "Skill 4.2.3: Implement notification alerts for specific actions (for example, quota limits, deployment completions).",
+        "Skill 4.2.4: Implement tracing by using AWS services and tools.",
+        "Skill 4.2.5: Monitor workload health (for example, by using application health checks, liveness and readiness probes)."
+       ]
+      },
+      {
+       "id": "4.3",
+       "text": "Optimize applications by using AWS services and features",
+       "knowledge": [],
+       "skills": [
+        "Skill 4.3.1: Apply concurrency concepts (for example, AWS Lambda provisioned concurrency, Amazon EC2 Auto Scaling, thread pool management, connection pooling).",
+        "Skill 4.3.2: Optimize memory and compute power for an application.",
+        "Skill 4.3.3: Optimize application messaging (for example, by using Amazon SQS queues, Amazon SNS fan-out patterns).",
+        "Skill 4.3.4: Implement caching by using AWS services (for example, Amazon ElastiCache, Amazon DynamoDB Accelerator [DAX], Amazon CloudFront).",
+        "Skill 4.3.5: Detect performance bottlenecks by using AWS services (for example, Amazon CloudWatch).",
+        "Skill 4.3.6: Use AWS AI tools to identify optimization opportunities (for example, performance bottleneck detection, resource usage optimization, code efficiency improvement)."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "DEA-C01": {
+   "guideUrl": "https://docs.aws.amazon.com/aws-certification/latest/data-engineer-associate-01/data-engineer-associate-01.html",
+   "retrieved": "2026-11-03",
+   "domains": [
+    {
+     "n": 1,
+     "name": "Data Ingestion and Transformation",
+     "weight": 34,
+     "tasks": [
+      {
+       "id": "1.1",
+       "text": "Perform data ingestion",
+       "knowledge": [],
+       "skills": [
+        "Skill 1.1.1: Read data from streaming sources (for example, Amazon Kinesis, Amazon Managed Streaming for Apache Kafka [Amazon MSK], Amazon DynamoDB Streams, AWS DMS, AWS Glue, Amazon Redshift).",
+        "Skill 1.1.2: Read data from batch sources (for example, Amazon S3, AWS Glue, Amazon EMR, AWS DMS, Amazon Redshift, AWS Lambda, Amazon AppFlow).",
+        "Skill 1.1.3: Implement appropriate configuration options for batch ingestion.",
+        "Skill 1.1.4: Consume data APIs.",
+        "Skill 1.1.5: Set up schedulers by using Amazon EventBridge, Apache Airflow, or time-based schedules for jobs and crawlers.",
+        "Skill 1.1.6: Set up event triggers (for example, Amazon S3 Event Notifications, EventBridge).",
+        "Skill 1.1.7: Call a Lambda function from Kinesis.",
+        "Skill 1.1.8: Create allowlists for IP addresses to allow connections to data sources.",
+        "Skill 1.1.9: Implement throttling and overcoming rate limits (for example, DynamoDB, Amazon RDS, Kinesis).",
+        "Skill 1.1.10: Manage fan-in and fan-out for streaming data distribution.",
+        "Skill 1.1.11: Describe replayability of data ingestion pipelines.",
+        "Skill 1.1.12: Define stateful and stateless data transactions."
+       ]
+      },
+      {
+       "id": "1.2",
+       "text": "Transform and process data",
+       "knowledge": [],
+       "skills": [
+        "Skill 1.2.1: Optimize container usage for performance needs (for example, Amazon EKS, Amazon ECS).",
+        "Skill 1.2.2: Connect to different data sources (for example, Java Database Connectivity [JDBC], Open Database Connectivity [ODBC]).",
+        "Skill 1.2.3: Integrate data from multiple sources.",
+        "Skill 1.2.4: Optimize costs while processing data.",
+        "Skill 1.2.5: Implement data transformation services based on requirements (for example, Amazon EMR, AWS Glue, Lambda, Amazon Redshift).",
+        "Skill 1.2.6: Transform data between formats (for example, from .csv to Apache Parquet).",
+        "Skill 1.2.7: Troubleshoot and debug common transformation failures and performance issues.",
+        "Skill 1.2.8: Create data APIs to make data available to other systems by using AWS services.",
+        "Skill 1.2.9: Define volume, velocity, and variety of data (for example, structured data, unstructured data).",
+        "Skill 1.2.10: Integrate large language models (LLMs) for data processing."
+       ]
+      },
+      {
+       "id": "1.3",
+       "text": "Orchestrate data pipelines",
+       "knowledge": [],
+       "skills": [
+        "Skill 1.3.1: Use orchestration services to build workflows for data ETL pipelines (for example, Lambda, EventBridge, Amazon Managed Workflows for Apache Airflow [Amazon MWAA], AWS Step Functions, AWS Glue workflows).",
+        "Skill 1.3.2: Build data pipelines for performance, availability, scalability, resiliency, and fault tolerance.",
+        "Skill 1.3.3: Implement and maintain serverless workflows.",
+        "Skill 1.3.4: Use notification services to send alerts (for example, Amazon SNS, Amazon SQS)."
+       ]
+      },
+      {
+       "id": "1.4",
+       "text": "Apply programming concepts",
+       "knowledge": [],
+       "skills": [
+        "Skill 1.4.1: Optimize code to reduce runtime for data ingestion and transformation.",
+        "Skill 1.4.2: Configure Lambda functions to meet concurrency and performance needs.",
+        "Skill 1.4.3: Use programming languages and frameworks for data engineering (for example, Python, SQL, Scala, R, Java, Bash, PowerShell).",
+        "Skill 1.4.4: Use software engineering best practices for data engineering (for example, version control, testing, logging, monitoring).",
+        "Skill 1.4.5: Use Infrastructure as Code (IaC) to deploy data engineering solutions.",
+        "Skill 1.4.6: Use AWS SAM to package and deploy serverless data pipelines (for example, Lambda functions, Step Functions, DynamoDB tables).",
+        "Skill 1.4.7: Use and mount storage volumes from within Lambda functions.",
+        "Skill 1.4.8: Use infrastructure as code (IaC) for repeatable resource deployment (for example, AWS CloudFormation and AWS CDK).",
+        "Skill 1.4.9: Describe continuous integration and continuous delivery (CI/CD) (implementation, testing, and deployment of data pipelines).",
+        "Skill 1.4.10: Define distributed computing.",
+        "Skill 1.4.11: Describe data structures and algorithms (for example, graph data structures and tree data structures)."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Data Store Management",
+     "weight": 26,
+     "tasks": [
+      {
+       "id": "2.1",
+       "text": "Choose a data store",
+       "knowledge": [],
+       "skills": [
+        "Skill 2.1.1: Implement the appropriate storage services for specific cost and performance requirements (for example, Amazon Redshift, Amazon EMR, AWS Lake Formation, Amazon RDS, Amazon DynamoDB, Amazon Kinesis Data Streams, Amazon Managed Streaming for Apache Kafka [Amazon MSK]).",
+        "Skill 2.1.2: Configure the appropriate storage services for specific access patterns and requirements (for example, Amazon Redshift, Amazon EMR, Lake Formation, Amazon RDS, DynamoDB).",
+        "Skill 2.1.3: Apply storage services to appropriate use cases (for example, using indexing algorithms like Hierarchical Navigable Small Worlds [HNSW] with Amazon Aurora PostgreSQL and using Amazon MemoryDB for fast key/value pair access).",
+        "Skill 2.1.4: Integrate migration tools into data processing systems (for example, AWS Transfer Family).",
+        "Skill 2.1.5: Implement data migration or remote access methods (for example, Amazon Redshift federated queries, Amazon Redshift materialized views, Amazon Redshift Spectrum).",
+        "Skill 2.1.6: Manage locks to prevent access to data (for example, Amazon Redshift, Amazon RDS).",
+        "Skill 2.1.7: Manage open table formats (for example Apache Iceberg).",
+        "Skill 2.1.8: Describe vector index types (for example, HNSW, IVF)."
+       ]
+      },
+      {
+       "id": "2.2",
+       "text": "Understand data cataloging systems",
+       "knowledge": [],
+       "skills": [
+        "Skill 2.2.1: Use data catalogs to consume data from the data's source.",
+        "Skill 2.2.2: Build and reference a technical data catalog (for example, AWS Glue Data Catalog, Apache Hive metastore).",
+        "Skill 2.2.3: Discover schemas and use AWS Glue crawlers to populate data catalogs.",
+        "Skill 2.2.4: Synchronize partitions with a data catalog.",
+        "Skill 2.2.5: Create new source or target connections for cataloging (for example, AWS Glue).",
+        "Skill 2.2.6: Create and manage business data catalogs (for example, Amazon SageMaker Catalog)."
+       ]
+      },
+      {
+       "id": "2.3",
+       "text": "Manage the lifecycle of data",
+       "knowledge": [],
+       "skills": [
+        "Skill 2.3.1: Perform load and unload operations to move data between Amazon S3 and Amazon Redshift.",
+        "Skill 2.3.2: Manage S3 Lifecycle policies to change the storage tier of S3 data.",
+        "Skill 2.3.3: Expire data when it reaches a specific age by using S3 Lifecycle policies.",
+        "Skill 2.3.4: Manage S3 versioning and DynamoDB TTL.",
+        "Skill 2.3.5: Delete data to meet business and legal requirements.",
+        "Skill 2.3.6: Protect data with appropriate resiliency and availability."
+       ]
+      },
+      {
+       "id": "2.4",
+       "text": "Design data models and schema evolution",
+       "knowledge": [],
+       "skills": [
+        "Skill 2.4.1: Design schemas for Amazon Redshift, DynamoDB, and Lake Formation.",
+        "Skill 2.4.2: Address changes to the characteristics of data.",
+        "Skill 2.4.3: Perform schema conversion (for example, by using AWS SCT and AWS DMS Schema Conversion).",
+        "Skill 2.4.4: Establish data lineage by using AWS tools (for example, Amazon SageMaker ML Lineage Tracking and Amazon SageMaker Catalog).",
+        "Skill 2.4.5: Describe best practices for indexing, partitioning strategies, compression, and other data optimization techniques.",
+        "Skill 2.4.6: Describe vectorization concepts (for example, Amazon Bedrock knowledge base)."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Data Operations and Support",
+     "weight": 22,
+     "tasks": [
+      {
+       "id": "3.1",
+       "text": "Automate data processing by using AWS services",
+       "knowledge": [],
+       "skills": [
+        "Skill 3.1.1: Orchestrate data pipelines (for example, Amazon Managed Workflows for Apache Airflow [Amazon MWAA], AWS Step Functions).",
+        "Skill 3.1.2: Troubleshoot Amazon managed workflows.",
+        "Skill 3.1.3: Call SDKs to access Amazon features from code.",
+        "Skill 3.1.4: Use the features of AWS services to process data (for example, Amazon EMR, Amazon Redshift, AWS Glue).",
+        "Skill 3.1.5: Consume and maintain data APIs.",
+        "Skill 3.1.6: Prepare data for transformation (for example, AWS Glue DataBrew and Amazon SageMaker Unified Studio).",
+        "Skill 3.1.7: Query data (for example, Amazon Athena).",
+        "Skill 3.1.8: Use AWS Lambda to automate data processing.",
+        "Skill 3.1.9: Manage events and schedulers (for example, Amazon EventBridge)."
+       ]
+      },
+      {
+       "id": "3.2",
+       "text": "Analyze data by using AWS services",
+       "knowledge": [],
+       "skills": [
+        "Skill 3.2.1: Visualize data by using AWS services and tools (for example, DataBrew, Amazon QuickSight).",
+        "Skill 3.2.2: Verify and clean data (for example, Lambda, Athena, QuickSight, Jupyter Notebooks, Amazon SageMaker Data Wrangler).",
+        "Skill 3.2.3: Use SQL in Amazon Redshift and Athena to query data or to create views.",
+        "Skill 3.2.4: Use Athena notebooks that use Apache Spark to explore data.",
+        "Skill 3.2.5: Describe tradeoffs between provisioned services and serverless services.",
+        "Skill 3.2.6: Define data aggregation, rolling average, grouping, and pivoting."
+       ]
+      },
+      {
+       "id": "3.3",
+       "text": "Maintain and monitor data pipelines",
+       "knowledge": [],
+       "skills": [
+        "Skill 3.3.1: Extract logs for audits.",
+        "Skill 3.3.2: Deploy logging and monitoring solutions to facilitate auditing and traceability.",
+        "Skill 3.3.3: Use notifications during monitoring to send alerts.",
+        "Skill 3.3.4: Troubleshoot performance issues.",
+        "Skill 3.3.5: Use AWS CloudTrail to track API calls.",
+        "Skill 3.3.6: Troubleshoot and maintain pipelines (for example, AWS Glue, Amazon EMR).",
+        "Skill 3.3.7: Use Amazon CloudWatch Logs to log application data (with a focus on configuration and automation).",
+        "Skill 3.3.8: Analyze logs with AWS services (for example, Athena, Amazon EMR, Amazon OpenSearch Service, CloudWatch Logs Insights, big data application logs)."
+       ]
+      },
+      {
+       "id": "3.4",
+       "text": "Ensure data quality",
+       "knowledge": [],
+       "skills": [
+        "Skill 3.4.1: Run data quality checks while processing the data (for example, checking for empty fields).",
+        "Skill 3.4.2: Define data quality rules (for example, DataBrew).",
+        "Skill 3.4.3: Investigate data consistency (for example, DataBrew).",
+        "Skill 3.4.4: Describe data sampling techniques.",
+        "Skill 3.4.5: Implement data skew mechanisms."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Data Security and Governance",
+     "weight": 18,
+     "tasks": [
+      {
+       "id": "4.1",
+       "text": "Apply authentication mechanisms",
+       "knowledge": [],
+       "skills": [
+        "Skill 4.1.1: Update VPC security groups.",
+        "Skill 4.1.2: Create and update IAM groups, roles, endpoints, and services.",
+        "Skill 4.1.3: Create and rotate credentials for password management (for example, AWS Secrets Manager).",
+        "Skill 4.1.4: Set up IAM roles for access (for example, AWS Lambda, Amazon API Gateway, AWS CLI, AWS CloudFormation).",
+        "Skill 4.1.5: Apply IAM policies to roles, endpoints, and services (for example, S3 Access Points, AWS PrivateLink).",
+        "Skill 4.1.6: Describe the differences between managed services and unmanaged services.",
+        "Skill 4.1.7: Use domain, domain units, and projects for SageMaker Unified Studio."
+       ]
+      },
+      {
+       "id": "4.2",
+       "text": "Apply authorization mechanisms",
+       "knowledge": [],
+       "skills": [
+        "Skill 4.2.1: Create custom IAM policies when a managed policy does not meet the needs.",
+        "Skill 4.2.2: Store application and database credentials (for example, Secrets Manager, AWS Systems Manager Parameter Store).",
+        "Skill 4.2.3: Provide database users, groups, and roles access and authority in a database (for example, for Amazon Redshift).",
+        "Skill 4.2.4: Manage permissions through AWS Lake Formation (for Amazon Redshift, Amazon EMR, Amazon Athena, and Amazon S3).",
+        "Skill 4.2.5: Apply authorization methods that address business needs (role-based, tag-based, and attribute-based).",
+        "Skill 4.2.6: Construct custom policies that meet the principle of least privilege."
+       ]
+      },
+      {
+       "id": "4.3",
+       "text": "Ensure data encryption and masking",
+       "knowledge": [],
+       "skills": [
+        "Skill 4.3.1: Apply data masking and anonymization according to compliance laws or company policies.",
+        "Skill 4.3.2: Use encryption keys to encrypt or decrypt data (for example, AWS KMS).",
+        "Skill 4.3.3: Configure encryption across AWS account boundaries.",
+        "Skill 4.3.4: Enable encryption in transit or before transit for data."
+       ]
+      },
+      {
+       "id": "4.4",
+       "text": "Prepare logs for audit",
+       "knowledge": [],
+       "skills": [
+        "Skill 4.4.1: Use AWS CloudTrail to track API calls.",
+        "Skill 4.4.2: Use Amazon CloudWatch Logs to store application logs.",
+        "Skill 4.4.3: Use AWS CloudTrail Lake for centralized logging queries.",
+        "Skill 4.4.4: Analyze logs by using AWS services (for example, Athena, CloudWatch Logs Insights, Amazon OpenSearch Service).",
+        "Skill 4.4.5: Integrate various AWS services to perform logging (for example, Amazon EMR in cases of large volumes of log data)."
+       ]
+      },
+      {
+       "id": "4.5",
+       "text": "Understand data privacy and governance",
+       "knowledge": [],
+       "skills": [
+        "Skill 4.5.1: Grant permissions for data sharing (for example, data sharing for Amazon Redshift).",
+        "Skill 4.5.2: Implement PII identification (for example, Amazon Macie with Lake Formation).",
+        "Skill 4.5.3: Implement data privacy strategies to prevent backups or replications of data to disallowed AWS Regions.",
+        "Skill 4.5.4: Viewing configuration changes that have occurred in an account (for example, AWS Config).",
+        "Skill 4.5.5: Maintain data sovereignty.",
+        "Skill 4.5.6: Manage data access through Amazon SageMaker Catalog projects.",
+        "Skill 4.5.7: Describe governance data framework and data sharing patterns."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "SCS-C03": {
+   "guideUrl": "https://docs.aws.amazon.com/aws-certification/latest/security-specialty-03/security-specialty-03.html",
+   "retrieved": "2026-11-03",
+   "domains": [
+    {
+     "n": 1,
+     "name": "Detection",
+     "weight": 16,
+     "tasks": [
+      {
+       "id": "1.1",
+       "text": "Design and implement monitoring and alerting solutions for an AWS account or organization",
+       "knowledge": [],
+       "skills": [
+        "Skill 1.1.1: Analyze workloads to determine monitoring requirements.",
+        "Skill 1.1.2: Design and implement workload monitoring strategies (for example, by configuring resource health checks).",
+        "Skill 1.1.3: Aggregate security and monitoring events.",
+        "Skill 1.1.4: Create metrics, alerts, and dashboards to detect anomalous data and events (for example, Amazon GuardDuty, Amazon Security Lake, AWS Security Hub, Amazon Macie).",
+        "Skill 1.1.5: Create and manage automations to perform regular assessments and investigations (for example, by deploying AWS Config conformance packs, Security Hub, AWS Systems Manager State Manager)."
+       ]
+      },
+      {
+       "id": "1.2",
+       "text": "Design and implement logging solutions",
+       "knowledge": [],
+       "skills": [
+        "Skill 1.2.1: Identify sources for log ingestion and storage based on requirements.",
+        "Skill 1.2.2: Configure logging for AWS services and applications (for example, by configuring an AWS CloudTrail trail for an organization, by creating a dedicated Amazon CloudWatch logging account, by configuring the Amazon CloudWatch Logs agent).",
+        "Skill 1.2.3: Implement log storage and log data lakes (for example, Security Lake) and integrate with third-party security tools.",
+        "Skill 1.2.4: Use AWS services to analyze logs (for example, CloudWatch Logs Insights, Amazon Athena, Security Hub findings).",
+        "Skill 1.2.5: Use AWS services to normalize, parse, and correlate logs (for example, Amazon OpenSearch Service, AWS Lambda, Amazon Managed Grafana).",
+        "Skill 1.2.6: Determine and configure appropriate log sources based on network design, threats, and attacks (for example, VPC Flow Logs, transit gateway flow logs, Amazon Route 53 Resolver logs)."
+       ]
+      },
+      {
+       "id": "1.3",
+       "text": "Troubleshoot security monitoring, logging, and alerting solutions",
+       "knowledge": [],
+       "skills": [
+        "Skill 1.3.1: Analyze the functionality, permissions, and configuration of resources (for example, Lambda function logging, Amazon API Gateway logging, health checks, Amazon CloudFront logging).",
+        "Skill 1.3.2: Remediate misconfiguration of resources (for example, by troubleshooting CloudWatch Agent configurations, troubleshooting missing logs)."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Incident Response",
+     "weight": 14,
+     "tasks": [
+      {
+       "id": "2.1",
+       "text": "Design and test an incident response plan",
+       "knowledge": [],
+       "skills": [
+        "Skill 2.1.1: Design and implement response plans and runbooks to respond to security incidents (for example, Systems Manager OpsCenter, Amazon SageMaker AI notebooks).",
+        "Skill 2.1.2: Use AWS service features and capabilities to configure services to be prepared for incidents (for example, by provisioning access, deploying security tools, minimizing the blast radius, configuring AWS Shield Advanced protections).",
+        "Skill 2.1.3: Recommend procedures to test and validate the effectiveness of an incident response plan (for example, AWS Fault Injection Service, AWS Resilience Hub).",
+        "Skill 2.1.4: Use AWS services to automatically remediate incidents (for example, Systems Manager, Automated Forensics Orchestrator for Amazon EC2, AWS Step Functions, Amazon Application Recovery Controller, Lambda functions)."
+       ]
+      },
+      {
+       "id": "2.2",
+       "text": "Respond to security events",
+       "knowledge": [],
+       "skills": [
+        "Skill 2.2.1: Capture and store relevant system and application logs as forensic artifacts.",
+        "Skill 2.2.2: Search and correlate logs for security events across applications and AWS services.",
+        "Skill 2.2.3: Validate findings from AWS security services to assess the scope and impact of an event.",
+        "Skill 2.2.4: Respond to affected resources by containing and eradicating threats, and recover resources (for example, by implementing network containment controls, restoring backups).",
+        "Skill 2.2.5: Describe methods to conduct root cause analysis (for example, Amazon Detective)."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Infrastructure Security",
+     "weight": 18,
+     "tasks": [
+      {
+       "id": "3.1",
+       "text": "Design, implement, and troubleshoot security controls for network edge services",
+       "knowledge": [],
+       "skills": [
+        "Skill 3.1.1: Define and select edge security strategies based on anticipated threats and attacks.",
+        "Skill 3.1.2: Implement appropriate network edge protection (for example, CloudFront headers, AWS WAF, AWS IoT policies, protecting against OWASP Top 10 threats, Amazon S3 cross-origin resource sharing [CORS], Shield Advanced).",
+        "Skill 3.1.3: Design and implement AWS edge controls and rules based on requirements (for example, geography, geolocation, rate limiting, client fingerprinting).",
+        "Skill 3.1.4: Configure integrations with AWS edge services and third-party services (for example, by ingesting data in Open Cybersecurity Schema Framework [OCSF] format, by using third-party WAF rules)."
+       ]
+      },
+      {
+       "id": "3.2",
+       "text": "Design, implement, and troubleshoot security controls for compute workloads",
+       "knowledge": [],
+       "skills": [
+        "Skill 3.2.1: Design and implement hardened Amazon EC2 AMIs and container images to secure compute workloads and embed security controls (for example, Systems Manager, EC2 Image Builder).",
+        "Skill 3.2.2: Apply instance profiles, service roles, and execution roles appropriately to authorize compute workloads.",
+        "Skill 3.2.3: Scan compute resources for known vulnerabilities (for example, scan container images and Lambda functions by using Amazon Inspector, monitor compute runtimes by using GuardDuty).",
+        "Skill 3.2.4: Deploy patches across compute resources to maintain secure and compliant environments by automating update processes and by integrating continuous validation (for example, Systems Manager Patch Manager, Amazon Inspector).",
+        "Skill 3.2.5: Configure secure administrative access to compute resources (for example, Systems Manager Session Manager, EC2 Instance Connect).",
+        "Skill 3.2.6: Configure security tools to discover and remediate vulnerabilities within a pipeline (for example, Amazon Q Developer, Amazon CodeGuru Security).",
+        "Skill 3.2.7: Implement protections and guardrails for generative AI applications (for example, by applying GenAI OWASP Top 10 for LLM Applications protections)."
+       ]
+      },
+      {
+       "id": "3.3",
+       "text": "Design and troubleshoot network security controls",
+       "knowledge": [],
+       "skills": [
+        "Skill 3.3.1: Design and troubleshoot appropriate network controls to permit or prevent network traffic as required (for example, security groups, network ACLs, AWS Network Firewall).",
+        "Skill 3.3.2: Design secure connectivity between hybrid and multi-cloud networks (for example, AWS Site-to-Site VPN, AWS Direct Connect, MAC Security [MACsec]).",
+        "Skill 3.3.3: Determine and configure security workload requirements for communication between hybrid environments and AWS (for example, by using AWS Verified Access).",
+        "Skill 3.3.4: Design network segmentation based on security requirements (for example, north/south and east/west traffic protections, isolated subnets).",
+        "Skill 3.3.5: Identify unnecessary network access (for example, AWS Verified Access, Network Access Analyzer, Amazon Inspector network reachability findings)."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Identity and Access Management",
+     "weight": 20,
+     "tasks": [
+      {
+       "id": "4.1",
+       "text": "Design, implement, and troubleshoot authentication strategies",
+       "knowledge": [],
+       "skills": [
+        "Skill 4.1.1: Design and establish identity solutions for human, application, and system authentication (for example, AWS IAM Identity Center, Amazon Cognito, multi-factor authentication [MFA], identity provider [IdP] integration).",
+        "Skill 4.1.2: Configure mechanisms to issue temporary credentials (for example, AWS STS, Amazon S3 presigned URLs).",
+        "Skill 4.1.3: Troubleshooting authentication issues (for example, CloudTrail, Amazon Cognito, IAM Identity Center permission sets, AWS Directory Service)."
+       ]
+      },
+      {
+       "id": "4.2",
+       "text": "Design, implement, and troubleshoot authorization strategies",
+       "knowledge": [],
+       "skills": [
+        "Skill 4.2.1: Design and evaluate authorization controls for human, application, and system access (for example, Amazon Verified Permissions, IAM paths, IAM Roles Anywhere, resource policies for cross-account access, IAM role trust policies).",
+        "Skill 4.2.2: Design attribute-based access control (ABAC) and role-based access control (RBAC) strategies (for example, by configuring resource access based on tags or attributes).",
+        "Skill 4.2.3: Design, interpret, and implement IAM policies by following the principle of least privilege (for example, permission boundaries, session policies).",
+        "Skill 4.2.4: Analyze authorization failures to determine causes or effects (for example, IAM Policy Simulator, IAM Access Analyzer).",
+        "Skill 4.2.5: Investigate and correct unintended permissions, authorizations, or privileges granted to a resource, service, or entity (for example, IAM Access Analyzer)."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Data Protection",
+     "weight": 18,
+     "tasks": [
+      {
+       "id": "5.1",
+       "text": "Design and implement controls for data in transit",
+       "knowledge": [],
+       "skills": [
+        "Skill 5.1.1: Design and configure mechanisms to require encryption when connecting to connect to resources (for example, by configuring Elastic Load Balancing [ELB] security policies, by enforcing TLS configurations).",
+        "Skill 5.1.2: Design and configure mechanisms for secure and private access to resources (for example, AWS PrivateLink, VPC endpoints, AWS Client VPN, AWS Verified Access).",
+        "Skill 5.1.3: Design and configure inter-resource encryption in transit (for example, inter-node encryption configurations for Amazon EMR, Amazon EKS, SageMaker AI, Nitro encryption)."
+       ]
+      },
+      {
+       "id": "5.2",
+       "text": "Design and implement controls for data at rest",
+       "knowledge": [],
+       "skills": [
+        "Skill 5.2.1: Design, implement, and configure data encryption at rest based on specific requirements (for example, by selecting the appropriate encryption key service such as AWS CloudHSM or AWS KMS or by selecting the appropriate encryption type such as client-side encryption or server-side encryption).",
+        "Skill 5.2.2: Design and configure mechanisms to protect data integrity (for example, S3 Object Lock, S3 Glacier Vault Lock, versioning, digital code signing, file validation).",
+        "Skill 5.2.3: Design automatic lifecycle management and retention solutions for data (for example, S3 Lifecycle policies, S3 Object Lock, Amazon EFS Lifecycle policies, Amazon FSx for Lustre backup policies).",
+        "Skill 5.2.4: Design and configure secure data replication and backup solutions (for example, Amazon Data Lifecycle Manager, AWS Backup, ransomware protection, AWS DataSync)."
+       ]
+      },
+      {
+       "id": "5.3",
+       "text": "Design and implement controls to protect confidential data, credentials, secrets, and cryptographic key materials",
+       "knowledge": [],
+       "skills": [
+        "Skill 5.3.1: Design management and rotation of credentials and secrets (for example, AWS Secrets Manager).",
+        "Skill 5.3.2: Manage and use imported key material (for example, by managing and rotating imported key material, by managing and configuring external key stores).",
+        "Skill 5.3.3: Describe the differences between imported key material and AWS generated key material.",
+        "Skill 5.3.4: Mask sensitive data (for example, CloudWatch Logs data protection policies, Amazon SNS message data protection).",
+        "Skill 5.3.5: Create and manage encryption keys and certificates across a single AWS Region or multiple Regions (for example, AWS KMS customer managed AWS KMS keys, AWS Private Certificate Authority)."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Security Foundations and Governance",
+     "weight": 14,
+     "tasks": [
+      {
+       "id": "6.1",
+       "text": "Develop a strategy to centrally deploy and manage AWS accounts",
+       "knowledge": [],
+       "skills": [
+        "Skill 6.1.1: Deploy and configure organizations by using AWS Organizations.",
+        "Skill 6.1.2: Implement and manage AWS Control Tower in new and existing environments, and deploy optional and custom controls.",
+        "Skill 6.1.3: Implement organization policies to manage permissions (for example, SCPs, RCPs, AI service opt-out policies, declarative policies).",
+        "Skill 6.1.4: Centrally manage security services (for example, delegated administrator accounts).",
+        "Skill 6.1.5: Manage AWS account root user credentials (for example, by centralizing root access for member accounts, managing MFA, designing break-glass procedures)."
+       ]
+      },
+      {
+       "id": "6.2",
+       "text": "Implement a secure and consistent deployment strategy for cloud resources",
+       "knowledge": [],
+       "skills": [
+        "Skill 6.2.1: Use infrastructure as code (IaC) to deploy cloud resources consistently and securely across accounts (for example, CloudFormation stack sets, third-party IaC tools, CloudFormation Guard, cfn-lint).",
+        "Skill 6.2.2: Use tags to organize AWS resources into groups for management (for example, by grouping by department, cost center, environment).",
+        "Skill 6.2.3: Deploy and enforce policies and configurations from a central source (for example, AWS Firewall Manager).",
+        "Skill 6.2.4: Securely share resources across AWS accounts (for example, AWS Service Catalog, AWS Resource Access Manager [AWS RAM])."
+       ]
+      },
+      {
+       "id": "6.3",
+       "text": "Evaluate the compliance of AWS resources",
+       "knowledge": [],
+       "skills": [
+        "Skill 6.3.1: Create or enable rules to detect and remediate noncompliant AWS resources and to send notifications (for example, by using AWS Config to aggregate alerts and remediate non-compliant resources, Security Hub).",
+        "Skill 6.3.2: Use AWS audit services to collect and organize evidence (for example, AWS Audit Manager, AWS Artifact).",
+        "Skill 6.3.3: Use AWS services to evaluate architecture for compliance with AWS security best practices (for example, AWS Well-Architected Framework tool)."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "SAP-C03": {
+   "guideUrl": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-03/solutions-architect-professional-03.html",
+   "retrieved": "2026-11-03",
+   "domains": [
+    {
+     "n": 1,
+     "name": "Architecture Design and Implementation Built for the Cloud",
+     "weight": 25,
+     "tasks": [
+      {
+       "id": "1.1",
+       "text": "Design architectures built for the cloud",
+       "knowledge": [],
+       "skills": [
+        "Skill 1.1.1: Design event-driven architectures that use appropriate messaging patterns such as idempotency, ordering, and delivery guarantees (for example, by using Amazon EventBridge, Amazon SQS FIFO queues and standard queues, Amazon SNS, Amazon Kinesis with partition keys).",
+        "Skill 1.1.2: Design stateless applications that use externalized state management (for example, by using Amazon DynamoDB, Amazon S3, Amazon ElastiCache).",
+        "Skill 1.1.3: Design serverless data processing and analysis pipelines (for example, by using Amazon Kinesis Data Streams, AWS Glue, Amazon Athena, AWS Lambda).",
+        "Skill 1.1.4: Design multi-step workflows that have durable execution patterns (for example, by using AWS Step Functions, durable Lambda functions).",
+        "Skill 1.1.5: Implement cross-account and cross-Region event routing patterns that use event buses and event forwarding.",
+        "Skill 1.1.6: Design container orchestration for microservices by using managed services (for example, Amazon EKS, Amazon ECS, AWS Fargate).",
+        "Skill 1.1.7: Design service mesh architectures that facilitate microservice communication and observability (for example, by using Amazon VPC Lattice, Amazon ECS Service Connect).",
+        "Skill 1.1.8: Manage container images by configuring security scans and lifecycle policies (for example, by using Amazon ECR).",
+        "Skill 1.1.9: Design auto scaling patterns for serverless and containerized workloads (for example, by using Lambda concurrency, Horizontal Pod Autoscaler, Cluster Autoscaler, Amazon ECS service auto scaling, AWS Application Auto Scaling).",
+        "Skill 1.1.10: Design ingress patterns and optimize resources for specific usage patterns (for example, Application Load Balancer, Network Load Balancer, AWS Load Balancer Controller, Amazon API Gateway).",
+        "Skill 1.1.11: Design edge architectures to meet latency requirements (for example, by using Amazon CloudFront Functions, Lambda@Edge).",
+        "Skill 1.1.12: Design architectures that support real-time data processing by using WebSocket and publish-subscribe patterns (for example, by using API Gateway WebSocket APIs).",
+        "Skill 1.1.13: Design multi-tenant architectures that use tenant isolation patterns (for example, siloed or pooled resources, Amazon Cognito tenant context, row-level security, tenant-specific encryption)."
+       ]
+      },
+      {
+       "id": "1.2",
+       "text": "Integrate AI and ML services into architectures",
+       "knowledge": [],
+       "skills": [
+        "Skill 1.2.1: Design generative AI integrations for applications, including for multi-account deployment patterns (for example, by using Amazon Bedrock).",
+        "Skill 1.2.2: Design AI agent architectures that integrate with tools (for example, by using Amazon Bedrock AgentCore, Amazon Bedrock Knowledge Bases).",
+        "Skill 1.2.3: Design ML inference architectures (for example, Amazon SageMaker AI endpoints).",
+        "Skill 1.2.4: Design RAG architectures, including ingestion and retrieval strategies (for example, Amazon Bedrock knowledge bases that use vector stores)."
+       ]
+      },
+      {
+       "id": "1.3",
+       "text": "Design hybrid cloud integration patterns",
+       "knowledge": [],
+       "skills": [
+        "Skill 1.3.1: Design hybrid connectivity that provides redundancy and failover capabilities (for example, by using AWS Direct Connect, AWS VPN, AWS Transit Gateway).",
+        "Skill 1.3.2: Design data synchronization strategies for hybrid workloads (for example, by using AWS DataSync, AWS Storage Gateway, AWS Transfer Family).",
+        "Skill 1.3.3: Design integration patterns to modernize legacy systems by using data transformations (for example, by using API Gateway, Lambda, Amazon MQ).",
+        "Skill 1.3.4: Design DNS solutions for hybrid environments (for example, by using Amazon Route 53 Resolver endpoints, Route 53 private hosted zones, split-horizon DNS, conditional forwarding).",
+        "Skill 1.3.5: Design hybrid compute patterns (for example, by using Amazon EKS Anywhere, Amazon ECS Anywhere, AWS Outposts, AWS Local Zones)."
+       ]
+      },
+      {
+       "id": "1.4",
+       "text": "Design network architectures",
+       "knowledge": [],
+       "skills": [
+        "Skill 1.4.1: Design multi-VPC architectures that provide hybrid and multi-account connectivity (for example, VPC peering, AWS PrivateLink).",
+        "Skill 1.4.2: Design VPC architectures by using subnet strategies, IP address management, and network segmentation (for example, by using Amazon VPC IP Address Manager [IPAM], public and private subnets).",
+        "Skill 1.4.3: Design network security architectures that include traffic inspection, traffic filtering, and application layer protection (for example, by using AWS Network Firewall, AWS WAF, Gateway Load Balancers, security groups, network ACLs, VPC Flow Logs).",
+        "Skill 1.4.4: Design IPv6 adoption and dual-stack migration strategies.",
+        "Skill 1.4.5: Design global traffic routing strategies for multi-Region applications (for example, by using Route 53 routing policies, AWS Global Accelerator)."
+       ]
+      },
+      {
+       "id": "1.5",
+       "text": "Design data, storage, and database architectures",
+       "knowledge": [],
+       "skills": [
+        "Skill 1.5.1: Design data lake and lakehouse architectures (for example, by using Amazon S3, AWS Lake Formation, Amazon Redshift Spectrum, Apache Iceberg).",
+        "Skill 1.5.2: Design real-time and batch analytics pipelines (for example, by using Amazon EMR, Amazon Redshift, Amazon Managed Streaming for Apache Kafka [Amazon MSK], Amazon AppFlow).",
+        "Skill 1.5.3: Select appropriate database services based on workload requirements such as access patterns, consistency needs, and scalability (for example, Amazon RDS, Amazon Aurora, Amazon DynamoDB, Amazon Redshift).",
+        "Skill 1.5.4: Design database scaling solutions to provide high availability (for example, by using read replicas, Amazon Aurora Global Database, Amazon DynamoDB global tables, Amazon RDS Multi-AZ deployments).",
+        "Skill 1.5.5: Design storage architectures based on access patterns and performance requirements (for example, by using Amazon S3, Amazon EBS, Amazon EFS, Amazon FSx).",
+        "Skill 1.5.6: Design data caching strategies to optimize performance (for example, by using ElastiCache, DynamoDB Accelerator [DAX]).",
+        "Skill 1.5.7: Design data cataloging and cross-account data sharing patterns (for example, AWS Glue Data Catalog, Lake Formation, AWS Clean Rooms)."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Security, Compliance, and Governance",
+     "weight": 25,
+     "tasks": [
+      {
+       "id": "2.1",
+       "text": "Design identity security architectures",
+       "knowledge": [],
+       "skills": [
+        "Skill 2.1.1: Implement identity federation by using standard protocols (for example, AWS IAM Identity Center, SAML 2.0, OpenID Connect, System for Cross-domain Identity Management [SCIM]).",
+        "Skill 2.1.2: Design application authentication and authorization solutions (for example, by using Amazon Cognito user pools, identity pools, OAuth 2.0, Amazon EKS Pod Identity).",
+        "Skill 2.1.3: Design least-privilege access controls such as cross-account access and temporary credentials (for example, by using IAM roles, IAM policies, permissions boundaries, external IDs, session policies, attribute-based access control [ABAC]).",
+        "Skill 2.1.4: Design data perimeter controls and external access validation solutions (for example, by using AWS Identity and Access Management Access Analyzer, VPC endpoint policies, AWS Verified Access).",
+        "Skill 2.1.5: Design workload identities for hybrid and multi-cloud environments (for example, by using IAM Roles Anywhere)."
+       ]
+      },
+      {
+       "id": "2.2",
+       "text": "Design solutions to implement encryption and key management strategies",
+       "knowledge": [],
+       "skills": [
+        "Skill 2.2.1: Implement encryption at rest by using customer managed keys and automatic key rotation (for example, by using AWS KMS).",
+        "Skill 2.2.2: Implement encryption in transit by using certificate management (for example, TLS 1.3, AWS Certificate Manager [ACM], AWS Private CA).",
+        "Skill 2.2.3: Implement dedicated hardware security modules to comply with regulations (for example, AWS CloudHSM).",
+        "Skill 2.2.4: Design post-quantum cryptography strategies (for example, by using AWS KMS with Module-Lattice Digital Signature Algorithm [ML-DSA], Module-Lattice-Based Key-Encapsulation Mechanism [ML-KEM])."
+       ]
+      },
+      {
+       "id": "2.3",
+       "text": "Design multi-account governance and compliance solutions",
+       "knowledge": [],
+       "skills": [
+        "Skill 2.3.1: Design organizational structures that include features such as guardrails, landing zones, and automated account provisioning (for example, by using AWS Organizations, OUs, AWS Control Tower, AWS Control Tower Account Factory).",
+        "Skill 2.3.2: Implement centralized logging and configuration management solutions, including solutions for AI model invocations and responses (for example, by using AWS CloudTrail organization trails, AWS Config aggregation, AWS GuardDuty, Amazon Security Lake, AWS Security Hub, Amazon CloudWatch Logs).",
+        "Skill 2.3.3: Configure cross-account resource sharing (for example, AWS Resource Access Manager [AWS RAM], AWS Transit Gateway).",
+        "Skill 2.3.4: Design policy enforcement by using SCPs and RCPs.",
+        "Skill 2.3.5: Implement automated compliance monitoring (for example, by using AWS Config rules, AWS Security Hub CSPM).",
+        "Skill 2.3.6: Configure automated vulnerability scanning and patch management (for example, by using Amazon Inspector, AWS Systems Manager Patch Manager)."
+       ]
+      },
+      {
+       "id": "2.4",
+       "text": "Design architectures to meet compliance requirements",
+       "knowledge": [],
+       "skills": [
+        "Skill 2.4.1: Design architectures to meet data protection requirements (for example, by implementing encryption, access controls, audit logging).",
+        "Skill 2.4.2: Design solutions to meet regulatory requirements such as data sovereignty controls.",
+        "Skill 2.4.3: Implement audit trail management for regulated workloads, including for AI services.",
+        "Skill 2.4.4: Design data residency controls such as AWS Region-specific deployments and transfer restrictions.",
+        "Skill 2.4.5: Implement compliance evidence collection and reporting solutions (for example, by using AWS Artifact).",
+        "Skill 2.4.6: Implement risk assessment solutions for cloud architectures such as threat modeling and mitigation strategies."
+       ]
+      },
+      {
+       "id": "2.5",
+       "text": "Design security and responsible AI controls",
+       "knowledge": [],
+       "skills": [
+        "Skill 2.5.1: Implement content filtering and compliance controls for generative AI services (for example, by using Amazon Bedrock Guardrails).",
+        "Skill 2.5.2: Implement access controls for generative and agentic AI applications (for example, by using Amazon Bedrock AgentCore Identity).",
+        "Skill 2.5.3: Design human oversight workflows that include approval mechanisms for AI operations (for example, by using AWS Step Functions)."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Cost-Optimized Architecture Design",
+     "weight": 15,
+     "tasks": [
+      {
+       "id": "3.1",
+       "text": "Design architectures based on AWS pricing models",
+       "knowledge": [],
+       "skills": [
+        "Skill 3.1.1: Select appropriate purchase options based on usage patterns, including commitment-based and capacity-based options (for example, provisioned capacity, Reserved Instances, AWS Savings Plans, Spot Instances, On-Demand Instances).",
+        "Skill 3.1.2: Design cost-optimized architectures to meet workload requirements (for example, by using Graviton-based instances, AWS Step Functions Standard Workflows or Express Workflows, AWS Lambda functions).",
+        "Skill 3.1.3: Implement rightsizing and scaling strategies based on performance metrics (for example, by using AWS Compute Optimizer, scheduled scaling, target tracking policies, AWS Fargate Spot).",
+        "Skill 3.1.4: Optimize costs for AI/ML workloads by selecting the appropriate service tier, implementing batching strategies, and designing caching patterns (for example, by using Amazon Bedrock, Amazon SageMaker AI)."
+       ]
+      },
+      {
+       "id": "3.2",
+       "text": "Optimize data transfer and network costs",
+       "knowledge": [],
+       "skills": [
+        "Skill 3.2.1: Design content delivery architectures, origin selection strategies, caching strategies, and failover patterns (for example, by using Amazon CloudFront, Amazon CloudFront Origin Shield).",
+        "Skill 3.2.2: Optimize data transfer costs by using strategies such as private connectivity, Regional traffic patterns, and inter-Availability Zone/inter-Region strategies (for example, by using VPC endpoints, NAT gateways, Availability Zone-aware architectures).",
+        "Skill 3.2.3: Configure cost-aware, multi-Region data replication (for example, by using Amazon S3 Cross-Region Replication, Amazon DynamoDB global tables).",
+        "Skill 3.2.4: Design cost-effective network architectures (for example, by using AWS Transit Gateway data processing charges, AWS PrivateLink pricing models).",
+        "Skill 3.2.5: Optimize data transfer costs for AI/ML workloads by using strategies such as cross-Region inference routing."
+       ]
+      },
+      {
+       "id": "3.3",
+       "text": "Design cost allocation and visibility solutions",
+       "knowledge": [],
+       "skills": [
+        "Skill 3.3.1: Design tagging strategies for cost allocation (for example, by using tags for business units, projects, and environments).",
+        "Skill 3.3.2: Configure cost reporting and analytics solutions that use detailed billing data (for example, by using AWS Cost Explorer, AWS Cost and Usage Reports).",
+        "Skill 3.3.3: Implement policy-based tagging enforcement for cost allocation (for example, by using SCPs, AWS Config rules, tag policies).",
+        "Skill 3.3.4: Implement chargeback and showback capabilities for cost allocation (for example, by using cost categories, split cost allocation, token usage monitoring for Amazon Bedrock).",
+        "Skill 3.3.5: Configure cost monitoring and alerting solutions that include budget thresholds and anomaly detection (for example, by using AWS Budgets, AWS Cost Anomaly Detection)."
+       ]
+      },
+      {
+       "id": "3.4",
+       "text": "Optimize storage and database costs",
+       "knowledge": [],
+       "skills": [
+        "Skill 3.4.1: Implement intelligent storage tiering and lifecycle policies (for example, by using Amazon S3 Intelligent-Tiering, S3 Lifecycle policies, S3 Glacier storage classes, Amazon EFS lifecycle policies).",
+        "Skill 3.4.2: Optimize block storage costs by selecting appropriate volume types and provisioning appropriate input/output operations per second (IOPS) (for example, Amazon EBS gp3 volumes, EBS gp2 volumes, Provisioned IOPS).",
+        "Skill 3.4.3: Optimize database costs by selecting appropriate capacity modes and reserved capacity (for example, DynamoDB capacity modes, Amazon RDS reserved DB instances, Amazon Aurora serverless, Aurora I/O-Optimized, Database Savings Plans).",
+        "Skill 3.4.4: Implement backup and disaster recovery mechanisms that use cost-optimized retention policies (for example, by using AWS Backup, Amazon Data Lifecycle Manager).",
+        "Skill 3.4.5: Design cost-effective observability solutions that include features such as log filtering, metric aggregation, and retention optimization."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Resilience, Migration, and Business Continuity",
+     "weight": 15,
+     "tasks": [
+      {
+       "id": "4.1",
+       "text": "Design migration strategies by using AWS frameworks",
+       "knowledge": [],
+       "skills": [
+        "Skill 4.1.1: Design discovery and portfolio assessment solutions to map dependencies and plan migration waves.",
+        "Skill 4.1.2: Implement rehosting strategies (for example, by using AWS Transform MGN [previously known as AWS Application Migration Service], AWS Transform).",
+        "Skill 4.1.3: Design database and data migration strategies (for example, by using AWS Database Migration Service, AWS DataSync).",
+        "Skill 4.1.4: Design replatforming strategies that use managed services to reduce operational overhead (for example, Amazon RDS, Amazon Aurora, Amazon ECS, AWS Lambda).",
+        "Skill 4.1.5: Implement refactor strategies such as microservices decomposition, serverless adoption, and incremental modernization patterns (for example, strangler fig pattern).",
+        "Skill 4.1.6: Modernize legacy workloads, including mainframes, applications, and databases."
+       ]
+      },
+      {
+       "id": "4.2",
+       "text": "Design disaster recovery architectures",
+       "knowledge": [],
+       "skills": [
+        "Skill 4.2.1: Design disaster recovery solutions to meet business requirements (for example, RTO, RPO, costs).",
+        "Skill 4.2.2: Configure continuous replication to recover quickly from incidents (for example, by using AWS Elastic Disaster Recovery).",
+        "Skill 4.2.3: Establish disaster recovery assessment and recovery procedures (for example, by using AWS Resilience Hub, AWS Systems Manager runbooks).",
+        "Skill 4.2.4: Implement multi-Region disaster recovery solutions that include features such as data replication and failover (for example, by using Amazon Route 53 health checks, AWS Global Accelerator, Amazon Application Recovery Controller).",
+        "Skill 4.2.5: Establish disaster recovery testing and validation procedures (for example, by using AWS Resilience Hub).",
+        "Skill 4.2.6: Implement multi-cluster container strategies to provide high availability and disaster recovery (for example, by using Amazon EKS, Amazon ECS)."
+       ]
+      },
+      {
+       "id": "4.3",
+       "text": "Design solutions to meet business continuity and resiliency requirements",
+       "knowledge": [],
+       "skills": [
+        "Skill 4.3.1: Configure centralized backup governance and cross-account backup policies (for example, by using AWS Backup).",
+        "Skill 4.3.2: Design failover tests and measure recovery times (for example, by using AWS Fault Injection Service, Amazon Route 53 health checks).",
+        "Skill 4.3.3: Design technically resilient architectures that have features such as redundancy, fault tolerance, and self-healing capabilities.",
+        "Skill 4.3.4: Protect data against ransomware and accidental deletion (for example, by using Amazon S3 Object Lock, Amazon EBS snapshot lock, AWS Backup Vault Lock).",
+        "Skill 4.3.5: Implement chaos engineering with controlled failure scenarios (for example, by using AWS Fault Injection Service experiment templates, steady-state hypotheses)."
+       ]
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Operational Excellence and Automation",
+     "weight": 20,
+     "tasks": [
+      {
+       "id": "5.1",
+       "text": "Design infrastructure as code",
+       "knowledge": [],
+       "skills": [
+        "Skill 5.1.1: Implement infrastructure as code by using declarative and imperative approaches (for example, AWS CloudFormation, AWS CDK).",
+        "Skill 5.1.2: Design policy as code to perform proactive validation, enforcement, and drift remediation (for example, by using AWS CloudFormation Hooks, AWS CDK aspects, AWS Config rules, SCPs).",
+        "Skill 5.1.3: Manage secrets in infrastructure code (for example, by using AWS Secrets Manager, AWS Systems Manager Parameter Store).",
+        "Skill 5.1.4: Design multi-account and multi-Region infrastructure deployments (for example, by using CloudFormation StackSets)."
+       ]
+      },
+      {
+       "id": "5.2",
+       "text": "Design CI/CD and DevSecOps pipelines",
+       "knowledge": [],
+       "skills": [
+        "Skill 5.2.1: Design CI/CD solutions to orchestrate automated build and deployment pipelines (for example, by using AWS CodePipeline, AWS CodeBuild, AWS CodeDeploy, AWS CodeCommit).",
+        "Skill 5.2.2: Implement security scanning in pipelines to assess vulnerabilities and sign artifacts (for example, by using Amazon Inspector, Amazon ECR image scanning).",
+        "Skill 5.2.3: Configure multi-account and multi-Region deployment pipelines that include features such as role delegation and artifact promotion (for example, by using CodePipeline cross-account deployments).",
+        "Skill 5.2.4: Evaluate AI/ML applications and validate outputs (for example, by using Amazon Bedrock Evaluations).",
+        "Skill 5.2.5: Implement deployment strategies that provide rollback capabilities (for example, blue/green, canary, rolling deployments)."
+       ]
+      },
+      {
+       "id": "5.3",
+       "text": "Design observability and monitoring solutions",
+       "knowledge": [],
+       "skills": [
+        "Skill 5.3.1: Implement observability by collecting metrics, logs, and distributed tracing by using standardized instrumentation (for example, by using Amazon CloudWatch, AWS X-Ray, AWS Distro for OpenTelemetry).",
+        "Skill 5.3.2: Implement monitoring for containerized applications (for example, by using Amazon ECS, Amazon EKS with Container Insights).",
+        "Skill 5.3.3: Implement multi-account log aggregation with cross-account subscriptions and centralized archives (for example, by using Amazon CloudWatch Logs subscriptions, Amazon S3 archival storage tiers).",
+        "Skill 5.3.4: Configure alerting solutions (for example, by using CloudWatch alarms, Amazon SNS, AWS Systems Manager).",
+        "Skill 5.3.5: Monitor metrics for AI/ML workloads, including model performance, AI agent performance, inference latency, and model drift.",
+        "Skill 5.3.6: Design monitoring solutions for the user experience by using strategies such as synthetic transactions and real user monitoring (for example, by using Amazon CloudWatch Synthetics, Amazon CloudWatch RUM).",
+        "Skill 5.3.7: Design service-level objectives (SLOs) that have measurable indicators and alerts (for example, by using CloudWatch, CloudWatch Application Signals)."
+       ]
+      },
+      {
+       "id": "5.4",
+       "text": "Design operational automation and resilient systems",
+       "knowledge": [],
+       "skills": [
+        "Skill 5.4.1: Implement health monitoring, capacity planning, and operational responses (for example, by using CloudWatch alarms, Amazon EventBridge, AWS Systems Manager, Service Quotas).",
+        "Skill 5.4.2: Configure controlled remediation solutions that have safety constraints (for example, circuit breakers, rate limits, bulkhead patterns, retry patterns with exponential backoff).",
+        "Skill 5.4.3: Configure auto scaling policies that are based on metrics and scheduled scaling policies (for example, target tracking scaling, predictive scaling for Auto Scaling groups).",
+        "Skill 5.4.4: Design automated failure recovery solutions that use health checks and replacement strategies (for example, by using Auto Scaling health checks, Amazon ECS task replacement, AWS Lambda retry policies).",
+        "Skill 5.4.5: Configure automated runbooks and incident response procedures for operational tasks such as patching, remediation, and scaling."
        ]
       }
      ]

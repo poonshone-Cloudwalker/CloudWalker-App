@@ -1,0 +1,1326 @@
+{
+  "format": "cloudwalker-content-pack",
+  "packId": "aws-clf-c02-practice",
+  "packVersion": "2026.11.1",
+  "title": "AWS Cloud Practitioner (CLF-C02) practice pack",
+  "publishedAt": "2026-11-03",
+  "minAppSchema": 1,
+  "checksum": {
+    "alg": "SHA-256",
+    "value": "c2f046f02471ddb51e059c817e4b5deff3f604878e0265369610991a8a98f232"
+  },
+  "content": {
+    "exams": [
+      {
+        "code": "CLF-C02",
+        "name": "AWS Certified Cloud Practitioner",
+        "vendor": "AWS",
+        "tier": "foundational",
+        "id_prefix": "aws-clf-c02",
+        "domain_weights": {
+          "1": 24,
+          "2": 30,
+          "3": 34,
+          "4": 12
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "aws-clf-c02-001",
+        "exam_code": "CLF-C02",
+        "domain": "1. Cloud Concepts",
+        "domain_number": 1,
+        "subdomain": "1.1 Define the benefits of the AWS Cloud.",
+        "question_type": "concept",
+        "difficulty": "easy",
+        "services": [
+          "AWS global infrastructure"
+        ],
+        "tags": [
+          "cloud-benefits"
+        ],
+        "question": "AWS describes one advantage of cloud computing as the ability to deploy an application in multiple Regions around the world with a few clicks, giving customers lower latency. Which advantage is this?",
+        "options": [
+          "Trade fixed expense for variable expense",
+          "Go global in minutes",
+          "Stop guessing capacity",
+          "Benefit from massive economies of scale"
+        ],
+        "correct_index": 1,
+        "correct_rationale": "AWS's list of six cloud advantages defines \"Go global in minutes\" as deploying to multiple Regions with a few clicks to give users lower latency.",
+        "distractor_rationales": [
+          "This advantage is about paying only for what you consume instead of investing in data centers in advance, not about where you deploy.",
+          "",
+          "This advantage is about scaling capacity up or down to match demand, not about worldwide placement.",
+          "This advantage is about lower prices from AWS's aggregated usage, not about deployment reach."
+        ],
+        "distractor_summary": "The other three are real cloud advantages, but they describe cost structure, capacity planning, and pricing rather than worldwide deployment.",
+        "docLinks": [
+          {
+            "title": "Six advantages of cloud computing - Overview of Amazon Web Services",
+            "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-002",
+        "exam_code": "CLF-C02",
+        "domain": "1. Cloud Concepts",
+        "domain_number": 1,
+        "subdomain": "1.2 Identify design principles of the AWS Cloud.",
+        "question_type": "concept",
+        "difficulty": "easy",
+        "services": [
+          "AWS Well-Architected Framework"
+        ],
+        "tags": [
+          "well-architected",
+          "pillars"
+        ],
+        "question": "Which AWS Well-Architected Framework pillar focuses on environmental impacts, especially energy consumption and efficiency?",
+        "options": [
+          "Cost optimization",
+          "Performance efficiency",
+          "Sustainability",
+          "Operational excellence"
+        ],
+        "correct_index": 2,
+        "correct_rationale": "The Sustainability pillar is defined as focusing on environmental impacts, especially energy consumption and efficiency.",
+        "distractor_rationales": [
+          "Cost optimization can reduce waste, but its focus is delivering business value at the lowest price point, not environmental impact.",
+          "Performance efficiency is about using computing resources efficiently to meet requirements, not about environmental impact.",
+          "",
+          "Operational excellence covers running and monitoring systems and improving processes, not environmental impact."
+        ],
+        "distractor_summary": "Each wrong option is a real pillar, but only Sustainability is defined by environmental impact.",
+        "docLinks": [
+          {
+            "title": "Sustainability - AWS Well-Architected Framework",
+            "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/sustainability.html"
+          },
+          {
+            "title": "The pillars of the framework - AWS Well-Architected Framework",
+            "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-003",
+        "exam_code": "CLF-C02",
+        "domain": "1. Cloud Concepts",
+        "domain_number": 1,
+        "subdomain": "1.2 Identify design principles of the AWS Cloud.",
+        "question_type": "concept",
+        "difficulty": "medium",
+        "services": [
+          "AWS Well-Architected Framework"
+        ],
+        "tags": [
+          "well-architected",
+          "pillars"
+        ],
+        "question": "A design review asks whether a workload can perform its intended function correctly and consistently when it is expected to. Which Well-Architected pillar does this question belong to?",
+        "options": [
+          "Reliability",
+          "Security",
+          "Performance efficiency",
+          "Operational excellence"
+        ],
+        "correct_index": 0,
+        "correct_rationale": "AWS defines the Reliability pillar as the ability of a workload to perform its intended function correctly and consistently when it is expected to.",
+        "distractor_rationales": [
+          "",
+          "Security covers protecting data, systems, and assets. A secure workload can still fail to perform its function consistently.",
+          "Performance efficiency covers using resources efficiently to meet requirements. It does not define whether the workload works correctly when expected.",
+          "Operational excellence covers running, monitoring, and improving operations. It supports reliability but is not the pillar that defines it."
+        ],
+        "distractor_summary": "Security, performance efficiency, and operational excellence are adjacent pillars, but the wording in the stem is AWS's definition of reliability.",
+        "docLinks": [
+          {
+            "title": "Reliability - AWS Well-Architected Framework",
+            "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/reliability.html"
+          },
+          {
+            "title": "Performance efficiency - AWS Well-Architected Framework",
+            "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/performance-efficiency.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-004",
+        "exam_code": "CLF-C02",
+        "domain": "1. Cloud Concepts",
+        "domain_number": 1,
+        "subdomain": "1.3 Understand the benefits of and strategies for migration to the AWS Cloud.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "AWS migration strategies"
+        ],
+        "tags": [
+          "7-rs",
+          "migration"
+        ],
+        "question": "A company must leave its data center within four months. Its main application works well, and the team has no time to change its code before the move. Which migration strategy fits this constraint?",
+        "options": [
+          "Refactor the application onto managed services",
+          "Repurchase a replacement software-as-a-service product",
+          "Rehost the application without changing it",
+          "Retire the application and archive its data"
+        ],
+        "correct_index": 2,
+        "correct_rationale": "Rehost, also called lift and shift, moves applications to AWS without making any changes to the application. That matches a fixed deadline with no time for code changes.",
+        "distractor_rationales": [
+          "Refactoring modernizes the application during the migration. AWS describes it as the most complex strategy, which conflicts with the deadline and the no-code-change constraint.",
+          "Repurchasing replaces the application with a different product. That is a larger change than moving the working application as it is.",
+          "",
+          "Retiring means decommissioning the application. The stem says the application is still needed."
+        ],
+        "distractor_summary": "Refactor, repurchase, and retire are all valid 7 Rs strategies, but each changes or removes the application, which the stem rules out.",
+        "docLinks": [
+          {
+            "title": "About the migration strategies - AWS Prescriptive Guidance",
+            "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-005",
+        "exam_code": "CLF-C02",
+        "domain": "1. Cloud Concepts",
+        "domain_number": 1,
+        "subdomain": "1.4 Understand concepts of cloud economics.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "Amazon EC2"
+        ],
+        "tags": [
+          "cloud-economics",
+          "capex-opex"
+        ],
+        "question": "A finance team compares buying servers for a five-year refresh with running the same workload on On-Demand EC2 instances. Which statement describes the change in cost structure?",
+        "options": [
+          "Up-front capital spending is replaced by spending tied to actual usage",
+          "Operating costs become fixed because AWS charges one flat monthly fee",
+          "Hardware is still bought up front, but AWS depreciates it for you",
+          "Costs stop depending on usage because capacity is reserved permanently"
+        ],
+        "correct_index": 0,
+        "correct_rationale": "AWS describes this as trading fixed expense for variable expense: instead of investing in servers before knowing how they will be used, you pay only when you consume resources. On-Demand instances are billed for the instances you launch.",
+        "distractor_rationales": [
+          "",
+          "On-Demand pricing is not a flat monthly fee. You pay for the instances you run, so costs vary with usage.",
+          "With On-Demand instances the customer does not buy hardware. AWS owns the infrastructure.",
+          "On-Demand involves no long-term reservation. Commitment-based options such as Savings Plans and Reserved Instances are separate purchasing choices."
+        ],
+        "distractor_summary": "The wrong options describe fixed fees, customer-owned hardware, or permanent reservations, none of which apply to On-Demand usage.",
+        "docLinks": [
+          {
+            "title": "Six advantages of cloud computing - Overview of Amazon Web Services",
+            "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html"
+          },
+          {
+            "title": "Amazon EC2 billing and purchasing options - Amazon Elastic Compute Cloud",
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-006",
+        "exam_code": "CLF-C02",
+        "domain": "1. Cloud Concepts",
+        "domain_number": 1,
+        "subdomain": "1.4 Understand concepts of cloud economics.",
+        "question_type": "scenario",
+        "difficulty": "hard",
+        "services": [
+          "Amazon EC2 Dedicated Hosts"
+        ],
+        "tags": [
+          "byol",
+          "licensing"
+        ],
+        "question": "A company owns Windows Server licenses that are counted per physical core. Its license terms only allow the software to run where the company can see the underlying sockets and cores. Which EC2 option supports bringing these licenses?",
+        "options": [
+          "Spot Instances",
+          "Dedicated Instances",
+          "Compute Savings Plans",
+          "Dedicated Hosts"
+        ],
+        "correct_index": 3,
+        "correct_rationale": "Dedicated Hosts are physical servers dedicated to you, and AWS states they let you use existing per-socket, per-core, or per-VM licenses, subject to your license terms.",
+        "distractor_rationales": [
+          "Spot Instances are a discounted purchasing option for interruptible capacity. They do not give visibility into physical sockets or cores.",
+          "Dedicated Instances also run on single-tenant hardware, but the Dedicated Hosts page says to consider them when you do not need per-socket or per-core licenses, which is exactly what the stem requires.",
+          "Savings Plans are a pricing commitment. They change the rate you pay, not the licensing visibility of the hardware.",
+          ""
+        ],
+        "distractor_summary": "Spot and Savings Plans are pricing choices, and Dedicated Instances are single-tenant but do not offer the host-level visibility that per-core licensing needs.",
+        "docLinks": [
+          {
+            "title": "Amazon EC2 Dedicated Hosts - Amazon Elastic Compute Cloud",
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html"
+          },
+          {
+            "title": "Amazon EC2 billing and purchasing options - Amazon Elastic Compute Cloud",
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-007",
+        "exam_code": "CLF-C02",
+        "domain": "2. Security and Compliance",
+        "domain_number": 2,
+        "subdomain": "2.1 Understand the AWS shared responsibility model.",
+        "question_type": "concept",
+        "difficulty": "easy",
+        "services": [
+          "AWS shared responsibility model"
+        ],
+        "tags": [
+          "shared-responsibility"
+        ],
+        "question": "Under the AWS shared responsibility model, which task is AWS responsible for when a customer runs workloads on Amazon EC2?",
+        "options": [
+          "Configuring the security group rules for the instances",
+          "Physical security of the facilities that host the service",
+          "Patching the guest operating system on the instances",
+          "Deciding which IAM users may stop the instances"
+        ],
+        "correct_index": 1,
+        "correct_rationale": "For services such as EC2, AWS operates and controls the components from the host operating system and virtualization layer down to the physical security of the facilities.",
+        "distractor_rationales": [
+          "AWS states that the customer is responsible for configuring the AWS-provided security group firewall.",
+          "",
+          "For EC2 the customer manages the guest operating system, including updates and security patches.",
+          "Granting permissions through IAM is part of the customer's responsibility for securing what they put in the cloud."
+        ],
+        "distractor_summary": "Security groups, guest OS patching, and IAM permissions are customer tasks on EC2; only facility security sits with AWS.",
+        "docLinks": [
+          {
+            "title": "Shared Responsibility Model - Amazon Web Services (AWS)",
+            "url": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-008",
+        "exam_code": "CLF-C02",
+        "domain": "2. Security and Compliance",
+        "domain_number": 2,
+        "subdomain": "2.1 Understand the AWS shared responsibility model.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "Amazon RDS",
+          "Amazon EC2"
+        ],
+        "tags": [
+          "shared-responsibility",
+          "managed-services"
+        ],
+        "question": "A team moves a self-managed MySQL database from an EC2 instance to Amazon RDS for MySQL. Which task shifts from the team to AWS after the move?",
+        "options": [
+          "Granting database users access to specific tables",
+          "Choosing which network sources may connect to the database",
+          "Classifying the sensitivity of the data being stored",
+          "Patching the database software and the operating system"
+        ],
+        "correct_index": 3,
+        "correct_rationale": "The RDS user guide's responsibility comparison shows database software patching and operating system patching as customer tasks on EC2 but AWS tasks on Amazon RDS.",
+        "distractor_rationales": [
+          "Database users and their permissions remain the customer's responsibility on RDS.",
+          "On RDS the customer still controls network access through security groups attached to the DB instance.",
+          "Data classification is always the customer's responsibility, whatever the service.",
+          ""
+        ],
+        "distractor_summary": "Access grants, network rules, and data classification stay with the customer; the managed service takes over patching.",
+        "docLinks": [
+          {
+            "title": "What is Amazon Relational Database Service (Amazon RDS)? - Amazon Relational Database Service",
+            "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+          },
+          {
+            "title": "Shared Responsibility Model - Amazon Web Services (AWS)",
+            "url": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-009",
+        "exam_code": "CLF-C02",
+        "domain": "2. Security and Compliance",
+        "domain_number": 2,
+        "subdomain": "2.2 Understand AWS Cloud security, governance, and compliance concepts.",
+        "question_type": "concept",
+        "difficulty": "easy",
+        "services": [
+          "AWS Artifact"
+        ],
+        "tags": [
+          "compliance-reports"
+        ],
+        "question": "An external auditor asks for AWS's SOC reports and ISO certification documents. Where can the customer download them on demand?",
+        "options": [
+          "AWS Artifact",
+          "AWS Config",
+          "AWS CloudTrail",
+          "Amazon Inspector"
+        ],
+        "correct_index": 0,
+        "correct_rationale": "AWS Artifact provides on-demand downloads of AWS security and compliance documents, including SOC reports and ISO reports.",
+        "distractor_rationales": [
+          "",
+          "AWS Config records the configuration of the customer's own resources. It does not hold AWS's audit reports.",
+          "CloudTrail records API activity in the customer's account. It does not provide AWS's compliance reports.",
+          "Amazon Inspector scans the customer's workloads for vulnerabilities. It does not provide AWS's compliance documents."
+        ],
+        "distractor_summary": "Config, CloudTrail, and Inspector produce evidence about the customer's own environment, not AWS's third-party audit reports.",
+        "docLinks": [
+          {
+            "title": "What is AWS Artifact? - AWS Artifact",
+            "url": "https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html"
+          },
+          {
+            "title": "What Is AWS Config? - AWS Config",
+            "url": "https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-010",
+        "exam_code": "CLF-C02",
+        "domain": "2. Security and Compliance",
+        "domain_number": 2,
+        "subdomain": "2.2 Understand AWS Cloud security, governance, and compliance concepts.",
+        "question_type": "concept",
+        "difficulty": "easy",
+        "services": [
+          "AWS CloudTrail"
+        ],
+        "tags": [
+          "logging",
+          "audit"
+        ],
+        "question": "Which AWS service records account activity so that a security team can identify who or what took an action, which resources were acted on, and when?",
+        "options": [
+          "Amazon Inspector",
+          "AWS Trusted Advisor",
+          "AWS CloudTrail",
+          "Amazon GuardDuty"
+        ],
+        "correct_index": 2,
+        "correct_rationale": "CloudTrail records account activity and lets you identify who or what took which action, the resources acted on, and when the event occurred.",
+        "distractor_rationales": [
+          "Amazon Inspector scans workloads for software vulnerabilities and network exposure. It does not keep a record of who made API calls.",
+          "Trusted Advisor inspects the environment and makes best-practice recommendations. It is not an activity log.",
+          "",
+          "GuardDuty analyzes data sources, including CloudTrail events, to detect threats. It produces findings rather than serving as the record of each action."
+        ],
+        "distractor_summary": "Inspector, Trusted Advisor, and GuardDuty are security services, but none of them is the activity record that answers who did what and when.",
+        "docLinks": [
+          {
+            "title": "What Is AWS CloudTrail? - AWS CloudTrail",
+            "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html"
+          },
+          {
+            "title": "What is Amazon GuardDuty? - Amazon GuardDuty",
+            "url": "https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-011",
+        "exam_code": "CLF-C02",
+        "domain": "2. Security and Compliance",
+        "domain_number": 2,
+        "subdomain": "2.3 Identify AWS access management capabilities.",
+        "question_type": "concept",
+        "difficulty": "easy",
+        "services": [
+          "AWS IAM"
+        ],
+        "tags": [
+          "root-user"
+        ],
+        "question": "A standalone AWS account that is not part of AWS Organizations needs a task that requires the root user's credentials. Which task is it?",
+        "options": [
+          "Creating an IAM role for EC2",
+          "Creating an S3 bucket in the account",
+          "Launching an instance in another Region",
+          "Closing this standalone AWS account"
+        ],
+        "correct_index": 3,
+        "correct_rationale": "IAM documentation lists closing the account among tasks that require root user credentials for standalone accounts that are not part of AWS Organizations.",
+        "distractor_rationales": [
+          "Creating IAM roles can be done by an IAM principal that has the right permissions.",
+          "Creating S3 buckets only needs ordinary IAM permissions granted to an IAM principal.",
+          "Launching instances in any enabled Region only needs ordinary IAM permissions.",
+          ""
+        ],
+        "distractor_summary": "Roles, buckets, and instance launches can all be delegated through IAM; closing a standalone account cannot.",
+        "docLinks": [
+          {
+            "title": "AWS account root user - AWS Identity and Access Management",
+            "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-012",
+        "exam_code": "CLF-C02",
+        "domain": "2. Security and Compliance",
+        "domain_number": 2,
+        "subdomain": "2.3 Identify AWS access management capabilities.",
+        "question_type": "scenario",
+        "difficulty": "hard",
+        "services": [
+          "AWS IAM",
+          "Amazon EC2",
+          "Amazon S3"
+        ],
+        "tags": [
+          "least-privilege",
+          "temporary-credentials"
+        ],
+        "question": "An application on EC2 reads objects from Amazon S3. Today it uses an IAM user's long-term access keys stored in a configuration file. Which change follows AWS's IAM best practice for workloads?",
+        "options": [
+          "Move the access keys into an environment variable",
+          "Use an IAM role that supplies temporary credentials",
+          "Create a separate IAM user with keys per instance",
+          "Rotate the stored access keys with a weekly script"
+        ],
+        "correct_index": 1,
+        "correct_rationale": "AWS's IAM best practices tell you to require workloads to use temporary credentials with IAM roles. A role attached to the instance removes the long-term keys entirely.",
+        "distractor_rationales": [
+          "Moving the keys to an environment variable changes where they are stored, but they are still long-term credentials.",
+          "",
+          "More IAM users means more long-term keys to manage, which works against the best practice.",
+          "Rotating keys reduces exposure, but the workload still depends on long-term credentials when a role would avoid them."
+        ],
+        "distractor_summary": "Each wrong option keeps long-term access keys in place; only the role replaces them with temporary credentials.",
+        "docLinks": [
+          {
+            "title": "Security best practices in IAM - AWS Identity and Access Management",
+            "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+          },
+          {
+            "title": "IAM roles - AWS Identity and Access Management",
+            "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-013",
+        "exam_code": "CLF-C02",
+        "domain": "2. Security and Compliance",
+        "domain_number": 2,
+        "subdomain": "2.4 Identify components and resources for security.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "AWS WAF"
+        ],
+        "tags": [
+          "web-security"
+        ],
+        "question": "A public web application behind an Application Load Balancer is receiving requests that try SQL injection and cross-site scripting. Which service can inspect these HTTP(S) requests and block the matches?",
+        "options": [
+          "AWS Shield Standard",
+          "AWS WAF",
+          "Network ACLs",
+          "Amazon GuardDuty"
+        ],
+        "correct_index": 1,
+        "correct_rationale": "AWS WAF is a web application firewall that monitors HTTP(S) requests to protected resources, including Application Load Balancers, and it has rule statements that inspect for SQL injection and cross-site scripting.",
+        "distractor_rationales": [
+          "Shield protects against DDoS attacks. It does not provide request-content rules for SQL injection or cross-site scripting.",
+          "",
+          "Network ACLs filter by IP address, protocol, and port at the subnet level. They cannot inspect HTTP request content.",
+          "GuardDuty detects threats from logs and other data sources. It does not sit in the request path to block web requests."
+        ],
+        "distractor_summary": "Shield, network ACLs, and GuardDuty all help security, but none inspects HTTP request content in-line.",
+        "docLinks": [
+          {
+            "title": "AWS WAF - AWS WAF, AWS Firewall Manager, AWS Shield Advanced, and AWS Shield network security director",
+            "url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html"
+          },
+          {
+            "title": "SQL injection attack rule statement - AWS WAF, AWS Firewall Manager, AWS Shield Advanced, and AWS Shield network security director",
+            "url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-sqli-match.html"
+          },
+          {
+            "title": "AWS Shield - AWS WAF, AWS Firewall Manager, AWS Shield Advanced, and AWS Shield network security director",
+            "url": "https://docs.aws.amazon.com/waf/latest/developerguide/shield-chapter.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-014",
+        "exam_code": "CLF-C02",
+        "domain": "2. Security and Compliance",
+        "domain_number": 2,
+        "subdomain": "2.4 Identify components and resources for security.",
+        "question_type": "scenario",
+        "difficulty": "hard",
+        "services": [
+          "AWS Firewall Manager",
+          "AWS WAF"
+        ],
+        "tags": [
+          "multi-account",
+          "governance"
+        ],
+        "question": "A company has dozens of AWS accounts and creates new ones every month. It wants its AWS WAF protections set up once and then applied automatically across accounts, including new ones. Which service meets this need?",
+        "options": [
+          "AWS Firewall Manager",
+          "AWS Shield Advanced",
+          "AWS WAF configured in each account",
+          "AWS Trusted Advisor"
+        ],
+        "correct_index": 0,
+        "correct_rationale": "Firewall Manager lets you set up protections once and automatically applies them across your accounts and resources, even as you add new accounts.",
+        "distractor_rationales": [
+          "",
+          "Shield Advanced adds DDoS protection. It does not centrally distribute WAF rules across accounts.",
+          "Configuring AWS WAF separately in each account works technically, but it is not set up once and does not apply itself to new accounts automatically.",
+          "Trusted Advisor makes recommendations. It does not deploy or enforce firewall rules."
+        ],
+        "distractor_summary": "The distractors either protect a different layer, require per-account work, or only advise; Firewall Manager is the central enforcement option.",
+        "docLinks": [
+          {
+            "title": "AWS Firewall Manager - AWS WAF, AWS Firewall Manager, AWS Shield Advanced, and AWS Shield network security director",
+            "url": "https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-015",
+        "exam_code": "CLF-C02",
+        "domain": "3. Cloud Technology and Services",
+        "domain_number": 3,
+        "subdomain": "3.1 Define methods of deploying and operating in the AWS Cloud.",
+        "question_type": "scenario",
+        "difficulty": "easy",
+        "services": [
+          "AWS CloudFormation"
+        ],
+        "tags": [
+          "infrastructure-as-code"
+        ],
+        "question": "A team must create the same environment in three AWS Regions and recreate it whenever a test fails. Changes must be repeatable and reviewable. Which approach fits best?",
+        "options": [
+          "Build each environment by hand in the AWS Management Console",
+          "Run one-off AWS CLI commands from an engineer's laptop",
+          "Describe the resources in AWS CloudFormation templates",
+          "Restore copies of the first environment by using AWS Backup"
+        ],
+        "correct_index": 2,
+        "correct_rationale": "CloudFormation provisions and configures the resources described in a template, so the same template can create identical stacks repeatedly. The template is a file that can be reviewed like code.",
+        "distractor_rationales": [
+          "Manual console work suits one-time tasks but is hard to repeat identically or review.",
+          "Ad hoc CLI commands are programmatic but are not a declared, reviewable definition of the whole environment.",
+          "",
+          "AWS Backup protects and restores data. It is not a tool for defining and provisioning whole environments across Regions."
+        ],
+        "distractor_summary": "The console and ad hoc CLI suit one-time operations, and AWS Backup restores data rather than defining infrastructure.",
+        "docLinks": [
+          {
+            "title": "What is CloudFormation? - AWS CloudFormation",
+            "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-016",
+        "exam_code": "CLF-C02",
+        "domain": "3. Cloud Technology and Services",
+        "domain_number": 3,
+        "subdomain": "3.2 Define the AWS global infrastructure.",
+        "question_type": "scenario",
+        "difficulty": "hard",
+        "services": [
+          "AWS global infrastructure"
+        ],
+        "tags": [
+          "availability-zones",
+          "high-availability",
+          "data-residency"
+        ],
+        "question": "A workload must keep running if one data center facility fails. Its data must stay in a single country that has one AWS Region, and its tiers need low-latency links to each other. What should the architect do?",
+        "options": [
+          "Run larger instances in a single Availability Zone",
+          "Deploy to Regions in two different countries",
+          "Run the application only from CloudFront edge locations",
+          "Spread the workload across multiple Availability Zones"
+        ],
+        "correct_index": 3,
+        "correct_rationale": "Availability Zones in a Region are physically separate, do not share common points of failure such as generators and cooling, and are close enough for single-digit millisecond synchronous replication. That meets the facility-failure, residency, and latency constraints.",
+        "distractor_rationales": [
+          "One Availability Zone remains a single point of failure, whatever the instance size.",
+          "A second Region would sit in another country, which breaks the data-residency constraint.",
+          "Edge locations deliver cached content through CloudFront. They do not host all of the application's tiers.",
+          ""
+        ],
+        "distractor_summary": "A single AZ fails the resilience goal, a second country fails residency, and edge locations cannot run the application tiers.",
+        "docLinks": [
+          {
+            "title": "Availability Zones - AWS Fault Isolation Boundaries",
+            "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/availability-zones.html"
+          },
+          {
+            "title": "Regions - AWS Fault Isolation Boundaries",
+            "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/regions.html"
+          },
+          {
+            "title": "What is Amazon CloudFront? - Amazon CloudFront",
+            "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-017",
+        "exam_code": "CLF-C02",
+        "domain": "3. Cloud Technology and Services",
+        "domain_number": 3,
+        "subdomain": "3.3 Identify AWS compute services.",
+        "question_type": "concept",
+        "difficulty": "easy",
+        "services": [
+          "AWS Lambda"
+        ],
+        "tags": [
+          "serverless"
+        ],
+        "question": "Which AWS service runs code in response to events without the customer provisioning or managing servers?",
+        "options": [
+          "Amazon EC2 Auto Scaling",
+          "AWS Lambda",
+          "AWS Elastic Beanstalk",
+          "Amazon ECS on EC2 instances"
+        ],
+        "correct_index": 1,
+        "correct_rationale": "Lambda is a serverless compute service that runs code without provisioning or managing servers, including in response to events.",
+        "distractor_rationales": [
+          "EC2 Auto Scaling adjusts the number of EC2 instances, which the customer still runs as servers.",
+          "",
+          "Elastic Beanstalk provisions EC2 instances or EKS clusters for your application, so servers still exist in your account.",
+          "ECS on EC2 runs containers on EC2 instances that the customer manages."
+        ],
+        "distractor_summary": "Auto Scaling, Elastic Beanstalk, and ECS on EC2 all run on instances the customer owns; Lambda does not expose servers.",
+        "docLinks": [
+          {
+            "title": "What is AWS Lambda? - AWS Lambda",
+            "url": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+          },
+          {
+            "title": "What is AWS Elastic Beanstalk? - AWS Elastic Beanstalk",
+            "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html"
+          },
+          {
+            "title": "What is Amazon EC2 Auto Scaling? - Amazon EC2 Auto Scaling",
+            "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-018",
+        "exam_code": "CLF-C02",
+        "domain": "3. Cloud Technology and Services",
+        "domain_number": 3,
+        "subdomain": "3.4 Identify AWS database services.",
+        "question_type": "concept",
+        "difficulty": "medium",
+        "services": [
+          "Amazon DynamoDB"
+        ],
+        "tags": [
+          "nosql",
+          "managed-database"
+        ],
+        "question": "Which AWS database is described as a serverless, fully managed, distributed NoSQL database with single-digit millisecond performance at any scale?",
+        "options": [
+          "Amazon RDS for PostgreSQL",
+          "MySQL installed on Amazon EC2",
+          "Amazon DynamoDB",
+          "Amazon Redshift"
+        ],
+        "correct_index": 2,
+        "correct_rationale": "That is how AWS describes Amazon DynamoDB in its developer guide.",
+        "distractor_rationales": [
+          "Amazon RDS is a managed relational database service, not a serverless NoSQL database.",
+          "A database installed on EC2 is self-managed by the customer and is not serverless.",
+          "",
+          "Amazon Redshift is a data warehouse service for analytics, not a key-value NoSQL database for operational workloads."
+        ],
+        "distractor_summary": "The other options are relational, self-managed, or analytical, not a serverless NoSQL database.",
+        "docLinks": [
+          {
+            "title": "What is Amazon DynamoDB? - Amazon DynamoDB",
+            "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
+          },
+          {
+            "title": "What is Amazon Relational Database Service (Amazon RDS)? - Amazon Relational Database Service",
+            "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+          },
+          {
+            "title": "What is Amazon Redshift? - Amazon Redshift",
+            "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-019",
+        "exam_code": "CLF-C02",
+        "domain": "3. Cloud Technology and Services",
+        "domain_number": 3,
+        "subdomain": "3.5 Identify AWS network services.",
+        "question_type": "concept",
+        "difficulty": "medium",
+        "services": [
+          "Amazon VPC"
+        ],
+        "tags": [
+          "network-acl",
+          "security-group"
+        ],
+        "question": "A security team must explicitly deny traffic from one IP address range to every instance in a subnet. Which VPC feature supports deny rules at the subnet level?",
+        "options": [
+          "A security group",
+          "A route table",
+          "An internet gateway",
+          "A network ACL"
+        ],
+        "correct_index": 3,
+        "correct_rationale": "Network ACLs operate at the subnet level and support both allow and deny rules. Security groups support allow rules only.",
+        "distractor_rationales": [
+          "Security groups support allow rules but not deny rules, and they apply at the instance level.",
+          "Route tables direct traffic to targets. They do not contain allow or deny rules.",
+          "An internet gateway enables communication with the internet. It does not filter traffic by rule.",
+          ""
+        ],
+        "distractor_summary": "Security groups cannot deny, and route tables and internet gateways do not filter, so only the network ACL meets the requirement.",
+        "docLinks": [
+          {
+            "title": "Infrastructure security in Amazon VPC - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/userguide/infrastructure-security.html"
+          },
+          {
+            "title": "Security group rules - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html"
+          },
+          {
+            "title": "Control subnet traffic with network access control lists - Amazon Virtual Private Cloud",
+            "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-020",
+        "exam_code": "CLF-C02",
+        "domain": "3. Cloud Technology and Services",
+        "domain_number": 3,
+        "subdomain": "3.6 Identify AWS storage services.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "Amazon S3"
+        ],
+        "tags": [
+          "lifecycle",
+          "storage-classes"
+        ],
+        "question": "Application logs in Amazon S3 are rarely read after 30 days and must be deleted after seven years. The team wants both steps to happen automatically. What should it configure?",
+        "options": [
+          "S3 Lifecycle rules with transition and expiration actions",
+          "S3 Versioning with MFA delete turned on",
+          "S3 Cross-Region Replication to a second bucket",
+          "S3 Transfer Acceleration on the log bucket"
+        ],
+        "correct_index": 0,
+        "correct_rationale": "S3 Lifecycle configurations define transition actions, which move objects to other storage classes, and expiration actions, after which S3 deletes the objects for you.",
+        "distractor_rationales": [
+          "",
+          "Versioning keeps multiple versions of objects. It neither moves objects to cheaper classes nor deletes them on a schedule.",
+          "Replication copies objects to another bucket, which adds storage rather than tiering or deleting it.",
+          "Transfer Acceleration speeds up uploads over long distances. It does not manage object age."
+        ],
+        "distractor_summary": "Versioning, replication, and Transfer Acceleration are real S3 features, but none automates moving and deleting objects by age.",
+        "docLinks": [
+          {
+            "title": "Managing the lifecycle of objects - Amazon Simple Storage Service",
+            "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-021",
+        "exam_code": "CLF-C02",
+        "domain": "3. Cloud Technology and Services",
+        "domain_number": 3,
+        "subdomain": "3.7 Identify AWS artificial intelligence and machine learning (AI/ML) services and analytics services.",
+        "question_type": "concept",
+        "difficulty": "easy",
+        "services": [
+          "Amazon Athena"
+        ],
+        "tags": [
+          "analytics"
+        ],
+        "question": "Which AWS service lets analysts run standard SQL queries directly against data stored in Amazon S3?",
+        "options": [
+          "Amazon Kinesis Data Streams",
+          "Amazon Lex",
+          "AWS Glue",
+          "Amazon Athena"
+        ],
+        "correct_index": 3,
+        "correct_rationale": "Athena is an interactive query service for analyzing data directly in Amazon S3 using standard SQL.",
+        "distractor_rationales": [
+          "Kinesis Data Streams collects and processes streaming data records in real time. It is not a SQL query service over S3.",
+          "Amazon Lex builds conversational interfaces using voice and text.",
+          "AWS Glue is a serverless data integration service for discovering, preparing, and moving data. Analysts use Athena to query the data.",
+          ""
+        ],
+        "distractor_summary": "Kinesis streams data, Lex builds chatbots, and Glue prepares and catalogs data; Athena is the SQL query service for S3.",
+        "docLinks": [
+          {
+            "title": "What is Amazon Athena? - Amazon Athena",
+            "url": "https://docs.aws.amazon.com/athena/latest/ug/what-is.html"
+          },
+          {
+            "title": "What is AWS Glue? - AWS Glue",
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html"
+          },
+          {
+            "title": "What is Amazon Kinesis Data Streams? - Amazon Kinesis Data Streams",
+            "url": "https://docs.aws.amazon.com/streams/latest/dev/introduction.html"
+          },
+          {
+            "title": "What is Amazon Lex V2? - Amazon Lex",
+            "url": "https://docs.aws.amazon.com/lexv2/latest/dg/what-is.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-022",
+        "exam_code": "CLF-C02",
+        "domain": "3. Cloud Technology and Services",
+        "domain_number": 3,
+        "subdomain": "3.8 Identify services from other in-scope AWS service categories.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "Amazon SQS"
+        ],
+        "tags": [
+          "decoupling",
+          "messaging"
+        ],
+        "question": "An order service produces requests faster than a fulfillment service can handle them. The fulfillment service must retrieve the requests at its own pace. Which service should sit between them?",
+        "options": [
+          "Amazon SNS",
+          "Amazon SQS",
+          "Amazon SES",
+          "Amazon EventBridge"
+        ],
+        "correct_index": 1,
+        "correct_rationale": "SQS is a hosted queue that decouples distributed components. The consumer retrieves messages from the queue when it is ready, so a slower consumer can work at its own pace.",
+        "distractor_rationales": [
+          "SNS delivers messages from publishers to subscribers through topics. It is designed for fan-out delivery, not for a consumer that pulls work later.",
+          "",
+          "Amazon SES sends and receives email. It is not a buffer between application services.",
+          "EventBridge ingests, filters, and delivers events to targets. It routes events to consumers rather than holding them for the consumer to pull."
+        ],
+        "distractor_summary": "SNS and EventBridge send messages on to targets, and SES handles email; only SQS buffers work for the consumer to retrieve at its own pace.",
+        "docLinks": [
+          {
+            "title": "What is Amazon Simple Queue Service? - Amazon Simple Queue Service",
+            "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html"
+          },
+          {
+            "title": "What is Amazon SNS? - Amazon Simple Notification Service",
+            "url": "https://docs.aws.amazon.com/sns/latest/dg/welcome.html"
+          },
+          {
+            "title": "What Is Amazon EventBridge? - Amazon EventBridge",
+            "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-023",
+        "exam_code": "CLF-C02",
+        "domain": "4. Billing, Pricing, and Support",
+        "domain_number": 4,
+        "subdomain": "4.1 Compare AWS pricing models.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "Amazon EC2"
+        ],
+        "tags": [
+          "purchasing-options",
+          "spot"
+        ],
+        "question": "A nightly batch job can run at any time before morning and simply restarts if an instance is taken away. The team wants the lowest compute cost. Which EC2 purchasing option fits?",
+        "options": [
+          "On-Demand Instances",
+          "A three-year Reserved Instance",
+          "Spot Instances",
+          "Dedicated Hosts"
+        ],
+        "correct_index": 2,
+        "correct_rationale": "Spot Instances use unused EC2 capacity at steep discounts. AWS describes them as cost-effective when the timing is flexible and the application can be interrupted, and names batch jobs as a good fit.",
+        "distractor_rationales": [
+          "On-Demand avoids interruption, but the job does not need that guarantee, so it pays more than necessary.",
+          "A Reserved Instance requires a one- or three-year commitment to a consistent configuration, which does not fit a short nightly job.",
+          "",
+          "Dedicated Hosts pay for a whole physical server, which suits licensing or compliance needs rather than low-cost batch work."
+        ],
+        "distractor_summary": "On-Demand pays for guarantees the job does not need, Reserved Instances need long commitments, and Dedicated Hosts solve licensing problems.",
+        "docLinks": [
+          {
+            "title": "Spot Instances - Amazon Elastic Compute Cloud",
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"
+          },
+          {
+            "title": "Amazon EC2 billing and purchasing options - Amazon Elastic Compute Cloud",
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-024",
+        "exam_code": "CLF-C02",
+        "domain": "4. Billing, Pricing, and Support",
+        "domain_number": 4,
+        "subdomain": "4.2 Understand resources for billing, budget, and cost management.",
+        "question_type": "scenario",
+        "difficulty": "easy",
+        "services": [
+          "AWS Budgets"
+        ],
+        "tags": [
+          "cost-management"
+        ],
+        "question": "A manager wants an alert before the end of the month if the account is forecast to spend more than its monthly target. Which AWS tool provides this?",
+        "options": [
+          "AWS Budgets",
+          "AWS Cost Explorer",
+          "AWS Pricing Calculator",
+          "Cost allocation tags"
+        ],
+        "correct_index": 0,
+        "correct_rationale": "AWS Budgets can alert you on both actual spend and forecasted spend, before the costs accrue.",
+        "distractor_rationales": [
+          "",
+          "Cost Explorer shows trends and forecasts spending, but Budgets is the tool that sends the threshold alert.",
+          "Pricing Calculator creates cost estimates before you build. It does not monitor actual account spend.",
+          "Cost allocation tags organize and track costs by tag. They do not send alerts."
+        ],
+        "distractor_summary": "Cost Explorer analyzes, the Pricing Calculator estimates, and tags organize; Budgets alerts against a target.",
+        "docLinks": [
+          {
+            "title": "Managing your costs with AWS Budgets - AWS Cost Management",
+            "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html"
+          },
+          {
+            "title": "Analyzing your costs and usage with AWS Cost Explorer - AWS Cost Management",
+            "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html"
+          },
+          {
+            "title": "What is AWS Pricing Calculator? - AWS Pricing Calculator",
+            "url": "https://docs.aws.amazon.com/pricing-calculator/latest/userguide/what-is-pricing-calculator.html"
+          },
+          {
+            "title": "Organizing and tracking costs using AWS cost allocation tags - AWS Billing",
+            "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      },
+      {
+        "id": "aws-clf-c02-025",
+        "exam_code": "CLF-C02",
+        "domain": "4. Billing, Pricing, and Support",
+        "domain_number": 4,
+        "subdomain": "4.3 Identify AWS technical resources and AWS Support options.",
+        "question_type": "scenario",
+        "difficulty": "medium",
+        "services": [
+          "AWS Health"
+        ],
+        "tags": [
+          "support-resources",
+          "monitoring"
+        ],
+        "question": "An operations lead wants to see AWS service events that could affect the resources in the company's own account. Which resource should the lead use?",
+        "options": [
+          "AWS Trusted Advisor",
+          "AWS CloudTrail",
+          "AWS Health Dashboard",
+          "AWS Config"
+        ],
+        "correct_index": 2,
+        "correct_rationale": "AWS Health gives visibility into resource performance and the availability of AWS services and accounts. When signed in, the AWS Health Dashboard shows events that can affect your account and services.",
+        "distractor_rationales": [
+          "Trusted Advisor recommends improvements such as cost savings and security fixes. It does not report AWS service events.",
+          "CloudTrail records API activity in the account, not AWS service events.",
+          "",
+          "AWS Config tracks configuration changes to the customer's resources, not AWS service events."
+        ],
+        "distractor_summary": "Trusted Advisor gives recommendations, and CloudTrail and Config record the customer's own activity and configurations; AWS Health reports AWS-side events.",
+        "docLinks": [
+          {
+            "title": "What is AWS Health? - AWS Health",
+            "url": "https://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html"
+          },
+          {
+            "title": "AWS Health Dashboard - AWS Health",
+            "url": "https://docs.aws.amazon.com/health/latest/ug/aws-health-dashboard-status.html"
+          },
+          {
+            "title": "AWS Trusted Advisor - AWS Support",
+            "url": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html"
+          }
+        ],
+        "examGuideVersion": "CLF-C02 guide retrieved 2026-11-03",
+        "origin": "generated-practice",
+        "reviewStatus": "draft",
+        "qtype": "single"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "les-clf-1",
+        "exam": "CLF-C02",
+        "domain": "1. Cloud Concepts",
+        "title": "Why organizations move to AWS, and how they decide",
+        "body": [
+          "Cloud value starts with cost structure and speed. AWS describes cloud computing as trading fixed expense for variable expense: instead of buying servers before you know how they will be used, you pay when you consume resources. Global infrastructure lets a team deploy in several Regions with a few clicks, and elasticity removes the need to guess capacity in advance.",
+          "The AWS Well-Architected Framework gives six pillars for judging a design: operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability. Learn the definitions, because exam questions often quote them. Reliability is the ability to perform the intended function correctly and consistently when expected. Sustainability focuses on environmental impact, especially energy consumption and efficiency.",
+          "Migration choices follow constraints. AWS Prescriptive Guidance names seven strategies (the 7 Rs): retire, retain, rehost, relocate, repurchase, replatform, and refactor. Rehost moves an application without changing it, which suits fixed deadlines. Refactor modernizes during the move and is the most complex option. Licensing is part of the economics too: Dedicated Hosts support bringing existing per-socket, per-core, or per-VM licenses, subject to the license terms."
+        ],
+        "decisions": [
+          [
+            "A data-center exit deadline with no time to change code",
+            "Rehost (lift and shift)",
+            "Refactor during the migration"
+          ],
+          [
+            "Licenses counted per physical core or socket",
+            "EC2 Dedicated Hosts",
+            "Spot Instances or Savings Plans alone"
+          ],
+          [
+            "A review question about consistent, correct operation",
+            "The Reliability pillar",
+            "The Performance efficiency pillar"
+          ],
+          [
+            "Need to serve users on several continents quickly",
+            "Deploy to additional AWS Regions",
+            "Build new on-premises sites"
+          ]
+        ],
+        "traps": [
+          "Treating 'cost optimization' and 'sustainability' as the same pillar. Both reduce waste, but only Sustainability is defined by environmental impact.",
+          "Assuming the cloud is always cheaper. AWS's claim is about variable expense and paying for what you consume, so idle or oversized resources still cost money.",
+          "Choosing refactor because it sounds modern. It is the most complex strategy and is a poor fit when the constraint is time."
+        ],
+        "links": [
+          {
+            "title": "Six advantages of cloud computing - Overview of Amazon Web Services",
+            "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html"
+          },
+          {
+            "title": "The pillars of the framework - AWS Well-Architected Framework",
+            "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html"
+          },
+          {
+            "title": "About the migration strategies - AWS Prescriptive Guidance",
+            "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html"
+          },
+          {
+            "title": "Amazon EC2 Dedicated Hosts - Amazon Elastic Compute Cloud",
+            "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html"
+          }
+        ],
+        "origin": "generated-practice",
+        "reviewStatus": "draft"
+      },
+      {
+        "id": "les-clf-2",
+        "exam": "CLF-C02",
+        "domain": "2. Security and Compliance",
+        "title": "Who secures what, and where the evidence lives",
+        "body": [
+          "The shared responsibility model splits security between AWS and the customer. For a service such as Amazon EC2, AWS operates everything from the host operating system and virtualization layer down to the physical security of the facilities. The customer manages the guest operating system, including patches, the application software, and the security group configuration. With managed services the line moves: on Amazon RDS, AWS handles database software and operating system patching.",
+          "Evidence comes from different places. AWS Artifact provides AWS's own compliance documents, such as SOC and ISO reports. AWS CloudTrail records activity in your account, showing who or what took which action and when. AWS Config records how your resources are configured and how that changes over time.",
+          "For access, follow IAM best practice: workloads should use temporary credentials through IAM roles rather than long-term access keys. Keep the root user for the few tasks that require it, such as closing a standalone account. For web traffic, AWS WAF inspects HTTP(S) requests, and AWS Firewall Manager applies protections across many accounts, including new ones."
+        ],
+        "decisions": [
+          [
+            "An auditor needs AWS's SOC report",
+            "AWS Artifact",
+            "AWS CloudTrail logs"
+          ],
+          [
+            "Find who deleted a resource",
+            "AWS CloudTrail",
+            "Amazon Inspector"
+          ],
+          [
+            "An application on EC2 needs to call S3",
+            "An IAM role with temporary credentials",
+            "Access keys in a config file"
+          ],
+          [
+            "Block SQL injection at the web layer",
+            "AWS WAF",
+            "Network ACLs"
+          ],
+          [
+            "Apply WAF rules across all current and future accounts",
+            "AWS Firewall Manager",
+            "Per-account AWS WAF setup"
+          ]
+        ],
+        "traps": [
+          "Assuming AWS patches the guest operating system on EC2. On EC2 that is the customer's job; managed services such as RDS change the split.",
+          "Looking for AWS's audit reports in CloudTrail or Config. Those services describe your account, while Artifact holds AWS's documents.",
+          "Treating key rotation as equal to using roles. Rotation shortens exposure, but roles remove long-term keys from the workload altogether.",
+          "Using the root user for daily administration. AWS recommends it only for tasks that require root-level permissions."
+        ],
+        "links": [
+          {
+            "title": "Shared Responsibility Model - Amazon Web Services (AWS)",
+            "url": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+          },
+          {
+            "title": "What is Amazon Relational Database Service (Amazon RDS)? - Amazon Relational Database Service",
+            "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+          },
+          {
+            "title": "What is AWS Artifact? - AWS Artifact",
+            "url": "https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html"
+          },
+          {
+            "title": "What Is AWS CloudTrail? - AWS CloudTrail",
+            "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html"
+          },
+          {
+            "title": "Security best practices in IAM - AWS Identity and Access Management",
+            "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+          },
+          {
+            "title": "AWS Firewall Manager - AWS WAF, AWS Firewall Manager, AWS Shield Advanced, and AWS Shield network security director",
+            "url": "https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html"
+          }
+        ],
+        "origin": "generated-practice",
+        "reviewStatus": "draft"
+      }
+    ],
+    "examProfiles": {}
+  }
+}
