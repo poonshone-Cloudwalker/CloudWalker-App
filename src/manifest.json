@@ -176,6 +176,12 @@
       "suffix": ";\n"
     },
     "js/features/500-decision-atlas.js",
+    {
+      "json": "content/aws/aws-objectives.json",
+      "prefix": "const AWS_OBJECTIVES = ",
+      "suffix": ";\n"
+    },
+    "js/features/510-aws-objectives.js",
     "js/boot.js"
   ]
 }
