@@ -11,29 +11,38 @@
  * - An exam with no questions in the bank (CLF-C02) says so; no Practice button is offered for it.
  */
 const awsObjFor = code => (AWS_OBJECTIVES.exams || {})[code] || null;
+const awsNormLabel = x => String(x || '').trim().replace(/\s+/g, ' ').replace(/\.$/, '');
+/* Draft questions from content packs are hidden from practice until the learner turns them on (allQ in 030), so a
+ * blueprint must not claim "no questions" when drafts are installed but switched off. */
+const awsHiddenDrafts = code => (S.ws && S.ws.includeDrafts === true) ? 0 : S.order.map(Q).filter(q => q && q.exam_code === code && q.packId && q.reviewStatus === 'draft').length;
 function awsObjCoverage(code) {
-  const map = (AWS_OBJECTIVES.bankMap || {})[code]; const qs = examQs(code);
-  if (!map) return { mapped: false, total: qs.length, byTask: {}, outside: [] };
-  const byTask = {}, outside = {};
-  for (const q of qs) { const t = map[q.subdomain]; if (t) byTask[t] = (byTask[t] || 0) + 1; else outside[q.subdomain] = (outside[q.subdomain] || 0) + 1; }
-  return { mapped: true, total: qs.length, byTask, outside: Object.entries(outside).sort((a, b) => a[0].localeCompare(b[0], undefined, { numeric: true })) };
+  const qs = examQs(code); const o = awsObjFor(code); const explicit = (AWS_OBJECTIVES.bankMap || {})[code];
+  const byLabel = {}; if (o) for (const d of o.domains) for (const t of d.tasks) byLabel[awsNormLabel(t.id + ' ' + t.text)] = t.id;
+  /* Match by explicit data-authored map when one exists, otherwise by the exact official label "<task id> <task text>".
+   * Counts are shown only when at least 80% of the questions match a task; below that the bank uses its own
+   * subdomains and per-task numbers would be a wall of zeros that says nothing true about coverage. */
+  const lookup = sub => explicit ? explicit[sub] : byLabel[awsNormLabel(sub)];
+  const byTask = {}, outside = {}; let matched = 0;
+  for (const q of qs) { const t = lookup(q.subdomain); if (t) { byTask[t] = (byTask[t] || 0) + 1; matched++; } else outside[q.subdomain] = (outside[q.subdomain] || 0) + 1; }
+  const mapped = qs.length > 0 && matched / qs.length >= 0.8;
+  return { mapped, total: qs.length, matched, byTask: mapped ? byTask : {}, outside: mapped ? Object.entries(outside).sort((a, b) => a[0].localeCompare(b[0], undefined, { numeric: true })) : [], hidden: awsHiddenDrafts(code) };
 }
 const awsList = a => a && a.length ? `<ul class="small" style="margin:4px 0 8px 18px">${a.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : '';
 function awsBlueprintIndex() {
   const rows = Object.keys(AWS_OBJECTIVES.exams).map(code => ({ code, p: examProfile(code), o: awsObjFor(code), n: examQs(code).length }));
   return `<div class="page-head"><div><h1>AWS exam blueprints</h1><p class="muted">The official domains and task statements each exam is built from, with how much of each this app's practice bank covers.</p></div></div>
   <div class="grid g-3">${rows.map(r => `<article class="card exam-card"><span class="vendor">AWS · ${esc(LEVEL_LABEL[r.p.level] || r.p.level)}${r.p.status !== 'active' ? ' · ' + esc(r.p.status) : ''}</span><h3>${esc(r.p.name)}</h3>
-    <p class="small muted">${esc(r.code)} · ${r.o.domains.length} domains · ${r.o.domains.reduce((n, d) => n + d.tasks.length, 0)} tasks · ${r.n ? r.n + ' practice questions' : 'no practice questions in the bank yet'}</p>
+    <p class="small muted">${esc(r.code)} · ${r.o.domains.length} domains · ${r.o.domains.reduce((n, d) => n + d.tasks.length, 0)} tasks · ${r.n ? r.n + ' practice questions' : awsHiddenDrafts(r.code) ? awsHiddenDrafts(r.code) + ' draft questions installed (switched off)' : 'no practice questions in the bank yet'}</p>
     <div class="actions"><a class="btn primary sm" href="#/blueprint/${esc(r.code)}">Open blueprint</a></div></article>`).join('')}</div>
-  <p class="small muted" style="margin-top:18px">Task statements were transcribed from the official AWS exam guides as supplied on ${esc(AWS_OBJECTIVES.exams['SAA-C03'].retrieved)}. Exams change; confirm on the official page before you book.</p>`;
+  <p class="small muted" style="margin-top:18px">Task statements were transcribed from the official AWS exam guides (retrieved 2026-11-02 and 2026-11-03). Exams change; confirm on the official page before you book.</p>`;
 }
 function awsBlueprintView(code) {
   const o = awsObjFor(code), p = examProfile(code);
   if (!o || !p) return `<div class="page-head"><div><h1>Blueprint not available</h1></div></div><p class="muted">There is no stored blueprint for that exam. <a href="#/blueprint">See the exams that have one.</a></p>`;
   const cov = awsObjCoverage(code);
   const wsum = o.domains.reduce((n, d) => n + (d.weight || 0), 0);
-  const coverNote = cov.total === 0 ? 'This exam has no questions in the practice bank yet, so there is nothing to drill. Nothing is shown as covered.'
-    : cov.mapped ? `${cov.total} practice questions. Counts below use the bank's own subdomain labels matched to the official tasks.`
+  const coverNote = cov.total === 0 ? (cov.hidden ? `${cov.hidden} draft questions are installed but switched off. Turn on "Include draft questions" on the Content updates page to practice them and see coverage here.` : 'This exam has no questions in the practice bank yet, so there is nothing to drill. Nothing is shown as covered.')
+    : cov.mapped ? `${cov.total} practice questions. Counts below match each question's subdomain label to the official task.${cov.hidden ? ` ${cov.hidden} more draft questions are switched off.` : ''}`
     : `${cov.total} practice questions. This bank groups them into subdomains that do not line up one-to-one with the official tasks, so per-task counts are not shown rather than guessed.`;
   return `<div class="page-head"><div><h1>${esc(p.name)}</h1><p class="muted">${esc(code)} · ${esc(LEVEL_LABEL[p.level] || p.level)} · status: <strong>${esc(p.status)}</strong>${p.durationMin ? ' · ' + p.durationMin + ' min' : ''}${p.questions ? ' · ' + p.questions + ' questions' : ''}${p.passScore ? ' · pass mark ' + esc(p.passScore) : ' · pass mark not published'}${p.priceUSD != null ? ' · ' + p.priceUSD + ' USD' : ''}</p></div></div>
   ${p.statusNote ? `<p class="notice" style="margin-bottom:14px">${esc(p.statusNote)}</p>` : ''}

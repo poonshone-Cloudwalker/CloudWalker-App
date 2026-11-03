@@ -1,7 +1,8 @@
 ok  nav entry follows Decision Atlas
-ok  index lists three exams
+ok  index lists nine exams
 ok  index: CLF says no practice questions yet
 ok  index: SAA shows its 200 questions
+ok  index: DEA, DVA, SCS, SAP have blueprints
 ok  index: AIB shows 13 tasks
 ok  CLF: four domains with official weights
 ok  CLF: 19 task statements
@@ -20,6 +21,23 @@ ok  AIB: explains why counts are not shown
 ok  AIB: pass mark not published, beta shown
 ok  AIB: tasks without detail say so
 ok  unknown code: safe message, nothing injected
+ok  drafts off: CLF says 25 drafts are switched off, not "no questions"
+ok  drafts off: index shows the draft count
+ok  CLF-C02: 19 tasks, every task has a count chip
+ok  CLF-C02: per-task counts equal the pack by exact label
+ok  CLF-C02: all 25 questions matched, none outside
+ok  CLF-C02: Practice button offered
+ok  AIF-C01: 14 tasks, every task has a count chip
+ok  AIF-C01: per-task counts equal the pack by exact label
+ok  AIF-C01: all 25 questions matched, none outside
+ok  AIF-C01: Practice button offered
+ok  SOA-C03: 13 tasks, every task has a count chip
+ok  SOA-C03: per-task counts equal the pack by exact label
+ok  SOA-C03: all 25 questions matched, none outside
+ok  SOA-C03: Practice button offered
+ok  SAA still uses its explicit map after packs are installed
+ok  AIB still shows no per-task counts
+ok  SAP-C03: weights from the guide, no practice button, drafts note absent
 ok  facts table has AIF-C01
 ok  facts table has SOA-C03
 ok  facts table has DVA-C03
