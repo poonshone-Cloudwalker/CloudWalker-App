@@ -100,6 +100,10 @@ The Bootcamp pages (`#/bootcamp`, in the Build group) track the hands-on labs of
 
 The content-pack system (Content updates page) carries questions, lessons, labs and exam profiles, merged by id. For new exams and question fixes, ship a pack rather than editing `src/content/bank/`. Packs need no rebuild and users can see what changed before it merges.
 
+### Published content packs
+
+`content-packs/` holds the AWS practice packs (CLF-C02, AIF-C01, DEA-C01, SCS-C03, SAP-C03; 200 questions each). The Pages workflow publishes them at `<site>/packs/<file>.json`, with `packs/index.json` listing versions and checksums. In Content updates, paste a pack address and review the preview before merging. Every question is `generated-practice` and `draft`. Update a pack by replacing its file with a newer `packVersion` and regenerating `index.json`. SOA-C03 and DVA-C03 are not published yet.
+
 ## Rules the build enforces
 
 - Every CSS and JS file in `src/css`, `src/js/core` and `src/js/features` is listed in the manifest, and none is listed twice.

@@ -1,7 +1,8 @@
 # Builds the app from src/ and publishes it to GitHub Pages on every push to main,
 # but only once the regression suite (tests/run.js) has passed for that commit.
 # Never triggers on pull_request, so a PR can never publish.
-# The site gets two files: index.html (the app) and cloudwalker-sw.js (offline support).
+# The site gets index.html (the app), cloudwalker-sw.js (offline support) and packs/ (content packs
+# from content-packs/, to import from Content updates by address).
 # One-time setup: repository Settings → Pages → Source: "GitHub Actions".
 name: Publish to GitHub Pages
 on:
@@ -55,6 +56,8 @@ jobs:
           mkdir -p _site
           cp dist/BluePrint_CloudWalker.html _site/index.html
           cp dist/cloudwalker-sw.js _site/cloudwalker-sw.js
+          mkdir -p _site/packs
+          cp content-packs/*.json _site/packs/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

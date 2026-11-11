@@ -1,0 +1,56 @@
+{
+ "format": "cloudwalker-pack-index",
+ "generated": "2026-11-10",
+ "packs": [
+  {
+   "file": "aws-aif-c01-practice.json",
+   "packId": "aws-aif-c01-practice",
+   "packVersion": "2026.11.5",
+   "title": "AWS AI Practitioner (AIF-C01) practice pack",
+   "questions": 200,
+   "lessons": 2,
+   "sha256": "750d600081779f9196aedcfbd6ee8cd8b85f08a2e6435ca2455031964ce105c9",
+   "reviewStatus": "draft"
+  },
+  {
+   "file": "aws-clf-c02-practice.json",
+   "packId": "aws-clf-c02-practice",
+   "packVersion": "2026.11.7",
+   "title": "AWS Cloud Practitioner (CLF-C02) practice pack",
+   "questions": 200,
+   "lessons": 2,
+   "sha256": "4c51975c3cbabc6763bae142fbecd217f0dc134c33a65f2275008f8806bdac19",
+   "reviewStatus": "draft"
+  },
+  {
+   "file": "aws-dea-c01-practice.json",
+   "packId": "aws-dea-c01-practice",
+   "packVersion": "2026.11.7",
+   "title": "AWS Data Engineer Associate (DEA-C01) practice pack",
+   "questions": 200,
+   "lessons": 4,
+   "sha256": "afb4a4b1a9ba84c4ed7a28dca555f6edd99633817572c779685a6718d0d6da7d",
+   "reviewStatus": "draft"
+  },
+  {
+   "file": "aws-sap-c03-practice.json",
+   "packId": "aws-sap-c03-practice",
+   "packVersion": "2026.11.4",
+   "title": "AWS Certified Solutions Architect - Professional (SAP-C03) practice pack",
+   "questions": 200,
+   "lessons": 5,
+   "sha256": "97d352db72b76fa1ce983cccee28a3226f32c8e9a346fbbd8499ca5be1f37fbb",
+   "reviewStatus": "draft"
+  },
+  {
+   "file": "aws-scs-c03-practice.json",
+   "packId": "aws-scs-c03-practice",
+   "packVersion": "2026.11.4",
+   "title": "AWS Certified Security - Specialty (SCS-C03) practice pack",
+   "questions": 200,
+   "lessons": 6,
+   "sha256": "bb2f3670b0e1fa4faa2ad0837b6eabe8b48f1f2b02a274cffb06e2ae7b86a925",
+   "reviewStatus": "draft"
+  }
+ ]
+}
