@@ -33,6 +33,16 @@
    "reviewStatus": "draft"
   },
   {
+   "file": "aws-dva-c03-practice.json",
+   "packId": "aws-dva-c03-practice",
+   "packVersion": "2026.11.6",
+   "title": "AWS Developer Associate (DVA-C03) practice pack",
+   "questions": 200,
+   "lessons": 4,
+   "sha256": "a39b95696c3e95519eda343eca57f390eae112fb1c8a56456f8847988053b466",
+   "reviewStatus": "draft"
+  },
+  {
    "file": "aws-sap-c03-practice.json",
    "packId": "aws-sap-c03-practice",
    "packVersion": "2026.11.4",
@@ -50,6 +60,16 @@
    "questions": 200,
    "lessons": 6,
    "sha256": "bb2f3670b0e1fa4faa2ad0837b6eabe8b48f1f2b02a274cffb06e2ae7b86a925",
+   "reviewStatus": "draft"
+  },
+  {
+   "file": "aws-soa-c03-practice.json",
+   "packId": "aws-soa-c03-practice",
+   "packVersion": "2026.11.6",
+   "title": "AWS CloudOps Engineer - Associate (SOA-C03) practice pack",
+   "questions": 200,
+   "lessons": 2,
+   "sha256": "b9a018a5814bf2b74bacdee258a7fab45a91ad0f64c2441a443844a8ff40e580",
    "reviewStatus": "draft"
   }
  ]
