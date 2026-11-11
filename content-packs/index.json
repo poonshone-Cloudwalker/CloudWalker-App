@@ -1,6 +1,6 @@
 {
  "format": "cloudwalker-pack-index",
- "generated": "2026-11-10",
+ "generated": "2026-11-11",
  "packs": [
   {
    "file": "aws-aif-c01-practice.json",
@@ -25,21 +25,21 @@
   {
    "file": "aws-dea-c01-practice.json",
    "packId": "aws-dea-c01-practice",
-   "packVersion": "2026.11.7",
+   "packVersion": "2026.11.8",
    "title": "AWS Data Engineer Associate (DEA-C01) practice pack",
    "questions": 200,
    "lessons": 4,
-   "sha256": "afb4a4b1a9ba84c4ed7a28dca555f6edd99633817572c779685a6718d0d6da7d",
+   "sha256": "e8fa0f9d87dc6f99137a8c233a82e00c5714cdc6360232a5538a3511b8758284",
    "reviewStatus": "draft"
   },
   {
    "file": "aws-dva-c03-practice.json",
    "packId": "aws-dva-c03-practice",
-   "packVersion": "2026.11.6",
+   "packVersion": "2026.11.7",
    "title": "AWS Developer Associate (DVA-C03) practice pack",
    "questions": 200,
    "lessons": 4,
-   "sha256": "a39b95696c3e95519eda343eca57f390eae112fb1c8a56456f8847988053b466",
+   "sha256": "07bd0ea2671fbfb26a367766af485d8bd0d8dfdd8e63a63fbdc30464a3ed8275",
    "reviewStatus": "draft"
   },
   {

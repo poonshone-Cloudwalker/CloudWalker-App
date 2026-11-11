@@ -1,13 +1,13 @@
 {
   "format": "cloudwalker-content-pack",
   "packId": "aws-dva-c03-practice",
-  "packVersion": "2026.11.6",
+  "packVersion": "2026.11.7",
   "title": "AWS Developer Associate (DVA-C03) practice pack",
   "publishedAt": "2026-11-10",
   "minAppSchema": 1,
   "checksum": {
     "alg": "SHA-256",
-    "value": "a39b95696c3e95519eda343eca57f390eae112fb1c8a56456f8847988053b466"
+    "value": "07bd0ea2671fbfb26a367766af485d8bd0d8dfdd8e63a63fbdc30464a3ed8275"
   },
   "content": {
     "exams": [
@@ -84,7 +84,8 @@
         "difficulty": "hard",
         "services": [
           "Amazon S3",
-          "AWS Lambda"
+          "AWS Lambda",
+          "AWS Elemental MediaConvert"
         ],
         "tags": [
           "async-patterns",
@@ -95,17 +96,17 @@
           "Raise the API Gateway integration timeout and the Lambda function timeout so large files finish inside one call.",
           "Have API Gateway put upload requests on an SQS queue while the client waits for the worker to finish.",
           "Split the file into chunks and transcode each chunk in a separate synchronous Lambda call from the client.",
-          "Return a presigned S3 URL for direct upload, and let an S3 event notification trigger the transcoding function."
+          "Return a presigned S3 URL for upload, and let an S3 event start a function that submits a MediaConvert job."
         ],
         "correct_index": 3,
-        "correct_rationale": "A presigned upload moves the file straight to S3 without holding an API connection, and the S3 event notification starts processing asynchronously, so no single invocation has to finish the whole job.",
+        "correct_rationale": "A presigned URL lets the client upload straight to S3 without holding an API connection. The S3 event notification starts a function whose only work is to submit the job; the transcoding runs as an AWS Elemental MediaConvert job, a file-based video processing service, so it does not run inside a Lambda invocation bounded by the function timeout.",
         "distractor_rationales": [
           "Raising timeouts still keeps the client connected and still exposes the run to the Lambda execution ceiling.",
           "The client still waits on the same connection for the worker to finish.",
           "Chunked synchronous calls keep every chunk on a client-held connection and add client-side orchestration.",
           ""
         ],
-        "distractor_summary": "The wrong options keep a client connection open or add orchestration without removing the synchronous wait.",
+        "distractor_summary": "The wrong options keep a client connection open or leave transcoding inside a timed invocation.",
         "docLinks": [
           {
             "title": "Sharing objects with presigned URLs",
@@ -114,6 +115,18 @@
           {
             "title": "Configuring Amazon S3 event notifications",
             "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/NotificationHowTo.html"
+          },
+          {
+            "title": "What is AWS Elemental MediaConvert?",
+            "url": "https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html"
+          },
+          {
+            "title": "Uploading objects with presigned URLs",
+            "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/PresignedUrlUploadObject.html"
+          },
+          {
+            "title": "Configure Lambda Event Function timeout",
+            "url": "https://docs.aws.amazon.com/lambda/latest/dg/configuration-timeout.html"
           }
         ],
         "examGuideVersion": "DVA-C03 guide retrieved 2026-11-08",
@@ -2598,26 +2611,30 @@
           "configuration",
           "parameters"
         ],
-        "question": "A function's database endpoint and feature settings differ between environments, and the same deployment package must be promoted without a rebuild. The values are not secret. Which mechanism serves the right values per environment at runtime?",
+        "question": "A function's database endpoint and feature settings differ between environments, and the same deployment package must be promoted without a rebuild. The values are not secret, and operators must change them centrally without updating any function's configuration. Which mechanism serves the right values per environment at runtime?",
         "options": [
           "Store the values as parameters in Parameter Store, one path per environment.",
           "Bake the values into the package as config files per environment",
-          "Store the values in Lambda environment variables and update them on every deployment.",
+          "Store the values in Lambda environment variables set on each environment's function.",
           "Email the values to the operations team before each promotion to an environment."
         ],
         "correct_index": 0,
-        "correct_rationale": "Parameter Store holds environment-scoped values that runtime code reads, so one artifact serves every environment.",
+        "correct_rationale": "Parameter Store is a centralized configuration store that runtime code reads, and a parameter update takes effect on the next read, so operators change values in one place and one artifact serves every environment without touching function configuration.",
         "distractor_rationales": [
           "",
           "Per-environment config files recreate the rebuild problem the requirement excludes.",
-          "Environment variables are set per deployment and change with it, not with the environment alone.",
+          "Environment variables live in each function's version-specific configuration, so changing a value is a configuration update, not a code rebuild, which the requirement excludes.",
           "A manual email is not a runtime configuration mechanism."
         ],
-        "distractor_summary": "The wrong options rebuild per environment, redeploy to change values, or rely on manual steps.",
+        "distractor_summary": "The wrong options rebuild per environment, change function configuration, or rely on manual steps.",
         "docLinks": [
           {
             "title": "What is Systems Manager Parameter Store?",
             "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html"
+          },
+          {
+            "title": "Working with Lambda environment variables",
+            "url": "https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html"
           }
         ],
         "examGuideVersion": "DVA-C03 guide retrieved 2026-11-08",

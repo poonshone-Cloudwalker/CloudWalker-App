@@ -1,13 +1,13 @@
 {
   "format": "cloudwalker-content-pack",
   "packId": "aws-dea-c01-practice",
-  "packVersion": "2026.11.7",
+  "packVersion": "2026.11.8",
   "title": "AWS Data Engineer Associate (DEA-C01) practice pack",
   "publishedAt": "2026-11-10",
   "minAppSchema": 1,
   "checksum": {
     "alg": "SHA-256",
-    "value": "afb4a4b1a9ba84c4ed7a28dca555f6edd99633817572c779685a6718d0d6da7d"
+    "value": "e8fa0f9d87dc6f99137a8c233a82e00c5714cdc6360232a5538a3511b8758284"
   },
   "content": {
     "exams": [
@@ -261,7 +261,7 @@
           "Increase the number of workers so each small file gets its own executor and finishes sooner."
         ],
         "correct_index": 1,
-        "correct_rationale": "Bookmarks prevent reprocessing and grouping combines small files into larger read units.",
+        "correct_rationale": "Job bookmarks prevent reprocessing of files earlier runs read, and groupFiles in the table parameters lets each task read many small JSON files into one in-memory partition; JSON is a supported DynamicFrame format for grouping.",
         "distractor_rationales": [
           "Grouping reduces small-file overhead, but every run rereads files that were already processed.",
           "",
@@ -273,6 +273,10 @@
           {
             "title": "Tracking processed data using job bookmarks",
             "url": "https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html"
+          },
+          {
+            "title": "Reading input files in larger groups",
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/grouping-input-files.html"
           }
         ],
         "examGuideVersion": "DEA-C01 guide retrieved 2026-11-10",
@@ -1899,11 +1903,11 @@
         "options": [
           "Unload the tables to Amazon S3 nightly and load them into tables on the consumer cluster.",
           "Take a manual snapshot of the producer and restore it as a new cluster for the regional team.",
-          "Create a datashare on the producer and grant the consumer warehouse usage on that datashare.",
+          "Create a datashare on the producer that grants only SELECT on the tables, and give the consumer usage on it.",
           "Give the regional analysts database users on the producer with full write privileges on the tables."
         ],
         "correct_index": 2,
-        "correct_rationale": "A datashare gives read-only access to live data without copies.",
+        "correct_rationale": "A datashare gives the consumer live data without copying or moving it. Data sharing can also be set up for writes, so the no-modification requirement is met by granting only SELECT and withholding INSERT and UPDATE on the shared tables.",
         "distractor_rationales": [
           "Nightly unload and load gives read-only tables but copies stale data.",
           "A restored snapshot is a writable copy that goes stale.",
@@ -2489,17 +2493,17 @@
           "configuration",
           "parameter-store"
         ],
-        "question": "Pipelines in several accounts read non-secret settings such as table names and batch sizes. Settings must be grouped by environment so a job can load every value under one path. The values must be managed in one central account and shared with the accounts that read them. Where should the settings be kept?",
+        "question": "Pipelines in several accounts read non-secret settings such as table names and batch sizes. Settings must be grouped by environment under a path hierarchy. The values must be managed in one central account and shared, and reading accounts retrieve each value by its full parameter ARN. Where should the settings be kept?",
         "options": [
           "Keep one flat JSON file of settings in a central S3 bucket that the other accounts can read.",
           "Hardcode the settings as environment variables in each job definition across every account.",
-          "Keep them in Parameter Store under per-environment parameter hierarchies and share them from a central account.",
+          "Keep them as advanced parameters under per-environment hierarchies in one account and share them through AWS RAM.",
           "Keep them in Parameter Store under per-environment parameter hierarchies created separately inside each account."
         ],
         "correct_index": 2,
-        "correct_rationale": "Hierarchies group the settings by path, and sharing from one account keeps a single source.",
+        "correct_rationale": "Hierarchy paths group the settings by environment. Sharing requires the advanced parameter tier and uses AWS RAM, and other accounts read each shared parameter by its full ARN, so one central account stays the single source.",
         "distractor_rationales": [
-          "A central file is shared, but a flat file gives no per-environment path to load.",
+          "A central file is shared, but a flat file has no per-environment hierarchy.",
           "Hardcoded variables are neither grouped by path nor centrally managed.",
           "",
           "Per-account hierarchies group the settings, but each account holds its own copy to manage."
@@ -2509,6 +2513,14 @@
           {
             "title": "AWS Systems Manager Parameter Store",
             "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html"
+          },
+          {
+            "title": "Working with shared parameters in Parameter Store",
+            "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html"
+          },
+          {
+            "title": "Working with parameter hierarchies in Parameter Store",
+            "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-hierarchies.html"
           }
         ],
         "examGuideVersion": "DEA-C01 guide retrieved 2026-11-10",
@@ -4657,26 +4669,38 @@
           "ordering",
           "exactly-once"
         ],
-        "question": "Account ledger updates are passed between services through an Amazon SQS queue. Updates for an account must be processed in the exact order they were sent. Each update must be delivered once, without duplicates reaching consumers. Which queue setup meets these requirements?",
+        "question": "Account ledger updates are passed between services through an Amazon SQS queue. Updates for an account must be processed in the exact order they were sent. A producer retry within five minutes must not add a second copy to the queue, and a redelivered update must not be applied to the ledger twice. Which setup meets these requirements?",
         "options": [
           "Use a standard queue with several consumers polling it in parallel to raise throughput.",
           "Use a standard queue and add a sequence number that consumers sort on before processing updates.",
-          "Use an SQS FIFO queue for the ledger updates, with a message group ID per account.",
+          "Use a FIFO queue with a group ID per account and deduplication IDs; consumers skip update IDs already applied.",
           "Use a standard queue with a DynamoDB table that records processed message IDs to discard duplicates."
         ],
         "correct_index": 2,
-        "correct_rationale": "A FIFO queue preserves send order and delivers each message once.",
+        "correct_rationale": "A message group ID per account keeps each account's updates in order, and a deduplication ID makes Amazon SQS drop a producer resend within the 5-minute deduplication interval. That bound covers sending only: if a consumer misses the visibility timeout the message can be received again, so consumers record applied update IDs and skip repeats.",
         "distractor_rationales": [
-          "Parallel consumers on a standard queue give neither ordering nor single delivery.",
-          "Sorting by sequence number restores order, but a standard queue can still deliver duplicates.",
+          "Parallel consumers on a standard queue give neither ordering nor send deduplication.",
+          "Sorting restores order, but a standard queue gives no send deduplication and can redeliver.",
           "",
-          "The ID table discards duplicates, but a standard queue does not preserve order."
+          "The ID table blocks reapplied updates, but a standard queue does not preserve order."
         ],
-        "distractor_summary": "WA rebuilds order but allows duplicates; WB removes duplicates but loses order; X gives neither.",
+        "distractor_summary": "WA restores order but cannot deduplicate sends; WB blocks reapplied updates but loses order; X gives neither.",
         "docLinks": [
           {
             "title": "Amazon SQS FIFO queues",
             "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-fifo-queues.html"
+          },
+          {
+            "title": "Exactly-once processing in Amazon SQS",
+            "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+          },
+          {
+            "title": "Using the message deduplication ID in Amazon SQS",
+            "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html"
+          },
+          {
+            "title": "Outage recovery scenarios in Amazon SQS",
+            "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/designing-for-outage-recovery-scenarios.html"
           }
         ],
         "examGuideVersion": "DEA-C01 guide retrieved 2026-11-10",
@@ -5933,7 +5957,7 @@
           "row-count-match",
           "data-quality"
         ],
-        "question": "An AWS Glue job copies a source dataset into a target table, and every source record must arrive. The check must compare the target against the source dataset, not inspect the target alone. It must run as a declarative rule inside the job's Glue Data Quality ruleset. Which approach meets these requirements?",
+        "question": "An AWS Glue job copies a source dataset into a target table, and after each load the target's record count must equal the source's. The check must compare the target against the source dataset, not inspect the target alone. It must run as a declarative rule inside the job's Glue Data Quality ruleset. Which approach meets these requirements?",
         "options": [
           "Add a RowCountMatch rule that compares the target's record count with the source dataset alias.",
           "Add a RowCount rule to the ruleset that requires the target count to fall between fixed bounds.",
@@ -5941,7 +5965,7 @@
           "After each load, run an Athena query that counts rows in both datasets and reports any difference."
         ],
         "correct_index": 0,
-        "correct_rationale": "RowCountMatch is a DQDL rule that compares record counts between the dataset and a reference dataset.",
+        "correct_rationale": "RowCountMatch checks the ratio of the primary dataset's row count to a reference dataset's row count against an expression, so a ratio of 1.0 confirms the counts are equal. It reconciles counts only and does not prove that the same records arrived.",
         "distractor_rationales": [
           "",
           "RowCount is a declarative ruleset rule, but fixed bounds inspect the target alone and never consult the source.",
@@ -5953,6 +5977,10 @@
           {
             "title": "DQDL rule type reference",
             "url": "https://docs.aws.amazon.com/glue/latest/dg/dqdl-rule-types.html"
+          },
+          {
+            "title": "RowCountMatch",
+            "url": "https://docs.aws.amazon.com/glue/latest/dg/dqdl-rule-types-RowCountMatch.html"
           }
         ],
         "examGuideVersion": "DEA-C01 guide retrieved 2026-11-10",
@@ -6748,18 +6776,18 @@
         "options": [
           "Use an Express Workflow run from Lambda with no logging and let the EMR step retry freely.",
           "Use an Express Workflow with logging to CloudWatch Logs so engineers can review each run.",
-          "Use a Standard Workflow, which runs each step exactly once and keeps the execution history.",
+          "Use a Standard Workflow without Retry on the EMR start state, which keeps the full execution history.",
           "Use an Express Workflow and add a DynamoDB check so the EMR start step is skipped on repeats."
         ],
         "correct_index": 2,
-        "correct_rationale": "Standard Workflows run steps exactly once, fit long runs, and keep execution history in the console.",
+        "correct_rationale": "Standard Workflows follow an exactly-once model unless Retry is specified in ASL, so leaving Retry off the EMR start state avoids a workflow-driven second start. Standard runs can last up to one year and keep their execution history. Workflow type alone does not make the EMR side effect impossible to repeat for reasons outside the workflow.",
         "distractor_rationales": [
           "Free retries can start EMR twice, and there is no run history to review.",
-          "Express logs to CloudWatch Logs, but its at-least-once model can repeat the EMR start step.",
+          "Express runs last up to five minutes, too short for this pipeline, and asynchronous Express is at-least-once.",
           "",
-          "A DynamoDB guard reduces repeats, but Express runs are short and lack console run history."
+          "A DynamoDB guard reduces repeats, but Express runs are capped at five minutes, too short for hours."
         ],
-        "distractor_summary": "WA gives logs but may repeat steps; WB guards repeats but lacks history; X repeats steps with no history.",
+        "distractor_summary": "WA logs runs but is capped at five minutes; WB guards repeats but is capped at five minutes; X may repeat steps with no history.",
         "docLinks": [
           {
             "title": "Choosing workflow type in Step Functions",
