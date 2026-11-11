@@ -102,7 +102,7 @@ The content-pack system (Content updates page) carries questions, lessons, labs 
 
 ### Published content packs
 
-`content-packs/` holds the AWS practice packs (CLF-C02, AIF-C01, DEA-C01, SCS-C03, SAP-C03; 200 questions each). The Pages workflow publishes them at `<site>/packs/<file>.json`, with `packs/index.json` listing versions and checksums. In Content updates, paste a pack address and review the preview before merging. Every question is `generated-practice` and `draft`. Update a pack by replacing its file with a newer `packVersion` and regenerating `index.json`. SOA-C03 and DVA-C03 are not published yet.
+`content-packs/` holds the AWS practice packs (CLF-C02, AIF-C01, SOA-C03, DVA-C03, DEA-C01, SCS-C03, SAP-C03; 200 questions each). The Pages workflow publishes them at `<site>/packs/<file>.json`, with `packs/index.json` listing versions and checksums. In Content updates, paste a pack address and review the preview before merging. Every question is `generated-practice` and `draft`. Update a pack by replacing its file with a newer `packVersion` and regenerating `index.json`.
 
 ## Rules the build enforces
 
