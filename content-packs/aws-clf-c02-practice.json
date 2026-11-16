@@ -1,13 +1,13 @@
 {
   "format": "cloudwalker-content-pack",
   "packId": "aws-clf-c02-practice",
-  "packVersion": "2026.11.7",
+  "packVersion": "2026.11.8",
   "title": "AWS Cloud Practitioner (CLF-C02) practice pack",
   "publishedAt": "2026-11-07",
   "minAppSchema": 1,
   "checksum": {
     "alg": "SHA-256",
-    "value": "4c51975c3cbabc6763bae142fbecd217f0dc134c33a65f2275008f8806bdac19"
+    "value": "0cf3dc935cc6b77191e7ee316beee42e1179cd4e8d7fb994db84260bdd7f7aca"
   },
   "content": {
     "exams": [
@@ -6939,7 +6939,7 @@
           "patching",
           "two-step"
         ],
-        "question": "A company runs 200 Amazon EC2 instances. It must be told automatically when software on any instance has a known vulnerability. Operating system patches must also be applied to the instances automatically on a schedule. Which setup meets both needs with the fewest services?",
+        "question": "A company runs 200 Amazon EC2 instances. Known vulnerabilities in software on any instance must be detected and reported as findings automatically. Operating system patches must also be applied to the instances automatically on a schedule. Which setup meets both needs with the fewest services?",
         "options": [
           "Amazon Inspector scanning plus Systems Manager Patch Manager",
           "Amazon Inspector scanning, with patches applied by hand",
@@ -9148,7 +9148,7 @@
           "reserved-instances",
           "two-step"
         ],
-        "question": "A company runs a steady workload on Amazon EC2 for the next year. It must have compute capacity reserved in one specific Availability Zone. It must also receive a billing discount compared with On-Demand pricing. Which purchase meets both needs while keeping the most flexibility?",
+        "question": "A company runs a steady workload on Amazon EC2 for the next year. It must have compute capacity reserved in one specific Availability Zone. It must also receive a billing discount compared with On-Demand pricing. Which purchase meets both needs?",
         "options": [
           "An On-Demand Capacity Reservation for that zone",
           "A zonal Reserved Instance for that Availability Zone",

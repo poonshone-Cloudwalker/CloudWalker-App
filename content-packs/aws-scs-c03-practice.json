@@ -1,13 +1,13 @@
 {
   "format": "cloudwalker-content-pack",
   "packId": "aws-scs-c03-practice",
-  "packVersion": "2026.11.4",
+  "packVersion": "2026.11.5",
   "title": "AWS Certified Security - Specialty (SCS-C03) practice pack",
   "publishedAt": "2026-11-10",
   "minAppSchema": 1,
   "checksum": {
     "alg": "SHA-256",
-    "value": "bb2f3670b0e1fa4faa2ad0837b6eabe8b48f1f2b02a274cffb06e2ae7b86a925"
+    "value": "fcab12c7265597677eebd7835d358eacc179bfec7287a3173a8114c63c93dc09"
   },
   "content": {
     "exams": [
@@ -1139,7 +1139,7 @@
         "options": [
           "The URLs end because S3 limits presigned links to short times, so make the objects publicly readable instead.",
           "The URLs end when the Lambda role session ends, so sign them with credentials that last the needed time.",
-          "The URLs end when the bucket policy is evaluated again, so add a public read statement for the link path.",
+          "The URLs end because the objects use SSE-KMS encryption, so switch the bucket default encryption to SSE-S3.",
           "The URLs end because Lambda caches the signature, so regenerate the links on each request with the same role."
         ],
         "correct_index": 1,
@@ -1147,10 +1147,10 @@
         "distractor_rationales": [
           "Public reads would make links work, but that breaks the private bucket requirement and misstates the cause.",
           "",
-          "A public read statement breaks the private bucket requirement, and policy evaluation is not why links end early.",
+          "Encryption type does not set how long a presigned URL lasts; the URL still expires with the signing credentials, so SSE-S3 leaves the early failures.",
           "Regenerating with the same short role session keeps the same early expiry, so the links still fail."
         ],
-        "distractor_summary": "WA goes public; WB adds a public statement; X keeps the short session.",
+        "distractor_summary": "A presigned URL lasts no longer than the credentials that signed it; public access, encryption changes, and re-signing with the same role do not fix that.",
         "docLinks": [
           {
             "title": "Download and upload objects with presigned URLs",

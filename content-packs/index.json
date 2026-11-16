@@ -5,21 +5,21 @@
   {
    "file": "aws-aif-c01-practice.json",
    "packId": "aws-aif-c01-practice",
-   "packVersion": "2026.11.5",
+   "packVersion": "2026.11.6",
    "title": "AWS AI Practitioner (AIF-C01) practice pack",
    "questions": 200,
    "lessons": 2,
-   "sha256": "750d600081779f9196aedcfbd6ee8cd8b85f08a2e6435ca2455031964ce105c9",
+   "sha256": "083031ec8952fb54a1471347ce8038d7f4a24540f3d5b6c740ca0903c9142394",
    "reviewStatus": "draft"
   },
   {
    "file": "aws-clf-c02-practice.json",
    "packId": "aws-clf-c02-practice",
-   "packVersion": "2026.11.7",
+   "packVersion": "2026.11.8",
    "title": "AWS Cloud Practitioner (CLF-C02) practice pack",
    "questions": 200,
    "lessons": 2,
-   "sha256": "4c51975c3cbabc6763bae142fbecd217f0dc134c33a65f2275008f8806bdac19",
+   "sha256": "0cf3dc935cc6b77191e7ee316beee42e1179cd4e8d7fb994db84260bdd7f7aca",
    "reviewStatus": "draft"
   },
   {
@@ -55,11 +55,11 @@
   {
    "file": "aws-scs-c03-practice.json",
    "packId": "aws-scs-c03-practice",
-   "packVersion": "2026.11.4",
+   "packVersion": "2026.11.5",
    "title": "AWS Certified Security - Specialty (SCS-C03) practice pack",
    "questions": 200,
    "lessons": 6,
-   "sha256": "bb2f3670b0e1fa4faa2ad0837b6eabe8b48f1f2b02a274cffb06e2ae7b86a925",
+   "sha256": "fcab12c7265597677eebd7835d358eacc179bfec7287a3173a8114c63c93dc09",
    "reviewStatus": "draft"
   },
   {
