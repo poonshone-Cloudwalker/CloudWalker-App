@@ -1,6 +1,6 @@
 {
  "format": "cloudwalker-pack-index",
- "generated": "2026-11-11",
+ "generated": "2026-11-16",
  "packs": [
   {
    "file": "aws-aif-c01-practice.json",
@@ -35,11 +35,11 @@
   {
    "file": "aws-dva-c03-practice.json",
    "packId": "aws-dva-c03-practice",
-   "packVersion": "2026.11.7",
+   "packVersion": "2026.11.8",
    "title": "AWS Developer Associate (DVA-C03) practice pack",
    "questions": 200,
    "lessons": 4,
-   "sha256": "07bd0ea2671fbfb26a367766af485d8bd0d8dfdd8e63a63fbdc30464a3ed8275",
+   "sha256": "86111b896c0bdc5dc7079bbc98eeecfe30e88fe2df8844b2c4c51db08e89f246",
    "reviewStatus": "draft"
   },
   {
@@ -65,11 +65,11 @@
   {
    "file": "aws-soa-c03-practice.json",
    "packId": "aws-soa-c03-practice",
-   "packVersion": "2026.11.6",
+   "packVersion": "2026.11.7",
    "title": "AWS CloudOps Engineer - Associate (SOA-C03) practice pack",
    "questions": 200,
    "lessons": 2,
-   "sha256": "b9a018a5814bf2b74bacdee258a7fab45a91ad0f64c2441a443844a8ff40e580",
+   "sha256": "927ecbccd244050871df8d5d23ceac376e1a300f565cf5ad8cd0acc2ba220550",
    "reviewStatus": "draft"
   }
  ]

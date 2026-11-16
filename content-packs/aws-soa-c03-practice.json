@@ -1,13 +1,13 @@
 {
   "format": "cloudwalker-content-pack",
   "packId": "aws-soa-c03-practice",
-  "packVersion": "2026.11.6",
+  "packVersion": "2026.11.7",
   "title": "AWS CloudOps Engineer - Associate (SOA-C03) practice pack",
   "publishedAt": "2026-11-09",
   "minAppSchema": 1,
   "checksum": {
     "alg": "SHA-256",
-    "value": "b9a018a5814bf2b74bacdee258a7fab45a91ad0f64c2441a443844a8ff40e580"
+    "value": "927ecbccd244050871df8d5d23ceac376e1a300f565cf5ad8cd0acc2ba220550"
   },
   "content": {
     "exams": [
@@ -1423,22 +1423,22 @@
           "alarms",
           "two-step"
         ],
-        "question": "An Application Load Balancer publishes HTTPCode_Target_5XX_Count and RequestCount. Because a fixed error count pages needlessly at peak traffic and misses problems at night, the team wants to track 5XX responses as a percentage of all requests. The on-call engineer must also be paged automatically when elevated 5XX errors last five minutes. Which approach meets both needs with the least setup?",
+        "question": "An Application Load Balancer publishes HTTPCode_Target_5XX_Count and RequestCount. Because a fixed error count pages needlessly at peak traffic and misses problems at night, the team wants to track 5XX responses as a percentage of all requests, computed as 100 × HTTPCode_Target_5XX_Count / RequestCount. The on-call engineer must also be paged automatically when elevated 5XX errors last five minutes. Which approach meets both needs with the least setup?",
         "options": [
-          "An alarm on a metric math expression that divides 5XX count by RequestCount",
-          "A dashboard graph of a metric math expression dividing 5XX count by requests",
+          "An alarm on a metric math expression that computes that percentage",
+          "A dashboard graph of a metric math expression that computes that percentage",
           "An alarm on the raw HTTPCode_Target_5XX_Count metric with a fixed threshold",
           "A dashboard graph that shows the raw HTTPCode_Target_5XX_Count metric"
         ],
         "correct_index": 0,
-        "correct_rationale": "CloudWatch can alarm on a metric math expression that combines or transforms one or more metrics, so dividing the 5XX count by RequestCount yields an error percentage, and the alarm pages when it stays above the threshold.",
+        "correct_rationale": "CloudWatch alarms can evaluate a metric math expression. With m1 as HTTPCode_Target_5XX_Count and m2 as RequestCount, both using the Sum statistic, the expression 100*(m1/m2) gives the 5XX percentage, and an alarm on it over five one-minute periods pages the on-call engineer when the percentage stays above the threshold.",
         "distractor_rationales": [
           "",
           "The graph shows the percentage the team wants, but a graph pages no one.",
           "The alarm pages people, but on a fixed count, which is the misleading signal the team wants to replace.",
           "A raw count on a graph neither shows the percentage nor pages anyone."
         ],
-        "distractor_summary": "A metric math ratio gives the percentage and the alarm pages; the graphs and the raw-count alarm each miss one need.",
+        "distractor_summary": "A metric math percentage alarm meets both needs; the graphs and the raw-count alarm each miss one.",
         "docLinks": [
           {
             "title": "Create a CloudWatch alarm based on a metric math expression - Amazon CloudWatch",

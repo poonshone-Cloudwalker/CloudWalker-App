@@ -1,13 +1,13 @@
 {
   "format": "cloudwalker-content-pack",
   "packId": "aws-dva-c03-practice",
-  "packVersion": "2026.11.7",
+  "packVersion": "2026.11.8",
   "title": "AWS Developer Associate (DVA-C03) practice pack",
   "publishedAt": "2026-11-10",
   "minAppSchema": 1,
   "checksum": {
     "alg": "SHA-256",
-    "value": "07bd0ea2671fbfb26a367766af485d8bd0d8dfdd8e63a63fbdc30464a3ed8275"
+    "value": "86111b896c0bdc5dc7079bbc98eeecfe30e88fe2df8844b2c4c51db08e89f246"
   },
   "content": {
     "exams": [
@@ -1532,26 +1532,30 @@
           "versions",
           "aliases"
         ],
-        "question": "A Lambda function behind API Gateway serves production traffic from version 7. A new version must be tested with production traffic pinned to an immutable snapshot, and promotion between versions must not require redeploying code. Which mechanism fits?",
+        "question": "A Lambda function behind API Gateway serves production through a prod alias that points to version 7. New code must be tested as version 8 while production stays on version 7, and promotion must not require redeploying code or changing the API. Which mechanism fits?",
         "options": [
-          "Point the API at $LATEST and rely on the deployment pipeline to keep it stable.",
-          "Deploy two copies of the function and switch the API's integration between them.",
-          "Publish version 8 and move the production alias, keeping the API on the alias.",
+          "Test the new code on $LATEST, then point the API at $LATEST once the tests pass.",
+          "Deploy a second function for testing and switch the API's integration to it later.",
+          "Publish version 8, test it through a separate test alias, then point prod at 8.",
           "Store a feature flag in Parameter Store and branch inside the function on its value."
         ],
         "correct_index": 2,
-        "correct_rationale": "Versions are immutable snapshots and aliases are pointers that can be moved without redeploying, so promotion is a pointer update.",
+        "correct_rationale": "A published version is immutable, and an alias is a pointer to a version that can be updated. Production keeps calling the prod alias, which stays on version 7 while testers invoke version 8 through a separate test alias (or its version-qualified ARN). Promotion is an update of the prod alias to version 8, with no code redeploy and no API change.",
         "distractor_rationales": [
-          "$LATEST changes with every deployment and is not an immutable snapshot.",
-          "Two functions drift independently and the switch is a redeploy of configuration at best.",
+          "$LATEST changes with every deployment, so it is not an immutable snapshot, and repointing the API is an API change.",
+          "A second function drifts independently, and switching the integration changes the API configuration.",
           "",
-          "A runtime flag changes behavior inside one deployment and does not pin an immutable snapshot."
+          "A runtime flag changes behavior inside one deployment and does not test or promote an immutable version."
         ],
-        "distractor_summary": "The wrong options expose mutable code, duplicate the function, or flag inside a snapshot.",
+        "distractor_summary": "The wrong options test mutable code, duplicate the function, or branch inside one deployment instead of moving an alias.",
         "docLinks": [
           {
             "title": "Lambda versions",
             "url": "https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html"
+          },
+          {
+            "title": "Create an alias for a Lambda Event Function",
+            "url": "https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html"
           }
         ],
         "examGuideVersion": "DVA-C03 guide retrieved 2026-11-08",
@@ -4356,26 +4360,34 @@
           "streaming",
           "recovery"
         ],
-        "question": "A consumer application had a parsing bug from 09:00 to 11:00, during which it skipped incoming clickstream records. The team must reprocess exactly the records from that window, without the producers re-sending anything. Which Kinesis capability fits?",
+        "question": "A consumer application had a parsing bug from 09:00 to 11:00, during which it skipped incoming clickstream records. It is now 13:00, and every skipped record is still within the stream's current 24-hour retention period. The team must reprocess exactly the records from that window, without the producers re-sending anything. Which Kinesis capability fits?",
         "options": [
           "Resend the affected records by replaying them from the producers' local log files.",
-          "Increase the stream's data retention so a repaired consumer can still read the skipped window.",
+          "Have a repaired consumer read each shard from an AT_TIMESTAMP iterator set to 09:00.",
           "Create a new stream and have producers duplicate all events into both streams during incidents.",
           "Export the shard data to S3 every hour and query it with Athena after each incident."
         ],
         "correct_index": 1,
-        "correct_rationale": "Extending retention keeps records readable after the normal consumption window, so a repaired consumer can read the skipped window without producers re-sending.",
+        "correct_rationale": "The records are still retained, so they remain readable in the stream. A GetShardIterator call with the AT_TIMESTAMP type starts reading at an arbitrary point in time, so a repaired consumer starts each shard at 09:00 and stops at records that arrived after 11:00. Increasing retention is not required here, and it could not restore records that had already expired.",
         "distractor_rationales": [
           "Producer-side replay requires the producers to have retained their own logs and duplicates events at the source.",
           "",
           "Dual-stream duplication doubles producer cost permanently and still needs a recovery path.",
           "Hourly S3 exports create a separate copy for analytics and do not give the stream consumer a way to reprocess in place."
         ],
-        "distractor_summary": "The wrong options re-send data at the source, duplicate streams, or build a copy pipeline instead of extending retention.",
+        "distractor_summary": "The wrong options re-send data at the source, duplicate streams, or build a copy pipeline instead of rereading the retained records.",
         "docLinks": [
           {
             "title": "Amazon Kinesis Data Streams key concepts",
             "url": "https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html"
+          },
+          {
+            "title": "GetShardIterator",
+            "url": "https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html"
+          },
+          {
+            "title": "Change the data retention period",
+            "url": "https://docs.aws.amazon.com/streams/latest/dev/kinesis-extended-retention.html"
           }
         ],
         "examGuideVersion": "DVA-C03 guide retrieved 2026-11-08",
@@ -5716,11 +5728,11 @@
         "options": [
           "An S3 bucket holding the template for each account's engineers to apply manually.",
           "Copying the template into each account and deploying it separately by hand.",
-          "CloudFormation StackSets, which deploys one template across many accounts and Regions.",
+          "CloudFormation StackSets, which deploy one template across many accounts and Regions.",
           "Mailing the template to each account owner for local execution."
         ],
         "correct_index": 2,
-        "correct_rationale": "StackSets deploys and updates a template across multiple accounts and Regions from one definition.",
+        "correct_rationale": "StackSets deploy and update a template across multiple accounts and Regions from one definition.",
         "distractor_rationales": [
           "A shared bucket only stores templates; it deploys nothing.",
           "Per-account manual deployment drifts and has no central update path.",
