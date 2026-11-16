@@ -1,13 +1,13 @@
 {
   "format": "cloudwalker-content-pack",
   "packId": "aws-aif-c01-practice",
-  "packVersion": "2026.11.5",
+  "packVersion": "2026.11.6",
   "title": "AWS AI Practitioner (AIF-C01) practice pack",
   "publishedAt": "2026-11-08",
   "minAppSchema": 1,
   "checksum": {
     "alg": "SHA-256",
-    "value": "750d600081779f9196aedcfbd6ee8cd8b85f08a2e6435ca2455031964ce105c9"
+    "value": "083031ec8952fb54a1471347ce8038d7f4a24540f3d5b6c740ca0903c9142394"
   },
   "content": {
     "exams": [
@@ -2566,7 +2566,7 @@
         "options": [
           "Zero-shot prompting",
           "Least-to-most prompting",
-          "Prompt injection",
+          "Tree-of-thought prompting",
           "Negative prompting"
         ],
         "correct_index": 1,
@@ -2574,7 +2574,7 @@
         "distractor_rationales": [
           "Zero-shot prompting asks the question directly with no examples or decomposition.",
           "",
-          "Prompt injection is an attack that tries to override a model's instructions, not a technique for solving problems.",
+          "Tree-of-thought prompting generates several possible next steps and searches among them; it does not first list subproblems and then solve them in order.",
           "Negative prompting tells the model what to leave out; it does not break a problem into subproblems."
         ],
         "distractor_summary": "Listing subproblems first and then solving them in sequence is least-to-most prompting.",
@@ -2582,10 +2582,6 @@
           {
             "title": "What is Prompt Engineering? - AI Prompt Engineering Explained - AWS",
             "url": "https://aws.amazon.com/what-is/prompt-engineering/"
-          },
-          {
-            "title": "Prompt injection security - Amazon Bedrock",
-            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-injection.html"
           }
         ],
         "examGuideVersion": "AIF-C01 guide retrieved 2026-11-08",
@@ -3064,20 +3060,20 @@
           "explainability",
           "black-box"
         ],
-        "question": "A lender is considering a generative AI model to recommend credit limits. Regulators require the lender to explain to each applicant why a specific limit was chosen. Which limitation of generative AI is most relevant to this decision?",
+        "question": "A lender is considering a generative AI model to recommend credit limits. Regulators require the lender to explain to each applicant why a specific limit was chosen. Which limitation of generative AI is most relevant to meeting this regulatory requirement?",
         "options": [
           "Generative AI models cannot work with numerical data such as income figures",
           "Generative AI models are often considered black boxes that are hard to interpret",
-          "Generative AI models must be retrained before they can answer each request",
-          "Generative AI models on AWS must be bought as dedicated Provisioned Throughput"
+          "Generative AI models can sometimes produce inaccurate or misleading information",
+          "Generative AI models need substantial compute resources to train and to run"
         ],
         "correct_index": 1,
         "correct_rationale": "AWS notes that generative AI models are often considered black boxes, which makes it hard to explain how a specific output was produced, and lists improving interpretability and transparency as a challenge.",
         "distractor_rationales": [
           "Generative models can process numbers in prompts; the regulatory issue is explaining an individual output.",
           "",
-          "Foundation models answer new prompts without retraining for each request.",
-          "Bedrock also offers on-demand inference; payment mode has no bearing on explaining decisions."
+          "Inaccurate output is a real risk, but even a correct recommendation must still be explained, and accuracy does not make an output explainable.",
+          "Compute cost is a real limitation, but it has no bearing on explaining why a specific limit was chosen."
         ],
         "distractor_summary": "A per-applicant explanation requirement collides with the black-box nature of generative models.",
         "docLinks": [
@@ -3652,7 +3648,7 @@
           "Computer vision for the camera images, with no speech recognition at all",
           "Computer vision for the images and speech recognition for the commands",
           "Speech recognition for the spoken commands, with no image analysis at all",
-          "Time-series forecasting applied to both the images and the commands"
+          "Computer vision for the images and machine translation for the commands"
         ],
         "correct_index": 1,
         "correct_rationale": "AWS defines computer vision as the field of AI that derives meaningful information from images and video, and names identifying product defects before products leave the factory as an example. Turning spoken commands into text is automatic speech recognition, which is what Amazon Transcribe provides.",
@@ -3660,9 +3656,9 @@
           "Computer vision finds the defects, but on its own it cannot accept the spoken commands the gloved workers must give.",
           "",
           "Speech recognition handles the commands, but it derives nothing from camera images, so defects go unseen.",
-          "Time-series forecasting predicts future values from past measurements; it neither inspects images nor understands speech."
+          "Machine translation converts text from one language to another; it does not turn the workers' speech into commands, so speech recognition is still missing."
         ],
-        "distractor_summary": "One field per input type: images need computer vision and voice needs speech recognition.",
+        "distractor_summary": "One field per input type: images need computer vision and voice needs speech recognition, not translation.",
         "docLinks": [
           {
             "title": "What is Computer Vision? - Image recognition AI/ML Explained - AWS",
@@ -4795,7 +4791,7 @@
         "options": [
           "Set ### as a stop sequence, leaving response length at default",
           "Set a maximum response length, with no stop sequence configured",
-          "Raise the temperature, leaving every other parameter at default",
+          "Set ### as a stop sequence and lower the Top P value",
           "Set ### as a stop sequence and set a maximum response length"
         ],
         "correct_index": 3,
@@ -4803,10 +4799,10 @@
         "distractor_rationales": [
           "The stop sequence ends generation at ###, but nothing caps the token count of a summary that never writes it early.",
           "The length cap limits tokens, but generation continues past ### until the cap is reached.",
-          "Temperature changes randomness; it neither stops at ### nor caps length.",
+          "The stop sequence ends at ###, but Top P only narrows which candidate tokens are sampled; it does not cap the number of tokens.",
           ""
         ],
-        "distractor_summary": "Ending at a marker is a stop sequence; a token cap is response length.",
+        "distractor_summary": "Ending at a marker is a stop sequence; a token cap is response length, not Top P.",
         "docLinks": [
           {
             "title": "Influence response generation with inference parameters - Amazon Bedrock",
@@ -5119,19 +5115,19 @@
         "question": "A firm is choosing between two Bedrock models for drafting tax guidance. The evaluation prompts must come from its own client questions, because public benchmark prompts do not reflect its specialized domain. Judgments must come from its own tax experts, because quality here needs professional judgment. Which evaluation setup meets both needs with the least effort?",
         "options": [
           "A human evaluation job by its experts, on its own prompt dataset",
-          "An automatic evaluation job, run on its own prompt dataset",
+          "A programmatic evaluation job, run on its own prompt dataset",
           "A human evaluation job by its experts, on a built-in prompt dataset",
-          "An automatic evaluation job, run on a built-in prompt dataset"
+          "A judge-model job told to act as a tax expert, on its own prompt dataset"
         ],
         "correct_index": 0,
         "correct_rationale": "Bedrock model evaluation lets you provide your own custom prompt dataset or use an available built-in dataset, and human-based evaluations can use workers who are employees of your company or a group of subject-matter experts.",
         "distractor_rationales": [
           "",
-          "Its own prompts reflect the domain, but automatic scoring does not give the professional judgment the firm requires.",
+          "Its own prompts reflect the domain, but programmatic metrics do not give the professional judgment the firm requires.",
           "Its experts judge quality, but built-in prompts are the public benchmarks that do not reflect its domain.",
-          "Automatic scoring on built-in prompts fails both requirements."
+          "Its own prompts reflect the domain, but a judge model is a second LLM, so even when told to act as a tax expert it gives no judgment from the firm's own experts."
         ],
-        "distractor_summary": "Domain prompts need a custom dataset; professional judgment needs human evaluators.",
+        "distractor_summary": "Domain prompts need a custom dataset; professional judgment needs the firm's own human experts, not metrics or a judge model.",
         "docLinks": [
           {
             "title": "Evaluate the performance of Amazon Bedrock resources - Amazon Bedrock",
@@ -5435,20 +5431,20 @@
         ],
         "question": "A company's AI writing assistant drafts replies for staff. The design team wants staff to be able to flag drafts that are wrong or unhelpful so the team can see where the assistant falls short and improve it. Which principle of human-centered design for explainable AI does this apply?",
         "options": [
-          "A larger context window",
+          "A SageMaker model card",
           "A user-feedback mechanism",
-          "A lower model temperature",
-          "A longer system prompt"
+          "A Bedrock Guardrails policy",
+          "Open-source model licensing"
         ],
         "correct_index": 1,
         "correct_rationale": "The AIF-C01 exam guide lists user-feedback mechanisms and AI decision transparency as principles of human-centered design for explainable AI. Letting staff flag poor drafts is a user-feedback mechanism.",
         "distractor_rationales": [
-          "A larger context window lets the model read more text; it gives staff no way to report problems.",
+          "A model card documents a model so it can be assessed for transparency; it gives staff no way to flag poor drafts.",
           "",
-          "A lower temperature makes outputs more predictable; it does not collect staff judgments.",
-          "A longer system prompt changes instructions to the model; it does not capture user feedback."
+          "Guardrails filter content to enforce responsible AI policies; they do not collect staff judgments on drafts.",
+          "Open-source licensing helps identify how transparent a model is; it does not capture feedback from the people using it."
         ],
-        "distractor_summary": "Letting users report problems is a feedback mechanism; the distractors are model settings.",
+        "distractor_summary": "Letting users report problems is a feedback mechanism; model cards, Guardrails, and licensing are transparency or safety tools.",
         "docLinks": [
           {
             "title": "Content Domain 4: Guidelines for Responsible AI - AWS Certified AI Practitioner",
