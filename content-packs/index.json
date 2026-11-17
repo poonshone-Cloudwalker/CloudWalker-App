@@ -81,6 +81,16 @@
    "lessons": 0,
    "sha256": "6529b0e92ff4d743660475699a37f88fb7e18cf33e18ed6655be305e407e1309",
    "reviewStatus": "needs-review"
+  },
+  {
+   "file": "builtin-saa-c03-option-length.json",
+   "packId": "builtin-saa-c03-option-length",
+   "packVersion": "2026.11.11",
+   "title": "SAA-C03 answer-length fix (196 questions)",
+   "questions": 196,
+   "lessons": 0,
+   "sha256": "1127c5b63b36015352d381331f536a7f0bdf5d7ed6903535f178ec9bb7fa5643",
+   "reviewStatus": "needs-review"
   }
  ]
 }
