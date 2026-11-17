@@ -73,6 +73,16 @@
    "reviewStatus": "draft"
   },
   {
+   "file": "builtin-az305-option-length.json",
+   "packId": "builtin-az305-option-length",
+   "packVersion": "2026.11.12",
+   "title": "AZ-305 answer-length fix (200 questions)",
+   "questions": 200,
+   "lessons": 0,
+   "sha256": "2d3f747cac5cf2d9b70c4dc58df10ba076547dffc19cc9bd739d73c621b09832",
+   "reviewStatus": "needs-review"
+  },
+  {
    "file": "builtin-pca-option-length.json",
    "packId": "builtin-pca-option-length",
    "packVersion": "2026.11.10",
