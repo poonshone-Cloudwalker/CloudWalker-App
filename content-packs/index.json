@@ -1,6 +1,6 @@
 {
  "format": "cloudwalker-pack-index",
- "generated": "2026-11-16",
+ "generated": "2026-11-17",
  "packs": [
   {
    "file": "aws-aif-c01-practice.json",
@@ -71,6 +71,16 @@
    "lessons": 2,
    "sha256": "927ecbccd244050871df8d5d23ceac376e1a300f565cf5ad8cd0acc2ba220550",
    "reviewStatus": "draft"
+  },
+  {
+   "file": "builtin-pca-option-length.json",
+   "packId": "builtin-pca-option-length",
+   "packVersion": "2026.11.10",
+   "title": "PCA answer-length fix and explanation gaps (200 questions)",
+   "questions": 198,
+   "lessons": 0,
+   "sha256": "6529b0e92ff4d743660475699a37f88fb7e18cf33e18ed6655be305e407e1309",
+   "reviewStatus": "needs-review"
   }
  ]
 }
