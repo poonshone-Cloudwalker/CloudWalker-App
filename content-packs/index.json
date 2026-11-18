@@ -73,6 +73,16 @@
    "reviewStatus": "draft"
   },
   {
+   "file": "builtin-ace-option-length.json",
+   "packId": "builtin-ace-option-length",
+   "packVersion": "2026.11.14",
+   "title": "ACE answer-length fix (198 questions)",
+   "questions": 198,
+   "lessons": 0,
+   "sha256": "32f91a117ef95d6b817a80ea79885bd165fee1dc3da282156b66da37ee1e5461",
+   "reviewStatus": "needs-review"
+  },
+  {
    "file": "builtin-az305-option-length.json",
    "packId": "builtin-az305-option-length",
    "packVersion": "2026.11.12",

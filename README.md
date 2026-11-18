@@ -104,7 +104,7 @@ The content-pack system (Content updates page) carries questions, lessons, labs 
 
 `content-packs/` holds the AWS practice packs (CLF-C02, AIF-C01, SOA-C03, DVA-C03, DEA-C01, SCS-C03, SAP-C03; 200 questions each). The Pages workflow publishes them at `<site>/packs/<file>.json`, with `packs/index.json` listing versions and checksums. In Content updates, paste a pack address and review the preview before merging. Every question is `generated-practice` and `draft`. Update a pack by replacing its file with a newer `packVersion` and regenerating `index.json`.
 
-`builtin-pca-option-length.json` is a replace-by-id pack for the built-in PCA questions: it rebalances option lengths and fills empty distractor summaries. Its questions keep `origin: reserve` and `needs-review`, so they stay in practice. `builtin-saa-c03-option-length.json` does the same for 196 built-in SAA-C03 questions. `builtin-az305-option-length.json` does the same for 200 built-in AZ-305 questions. `builtin-pcne-option-length.json` does the same for 195 built-in PCNE questions.
+`builtin-pca-option-length.json` is a replace-by-id pack for the built-in PCA questions: it rebalances option lengths and fills empty distractor summaries. Its questions keep `origin: reserve` and `needs-review`, so they stay in practice. `builtin-saa-c03-option-length.json` does the same for 196 built-in SAA-C03 questions. `builtin-az305-option-length.json` does the same for 200 built-in AZ-305 questions. `builtin-pcne-option-length.json` does the same for 195 built-in PCNE questions. `builtin-ace-option-length.json` does the same for 198 built-in ACE questions.
 
 ## Rules the build enforces
 
