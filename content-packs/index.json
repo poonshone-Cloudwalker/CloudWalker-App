@@ -83,6 +83,16 @@
    "reviewStatus": "needs-review"
   },
   {
+   "file": "builtin-aib-option-length.json",
+   "packId": "builtin-aib-option-length",
+   "packVersion": "2026.11.18",
+   "title": "AIB-C01 answer-length fix (147 questions)",
+   "questions": 147,
+   "lessons": 0,
+   "sha256": "3cece421e6e282b2dc3f6b60432ef40645f1a04106aab839bd732ba0239bfbc5",
+   "reviewStatus": "needs-review"
+  },
+  {
    "file": "builtin-az305-option-length.json",
    "packId": "builtin-az305-option-length",
    "packVersion": "2026.11.12",
