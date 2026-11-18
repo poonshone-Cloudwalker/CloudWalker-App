@@ -1,6 +1,6 @@
 {
  "format": "cloudwalker-pack-index",
- "generated": "2026-11-17",
+ "generated": "2026-11-18",
  "packs": [
   {
    "file": "aws-aif-c01-practice.json",
@@ -90,6 +90,16 @@
    "questions": 198,
    "lessons": 0,
    "sha256": "6529b0e92ff4d743660475699a37f88fb7e18cf33e18ed6655be305e407e1309",
+   "reviewStatus": "needs-review"
+  },
+  {
+   "file": "builtin-pcne-option-length.json",
+   "packId": "builtin-pcne-option-length",
+   "packVersion": "2026.11.13",
+   "title": "PCNE answer-length fix (195 questions)",
+   "questions": 195,
+   "lessons": 0,
+   "sha256": "4f267731177f8e841285ee4a97d1a23a86d77b0d8c65d89826fd24495b27cc8c",
    "reviewStatus": "needs-review"
   },
   {
