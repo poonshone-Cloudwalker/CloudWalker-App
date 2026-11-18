@@ -131,6 +131,16 @@
    "lessons": 0,
    "sha256": "1127c5b63b36015352d381331f536a7f0bdf5d7ed6903535f178ec9bb7fa5643",
    "reviewStatus": "needs-review"
+  },
+  {
+   "file": "builtin-sy701-option-length.json",
+   "packId": "builtin-sy701-option-length",
+   "packVersion": "2026.11.17",
+   "title": "SY0-701 answer-length fix (90 questions)",
+   "questions": 90,
+   "lessons": 0,
+   "sha256": "684f1809d7c40b66b13bec2c9a4f1c3e0ae5388a0bf89f0e9b85314cab3f9aa9",
+   "reviewStatus": "needs-review"
   }
  ]
 }

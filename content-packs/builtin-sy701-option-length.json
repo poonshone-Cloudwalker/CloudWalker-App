@@ -1,0 +1,2576 @@
+{
+ "format": "cloudwalker-content-pack",
+ "packId": "builtin-sy701-option-length",
+ "packVersion": "2026.11.17",
+ "title": "SY0-701 answer-length fix (90 questions)",
+ "publishedAt": "2026-11-18",
+ "minAppSchema": 1,
+ "checksum": {
+  "alg": "SHA-256",
+  "value": "04cea22b9f09a3fa5a311dcae894a2067f00a28d1e4a20308f8a960b876529c0"
+ },
+ "content": {
+  "exams": [],
+  "questions": [
+   {
+    "id": "comptia-secplus-006",
+    "source_id": "SEC-006",
+    "exam_code": "SY0-701",
+    "domain": "1. General Security Concepts",
+    "subdomain": "1.1 Compare and contrast various types of security controls",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "IDS",
+     "MFA"
+    ],
+    "tags": [],
+    "question": "A security manager is classifying the organization's controls by category. Which pair consists of two operational controls?",
+    "options": [
+     "Security awareness training from HR and configuration management by system administrators",
+     "A web application firewall and an intrusion detection system that watch the network overall.",
+     "The information security policy and the annual risk assessment that the company performs overall.",
+     "Full-disk encryption and multifactor authentication on all of the workstations"
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Operational controls are implemented and carried out primarily by people, such as running awareness training or following configuration management procedures.",
+    "distractor_summary": "Firewalls, IDS, encryption, and MFA are technical controls, while policies and risk assessments are managerial controls.",
+    "section": 30,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-008",
+    "source_id": "SEC-008",
+    "exam_code": "SY0-701",
+    "domain": "1. General Security Concepts",
+    "subdomain": "1.2 Summarize fundamental security concepts",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "RBAC"
+    ],
+    "tags": [],
+    "question": "A finance department needs to be able to prove that a specific manager approved each wire transfer, so that the manager can't later claim the approval came from someone else. Which concept and mechanism meet this need?",
+    "options": [
+     "Confidentiality, by encrypting each approval message throughout the organization.",
+     "Availability, by running redundant approval servers throughout the organization overall.",
+     "Non-repudiation, through digital signatures made with the manager's private key",
+     "Authorization, by role-based access control on the approval system in production."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Non-repudiation provides proof of origin, and a digital signature created with a private key only that manager holds ties the approval to them.",
+    "distractor_summary": "Encryption protects secrecy, redundancy protects uptime, and RBAC controls who may approve but doesn't prove who actually did.",
+    "section": 30,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-015",
+    "source_id": "SEC-015",
+    "exam_code": "SY0-701",
+    "domain": "1. General Security Concepts",
+    "subdomain": "1.3 Explain the importance of change management processes",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [],
+    "question": "A security patch for the customer portal requires restarting the web service. The operations team agrees with business owners to apply it every second Sunday between 2:00 and 4:00 a.m., when traffic is lowest. What change management concept does this describe?",
+    "options": [
+     "Ownership, which names the person who is responsible for the portal",
+     "A maintenance window, which is the scheduled time for the planned downtime",
+     "An allow list, which names the software that may run on the servers",
+     "Test results, which show whether the patch works as intended"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "A maintenance window is a pre-agreed time for making changes that minimizes impact on users.",
+    "distractor_summary": "Ownership identifies who is responsible for the change, an allow list controls what can run, and test results show whether the change worked in testing.",
+    "section": 30,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-017",
+    "source_id": "SEC-017",
+    "exam_code": "SY0-701",
+    "domain": "1. General Security Concepts",
+    "subdomain": "1.3 Explain the importance of change management processes",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "networking",
+     "governance",
+     "risk-compliance"
+    ],
+    "question": "After an outage, auditors ask who changed a firewall configuration file, what exactly was changed, and when. The team needs a way to answer this quickly in the future and to roll back to any earlier configuration. What should the team implement?",
+    "options": [
+     "Version control for the configuration files, which logs who changed what and when",
+     "Application allow listing, which limits the software that may run on the firewall overall.",
+     "A documented change owner, who is named for each of the changes",
+     "A standard operating procedure that explains the steps of each change for the team."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Version control records every change with author, time, and content, and allows reverting to earlier versions.",
+    "distractor_summary": "Allow listing controls executable software, a change owner is accountable for a change but doesn't record history, and an SOP describes how to perform a task.",
+    "section": 30,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-020",
+    "source_id": "SEC-020",
+    "exam_code": "SY0-701",
+    "domain": "1. General Security Concepts",
+    "subdomain": "1.4 Explain the importance of using appropriate cryptographic solutions",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "CRL",
+     "OCSP"
+    ],
+    "tags": [
+     "cryptography"
+    ],
+    "question": "A web browser must check whether a server's certificate has been revoked. To avoid downloading a large list of revoked certificates, it sends a query about that single certificate and receives a signed \"good\", \"revoked\", or \"unknown\" response. Which mechanism is the browser using?",
+    "options": [
+     "Certificate revocation list (CRL), a large downloaded list of revoked certificates",
+     "Certificate signing request (CSR), which asks a CA to issue a certificate",
+     "Online Certificate Status Protocol (OCSP), a query about a single certificate",
+     "Wildcard certificate, which covers every subdomain of one domain name"
+    ],
+    "correct_index": 2,
+    "correct_rationale": "OCSP returns the real-time status of a single certificate, avoiding the download of a full revocation list.",
+    "distractor_summary": "A CRL is the full list of revoked certificates published by the CA, a CSR is a request to obtain a certificate, and a wildcard certificate covers multiple subdomains.",
+    "section": 30,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-023",
+    "source_id": "SEC-023",
+    "exam_code": "SY0-701",
+    "domain": "1. General Security Concepts",
+    "subdomain": "1.4 Explain the importance of using appropriate cryptographic solutions",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [
+     "TLS"
+    ],
+    "tags": [
+     "cryptography"
+    ],
+    "question": "A company needs one TLS certificate that will work for www.example.com, shop.example.com, mail.example.com, and any subdomains it adds later. Which type of certificate fits best?",
+    "options": [
+     "A wildcard certificate for *.example.com that covers each of the subdomains",
+     "A self-signed certificate that the company creates and signs by itself overall.",
+     "A code-signing certificate that is used to sign software releases by default.",
+     "A root CA certificate that sits at the top of a trust chain for the application."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "A wildcard certificate secures every first-level subdomain of a domain, including ones added later.",
+    "distractor_summary": "A self-signed certificate won't be trusted by public browsers, a code-signing certificate signs software rather than securing websites, and a root CA certificate is used to issue other certificates.",
+    "section": 32,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-024",
+    "source_id": "SEC-024",
+    "exam_code": "SY0-701",
+    "domain": "1. General Security Concepts",
+    "subdomain": "1.4 Explain the importance of using appropriate cryptographic solutions",
+    "question_type": "concept",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "security",
+     "observability",
+     "cryptography"
+    ],
+    "question": "Which statement correctly describes asymmetric encryption used to send a confidential message?",
+    "options": [
+     "The sender encrypts with their own private key, and anyone can decrypt with their public key overall.",
+     "Both parties use the same secret key to encrypt and to decrypt the message across the subscriptions.",
+     "The sender encrypts with the recipient's public key; only the recipient's private key decrypts it.",
+     "The message is hashed, so it can't be read by anyone who receives it."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "For confidentiality, data is encrypted with the recipient's public key so that only the holder of the matching private key can decrypt it.",
+    "distractor_summary": "Encrypting with your own private key creates a digital signature, which proves origin but not secrecy. A shared key is symmetric encryption, and hashing is one-way, not encryption.",
+    "section": 32,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-029",
+    "source_id": "SEC-029",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.1 Compare and contrast common threat actors and motivations",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [
+     "IDS"
+    ],
+    "tags": [
+     "security"
+    ],
+    "question": "The IDS records a flood of noisy, well-known exploit attempts against a web server, copied from a public exploit site and aimed at software the server doesn't even run. Which threat actor is most likely?",
+    "options": [
+     "Nation-state, a government-backed group with large funding and custom tools",
+     "Unskilled attacker, who runs public exploits without much knowledge",
+     "Organized crime, a group that attacks to make money from its victims",
+     "Insider threat, a current or former employee with legitimate access"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Unskilled attackers rely on existing tools and scripts without understanding them, so their attempts are noisy and poorly targeted.",
+    "distractor_summary": "Nation-states and organized crime groups tend to be stealthy and targeted, and nothing indicates internal access.",
+    "section": 32,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-030",
+    "source_id": "SEC-030",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.1 Compare and contrast common threat actors and motivations",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "security",
+     "databases"
+    ],
+    "question": "A database administrator learns he'll be laid off next month. He schedules a script that will delete production tables 30 days after his account is disabled. Which description best fits this threat?",
+    "options": [
+     "A hacktivist, who attacks because of an ethical or political cause",
+     "An unskilled attacker who uses public tools to cause some damage",
+     "A nation-state that seeks disruption of a rival country's systems",
+     "An insider threat with internal access and a revenge motive"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "The administrator is an insider who uses legitimate access and knowledge of internal systems, motivated by revenge; the delayed script is a logic bomb.",
+    "distractor_summary": "The other actors are external and don't match the personal grievance.",
+    "section": 32,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-031",
+    "source_id": "SEC-031",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.1 Compare and contrast common threat actors and motivations",
+    "question_type": "concept",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "security"
+    ],
+    "question": "Which attribute best explains why insider threats are often harder to detect than external attackers?",
+    "options": [
+     "Insiders already have legitimate access and knowledge of internal systems and processes.",
+     "Insiders always have more funding than the external groups that attack the company overall.",
+     "Insiders are usually backed by nation-states that give them their orders for the application.",
+     "Insiders rely mainly on zero-day exploits to get into the internal systems in every region."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Because insiders use legitimate credentials and know where valuable data lives, their activity can look like normal work.",
+    "distractor_summary": "Funding, nation-state backing, and zero-day use aren't typical characteristics of insiders.",
+    "section": 32,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-034",
+    "source_id": "SEC-034",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.2 Explain common threat vectors and attack surfaces",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "security",
+     "high-availability"
+    ],
+    "question": "Attackers want into a regional power utility but can't get past its email filtering. They compromise an industry association website that the utility's engineers visit regularly and plant malicious code that infects visitors from the utility's IP range. What type of attack is this?",
+    "options": [
+     "Phishing, which sends deceptive emails to the staff of the utility overall.",
+     "Pretexting, which invents a false story to gain the trust of a victim",
+     "Impersonation, which poses as a trusted person or an organization",
+     "A watering hole attack, which infects a site that the targets visit"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "A watering hole attack compromises a website the target group already trusts and visits, then infects those visitors.",
+    "distractor_summary": "No message was sent to the victims, and no one was impersonated or given a false story.",
+    "section": 32,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-037",
+    "source_id": "SEC-037",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.2 Explain common threat vectors and attack surfaces",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [],
+    "tags": [
+     "networking",
+     "security",
+     "risk-compliance"
+    ],
+    "question": "Attackers breach a network management software vendor's build system and insert a backdoor into a legitimate, digitally signed update. Thousands of customers install the update automatically. What best describes this attack vector?",
+    "options": [
+     "Vulnerable software on the client systems that the vendor never updated",
+     "Open service ports on the servers of the customers of the vendor",
+     "Default credentials on the management systems of the customers",
+     "A supply chain attack through a trusted software provider"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Compromising a vendor so that malicious code reaches customers through trusted updates is a supply chain attack via a software provider.",
+    "distractor_summary": "The customers' software wasn't inherently flawed, and no open ports or default credentials were exploited.",
+    "section": 32,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-038",
+    "source_id": "SEC-038",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.2 Explain common threat vectors and attack surfaces",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "networking",
+     "security"
+    ],
+    "question": "In a hotel lobby near a corporate office, an attacker sets up a wireless access point broadcasting the company's guest network SSID with a stronger signal, then captures the traffic of employees who connect. What is this?",
+    "options": [
+     "An evil twin wireless network that copies the real SSID",
+     "A Bluetooth attack on the phones of the people in the lobby",
+     "An unsecure wired network that is open to the guests of the hotel",
+     "A watering hole attack on a site that the staff often visit"
+    ],
+    "correct_index": 0,
+    "correct_rationale": "An evil twin is a rogue access point impersonating a legitimate SSID to trick devices into connecting, which exploits unsecure wireless networks.",
+    "distractor_summary": "It doesn't use Bluetooth or wired connections, and no trusted website was compromised.",
+    "section": 32,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-040",
+    "source_id": "SEC-040",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.2 Explain common threat vectors and attack surfaces",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "security"
+    ],
+    "question": "An accounts payable clerk receives an email from a real supplier's mailbox, which attackers had compromised. It says the supplier's bank details have changed and asks for this month's invoice to be paid to a new account. Which attack is this?",
+    "options": [
+     "Smishing, which tricks people with text messages sent to their phones",
+     "Business email compromise, which uses a real supplier's hijacked mailbox",
+     "A watering hole attack, which infects a site that many suppliers visit",
+     "Brand impersonation, which copies the look of a well-known company"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Business email compromise uses compromised or spoofed business email accounts to trick staff into fraudulent payments or data disclosure.",
+    "distractor_summary": "It's email rather than SMS, no website was compromised, and the attacker used the real supplier's mailbox rather than impersonating a brand.",
+    "section": 32,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-041",
+    "source_id": "SEC-041",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.3 Explain various types of vulnerabilities",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [],
+    "tags": [
+     "iam",
+     "security",
+     "disaster-recovery"
+    ],
+    "question": "A privileged backup utility checks that a user has permission to read a file and then, a few milliseconds later, opens the file. An attacker repeatedly swaps the file for a symbolic link to /etc/shadow during that gap and eventually reads the protected file. Which vulnerability is being exploited?",
+    "options": [
+     "Buffer overflow, which writes past the end of a memory buffer",
+     "SQL injection, which inserts database commands into an input field",
+     "Memory injection, which places malicious code into a running process",
+     "A time-of-check to time-of-use (TOC/TOU) race condition"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "A TOC/TOU race condition happens when the state of a resource changes between the moment it's checked and the moment it's used.",
+    "distractor_summary": "Nothing overflows a buffer, no database query is manipulated, and no code is injected into another process's memory.",
+    "section": 33,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-043",
+    "source_id": "SEC-043",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.3 Explain various types of vulnerabilities",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "security"
+    ],
+    "question": "An attacker posts a comment on a support forum that contains hidden JavaScript. Every user who views the thread has the script run in their browser, which sends their session cookie to the attacker's server. What vulnerability does the forum have?",
+    "options": [
+     "SQL injection, which inserts database commands into a form field",
+     "Cross-site request forgery, which makes a browser send unwanted requests overall.",
+     "Stored cross-site scripting (XSS), where the script is saved on the server",
+     "A race condition, which depends on the timing of two operations"
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Stored XSS saves malicious script on the site and runs it in the browser of everyone who views the page; output encoding and input validation prevent it.",
+    "distractor_summary": "SQL injection targets the database, CSRF tricks a user's browser into sending an unwanted request, and a race condition depends on timing.",
+    "section": 33,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-044",
+    "source_id": "SEC-044",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.3 Explain various types of vulnerabilities",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [],
+    "tags": [
+     "security",
+     "risk-compliance"
+    ],
+    "question": "A cloud provider patches a hypervisor flaw that let code running inside one customer's guest virtual machine execute commands on the underlying host, putting every other tenant's VMs on that host at risk. What type of vulnerability was this?",
+    "options": [
+     "Resource reuse, in which freed memory or storage is given to a new user",
+     "Virtual machine escape, in which guest code runs commands on the host",
+     "Side loading, in which an app is installed from outside the official store",
+     "Jailbreaking, in which a user removes the limits that a phone vendor sets"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "VM escape breaks out of a guest VM's isolation to reach the hypervisor or host.",
+    "distractor_summary": "Resource reuse leaves data in memory or storage that's reassigned to another tenant, while side loading and jailbreaking are mobile device issues.",
+    "section": 33,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-047",
+    "source_id": "SEC-047",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.3 Explain various types of vulnerabilities",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "security",
+     "devops",
+     "risk-compliance"
+    ],
+    "question": "A manufacturer's production line is controlled by PCs running an operating system version the vendor stopped supporting three years ago. New vulnerabilities in that OS are published, but no patches will ever be released for it. What vulnerability does this describe?",
+    "options": [
+     "A zero-day, which is a flaw that the vendor does not yet know about",
+     "A race condition, which depends on the timing of two operations",
+     "Resource reuse, in which freed memory is handed to another process",
+     "End-of-life systems that no longer get security updates from the vendor"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "End-of-life (and legacy) systems stay exposed to every newly found vulnerability because the vendor no longer patches them; compensating controls such as isolation are needed until replacement.",
+    "distractor_summary": "The flaws are publicly known, so this isn't a zero-day, and nothing involves timing or reused resources.",
+    "section": 33,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-049",
+    "source_id": "SEC-049",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.3 Explain various types of vulnerabilities",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "TLS"
+    ],
+    "tags": [
+     "security",
+     "governance",
+     "risk-compliance"
+    ],
+    "question": "An audit finds that an internal payments application only supports TLS 1.0 and signs its records with MD5. Both are known to be broken. What category of vulnerability is this?",
+    "options": [
+     "A cloud misconfiguration, such as a storage bucket that is left open",
+     "Memory injection, in which malicious code is placed into a process",
+     "A cryptographic vulnerability caused by weak or deprecated algorithms",
+     "A software supply chain problem that comes from a third-party library"
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Relying on deprecated protocols and broken hash functions is a cryptographic vulnerability that enables downgrade, interception, and collision attacks.",
+    "distractor_summary": "The problem lies in the algorithms, not the cloud, process memory, or a supplier.",
+    "section": 33,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-056",
+    "source_id": "SEC-056",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.4 Analyze indicators of malicious activity",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [],
+    "tags": [
+     "networking",
+     "security"
+    ],
+    "question": "A company's website is overwhelmed by large DNS responses it never requested. Analysis shows attackers sent small queries to thousands of open DNS resolvers using the company's IP address as the spoofed source. What type of attack is this?",
+    "options": [
+     "DNS cache poisoning, which puts false records into a resolver overall.",
+     "An on-path attack, which sits between a client and a server",
+     "A replay attack, which resends a captured message at a later time",
+     "A reflected, amplified DDoS attack that uses open DNS resolvers"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Spoofing the victim's address so third-party servers send it far larger responses is a reflected, amplified DDoS. DNS poisoning corrupts resolver records, an on-path attack intercepts traffic, and a replay attack resends captured data.",
+    "distractor_summary": "",
+    "section": 33,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-060",
+    "source_id": "SEC-060",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.4 Analyze indicators of malicious activity",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [],
+    "tags": [
+     "security",
+     "cryptography"
+    ],
+    "question": "An attacker captures a user's NTLM password hash from a compromised workstation and uses it to authenticate to a file server, without ever learning the user's actual password. What type of attack is this?",
+    "options": [
+     "Password spraying, which tries a few common passwords on many accounts overall.",
+     "Credential replay (pass-the-hash), which reuses a captured hash to log in",
+     "A downgrade attack, which forces a system to use a weaker protocol",
+     "RFID cloning, which copies the data of an access card"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Credential replay reuses captured authentication material, here a password hash, to log in as the victim.",
+    "distractor_summary": "Spraying guesses passwords, a downgrade weakens protocol negotiation, and RFID cloning copies physical access badges.",
+    "section": 33,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-062",
+    "source_id": "SEC-062",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.5 Explain the purpose of mitigation techniques",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "networking"
+    ],
+    "question": "A retailer moves its point-of-sale terminals onto their own VLAN, separated from the guest Wi-Fi and the corporate office network, with a firewall allowing only the traffic the payment processor needs. Which mitigation is this?",
+    "options": [
+     "Network segmentation, which separates systems into isolated zones",
+     "Decommissioning, which retires systems that are no longer in use overall.",
+     "Encryption, which makes the data unreadable without a key in Azure.",
+     "Monitoring, which collects and reviews the logs of the network overall."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Segmentation divides the network into zones with controlled traffic between them, limiting how far an attacker can move and reducing compliance scope.",
+    "distractor_summary": "Nothing is being retired, encrypted, or simply watched.",
+    "section": 36,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-065",
+    "source_id": "SEC-065",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.5 Explain the purpose of mitigation techniques",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "networking"
+    ],
+    "question": "An administrator is preparing a new Linux web server for production. Which set of actions best represents system hardening?",
+    "options": [
+     "Adding extra monitoring tools, enabling every service, and keeping the vendor's default passwords for the team.",
+     "Removing unneeded software, disabling unused ports, changing default passwords, and enabling a host firewall",
+     "Placing the server in the DMZ and leaving its settings at the defaults of the vendor across the subscriptions.",
+     "Taking a full backup and listing the server in the asset inventory of the company"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Hardening reduces the attack surface by removing what isn't needed, closing unused ports and services, replacing default credentials, and adding host protections.",
+    "distractor_summary": "Enabling everything and keeping defaults does the opposite, and backups and inventory are good practice but don't harden the system.",
+    "section": 36,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-066",
+    "source_id": "SEC-066",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.5 Explain the purpose of mitigation techniques",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "cryptography"
+    ],
+    "question": "A company is retiring storage arrays that held customer records. The drives are cryptographically erased and then physically shredded, the arrays are removed from the asset inventory, and their management certificates are revoked. What process is this?",
+    "options": [
+     "Isolation, which separates a system from the rest of the network overall.",
+     "Patching, which fixes the known flaws in software with an update",
+     "Decommissioning, which retires assets securely and removes their data",
+     "Segmentation, which divides a network into separate zones"
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Decommissioning securely retires assets, including data sanitization, inventory updates, and removal of credentials or certificates, so they can't become a forgotten risk.",
+    "distractor_summary": "The arrays aren't being contained, updated, or placed in a network zone.",
+    "section": 36,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-067",
+    "source_id": "SEC-067",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.5 Explain the purpose of mitigation techniques",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "EDR"
+    ],
+    "tags": [
+     "devops"
+    ],
+    "question": "A company wants its laptops to detect suspicious behavior such as process injection and credential dumping. It also wants analysts to be able to isolate a laptop remotely and review a timeline of what happened on it. Which hardening control should it deploy?",
+    "options": [
+     "Endpoint detection and response (EDR), which detects threats and can isolate hosts",
+     "A host-based firewall, which filters traffic that reaches the laptop",
+     "Full-disk encryption, which protects data if the laptop is stolen",
+     "An application deny list, which blocks specific programs from running"
+    ],
+    "correct_index": 0,
+    "correct_rationale": "EDR monitors endpoint behavior, raises alerts on suspicious activity, supports remote isolation, and records telemetry for investigation.",
+    "distractor_summary": "A host firewall filters network traffic, full-disk encryption protects data at rest, and deny lists block only known software.",
+    "section": 36,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-068",
+    "source_id": "SEC-068",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.5 Explain the purpose of mitigation techniques",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "devops"
+    ],
+    "question": "After a hardening project, administrators find that servers gradually drift back to insecure settings as people make manual changes. The company deploys a tool that continuously checks each server against the approved baseline and automatically reverts unauthorized changes. Which mitigation is this?",
+    "options": [
+     "Monitoring only, which reports on the drift but does not fix it by default.",
+     "Least privilege, which gives users only the access that they need in Azure.",
+     "Decommissioning, which retires systems that are no longer in use as needed.",
+     "Configuration enforcement, which reverts systems to the approved baseline"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Configuration enforcement keeps systems at their approved baseline and corrects drift automatically.",
+    "distractor_summary": "Monitoring alone would report the drift without fixing it, least privilege limits access rights, and decommissioning retires systems.",
+    "section": 36,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-070",
+    "source_id": "SEC-070",
+    "exam_code": "SY0-701",
+    "domain": "3. Security Architecture",
+    "subdomain": "3.1 Compare and contrast security implications of architecture models",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "iam"
+    ],
+    "question": "An organization moves its email to a software-as-a-service (SaaS) provider. Which security responsibility remains with the organization?",
+    "options": [
+     "Patching the application servers that run the email service",
+     "The physical security of the data center that hosts the service overall.",
+     "Maintaining the hypervisor that runs the provider's virtual machines",
+     "Managing user accounts, access permissions, and how data is shared"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "In SaaS, the provider runs the infrastructure and application, but the customer still controls identities, access, configuration, and its own data.",
+    "distractor_summary": "Servers, data centers, and hypervisors are the provider's responsibility.",
+    "section": 36,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-071",
+    "source_id": "SEC-071",
+    "exam_code": "SY0-701",
+    "domain": "3. Security Architecture",
+    "subdomain": "3.1 Compare and contrast security implications of architecture models",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "networking",
+     "devops"
+    ],
+    "question": "A cloud team stops building environments by clicking through the console. Instead, it defines networks, firewall rules, and servers in version-controlled templates that are reviewed and scanned before deployment. What is the main security benefit of this infrastructure-as-code (IaC) approach?",
+    "options": [
+     "It removes the need for any kind of access control on the cloud",
+     "It guarantees that no vulnerabilities exist in the code of the team",
+     "Environments become consistent, reviewable, and repeatable, which reduces drift",
+     "It makes the infrastructure physically isolated from other customers for the team."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "IaC makes configuration consistent, auditable, and testable before deployment, reducing human error and drift.",
+    "distractor_summary": "It still needs access controls, its templates can contain flaws (which is why they're scanned), and it doesn't provide physical isolation.",
+    "section": 36,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-072",
+    "source_id": "SEC-072",
+    "exam_code": "SY0-701",
+    "domain": "3. Security Architecture",
+    "subdomain": "3.1 Compare and contrast security implications of architecture models",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "iam",
+     "serverless"
+    ],
+    "question": "A team moves its image-processing job to serverless functions. Which security responsibility does the team still own?",
+    "options": [
+     "Patching the underlying server operating system of the function hosts overall.",
+     "Securing the function code, its dependencies, and its granted permissions",
+     "The physical security of the hosts that run the functions for the application.",
+     "Capacity planning for the servers that run the functions for the application."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "With serverless, the provider manages servers, operating systems, and scaling, but the customer remains responsible for application code, third-party libraries, and the identity and permissions each function uses.",
+    "distractor_summary": "The other options belong to the provider.",
+    "section": 36,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-073",
+    "source_id": "SEC-073",
+    "exam_code": "SY0-701",
+    "domain": "3. Security Architecture",
+    "subdomain": "3.1 Compare and contrast security implications of architecture models",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "TLS"
+    ],
+    "tags": [
+     "networking",
+     "security",
+     "cryptography"
+    ],
+    "question": "A company breaks a monolithic application into 40 microservices that call each other over APIs. Which security implication should the architects plan for?",
+    "options": [
+     "The attack surface shrinks because only one service is exposed to the network",
+     "Service-to-service calls no longer need any authentication between services",
+     "Patching becomes unnecessary because each one of the services is small",
+     "More APIs widen the attack surface, so each service needs authentication and encryption"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Microservices add many internal APIs, each a potential entry point, so they need service identities, least-privilege permissions, and encryption such as mutual TLS. The benefit is a smaller blast radius per service, but only if those controls are in place.",
+    "distractor_summary": "Small services still need patching.",
+    "section": 36,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-076",
+    "source_id": "SEC-076",
+    "exam_code": "SY0-701",
+    "domain": "3. Security Architecture",
+    "subdomain": "3.1 Compare and contrast security implications of architecture models",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "networking",
+     "disaster-recovery",
+     "observability",
+     "devops",
+     "risk-compliance"
+    ],
+    "question": "A hospital's infusion pumps run a vendor-controlled real-time operating system (RTOS). The hospital can't patch them, and the vendor releases fixes only once a year. What is the best way to reduce the risk?",
+    "options": [
+     "Install antivirus on each of the pumps, although the vendor controls them",
+     "Put the pumps on a segmented network with tight access limits and monitoring",
+     "Connect the pumps directly to the internet so the vendor can manage them",
+     "Replace the firmware with a general-purpose operating system of the hospital"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "When devices can't be patched, compensating controls such as segmentation, strict access rules, and monitoring limit exposure.",
+    "distractor_summary": "Embedded RTOS devices usually can't run antivirus, internet exposure increases risk, and replacing medical device firmware would void its certification and support.",
+    "section": 36,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-077",
+    "source_id": "SEC-077",
+    "exam_code": "SY0-701",
+    "domain": "3. Security Architecture",
+    "subdomain": "3.1 Compare and contrast security implications of architecture models",
+    "question_type": "concept",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "security",
+     "containers"
+    ],
+    "question": "Compared with virtual machines, what security implication of containers must architects consider?",
+    "options": [
+     "Containers each run a separate kernel, so hardware fully isolates them",
+     "Containers share the host kernel, so a kernel flaw can affect every container",
+     "Containers can't be scanned for vulnerabilities by any kind of tool",
+     "Containers don't need access controls, because they are short-lived"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Containers isolate processes but share the host kernel, so the isolation boundary is weaker than a hypervisor's; hardening the host and limiting container privileges matter.",
+    "distractor_summary": "Containers are routinely image-scanned and need access controls like anything else.",
+    "section": 36,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-078",
+    "source_id": "SEC-078",
+    "exam_code": "SY0-701",
+    "domain": "3. Security Architecture",
+    "subdomain": "3.1 Compare and contrast security implications of architecture models",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "EDR"
+    ],
+    "tags": [
+     "security",
+     "devops",
+     "cryptography"
+    ],
+    "question": "A farm deploys thousands of battery-powered soil sensors that send readings every 10 minutes. The security team wants to install an EDR agent and use strong, compute-heavy encryption on each sensor. What architectural consideration makes this impractical?",
+    "options": [
+     "The limited power and compute resources of the sensors",
+     "The high availability requirements that the sensors must meet",
+     "The transfer of risk to the vendor of the sensors",
+     "The ease of deployment of the sensors in the field"
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Embedded and IoT devices often have constrained processors, memory, and battery life, which limits the security software and cryptography they can run.",
+    "distractor_summary": "That's why protection is usually applied at the gateway and network level, with lightweight cryptography on the device itself.",
+    "section": 36,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-081",
+    "source_id": "SEC-081",
+    "exam_code": "SY0-701",
+    "domain": "3. Security Architecture",
+    "subdomain": "3.2 Apply security principles to secure enterprise infrastructure",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "RADIUS",
+     "802.1X"
+    ],
+    "tags": [
+     "networking"
+    ],
+    "question": "A company wants every device that plugs into a wall jack to authenticate before it gets network access. The switch should pass credentials to a RADIUS server using EAP and only open the port once authentication succeeds. What should be implemented?",
+    "options": [
+     "Port mirroring, which copies the traffic of a port to a monitor overall.",
+     "IEEE 802.1X, port-based network access control with a RADIUS server",
+     "MAC flooding protection, which limits the addresses that a port learns",
+     "Spanning Tree Protocol, which prevents loops in switched networks overall."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "802.1X makes the switch an authenticator that relays EAP credentials to a RADIUS server and grants access only after authentication succeeds.",
+    "distractor_summary": "Port mirroring copies traffic for monitoring, MAC flooding protection limits MAC addresses per port, and STP prevents switching loops.",
+    "section": 37,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-083",
+    "source_id": "SEC-083",
+    "exam_code": "SY0-701",
+    "domain": "3. Security Architecture",
+    "subdomain": "3.2 Apply security principles to secure enterprise infrastructure",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "NGFW",
+     "IPS",
+     "WAF"
+    ],
+    "tags": [
+     "networking",
+     "iam"
+    ],
+    "question": "A security team needs a perimeter firewall that can identify applications regardless of the port they use, write rules based on user identity, and include intrusion prevention, all in one device. Which firewall type fits?",
+    "options": [
+     "A next-generation firewall (NGFW) with application and user awareness",
+     "A stateless packet filter that checks only the headers of each packet overall.",
+     "A web application firewall that protects the web apps from attacks overall.",
+     "A forward proxy that fetches web content for internal users"
+    ],
+    "correct_index": 0,
+    "correct_rationale": "An NGFW adds application awareness, user-based policy, and integrated IPS on top of stateful filtering.",
+    "distractor_summary": "A stateless filter only checks packet headers, a WAF protects web applications specifically, and a proxy brokers connections without full firewall functions.",
+    "section": 37,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-084",
+    "source_id": "SEC-084",
+    "exam_code": "SY0-701",
+    "domain": "3. Security Architecture",
+    "subdomain": "3.2 Apply security principles to secure enterprise infrastructure",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "IPS",
+     "IDS",
+     "WAF"
+    ],
+    "tags": [
+     "networking",
+     "devops",
+     "risk-compliance"
+    ],
+    "question": "A team wants visibility into suspicious traffic on a busy trading network, but must not add latency or risk blocking legitimate trades. Which deployment fits these requirements?",
+    "options": [
+     "An inline IPS set to fail-closed, which blocks traffic when it fails overall.",
+     "An inline IPS set to fail-open, which passes traffic when it fails",
+     "A passive IDS that gets a copy of the traffic from a tap or SPAN port",
+     "A WAF in blocking mode, which drops requests that match its rules"
+    ],
+    "correct_index": 2,
+    "correct_rationale": "A passive IDS analyzes a copy of the traffic, so it adds no latency and can't block anything; it only alerts.",
+    "distractor_summary": "Any inline device, whether an IPS or a blocking WAF, sits in the traffic path and can add latency or drop legitimate traffic.",
+    "section": 37,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-086",
+    "source_id": "SEC-086",
+    "exam_code": "SY0-701",
+    "domain": "3. Security Architecture",
+    "subdomain": "3.2 Apply security principles to secure enterprise infrastructure",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "IPsec",
+     "VPN",
+     "TLS"
+    ],
+    "tags": [
+     "hybrid-connectivity",
+     "security",
+     "cryptography"
+    ],
+    "question": "Two offices connect over the internet with a site-to-site IPsec VPN between their gateways. The design requires that each entire original IP packet, including its internal source and destination addresses, be encrypted and given a new outer header. Which IPsec configuration provides this?",
+    "options": [
+     "Transport mode with Authentication Header (AH), which signs but does not encrypt",
+     "Tunnel mode with Encapsulating Security Payload (ESP), which encrypts the whole packet",
+     "TLS 1.0, an old and deprecated protocol that is no longer considered strong",
+     "GRE without encryption, which wraps the packets but leaves them in the clear"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Tunnel mode encapsulates the whole original packet inside a new IP header, and ESP provides encryption, which together hide the internal addresses between gateways.",
+    "distractor_summary": "Transport mode protects only the payload, AH authenticates but doesn't encrypt, TLS 1.0 is deprecated and isn't IPsec, and plain GRE has no encryption.",
+    "section": 37,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-095",
+    "source_id": "SEC-095",
+    "exam_code": "SY0-701",
+    "domain": "3. Security Architecture",
+    "subdomain": "3.3 Compare and contrast concepts and strategies to protect data",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "risk-compliance"
+    ],
+    "question": "A company operates only in the United States and Canada. To reduce risk, it configures its cloud admin portal to reject sign-in attempts that come from IP addresses in any other country. Which data protection method is this?",
+    "options": [
+     "Geographic restrictions, which block sign-ins from outside approved countries",
+     "Hashing, which turns data into a fixed-length digest throughout the organization.",
+     "Segmentation, which splits a network into isolated zones across the subscriptions.",
+     "Obfuscation, which hides the meaning of data or code throughout the organization."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Geographic restrictions limit access based on where a request appears to come from.",
+    "distractor_summary": "Hashing protects integrity, segmentation separates network zones, and obfuscation makes data harder to understand.",
+    "section": 37,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-098",
+    "source_id": "SEC-098",
+    "exam_code": "SY0-701",
+    "domain": "3. Security Architecture",
+    "subdomain": "3.4 Explain the importance of resilience and recovery",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "high-availability"
+    ],
+    "question": "Four web servers all serve customer traffic at the same time. If one fails, the others keep handling requests and users notice nothing. Which high availability approach is this?",
+    "options": [
+     "Load balancing across active nodes, which share the traffic",
+     "A cold standby server, which is powered off until an outage occurs",
+     "Journaling, which records changes to help recover a file system",
+     "Snapshots, which capture the state of a system at one moment"
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Load balancing spreads traffic across multiple active servers and routes around a failed one, giving both capacity and availability.",
+    "distractor_summary": "A cold standby needs time to start, and journaling and snapshots are data recovery techniques rather than live availability.",
+    "section": 37,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-100",
+    "source_id": "SEC-100",
+    "exam_code": "SY0-701",
+    "domain": "3. Security Architecture",
+    "subdomain": "3.4 Explain the importance of resilience and recovery",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "networking",
+     "security",
+     "disaster-recovery",
+     "cryptography"
+    ],
+    "question": "Ransomware encrypts a company's production servers and every backup copy reachable over the network. Which backup practice would most reliably have allowed recovery?",
+    "options": [
+     "Taking backups more often to the same network share as before",
+     "Keeping an offline or immutable copy of the backups offsite",
+     "Storing the backups on the same servers that hold the data",
+     "Disabling backup encryption so that the files restore faster"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Offline, air-gapped, or immutable offsite copies can't be reached or altered by ransomware moving through the network.",
+    "distractor_summary": "More frequent backups to the same share, or storing them on the same servers, would be encrypted too, and disabling encryption weakens confidentiality without helping recovery.",
+    "section": 37,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-101",
+    "source_id": "SEC-101",
+    "exam_code": "SY0-701",
+    "domain": "3. Security Architecture",
+    "subdomain": "3.4 Explain the importance of resilience and recovery",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "disaster-recovery",
+     "risk-compliance"
+    ],
+    "question": "A company's primary and backup data centers are 25 miles apart on the same coastline. A risk review notes that a single hurricane could disable both. Which resilience concept addresses this weakness?",
+    "options": [
+     "Platform diversity, which uses different operating systems and vendors",
+     "Clustering, which groups servers so that they work as one by default.",
+     "Geographic dispersion, which places sites far apart from each other",
+     "Journaling, which records changes to help recover a file system overall."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Geographic dispersion places sites far enough apart that one regional disaster can't take out both.",
+    "distractor_summary": "Platform diversity uses different technologies to avoid a shared flaw, clustering provides local failover, and journaling records changes for data recovery.",
+    "section": 40,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-103",
+    "source_id": "SEC-103",
+    "exam_code": "SY0-701",
+    "domain": "3. Security Architecture",
+    "subdomain": "3.4 Explain the importance of resilience and recovery",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "governance",
+     "disaster-recovery",
+     "databases",
+     "incident-response"
+    ],
+    "question": "During a two-day outage, recovery stalls overnight because only one engineer knows how to restore the core database, and she's exhausted. Which resilience practice failed?",
+    "options": [
+     "Platform diversity, which uses different operating systems and vendors in production.",
+     "Geographic dispersion, which places sites far apart from each other",
+     "Infrastructure capacity planning for the servers and the network links in production.",
+     "Capacity planning for people, such as cross-training and extended-incident staffing"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Capacity planning covers people as well as technology and infrastructure, so critical skills need backups and staffing must cover long incidents.",
+    "distractor_summary": "The other options deal with technology and facilities, not a single-person dependency.",
+    "section": 40,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-104",
+    "source_id": "SEC-104",
+    "exam_code": "SY0-701",
+    "domain": "3. Security Architecture",
+    "subdomain": "3.4 Explain the importance of resilience and recovery",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [],
+    "tags": [
+     "disaster-recovery",
+     "databases"
+    ],
+    "question": "A faulty application update corrupts a database. Synchronous replication copies the corruption to the secondary site within seconds, so failing over doesn't help. What would have let the team return to a clean state quickly?",
+    "options": [
+     "More replication targets, which copy the corrupted data to more places",
+     "Point-in-time snapshots or backups taken before the faulty update",
+     "A faster network link between the two sites of the company",
+     "Adding a load balancer in front of the database servers"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Replication protects against site failure, but it faithfully copies bad data too.",
+    "distractor_summary": "Point-in-time snapshots or backups let you roll back to before the corruption. More replicas, faster links, and load balancers would only spread or serve the corrupted data.",
+    "section": 40,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-105",
+    "source_id": "SEC-105",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.1 Apply common security techniques to computing resources",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "networking",
+     "high-availability",
+     "data-analytics"
+    ],
+    "question": "Before installing access points in a new warehouse, the network team walks the building with measuring tools to record signal strength and interference. It then produces a map showing coverage and dead zones. What is this activity?",
+    "options": [
+     "War driving, which maps wireless networks while driving by overall.",
+     "A wireless site survey with heat maps of the signal strength",
+     "A penetration test, which tries to break into the network",
+     "A packet capture, which records the traffic on the network"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "A site survey measures radio conditions and produces heat maps that guide where to place access points and how to configure power and channels.",
+    "distractor_summary": "War driving is searching for networks from outside, and pen tests and packet captures serve other purposes.",
+    "section": 40,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-107",
+    "source_id": "SEC-107",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.1 Apply common security techniques to computing resources",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "devops"
+    ],
+    "question": "A company buys smartphones for its sales staff, keeps full ownership and management of them, and allows employees to use them for personal purposes as well. Which mobile deployment model is this?",
+    "options": [
+     "COPE (corporate-owned, personally enabled) phones for the sales staff",
+     "BYOD (bring your own device), where staff use their own phones",
+     "CYOD (choose your own device), where staff pick from a set list",
+     "VDI (virtual desktop infrastructure), where staff use a remote desktop"
+    ],
+    "correct_index": 0,
+    "correct_rationale": "In COPE, the organization owns and manages the device but permits personal use.",
+    "distractor_summary": "In BYOD the employee owns the device, CYOD lets employees pick from approved models (usually company-owned), and VDI delivers desktops virtually rather than being a device ownership model.",
+    "section": 40,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-110",
+    "source_id": "SEC-110",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.1 Apply common security techniques to computing resources",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [],
+    "question": "A development team wants to find flaws such as hard-coded passwords and unsafe input handling by analyzing source code during the build, without running the application. What technique is this?",
+    "options": [
+     "Dynamic analysis, which tests the program while it runs for the application.",
+     "Static code analysis, which inspects the source code without running it",
+     "Sandboxing, which runs untrusted code in an isolated space in production.",
+     "Penetration testing, which simulates attacks on a running system overall."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Static analysis (SAST) examines source or compiled code without executing it, so problems are caught early in the pipeline.",
+    "distractor_summary": "Dynamic analysis and penetration testing exercise a running application, and sandboxing runs untrusted code in isolation.",
+    "section": 40,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-112",
+    "source_id": "SEC-112",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.2 Explain the security implications of hardware, software, and data asset management",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "networking"
+    ],
+    "question": "A network scan finds 60 devices that don't appear in any company record, and nobody can say who is responsible for them. What should the organization establish first to manage these assets?",
+    "options": [
+     "An accurate asset inventory with an assigned owner for each asset",
+     "A new firewall rule set to block all of the unknown devices",
+     "A bug bounty program that pays for reports of flaws",
+     "A data retention schedule that sets how long files are kept"
+    ],
+    "correct_index": 0,
+    "correct_rationale": "You can't secure what you don't know about.",
+    "distractor_summary": "An accurate inventory with assigned ownership is the foundation for patching, monitoring, and accountability. Firewall rules, bug bounties, and retention policies don't solve the unknown-asset problem.",
+    "section": 40,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-114",
+    "source_id": "SEC-114",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.2 Explain the security implications of hardware, software, and data asset management",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [],
+    "question": "A company wants to reissue laptops to new employees after previous staff leave, so the drives must be reusable, but no prior data can be recoverable. Which disposal approach fits?",
+    "options": [
+     "Physical destruction by shredding, which leaves the drives unusable",
+     "Sanitization, such as cryptographic erase or a secure overwrite",
+     "Deleting the files and emptying the recycle bin on each laptop overall.",
+     "Reformatting the drives with a quick format before reissue"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Sanitization makes data unrecoverable while keeping the media usable.",
+    "distractor_summary": "Shredding destroys the drive, and deleting files or quick formatting leaves recoverable data.",
+    "section": 40,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-116",
+    "source_id": "SEC-116",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.2 Explain the security implications of hardware, software, and data asset management",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "networking",
+     "security",
+     "governance",
+     "cryptography"
+    ],
+    "question": "A company keeps buying network cameras that later turn out to lack firmware updates and encryption. At what stage of the asset lifecycle is it best to make sure new devices meet security requirements?",
+    "options": [
+     "During acquisition, by setting security requirements before the purchase",
+     "During disposal, when the old cameras are retired",
+     "After the first security incident, when the problem shows in every region.",
+     "During the annual audit, when the assets are counted"
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Building security requirements into procurement prevents insecure assets from entering the environment, which is cheaper than fixing them afterward.",
+    "distractor_summary": "Disposal, incidents, and audits all come too late to influence what was bought.",
+    "section": 40,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-117",
+    "source_id": "SEC-117",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.3 Explain activities associated with vulnerability management",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "CVSS"
+    ],
+    "tags": [
+     "networking",
+     "security",
+     "risk-compliance"
+    ],
+    "question": "A scan reports two findings: a CVSS 9.8 vulnerability on an isolated lab server with no network connectivity and no sensitive data, and a CVSS 6.5 vulnerability on an internet-facing server that processes card payments. Which should normally be fixed first, and why?",
+    "options": [
+     "The 9.8 finding, because the highest CVSS base score always comes first",
+     "Neither, since both should be accepted as risks by the business overall.",
+     "The 6.5 finding, since its exposure makes it the greater real risk",
+     "The 9.8 finding, because lab systems are the most valuable ones overall."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Prioritization should weigh exposure, asset value, and environmental variables, not just the base score.",
+    "distractor_summary": "An internet-facing payment system with a known flaw is more likely to be exploited and more damaging. Base scores alone can mislead, and accepting both risks ignores real exposure.",
+    "section": 40,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-119",
+    "source_id": "SEC-119",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.3 Explain activities associated with vulnerability management",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "networking"
+    ],
+    "question": "Scans of Windows servers show very few missing patches, but a manual check finds many. The scanner was only probing network services from outside. What change would make the results more accurate?",
+    "options": [
+     "Scanning less often, which cuts down the load on the servers across the subscriptions.",
+     "Running credentialed scans so that the scanner can inspect the installed software",
+     "Scanning only from the internet, outside of the firewall",
+     "Switching to a passive network sniffer on the server subnet across the subscriptions."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Credentialed scans log in to the system and see installed packages, patches, and settings, which greatly reduces false negatives.",
+    "distractor_summary": "Less frequent scans, external-only scans, and passive sniffing all provide less visibility.",
+    "section": 40,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-121",
+    "source_id": "SEC-121",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.3 Explain activities associated with vulnerability management",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "risk-compliance"
+    ],
+    "question": "A critical patch for a laboratory instrument controller can't be installed for 60 days, because the vendor must first certify it. The security team documents the risk, gets the business owner's approval, isolates the controller on a restricted segment, and sets a review date. What is this remediation approach?",
+    "options": [
+     "Risk transfer through insurance, which covers the financial loss",
+     "A formal exception with compensating controls until the patch is certified",
+     "Rescanning the instrument controller once every week",
+     "Ignoring the vulnerability until the vendor finishes the certification overall."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "An exception (or exemption) formally accepts a vulnerability for a defined period with documented approval, compensating controls, and a review date.",
+    "distractor_summary": "Insurance transfers financial impact, rescanning verifies fixes, and ignoring the vulnerability has no approval or controls.",
+    "section": 41,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-122",
+    "source_id": "SEC-122",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.3 Explain activities associated with vulnerability management",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "security"
+    ],
+    "question": "An administrator reports that all servers affected by a critical OpenSSL vulnerability have been patched. Before closing the ticket, what should the security team do to validate the remediation?",
+    "options": [
+     "Close the ticket based on the report of the administrator",
+     "Subscribe to a new threat feed that covers the library",
+     "Launch a bug bounty program that tests the servers",
+     "Rescan the affected systems to verify that the flaw is gone"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Validation confirms remediation actually worked, typically by rescanning or verifying configuration.",
+    "distractor_summary": "Taking someone's word for it skips validation, and threat feeds and bug bounties are about finding vulnerabilities, not confirming fixes.",
+    "section": 41,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-123",
+    "source_id": "SEC-123",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.3 Explain activities associated with vulnerability management",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "security",
+     "risk-compliance"
+    ],
+    "question": "After applying all reasonable controls, the board decides to buy cyber insurance to cover the remaining financial impact of a possible ransomware attack. Which response does this represent?",
+    "options": [
+     "Transferring the risk to an insurer through a policy",
+     "Avoiding the risk by stopping the business activity overall.",
+     "Mitigating the risk with network segmentation and backups",
+     "Granting an exception that accepts the risk for now overall."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Insurance transfers the financial consequences of a risk to another party, though it doesn't stop the attack itself.",
+    "distractor_summary": "Avoidance means stopping the risky activity, segmentation reduces likelihood or impact, and an exception temporarily accepts a specific vulnerability.",
+    "section": 41,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-124",
+    "source_id": "SEC-124",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.4 Explain security alerting and monitoring concepts and tools",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [
+     "NetFlow",
+     "SIEM"
+    ],
+    "tags": [
+     "networking",
+     "iam",
+     "observability"
+    ],
+    "question": "A security team wants to collect logs from firewalls, servers, the identity provider, and endpoints in one place. It needs to correlate events across them, for example many failed logins followed by a success from a new country, and raise alerts. Which tool fits?",
+    "options": [
+     "SNMP, a protocol for monitoring the status of network devices",
+     "NetFlow, which records the traffic flows between hosts",
+     "A security information and event management (SIEM) system",
+     "Antivirus software, which detects malware on the endpoints"
+    ],
+    "correct_index": 2,
+    "correct_rationale": "A SIEM aggregates and normalizes logs from many sources, correlates events, and generates alerts and reports.",
+    "distractor_summary": "SNMP monitors device status, NetFlow records traffic flows, and antivirus protects individual endpoints.",
+    "section": 41,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-125",
+    "source_id": "SEC-125",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.4 Explain security alerting and monitoring concepts and tools",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "disaster-recovery",
+     "observability",
+     "messaging"
+    ],
+    "question": "The SOC receives hundreds of alerts every night from a legitimate backup job that a rule flags as \"mass file access.\" Analysts have started ignoring the queue. What should the team do?",
+    "options": [
+     "Tune the alert by excluding the known backup account or adjusting thresholds",
+     "Archive the logs so that the alerts stop reaching the analysts",
+     "Quarantine the backup server so that it cannot trigger the rule in production.",
+     "Turn off log aggregation so that fewer alerts are created"
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Alert tuning reduces false positives so real alerts get attention, which addresses alert fatigue.",
+    "distractor_summary": "Archiving doesn't reduce noise, quarantining a legitimate server disrupts operations, and disabling aggregation removes visibility.",
+    "section": 41,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-126",
+    "source_id": "SEC-126",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.4 Explain security alerting and monitoring concepts and tools",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "NetFlow",
+     "SCAP"
+    ],
+    "tags": [
+     "security",
+     "governance",
+     "risk-compliance"
+    ],
+    "question": "An auditor asks for proof that 500 Linux and Windows servers are configured according to CIS Benchmarks. The team needs automated, standardized checks that produce a compliance report. What should it use?",
+    "options": [
+     "Manual spot checks of ten of the servers in the environment",
+     "NetFlow analysis of the traffic between the servers overall.",
+     "A packet capture of the traffic that the servers send overall.",
+     "A SCAP-compliant scanner that uses CIS Benchmark content"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "SCAP (Security Content Automation Protocol) standardizes how configuration checks are expressed and evaluated, so tools can automatically assess systems against benchmarks such as CIS. Spot checks don't scale, and NetFlow and packet captures show traffic, not configuration.",
+    "distractor_summary": "",
+    "section": 41,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-129",
+    "source_id": "SEC-129",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.4 Explain security alerting and monitoring concepts and tools",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "EDR"
+    ],
+    "tags": [
+     "networking",
+     "observability",
+     "risk-compliance"
+    ],
+    "question": "The team wants to monitor printers, storage appliances, and network switches, which can't run third-party software. Which monitoring approach fits these devices?",
+    "options": [
+     "Agentless monitoring through SNMP, syslog, or the vendor APIs",
+     "Installing an EDR agent on each of the devices",
+     "Agent-based antivirus on each of the appliances in every region.",
+     "No monitoring at all, since appliances are secure by default overall."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Agentless monitoring collects data remotely when software can't be installed.",
+    "distractor_summary": "EDR and antivirus agents need an installable operating system, and appliances still need monitoring.",
+    "section": 41,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-130",
+    "source_id": "SEC-130",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.5 Modify enterprise capabilities to enhance security",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [],
+    "question": "An administrator adds a rule allowing HTTPS to the new web server, but connections still fail. The rule list shows \"Deny any any\" as rule 3 and the new allow rule as rule 9. What is the likely cause and fix?",
+    "options": [
+     "HTTPS also needs port 80 to be opened on the firewall",
+     "The server needs a new IP address from the network team",
+     "Firewalls process rules bottom-up, so the deny rule should move down",
+     "Rules run top-down, so the deny rule matches first; move the allow rule above it"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Firewalls generally evaluate rules from top to bottom and apply the first match, so a broad deny placed earlier blocks traffic that later rules would allow.",
+    "distractor_summary": "Specific allow rules go above the default deny, which belongs at the end. HTTPS uses port 443, and the IP address isn't the issue.",
+    "section": 41,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-131",
+    "source_id": "SEC-131",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.5 Modify enterprise capabilities to enhance security",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "networking"
+    ],
+    "question": "A company is publishing a public-facing web server and wants it isolated from the internal network, so that a compromise of the web server doesn't give direct access to internal systems. Where should the server go?",
+    "options": [
+     "On the internal user VLAN, next to the staff computers",
+     "In a screened subnet (DMZ) between the external and internal firewalls",
+     "Directly on the internet with no firewall in front of it",
+     "On the same segment as the domain controllers of the company by default."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "A screened subnet hosts public services in a separate zone with firewall rules controlling traffic to the internet and to the internal network.",
+    "distractor_summary": "The internal VLAN and the domain controller segment expose internal systems, and having no firewall leaves the server unprotected.",
+    "section": 41,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-132",
+    "source_id": "SEC-132",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.5 Modify enterprise capabilities to enhance security",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "DNS filtering",
+     "WAF",
+     "DLP"
+    ],
+    "tags": [
+     "networking"
+    ],
+    "question": "A company wants to stop all devices on its network, including IoT devices and guest laptops that can't run agents, from reaching known malware and phishing domains. Which control works without installing anything on the devices?",
+    "options": [
+     "An agent-based web filter that is installed on each device",
+     "A web application firewall that protects the company web servers",
+     "DNS filtering at the resolvers of the organization, which covers every device",
+     "Data loss prevention, which stops sensitive data from leaving the company overall."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "DNS filtering blocks lookups of malicious domains for every device that uses the organization's resolvers, with no agent needed.",
+    "distractor_summary": "Agent-based filters need software on each device, a WAF protects web applications, and DLP focuses on data leaving.",
+    "section": 41,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-134",
+    "source_id": "SEC-134",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.5 Modify enterprise capabilities to enhance security",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "SPF",
+     "DKIM",
+     "DMARC"
+    ],
+    "tags": [
+     "risk-compliance"
+    ],
+    "question": "A company already publishes SPF and signs outgoing mail with DKIM. It now wants receiving servers to reject messages claiming to be from its domain that fail those checks, and it wants reports on who is sending mail as its domain. What should it add?",
+    "options": [
+     "Another SPF record for the domain of the company",
+     "A longer DKIM key for the outgoing mail of the company",
+     "An MX record that names the mail servers of the domain",
+     "A DMARC record with p=reject and reporting addresses"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "DMARC tells receivers what to do when SPF and DKIM checks fail or don't align with the From domain (none, quarantine, or reject) and sends aggregate reports back.",
+    "distractor_summary": "A second SPF record is invalid, a longer key doesn't create a policy, and MX records route inbound mail.",
+    "section": 41,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-135",
+    "source_id": "SEC-135",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.5 Modify enterprise capabilities to enhance security",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "FIM",
+     "NAC"
+    ],
+    "tags": [
+     "security",
+     "observability",
+     "devops"
+    ],
+    "question": "A security team wants an alert whenever critical operating system binaries or the files in the web server's document root are modified, because attackers often plant web shells or tamper with system files. What should be deployed?",
+    "options": [
+     "A web content filter, which blocks categories of websites overall.",
+     "Network access control, which checks devices before they connect",
+     "File integrity monitoring (FIM), which alerts when files change",
+     "User behavior analytics, which spots unusual actions by users overall."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "FIM compares files against known-good hashes and alerts on unauthorized changes.",
+    "distractor_summary": "Content filters control browsing, NAC controls network admission, and UBA analyzes user activity patterns.",
+    "section": 41,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-137",
+    "source_id": "SEC-137",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.5 Modify enterprise capabilities to enhance security",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [
+     "DMARC",
+     "FIM"
+    ],
+    "tags": [],
+    "question": "A school district wants to block student devices from reaching gambling, adult, and known-malware sites without maintaining its own list of every URL. Which web filtering capability fits?",
+    "options": [
+     "Content categorization with category-based block rules for the sites",
+     "A manually maintained list of URLs that the staff update",
+     "DMARC, which protects the domain of the district from spoofed mail overall.",
+     "File integrity monitoring, which alerts when files are changed overall."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Content categorization uses vendor-maintained classifications and reputation data so whole categories can be blocked at once.",
+    "distractor_summary": "Manual lists can't keep up, DMARC is email authentication, and FIM watches file changes.",
+    "section": 41,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-140",
+    "source_id": "SEC-140",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.6 Implement and maintain identity and access management",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "governance",
+     "risk-compliance"
+    ],
+    "question": "An audit finds that employees who left months ago still have active accounts in several SaaS applications, because IT disables accounts only in the main directory and only when it remembers. What should be implemented?",
+    "options": [
+     "Longer password expiration periods for all of the SaaS accounts in use",
+     "Automated deprovisioning triggered by HR terminations across all connected systems",
+     "More frequent vulnerability scans of each of the SaaS applications",
+     "A new firewall rule that blocks the sign-ins of the former employees"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Deprovisioning removes access promptly when people leave, and automating it from HR events across connected systems prevents orphaned accounts.",
+    "distractor_summary": "Password settings, scans, and firewall rules don't remove leftover access.",
+    "section": 41,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-141",
+    "source_id": "SEC-141",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.6 Implement and maintain identity and access management",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "RBAC",
+     "ABAC"
+    ],
+    "tags": [
+     "risk-compliance"
+    ],
+    "question": "A bank's policy allows access to loan files only when the user is in the Lending department, the device is company-managed, the request comes during business hours, and the file's classification is no higher than the user's clearance. Which access control model evaluates rules like these?",
+    "options": [
+     "Role-based access control (RBAC), which grants access by job role for the application.",
+     "Discretionary access control (DAC), where the owner sets the access in every region.",
+     "Attribute-based access control (ABAC), which uses attributes like device and time",
+     "Mandatory access control (MAC), which uses labels set by the system in every region."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "ABAC makes decisions by evaluating attributes of the user, resource, device, and environment, such as time of day, together.",
+    "distractor_summary": "RBAC grants access by role alone, DAC lets owners decide, and MAC relies on system-enforced labels and clearances without the device and time conditions.",
+    "section": 42,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-145",
+    "source_id": "SEC-145",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.6 Implement and maintain identity and access management",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "PAM",
+     "SSO"
+    ],
+    "tags": [],
+    "question": "Domain administrators currently know the passwords of powerful accounts and use them whenever they like. The company wants admins to check out credentials from a vault only for approved tasks, have the passwords rotated automatically afterward, and have sessions recorded. Which solution fits?",
+    "options": [
+     "Single sign-on, which gives one login for many applications in production.",
+     "Privileged access management (PAM) with vaulting and just-in-time access",
+     "Federation, which trusts identities from another organization for the team.",
+     "A personal password manager that each admin uses alone"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "PAM tools vault privileged credentials, grant just-in-time or ephemeral access, rotate secrets, and record sessions.",
+    "distractor_summary": "SSO and federation simplify regular sign-ins, and a personal password manager doesn't provide approval workflows or session recording.",
+    "section": 42,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-147",
+    "source_id": "SEC-147",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.7 Explain the importance of automation and orchestration",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "EDR",
+     "SOAR"
+    ],
+    "tags": [
+     "observability"
+    ],
+    "question": "When the EDR raises a high-confidence ransomware alert at 3:00 a.m., a SOAR playbook immediately isolates the laptop, disables the user's sessions, opens a ticket, and pages the on-call analyst. What is the primary benefit of this automation?",
+    "options": [
+     "Faster reaction time, with automation acting as a workforce multiplier",
+     "Removing the need for any human analysts in the SOC",
+     "Lower software licensing costs for the security tools",
+     "Eliminating all false positives from the alerts of the EDR"
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Automation responds in seconds and handles repetitive steps, letting a small team cover more incidents.",
+    "distractor_summary": "Humans are still needed for judgment, automation tools carry their own costs, and automation doesn't remove false positives; tuning does that.",
+    "section": 42,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-148",
+    "source_id": "SEC-148",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.7 Explain the importance of automation and orchestration",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [],
+    "tags": [
+     "networking"
+    ],
+    "question": "An engineer writes one large, undocumented script that provisions every account, firewall rule, and server in the company. Then the engineer leaves. Which automation consideration does this situation illustrate most?",
+    "options": [
+     "Employee retention, which is a benefit of the approach",
+     "Faster reaction time to the changes in the business",
+     "Complexity, technical debt, a single point of failure, and weak supportability",
+     "Enforcement of baselines on the accounts and servers of the company"
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Automation brings its own risks: complex, undocumented tooling creates technical debt and a single point of failure that nobody else can support.",
+    "distractor_summary": "The other options are benefits of automation, not risks.",
+    "section": 42,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-150",
+    "source_id": "SEC-150",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.8 Explain appropriate incident response activities",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "incident-response"
+    ],
+    "question": "Two weeks after a phishing-driven incident is resolved, the response team meets with IT and HR to review what happened, what worked, and what to change in email filtering and training. Which phase of incident response is this?",
+    "options": [
+     "Recovery, which restores the systems to normal operation overall.",
+     "Lessons learned, which reviews what worked and what to change",
+     "Containment, which limits the spread of the incident",
+     "Preparation, which readies the team and tools before an incident"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Lessons learned reviews the incident afterward to improve controls and processes.",
+    "distractor_summary": "Recovery restores operations, containment limits the spread, and preparation happens before incidents. Improvements from lessons learned do feed back into preparation.",
+    "section": 42,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-156",
+    "source_id": "SEC-156",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.8 Explain appropriate incident response activities",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "VPN"
+    ],
+    "tags": [
+     "hybrid-connectivity",
+     "devops"
+    ],
+    "question": "After a breach through an unpatched VPN appliance, investigators find the patch had been released months earlier. Nobody applied it because the appliance wasn't in the asset inventory used for patching. Identifying this underlying process gap is an example of what?",
+    "options": [
+     "Containment, which limits the spread of the incident overall.",
+     "Root cause analysis, which finds why the incident happened",
+     "E-discovery, which collects data for legal cases by default.",
+     "Threat hunting, which searches for hidden threats as needed."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Root cause analysis looks past the immediate technical cause (the missing patch) to the underlying reason (the incomplete inventory), so the fix prevents recurrence.",
+    "distractor_summary": "Containment limits damage, e-discovery produces evidence for legal matters, and threat hunting searches for active threats.",
+    "section": 42,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-157",
+    "source_id": "SEC-157",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.9 Use data sources to support an investigation",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "EDR"
+    ],
+    "tags": [
+     "security",
+     "observability"
+    ],
+    "question": "An investigator needs to confirm whether opening a malicious Word document on a laptop caused PowerShell to launch and download a file. Which data source most directly shows this process activity?",
+    "options": [
+     "Firewall logs, which show the traffic at the network edge",
+     "Endpoint and OS security logs, such as EDR telemetry",
+     "Load balancer logs, which show the requests to web servers",
+     "A vulnerability scan report, which lists known flaws"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Endpoint and OS logs record process creation, including which parent process launched which child, so they can show Word starting PowerShell.",
+    "distractor_summary": "Firewall and load balancer logs see network connections but not processes, and scan reports show weaknesses rather than activity.",
+    "section": 42,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-158",
+    "source_id": "SEC-158",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.9 Use data sources to support an investigation",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "NetFlow"
+    ],
+    "tags": [],
+    "question": "Investigators know a compromised server made an unusual outbound connection. To determine exactly what data was sent, they need the contents of the transmitted traffic, not just its source, destination, and size. Which data source is required?",
+    "options": [
+     "NetFlow records, which show who talked to whom and how much overall.",
+     "Firewall allow logs, which show the connections that were permitted",
+     "SNMP traps, which report the status of network devices",
+     "A packet capture of the traffic, which holds the contents sent"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Packet captures contain full payloads, which shows what was transmitted if the traffic wasn't encrypted or can be decrypted.",
+    "distractor_summary": "NetFlow and firewall logs record metadata about connections, and SNMP traps report device events.",
+    "section": 42,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-160",
+    "source_id": "SEC-160",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.9 Use data sources to support an investigation",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "SIEM"
+    ],
+    "tags": [
+     "security"
+    ],
+    "question": "After a web server is compromised through a known exploit, leadership asks whether the vulnerability had been detected before the attack and how long it had gone unremediated. Which data source answers this most directly?",
+    "options": [
+     "Historical vulnerability scan reports for that server of the company",
+     "The current SIEM dashboard, which shows the live alerts",
+     "Packet captures from the day of the attack on the server",
+     "The CPU utilization graph of the server over the past week by default."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Past scan reports show when the vulnerability first appeared and whether it stayed open, which supports the investigation and root cause analysis.",
+    "distractor_summary": "A current dashboard, attack-day captures, and CPU graphs don't show the vulnerability's history.",
+    "section": 42,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-164",
+    "source_id": "SEC-164",
+    "exam_code": "SY0-701",
+    "domain": "5. Security Program Management and Oversight",
+    "subdomain": "5.1 Summarize elements of effective security governance",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "iam",
+     "security",
+     "disaster-recovery",
+     "databases",
+     "cryptography"
+    ],
+    "question": "Database administrators run nightly backups, apply the access permissions the data owner has approved, and maintain encryption on the CRM database. Which role are they performing?",
+    "options": [
+     "Data owner, who is accountable for the data and approves access overall.",
+     "Data controller, who decides why and how personal data is used overall.",
+     "Data custodian (steward), who handles the technical care of the data",
+     "Data subject, who is the person that the data describes in production."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Custodians, or stewards, handle the day-to-day care of data, carrying out protections as the owner directs.",
+    "distractor_summary": "The owner sets classification and access, the controller decides the purposes of processing personal data under privacy law, and the subject is the person the data is about.",
+    "section": 43,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-167",
+    "source_id": "SEC-167",
+    "exam_code": "SY0-701",
+    "domain": "5. Security Program Management and Oversight",
+    "subdomain": "5.1 Summarize elements of effective security governance",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "high-availability"
+    ],
+    "question": "In a global conglomerate, each regional business unit writes and enforces its own security policies, with little central oversight. The result is inconsistent controls across regions. Which governance structure does this describe?",
+    "options": [
+     "Centralized governance, where one team sets the policies for everyone",
+     "Board oversight, where directors review the risks of the company",
+     "A government entity that regulates the security of the company",
+     "Decentralized governance, where each unit sets its own policies"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Decentralized governance distributes decision-making to business units, which gives flexibility but often produces inconsistency.",
+    "distractor_summary": "Centralized governance sets common policy from one authority. A board and a government entity are governing bodies, not this distribution model.",
+    "section": 43,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-175",
+    "source_id": "SEC-175",
+    "exam_code": "SY0-701",
+    "domain": "5. Security Program Management and Oversight",
+    "subdomain": "5.2 Explain elements of the risk management process",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "disaster-recovery",
+     "observability",
+     "databases"
+    ],
+    "question": "The finance team says that if the trading database fails, it can afford to lose no more than 15 minutes of transactions. Which metric does this define, and how does it shape the backup design?",
+    "options": [
+     "RTO; servers must restart within 15 minutes after a failure",
+     "MTTR; repairs must take 15 minutes on average, per incident",
+     "RPO; backups or replication must capture data every 15 minutes or less",
+     "MTBF; the database may fail only once every 15 minutes"
+    ],
+    "correct_index": 2,
+    "correct_rationale": "RPO sets how much data loss is acceptable, which determines backup or replication frequency.",
+    "distractor_summary": "RTO is about restoration time, MTTR is average repair time, and MTBF measures reliability between failures.",
+    "section": 43,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-180",
+    "source_id": "SEC-180",
+    "exam_code": "SY0-701",
+    "domain": "5. Security Program Management and Oversight",
+    "subdomain": "5.3 Explain the processes associated with third-party risk assessment and management",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "cost-optimization"
+    ],
+    "question": "A company already has a master service agreement (MSA) with a consulting firm covering general legal terms. It now needs a document defining the specific deliverables, timeline, and cost of a new penetration test. Which document should be created?",
+    "options": [
+     "Memorandum of understanding (MOU), a non-binding statement of intent",
+     "Statement of work (SOW) or work order for the specific project",
+     "Service level agreement (SLA), which sets targets for the service",
+     "Non-disclosure agreement (NDA) that protects confidential information"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "An SOW or work order defines the scope, deliverables, schedule, and price of a specific engagement under an existing MSA. An MOU is informal, an SLA sets ongoing service levels, and an NDA protects confidentiality.",
+    "distractor_summary": "",
+    "section": 43,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-183",
+    "source_id": "SEC-183",
+    "exam_code": "SY0-701",
+    "domain": "5. Security Program Management and Oversight",
+    "subdomain": "5.4 Summarize elements of effective security compliance",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "risk-compliance"
+    ],
+    "question": "A merchant repeatedly fails its PCI DSS assessments and doesn't fix the findings. Which consequence is it most likely to face?",
+    "options": [
+     "Automatic immunity from all of the future audits for the application.",
+     "Fines and a possible loss of the ability to process card payments",
+     "A lower cyber insurance premium for the merchant for the application.",
+     "Exemption from the breach notification laws across the subscriptions."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Non-compliance can lead to fines, sanctions, contract penalties, reputational damage, and the loss of a license or privilege, here the ability to accept cards.",
+    "distractor_summary": "It never brings immunity, lower premiums, or exemption from other laws.",
+    "section": 44,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-184",
+    "source_id": "SEC-184",
+    "exam_code": "SY0-701",
+    "domain": "5. Security Program Management and Oversight",
+    "subdomain": "5.4 Summarize elements of effective security compliance",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "disaster-recovery"
+    ],
+    "question": "A European customer asks an online retailer to delete all personal data it holds about her. To comply, the retailer must find her data across its CRM, order systems, backups, and marketing tools. Which privacy right is she exercising?",
+    "options": [
+     "Data portability, the right to receive data in a usable format",
+     "Data sovereignty, where data follows the laws of its location overall.",
+     "The right to be forgotten (right to erasure) of personal data",
+     "Legal hold, which preserves data that may be needed in a case"
+    ],
+    "correct_index": 2,
+    "correct_rationale": "The right to be forgotten lets data subjects ask for their personal data to be erased, subject to legal exceptions.",
+    "distractor_summary": "It depends on the organization knowing where personal data lives. Portability is about receiving your data, sovereignty concerns jurisdiction, and a legal hold preserves data rather than deleting it.",
+    "section": 44,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-185",
+    "source_id": "SEC-185",
+    "exam_code": "SY0-701",
+    "domain": "5. Security Program Management and Oversight",
+    "subdomain": "5.4 Summarize elements of effective security compliance",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "security",
+     "risk-compliance"
+    ],
+    "question": "Every January, each employee must sign a statement confirming they've read and agree to follow the acceptable use and information security policies, and HR stores the records. What is this compliance practice?",
+    "options": [
+     "Attestation and acknowledgment of the policies by each employee",
+     "An external audit of the controls by an independent firm overall.",
+     "A penetration test of the systems of the company",
+     "Vendor monitoring of the third parties of the company"
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Attestation and acknowledgment record that people have read and accepted policies, which supports compliance monitoring and accountability.",
+    "distractor_summary": "Audits, penetration tests, and vendor monitoring are different assurance activities.",
+    "section": 44,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-188",
+    "source_id": "SEC-188",
+    "exam_code": "SY0-701",
+    "domain": "5. Security Program Management and Oversight",
+    "subdomain": "5.4 Summarize elements of effective security compliance",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [],
+    "question": "To meet privacy obligations, a company needs a maintained record of what personal data it collects, where it's stored, who can access it, and how long it's kept. What is this record?",
+    "options": [
+     "A risk register, which lists the risks and their owners overall.",
+     "A data inventory with retention details for the personal data",
+     "Chain of custody, which tracks the handling of evidence overall.",
+     "A service level agreement with the cloud provider for the team."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "A data inventory maps personal data and its retention, which is essential for answering data subject requests and proving compliance.",
+    "distractor_summary": "A risk register tracks risks, chain of custody tracks evidence, and an SLA defines service commitments.",
+    "section": 44,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-192",
+    "source_id": "SEC-192",
+    "exam_code": "SY0-701",
+    "domain": "5. Security Program Management and Oversight",
+    "subdomain": "5.5 Explain types and purposes of audits and assessments",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "observability",
+     "cryptography"
+    ],
+    "question": "At the start of an engagement, testers collect employee names from LinkedIn, find subdomains in public certificate transparency logs, and read the company's job postings to learn its technologies. They don't send any traffic to the company's systems. What phase is this?",
+    "options": [
+     "Active reconnaissance, which probes the systems of the target directly overall.",
+     "Exploitation, which uses a flaw to get into the systems",
+     "Passive reconnaissance, which uses public sources without touching the target",
+     "Lateral movement, which spreads from one system to another for the application."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Passive reconnaissance gathers information from public sources without interacting with the target's systems.",
+    "distractor_summary": "Active reconnaissance, such as port scanning, touches the target directly, and exploitation and lateral movement come later.",
+    "section": 44,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-193",
+    "source_id": "SEC-193",
+    "exam_code": "SY0-701",
+    "domain": "5. Security Program Management and Oversight",
+    "subdomain": "5.5 Explain types and purposes of audits and assessments",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "SOC 2"
+    ],
+    "tags": [
+     "governance",
+     "risk-compliance"
+    ],
+    "question": "A large enterprise customer won't sign a contract with a SaaS provider until the provider shows independent assurance that its security controls operated effectively over the past year. What should the provider supply?",
+    "options": [
+     "Its own internal self-assessment of the controls of the provider",
+     "Its acceptable use policy for the customers of the service",
+     "An independent third-party audit report, such as a SOC 2 Type II",
+     "Its marketing security whitepaper that describes the controls"
+    ],
+    "correct_index": 2,
+    "correct_rationale": "An independent third-party audit, such as SOC 2 Type II covering effectiveness over a period, gives external assurance.",
+    "distractor_summary": "Self-assessments, policies, and whitepapers are produced by the provider itself and aren't independent.",
+    "section": 44,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-194",
+    "source_id": "SEC-194",
+    "exam_code": "SY0-701",
+    "domain": "5. Security Program Management and Oversight",
+    "subdomain": "5.5 Explain types and purposes of audits and assessments",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [],
+    "tags": [
+     "security"
+    ],
+    "question": "Instead of running separate exercises, the company's attack simulation team and its SOC work side by side. The attackers run techniques one at a time while the defenders tune detections in real time, and they share findings throughout. What type of penetration testing is this?",
+    "options": [
+     "Integrated testing, where offense and defense work together side by side",
+     "Offensive testing only, where the red team works alone",
+     "Defensive testing only, where the blue team works alone",
+     "Physical penetration testing of the buildings and the doors in production."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Integrated testing (often called purple teaming) combines offensive and defensive work to improve detection and response together.",
+    "distractor_summary": "Purely offensive or defensive tests keep the teams separate, and physical tests target facilities rather than detections.",
+    "section": 44,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-195",
+    "source_id": "SEC-195",
+    "exam_code": "SY0-701",
+    "domain": "5. Security Program Management and Oversight",
+    "subdomain": "5.6 Implement security awareness practices",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [],
+    "question": "A company runs monthly simulated phishing campaigns. Which result best shows that its security awareness program is working?",
+    "options": [
+     "More employees click the links, but fewer of them report the emails overall.",
+     "The number of campaigns per month goes down over the year in production.",
+     "Training completion stays the same while the clicks rise",
+     "Click rates fall while the share of reports of suspicious emails rises"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Effective awareness both reduces risky actions (clicks) and increases protective ones (reporting), which helps the SOC respond faster.",
+    "distractor_summary": "The other results show worse behavior or say nothing about behavior at all.",
+    "section": 44,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-197",
+    "source_id": "SEC-197",
+    "exam_code": "SY0-701",
+    "domain": "5. Security Program Management and Oversight",
+    "subdomain": "5.6 Implement security awareness practices",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [],
+    "question": "Awareness training covers removable media and cables. Which guidance best fits this topic?",
+    "options": [
+     "Don't plug in unexpected USB drives or cables; hand them to IT or security",
+     "Use any free charging kiosk at an airport to save the battery in production.",
+     "Copy work files to personal USB drives so that you have a backup by default.",
+     "Plug unknown USB drives into a coworker's computer to check them by default."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Unknown USB drives and cables can carry malware or keystroke-injection payloads, so they should be reported rather than used.",
+    "distractor_summary": "Public charging ports can be tampered with, personal USB copies risk data loss, and testing unknown media on another computer just moves the risk.",
+    "section": 44,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-198",
+    "source_id": "SEC-198",
+    "exam_code": "SY0-701",
+    "domain": "5. Security Program Management and Oversight",
+    "subdomain": "5.6 Implement security awareness practices",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "VPN"
+    ],
+    "tags": [
+     "hybrid-connectivity",
+     "risk-compliance"
+    ],
+    "question": "Many employees now work from coffee shops and shared workspaces. Which training topic best addresses the risks of this setting?",
+    "options": [
+     "Data center physical access procedures for the staff of the company",
+     "Firewall rule review for the network team of the company",
+     "Hybrid and remote work security: privacy screens, VPN use, locked devices, and quiet talk",
+     "Change management approvals for the production systems of the company"
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Remote work training covers shoulder surfing, untrusted networks, unattended devices, and overheard conversations.",
+    "distractor_summary": "Data center access, firewall reviews, and change approvals are relevant to IT staff, not the remote workforce's everyday risks.",
+    "section": 44,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-199",
+    "source_id": "SEC-199",
+    "exam_code": "SY0-701",
+    "domain": "5. Security Program Management and Oversight",
+    "subdomain": "5.6 Implement security awareness practices",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [],
+    "question": "A person carrying boxes asks an employee to hold the badge-controlled door to the office floor. What does situational awareness training teach the employee to do?",
+    "options": [
+     "Hold the door, because being helpful matters more than security",
+     "Politely ask the person to badge in or check in at reception, and report refusals",
+     "Ignore the person and let the door close without saying a word",
+     "Give the person a spare badge to use for the rest of the day"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Training teaches employees to recognize tailgating and to respond politely but firmly by directing people to badge in or check in, reporting anyone who won't.",
+    "distractor_summary": "Holding the door enables tailgating, ignoring the person misses a chance to report, and lending badges defeats access control.",
+    "section": 44,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-200",
+    "source_id": "SEC-200",
+    "exam_code": "SY0-701",
+    "domain": "5. Security Program Management and Oversight",
+    "subdomain": "5.6 Implement security awareness practices",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "iam"
+    ],
+    "question": "A company is redesigning its security awareness program after finding that one annual video isn't changing behavior. Which approach best reflects good program development and execution?",
+    "options": [
+     "Keep the annual video, but make it longer than it is now for staff",
+     "Train only the IT department of the company once each year, in a class",
+     "Replace the training with stricter punishments for every mistake made",
+     "Onboarding, then recurring role-based training with phishing simulations and measurement"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Effective programs combine initial and recurring training, tailor content to roles and risks, reinforce it with simulations, and measure results to improve.",
+    "distractor_summary": "A longer annual video, IT-only training, and punishment-focused approaches don't build lasting habits.",
+    "section": 44,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   }
+  ],
+  "lessons": [],
+  "examProfiles": []
+ }
+}
