@@ -1,0 +1,2123 @@
+{
+ "format": "cloudwalker-content-pack",
+ "packId": "builtin-wrong-option-explanations",
+ "packVersion": "2026.11.19",
+ "title": "Wrong-option explanations (67 questions)",
+ "publishedAt": "2026-11-18",
+ "minAppSchema": 1,
+ "checksum": {
+  "alg": "SHA-256",
+  "value": "89fe62f977e07bee4959b5d9c2480d303298fff6a3c9e58260692b44e7590ce8"
+ },
+ "content": {
+  "exams": [],
+  "questions": [
+   {
+    "id": "gcp-pcne-015",
+    "source_id": "PCNE-015",
+    "exam_code": "PCNE",
+    "domain": "1. Designing and Planning a Google Cloud Network",
+    "subdomain": "1.2 Design VPC networks",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "VPC",
+     "Shared VPC"
+    ],
+    "tags": [
+     "networking",
+     "governance",
+     "high-availability"
+    ],
+    "question": "A company is designing its landing zone. Production and non-production workloads must be isolated so that a misconfigured firewall rule in development can never affect production, while each environment is still centrally managed by the network team with multiple application service projects. Which VPC design is most appropriate?",
+    "options": [
+     "Use one Shared VPC host project with separate subnets for production and non-production.",
+     "Use a standalone VPC for each application, peered together in a full mesh across the company.",
+     "Use one Shared VPC with firewall rules that use `prod` and `dev` network tags to isolate them.",
+     "Use separate Shared VPC host projects for production and non-production, each with service projects."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Separate host projects give each environment its own VPC, firewall rule set, and IAM boundary while preserving central network administration through Shared VPC.",
+    "distractor_summary": "A single Shared VPC shares firewall and routing scope across environments, so a mistake can cross them; per-application peering meshes don't scale and hit peering limits.",
+    "section": 0,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-019",
+    "source_id": "PCNE-019",
+    "exam_code": "PCNE",
+    "domain": "1. Designing and Planning a Google Cloud Network",
+    "subdomain": "1.2 Design VPC networks",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "GKE",
+     "Cloud NAT",
+     "VPC"
+    ],
+    "tags": [
+     "networking",
+     "containers",
+     "devops"
+    ],
+    "question": "To solve address exhaustion, a company configures a GKE subnet secondary range using privately used public IP (PUPI) space `45.20.0.0/16`, which belongs to an external organization. After deployment, developers report that a third-party SaaS API hosted at `45.20.14.10` is unreachable from Pods. What is the cause?",
+    "options": [
+     "Cloud NAT does not support GKE Pods by default, so the traffic is dropped at the edge.",
+     "Firewall rules do not allow egress to public IP ranges from the secondary ranges.",
+     "PUPI ranges require Premium Tier to reach the external destinations that they use.",
+     "Destinations in a PUPI range are treated as internal and routed within the VPC, not to the internet."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "When public space is used privately, the VPC's subnet route for that range takes precedence, so traffic to real internet hosts in that range never leaves the VPC.",
+    "distractor_summary": "That is the key tradeoff of PUPI; Cloud NAT can serve GKE, the implied egress allow rule permits the traffic, and network tiers have no bearing on PUPI routing.",
+    "section": 0,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-023",
+    "source_id": "PCNE-023",
+    "exam_code": "PCNE",
+    "domain": "1. Designing and Planning a Google Cloud Network",
+    "subdomain": "1.2 Design VPC networks",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "VPC"
+    ],
+    "tags": [
+     "networking",
+     "high-availability"
+    ],
+    "question": "A team created `app-subnet` as `10.20.0.0/24` in a custom-mode VPC. A regional managed instance group is expected to grow to 700 VMs next quarter. The adjacent range `10.20.1.0/24` is unused, but `10.20.4.0/22` is assigned to another subnet. What is the best action?",
+    "options": [
+     "Shrink the subnet to `/25` and create a second subnet for the remaining VMs for the application.",
+     "Add a secondary IP range to `app-subnet` and assign VM primary interfaces from it for the team.",
+     "Convert the VPC to auto mode so that it gets larger subnets for the VMs.",
+     "Expand `app-subnet` to `10.20.0.0/22` using the gcloud command that expands its IP range."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "A subnet's primary range can be expanded without downtime, and `10.20.0.0/22` (1,020 usable addresses) fits 700 VMs without overlapping `10.20.4.0/22`.",
+    "distractor_summary": "Subnet ranges cannot be shrunk, secondary ranges are for alias IPs rather than VM primary interfaces, and a VPC can go from auto to custom mode but not the reverse.",
+    "section": 0,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-042",
+    "source_id": "PCNE-042",
+    "exam_code": "PCNE",
+    "domain": "1. Designing and Planning a Google Cloud Network",
+    "subdomain": "1.3 Design resilient hybrid and multicloud connectivity",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "HA VPN",
+     "Classic VPN",
+     "Cross-Cloud Interconnect",
+     "VLAN attachments"
+    ],
+    "tags": [
+     "networking",
+     "hybrid-connectivity",
+     "high-availability"
+    ],
+    "question": "A company connects Google Cloud to Microsoft Azure using HA VPN. The Azure VPN gateway is active-active with two public IPs. The company wants Google's 99.99% HA VPN SLA. How should the connection be configured?",
+    "options": [
+     "Use an HA VPN gateway, an external gateway with two interfaces, four tunnels and BGP on each.",
+     "Use a Classic VPN gateway with two tunnels to the two Azure IP addresses.",
+     "Use an HA VPN gateway with one tunnel to one Azure IP and a static route backup.",
+     "Use Cross-Cloud Interconnect with a single VLAN attachment between the clouds."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "For a peer with two interfaces, Google's recommended HA VPN topology uses a two-interface external VPN gateway and four tunnels with BGP to achieve the 99.99% SLA.",
+    "distractor_summary": "Classic VPN is limited to 99.9%, a single tunnel doesn't qualify for 99.99%, and a single VLAN attachment lacks redundancy.",
+    "section": 0,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-049",
+    "source_id": "PCNE-049",
+    "exam_code": "PCNE",
+    "domain": "1. Designing and Planning a Google Cloud Network",
+    "subdomain": "1.4 Design IP addressing for GKE",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "GKE",
+     "VPC",
+     "VPC firewall rules"
+    ],
+    "tags": [
+     "containers",
+     "migration"
+    ],
+    "question": "A company is migrating to GKE Autopilot and asks whether it can install Calico to enforce Kubernetes NetworkPolicy, as it did on self-managed clusters. What should the engineer tell them?",
+    "options": [
+     "Autopilot supports Calico when it is enabled at cluster creation time.",
+     "Autopilot does not support NetworkPolicy, so firewall rules are used instead in every region.",
+     "Autopilot uses GKE Dataplane V2 to enforce NetworkPolicy natively, so Calico is not needed.",
+     "Autopilot requires Istio sidecars to be injected before NetworkPolicy is enforced by default."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Autopilot clusters use GKE Dataplane V2 (eBPF-based), which enforces NetworkPolicy natively, and users can't install their own CNI.",
+    "distractor_summary": "NetworkPolicy is supported, VPC firewall rules don't provide Pod-level policy, and a service mesh isn't required.",
+    "section": 0,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-059",
+    "source_id": "PCNE-059",
+    "exam_code": "PCNE",
+    "domain": "2. Implementing VPC Networks",
+    "subdomain": "2.1 Configure VPCs",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "VPC",
+     "Identity-Aware Proxy",
+     "Cloud NAT"
+    ],
+    "tags": [
+     "networking",
+     "iam",
+     "devops"
+    ],
+    "question": "A team created a new custom-mode VPC and deployed VMs with no external IPs. Admins must SSH using Identity-Aware Proxy TCP forwarding. The IAM `roles/iap.tunnelResourceAccessor` role is granted, but connections fail. No firewall rules exist yet. What should the engineer add?",
+    "options": [
+     "Allow an egress rule for TCP 22 to `0.0.0.0/0` from the VMs.",
+     "Allow an ingress rule for TCP 22 from `35.191.0.0/16` and `130.211.0.0/22`.",
+     "Create a Cloud NAT gateway so that IAP can reach the VMs without external IPs.",
+     "Allow an ingress rule for TCP 22 from `35.235.240.0/20` to the target VMs."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Custom-mode VPCs have only the implied deny-ingress rule, so an ingress rule must allow TCP 22 from IAP's forwarding range `35.235.240.0/20`.",
+    "distractor_summary": "Egress is already allowed by the implied rule, the other ranges are for load balancer health checks, and Cloud NAT only handles outbound traffic.",
+    "section": 1,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-094",
+    "source_id": "PCNE-094",
+    "exam_code": "PCNE",
+    "domain": "2. Implementing VPC Networks",
+    "subdomain": "2.5 Cloud NGFW",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Cloud NGFW",
+     "Certificate Authority Service",
+     "Cloud Armor"
+    ],
+    "tags": [
+     "security",
+     "devops",
+     "risk-compliance",
+     "cryptography"
+    ],
+    "question": "A company deployed Cloud NGFW Enterprise with an intrusion prevention security profile. Test attacks sent over plain HTTP are detected and blocked, but the same attacks sent over HTTPS pass through undetected. What should the engineer do?",
+    "options": [
+     "Increase the threat severity level in the security profile to \"critical\" for the endpoint in every region.",
+     "Enable Firewall Rules Logging on the rules that apply the security profile group.",
+     "Configure TLS inspection with a CAS CA pool and policy, enable it on rules, and distribute the CA cert.",
+     "Replace the firewall endpoint with Cloud Armor in front of the workloads."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Encrypted payloads can't be inspected until Cloud NGFW Enterprise decrypts them with TLS inspection, which uses Certificate Authority Service and requires clients to trust the issuing CA.",
+    "distractor_summary": "Severity settings and logging don't provide decryption, and Cloud Armor protects load balancers rather than inspecting VM traffic.",
+    "section": 1,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-095",
+    "source_id": "PCNE-095",
+    "exam_code": "PCNE",
+    "domain": "2. Implementing VPC Networks",
+    "subdomain": "2.5 Cloud NGFW",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Cloud NGFW",
+     "VPC",
+     "Firewall policies"
+    ],
+    "tags": [
+     "networking",
+     "high-availability",
+     "risk-compliance"
+    ],
+    "question": "A company enabled Cloud NGFW Enterprise intrusion prevention for a VPC. VMs in `us-central1-a` are protected, but VMs in `us-central1-b` and `us-central1-c` aren't being inspected, even though the firewall policy rule with `apply_security_profile_group` targets all VMs. What's the cause?",
+    "options": [
+     "Security profiles only apply to the first zone in a region where they are used for the application.",
+     "The firewall policy must be regional rather than global for the endpoint across the subscriptions.",
+     "The rule's priority is lower than the implied allow egress rule for the VMs across the subscriptions.",
+     "Firewall endpoints are zonal, so each zone with workloads needs an endpoint and VPC association."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Cloud NGFW Enterprise firewall endpoints are zonal resources, and traffic is only inspected in zones where an endpoint exists and is associated with the VPC.",
+    "distractor_summary": "Security profiles apply in all zones with endpoints, both global and regional policies can reference profiles, and implied rules have the lowest priority.",
+    "section": 1,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-097",
+    "source_id": "PCNE-097",
+    "exam_code": "PCNE",
+    "domain": "3. Configuring Managed Network Services",
+    "subdomain": "3.1 Load balancing",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Application Load Balancer",
+     "GKE",
+     "Cloud Storage",
+     "Compute Engine",
+     "Cloud DNS"
+    ],
+    "tags": [
+     "networking",
+     "high-availability",
+     "containers",
+     "storage"
+    ],
+    "question": "A media company is consolidating two websites behind one global external Application Load Balancer. Requests to `www.example.com/api/*` must go to a GKE service exposed through zonal NEGs, requests to `www.example.com/static/*` must be served from a Cloud Storage bucket, and all requests to `shop.example.com` must go to a Compute Engine managed instance group. How should the engineer configure the load balancer?",
+    "options": [
+     "Create three forwarding rules with different IP addresses, one for each backend.",
+     "Create a URL map: `www` routes `/api/*` to NEGs and `/static/*` to a bucket; `shop` to the MIG.",
+     "Create one backend service with the NEGs, bucket and MIG, separating traffic with balancing modes.",
+     "Use Cloud DNS routing policies to send each path to a different load balancer."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "URL maps use host rules and path matchers to route by hostname and path to different backend services and backend buckets behind a single IP.",
+    "distractor_summary": "Separate forwarding rules aren't necessary, a backend service can't contain a Cloud Storage bucket or mix these backend types for path routing, and DNS can't route by URL path.",
+    "section": 2,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-115",
+    "source_id": "PCNE-115",
+    "exam_code": "PCNE",
+    "domain": "3. Configuring Managed Network Services",
+    "subdomain": "3.3 Cloud CDN",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Cloud CDN"
+    ],
+    "tags": [],
+    "question": "A company enables Cloud CDN on a backend service whose origin application sends no `Cache-Control` headers. The site serves static assets such as JavaScript, CSS, and images, along with personalized HTML pages that must never be cached. Which cache mode should the engineer select?",
+    "options": [
+     "`CACHE_ALL_STATIC`",
+     "`USE_ORIGIN_HEADERS`",
+     "`FORCE_CACHE_ALL`",
+     "Disable caching and rely on the origin."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "`CACHE_ALL_STATIC` automatically caches common static content types when the origin doesn't specify caching directives, while not caching dynamic content like HTML without explicit headers.",
+    "distractor_summary": "`USE_ORIGIN_HEADERS` caches nothing without headers, `FORCE_CACHE_ALL` would cache personalized pages, and disabling caching defeats the purpose.",
+    "section": 2,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-128",
+    "source_id": "PCNE-128",
+    "exam_code": "PCNE",
+    "domain": "3. Configuring Managed Network Services",
+    "subdomain": "3.5 Internet egress",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Cloud NAT",
+     "Private NAT"
+    ],
+    "tags": [
+     "networking"
+    ],
+    "question": "A Cloud NAT gateway serves VMs with widely varying connection counts. The engineer tries to enable dynamic port allocation so busy VMs receive more ports, but the update fails. The gateway has endpoint-independent mapping enabled. What should the engineer do?",
+    "options": [
+     "Switch to manual NAT IP allocation first and then change the port settings.",
+     "Delete the gateway and create a Private NAT gateway in its place for the VMs.",
+     "Disable endpoint-independent mapping, then enable dynamic port allocation with minimum and maximum ports.",
+     "Set the minimum ports per VM to 65,536 so that every VM has enough ports."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Dynamic port allocation isn't compatible with endpoint-independent mapping, so EIM must be disabled before enabling DPA.",
+    "distractor_summary": "Manual IP allocation works with DPA but doesn't resolve the conflict, Private NAT serves a different use case, and 65,536 exceeds the maximum ports per VM.",
+    "section": 2,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-130",
+    "source_id": "PCNE-130",
+    "exam_code": "PCNE",
+    "domain": "3. Configuring Managed Network Services",
+    "subdomain": "3.5 Internet egress",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Cloud NAT",
+     "Cloud Router",
+     "Firewall policies"
+    ],
+    "tags": [
+     "networking",
+     "governance",
+     "risk-compliance"
+    ],
+    "question": "A central security team wants to ensure that only designated subnets in approved projects can use Cloud NAT across the organization, preventing teams from creating NAT gateways that give internet egress to sensitive subnets. What should the engineer implement?",
+    "options": [
+     "Use an IAM deny policy that blocks `compute.routers.create` in all of the projects.",
+     "Use the organization policy `constraints/compute.restrictCloudNATUsage` to list the allowed subnets.",
+     "Use a hierarchical firewall policy that denies egress to `0.0.0.0/0` for the workloads.",
+     "Use the organization policy constraint `constraints/compute.vmExternalIpAccess` on the projects overall."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "The `restrictCloudNATUsage` constraint defines which subnets are allowed to use Cloud NAT.",
+    "distractor_summary": "Denying Cloud Router creation blocks legitimate hybrid routing, a blanket egress deny also blocks approved subnets, and `vmExternalIpAccess` controls external IPs on VMs rather than NAT.",
+    "section": 2,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-133",
+    "source_id": "PCNE-133",
+    "exam_code": "PCNE",
+    "domain": "3. Configuring Managed Network Services",
+    "subdomain": "3.5 Internet egress",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Cloud NAT",
+     "VPC",
+     "VPC Flow Logs",
+     "Connectivity Tests",
+     "Cloud Monitoring"
+    ],
+    "tags": [
+     "networking",
+     "observability"
+    ],
+    "question": "Some batch VMs behind Cloud NAT intermittently fail to open outbound connections during peak processing, while other VMs work normally. The engineer suspects NAT port exhaustion but needs evidence before changing the configuration. What should the engineer do first?",
+    "options": [
+     "Enable VPC Flow Logs with 100% sampling on the subnet of the batch VMs.",
+     "Enable Cloud NAT error logging and look for `OUT_OF_RESOURCES` drops, plus NAT allocation-failed metrics.",
+     "Enable Firewall Rules Logging on all of the egress rules of the VPC network.",
+     "Run Connectivity Tests from a batch VM to the internet to find the failures."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Cloud NAT error logs record connections dropped because of port exhaustion with the `OUT_OF_RESOURCES` reason, and Cloud Monitoring exposes NAT allocation-failure metrics per VM.",
+    "distractor_summary": "Flow logs and firewall logs don't show NAT port allocation, and Connectivity Tests analyze configuration rather than runtime port usage.",
+    "section": 2,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-134",
+    "source_id": "PCNE-134",
+    "exam_code": "PCNE",
+    "domain": "3. Configuring Managed Network Services",
+    "subdomain": "3.6 Packet inspection",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Private Google Access",
+     "VPC"
+    ],
+    "tags": [
+     "networking",
+     "risk-compliance"
+    ],
+    "question": "A firewall appliance VM has `nic0` in `untrust-vpc` and `nic1` in `trust-vpc`. Traffic from `trust-vpc` clients reaches the appliance on `nic1`, but replies to clients in a different `trust-vpc` subnet leave via `nic0` and are dropped. What should the engineer do?",
+    "options": [
+     "Use policy-based routing in the guest OS so `trust-vpc` ranges are sent out `nic1` to its gateway.",
+     "Swap `nic0` and `nic1` on the running VM so that the interfaces change roles.",
+     "Enable Private Google Access on `trust-vpc` so that the appliance can reply to it for the application.",
+     "Create a VPC route in `trust-vpc` that points to `nic0` of the appliance."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "By default, only `nic0` receives a default gateway in the guest OS, so traffic to non-local subnets exits through it unless guest routing directs the `trust-vpc` ranges to `nic1`.",
+    "distractor_summary": "NIC order can't be swapped on an existing VM, Private Google Access is unrelated, and VPC routes in `trust-vpc` can't point to an interface that lives in another VPC.",
+    "section": 2,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-140",
+    "source_id": "PCNE-140",
+    "exam_code": "PCNE",
+    "domain": "4. Implementing Hybrid Network Interconnectivity",
+    "subdomain": "4.1 Cloud Interconnect",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Dedicated Interconnect"
+    ],
+    "tags": [
+     "networking",
+     "hybrid-connectivity"
+    ],
+    "question": "A new single-circuit 10 Gbps Dedicated Interconnect passed Google's light-level tests, but the link never comes up after the company connects its router. The router port is configured with a 10GBASE-LR optic and a plain routed interface with no port-channel. What is the most likely issue?",
+    "options": [
+     "Dedicated Interconnect requires LACP, even for a single circuit, so the port must be in an LACP bundle.",
+     "Single circuits require 100GBASE-LR4 optics on the router that connects to Google.",
+     "The router must use multimode fiber for the Dedicated Interconnect circuit to Google.",
+     "The router must first establish an IPsec tunnel with Google over the circuit."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Google requires LACP on Dedicated Interconnect connections regardless of circuit count, so the port must be part of a link aggregation group.",
+    "distractor_summary": "10GBASE-LR over single-mode fiber is correct for a 10 Gbps circuit, multimode fiber isn't supported, and IPsec isn't part of bringing up the physical link.",
+    "section": 3,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-146",
+    "source_id": "PCNE-146",
+    "exam_code": "PCNE",
+    "domain": "4. Implementing Hybrid Network Interconnectivity",
+    "subdomain": "4.1 Cloud Interconnect",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Dedicated Interconnect",
+     "Shared VPC",
+     "VPC",
+     "HA VPN"
+    ],
+    "tags": [
+     "networking",
+     "hybrid-connectivity"
+    ],
+    "question": "A company's physical Dedicated Interconnect connections are owned by an `infra-interconnect` project for billing and administration. Its Shared VPC network is in a separate `net-host` project. How should the engineer connect the Shared VPC to on-premises?",
+    "options": [
+     "Move the Interconnect connections to the `net-host` project for the attachments.",
+     "Create the VLAN attachments and Cloud Routers in `net-host`, using the connections from `infra-interconnect`.",
+     "Create the VLAN attachments in `infra-interconnect` and peer its VPC with the Shared VPC across the subscriptions.",
+     "Create an HA VPN from `infra-interconnect` to `net-host` over the Interconnect."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Dedicated Interconnect connections can be used by VLAN attachments in other projects, so attachments and Cloud Routers belong in the host project that owns the VPC.",
+    "distractor_summary": "Moving connections is unnecessary, peering doesn't carry dynamic routes to on-premises transitively without extra configuration and adds a hop, and a VPN over the Interconnect adds needless complexity.",
+    "section": 3,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-149",
+    "source_id": "PCNE-149",
+    "exam_code": "PCNE",
+    "domain": "4. Implementing Hybrid Network Interconnectivity",
+    "subdomain": "4.2 Site-to-site IPsec VPN",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "HA VPN",
+     "Classic VPN"
+    ],
+    "tags": [
+     "networking",
+     "hybrid-connectivity",
+     "high-availability"
+    ],
+    "question": "A branch office has a single VPN device with one public IP address. The company wants the 99.99% availability SLA on the Google Cloud side of the HA VPN connection. How should the tunnels be configured?",
+    "options": [
+     "Use one tunnel from interface 0 of the HA VPN gateway to the peer IP address.",
+     "Use two Classic VPN tunnels to the peer IP address from the gateway.",
+     "Use two HA VPN gateways, each with one tunnel to the peer IP address.",
+     "Use one tunnel from each HA VPN interface to the peer's single IP, each with its own BGP session."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Google's HA VPN SLA on its side requires tunnels from both gateway interfaces, which can terminate on a single peer IP; the peer device remains a single point of failure outside Google's SLA.",
+    "distractor_summary": "A single tunnel doesn't qualify, Classic VPN has a lower SLA, and two gateways with one tunnel each don't form the supported topology.",
+    "section": 3,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-151",
+    "source_id": "PCNE-151",
+    "exam_code": "PCNE",
+    "domain": "4. Implementing Hybrid Network Interconnectivity",
+    "subdomain": "4.2 Site-to-site IPsec VPN",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "HA VPN",
+     "Classic VPN",
+     "VPC",
+     "Cloud VPN"
+    ],
+    "tags": [
+     "networking",
+     "hybrid-connectivity",
+     "security",
+     "cryptography"
+    ],
+    "question": "A company needs about 10 Gbps of encrypted connectivity to Google Cloud over the internet while it waits several months for Interconnect. A single HA VPN tunnel pair isn't delivering enough throughput. What should the engineer do?",
+    "options": [
+     "Increase the MTU on the VPN tunnels to 8,896 bytes to carry more traffic.",
+     "Switch to Classic VPN, which has a higher throughput for each of the tunnels.",
+     "Add more HA VPN tunnels with BGP sessions of equal priority so ECMP distributes the traffic.",
+     "Enable Premium Tier on the VPC so that the VPN tunnels carry more traffic."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Each Cloud VPN tunnel has a throughput limit of up to about 3 Gbps, so aggregate bandwidth scales by adding tunnels with equal-priority routes for ECMP.",
+    "distractor_summary": "VPN tunnels don't support jumbo frames, Classic VPN doesn't have higher throughput, and network tier doesn't raise tunnel limits.",
+    "section": 3,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-156",
+    "source_id": "PCNE-156",
+    "exam_code": "PCNE",
+    "domain": "4. Implementing Hybrid Network Interconnectivity",
+    "subdomain": "4.2 Site-to-site IPsec VPN",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Classic VPN",
+     "HA VPN",
+     "VPC"
+    ],
+    "tags": [
+     "networking",
+     "hybrid-connectivity",
+     "high-availability"
+    ],
+    "question": "A team wants to create a new Classic VPN tunnel with BGP dynamic routing to a data center because it's familiar with the configuration. What should the network engineer advise?",
+    "options": [
+     "Use HA VPN instead, since Classic VPN dynamic routing is deprecated for new tunnels.",
+     "Proceed with Classic VPN and enable global dynamic routing for the new tunnel.",
+     "Use Classic VPN with policy-based routing, which supports BGP for the new tunnel.",
+     "Use Direct Peering, which replaces Classic VPN for the connection to the data center."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Classic VPN's dynamic routing was deprecated, so new BGP-based deployments should use HA VPN, which also offers a 99.99% SLA.",
+    "distractor_summary": "Policy-based Classic VPN uses static traffic selectors rather than BGP, and Direct Peering doesn't provide VPC connectivity.",
+    "section": 3,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-159",
+    "source_id": "PCNE-159",
+    "exam_code": "PCNE",
+    "domain": "4. Implementing Hybrid Network Interconnectivity",
+    "subdomain": "4.3 Cloud Router",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "HA VPN",
+     "Cloud Router"
+    ],
+    "tags": [
+     "networking",
+     "hybrid-connectivity"
+    ],
+    "question": "An engineer adds a second HA VPN tunnel to an existing Cloud Router. When configuring the new BGP interface, the engineer reuses `169.254.10.0/30`, which is already used by the first tunnel's BGP session on the same Cloud Router. What will happen?",
+    "options": [
+     "Both sessions come up, and the traffic is balanced across the tunnels using ECMP in every region.",
+     "The second session replaces the first session on the Cloud Router.",
+     "The session fails since each BGP session needs a unique link-local `/30` from `169.254.0.0/16`.",
+     "BGP works only if MD5 authentication is enabled on both of the sessions across the subscriptions."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "BGP sessions on a Cloud Router use link-local addresses, and each interface needs its own non-overlapping `/30` within `169.254.0.0/16`.",
+    "distractor_summary": "Reused ranges conflict rather than enable ECMP or replace sessions, and MD5 doesn't make overlapping addresses valid.",
+    "section": 3,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-163",
+    "source_id": "PCNE-163",
+    "exam_code": "PCNE",
+    "domain": "4. Implementing Hybrid Network Interconnectivity",
+    "subdomain": "4.3 Cloud Router",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Cloud Router"
+    ],
+    "tags": [
+     "networking",
+     "hybrid-connectivity",
+     "disaster-recovery"
+    ],
+    "question": "Using the same two Interconnect attachments, the company now wants traffic from on-premises to Google Cloud to prefer attachment A, with B as backup. The on-premises routers honor MED. What should the engineer configure on Cloud Router?",
+    "options": [
+     "Set the advertised priority on the session over A lower (such as 100) than over B (200).",
+     "Configure custom learned routes on B so that the traffic from on-premises prefers attachment A.",
+     "Remove the all-subnets advertisement from B's Cloud Router so that A is preferred.",
+     "Enable MD5 authentication on attachment A only so that on-premises traffic prefers it."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Cloud Router sends its advertised route priority as MED, so a lower value on A's session makes on-premises routers prefer A.",
+    "distractor_summary": "Custom learned routes affect Google Cloud's outbound path, removing advertisements from B eliminates the backup path, and MD5 doesn't influence path selection.",
+    "section": 3,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-pcne-190",
+    "source_id": "PCNE-190",
+    "exam_code": "PCNE",
+    "domain": "5. Managing, Monitoring, and Troubleshooting Network Operations",
+    "subdomain": "5.2 Maintain and troubleshoot connectivity",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Private Google Access",
+     "VPC"
+    ],
+    "tags": [
+     "networking",
+     "high-availability",
+     "data-analytics"
+    ],
+    "question": "A team created a private zone `corp.internal` with records for internal services. VMs in `app-vpc` resolve these names correctly, but VMs in the newly created `analytics-vpc` receive NXDOMAIN for the same names. What is the most likely fix?",
+    "options": [
+     "Enable Private Google Access in `analytics-vpc` so that it can resolve the zone.",
+     "Add `analytics-vpc` to the zone's authorized networks, or peer DNS from it to `app-vpc`.",
+     "Create a firewall rule that allows UDP 53 to `169.254.169.254` in `analytics-vpc` overall.",
+     "Change the TTL of the zone to 0 so that the VMs always fetch fresh records."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Private zones are only visible to authorized VPC networks, so a new VPC must be authorized or configured to peer DNS with an authorized VPC.",
+    "distractor_summary": "Private Google Access doesn't affect DNS, access to the metadata server resolver is always allowed, and TTL changes don't grant visibility.",
+    "section": 4,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-ace-048",
+    "source_id": "ACE-048",
+    "exam_code": "ACE",
+    "domain": "2. Planning and Configuring a Cloud Solution",
+    "subdomain": "2.1 Planning and configuring compute",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Compute Engine"
+    ],
+    "tags": [
+     "devops"
+    ],
+    "question": "A company is deploying SAP HANA, which requires several terabytes of memory on a single VM. Which Compute Engine machine family should the engineer select?",
+    "options": [
+     "E2 general-purpose machines, which offer a balanced cost for the workload overall.",
+     "M-series memory-optimized machines, which offer terabytes of memory in one VM.",
+     "C3 compute-optimized machines, which offer the highest CPU performance.",
+     "A2 accelerator-optimized machines, which attach GPUs to the workload."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Memory-optimized M-series machines provide the very large memory footprints required by in-memory databases like SAP HANA.",
+    "distractor_summary": "E2 has limited memory, compute-optimized families favor CPU performance, and accelerator-optimized families are built for GPUs.",
+    "section": 6,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-ace-053",
+    "source_id": "ACE-053",
+    "exam_code": "ACE",
+    "domain": "2. Planning and Configuring a Cloud Solution",
+    "subdomain": "2.2 Planning and configuring data storage",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Spanner",
+     "Cloud SQL",
+     "Bigtable",
+     "Firestore"
+    ],
+    "tags": [
+     "databases"
+    ],
+    "question": "A global gaming company needs a relational database for player accounts and in-game purchases. It must support strongly consistent transactions across users in North America, Europe, and Asia, scale horizontally beyond a single machine, and offer up to 99.999% availability. Which database should the engineer choose?",
+    "options": [
+     "Use Spanner with a multi-region configuration for the accounts.",
+     "Use Cloud SQL for MySQL with cross-region read replicas for the accounts.",
+     "Use Bigtable with multi-cluster replication for the accounts.",
+     "Use Firestore in Datastore mode for the accounts."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Spanner provides globally distributed, strongly consistent relational transactions with horizontal scaling and a 99.999% multi-region SLA.",
+    "distractor_summary": "Cloud SQL scales vertically and its read replicas are asynchronous, Bigtable isn't relational, and Firestore isn't a relational SQL database.",
+    "section": 6,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-ace-076",
+    "source_id": "ACE-076",
+    "exam_code": "ACE",
+    "domain": "3. Deploying and Implementing a Cloud Solution",
+    "subdomain": "3.1 Deploying Compute Engine resources",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "high-availability",
+     "risk-compliance"
+    ],
+    "question": "An engineer must create a VM named `api-01` in `us-central1-a` using an `e2-standard-4` machine type and the latest Debian 12 image. Security policy requires that the VM have no external IP address. Which command should the engineer run?",
+    "options": [
+     "`gcloud compute instances create api-01 --zone=us-central1-a --machine-type=e2-standard-4 --image=debian-12 --no-address`",
+     "`gcloud compute instances create api-01 --zone=us-central1-a --machine-type=e2-standard-4 --image-family=debian-12 --image-project=debian-cloud --no-address`",
+     "`gcloud compute instances create api-01 --region=us-central1 --machine-type=e2-standard-4 --image-family=debian-12 --image-project=debian-cloud --no-address` overall.",
+     "`gcloud compute instances create api-01 --zone=us-central1-a --image-family=debian-12 --image-project=debian-cloud --network-tier=STANDARD --no-address` overall."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Using `--image-family` with `--image-project` selects the latest image in the family, and `--no-address` prevents an external IP.",
+    "distractor_summary": "Option A references an image name that doesn't exist and assigns an external IP by default, VMs are zonal so `--region` isn't valid, and changing the network tier still assigns an external IP.",
+    "section": 7,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-ace-079",
+    "source_id": "ACE-079",
+    "exam_code": "ACE",
+    "domain": "3. Deploying and Implementing a Cloud Solution",
+    "subdomain": "3.1 Deploying Compute Engine resources",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "risk-compliance"
+    ],
+    "question": "An engineer is creating VMs with attached NVIDIA GPUs for a training workload and wants them to restart automatically after Google Cloud host maintenance events. The default availability policy settings cause VM creation to fail. What should the engineer set?",
+    "options": [
+     "`--maintenance-policy=MIGRATE` and `--restart-on-failure` on the VMs overall.",
+     "`--preemptible` and `--maintenance-policy=MIGRATE` on the VMs.",
+     "`--maintenance-policy=TERMINATE` and `--restart-on-failure` on the VMs.",
+     "`--no-restart-on-failure` only, with no other maintenance setting overall."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "VMs with attached GPUs generally can't live-migrate, so the host maintenance policy must be `TERMINATE`, while automatic restart brings them back after maintenance.",
+    "distractor_summary": "`MIGRATE` fails for these GPU VMs, preemptible VMs don't restart automatically, and disabling restart contradicts the requirement.",
+    "section": 7,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-ace-124",
+    "source_id": "ACE-124",
+    "exam_code": "ACE",
+    "domain": "3. Deploying and Implementing a Cloud Solution",
+    "subdomain": "3.6 Implementing resources via infrastructure as code",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Terraform",
+     "Cloud Foundation Toolkit"
+    ],
+    "tags": [
+     "networking",
+     "iam",
+     "governance",
+     "high-availability",
+     "devops"
+    ],
+    "question": "A company is building its Google Cloud landing zone and wants to use Google-maintained, opinionated Terraform modules and blueprints for projects, networking, and IAM that follow best practices, rather than writing everything from scratch. What should the engineer use?",
+    "options": [
+     "Use Cloud Shell Editor templates for the landing zone of the company.",
+     "Use `gcloud` scripts that are written by the team for the landing zone.",
+     "Use Cloud Foundation Toolkit Terraform modules and blueprints for the landing zone.",
+     "Use Deployment Manager Jinja examples for the landing zone of the company by default."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "The Cloud Foundation Toolkit provides Google-maintained Terraform modules and blueprints for common foundations such as projects, networks, and IAM.",
+    "distractor_summary": "The other options require writing and maintaining most of the logic yourself, and Deployment Manager isn't the recommended IaC path.",
+    "section": 8,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-ace-148",
+    "source_id": "ACE-148",
+    "exam_code": "ACE",
+    "domain": "4. Ensuring Successful Operation of a Cloud Solution",
+    "subdomain": "4.4 Storage and databases",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "BigQuery",
+     "Cloud Monitoring",
+     "Cloud Storage"
+    ],
+    "tags": [
+     "cost-optimization",
+     "data-analytics"
+    ],
+    "question": "An analyst wants to know how much a large BigQuery query will cost under on-demand pricing before running it. What should the engineer recommend?",
+    "options": [
+     "Run the query with `LIMIT 10` to reduce the cost of the query throughout the organization overall.",
+     "Run the query as a dry run, such as `bq query --dry_run`, to see the bytes it will process.",
+     "Check Cloud Monitoring after the query has been run to see the cost across the subscriptions.",
+     "Export the table to Cloud Storage first to find the size of the query across the subscriptions."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "A dry run estimates the bytes processed without running the query, which determines on-demand cost.",
+    "distractor_summary": "`LIMIT` usually doesn't reduce bytes scanned, checking after running doesn't prevent cost, and exporting doesn't estimate query cost.",
+    "section": 9,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-ace-154",
+    "source_id": "ACE-154",
+    "exam_code": "ACE",
+    "domain": "4. Ensuring Successful Operation of a Cloud Solution",
+    "subdomain": "4.5 Networking",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Cloud NAT"
+    ],
+    "tags": [
+     "networking",
+     "databases"
+    ],
+    "question": "Application servers connect to a self-managed database VM by its internal IP address. When the database VM was recreated, it received a different internal IP and applications broke. What should the engineer configure?",
+    "options": [
+     "Assign an external IP to the database VM and connect through that address for the team.",
+     "Use an ephemeral internal IP and extend the DHCP lease on the VM across the subscriptions.",
+     "Place the database VM behind Cloud NAT so the address is stable across the subscriptions.",
+     "Reserve a static internal IP address in the subnet and assign it to the database VM."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Static internal IP addresses remain reserved in the subnet and can be reassigned to a recreated VM.",
+    "distractor_summary": "External IPs expose the database, ephemeral internal IPs don't persist across recreation, and Cloud NAT handles outbound internet traffic.",
+    "section": 9,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-ace-167",
+    "source_id": "ACE-167",
+    "exam_code": "ACE",
+    "domain": "5. Configuring Access and Security",
+    "subdomain": "5.1 Managing Identity and Access Management",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "iam",
+     "observability",
+     "risk-compliance"
+    ],
+    "question": "An engineer must grant `roles/logging.viewer` to `group:sre@example.com` on a project that has dozens of existing bindings managed by other teams. The engineer wants to avoid accidentally removing any existing access. What should the engineer run?",
+    "options": [
+     "Edit the downloaded policy and run `gcloud projects set-iam-policy` without checking the etag.",
+     "Run `gcloud projects set-iam-policy` with a file holding only the new binding for the group.",
+     "Run `gcloud iam roles update roles/logging.viewer --add-members=sre@example.com` for the group.",
+     "Run `gcloud projects add-iam-policy-binding PROJECT_ID --member=group:sre@example.com --role=roles/logging.viewer` for that binding."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "`add-iam-policy-binding` adds a single binding while preserving the rest of the policy.",
+    "distractor_summary": "`set-iam-policy` replaces the whole policy, which can wipe other bindings if the file is incomplete or stale, and predefined roles can't be edited to add members.",
+    "section": 10,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-ace-197",
+    "source_id": "ACE-197",
+    "exam_code": "ACE",
+    "domain": "5. Configuring Access and Security",
+    "subdomain": "5.2 Managing service accounts",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "iam"
+    ],
+    "question": "A developer is testing code locally that uses Google Cloud client libraries and wants the libraries to authenticate automatically using their own user credentials, without downloading any service account keys. What should the developer run?",
+    "options": [
+     "Run `gcloud auth login` only, and then run the application again.",
+     "Run `gcloud iam service-accounts keys create key.json` for the developer.",
+     "Run `gcloud auth application-default login` to create local credentials.",
+     "Run `gcloud config set account service-account@project.iam.gserviceaccount.com` for the app."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "`application-default login` sets up Application Default Credentials that client libraries use automatically.",
+    "distractor_summary": "`gcloud auth login` authorizes the gcloud CLI itself, creating keys is what should be avoided, and setting the gcloud account doesn't configure client library credentials.",
+    "section": 10,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-ace-198",
+    "source_id": "ACE-198",
+    "exam_code": "ACE",
+    "domain": "5. Configuring Access and Security",
+    "subdomain": "5.2 Managing service accounts",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Cloud Run"
+    ],
+    "tags": [
+     "iam",
+     "serverless",
+     "devops"
+    ],
+    "question": "A project contains 20 service accounts, including a highly privileged `billing-export-sa`. A deployment team needs to attach only `web-sa` to Cloud Run services. The proposal is to grant Service Account User at the project level. What should the engineer do instead?",
+    "options": [
+     "Grant Service Account Admin on the project to the deployment team.",
+     "Grant Service Account User at the project level to the deployment team, as proposed.",
+     "Grant Owner on the project to the deployment team for the deployments.",
+     "Grant Service Account User on the `web-sa` service account only."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Service accounts are also resources, so Service Account User can be granted on a single account, preventing the team from acting as privileged accounts like `billing-export-sa`.",
+    "distractor_summary": "A project-level grant allows acting as all 20 accounts, and Admin or Owner is far broader.",
+    "section": 10,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "azure-az305-015",
+    "source_id": "AZ-015",
+    "exam_code": "AZ-305",
+    "domain": "1. Design Identity, Governance, and Monitoring Solutions",
+    "subdomain": "1.2 Design authentication and authorization solutions",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Microsoft Entra ID"
+    ],
+    "tags": [
+     "iam",
+     "governance",
+     "risk-compliance",
+     "cryptography"
+    ],
+    "question": "A company uses AD FS for federated sign-in to Microsoft Entra ID but wants to decommission its AD FS farm to reduce infrastructure and risk. It needs to move users to cloud authentication gradually, testing with pilot groups before switching everyone. What should the architect recommend?",
+    "options": [
+     "Enable password hash sync or pass-through authentication, then use Staged Rollout before converting the domain.",
+     "Shut down AD FS immediately and reset all of the passwords in the tenant afterward.",
+     "Keep AD FS and add a second farm so that the federation service is redundant.",
+     "Create new cloud-only accounts for all of the users and retire the old accounts."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Staged Rollout lets selected groups use cloud authentication while the domain stays federated, enabling a controlled migration off AD FS.",
+    "distractor_summary": "An abrupt shutdown risks outages, a second farm increases infrastructure, and new accounts disrupt users and access.",
+    "section": 17,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "azure-az305-069",
+    "source_id": "AZ-069",
+    "exam_code": "AZ-305",
+    "domain": "2. Design Data Storage Solutions",
+    "subdomain": "2.1 Relational data",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Microsoft Defender for SQL"
+    ],
+    "tags": [
+     "security",
+     "databases"
+    ],
+    "question": "A company wants to detect anomalous activities on its Azure SQL databases, such as potential SQL injection, access from unusual locations, and brute-force attempts, and to get vulnerability assessments with remediation guidance. What should the architect recommend?",
+    "options": [
+     "Enable geo-replication so that the databases are copied to another region.",
+     "Configure firewall rules only, to limit which clients can reach the server overall.",
+     "Enable read scale-out so that the queries are spread over a replica.",
+     "Enable Microsoft Defender for SQL on the servers to detect threats and anomalies."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Defender for SQL provides advanced threat protection alerts and vulnerability assessment for Azure SQL.",
+    "distractor_summary": "Geo-replication and read scale-out address availability and performance, and firewall rules don't detect anomalous behavior.",
+    "section": 19,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "azure-az305-075",
+    "source_id": "AZ-075",
+    "exam_code": "AZ-305",
+    "domain": "2. Design Data Storage Solutions",
+    "subdomain": "2.2 Semi-structured and unstructured data",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Cosmos DB"
+    ],
+    "tags": [
+     "high-availability",
+     "databases"
+    ],
+    "question": "In a globally distributed shopping cart app on Cosmos DB, each user must always see their own updates immediately after making them (read-your-writes), but it's acceptable for other users to see slightly stale data. The company wants low latency and high availability. Which consistency level should the architect recommend?",
+    "options": [
+     "Strong consistency, which guarantees the latest write across every region.",
+     "Eventual consistency, which allows readers to see stale or reordered data.",
+     "Session consistency, which gives each user read-your-writes within their session.",
+     "Bounded staleness with a lag of one second behind the latest write."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Session consistency guarantees read-your-writes within a client session with low latency and high availability, and it's the default for Cosmos DB.",
+    "distractor_summary": "Strong adds latency and limits multi-region write scenarios, Eventual doesn't guarantee read-your-writes, and bounded staleness is stricter and costlier than needed.",
+    "section": 19,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "azure-az305-083",
+    "source_id": "AZ-083",
+    "exam_code": "AZ-305",
+    "domain": "2. Design Data Storage Solutions",
+    "subdomain": "2.2 Semi-structured and unstructured data",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Azure Files",
+     "Blob Storage",
+     "Azure NetApp Files",
+     "Table Storage"
+    ],
+    "tags": [
+     "disaster-recovery",
+     "migration"
+    ],
+    "question": "A company is migrating SAP HANA and a high-performance Linux application that requires an NFS file system with sub-millisecond latency, very high throughput, and enterprise features such as snapshots and cross-region replication. What should the architect recommend?",
+    "options": [
+     "Azure Files standard tier, with shares mounted over the SMB protocol.",
+     "Azure Blob Storage with NFS 3.0 enabled on a premium block blob account overall.",
+     "Azure NetApp Files, which provides high-performance NFS volumes for HANA.",
+     "Azure Table Storage, with tables mounted as file systems for the application."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Azure NetApp Files provides high-performance, low-latency NFS and SMB volumes with snapshots and replication, and it's certified for SAP HANA.",
+    "distractor_summary": "Standard Azure Files and blob NFS don't meet these performance characteristics, and Table Storage isn't a file system.",
+    "section": 19,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "azure-az305-102",
+    "source_id": "AZ-102",
+    "exam_code": "AZ-305",
+    "domain": "3. Design Business Continuity Solutions",
+    "subdomain": "3.1 Backup and recovery",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Azure Backup",
+     "Site Recovery"
+    ],
+    "tags": [
+     "disaster-recovery",
+     "risk-compliance"
+    ],
+    "question": "A company runs critical Azure VMs, including Trusted Launch VMs. The business requires an RPO of four hours for these VMs rather than the once-daily backup the team currently uses. What should the architect recommend?",
+    "options": [
+     "Use an Enhanced backup policy in Azure Backup with backups every four hours.",
+     "Keep the Standard policy and take manual on-demand backups every four hours.",
+     "Use snapshots from a custom script rather than Azure Backup for the VMs.",
+     "Use Azure Site Recovery in place of backup for the critical VMs here."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "The Enhanced policy supports multiple backups per day and is required for Trusted Launch VMs, meeting a four-hour RPO.",
+    "distractor_summary": "Manual backups are error-prone, custom scripts lack management and retention features, and Site Recovery provides replication for DR rather than point-in-time backup retention.",
+    "section": 20,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "azure-az305-131",
+    "source_id": "AZ-131",
+    "exam_code": "AZ-305",
+    "domain": "3. Design Business Continuity Solutions",
+    "subdomain": "3.3 High availability",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Application Gateway",
+     "Traffic Manager",
+     "Availability zones"
+    ],
+    "tags": [
+     "security",
+     "high-availability",
+     "devops"
+    ],
+    "question": "A company uses Application Gateway with WAF in front of a web tier spread across availability zones. The gateway itself must survive a zone failure and scale automatically with traffic. What should the architect recommend?",
+    "options": [
+     "Use Application Gateway v1 with a fixed instance count spread across the zones.",
+     "Use Application Gateway v2 (WAF v2) across multiple zones with autoscaling.",
+     "Use a separate Application Gateway in each zone with DNS failover between them.",
+     "Use Azure Traffic Manager in place of Application Gateway for the web tier."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "The v2 SKU supports zone redundancy and autoscaling, keeping the gateway available through a zone failure.",
+    "distractor_summary": "v1 lacks zone support and autoscaling, per-zone gateways with DNS add complexity, and Traffic Manager doesn't provide WAF or Layer 7 features.",
+    "section": 20,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "azure-az305-133",
+    "source_id": "AZ-133",
+    "exam_code": "AZ-305",
+    "domain": "3. Design Business Continuity Solutions",
+    "subdomain": "3.3 High availability",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [],
+    "tags": [
+     "high-availability",
+     "databases",
+     "devops"
+    ],
+    "question": "A solution consists of a web app with a 99.95% SLA that depends on an Azure SQL database with a 99.99% SLA. Both components are required for the solution to work. What is the approximate composite SLA, and what does it imply?",
+    "options": [
+     "About 99.94%; the composite is lower than either part, so a higher target needs redundancy.",
+     "99.99%, which is the highest of the component SLAs in the solution.",
+     "99.95%, which is the lowest of the component SLAs in the solution.",
+     "About 99.99%, because the SQL database SLA covers the web app as well across the subscriptions."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "For serially dependent components, SLAs multiply (0.9995 × 0.9999 ≈ 0.9994), so the composite SLA is below each component's SLA.",
+    "distractor_summary": "Taking the highest or lowest component SLA misstates it, and adding SLAs is incorrect.",
+    "section": 20,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "azure-az305-186",
+    "source_id": "AZ-186",
+    "exam_code": "AZ-305",
+    "domain": "4. Design Infrastructure Solutions",
+    "subdomain": "4.3 Design network solutions",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Microsoft Entra ID",
+     "Conditional Access",
+     "Virtual WAN",
+     "Azure Bastion"
+    ],
+    "tags": [
+     "networking",
+     "hybrid-connectivity",
+     "iam"
+    ],
+    "question": "A company needs 3,000 remote employees to securely access resources in Azure virtual networks from laptops. Authentication must use their Microsoft Entra ID credentials with Conditional Access and MFA. What should the architect recommend?",
+    "options": [
+     "Use point-to-site VPN with OpenVPN and Microsoft Entra ID authentication.",
+     "Use a site-to-site VPN from each employee's home router to the gateway.",
+     "Put public IP addresses on the target VMs and restrict them with NSGs.",
+     "Use Azure Bastion for all of the application access by the remote employees."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Point-to-site VPN with Microsoft Entra authentication provides client connectivity with Conditional Access and MFA.",
+    "distractor_summary": "Site-to-site VPN from home routers is impractical, public IPs expose resources, and Bastion is for administrative RDP and SSH rather than general application access.",
+    "section": 22,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "azure-az305-188",
+    "source_id": "AZ-188",
+    "exam_code": "AZ-305",
+    "domain": "4. Design Infrastructure Solutions",
+    "subdomain": "4.3 Design network solutions",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Application Gateway",
+     "Traffic Manager",
+     "Azure Load Balancer"
+    ],
+    "tags": [
+     "networking",
+     "security",
+     "high-availability",
+     "cryptography"
+    ],
+    "question": "A regional web application has separate backend pools for `/api/*` and `/images/*`. The company needs Layer 7 routing by URL path, end-to-end TLS encryption to the backends, and WAF protection within a single Azure region. What should the architect recommend?",
+    "options": [
+     "Use an Azure Standard Load Balancer in front of the two backend pools overall.",
+     "Use Application Gateway v2 with WAF, path-based routing and end-to-end TLS.",
+     "Use Azure Traffic Manager to route the paths to the two backend pools.",
+     "Use network security groups to route the paths to the two backend pools overall."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Application Gateway provides regional Layer 7 load balancing with path-based routing, end-to-end TLS, and WAF.",
+    "distractor_summary": "Standard Load Balancer is Layer 4, Traffic Manager is DNS-based, and NSGs filter traffic without routing.",
+    "section": 22,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "aws-saa-c03-009",
+    "source_id": "AWS-009",
+    "exam_code": "SAA-C03",
+    "domain": "1. Design Secure Architectures",
+    "subdomain": "1.1 Design secure access to AWS resources",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Object Lock",
+     "Amazon S3"
+    ],
+    "tags": [
+     "iam",
+     "security",
+     "storage",
+     "risk-compliance",
+     "cryptography"
+    ],
+    "question": "A data team in Account B needs to read objects in an S3 bucket owned by Account A. Account A's bucket policy allows `s3:GetObject` for Account B's `DataTeamRole`, but the team still gets Access Denied. The bucket uses SSE-S3 encryption. What is most likely missing?",
+    "options": [
+     "The bucket must be made public, because cross-account access needs public read permission on all of the objects.",
+     "The identity-based policy on DataTeamRole in Account B must also allow s3:GetObject on the objects.",
+     "Account B must enable S3 Transfer Acceleration on the bucket before cross-account reads can work.",
+     "S3 Object Lock must be disabled on the bucket before the cross-account role can read objects."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Cross-account access requires permission on both sides: the resource policy in Account A and an identity policy in Account B.",
+    "distractor_summary": "Public access isn't needed, Transfer Acceleration affects speed, and Object Lock doesn't block reads.",
+    "section": 23,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "aws-saa-c03-020",
+    "source_id": "AWS-020",
+    "exam_code": "SAA-C03",
+    "domain": "1. Design Secure Architectures",
+    "subdomain": "1.2 Design secure workloads and applications",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Lambda",
+     "EC2",
+     "Secrets Manager",
+     "AWS KMS",
+     "NAT gateway",
+     "PrivateLink",
+     "DynamoDB",
+     "Amazon S3"
+    ],
+    "tags": [
+     "networking",
+     "security",
+     "serverless"
+    ],
+    "question": "Lambda functions and EC2 instances in private subnets with no internet access must retrieve secrets from AWS Secrets Manager and call AWS KMS. Security prohibits adding a NAT gateway or internet gateway. What should the solutions architect do?",
+    "options": [
+     "Create S3 gateway endpoints for Secrets Manager and KMS in each of the private subnets.",
+     "Add an egress-only internet gateway and route the workloads' traffic to it from private subnets.",
+     "Interface VPC endpoints for Secrets Manager and KMS with private DNS and HTTPS security group rules.",
+     "Store the secrets in plaintext environment variables instead of calling the Secrets Manager API."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Interface endpoints give private connectivity to AWS services such as Secrets Manager and KMS within the VPC.",
+    "distractor_summary": "Gateway endpoints exist only for S3 and DynamoDB, egress-only gateways are for IPv6 internet access, and plaintext secrets are insecure.",
+    "section": 23,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "aws-saa-c03-023",
+    "source_id": "AWS-023",
+    "exam_code": "SAA-C03",
+    "domain": "1. Design Secure Architectures",
+    "subdomain": "1.2 Design secure workloads and applications",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Transit Gateway",
+     "Network Firewall",
+     "AWS WAF"
+    ],
+    "tags": [
+     "networking"
+    ],
+    "question": "A company with 30 VPCs connected through a Transit Gateway must inspect all east-west and outbound internet traffic centrally with stateful rules, intrusion prevention, and domain-based filtering, using a managed AWS service. What should the solutions architect recommend?",
+    "options": [
+     "A central inspection VPC with AWS Network Firewall and Transit Gateway routes through it.",
+     "Security groups in each VPC, with rules written to allow only the traffic the application needs.",
+     "AWS WAF web ACLs deployed in each VPC to filter both the internal and the outbound traffic.",
+     "Network ACLs in each VPC, with rules that match the destination domain names of the traffic."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "AWS Network Firewall provides managed stateful inspection, IPS, and domain filtering, and Transit Gateway routing can steer traffic through a central inspection VPC.",
+    "distractor_summary": "Security groups and NACLs lack IPS and domain filtering, and WAF protects HTTP applications rather than VPC traffic.",
+    "section": 23,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "aws-saa-c03-037",
+    "source_id": "AWS-037",
+    "exam_code": "SAA-C03",
+    "domain": "1. Design Secure Architectures",
+    "subdomain": "1.3 Determine appropriate data security controls",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "EC2",
+     "AWS KMS",
+     "Secrets Manager",
+     "CloudHSM",
+     "Amazon S3"
+    ],
+    "tags": [
+     "security",
+     "cryptography"
+    ],
+    "question": "A bank must store encryption keys in single-tenant hardware security modules that it exclusively controls, validated to FIPS 140 Level 3, and use them with Oracle Transparent Data Encryption on EC2 via standard PKCS#11 interfaces. AWS personnel must not be able to access the keys. What should the solutions architect recommend?",
+    "options": [
+     "AWS KMS with AWS managed keys, rotated and managed by AWS.",
+     "AWS Secrets Manager with automatic rotation of the keys stored as secrets.",
+     "SSE-S3 with S3 bucket keys enabled on the bucket.",
+     "AWS CloudHSM, which provides single-tenant HSMs the bank controls exclusively."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "CloudHSM provides dedicated, customer-controlled HSMs with standard interfaces such as PKCS#11 for applications like Oracle TDE.",
+    "distractor_summary": "KMS AWS managed keys aren't exclusively customer-controlled, Secrets Manager stores secrets rather than providing HSMs, and SSE-S3 is S3 encryption.",
+    "section": 24,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "aws-saa-c03-043",
+    "source_id": "AWS-043",
+    "exam_code": "SAA-C03",
+    "domain": "1. Design Secure Architectures",
+    "subdomain": "1.3 Determine appropriate data security controls",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Amazon S3"
+    ],
+    "tags": [
+     "networking",
+     "iam",
+     "storage",
+     "risk-compliance"
+    ],
+    "question": "A shared S3 bucket holds a large dataset used by 25 applications, each needing different permissions to different prefixes. The single bucket policy has become too complex to manage, and some applications must access the data only from within a specific VPC. What should the solutions architect recommend?",
+    "options": [
+     "Create 25 copies of the bucket, one for each application, and sync the data between the copies nightly using replication.",
+     "Use IAM users with access keys for each application, with inline policies limited to its prefix.",
+     "S3 Access Points for each application, each with its own policy and VPC-only network origin if needed.",
+     "Make the bucket public and rely on hard-to-guess prefix names to limit each application's view."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Access points simplify managing access to shared datasets by giving each application its own endpoint and policy, and they can be restricted to a VPC.",
+    "distractor_summary": "Copies duplicate data, access keys add credential risk, and public access is insecure.",
+    "section": 24,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "aws-saa-c03-080",
+    "source_id": "AWS-080",
+    "exam_code": "SAA-C03",
+    "domain": "2. Design Resilient Architectures",
+    "subdomain": "2.1 Design scalable and loosely coupled architectures",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Application Load Balancer",
+     "Network Load Balancer",
+     "CloudFront"
+    ],
+    "tags": [],
+    "question": "A real-time trading gateway uses a custom TCP protocol, needs to handle millions of requests per second with ultra-low latency, and partners must allowlist a fixed IP address per Availability Zone. What should the solutions architect recommend?",
+    "options": [
+     "An Application Load Balancer, with the partners allowlisting the DNS name of the balancer.",
+     "A Classic Load Balancer with a TCP listener and the partner IP addresses allowlisted by hand.",
+     "A Network Load Balancer with an Elastic IP address in each AZ.",
+     "Amazon CloudFront with the TCP traffic forwarded to the origin servers behind the distribution."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "NLBs operate at Layer 4 with very high throughput and low latency, and support static Elastic IPs per AZ.",
+    "distractor_summary": "ALBs are for HTTP(S), Classic Load Balancers are legacy, and CloudFront is a CDN for HTTP content.",
+    "section": 25,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "aws-saa-c03-092",
+    "source_id": "AWS-092",
+    "exam_code": "SAA-C03",
+    "domain": "2. Design Resilient Architectures",
+    "subdomain": "2.2 Design highly available and/or fault-tolerant architectures",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Global Accelerator",
+     "CloudFront",
+     "Route 53",
+     "Application Load Balancer"
+    ],
+    "tags": [
+     "networking",
+     "high-availability"
+    ],
+    "question": "A multiplayer game uses UDP servers in two Regions. Players' clients connect by IP address and can't handle DNS changes quickly because of client-side DNS caching. The company wants static anycast IPs, traffic routed over the AWS global network, and failover between Regions within seconds. What should the solutions architect recommend?",
+    "options": [
+     "Global Accelerator with endpoint groups in both Regions, using static anycast IP addresses.",
+     "Amazon CloudFront in front of the servers, with the clients using the distribution's domain name.",
+     "Route 53 failover routing with a 60-second TTL on the records of both Regions.",
+     "An Application Load Balancer in each Region with an alias record for the clients."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Global Accelerator provides static anycast IPs, supports TCP and UDP, uses the AWS backbone, and fails over quickly without relying on DNS.",
+    "distractor_summary": "CloudFront is for HTTP content, DNS failover depends on client caching, and ALBs don't support UDP or provide global static IPs.",
+    "section": 26,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "aws-saa-c03-093",
+    "source_id": "AWS-093",
+    "exam_code": "SAA-C03",
+    "domain": "2. Design Resilient Architectures",
+    "subdomain": "2.2 Design highly available and/or fault-tolerant architectures",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "EC2",
+     "Auto Scaling",
+     "EBS",
+     "EFS",
+     "Amazon S3"
+    ],
+    "tags": [
+     "high-availability",
+     "storage"
+    ],
+    "question": "A content management system runs on EC2 instances in an Auto Scaling group across three AZs. All instances must read and write the same set of files concurrently through a POSIX file system, and the file system must remain available if an AZ fails. What should the solutions architect recommend?",
+    "options": [
+     "An EBS volume attached to each instance, with rsync copying the files between instances.",
+     "Amazon EFS with a Regional file system and mount targets in each AZ.",
+     "Instance store volumes on each instance, with the content copied to them at launch.",
+     "An S3 bucket mounted as a block device on each instance, shared through the bucket."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "EFS Regional file systems store data across multiple AZs and are mountable concurrently from instances in each AZ.",
+    "distractor_summary": "EBS volumes with rsync are complex and inconsistent, instance store is ephemeral, and S3 isn't a POSIX block device.",
+    "section": 26,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "aws-saa-c03-101",
+    "source_id": "AWS-101",
+    "exam_code": "SAA-C03",
+    "domain": "2. Design Resilient Architectures",
+    "subdomain": "2.3 Disaster recovery strategies",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "high-availability",
+     "disaster-recovery",
+     "cost-optimization",
+     "databases"
+    ],
+    "question": "A company's application has an RTO of four hours and an RPO of 15 minutes. It wants to minimize DR costs in a second Region while keeping core data continuously replicated. Application servers can be launched from AMIs during a disaster. Which DR strategy should the solutions architect recommend?",
+    "options": [
+     "Backup and restore with daily backups copied to the DR Region and restored when needed.",
+     "Multi-site active-active with the full workload running in both Regions at the same time.",
+     "Warm standby with full-size servers running in the DR Region and replicated data.",
+     "Pilot light: replicate core data to the DR Region, with application servers off and launched from AMIs."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Pilot light keeps critical data live and the rest ready to start, balancing low cost with an RTO of hours and a low RPO.",
+    "distractor_summary": "Daily backups miss the RPO, and active-active or full warm standby cost more than needed.",
+    "section": 26,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "aws-saa-c03-116",
+    "source_id": "AWS-116",
+    "exam_code": "SAA-C03",
+    "domain": "3. Design High-Performing Architectures",
+    "subdomain": "3.1 Compute",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "cost-optimization"
+    ],
+    "question": "A company has trained a deep learning model and needs to run high-volume real-time inference at the lowest cost per inference while maintaining low latency. The model is compatible with the AWS Neuron SDK. What should the solutions architect recommend?",
+    "options": [
+     "General purpose M instances, with the model served on the CPUs of the instances.",
+     "Memory optimized R instances, with the model loaded entirely into instance memory.",
+     "AWS Inferentia-based instances (such as Inf2), built for low-cost inference.",
+     "Storage optimized I instances, with the model kept on the local NVMe storage."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Inferentia-based instances are purpose-built for cost-effective, high-performance ML inference with the Neuron SDK.",
+    "distractor_summary": "General purpose, memory-optimized, and storage-optimized instances lack ML accelerators and deliver lower inference efficiency.",
+    "section": 27,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "aws-saa-c03-123",
+    "source_id": "AWS-123",
+    "exam_code": "SAA-C03",
+    "domain": "3. Design High-Performing Architectures",
+    "subdomain": "3.2 Storage",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "EC2"
+    ],
+    "tags": [
+     "databases"
+    ],
+    "question": "A database on EC2 needs 12,000 IOPS and 500 MiB/s of throughput, but only 200 GiB of storage. The team currently uses gp2 volumes and has overprovisioned storage size to get performance. What should the solutions architect recommend?",
+    "options": [
+     "gp3 volumes with 12,000 IOPS and 500 MiB/s provisioned independently of the volume size.",
+     "st1 volumes, which provide high sequential throughput at a low cost per GB for the database.",
+     "sc1 volumes, which provide the lowest cost per GB and burst throughput for the database.",
+     "Keep gp2 and increase the volume size to 4 TiB to reach the IOPS."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "gp3 volumes let you set IOPS and throughput independently of capacity, avoiding overprovisioned storage.",
+    "distractor_summary": "st1 and sc1 are HDD volumes for sequential throughput with low IOPS, and scaling gp2 size wastes storage.",
+    "section": 27,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "aws-saa-c03-124",
+    "source_id": "AWS-124",
+    "exam_code": "SAA-C03",
+    "domain": "3. Design High-Performing Architectures",
+    "subdomain": "3.2 Storage",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "EC2",
+     "EBS"
+    ],
+    "tags": [
+     "databases",
+     "storage"
+    ],
+    "question": "A mission-critical Oracle database on EC2 requires more than 100,000 IOPS with consistent sub-millisecond latency and the highest EBS durability. Which EBS volume type should the solutions architect recommend?",
+    "options": [
+     "gp3 volumes with provisioned IOPS raised to the maximum and throughput set to the maximum.",
+     "st1 volumes striped across several devices for sequential throughput on the database.",
+     "io2 Block Express volumes, built for sub-millisecond latency above 100,000 IOPS.",
+     "sc1 volumes striped across several devices for low-cost cold storage on the database."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "io2 Block Express delivers very high IOPS, sub-millisecond latency, and the highest durability among EBS volumes.",
+    "distractor_summary": "gp3 tops out at lower IOPS, and st1 and sc1 are HDD volumes unsuitable for transactional databases.",
+    "section": 27,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "aws-saa-c03-125",
+    "source_id": "AWS-125",
+    "exam_code": "SAA-C03",
+    "domain": "3. Design High-Performing Architectures",
+    "subdomain": "3.2 Storage",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "EC2",
+     "EBS"
+    ],
+    "tags": [
+     "cost-optimization",
+     "storage"
+    ],
+    "question": "A log processing cluster on EC2 reads and writes large files sequentially and needs high throughput at low cost per GB. Random I/O performance isn't important. Which EBS volume type should the solutions architect recommend?",
+    "options": [
+     "Provisioned IOPS SSD io2 Block Express, built for the highest random IOPS and lowest latency.",
+     "Throughput Optimized HDD (st1), built for large sequential I/O at low cost per GB.",
+     "General Purpose SSD (gp3) with maximum provisioned IOPS and throughput for every volume.",
+     "Magnetic (standard) volumes, a previous-generation type for infrequently accessed data."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "st1 volumes provide high sequential throughput at low cost for big data and log processing.",
+    "distractor_summary": "io2 and high-IOPS gp3 cost more for random I/O performance that isn't needed, and previous-generation magnetic volumes offer lower performance.",
+    "section": 27,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "aws-saa-c03-140",
+    "source_id": "AWS-140",
+    "exam_code": "SAA-C03",
+    "domain": "3. Design High-Performing Architectures",
+    "subdomain": "3.3 Databases",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "DynamoDB",
+     "Athena",
+     "OpenSearch",
+     "Lambda",
+     "RDS"
+    ],
+    "tags": [
+     "serverless",
+     "databases"
+    ],
+    "question": "An e-commerce site needs full-text product search with relevance ranking, typo tolerance, faceted filtering, and autocomplete over 20 million products that are stored in DynamoDB. What should the solutions architect recommend?",
+    "options": [
+     "DynamoDB scans with filter expressions run against the products table for each one of the searches.",
+     "Amazon Athena queries on the exported data, with the results returned to the website for each search.",
+     "Amazon OpenSearch Service, with the index kept updated from DynamoDB through zero-ETL or Streams.",
+     "Amazon RDS full-text indexes on a copy of the product catalog stored in a MySQL database instance."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "OpenSearch provides full-text search with relevance, fuzzy matching, facets, and autocomplete, and it can be synchronized from DynamoDB.",
+    "distractor_summary": "Scans are slow and lack search features, Athena isn't designed for interactive search, and RDS full-text features are limited at this scale.",
+    "section": 27,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "aws-saa-c03-159",
+    "source_id": "AWS-159",
+    "exam_code": "SAA-C03",
+    "domain": "3. Design High-Performing Architectures",
+    "subdomain": "3.5 Data ingestion and transformation",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Transfer Family",
+     "EC2",
+     "Amazon S3",
+     "DataSync",
+     "EFS"
+    ],
+    "tags": [
+     "hybrid-connectivity",
+     "storage"
+    ],
+    "question": "Dozens of business partners send daily files using SFTP to a company's on-premises SFTP server, which is being retired. The company wants a fully managed SFTP endpoint that stores files directly in S3, with partner authentication, and without partners changing their clients. What should the solutions architect recommend?",
+    "options": [
+     "AWS Transfer Family with an SFTP-enabled server backed by S3, keeping the partners' clients.",
+     "An EC2 instance running an SFTP server, with the partners' files stored on an attached EBS volume.",
+     "Amazon S3 presigned URLs sent to the partners every day, with each partner changing their clients.",
+     "AWS DataSync agents installed at each partner location to copy the daily files."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Transfer Family provides managed SFTP, FTPS, and FTP endpoints that store files in S3 or EFS with flexible authentication, so partners keep using SFTP.",
+    "distractor_summary": "An EC2 server requires management, presigned URLs change the partner workflow, and DataSync isn't an SFTP endpoint.",
+    "section": 27,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "aws-saa-c03-167",
+    "source_id": "AWS-167",
+    "exam_code": "SAA-C03",
+    "domain": "4. Design Cost-Optimized Architectures",
+    "subdomain": "4.1 Cost-optimized storage",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "EBS",
+     "AWS Backup"
+    ],
+    "tags": [
+     "governance",
+     "cost-optimization",
+     "storage",
+     "risk-compliance"
+    ],
+    "question": "A cost audit finds hundreds of unattached EBS volumes left over from terminated instances and thousands of old manual snapshots. The company wants to remove the waste and automate snapshot creation and retention for its remaining volumes. What should the solutions architect recommend?",
+    "options": [
+     "Delete unneeded unattached volumes, clean up old snapshots, and use Data Lifecycle Manager policies for snapshots.",
+     "Convert all of the volumes to io2 so that the unattached volumes are billed at a lower rate in each month that follows.",
+     "Keep all of the volumes and snapshots for safety, and then review the bill again in a year.",
+     "Move all volumes to instance store so that the unattached volumes cost nothing at all."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Removing unused volumes and snapshots eliminates waste, and lifecycle policies automate creation and retention to prevent recurrence.",
+    "distractor_summary": "io2 increases cost, keeping everything wastes money, and instance store is ephemeral.",
+    "section": 28,
+    "difficulty_source": "inferred",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-cdl-022",
+    "source_id": "CDL-022",
+    "exam_code": "CDL",
+    "domain": "2. Exploring Data Transformation with Google Cloud",
+    "subdomain": "2.1 Describe the intrinsic role that data plays in digital transformation",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [],
+    "question": "A coffee chain stores customer orders, loyalty data, and supply information, but only uses it for monthly accounting. A consultant says the company is underusing its data. Which use of data would create the most business value?",
+    "options": [
+     "Deleting older data to save on storage costs for the company.",
+     "Storing the data only on the computers in each individual store in the project as a result.",
+     "Printing the monthly reports and keeping them in a paper archive for the team at that point.",
+     "Analyzing data for trends and near real-time insights to guide staffing and promotions."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Data creates value when it's analyzed to reveal trends and inform decisions, and it also fuels AI.",
+    "distractor_summary": "Deleting data, printing reports, or isolating data in stores limits its value.",
+    "section": 31,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-cdl-032",
+    "source_id": "CDL-032",
+    "exam_code": "CDL",
+    "domain": "2. Exploring Data Transformation with Google Cloud",
+    "subdomain": "2.2 Determine which data management products fit business use cases",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "BigQuery",
+     "Bigtable",
+     "Cloud SQL",
+     "Cloud Storage"
+    ],
+    "tags": [
+     "disaster-recovery",
+     "databases"
+    ],
+    "question": "A small company runs a web application on a MySQL database on its own server. It wants to move to a managed service with automated backups and patching, without changing its application. Which product fits?",
+    "options": [
+     "BigQuery.",
+     "Bigtable.",
+     "Cloud SQL.",
+     "Cloud Storage."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Cloud SQL is a fully managed relational database service for MySQL, PostgreSQL, and SQL Server, so the application can keep using MySQL.",
+    "distractor_summary": "BigQuery is for analytics, Bigtable is NoSQL, and Cloud Storage is object storage.",
+    "section": 31,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-cdl-033",
+    "source_id": "CDL-033",
+    "exam_code": "CDL",
+    "domain": "2. Exploring Data Transformation with Google Cloud",
+    "subdomain": "2.2 Determine which data management products fit business use cases",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [
+     "BigQuery",
+     "Compute Engine",
+     "Firestore",
+     "Cloud SQL"
+    ],
+    "tags": [
+     "observability",
+     "data-analytics"
+    ],
+    "question": "An analytics team wants to run SQL queries over petabytes of sales data without managing any servers, and connect the results to dashboards. Which product fits?",
+    "options": [
+     "BigQuery.",
+     "Compute Engine.",
+     "Firestore.",
+     "Cloud SQL."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "BigQuery is Google Cloud's serverless data warehouse for analyzing very large datasets with SQL.",
+    "distractor_summary": "Cloud SQL isn't designed for petabyte analytics, Firestore is a document database, and Compute Engine provides VMs that would need to be managed.",
+    "section": 31,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-cdl-104",
+    "source_id": "CDL-104",
+    "exam_code": "CDL",
+    "domain": "5. Trust and Security with Google Cloud",
+    "subdomain": "5.2 Describe the business value of Google's multilayered approach to cloud security",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Cloud Translation API",
+     "Identity-Aware Proxy",
+     "BigQuery",
+     "Cloud Storage"
+    ],
+    "tags": [
+     "hybrid-connectivity",
+     "iam"
+    ],
+    "question": "A company wants employees to access internal web applications securely from anywhere without a VPN, with access granted based on user identity and context. Which Google Cloud product fits?",
+    "options": [
+     "Cloud Translation API, which translates text between languages.",
+     "Identity-Aware Proxy (IAP), which gates app access by identity and context.",
+     "BigQuery, the data warehouse that is used for analytics.",
+     "Cloud Storage, which stores objects such as files and media."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "IAP controls access to applications based on identity and context, supporting a zero-trust approach without a VPN.",
+    "distractor_summary": "The other products don't control application access.",
+    "section": 38,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-056",
+    "source_id": "SEC-056",
+    "exam_code": "SY0-701",
+    "domain": "2. Threats, Vulnerabilities, and Mitigations",
+    "subdomain": "2.4 Analyze indicators of malicious activity",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [],
+    "tags": [
+     "networking",
+     "security"
+    ],
+    "question": "A company's website is overwhelmed by large DNS responses it never requested. Analysis shows attackers sent small queries to thousands of open DNS resolvers using the company's IP address as the spoofed source. What type of attack is this?",
+    "options": [
+     "DNS cache poisoning, which puts false records into a resolver overall.",
+     "An on-path attack, which sits between a client and a server",
+     "A replay attack, which resends a captured message at a later time",
+     "A reflected, amplified DDoS attack that uses open DNS resolvers"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Spoofing the victim's address so third-party servers send it far larger responses is a reflected, amplified DDoS.",
+    "distractor_summary": "DNS poisoning corrupts resolver records, an on-path attack intercepts traffic, and a replay attack resends captured data.",
+    "section": 33,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-082",
+    "source_id": "SEC-082",
+    "exam_code": "SY0-701",
+    "domain": "3. Security Architecture",
+    "subdomain": "3.2 Apply security principles to secure enterprise infrastructure",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [
+     "UTM",
+     "WAF"
+    ],
+    "tags": [
+     "networking",
+     "security",
+     "devops"
+    ],
+    "question": "A public web application keeps getting hit with SQL injection and cross-site scripting attempts. The company wants a control in front of the application that inspects HTTP requests and blocks these application-layer attacks. What should it deploy?",
+    "options": [
+     "A layer 4 firewall",
+     "A unified threat management (UTM) appliance at the branch office",
+     "A stateless packet filter",
+     "A web application firewall (WAF)"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "A WAF inspects HTTP/HTTPS traffic at layer 7 and blocks web attacks such as SQL injection and XSS.",
+    "distractor_summary": "Layer 4 firewalls and packet filters only see addresses, ports, and protocols, and a branch UTM is a general multifunction device rather than one placed in front of this application.",
+    "section": 37,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-109",
+    "source_id": "SEC-109",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.1 Apply common security techniques to computing resources",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "security",
+     "cryptography"
+    ],
+    "question": "A penetration test finds that a web application's session cookie is sent over unencrypted HTTP and can be read by JavaScript running on the page. Which cookie attributes should developers set?",
+    "options": [
+     "Domain and Path",
+     "Expires and Max-Age",
+     "Secure and HttpOnly",
+     "SameSite=None with no other flags"
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Secure limits the cookie to HTTPS, and HttpOnly prevents client-side scripts from reading it, which reduces theft through sniffing and XSS.",
+    "distractor_summary": "Domain, Path, and expiry settings control scope and lifetime, and SameSite=None actually loosens cross-site protections.",
+    "section": 40,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-126",
+    "source_id": "SEC-126",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.4 Explain security alerting and monitoring concepts and tools",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "NetFlow",
+     "SCAP"
+    ],
+    "tags": [
+     "security",
+     "governance",
+     "risk-compliance"
+    ],
+    "question": "An auditor asks for proof that 500 Linux and Windows servers are configured according to CIS Benchmarks. The team needs automated, standardized checks that produce a compliance report. What should it use?",
+    "options": [
+     "Manual spot checks of ten of the servers in the environment",
+     "NetFlow analysis of the traffic between the servers overall.",
+     "A packet capture of the traffic that the servers send overall.",
+     "A SCAP-compliant scanner that uses CIS Benchmark content"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "SCAP (Security Content Automation Protocol) standardizes how configuration checks are expressed and evaluated, so tools can automatically assess systems against benchmarks such as CIS.",
+    "distractor_summary": "Spot checks don't scale, and NetFlow and packet captures show traffic, not configuration.",
+    "section": 41,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-146",
+    "source_id": "SEC-146",
+    "exam_code": "SY0-701",
+    "domain": "4. Security Operations",
+    "subdomain": "4.7 Explain the importance of automation and orchestration",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [],
+    "question": "When HR marks a new hire as \"starting Monday,\" a workflow automatically creates their accounts, adds them to the right groups for their department, and assigns a laptop. Which automation use case is this?",
+    "options": [
+     "Continuous integration and testing",
+     "Ticket escalation",
+     "Security group enforcement in the cloud",
+     "User provisioning"
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Automated user provisioning creates accounts and permissions consistently from an authoritative source such as HR.",
+    "distractor_summary": "Continuous integration tests code, escalation routes tickets, and security groups control network access to cloud resources.",
+    "section": 42,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "comptia-secplus-180",
+    "source_id": "SEC-180",
+    "exam_code": "SY0-701",
+    "domain": "5. Security Program Management and Oversight",
+    "subdomain": "5.3 Explain the processes associated with third-party risk assessment and management",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "cost-optimization"
+    ],
+    "question": "A company already has a master service agreement (MSA) with a consulting firm covering general legal terms. It now needs a document defining the specific deliverables, timeline, and cost of a new penetration test. Which document should be created?",
+    "options": [
+     "Memorandum of understanding (MOU), a non-binding statement of intent",
+     "Statement of work (SOW) or work order for the specific project",
+     "Service level agreement (SLA), which sets targets for the service",
+     "Non-disclosure agreement (NDA) that protects confidential information"
+    ],
+    "correct_index": 1,
+    "correct_rationale": "An SOW or work order defines the scope, deliverables, schedule, and price of a specific engagement under an existing MSA.",
+    "distractor_summary": "An MOU is informal, an SLA sets ongoing service levels, and an NDA protects confidentiality.",
+    "section": 43,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   }
+  ],
+  "lessons": [],
+  "examProfiles": []
+ }
+}

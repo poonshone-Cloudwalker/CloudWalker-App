@@ -151,6 +151,16 @@
    "lessons": 0,
    "sha256": "684f1809d7c40b66b13bec2c9a4f1c3e0ae5388a0bf89f0e9b85314cab3f9aa9",
    "reviewStatus": "needs-review"
+  },
+  {
+   "file": "builtin-wrong-option-explanations.json",
+   "packId": "builtin-wrong-option-explanations",
+   "packVersion": "2026.11.19",
+   "title": "Wrong-option explanations (67 questions)",
+   "questions": 67,
+   "lessons": 0,
+   "sha256": "eebd24a1c0aff6f73f3d51d8935e6cbbb7ba7cedfd27476a442b320827aa1d91",
+   "reviewStatus": "needs-review"
   }
  ]
 }
