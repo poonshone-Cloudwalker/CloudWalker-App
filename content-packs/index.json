@@ -93,6 +93,16 @@
    "reviewStatus": "needs-review"
   },
   {
+   "file": "builtin-cdl-option-length.json",
+   "packId": "builtin-cdl-option-length",
+   "packVersion": "2026.11.16",
+   "title": "CDL answer-length fix (85 questions)",
+   "questions": 85,
+   "lessons": 0,
+   "sha256": "f978a68177cdba34832026c3b0632c953da9f522771f7b55610c3fedde5487ba",
+   "reviewStatus": "needs-review"
+  },
+  {
    "file": "builtin-pca-option-length.json",
    "packId": "builtin-pca-option-length",
    "packVersion": "2026.11.10",
