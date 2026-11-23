@@ -59,6 +59,6 @@ function awsBlueprintView(code) {
 registerFeature({
   id: 'awsobj',
   css: `.bp-task{border-top:1px solid var(--color-divider);padding:8px 0}.bp-task summary{cursor:pointer}`,
-  views: { blueprint: arg => arg ? awsBlueprintView(decodeURIComponent(String(arg)).trim()) : awsBlueprintIndex() },
+  views: { blueprint: arg => { if (!arg) return awsBlueprintIndex(); let d = String(arg); try { d = decodeURIComponent(d); } catch (e) {} return awsBlueprintView(d.trim()); } },
   nav: [{ route: 'blueprint', label: 'AWS blueprints', group: 'Certify', after: 'atlas', icon: '<path d="M5 4h14v16H5zM9 8h6M9 12h6M9 16h4"/>' }]
 });

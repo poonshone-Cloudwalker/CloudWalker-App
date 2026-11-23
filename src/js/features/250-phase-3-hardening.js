@@ -257,7 +257,15 @@ function smartImport(data) {
   if (data.format === 'blueprint-progress') { snapshot('Before progress import'); const r = importProgress(data); S.meta2.lastImport = Date.now(); return r; }
   if (!['cloudwalker-workspace', 'cloudwalker-artifacts'].includes(data.format)) throw new Error(`Unrecognised file format "${data.format || 'none'}". Expected a CloudWalker workspace, artifacts, or progress file.`);
   snapshot(`Before ${data.format === 'cloudwalker-workspace' ? 'workspace' : 'artifacts'} import`);
-  const rep = { added: 0, updated: 0, unchanged: 0, kept: 0, rejected: 0, errors: [] };
+  const SAFE_KEYS = new Set(['__proto__', 'constructor', 'prototype']);
+function safeAssign(target, source) {
+  if (!source || typeof source !== 'object') return target;
+  for (const k of Object.keys(source)) {
+    if (!SAFE_KEYS.has(k)) target[k] = source[k];
+  }
+  return target;
+}
+const rep = { added: 0, updated: 0, unchanged: 0, kept: 0, rejected: 0, errors: [] };
   const w = data.workspace || data; let progMsg = '';
   if (data.progress) { const r = importProgress({ format: 'blueprint-progress', ...data.progress }); progMsg = r.body; rep.errors.push(...(r.list || [])); }
   S.ws.adrs = mergeValidated('adr', S.ws.adrs, w.adrs, normalizeAdr, rep);
@@ -265,8 +273,8 @@ function smartImport(data) {
   S.ws.labs = mergeValidated('labs', S.ws.labs, w.labs, null, rep);
   ensureWs4(); S.ws.outputs = mergeValidated('generic', S.ws.outputs, w.outputs, null, rep); S.ws.reflections = mergeValidated('generic', S.ws.reflections, w.reflections, null, rep);
   if (Array.isArray(w.exportLog)) { const seen = new Set(S.ws.exportLog.map(x => x.t + x.file)); w.exportLog.forEach(x => x && !seen.has(x.t + x.file) && S.ws.exportLog.push(x)); }
-  if (w.panels && typeof w.panels === 'object') Object.assign(S.ws.panels, w.panels);
-  if (data.drafts && typeof data.drafts === 'object') { Object.assign(S.drafts.iq, data.drafts.iq || {}); Object.assign(S.drafts.wb, data.drafts.wb || {}); }
+  if (w.panels && typeof w.panels === 'object') safeAssign(S.ws.panels, w.panels);
+  if (data.drafts && typeof data.drafts === 'object') { safeAssign(S.drafts.iq, data.drafts.iq || {}); safeAssign(S.drafts.wb, data.drafts.wb || {}); }
   if (w.labDrafts && typeof w.labDrafts === 'object') for (const [k, v] of Object.entries(w.labDrafts)) if (LAB_SCENARIOS.some(s => s.id === k) && v && typeof v.sections === 'object') S.ws.labDrafts[k] = v; else rep.errors.push(`lab note for "${k}" ignored (unknown scenario or malformed)`);
   const iv = w.interview || {}; const stories = iv.stories ?? w.stories;
   S.ws.interview.stories = mergeValidated('stories', S.ws.interview.stories, stories, normalizeStory, rep);
@@ -274,7 +282,7 @@ function smartImport(data) {
   S.ws.interview.boards = mergeValidated('generic', S.ws.interview.boards, iv.boards, null, rep);
   S.ws.interview.exec = mergeValidated('generic', S.ws.interview.exec, iv.exec, null, rep);
   const c = w.career;
-  if (c) { if (c.profile && typeof c.profile === 'object') Object.assign(S.ws.career.profile, c.profile); for (const k of ['roles', 'milestones', 'apps']) S.ws.career[k] = mergeValidated('generic', S.ws.career[k], c[k], null, rep); if (c.weeks && typeof c.weeks === 'object') Object.assign(S.ws.career.weeks, c.weeks); }
+  if (c) { if (c.profile && typeof c.profile === 'object') safeAssign(S.ws.career.profile, c.profile); for (const k of ['roles', 'milestones', 'apps']) S.ws.career[k] = mergeValidated('generic', S.ws.career[k], c[k], null, rep); if (c.weeks && typeof c.weeks === 'object') safeAssign(S.ws.career.weeks, c.weeks); }
   if (w.srs && typeof w.srs === 'object') for (const [id, card] of Object.entries(w.srs)) { if (!card || typeof card.due !== 'number') { rep.errors.push(`retention card ${id}: malformed`); continue; } const n = normCard(card); if (!S.ws.srs[id] || (n.last || 0) > (S.ws.srs[id].last || 0)) S.ws.srs[id] = n; }
   if (w.trail && typeof w.trail === 'object') S.ws.trail = { ...w.trail, ...S.ws.trail };
   if (w.glossary && typeof w.glossary === 'object') {

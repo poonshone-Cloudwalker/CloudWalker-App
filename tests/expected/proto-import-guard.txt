@@ -1,0 +1,8 @@
+1 import notice: Couldn't import proto-malicious.json. | object is not iterable (cannot read property Symbol(Symbol.iterator))
+2 Object.prototype polluted: false
+3 prototype value: undefined
+4 normal panel preserved: false
+5 after progress import, Object.prototype polluted: false
+6 answers prototype polluted: false
+7 dashboard renders: true
+errors: none

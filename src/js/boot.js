@@ -1,3 +1,7 @@
+/* Global error boundary */
+window.addEventListener('error', e => { console.error('Uncaught error:', e.error || e.message); });
+window.addEventListener('unhandledrejection', e => { console.error('Unhandled rejection:', e.reason); });
+
 /* ------------------------------------------------------------------ Boot */
 S.booting = true; const BOOT_T0 = performance.now();
 const _renderP9 = render; render = function () { if (S.booting) return; _renderP9(); };

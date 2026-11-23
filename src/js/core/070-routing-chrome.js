@@ -65,7 +65,12 @@ const VIEWS = {};
 function render() {
   const r = route(); const v = VIEWS[r.name] || VIEWS.dashboard;
   if (r.name !== 'run') clearInterval(timerHandle);
-  $('#main').innerHTML = `<div class="page">${chrome(r.name)}${v(r.arg)}${appFooter()}</div>`;
+  let body;
+  try { body = v(r.arg); } catch (e) {
+    console.error('View error:', e);
+    body = `<div class="card" style="border-color:var(--danger,#c00)"><h2>Something went wrong</h2><p class="small">This page failed to load. Try refreshing or going back to the <a href="#/dashboard">dashboard</a>.</p><p class="small muted">${esc(String(e?.message || e))}</p></div>`;
+  }
+  $('#main').innerHTML = `<div class="page">${chrome(r.name)}${body}${appFooter()}</div>`;
   renderNav(); closeNav();
   document.title = (NAV.find(n => n[0] === r.name)?.[1] || (r.name === 'run' ? (S.runner?.title || 'Session') : r.name === 'results' ? 'Results' : 'Dashboard')) + ' · CloudWalker';
   if (r.name === 'run') tickTimer();
