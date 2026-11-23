@@ -22,7 +22,7 @@ S.userBank = { exams: {}, questions: {} };
 function persistOK() { return PERSIST.status === 'ok' || PERSIST.status === 'saving'; }
 
 /* ---------- IndexedDB, promise-wrapped, every call guarded */
-function withTimeout(p, ms, what) { return Promise.race([p, new Promise((_, rej) => setTimeout(() => rej(new Error(`${what} timed out`)), ms))]); }
+function withTimeout(p, ms, what) { let t; const timeout = new Promise((_, rej) => { t = setTimeout(() => rej(new Error(`${what} timed out`)), ms); }); return Promise.race([p, timeout]).finally(() => clearTimeout(t)); }
 function idbOpen() {
   return withTimeout(new Promise((res, rej) => {
     let rq; try { if (!('indexedDB' in window) || !indexedDB) throw new Error('IndexedDB is not available in this browser'); rq = indexedDB.open(IDB_NAME, 1); } catch (e) { rej(e); return; }
@@ -190,7 +190,8 @@ async function refreshEstimate() {
 async function persistBoot() {
   PERSIST.tab = Math.random().toString(36).slice(2);
   try { PERSIST.pristine = JSON.stringify(localRecord()); } catch { PERSIST.pristine = null; }
-  try { PERSIST.db = await idbOpen(); }
+  const opening = idbOpen(); PERSIST.opening = opening.then(() => null, () => null);
+  try { PERSIST.db = await opening; }
   catch (e) { PERSIST.status = 'blocked'; PERSIST.reason = e && e.message || 'Storage is blocked'; return; }
   PERSIST.status = 'restoring';
   try {

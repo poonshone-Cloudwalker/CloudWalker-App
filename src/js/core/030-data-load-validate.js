@@ -43,7 +43,7 @@ function bootBankRows(rows) {
   for (const row of rows) {
     const o = {}; F.forEach((f, i) => o[f] = row[i]);
     o.source_section = S.sections[o.section] || ''; delete o.section;
-    const em = examMetaFor(o.exam_code);
+    const em = examMetaFor(o.exam_code) || { name: o.exam_code, vendor: '' };
     Object.assign(o, { exam: em.name, vendor: em.vendor, difficulty_source: o.difficulty_source || 'inferred', blueprint_version: '', last_reviewed: '', origin: 'reserve', _fromReserve: true }); /* V09: no review date is invented for the reserve */
     if (validateQuestion(o, 0).length) { dropped++; continue; }
     const q = normalizeQuestion(o);

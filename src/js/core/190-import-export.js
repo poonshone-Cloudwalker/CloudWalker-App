@@ -52,6 +52,7 @@ function importBank(data) {
 }
 function readJSON(input, fn) {
   const file = input.files[0]; input.value = ''; if (!file) return;
+  if (file.size > 25 * 1024 * 1024) { S.ui.settingsMsg = { ok: false, title: `Couldn't import ${file.name}.`, body: 'The file is larger than 25 MB, which is more than a CloudWalker export should be.' }; go('settings'); toast(S.ui.settingsMsg.title); return; }
   const rd = new FileReader();
   rd.onload = () => {
     try { const data = JSON.parse(rd.result); if (data && data.format === 'blueprint-question-bank') snapshot('Before importing ' + file.name); S.ui.settingsMsg = fn(data); S.meta2.lastImport = Date.now(); }

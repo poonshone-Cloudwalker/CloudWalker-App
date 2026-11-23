@@ -18,7 +18,7 @@ fs.rmSync(WORK, { recursive: true, force: true }); fs.cpSync(path.join(__dirname
 const tests = fs.readdirSync(SUITE).filter(f => f.endsWith('.js')).map(f => f.slice(0, -3)).filter(n => !words.length || words.some(w => n.includes(w))).sort();
 
 /* The hosted-PWA test needs the build served over http on port 8731 */
-const server = http.createServer((req, res) => { const p = decodeURIComponent(req.url.split('?')[0]); const f = path.join(path.dirname(DIST), p === '/' ? path.basename(DIST) : p); if (!f.startsWith(path.dirname(DIST)) || !fs.existsSync(f)) { res.writeHead(404); return res.end(); } res.writeHead(200, { 'Content-Type': f.endsWith('.js') ? 'text/javascript' : 'text/html; charset=utf-8' }); fs.createReadStream(f).pipe(res); });
+const server = http.createServer((req, res) => { const p = decodeURIComponent(req.url.split('?')[0]); const f = path.join(path.dirname(DIST), p === '/' ? path.basename(DIST) : p); if (!f.startsWith(path.dirname(DIST) + path.sep) || !fs.existsSync(f)) { res.writeHead(404); return res.end(); } res.writeHead(200, { 'Content-Type': f.endsWith('.js') ? 'text/javascript' : 'text/html; charset=utf-8' }); fs.createReadStream(f).pipe(res); });
 const run = name => new Promise(resolve => {
   const src = fs.readFileSync(path.join(SUITE, name + '.js'), 'utf8').split('__CW_APP__').join('file://' + DIST);
   const file = path.join(WORK, name + '.js'); fs.writeFileSync(file, src); let out = ''; const t0 = Date.now();

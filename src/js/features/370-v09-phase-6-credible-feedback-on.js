@@ -19,7 +19,8 @@ S.p6 = { busy: {}, err: {}, loaded: false, memOnly: false, test: '' };
 const aiReady = () => !!(AIC && AIC.endpoint && AIC.key && AIC.model);
 const aiHost = () => { try { return new URL(AIC.endpoint).host; } catch { return 'the AI service'; } };
 async function p6LoadConfig() {
-  for (let i = 0; i < 60 && !PERSIST.db; i++) await new Promise(r => setTimeout(r, 100));
+  for (let i = 0; i < 60 && !PERSIST.opening; i++) await new Promise(r => setTimeout(r, 100));
+  if (PERSIST.opening) await PERSIST.opening;
   if (PERSIST.db) { try { const v = await idbGet(AI_KEY); if (v && typeof v === 'object' && v.endpoint) AIC = v; } catch { /* storage unreadable: feature stays hidden */ } }
   S.p6.loaded = true;
   if (aiReady() && ['settings', 'lab', 'adr', 'interview', 'calibration'].includes(route().name)) { const a = document.activeElement; if (!a || a === document.body || !a.closest('input,textarea,select')) render(); }
