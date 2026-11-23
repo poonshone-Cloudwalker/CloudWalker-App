@@ -2,7 +2,7 @@
 const CACHE = 'cloudwalker-v09-shell-1';
 self.addEventListener('install', e => { self.skipWaiting(); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith('cloudwalker-') && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
-self.addEventListener('message', e => { const d = e.data || {}; if (d.type === 'cache-shell' && typeof d.url === 'string') e.waitUntil(caches.open(CACHE).then(c => c.add(new Request(d.url, { cache: 'reload' }))).catch(() => {})); });
+self.addEventListener('message', e => { const d = e.data || {}; if (d.type === 'cache-shell' && typeof d.url === 'string' && e.source && (() => { try { return new URL(d.url, self.location.href).origin === self.location.origin; } catch { return false; } })()) e.waitUntil(caches.open(CACHE).then(c => c.add(new Request(d.url, { cache: 'reload' }))).catch(() => {})); });
 self.addEventListener('fetch', e => {
   const r = e.request; if (r.method !== 'GET') return;
   const u = new URL(r.url); if (u.origin !== self.location.origin) return;

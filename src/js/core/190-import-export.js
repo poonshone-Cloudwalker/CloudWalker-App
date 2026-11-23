@@ -19,6 +19,7 @@ function importProgress(data) {
   if (data.answers && typeof data.answers !== 'object') throw new Error('"answers" must be an object keyed by question id.');
   let added = 0, unknown = 0;
   for (const [id, arr] of Object.entries(data.answers || {})) {
+    if (id === '__proto__' || id === 'constructor' || id === 'prototype') { errs.push(`${id}: reserved answer id skipped`); continue; }
     if (!Array.isArray(arr)) { errs.push(`${id}: answers must be an array`); continue; }
     if (!S.bank.has(id)) unknown++;
     const cur = S.progress.answers[id] ||= []; const seen = new Set(cur.map(a => a.t + ':' + a.choice));
