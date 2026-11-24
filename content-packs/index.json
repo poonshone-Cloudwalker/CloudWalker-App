@@ -105,11 +105,11 @@
   {
    "file": "builtin-cdl-doc-links.json",
    "packId": "builtin-cdl-doc-links",
-   "packVersion": "2026.11.24",
+   "packVersion": "2026.11.28",
    "title": "Google Cloud (CDL) built-in questions: documentation links",
    "questions": 85,
    "lessons": 0,
-   "sha256": "1c5ff2377f4bb5eb24091112f1b5f1f17d1a0348e38ebf1854e6dd274a8ebcbe",
+   "sha256": "3877baad2152858286749647ccf20c083bf5ac58df913cc0becbb370c732758d",
    "reviewStatus": "needs-review"
   },
   {
