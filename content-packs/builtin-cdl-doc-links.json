@@ -1,13 +1,13 @@
 {
  "format": "cloudwalker-content-pack",
  "packId": "builtin-cdl-doc-links",
- "packVersion": "2026.11.24",
+ "packVersion": "2026.11.28",
  "title": "Google Cloud (CDL) built-in questions: documentation links",
  "publishedAt": "2026-11-24",
  "minAppSchema": 1,
  "checksum": {
   "alg": "SHA-256",
-  "value": "bf91c97f0294df55665d511b8f359b2682d52f8eb4961ddd96657db3df702e41"
+  "value": "7f1a8bbd49f21d3c433d647d277e23c4e087437f64920c2e625a1b8f652c3c3e"
  },
  "content": {
   "exams": [],
@@ -629,7 +629,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      {
-      "title": "Knowledge Catalog (formerly Dataplex) overview",
+      "title": "Knowledge Catalog overview",
       "url": "https://docs.cloud.google.com/dataplex/docs/introduction"
      }
     ]
@@ -784,7 +784,7 @@
       "url": "https://cloud.google.com/discover/what-is-nosql"
      },
      {
-      "title": "Google Cloud databases",
+      "title": "What is a database?",
       "url": "https://cloud.google.com/discover/databases"
      }
     ]
@@ -1126,7 +1126,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      {
-      "title": "Google Cloud AI products",
+      "title": "AI and machine learning products",
       "url": "https://cloud.google.com/products/ai"
      }
     ]
@@ -1157,7 +1157,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      {
-      "title": "Pre-trained AI APIs",
+      "title": "AI APIs for Google Cloud",
       "url": "https://cloud.google.com/ai/apis"
      },
      {
@@ -1238,7 +1238,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      {
-      "title": "Cloud Translation overview",
+      "title": "Google translation offerings",
       "url": "https://docs.cloud.google.com/translate/docs/overview"
      }
     ]
@@ -1388,8 +1388,8 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      {
-      "title": "Generative AI on Google Cloud overview",
-      "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/overview"
+      "title": "Generative AI on Google Cloud",
+      "url": "https://cloud.google.com/ai/generative-ai"
      }
     ]
    },
@@ -1421,7 +1421,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      {
-      "title": "Training methods",
+      "title": "Choose a training method",
       "url": "https://docs.cloud.google.com/vertex-ai/docs/start/training-methods"
      }
     ]
@@ -1771,8 +1771,8 @@
       "url": "https://cloud.google.com/apigee"
      },
      {
-      "title": "New business channels using APIs",
-      "url": "https://cloud.google.com/solutions/new-channels-using-apis"
+      "title": "APIs and applications solutions",
+      "url": "https://cloud.google.com/solutions/apis-and-applications"
      }
     ]
    },
@@ -2007,7 +2007,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      {
-      "title": "Shared responsibility and shared fate on Google Cloud",
+      "title": "Shared responsibilities and shared fate on Google Cloud",
       "url": "https://docs.cloud.google.com/architecture/framework/security/shared-responsibility-shared-fate"
      }
     ]
@@ -2239,7 +2239,7 @@
       "url": "https://cloud.google.com/security/products/security-operations"
      },
      {
-      "title": "SIEM platform overview (Google Security Operations)",
+      "title": "SIEM platform overview",
       "url": "https://docs.cloud.google.com/chronicle/docs/overview"
      }
     ]
