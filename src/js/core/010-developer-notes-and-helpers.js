@@ -81,3 +81,13 @@ const ago = t => { const s = (Date.now() - t) / 1000; if (s < 60) return 'just n
 const LETTERS = 'ABCDEF';
 const DIFFS = ['easy', 'medium', 'hard'];
 
+
+/* Quiet failures are recorded here (newest last, capped at 40) instead of vanishing; Settings shows them under "Diagnostics". */
+const ISSUES = [];
+function logIssue(where, err) {
+  try { ISSUES.push({ t: Date.now(), where, msg: String((err && err.message) || err || 'unknown').slice(0, 200) }); if (ISSUES.length > 40) ISSUES.shift(); console.warn('CloudWalker: ' + where, err); } catch { /* logging must never throw */ }
+}
+function diagHtml() {
+  const rows = ISSUES.slice().reverse().map(i => `<li><span class="muted">${esc(new Date(i.t).toLocaleTimeString())}</span> <strong>${esc(i.where)}</strong>: ${esc(i.msg)}</li>`).join('');
+  return `<section class="card" id="diagCard"><details><summary><strong>Diagnostics</strong> <span class="small muted">(${ISSUES.length ? ISSUES.length + ' recent quiet problem' + (ISSUES.length === 1 ? '' : 's') : 'nothing to report'})</span></summary>${rows ? `<ul class="small" style="margin:8px 0 0;padding-left:18px">${rows}</ul><p class="small muted" style="margin:8px 0 0">These cleared when you reload. They are for troubleshooting; your saved work is not affected by this list.</p>` : '<p class="small muted" style="margin:8px 0 0">Nothing has failed quietly in this session.</p>'}</details></section>`;
+}

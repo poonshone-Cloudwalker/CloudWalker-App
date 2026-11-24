@@ -36,7 +36,7 @@ document.addEventListener('click', e => {
     'import-bank': () => $('#fileBank').click(),
     'export-bank': () => { download(`blueprint-question-bank-${stamp()}.json`, { format: 'blueprint-question-bank', exported_at: new Date().toISOString(), exams: S.exams, questions: allQ() }); toast('Question bank exported.'); },
     'set-theme': () => { S.ui.theme = d.v; applyTheme(); render(); },
-    'reset': () => { if (!confirm('Clear all answers, flags, confidence ratings, and sessions? Export first if you want to keep them.')) return; S.progress = { answers: {}, flags: new Set(), confidence: {}, sessions: [] }; S.session = { started: Date.now(), answered: 0, correct: 0, streak: 0, best: 0 }; S.runner = null; S.lastResult = null; S.ui.settingsMsg = { ok: true, title: 'Runtime session reset.' }; renderSessionMini(); render(); }
+    'reset': () => { confirmModal('Clear all answers, flags, confidence ratings, and sessions?', 'Export first if you want to keep them.', 'Clear all', () => { S.progress = { answers: {}, flags: new Set(), confidence: {}, sessions: [] }; S.session = { started: Date.now(), answered: 0, correct: 0, streak: 0, best: 0 }; S.runner = null; S.lastResult = null; S.ui.settingsMsg = { ok: true, title: 'Runtime session reset.' }; renderSessionMini(); render(); }); }
   };
   if (fx[a]) { e.preventDefault(); fx[a](); }
 });

@@ -215,7 +215,7 @@ function sectionReset(kind) {
 /* Confirmation modal (opened only on explicit destructive actions; never used for navigation). */
 const dlg4 = document.createElement('dialog'); dlg4.id = 'dlg4'; dlg4.className = 'confirm-dlg'; dlg4.setAttribute('aria-labelledby', 'dlg4-t'); document.body.append(dlg4);
 function confirmModal(title, body, okLabel, onOk) {
-  dlg4.innerHTML = `<h2 id="dlg4-t">${esc(title)}</h2><p>${esc(body)}</p><div class="row" style="margin-top:16px"><button class="btn danger" id="dlg4-ok">${esc(okLabel)}</button><button class="btn" id="dlg4-cancel">Cancel</button></div>`;
+  dlg4.innerHTML = `<h2 id="dlg4-t">${esc(title)}</h2>${body ? `<p>${esc(body)}</p>` : ''}<div class="row" style="margin-top:16px"><button class="btn danger" id="dlg4-ok">${esc(okLabel)}</button><button class="btn" id="dlg4-cancel">Cancel</button></div>`;
   dlg4.showModal(); $('#dlg4-cancel').focus();
   $('#dlg4-ok').onclick = () => { dlg4.close(); onOk(); }; $('#dlg4-cancel').onclick = () => dlg4.close();
 }

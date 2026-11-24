@@ -1,0 +1,9 @@
+1 confirm modal opens (no native dialog): true true
+2 modal title: Clear all answers, flags, confidence ratings, and sessions?
+3 cancel closes it: true
+4 confirm runs the reset: true
+5 diagnostics card present: true
+6 diagnostics says nothing failed quietly: true
+7 AI tab-only option present: true
+8 native dialogs: 0
+errors: none

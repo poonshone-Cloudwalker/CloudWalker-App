@@ -264,7 +264,7 @@ function p8Apply() {
   for (const s of Object.values(c.labs)) { const i = LAB_SCENARIOS.findIndex(x => x.id === s.id); if (i >= 0) { if (!LAB_BASE.has(s.id)) LAB_BASE.set(s.id, LAB_SCENARIOS[i]); LAB_SCENARIOS[i] = s; } else LAB_SCENARIOS.push(s); }
   for (const [code, p] of Object.entries(c.examProfiles)) { if (!PROFILE_BASE.has(code)) PROFILE_BASE.set(code, EXAM_PROFILES[code] || null); EXAM_PROFILES[code] = { ...(EXAM_PROFILES[code] || {}), ...p }; }
   if (typeof LT_CACHE !== 'undefined') LT_CACHE = null;
-  try { applyContentEdits(true); } catch { /* edits apply on next render */ }
+  try { applyContentEdits(true); } catch (e) { logIssue('Applying content edits', e); }
 }
 function mergePack(rep) {
   const c = PKC(); const p = rep.pack; const t = rep.types; const now = Date.now();
