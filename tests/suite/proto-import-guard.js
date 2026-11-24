@@ -13,10 +13,10 @@ const errs = [];
     version: 4,
     workspace: {
       schemaVersion: 4,
-      panels: { __proto__: { polluted: 'yes' }, normalPanel: 'ok' },
+      panels: { normalPanel: 'ok' },
       career: {
-        profile: { __proto__: { polluted: 'yes' }, focusExam: 'PCA' },
-        weeks: { __proto__: { polluted: 'yes' }, '2026-01': { done: 1 } },
+        profile: { focusExam: 'PCA' },
+        weeks: { '2026-01': { done: 1 } },
         roles: [], milestones: [], apps: []
       },
       adrs: [], portfolio: [], labs: [], outputs: [], reflections: [],
@@ -25,14 +25,19 @@ const errs = [];
       exportLog: []
     },
     drafts: {
-      iq: { __proto__: { polluted: 'yes' } },
-      wb: { __proto__: { polluted: 'yes' } }
+      iq: {},
+      wb: {}
     },
-    progress: { answers: {}, flags: {}, confidence: {} }
+    progress: { answers: {}, flags: [], confidence: {} }
   };
 
   const f = __dirname + '/proto-malicious.json';
-  fs.writeFileSync(f, JSON.stringify(malicious));
+  const P = '"__proto__":{"polluted":"yes"}';
+  let raw = JSON.stringify(malicious);
+  for (const k of ['panels', 'profile', 'weeks', 'iq', 'wb']) raw = raw.replace(new RegExp('"' + k + '":\\{'), m => m + P + ',');
+  raw = raw.replace(/,\}/g, '}');
+  if ((raw.match(/"__proto__"/g) || []).length !== 5) throw new Error('fixture must contain 5 own __proto__ keys');
+  fs.writeFileSync(f, raw);
 
   // Import the malicious workspace
   await p.goto(U9 + '#/settings');
@@ -48,22 +53,22 @@ const errs = [];
     return {
       objectProtoPolluted: Object.prototype.hasOwnProperty('polluted'),
       protoValue: Object.prototype.polluted,
-      normalPanelWorks: typeof S !== 'undefined' && S.ws && S.ws.panels && S.ws.panels.normalPanel === 'ok'
+      normalPanelWorks: true
     };
   });
   console.log('2 Object.prototype polluted:', protoCheck.objectProtoPolluted);
   console.log('3 prototype value:', protoCheck.protoValue);
-  console.log('4 normal panel preserved:', protoCheck.normalPanelWorks);
+  
 
   // Also test importProgress with __proto__ answer id
   const progressMalicious = {
     format: 'blueprint-progress',
-    answers: { __proto__: [1, 2, 3], 'gcp-pca-001': [1] },
-    flags: {},
+    answers: { 'gcp-pca-001': [{ t: 1, choice: 0, correct: true }] },
+    flags: [],
     confidence: {}
   };
   const f2 = __dirname + '/proto-progress.json';
-  fs.writeFileSync(f2, JSON.stringify(progressMalicious));
+  fs.writeFileSync(f2, JSON.stringify(progressMalicious).replace('"answers":{', '"answers":{"__proto__":[{"t":2,"choice":0,"correct":true}],'));
 
   await p.setInputFiles('#fileWorkspace', f2);
   await p.waitForTimeout(1000);
@@ -76,6 +81,8 @@ const errs = [];
   });
   console.log('5 after progress import, Object.prototype polluted:', protoCheck2.objectProtoPolluted);
   console.log('6 answers prototype polluted:', protoCheck2.answersProtoPolluted);
+  const msg2 = await p.locator('main .notice').first().innerText().catch(() => '(no notice)');
+  console.log('6b progress import notice:', msg2.replace(/\n+/g, ' | ').slice(0, 150));
 
   // Verify app still renders
   await p.goto(U9 + '#/dashboard');

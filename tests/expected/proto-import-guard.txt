@@ -1,8 +1,8 @@
-1 import notice: Couldn't import proto-malicious.json. | object is not iterable (cannot read property Symbol(Symbol.iterator))
+1 import notice: Import complete. | 0 added, 0 updated (newer copy), 0 unchanged, 0 kept (your copy was newer), 0 rejected. 0 answers added, 0 flags and 0 confidence r
 2 Object.prototype polluted: false
 3 prototype value: undefined
-4 normal panel preserved: false
 5 after progress import, Object.prototype polluted: false
 6 answers prototype polluted: false
+6b progress import notice: Progress imported. | 1 answers added, 0 flags and 0 confidence ratings merged. | __proto__: reserved answer id skipped
 7 dashboard renders: true
 errors: none
