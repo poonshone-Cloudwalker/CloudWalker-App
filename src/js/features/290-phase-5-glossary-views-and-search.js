@@ -127,8 +127,7 @@ function glossaryImport(data) {
   S.meta2.lastImport = Date.now(); markDirty();
   return { ok: rep.rejected === 0, title: rep.rejected ? `Glossary imported with ${rep.rejected} rejected entr${rep.rejected === 1 ? 'y' : 'ies'}.` : 'Glossary imported.', body: `${rep.added} added, ${rep.updated} updated, ${rep.unchanged} unchanged, ${rep.rejected} rejected. Changes are kept in this workspace; save it to keep them.`, list: [...rep.errors, ...rep.warnings] };
 }
-const _smartImport5 = smartImport;
-smartImport = data => (data && typeof data === 'object' && !data.format && (Array.isArray(data.terms) || Array.isArray(data.cross_cloud))) ? glossaryImport(data) : _smartImport5(data);
+registerImportHook({ id: 'glossary-file', order: 10, pre: data => (data && typeof data === 'object' && !data.format && (Array.isArray(data.terms) || Array.isArray(data.cross_cloud))) ? { result: glossaryImport(data) } : null });
 function glossaryExport() {
   const out = { terms: glTerms().map(({ id, term, acronym, clouds, exams, domains, definition, aliases, related, source_section }) => ({ id, term, acronym, clouds, exams, domains, definition, aliases, related, source_section })), cross_cloud: glCross().map(({ function: fn, gcp, azure, aws, notes }) => ({ function: fn, gcp, azure, aws, notes })) };
   const name = `cloudwalker-glossary-${stamp()}.json`; download(name, out); S.ws.exportLog.push({ t: Date.now(), kind: 'glossary', file: name, count: out.terms.length }); showStatus(`Exported ${out.terms.length} terms and ${out.cross_cloud.length} cross-cloud rows.`);

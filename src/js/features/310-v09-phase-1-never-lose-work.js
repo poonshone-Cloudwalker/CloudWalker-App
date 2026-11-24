@@ -103,14 +103,13 @@ function restoreUserBank(ub) {
 }
 
 /* ---------- Workspace import: migrate first, then the existing merge-by-id */
-const _smartImportP1 = smartImport;
-smartImport = data => {
-  const m = migrateWorkspace(data); const d = m.data;
-  const r = _smartImportP1(d);
+registerImportHook({ id: 'p1-migrate', order: 30,
+  pre: data => { const m = migrateWorkspace(data); return { data: m.data, state: m }; },
+  post: (r, { cur: d, state: m }) => {
   if (d && d.format === 'cloudwalker-workspace' && d.userBank) { try { restoreUserBank(d.userBank); } catch (e) { (r.list ||= []).push('Imported questions in this file could not be loaded: ' + e.message); } }
   if (m.notes.length) r.body = `${m.notes.join(' ')} ${r.body || ''}`.trim();
-  persistSoon(SAVE_QUICK); return r;
-};
+  persistSoon(SAVE_QUICK);
+} });
 
 /* ---------- Apply a saved record (boot restore and daily-backup restore) */
 function applyLocal(rec) {

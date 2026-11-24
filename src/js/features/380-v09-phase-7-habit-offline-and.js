@@ -291,17 +291,15 @@ VIEWS.install = () => {
 };
 
 /* ---------- Workspace import: habit data merges, newer wins */
-const _smartImportP7 = smartImport;
-smartImport = data => {
-  const r = _smartImportP7(data); const w = data && (data.workspace || data); if (!w || data.format !== 'cloudwalker-workspace' || !w.habit || typeof w.habit !== 'object') return r;
+registerImportHook({ id: 'p7-habit', order: 70, post: (r, { orig: data }) => {
+  const w = data && (data.workspace || data); if (!w || data.format !== 'cloudwalker-workspace' || !w.habit || typeof w.habit !== 'object') return;
   const h = HB(), x = w.habit;
   if (x.goal && (x.goal.updated || 0) > (h.goal.updated || 0) && ['cards', 'minutes'].includes(x.goal.type)) h.goal = x.goal;
   if (x.remind && (x.remind.updated || 0) > (h.remind.updated || 0)) h.remind = { ...x.remind, on: false };
   if (x.days && typeof x.days === 'object') for (const [k, v] of Object.entries(x.days)) if (v && /^\d{4}-\d{2}-\d{2}$/.test(k) && (!h.days[k] || (v.min || 0) > (h.days[k].min || 0))) h.days[k] = v;
   if (x.weekNotes && typeof x.weekNotes === 'object') for (const [k, v] of Object.entries(x.weekNotes)) if (v && (!h.weekNotes[k] || (v.updated || 0) > (h.weekNotes[k].updated || 0))) h.weekNotes[k] = v;
   if (x.startedAt && x.startedAt < h.startedAt) h.startedAt = x.startedAt;
-  return r;
-};
+}});
 
 /* ---------- Chrome and events */
 ICON.today = '<path d="M4 7h16v13H4z"/><path d="M8 3v4M16 3v4M4 11h16"/><path d="M9 15l2 2 4-4"/>';

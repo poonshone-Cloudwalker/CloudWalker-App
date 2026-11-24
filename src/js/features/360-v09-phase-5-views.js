@@ -105,9 +105,8 @@ VIEWS.content = (arg = '') => {
 };
 
 /* Workspace import: lesson progress merges by lesson id, newer wins */
-const _smartImportP5 = smartImport;
-smartImport = data => {
-  const r = _smartImportP5(data); const w = data && (data.workspace || data); if (!w || data.format !== 'cloudwalker-workspace') return r;
+registerImportHook({ id: 'p5-lessons', order: 50, post: (r, { orig: data }) => {
+  const w = data && (data.workspace || data); if (!w || data.format !== 'cloudwalker-workspace') return;
   for (const [key, getter] of [['lessons', LS], ['lessonReview', LREV]]) {
     const src = w[key]; if (!src || typeof src !== 'object') continue; const dst = getter();
     for (const [id, v] of Object.entries(src)) {
@@ -116,8 +115,7 @@ smartImport = data => {
       if (!cur || t(v) > t(cur)) dst[id] = v;
     }
   }
-  return r;
-};
+}});
 
 /* ---------- Chrome and events */
 ICON.lessons = '<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0 0 12 3z"/>';

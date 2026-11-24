@@ -56,11 +56,37 @@ function registerFeature(f) {
   }
   return true;
 }
+/* ------------------------------------------------------------------ Import hooks
+ * smartImport() = pre hooks (outermost first) -> smartImportCore() -> post hooks (innermost first), ordered by `order`.
+ * A hook is { id, order, pre?(data) -> null | { data } | { result }, post?(result, { cur, orig, state }) }.
+ *   pre  may replace the data for everything inside it ({ data, state }) or answer the import itself ({ result });
+ *        a result skips the core import and every hook with a lower order, exactly like an early return would.
+ *   post runs after the core import. `orig` is the file as chosen; `cur` is the data after pre hooks (migration);
+ *        `state` is whatever this hook's own pre returned. Posts mutate the result in place; they do not return it.
+ * Orders in use: 10 glossary file, 20 remember focus, 30 migrate+backup, 40 content edits, 50 lessons, 60 AI feedback log,
+ * 70 habit, 80 content packs, 1000 registerFeature mergeImport. Pick a free number; ids must be unique. */
+const IMPORT_HOOKS = [];
+function registerImportHook(h) {
+  if (!h || !h.id || !Number.isFinite(h.order) || (!h.pre && !h.post)) throw new Error('registerImportHook: needs id, a numeric order, and pre or post.');
+  if (IMPORT_HOOKS.some(x => x.id === h.id)) throw new Error(`registerImportHook: "${h.id}" is registered twice.`);
+  IMPORT_HOOKS.push(h); IMPORT_HOOKS.sort((a, b) => a.order - b.order);
+}
+function smartImport(data) {
+  const hooks = IMPORT_HOOKS, states = new Array(hooks.length), curs = new Array(hooks.length); let cur = data, result, stop = -1;
+  for (let i = hooks.length - 1; i >= 0; i--) {
+    const h = hooks[i], p = h.pre ? h.pre(cur, data) : null;
+    if (p && 'result' in p) { result = p.result; stop = i; break; }
+    if (p && 'data' in p) cur = p.data;
+    if (p) states[i] = p.state; curs[i] = cur;
+  }
+  if (stop < 0) result = smartImportCore(cur);
+  for (let i = stop + 1; i < hooks.length; i++) if (hooks[i].post) hooks[i].post(result, { cur: curs[i], orig: data, state: states[i] });
+  return result;
+}
 function featuresAfterBoot() {
   const list = registerFeature.list || []; if (!list.length) return;
   if (list.some(f => f.mergeImport)) {
-    const prev = smartImport;
-    smartImport = data => { const r = prev(data); const w = data && (data.workspace || data); if (w && data.format === 'cloudwalker-workspace') for (const f of list) if (f.mergeImport) { try { f.mergeImport(w); } catch (e) { console.error(`Feature ${f.id} could not merge the import`, e); } } return r; };
+    registerImportHook({ id: 'features-merge-import', order: 1000, post: (r, { orig: data }) => { const w = data && (data.workspace || data); if (w && data.format === 'cloudwalker-workspace') for (const f of list) if (f.mergeImport) { try { f.mergeImport(w); } catch (e) { console.error(`Feature ${f.id} could not merge the import`, e); } } } });
   }
   for (const f of list) if (f.onBoot) { try { f.onBoot(); } catch (e) { console.error(`Feature ${f.id} failed to start`, e); } }
   renderNav();

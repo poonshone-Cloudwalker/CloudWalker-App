@@ -1,0 +1,8 @@
+1 import notice: Import complete. 0 added, 0 updated (newer copy), 0 unchange
+2 older file migrated by the first hook: true
+3 plan merged: true
+4 report merged: true
+5 lesson progress merged: true
+6 AI feedback + outcome merged: true
+7 habit merged: true
+errors: none
