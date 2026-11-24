@@ -496,14 +496,14 @@ document.addEventListener('click', e => {
     'x-adr-tab': () => { S.p3.adrTab = d.v; if (d.out) S.p3.outTab['adr:' + d.id] = d.out; render(); },
     'x-adr-opt': () => { S.ws.adrs.find(x => x.id === d.id).options.push(blankOpt()); markDirty(); render(); },
     'x-adr-optdel': () => { const r = S.ws.adrs.find(x => x.id === d.id); const i = +d.i; r.options.splice(i, 1); if (r.chosen === i) r.chosen = -1; else if (r.chosen > i) r.chosen--; markDirty(); render(); },
-    'x-adr-del': () => { if (!confirm(`Delete ${d.id}? You can undo for a short time.`)) return; deleteWithUndo(d.id, () => { S.ws.adrs = S.ws.adrs.filter(x => x.id !== d.id); S.ws.portfolio.forEach(p => p.adrIds = p.adrIds.filter(x => x !== d.id)); S.ws.interview.stories.forEach(s => s.adrIds = s.adrIds.filter(x => x !== d.id)); }); go('adr'); },
+    'x-adr-del': () => { confirmModal(`Delete ${d.id}? You can undo for a short time.`, '', 'Delete', () => { deleteWithUndo(d.id, () => { S.ws.adrs = S.ws.adrs.filter(x => x.id !== d.id); S.ws.portfolio.forEach(p => p.adrIds = p.adrIds.filter(x => x !== d.id)); S.ws.interview.stories.forEach(s => s.adrIds = s.adrIds.filter(x => x !== d.id)); }); go('adr'); }); },
     'x-story-from-adr': () => { const ad = S.ws.adrs.find(x => x.id === d.id); const s = newStory({ title: ad.title, source: 'Architecture lab', competencies: ['technical'], adrIds: [ad.id], situation: ad.context, action: [chosenOpt(ad) ? `I compared ${named(ad).map(o => o.name).join(', ')} and chose ${chosenOpt(ad).name}.` : '', ad.rationale].filter(Boolean).join(' ') }); S.p3.storyTab = 'write'; go('interview', 'story/' + s.id); },
     'x-pf-from-adr': () => { const ad = S.ws.adrs.find(x => x.id === d.id); const p = newPf({ title: ad.title, provider: ad.providers[0] || '', adrIds: [ad.id], services: ad.services.slice(), tradeoffs: ad.tradeoffs }); S.p3.pfTab = 'write'; go('portfolio', p.id); },
     /* Portfolio */
     'x-pf-new': () => { const p = newPf(); S.p3.pfTab = 'write'; go('portfolio', p.id); },
     'x-pf-tpl': () => { const p = pfFromTemplate(d.v); S.p3.pfTab = 'write'; go('portfolio', p.id); },
     'x-pf-tab': () => { S.p3.pfTab = d.v; if (d.out) S.p3.outTab['pf:' + d.id] = d.out; render(); },
-    'x-pf-del': () => { if (!confirm(`Delete ${d.id}? You can undo for a short time.`)) return; deleteWithUndo(d.id, () => { S.ws.portfolio = S.ws.portfolio.filter(x => x.id !== d.id); S.ws.interview.stories.forEach(s => s.pfIds = s.pfIds.filter(x => x !== d.id)); }); go('portfolio'); },
+    'x-pf-del': () => { confirmModal(`Delete ${d.id}? You can undo for a short time.`, '', 'Delete', () => { deleteWithUndo(d.id, () => { S.ws.portfolio = S.ws.portfolio.filter(x => x.id !== d.id); S.ws.interview.stories.forEach(s => s.pfIds = s.pfIds.filter(x => x !== d.id)); }); go('portfolio'); }); },
     'x-pf-diag': () => { diagInput.dataset.id = d.id; diagInput.click(); },
     'x-pf-diag-del': () => { const p = S.ws.portfolio.find(x => x.id === d.id); p.diagram = ''; markDirty(); render(); },
     'x-pf-html': () => { const p = S.ws.portfolio.find(x => x.id === d.id); exp(`${p.id}-${slug(p.title)}.html`, siteHtml([p], p.title), 'text/html'); },
@@ -524,7 +524,7 @@ document.addEventListener('click', e => {
     'x-story-new': () => { const s = newStory(d.comp ? { competencies: [d.comp] } : {}); S.p3.storyTab = 'write'; go('interview', 'story/' + s.id); },
     'x-story-seed': () => { const raw = allSeeds().find(x => x.id === d.v); if (!raw) return; const sd = fillSeed(raw); const s = newStory({ title: sd.title, seed: sd.id, source: storySourceLabel(), competencies: sd.comps.slice(), translation: sd.translate }); S.p3.storyTab = 'write'; go('interview', 'story/' + s.id); },
     'x-story-tab': () => { S.p3.storyTab = d.v; render(); },
-    'x-story-del': () => { if (!confirm(`Delete ${d.id}? You can undo for a short time.`)) return; deleteWithUndo(d.id, () => { S.ws.interview.stories = S.ws.interview.stories.filter(x => x.id !== d.id); }); go('interview', 'stories'); },
+    'x-story-del': () => { confirmModal(`Delete ${d.id}? You can undo for a short time.`, '', 'Delete', () => { deleteWithUndo(d.id, () => { S.ws.interview.stories = S.ws.interview.stories.filter(x => x.id !== d.id); }); go('interview', 'stories'); }); },
     'x-wb-start': () => { S.drafts.wb[d.id].started = Date.now(); render(); },
     'x-wb-save': () => { const dr = S.drafts.wb[d.id]; S.ws.interview.boards.push({ id: nextId('WB', S.ws.interview.boards), pid: d.id, t: Date.now(), notes: dr.notes, checks: { ...dr.checks }, seconds: dr.started ? Math.round((Date.now() - dr.started) / 1000) : 0 }); delete S.drafts.wb[d.id]; markDirty(); showStatus('Whiteboard session saved.'); go('interview', 'whiteboard'); }
   };

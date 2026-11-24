@@ -21,16 +21,16 @@ const aiHost = () => { try { return new URL(AIC.endpoint).host; } catch { return
 async function p6LoadConfig() {
   for (let i = 0; i < 60 && !PERSIST.opening; i++) await new Promise(r => setTimeout(r, 100));
   if (PERSIST.opening) await PERSIST.opening;
-  if (PERSIST.db) { try { const v = await idbGet(AI_KEY); if (v && typeof v === 'object' && v.endpoint) AIC = v; } catch { /* storage unreadable: feature stays hidden */ } }
+  if (PERSIST.db) { try { const v = await idbGet(AI_KEY); if (v && typeof v === 'object' && v.endpoint) AIC = v; } catch (e) { logIssue('Reading the AI settings', e); /* feature stays hidden */ } }
   S.p6.loaded = true;
   if (aiReady() && ['settings', 'lab', 'adr', 'interview', 'calibration'].includes(route().name)) { const a = document.activeElement; if (!a || a === document.body || !a.closest('input,textarea,select')) render(); }
 }
 async function p6SaveConfig(c) {
   AIC = c; S.p6.memOnly = false;
   if (!PERSIST.db) { S.p6.memOnly = true; return; }
-  try { await idbPut(AI_KEY, c); } catch { S.p6.memOnly = true; }
+  try { await idbPut(AI_KEY, c.sessionOnly ? { ...c, key: '' } : c); } catch { S.p6.memOnly = true; }
 }
-async function p6RemoveConfig() { AIC = null; try { if (PERSIST.db) await idbDel(AI_KEY); } catch { /* ignore */ } }
+async function p6RemoveConfig() { AIC = null; try { if (PERSIST.db) await idbDel(AI_KEY); } catch (e) { logIssue('Removing the AI settings', e); } }
 
 /* ---------- Provider-agnostic call */
 function aiHeaders(c) {
@@ -306,8 +306,8 @@ VIEWS.calibration = () => {
 /* ---------- Settings: device-only AI configuration */
 function aiSettingsCard() {
   const c = AIC || {}; const st = c.style || 'openai';
-  return `<section class="card" style="margin-bottom:20px" aria-labelledby="h-ai-set"><div class="card-head"><h2 id="h-ai-set">AI feedback (optional)</h2>${aiReady() ? '<span class="chip ok-chip">Set up on this device</span>' : '<span class="chip">Off</span>'}</div>
-    <p class="small muted">Get a second opinion on labs, ADRs, STAR stories, executive summaries, whiteboards, and mock answers from an AI service you choose. Your key is stored only in this browser's storage on this device. It is never put in workspace files, daily backups, or exports. Without it, AI controls stay hidden and everything else works the same.</p>
+  return `<section class="card" style="margin-bottom:20px" aria-labelledby="h-ai-set"><div class="card-head"><h2 id="h-ai-set">AI feedback (optional)</h2>${aiReady() ? '<span class="chip ok-chip">Set up on this device</span>' : c.endpoint && c.sessionOnly ? '<span class="chip">Key needed</span>' : '<span class="chip">Off</span>'}</div>
+    <p class="small muted">Get a second opinion on labs, ADRs, STAR stories, executive summaries, whiteboards, and mock answers from an AI service you choose. Unless you choose the tab-only option below, your key is stored in this browser's storage on this device, where any script running on this page could read it. It is never put in workspace files, daily backups, or exports. Without it, AI controls stay hidden and everything else works the same.</p>
     ${S.p6.memOnly ? '<p class="notice">Storage is blocked, so the key is kept only until you close this tab.</p>' : ''}
     <form id="p6-ai-form" novalidate><div class="filters" style="margin-top:10px">
       <div class="field"><label for="ai-style">Request format</label><select id="ai-style">${opts(AI_STYLES, st)}</select></div>
@@ -315,6 +315,7 @@ function aiSettingsCard() {
       <div class="field"><label for="ai-model">Model name</label><input id="ai-model" type="text" value="${esc(c.model || '')}" placeholder="as your provider names it" autocomplete="off" autocapitalize="none" spellcheck="false"></div>
       <div class="field"><label for="ai-header">Key header name</label><input id="ai-header" type="text" value="${esc(c.header || AI_DEFAULT_HEADER[st])}" autocomplete="off" autocapitalize="none" spellcheck="false"></div>
       <div class="field"><label for="ai-key">API key</label><input id="ai-key" type="password" value="" placeholder="${c.key ? 'Saved (ends ' + esc(c.key.slice(-4)) + '). Leave blank to keep.' : 'Paste your key'}" autocomplete="off" autocapitalize="none" spellcheck="false"></div></div>
+      <label class="small" style="display:flex;gap:8px;align-items:flex-start;margin-top:10px"><input id="ai-session" type="checkbox" ${c.sessionOnly ? 'checked' : ''}> <span>Don't keep the key on this device. The endpoint and model are saved, but you paste the key again after you close this tab.</span></label>
       <div class="row" style="margin-top:12px"><button class="btn primary" type="submit">Save on this device</button><button class="btn" type="button" data-action="p6-ai-test" ${aiReady() ? '' : 'disabled'}>Test connection</button>${c.endpoint ? '<button class="btn ghost" type="button" data-action="p6-ai-remove">Remove key and settings</button>' : ''}</div></form>
     <div id="p6-ai-msg" aria-live="polite">${S.p6.test ? `<p class="small" style="margin-top:8px">${esc(S.p6.test)}</p>` : ''}</div>
     <p class="small muted" style="margin-top:8px">With "Authorization" as the header, the key is sent as "Bearer …". The Anthropic format also sends the headers that API needs for browser requests. A key used from a browser can be read by anything running on this device; a small proxy you control is safer. See <a href="#/privacy">Privacy</a>.</p></section>`;
@@ -340,7 +341,7 @@ ICON.calibration = '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"
 (() => { const i = NAV.findIndex(n => n[0] === 'interview'); NAV.splice(i >= 0 ? i + 1 : NAV.length, 0, ['calibration', 'Calibration & outcomes', 'Prove']); })();
 function readAiForm() {
   const v = id => ($('#' + id)?.value || '').trim(); const prev = AIC || {};
-  return { style: v('ai-style') || 'openai', endpoint: v('ai-endpoint'), model: v('ai-model'), header: v('ai-header') || 'Authorization', key: v('ai-key') || prev.key || '', savedAt: Date.now() };
+  return { style: v('ai-style') || 'openai', endpoint: v('ai-endpoint'), model: v('ai-model'), header: v('ai-header') || 'Authorization', key: v('ai-key') || prev.key || '', sessionOnly: !!$('#ai-session')?.checked, savedAt: Date.now() };
 }
 function validAi(c) {
   let u; try { u = new URL(c.endpoint); } catch { return 'Enter the full endpoint URL, starting with https://'; }
@@ -372,9 +373,9 @@ document.addEventListener('click', e => {
   e.preventDefault();
   if (d.action === 'p6-ask') p6Request(...d.k.split(/:(.+)/).slice(0, 2));
   else if (d.action === 'p6-dispute') { const r = AIF()[d.k]; if (!r) return; r.disputed = !r.disputed; r.updated = Date.now(); markDirty(); persistSoon(SAVE_QUICK); render(); showStatus(r.disputed ? 'Marked as wrong. Readiness uses your own score for this item.' : 'AI score counts again.'); $(`[data-action="p6-dispute"][data-k="${d.k}"]`)?.focus(); }
-  else if (d.action === 'p6-del') { if (!confirm('Remove this AI feedback? Your own score is kept.')) return; delete AIF()[d.k]; markDirty(); persistSoon(SAVE_QUICK); render(); showStatus('AI feedback removed.'); }
-  else if (d.action === 'p6-out-del') { if (!confirm(`Delete result ${d.id}?`)) return; S.ws.outcomes = OUT().filter(o => o.id !== d.id); markDirty(); persistSoon(SAVE_QUICK); render(); showStatus('Result deleted.'); }
-  else if (d.action === 'p6-ai-remove') { if (!confirm('Remove the AI endpoint, model, and key from this device?')) return; p6RemoveConfig().then(() => { S.p6.test = 'Removed. AI feedback is off.'; render(); }); }
+  else if (d.action === 'p6-del') { confirmModal('Remove this AI feedback? Your own score is kept.', '', 'Remove', () => { delete AIF()[d.k]; markDirty(); persistSoon(SAVE_QUICK); render(); showStatus('AI feedback removed.'); }); }
+  else if (d.action === 'p6-out-del') { confirmModal(`Delete result ${d.id}?`, '', 'Delete', () => { S.ws.outcomes = OUT().filter(o => o.id !== d.id); markDirty(); persistSoon(SAVE_QUICK); render(); showStatus('Result deleted.'); }); }
+  else if (d.action === 'p6-ai-remove') { confirmModal('Remove the AI endpoint, model, and key from this device?', '', 'Remove', () => { p6RemoveConfig().then(() => { S.p6.test = 'Removed. AI feedback is off.'; render(); }); }); }
   else if (d.action === 'p6-ai-test') {
     S.p6.test = 'Testing…'; render();
     aiCall('Reply with JSON only.', 'Return exactly {"scores":{"test":4},"strengths":["ok"],"gaps":[],"nextStep":"none"}')
