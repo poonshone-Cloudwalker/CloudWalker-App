@@ -1,6 +1,6 @@
 {
  "format": "cloudwalker-pack-index",
- "generated": "2026-11-18",
+ "generated": "2026-11-24",
  "packs": [
   {
    "file": "aws-aif-c01-practice.json",
@@ -100,6 +100,16 @@
    "questions": 200,
    "lessons": 0,
    "sha256": "2d3f747cac5cf2d9b70c4dc58df10ba076547dffc19cc9bd739d73c621b09832",
+   "reviewStatus": "needs-review"
+  },
+  {
+   "file": "builtin-cdl-doc-links.json",
+   "packId": "builtin-cdl-doc-links",
+   "packVersion": "2026.11.24",
+   "title": "Google Cloud (CDL) built-in questions: documentation links",
+   "questions": 85,
+   "lessons": 0,
+   "sha256": "1c5ff2377f4bb5eb24091112f1b5f1f17d1a0348e38ebf1854e6dd274a8ebcbe",
    "reviewStatus": "needs-review"
   },
   {

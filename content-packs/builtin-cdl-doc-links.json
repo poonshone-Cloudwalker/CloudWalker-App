@@ -1,0 +1,3005 @@
+{
+ "format": "cloudwalker-content-pack",
+ "packId": "builtin-cdl-doc-links",
+ "packVersion": "2026.11.24",
+ "title": "Google Cloud (CDL) built-in questions: documentation links",
+ "publishedAt": "2026-11-24",
+ "minAppSchema": 1,
+ "checksum": {
+  "alg": "SHA-256",
+  "value": "bf91c97f0294df55665d511b8f359b2682d52f8eb4961ddd96657db3df702e41"
+ },
+ "content": {
+  "exams": [],
+  "questions": [
+   {
+    "id": "gcp-cdl-001",
+    "source_id": "CDL-001",
+    "exam_code": "CDL",
+    "domain": "1. Digital Transformation with Google Cloud",
+    "subdomain": "1.1 Explain why and how the cloud is revolutionizing businesses",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "high-availability",
+     "cost-optimization"
+    ],
+    "question": "A regional retailer buys new servers every five years. Each refresh ties up a large amount of cash, and the servers sit mostly idle except during the holiday season, when they still run out of capacity. Which benefit of cloud technology most directly addresses both problems?",
+    "options": [
+     "Open-source software licensing that removes the need for any license fees.",
+     "Longer hardware warranties that the cloud provider offers on every server.",
+     "Pay-as-you-go pricing combined with on-demand scalability for peak loads.",
+     "Dedicated physical servers placed in the provider's data center for the retailer."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Paying only for what is used removes the large upfront purchase, and scaling on demand adds capacity for the holiday peak and releases it afterward.",
+    "distractor_summary": "Open-source licensing, warranties, and dedicated servers don't solve either the idle-capacity cost or the peak shortfall.",
+    "section": 29,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Advantages of cloud computing",
+      "url": "https://cloud.google.com/learn/advantages-of-cloud-computing"
+     },
+     {
+      "title": "Well-Architected Framework: Cost optimization",
+      "url": "https://docs.cloud.google.com/architecture/framework/cost-optimization"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-002",
+    "source_id": "CDL-002",
+    "exam_code": "CDL",
+    "domain": "1. Digital Transformation with Google Cloud",
+    "subdomain": "1.1 Explain why and how the cloud is revolutionizing businesses",
+    "question_type": "concept",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [],
+    "question": "Which statement best defines digital transformation?",
+    "options": [
+     "Moving all of the company's servers to a colocation facility across the subscriptions.",
+     "Buying the latest laptops and phones for every employee throughout the organization.",
+     "Using digital technology to change processes, culture, and customer experiences.",
+     "Replacing paper forms with PDF files that staff fill in throughout the organization."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Digital transformation is about using technology to rethink how an organization operates and delivers value, not just digitizing existing artifacts.",
+    "distractor_summary": "Converting paper to PDF, relocating servers, or upgrading laptops are individual IT changes rather than a transformation of processes, culture, and experience.",
+    "section": 29,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What is digital transformation?",
+      "url": "https://cloud.google.com/learn/what-is-digital-transformation"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-004",
+    "source_id": "CDL-004",
+    "exam_code": "CDL",
+    "domain": "1. Digital Transformation with Google Cloud",
+    "subdomain": "1.1 Explain why and how the cloud is revolutionizing businesses",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "cost-optimization",
+     "risk-compliance"
+    ],
+    "question": "A media company wants to avoid being locked into a single vendor's proprietary technology so it can move workloads or combine tools from different providers in the future. Which Google Cloud differentiator speaks most directly to this concern?",
+    "options": [
+     "Its commitment to openness, open standards, and interoperability.",
+     "Its 24/7 phone support for customers who run production workloads.",
+     "Its custom security chips that protect the servers in its data centers.",
+     "Its sustainability reporting for the energy used by customer workloads."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Support for open source and open standards, such as Kubernetes and open data formats, makes it easier to move workloads and combine services across environments.",
+    "distractor_summary": "Security hardware, sustainability reporting, and support hours don't address lock-in.",
+    "section": 29,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What is enterprise cloud computing?",
+      "url": "https://cloud.google.com/discover/what-is-enterprise-cloud-computing"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-005",
+    "source_id": "CDL-005",
+    "exam_code": "CDL",
+    "domain": "1. Digital Transformation with Google Cloud",
+    "subdomain": "1.1 Explain why and how the cloud is revolutionizing businesses",
+    "question_type": "concept",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "risk-compliance"
+    ],
+    "question": "What is the difference between open source and an open standard?",
+    "options": [
+     "They are two names for the same thing and mean exactly the same.",
+     "Open source is always free of charge, and open standards are always paid for for the application.",
+     "Open source means public code anyone can modify; an open standard is a public specification.",
+     "Open standards apply only to hardware, and open source applies only to networking for the team."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Open source refers to code that anyone can inspect, use, and modify under its license, while an open standard is a shared specification that many products can follow so they interoperate.",
+    "distractor_summary": "They're related but distinct, and neither is limited by cost or to one kind of technology.",
+    "section": 29,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-cdl-006",
+    "source_id": "CDL-006",
+    "exam_code": "CDL",
+    "domain": "1. Digital Transformation with Google Cloud",
+    "subdomain": "1.1 Explain why and how the cloud is revolutionizing businesses",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "risk-compliance"
+    ],
+    "question": "A logistics company's competitors are launching new digital services every few weeks, while it takes the company six months just to provision servers for a new project. Executives ask what risk they face if they don't adopt the cloud. What is the best answer?",
+    "options": [
+     "They risk falling behind because slow provisioning limits experimentation and innovation.",
+     "They will only see a small rise in their electricity bills each year.",
+     "Their data centers will automatically shut down after six months of use for the application.",
+     "They will lose all of their existing customers within the next month."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "A key risk of not adopting cloud is reduced agility, which leaves the business slower to innovate and respond than competitors.",
+    "distractor_summary": "The other options are exaggerated or unrelated to the core business risk.",
+    "section": 29,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What is digital transformation?",
+      "url": "https://cloud.google.com/learn/what-is-digital-transformation"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-007",
+    "source_id": "CDL-007",
+    "exam_code": "CDL",
+    "domain": "1. Digital Transformation with Google Cloud",
+    "subdomain": "1.1 Explain why and how the cloud is revolutionizing businesses",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "governance",
+     "migration"
+    ],
+    "question": "A manufacturer is planning a cloud migration. The CIO says the technology isn't the hardest part; the biggest obstacles are employees' resistance to new ways of working and a shortage of cloud skills. What does this describe?",
+    "options": [
+     "A lack of physical space in the company's own data center throughout the organization overall.",
+     "A regulatory requirement that blocks all use of cloud services throughout the organization overall.",
+     "Common organizational challenges of digital transformation: culture change and skills gaps.",
+     "Network latency problems between the factories and the head office throughout the organization."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Culture, change management, and skills are among the most common hurdles in digital transformation, often more than the technology itself.",
+    "distractor_summary": "Latency, data center space, and regulatory bans aren't what the CIO describes.",
+    "section": 29,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What is digital transformation?",
+      "url": "https://cloud.google.com/learn/what-is-digital-transformation"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-008",
+    "source_id": "CDL-008",
+    "exam_code": "CDL",
+    "domain": "1. Digital Transformation with Google Cloud",
+    "subdomain": "1.1 Explain why and how the cloud is revolutionizing businesses",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "high-availability"
+    ],
+    "question": "A global news site experiences sudden traffic spikes during breaking news. It wants the site to stay fast and available for readers worldwide without buying servers in every country. Which cloud benefits apply?",
+    "options": [
+     "Global reach and high availability, with automatic scaling.",
+     "Fixed capacity and manual scaling in every country that it serves.",
+     "Longer procurement cycles for each of the new servers it buys.",
+     "Lower data quality and fewer analytics options for the editors."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Cloud providers offer infrastructure around the world and services that scale automatically, keeping applications available and responsive during spikes.",
+    "distractor_summary": "Fixed capacity and long procurement are on-premises limitations, and data quality isn't the issue.",
+    "section": 29,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Advantages of cloud computing",
+      "url": "https://cloud.google.com/learn/advantages-of-cloud-computing"
+     },
+     {
+      "title": "Autoscaling groups of instances",
+      "url": "https://docs.cloud.google.com/compute/docs/autoscaler/"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-009",
+    "source_id": "CDL-009",
+    "exam_code": "CDL",
+    "domain": "1. Digital Transformation with Google Cloud",
+    "subdomain": "1.1 Explain why and how the cloud is revolutionizing businesses",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "cost-optimization"
+    ],
+    "question": "An insurance company currently spends most of its IT budget maintaining hardware and patching servers. The CEO wants IT staff to spend more time building products that differentiate the company. Which cloud benefit addresses this?",
+    "options": [
+     "More frequent manual patching of the servers by the IT team.",
+     "Longer server lifecycles that keep the hardware in use for years.",
+     "Strategic focus: managed services take over routine maintenance so staff can build products.",
+     "A bigger need for on-site hardware technicians to keep servers running across the subscriptions."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Using managed cloud services means the provider handles much of the infrastructure maintenance, so teams can focus on innovation.",
+    "distractor_summary": "The other options increase or preserve the maintenance burden.",
+    "section": 29,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "PaaS vs. IaaS vs. SaaS",
+      "url": "https://cloud.google.com/learn/paas-vs-iaas-vs-saas"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-010",
+    "source_id": "CDL-010",
+    "exam_code": "CDL",
+    "domain": "1. Digital Transformation with Google Cloud",
+    "subdomain": "1.1 Explain why and how the cloud is revolutionizing businesses",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Cloud Storage",
+     "AI Hypercomputer",
+     "TPUs"
+    ],
+    "tags": [],
+    "question": "A healthcare startup wants to train and run large AI models but doesn't want to assemble specialized hardware itself. It wants a provider whose infrastructure is optimized for AI, from accelerators to software. Which Google Cloud differentiator best matches this need?",
+    "options": [
+     "Cloud Storage Archive class, which stores rarely used data at a low price.",
+     "Google Workspace, the suite of email, documents, and meeting tools.",
+     "Google Cloud's billing reports, which break down costs by project.",
+     "Google Cloud's AI Hypercomputer: integrated AI-optimized hardware, software, and consumption models."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "AI Hypercomputer combines accelerators such as TPUs and GPUs with optimized software and flexible consumption options for AI workloads.",
+    "distractor_summary": "Workspace is a productivity suite, Archive storage is for long-term data retention, and billing reports track spending.",
+    "section": 29,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "AI Hypercomputer overview",
+      "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-011",
+    "source_id": "CDL-011",
+    "exam_code": "CDL",
+    "domain": "1. Digital Transformation with Google Cloud",
+    "subdomain": "1.1 Explain why and how the cloud is revolutionizing businesses",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [],
+    "question": "A retail chain collects sales, inventory, and customer data in separate systems. Leadership wants to use this data to predict demand and personalize offers. Which benefit of cloud technology does this describe?",
+    "options": [
+     "Data-driven insights from combining and analyzing data at scale.",
+     "Better physical security for the retail stores in each location overall.",
+     "Reduced global reach for the retailer's online store and its offers.",
+     "Faster laptops for the store staff who work at the checkout overall."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Cloud data platforms make it easier to bring data together and analyze it to produce insights such as demand forecasts and personalization.",
+    "distractor_summary": "The other options are unrelated to analyzing business data.",
+    "section": 29,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What is a data warehouse?",
+      "url": "https://cloud.google.com/learn/what-is-a-data-warehouse"
+     },
+     {
+      "title": "BigQuery overview",
+      "url": "https://docs.cloud.google.com/bigquery/docs/introduction"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-012",
+    "source_id": "CDL-012",
+    "exam_code": "CDL",
+    "domain": "1. Digital Transformation with Google Cloud",
+    "subdomain": "1.1 Explain why and how the cloud is revolutionizing businesses",
+    "question_type": "concept",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "networking"
+    ],
+    "question": "In the context of cloud computing, what does \"infrastructure\" refer to?",
+    "options": [
+     "An organization's marketing strategy and the plans for its brand.",
+     "Only the end-user applications that employees use in their daily work overall.",
+     "The organization's org chart and the reporting lines of its managers overall.",
+     "The compute, storage, and networking resources that applications run on."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Infrastructure is the foundational compute, storage, and networking resources that support applications and services.",
+    "distractor_summary": "Marketing, applications alone, and the org chart aren't infrastructure.",
+    "section": 29,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What is IaaS?",
+      "url": "https://cloud.google.com/learn/what-is-iaas"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-017",
+    "source_id": "CDL-017",
+    "exam_code": "CDL",
+    "domain": "1. Digital Transformation with Google Cloud",
+    "subdomain": "1.2 Describe fundamental cloud concepts",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [],
+    "question": "A research lab needs full control over virtual machines, including the operating system and installed software, but doesn't want to own physical hardware. Which service model and trade-off apply?",
+    "options": [
+     "PaaS, with no access to the application code that runs on it.",
+     "IaaS, with the most control and the most management responsibility of the models.",
+     "On-premises hosting, with no ownership of the hardware at all.",
+     "SaaS, with the least control and the least management effort for users for the team."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "IaaS gives customers control of virtual machines and operating systems while the provider manages physical infrastructure, which means more flexibility but more responsibility for patching and configuration.",
+    "distractor_summary": "SaaS and PaaS give less control, and on-premises requires owning hardware.",
+    "section": 29,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Compute Engine overview",
+      "url": "https://docs.cloud.google.com/compute/docs/overview"
+     },
+     {
+      "title": "What is IaaS?",
+      "url": "https://cloud.google.com/learn/what-is-iaas"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-018",
+    "source_id": "CDL-018",
+    "exam_code": "CDL",
+    "domain": "1. Digital Transformation with Google Cloud",
+    "subdomain": "1.2 Describe fundamental cloud concepts",
+    "question_type": "concept",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "high-availability",
+     "devops"
+    ],
+    "question": "How do Google Cloud regions and zones relate to each other?",
+    "options": [
+     "Regions and zones are two names for the same thing in the network.",
+     "A zone contains many regions, and each region has a single zone overall.",
+     "A region is a geographic area made up of multiple isolated zones.",
+     "Zones exist only for networking, and regions exist only for storage."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "A region is a geographic location, and each region contains several zones, so deploying across zones protects against a failure in one zone.",
+    "distractor_summary": "Zones don't contain regions, the terms aren't interchangeable, and both apply to many kinds of resources.",
+    "section": 29,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Geography and regions",
+      "url": "https://docs.cloud.google.com/docs/geography-and-regions"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-021",
+    "source_id": "CDL-021",
+    "exam_code": "CDL",
+    "domain": "1. Digital Transformation with Google Cloud",
+    "subdomain": "1.2 Describe fundamental cloud concepts",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Cloud CDN"
+    ],
+    "tags": [
+     "networking"
+    ],
+    "question": "A company's website serves large images to visitors worldwide. It wants content cached closer to users to reduce load times. Which part of Google's network infrastructure helps most?",
+    "options": [
+     "A DNS record only, with no caching of any of the images.",
+     "Edge locations that cache and deliver content close to users.",
+     "The company's own office Wi-Fi network and its internet router.",
+     "A single zone in one region that holds all of the images overall."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Google's edge locations around the world, used by services such as Cloud CDN, cache content near users to reduce latency.",
+    "distractor_summary": "A single zone keeps content far from many users, office Wi-Fi is irrelevant, and DNS alone doesn't cache content.",
+    "section": 29,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Cloud CDN overview",
+      "url": "https://docs.cloud.google.com/cdn/docs/overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-022",
+    "source_id": "CDL-022",
+    "exam_code": "CDL",
+    "domain": "2. Exploring Data Transformation with Google Cloud",
+    "subdomain": "2.1 Describe the intrinsic role that data plays in digital transformation",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [],
+    "question": "A coffee chain stores customer orders, loyalty data, and supply information, but only uses it for monthly accounting. A consultant says the company is underusing its data. Which use of data would create the most business value?",
+    "options": [
+     "Deleting older data to save on storage costs for the company.",
+     "Storing the data only on the computers in each individual store in the project as a result.",
+     "Printing the monthly reports and keeping them in a paper archive for the team at that point.",
+     "Analyzing data for trends and near real-time insights to guide staffing and promotions."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Data creates value when it's analyzed to reveal trends and inform decisions, and it also fuels AI.",
+    "distractor_summary": "Deleting data, printing reports, or isolating data in stores limits its value.",
+    "section": 31,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-cdl-024",
+    "source_id": "CDL-024",
+    "exam_code": "CDL",
+    "domain": "2. Exploring Data Transformation with Google Cloud",
+    "subdomain": "2.1 Describe the intrinsic role that data plays in digital transformation",
+    "question_type": "concept",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "data-analytics",
+     "databases"
+    ],
+    "question": "How does a data warehouse differ from an operational database?",
+    "options": [
+     "A warehouse analyzes large amounts of historical data; an operational database handles transactions.",
+     "A data warehouse handles day-to-day transactions, such as recording each sale as it happens.",
+     "A data warehouse stores only images and other media files for the company.",
+     "There is no real difference, because both are built for the same kind of work."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Operational databases support everyday transactions, while data warehouses consolidate data for reporting and analytics.",
+    "distractor_summary": "Warehouses don't record individual sales in real time, store structured data rather than just images, and serve a different purpose.",
+    "section": 31,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What is a data warehouse?",
+      "url": "https://cloud.google.com/learn/what-is-a-data-warehouse"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-026",
+    "source_id": "CDL-026",
+    "exam_code": "CDL",
+    "domain": "2. Exploring Data Transformation with Google Cloud",
+    "subdomain": "2.1 Describe the intrinsic role that data plays in digital transformation",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [],
+    "question": "A support team collects customer emails, call recordings, and product photos. A data analyst wants to classify them. What type of data are they?",
+    "options": [
+     "Relational data, which sits in tables with a fixed schema overall.",
+     "Structured data, which follows a defined and consistent format.",
+     "Tabular data, which is organized in rows and columns.",
+     "Unstructured data, which has no predefined format or schema."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Unstructured data, such as free text, audio, and images, doesn't follow a predefined table format.",
+    "distractor_summary": "Structured, relational, and tabular data fit into rows and columns.",
+    "section": 31,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What is unstructured data?",
+      "url": "https://cloud.google.com/discover/unstructured-data"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-027",
+    "source_id": "CDL-027",
+    "exam_code": "CDL",
+    "domain": "2. Exploring Data Transformation with Google Cloud",
+    "subdomain": "2.1 Describe the intrinsic role that data plays in digital transformation",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [],
+    "question": "A company wants to understand its data supply chain, from where data originates to how it drives action. Which sequence best describes this chain?",
+    "options": [
+     "Activation, processing, collection, and analysis, in that order overall.",
+     "Analysis, genesis, storage, and deletion, in that order for the team.",
+     "Genesis, collection, processing, storage, analysis, and activation.",
+     "Storage, collection, activation, and genesis, in that order in Azure."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Data is created (genesis), collected, processed, stored, analyzed, and then activated, meaning used to drive decisions or actions.",
+    "distractor_summary": "The other sequences put the stages out of order.",
+    "section": 31,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-cdl-028",
+    "source_id": "CDL-028",
+    "exam_code": "CDL",
+    "domain": "2. Exploring Data Transformation with Google Cloud",
+    "subdomain": "2.1 Describe the intrinsic role that data plays in digital transformation",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "incident-response"
+    ],
+    "question": "After a privacy incident, a financial company realizes nobody knows who owns its customer data, who can access it, or how long it's kept. Which practice addresses this?",
+    "options": [
+     "Data governance: policies for ownership, access, quality, and retention.",
+     "Buying more storage so that the company can keep all of the data.",
+     "Deleting all customer data so that the risk of an incident ends.",
+     "Moving all of the data into spreadsheets that teams can share."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Data governance establishes how data is managed, secured, and used, including ownership, access, quality, and compliance.",
+    "distractor_summary": "More storage, deletion, or spreadsheets don't establish accountability or control.",
+    "section": 31,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Knowledge Catalog (formerly Dataplex) overview",
+      "url": "https://docs.cloud.google.com/dataplex/docs/introduction"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-029",
+    "source_id": "CDL-029",
+    "exam_code": "CDL",
+    "domain": "2. Exploring Data Transformation with Google Cloud",
+    "subdomain": "2.1 Describe the intrinsic role that data plays in digital transformation",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "risk-compliance"
+    ],
+    "question": "A company's marketing, finance, and operations teams each store data in separate tools that can't share data, creating silos. Leadership wants to avoid being locked into a single vendor as they fix this. What approach does Google Cloud recommend?",
+    "options": [
+     "Email spreadsheets between the teams every week or every month in production.",
+     "Keep each team's data isolated from the others for security reasons in Azure.",
+     "Use open, interoperable platforms and formats so that tools can share data.",
+     "Choose one proprietary format that only a single tool can read."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Open and interoperable platforms break down silos and let organizations use different tools without being locked in.",
+    "distractor_summary": "Proprietary single-tool formats increase lock-in, isolation keeps silos, and emailing spreadsheets doesn't scale or govern data.",
+    "section": 31,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What is a data warehouse?",
+      "url": "https://cloud.google.com/learn/what-is-a-data-warehouse"
+     },
+     {
+      "title": "BigQuery overview",
+      "url": "https://docs.cloud.google.com/bigquery/docs/introduction"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-030",
+    "source_id": "CDL-030",
+    "exam_code": "CDL",
+    "domain": "2. Exploring Data Transformation with Google Cloud",
+    "subdomain": "2.2 Determine which data management products fit business use cases",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [
+     "BigQuery",
+     "Cloud Storage",
+     "Cloud SQL",
+     "Spanner"
+    ],
+    "tags": [
+     "cost-optimization",
+     "databases",
+     "storage"
+    ],
+    "question": "A media company needs to store millions of video files and images that users upload, at low cost and with high durability. The files aren't queried like database records. Which Google Cloud product fits best?",
+    "options": [
+     "BigQuery, the analytics data warehouse for running SQL queries.",
+     "Cloud Storage, the object store for files at low cost and high durability.",
+     "Cloud SQL, the managed relational database for transactional apps.",
+     "Spanner, the globally distributed relational database for large transactions."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Cloud Storage is object storage designed for unstructured files such as images and videos, with high durability and low cost.",
+    "distractor_summary": "Cloud SQL and Spanner are relational databases, and BigQuery is a data warehouse for analytics.",
+    "section": 31,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Cloud Storage overview",
+      "url": "https://docs.cloud.google.com/storage/docs/introduction"
+     },
+     {
+      "title": "Cloud Storage classes",
+      "url": "https://docs.cloud.google.com/storage/docs/storage-classes"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-037",
+    "source_id": "CDL-037",
+    "exam_code": "CDL",
+    "domain": "2. Exploring Data Transformation with Google Cloud",
+    "subdomain": "2.2 Determine which data management products fit business use cases",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Cloud Storage",
+     "Cloud SQL",
+     "Autoclass"
+    ],
+    "tags": [
+     "storage"
+    ],
+    "question": "A company stores millions of files with unpredictable access patterns, and doesn't want to manually decide which storage class each file should be in. Which Cloud Storage feature helps?",
+    "options": [
+     "Moving the files to Cloud SQL, the managed relational database as needed.",
+     "Autoclass, which moves objects between storage classes based on access.",
+     "Using only the Archive class for all of the files in the buckets overall.",
+     "Deleting every file after 30 days so that the bucket stays small overall."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Autoclass transitions objects to colder classes when they aren't accessed and back to Standard when they are, optimizing cost automatically.",
+    "distractor_summary": "Deleting files loses data, Archive-only makes frequent access expensive, and Cloud SQL isn't for file storage.",
+    "section": 31,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Cloud Storage Autoclass",
+      "url": "https://docs.cloud.google.com/storage/docs/autoclass"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-038",
+    "source_id": "CDL-038",
+    "exam_code": "CDL",
+    "domain": "2. Exploring Data Transformation with Google Cloud",
+    "subdomain": "2.2 Determine which data management products fit business use cases",
+    "question_type": "concept",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "databases"
+    ],
+    "question": "What is the key difference between relational (SQL) and non-relational (NoSQL) databases?",
+    "options": [
+     "Relational databases can only store images and other kinds of media files for the team.",
+     "NoSQL databases can't store any kind of data, so teams do not use them at that point.",
+     "There is no difference between the two kinds of database at all in the project.",
+     "Relational uses tables and SQL; NoSQL uses flexible models such as documents."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Relational databases organize structured data in tables with schemas and relationships, while NoSQL databases offer flexible data models suited to varied or massive-scale data.",
+    "distractor_summary": "The other statements are incorrect.",
+    "section": 31,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What is NoSQL?",
+      "url": "https://cloud.google.com/discover/what-is-nosql"
+     },
+     {
+      "title": "Google Cloud databases",
+      "url": "https://cloud.google.com/discover/databases"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-040",
+    "source_id": "CDL-040",
+    "exam_code": "CDL",
+    "domain": "2. Exploring Data Transformation with Google Cloud",
+    "subdomain": "2.3 Discuss how smart analytics, BI, and streaming analytics add value",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "data-analytics"
+    ],
+    "question": "A credit card company wants to detect fraudulent transactions within seconds of them occurring, rather than in a nightly batch report. Why is real-time streaming analytics important here?",
+    "options": [
+     "It reduces the need for any data storage in the company.",
+     "It replaces the need for security controls on payment systems.",
+     "It lets the company act as events happen, such as blocking a suspicious transaction.",
+     "It makes historical reporting impossible for the fraud analysts across the subscriptions."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Streaming analytics processes data as it arrives, enabling immediate responses to events like fraud.",
+    "distractor_summary": "It still uses storage, doesn't prevent historical reporting, and doesn't replace security controls.",
+    "section": 31,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What is Pub/Sub?",
+      "url": "https://docs.cloud.google.com/pubsub/docs/overview"
+     },
+     {
+      "title": "Dataflow overview",
+      "url": "https://docs.cloud.google.com/dataflow/docs/overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-043",
+    "source_id": "CDL-043",
+    "exam_code": "CDL",
+    "domain": "2. Exploring Data Transformation with Google Cloud",
+    "subdomain": "2.3 Discuss how smart analytics, BI, and streaming analytics add value",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Managed Service for Apache Spark",
+     "Cloud SQL",
+     "Apigee",
+     "Cloud CDN"
+    ],
+    "tags": [],
+    "question": "A company already has many data processing jobs written for Apache Spark and wants to run them in Google Cloud on a managed service rather than maintaining its own clusters. Which product fits?",
+    "options": [
+     "Managed Service for Apache Spark, which runs the existing Spark jobs.",
+     "Cloud SQL, the managed relational database for transactional workloads.",
+     "Apigee, the platform for managing and securing APIs.",
+     "Cloud CDN, the content delivery network for cached web content."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Google Cloud's managed Spark service runs existing Spark jobs without the company operating its own clusters.",
+    "distractor_summary": "Cloud SQL is a database, Apigee manages APIs, and Cloud CDN delivers content.",
+    "section": 31,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Managed Service for Apache Spark (Dataproc) documentation",
+      "url": "https://docs.cloud.google.com/dataproc/docs"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-044",
+    "source_id": "CDL-044",
+    "exam_code": "CDL",
+    "domain": "3. Innovating with Google Cloud Artificial Intelligence",
+    "subdomain": "3.1 Describe fundamental AI and ML concepts and business value",
+    "question_type": "concept",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [],
+    "question": "How are artificial intelligence (AI), machine learning (ML), and generative AI related?",
+    "options": [
+     "Generative AI is a broader field that contains AI and ML as parts throughout the organization overall.",
+     "AI is the broad field; ML is a subset that learns from data; generative AI creates new content.",
+     "They are unrelated technologies that serve different business needs throughout the organization overall.",
+     "ML is only used for spreadsheets and for simple reports throughout the organization for the team."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "AI is the umbrella field, ML is an approach within AI that learns patterns from data, and generative AI produces new content.",
+    "distractor_summary": "The other options misstate the relationship.",
+    "section": 34,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "AI vs. machine learning",
+      "url": "https://cloud.google.com/learn/artificial-intelligence-vs-machine-learning"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-045",
+    "source_id": "CDL-045",
+    "exam_code": "CDL",
+    "domain": "3. Innovating with Google Cloud Artificial Intelligence",
+    "subdomain": "3.1 Describe fundamental AI and ML concepts and business value",
+    "question_type": "concept",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [],
+    "question": "What is the difference between business intelligence (BI) and machine learning (ML)?",
+    "options": [
+     "BI reports on what has happened, while ML learns patterns to make predictions.",
+     "BI only works with images, while ML only works with plain text.",
+     "They are identical tools, and the two names mean the same thing in every region.",
+     "ML only produces printed reports, while BI produces live dashboards for the team."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "BI focuses on describing and visualizing historical and current data, while ML builds models that predict outcomes or automate decisions.",
+    "distractor_summary": "The other options are incorrect.",
+    "section": 34,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-cdl-046",
+    "source_id": "CDL-046",
+    "exam_code": "CDL",
+    "domain": "3. Innovating with Google Cloud Artificial Intelligence",
+    "subdomain": "3.1 Describe fundamental AI and ML concepts and business value",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [],
+    "question": "An insurance company uses hundreds of hand-written rules to flag suspicious claims, and the rules are hard to maintain and miss new fraud patterns. Which business problem can ML help solve?",
+    "options": [
+     "Reducing the internet bandwidth that the claims systems use.",
+     "Guaranteeing that the company has zero fraud across all of its claims by default.",
+     "Replacing complex rule-based systems by learning patterns from historical data.",
+     "Eliminating the need for any data in the fraud detection process."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "ML can learn from historical examples to identify patterns, replacing brittle hand-coded rules and adapting to new patterns as it's retrained.",
+    "distractor_summary": "It requires data, can't guarantee zero fraud, and isn't about bandwidth.",
+    "section": 34,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "AI vs. machine learning",
+      "url": "https://cloud.google.com/learn/artificial-intelligence-vs-machine-learning"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-047",
+    "source_id": "CDL-047",
+    "exam_code": "CDL",
+    "domain": "3. Innovating with Google Cloud Artificial Intelligence",
+    "subdomain": "3.1 Describe fundamental AI and ML concepts and business value",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [],
+    "question": "A company trained a model to predict customer churn, but its predictions are poor. Investigation shows many records are duplicated, outdated, or missing fields. What is the most likely cause?",
+    "options": [
+     "The model was trained in the wrong region of the cloud across the subscriptions.",
+     "Poor data quality, since AI models need complete, accurate, and timely data.",
+     "The company used too few dashboards to monitor its customers for the application.",
+     "The model needs a bigger logo before it can predict churn for the application."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Models learn from their training data, so duplicates, missing values, and outdated records lead to poor predictions.",
+    "distractor_summary": "Region, dashboards, and branding don't affect model accuracy.",
+    "section": 34,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-cdl-049",
+    "source_id": "CDL-049",
+    "exam_code": "CDL",
+    "domain": "3. Innovating with Google Cloud Artificial Intelligence",
+    "subdomain": "3.1 Describe fundamental AI and ML concepts and business value",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [],
+    "question": "A bank uses an AI model to approve or deny loans. Regulators and customers want to understand why a loan was denied, and the bank wants to ensure the model doesn't treat applicants unfairly. Which concepts are most relevant?",
+    "options": [
+     "Data compression and caching for the model's prediction service across the subscriptions.",
+     "Autoscaling and load balancing for the model's prediction service across the subscriptions.",
+     "Explainable and responsible AI practices: fairness, transparency, and accountability.",
+     "Edge locations and a CDN for the model's prediction service."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Explainability helps people understand model decisions, and responsible AI practices address fairness, accountability, and trust, which have business and regulatory implications.",
+    "distractor_summary": "The other options are infrastructure concepts.",
+    "section": 34,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "BigQuery Explainable AI overview",
+      "url": "https://docs.cloud.google.com/bigquery/docs/xai-overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-050",
+    "source_id": "CDL-050",
+    "exam_code": "CDL",
+    "domain": "3. Innovating with Google Cloud Artificial Intelligence",
+    "subdomain": "3.1 Describe fundamental AI and ML concepts and business value",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "devops"
+    ],
+    "question": "A software company plans to deploy AI agents that can resolve routine customer support requests end to end, escalating complex cases to humans. Which area of transformation from agentic AI does this represent?",
+    "options": [
+     "Network cabling, which is the physical wiring of the data center.",
+     "Hardware procurement, which is the buying of servers and devices.",
+     "Physical security, which is the guarding of the buildings and sites overall.",
+     "Customer support and service, where agents resolve routine requests."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Agentic AI is reshaping customer support by handling routine requests autonomously and escalating complex ones.",
+    "distractor_summary": "The other options aren't related to AI agents serving customers.",
+    "section": 34,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What are AI agents?",
+      "url": "https://cloud.google.com/discover/what-are-ai-agents"
+     },
+     {
+      "title": "Agents overview (Gemini Enterprise Agent Platform)",
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/agents"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-051",
+    "source_id": "CDL-051",
+    "exam_code": "CDL",
+    "domain": "3. Innovating with Google Cloud Artificial Intelligence",
+    "subdomain": "3.1 Describe fundamental AI and ML concepts and business value",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [],
+    "question": "A sales organization wants to give each salesperson an AI assistant that summarizes account history, drafts follow-up emails, and suggests next steps. What business value does this mainly provide?",
+    "options": [
+     "Improved workforce productivity, since routine tasks take less time.",
+     "Fewer customers, because the assistant replaces the sales staff overall.",
+     "Lower data center cooling costs for the sales organization by default.",
+     "Faster internet connections for each of the salespeople in production."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "AI assistants and agents boost productivity by automating routine work so employees focus on higher-value activities.",
+    "distractor_summary": "The other options aren't benefits of this use case.",
+    "section": 34,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What is Gemini Enterprise?",
+      "url": "https://docs.cloud.google.com/gemini/enterprise/docs"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-052",
+    "source_id": "CDL-052",
+    "exam_code": "CDL",
+    "domain": "3. Innovating with Google Cloud Artificial Intelligence",
+    "subdomain": "3.1 Describe fundamental AI and ML concepts and business value",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [],
+    "question": "A manufacturer wants to use ML on machine sensor data to predict equipment failures before they happen, so maintenance can be scheduled in advance. Which business value of ML does this demonstrate?",
+    "options": [
+     "Removing the need to collect any sensor data from the machines in production.",
+     "Replacing all of the maintenance staff immediately after launch for the team.",
+     "Guaranteeing that the machines will never fail in any way.",
+     "Finding insights in large datasets to predict outcomes and scale decisions."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Predictive maintenance uses ML to find patterns in large datasets and anticipate failures, reducing downtime.",
+    "distractor_summary": "It doesn't eliminate staff or data collection, and it can't guarantee machines never fail.",
+    "section": 34,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review"
+   },
+   {
+    "id": "gcp-cdl-053",
+    "source_id": "CDL-053",
+    "exam_code": "CDL",
+    "domain": "3. Innovating with Google Cloud Artificial Intelligence",
+    "subdomain": "3.1 Describe fundamental AI and ML concepts and business value",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Gemini"
+    ],
+    "tags": [],
+    "question": "A company is choosing an AI provider. Which set of benefits reflects Google Cloud's key AI value proposition?",
+    "options": [
+     "A single fixed model that can't be customized for any company.",
+     "Email hosting only, with no AI tools or models included in it.",
+     "Strong AI infrastructure, a ready data cloud, Gemini models, and pre-built agents.",
+     "Only the sale of on-premises hardware to its own customers."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Google Cloud highlights its AI infrastructure, data platform, Gemini models, developer platform, and ready-made agents as differentiators.",
+    "distractor_summary": "The other options don't describe its AI offerings.",
+    "section": 34,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Google Cloud AI products",
+      "url": "https://cloud.google.com/products/ai"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-054",
+    "source_id": "CDL-054",
+    "exam_code": "CDL",
+    "domain": "3. Innovating with Google Cloud Artificial Intelligence",
+    "subdomain": "3.2 Explain how Google Cloud's AI offerings create business value",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [],
+    "tags": [],
+    "question": "A retailer wants to add AI features quickly with minimal development effort and has no data science team. Another company wants a highly customized model that differentiates its core product and has expert ML engineers. What strategic consideration does this illustrate?",
+    "options": [
+     "All companies should build every one of their models from scratch.",
+     "Pick AI solutions by speed, effort, skills, and potential for differentiation.",
+     "Choose an AI solution based only on the color of the vendor's logo.",
+     "All companies should avoid AI until the technology is mature."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Organizations should weigh speed, effort, expertise, and differentiation: pre-built solutions suit fast, low-effort needs, while custom models suit differentiating use cases with skilled teams.",
+    "distractor_summary": "The other options ignore these trade-offs.",
+    "section": 34,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Pre-trained AI APIs",
+      "url": "https://cloud.google.com/ai/apis"
+     },
+     {
+      "title": "AutoML training overview",
+      "url": "https://docs.cloud.google.com/vertex-ai/docs/training/automl-training-overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-055",
+    "source_id": "CDL-055",
+    "exam_code": "CDL",
+    "domain": "3. Innovating with Google Cloud Artificial Intelligence",
+    "subdomain": "3.2 Explain how Google Cloud's AI offerings create business value",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Gemini",
+     "Cloud Storage",
+     "Cloud DNS",
+     "Gemini Enterprise Agent Platform",
+     "Cloud Billing",
+     "Vertex AI"
+    ],
+    "tags": [
+     "devops"
+    ],
+    "question": "A company wants a single Google Cloud platform where its teams can access foundation models like Gemini, build and deploy AI agents, and train, evaluate, and manage machine learning models. Which product fits?",
+    "options": [
+     "Cloud Storage, the object store for files throughout the organization for the team.",
+     "Cloud DNS, the managed domain name service throughout the organization by default.",
+     "Gemini Enterprise Agent Platform, for models, agents, and the full ML lifecycle.",
+     "Cloud Billing, the service for managing costs throughout the organization overall."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Gemini Enterprise Agent Platform (the evolution of Vertex AI) is Google Cloud's unified platform for ML models, generative AI, and agent building.",
+    "distractor_summary": "The other products aren't AI development platforms.",
+    "section": 34,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Agent Platform overview (Gemini Enterprise Agent Platform)",
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-056",
+    "source_id": "CDL-056",
+    "exam_code": "CDL",
+    "domain": "3. Innovating with Google Cloud Artificial Intelligence",
+    "subdomain": "3.2 Explain how Google Cloud's AI offerings create business value",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [
+     "Speech-to-Text API",
+     "Cloud Translation API",
+     "Compute Engine",
+     "BigQuery ML",
+     "BigQuery"
+    ],
+    "tags": [],
+    "question": "A travel website wants to automatically translate its hotel descriptions into 40 languages. It has no ML experts and wants a ready-to-use service. Which product fits?",
+    "options": [
+     "Speech-to-Text API, which turns audio into written text.",
+     "Cloud Translation API, which translates text between languages.",
+     "Compute Engine, which provides virtual machines to run code overall.",
+     "BigQuery ML, which builds models with SQL inside BigQuery overall."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "The Cloud Translation API is a pre-trained service that translates text between languages without custom ML work.",
+    "distractor_summary": "BigQuery ML builds models in SQL, Speech-to-Text converts audio to text, and Compute Engine provides VMs.",
+    "section": 34,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Cloud Translation overview",
+      "url": "https://docs.cloud.google.com/translate/docs/overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-060",
+    "source_id": "CDL-060",
+    "exam_code": "CDL",
+    "domain": "3. Innovating with Google Cloud Artificial Intelligence",
+    "subdomain": "3.2 Explain how Google Cloud's AI offerings create business value",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Cloud VPN",
+     "Cloud Monitoring",
+     "Agent Studio",
+     "Cloud Storage"
+    ],
+    "tags": [],
+    "question": "A company wants to build a custom AI agent grounded in its own product manuals and policies, using a visual, low-code environment on Google Cloud's AI platform. Which option fits?",
+    "options": [
+     "Cloud VPN, which creates encrypted tunnels to networks for the team.",
+     "Cloud Monitoring, which tracks the health of resources.",
+     "Agent Studio on Agent Platform, a low-code place to build agents.",
+     "Cloud Storage Archive, a class for rarely read data."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Agent Studio on Agent Platform helps organizations build agents and custom AI experiences using their own data.",
+    "distractor_summary": "Archive storage, VPN, and monitoring don't build AI agents.",
+    "section": 34,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Agent Studio overview",
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/agent-studio"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-061",
+    "source_id": "CDL-061",
+    "exam_code": "CDL",
+    "domain": "3. Innovating with Google Cloud Artificial Intelligence",
+    "subdomain": "3.2 Explain how Google Cloud's AI offerings create business value",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Compute Engine",
+     "AutoML",
+     "Cloud CDN",
+     "Cloud Translation API"
+    ],
+    "tags": [
+     "governance"
+    ],
+    "question": "A furniture retailer wants a custom model that classifies its own product images into its unique categories. It has labeled images but little ML expertise and doesn't want to write model code. Which option fits?",
+    "options": [
+     "Writing a model from scratch on Compute Engine virtual machines throughout the organization.",
+     "AutoML on Agent Platform, which trains custom models from labeled data with little code.",
+     "Cloud CDN, which caches web content close to users throughout the organization by default.",
+     "The Cloud Translation API, which translates text into other languages for the application."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "AutoML trains high-quality custom models on an organization's own data with little ML expertise required.",
+    "distractor_summary": "Building from scratch requires deep expertise, Translation is for text, and Cloud CDN delivers content.",
+    "section": 34,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "AutoML training overview",
+      "url": "https://docs.cloud.google.com/vertex-ai/docs/training/automl-training-overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-063",
+    "source_id": "CDL-063",
+    "exam_code": "CDL",
+    "domain": "3. Innovating with Google Cloud Artificial Intelligence",
+    "subdomain": "3.2 Explain how Google Cloud's AI offerings create business value",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "AI Hypercomputer",
+     "Cloud Storage",
+     "TPUs"
+    ],
+    "tags": [
+     "cost-optimization"
+    ],
+    "question": "An AI startup needs high-performance accelerators to train large models, efficient software frameworks, and flexible pricing options to control costs. Which components of Google Cloud's AI Hypercomputer address these needs?",
+    "options": [
+     "Email and calendars for the engineers on the team.",
+     "Cloud Storage classes only, with no accelerators or frameworks overall.",
+     "Physical keys for the data centers that hold the servers in production.",
+     "GPUs and TPUs, optimized frameworks, and flexible consumption models."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "AI Hypercomputer brings together accelerators (GPUs and Google's TPUs), optimized software and open standards, and flexible consumption options for performance and cost control.",
+    "distractor_summary": "The other options aren't AI infrastructure components.",
+    "section": 34,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "AI Hypercomputer overview",
+      "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/overview"
+     },
+     {
+      "title": "Introduction to Cloud TPU",
+      "url": "https://docs.cloud.google.com/tpu/docs/intro-to-tpu"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-064",
+    "source_id": "CDL-064",
+    "exam_code": "CDL",
+    "domain": "3. Innovating with Google Cloud Artificial Intelligence",
+    "subdomain": "3.2 Explain how Google Cloud's AI offerings create business value",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Gemini",
+     "Cloud Storage",
+     "Agent Platform API"
+    ],
+    "tags": [],
+    "question": "A developer wants to add Gemini-powered capabilities to an existing application by calling a model through an API, without hosting the model. What should the developer use?",
+    "options": [
+     "A firewall rule that allows traffic from the application.",
+     "A Cloud Storage bucket that holds the files of the application.",
+     "The Agent Platform API, which lets the app call Gemini models.",
+     "A billing budget that limits the monthly spending of the project."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "The Agent Platform API provides programmatic access to Gemini and other models, so applications can use them without managing model infrastructure.",
+    "distractor_summary": "Storage, firewall rules, and budgets don't provide model access.",
+    "section": 34,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Generative AI on Google Cloud overview",
+      "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-065",
+    "source_id": "CDL-065",
+    "exam_code": "CDL",
+    "domain": "3. Innovating with Google Cloud Artificial Intelligence",
+    "subdomain": "3.2 Explain how Google Cloud's AI offerings create business value",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Gemini"
+    ],
+    "tags": [],
+    "question": "A pharmaceutical company wants to use AI to differentiate its research products and has a strong ML team. A small accounting firm just wants to summarize documents. Which approach best fits each?",
+    "options": [
+     "The drug firm builds or tunes models; the accounting firm uses pre-built tools.",
+     "Both companies should avoid using AI until the technology matures further at that point.",
+     "The accounting firm should build its own data centers to run AI.",
+     "Both companies should build custom models from scratch on their own in the project."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Custom models make sense when AI differentiates the business and expertise exists, while pre-built tools give fast value with little effort.",
+    "distractor_summary": "Building from scratch everywhere wastes effort, avoiding AI forgoes value, and data centers are unnecessary.",
+    "section": 34,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Training methods",
+      "url": "https://docs.cloud.google.com/vertex-ai/docs/start/training-methods"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-066",
+    "source_id": "CDL-066",
+    "exam_code": "CDL",
+    "domain": "4. Modernize Infrastructure and Applications with Google Cloud",
+    "subdomain": "4.1 Describe how Google Cloud helps organizations transition to the cloud",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "migration"
+    ],
+    "question": "A company must leave its data center in three months. It plans to move its applications to cloud virtual machines exactly as they are, with no code changes, and optimize later. Which migration approach is this?",
+    "options": [
+     "Refactor, which redesigns the application for the cloud.",
+     "Retire, which shuts the application down for good.",
+     "Reimagine, which rebuilds it with entirely new technology.",
+     "Rehost, also known as lift and shift."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Rehosting moves workloads to the cloud with minimal or no changes, which is fastest for tight deadlines.",
+    "distractor_summary": "Refactoring and reimagining change the application significantly, and retiring means shutting it down.",
+    "section": 35,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Migrate to Google Cloud: Get started",
+      "url": "https://docs.cloud.google.com/architecture/migration-to-gcp-getting-started"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-068",
+    "source_id": "CDL-068",
+    "exam_code": "CDL",
+    "domain": "4. Modernize Infrastructure and Applications with Google Cloud",
+    "subdomain": "4.1 Describe how Google Cloud helps organizations transition to the cloud",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [],
+    "tags": [
+     "databases"
+    ],
+    "question": "A company moves its application to the cloud and, during the move, swaps its self-managed database for a managed cloud database, without rewriting the application's core code. Which approach is this?",
+    "options": [
+     "Retire, which means to decommission the application overall.",
+     "Retain, which means to keep the application where it is overall.",
+     "Replatform, which means moving and improving it a little.",
+     "Rehost, which means moving it exactly as it is for the team."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Replatforming makes targeted optimizations, such as adopting managed services, while largely keeping the application's architecture.",
+    "distractor_summary": "Retaining keeps it where it is, rehosting moves it unchanged, and retiring shuts it down.",
+    "section": 35,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Migrate to Google Cloud: Get started",
+      "url": "https://docs.cloud.google.com/architecture/migration-to-gcp-getting-started"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-070",
+    "source_id": "CDL-070",
+    "exam_code": "CDL",
+    "domain": "4. Modernize Infrastructure and Applications with Google Cloud",
+    "subdomain": "4.1 Describe how Google Cloud helps organizations transition to the cloud",
+    "question_type": "concept",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "containers"
+    ],
+    "question": "What is a container?",
+    "options": [
+     "A physical shipping box that carries servers to the data center.",
+     "A type of database backup that a team stores offline.",
+     "A network firewall rule that filters packets on a subnet.",
+     "A portable package of an app and its dependencies that runs consistently anywhere."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Containers package code with its libraries and dependencies, so applications run the same way on a laptop, in testing, or in production.",
+    "distractor_summary": "They aren't physical boxes, backups, or firewall rules.",
+    "section": 35,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What are containers?",
+      "url": "https://cloud.google.com/learn/what-are-containers"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-071",
+    "source_id": "CDL-071",
+    "exam_code": "CDL",
+    "domain": "4. Modernize Infrastructure and Applications with Google Cloud",
+    "subdomain": "4.1 Describe how Google Cloud helps organizations transition to the cloud",
+    "question_type": "concept",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "serverless"
+    ],
+    "question": "What does serverless computing mean for a business?",
+    "options": [
+     "Applications can only run on the laptops that the employees use.",
+     "Developers focus on code, the provider runs the infrastructure, and billing follows usage.",
+     "The business must manage every one of its servers by hand.",
+     "There are no servers involved anywhere in the system at all."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "In serverless computing, servers still exist, but the provider manages them, scales automatically, and often charges only for actual usage.",
+    "distractor_summary": "The other statements are incorrect.",
+    "section": 35,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What is serverless computing?",
+      "url": "https://cloud.google.com/discover/what-is-serverless-computing"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-074",
+    "source_id": "CDL-074",
+    "exam_code": "CDL",
+    "domain": "4. Modernize Infrastructure and Applications with Google Cloud",
+    "subdomain": "4.2 Describe the business value of Google Cloud's infrastructure offerings",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Cloud Storage",
+     "GKE",
+     "Cloud Billing",
+     "BigQuery"
+    ],
+    "tags": [
+     "containers",
+     "devops"
+    ],
+    "question": "A software company has broken its large application into dozens of containerized microservices and needs to deploy, scale, and manage them consistently. Which Google Cloud product fits?",
+    "options": [
+     "Cloud Storage, the object store for files and media.",
+     "Google Kubernetes Engine (GKE), the managed platform for containers.",
+     "Cloud Billing, the tool for invoices and budgets.",
+     "BigQuery, the data warehouse for analytics workloads."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "GKE is a managed Kubernetes service for deploying, scaling, and managing containerized applications.",
+    "distractor_summary": "Cloud Storage stores files, BigQuery analyzes data, and Cloud Billing tracks costs.",
+    "section": 35,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "GKE overview",
+      "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/kubernetes-engine-overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-076",
+    "source_id": "CDL-076",
+    "exam_code": "CDL",
+    "domain": "4. Modernize Infrastructure and Applications with Google Cloud",
+    "subdomain": "4.2 Describe the business value of Google Cloud's infrastructure offerings",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Cloud Storage",
+     "Cloud Interconnect",
+     "Compute Engine",
+     "Looker",
+     "Cloud Run",
+     "Cloud Run functions"
+    ],
+    "tags": [
+     "serverless",
+     "storage"
+    ],
+    "question": "A company wants a small piece of code to run automatically whenever a file is uploaded to Cloud Storage, such as creating a thumbnail, without managing servers. Which product fits?",
+    "options": [
+     "Cloud Interconnect, which links on-premises networks to Google.",
+     "Compute Engine, which runs virtual machines that you manage overall.",
+     "Looker, which builds dashboards and business reports by default.",
+     "Cloud Run functions, which run small pieces of code on events."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Cloud Run functions run event-driven code in response to events like file uploads, with no servers to manage.",
+    "distractor_summary": "Compute Engine requires managing VMs, Looker is BI, and Interconnect connects networks.",
+    "section": 35,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Cloud Run function triggers",
+      "url": "https://docs.cloud.google.com/run/docs/function-triggers"
+     },
+     {
+      "title": "Create triggers from Cloud Storage events",
+      "url": "https://docs.cloud.google.com/run/docs/triggering/storage-triggers"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-077",
+    "source_id": "CDL-077",
+    "exam_code": "CDL",
+    "domain": "4. Modernize Infrastructure and Applications with Google Cloud",
+    "subdomain": "4.2 Describe the business value of Google Cloud's infrastructure offerings",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "devops"
+    ],
+    "question": "A retailer rebuilds its monolithic application as microservices using managed services and automated deployments. Which business benefits should it expect?",
+    "options": [
+     "Faster independent releases, better scalability and resilience, and efficiency.",
+     "The complete elimination of all software bugs in the application in every region.",
+     "A need to buy more physical servers for the new services.",
+     "Slower releases and less scalability than the monolith had across the subscriptions."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Modern application development lets teams release parts of an application independently, scale components separately, and reduce operational overhead with managed services.",
+    "distractor_summary": "It doesn't slow releases, require more hardware, or eliminate all bugs.",
+    "section": 35,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What is microservices architecture?",
+      "url": "https://cloud.google.com/learn/what-is-microservices-architecture"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-081",
+    "source_id": "CDL-081",
+    "exam_code": "CDL",
+    "domain": "4. Modernize Infrastructure and Applications with Google Cloud",
+    "subdomain": "4.2 Describe the business value of Google Cloud's infrastructure offerings",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "networking"
+    ],
+    "question": "An online store's traffic varies widely across the day. It wants the number of servers to grow when traffic rises and shrink when traffic falls, with requests spread evenly across servers. Which capabilities provide this?",
+    "options": [
+     "Encryption and key rotation for the data of the store.",
+     "Autoscaling and load balancing across the servers of the store.",
+     "Data governance and retention for the records of the store.",
+     "Translation and transcription for the customers of the store overall."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Autoscaling adjusts capacity to demand, and load balancing distributes traffic across instances.",
+    "distractor_summary": "The other options address data management, security, or AI tasks.",
+    "section": 35,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Autoscaling groups of instances",
+      "url": "https://docs.cloud.google.com/compute/docs/autoscaler/"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-082",
+    "source_id": "CDL-082",
+    "exam_code": "CDL",
+    "domain": "4. Modernize Infrastructure and Applications with Google Cloud",
+    "subdomain": "4.3 Describe the business value of APIs",
+    "question_type": "concept",
+    "difficulty": "easy",
+    "services": [
+     "Cloud Storage"
+    ],
+    "tags": [],
+    "question": "What is an application programming interface (API)?",
+    "options": [
+     "A type of physical server in a data center.",
+     "A set of rules that lets applications communicate and exchange data.",
+     "A billing account that pays for the cloud services.",
+     "A storage class in Cloud Storage for rarely used files."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "An API defines how software components interact, enabling one application to use another's data or services.",
+    "distractor_summary": "It isn't hardware, a storage class, or a billing account.",
+    "section": 35,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Developing APIs: A comprehensive guide",
+      "url": "https://cloud.google.com/discover/what-is-api-development"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-083",
+    "source_id": "CDL-083",
+    "exam_code": "CDL",
+    "domain": "4. Modernize Infrastructure and Applications with Google Cloud",
+    "subdomain": "4.3 Describe the business value of APIs",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [],
+    "question": "A weather company has valuable forecast data. It wants partners and developers to build apps using this data and wants to charge them based on usage. What strategy creates this new revenue stream?",
+    "options": [
+     "Printing the forecasts and mailing them to partners each week overall.",
+     "Exposing the data through public APIs and charging for access.",
+     "Keeping the forecast data private and leaving it unused overall.",
+     "Emailing spreadsheets of the forecasts to each partner in Azure."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Public APIs let partners integrate data into their products, and usage-based pricing turns the data into a revenue stream.",
+    "distractor_summary": "The other options don't scale or create revenue.",
+    "section": 35,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Apigee API Management",
+      "url": "https://cloud.google.com/apigee"
+     },
+     {
+      "title": "New business channels using APIs",
+      "url": "https://cloud.google.com/solutions/new-channels-using-apis"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-085",
+    "source_id": "CDL-085",
+    "exam_code": "CDL",
+    "domain": "4. Modernize Infrastructure and Applications with Google Cloud",
+    "subdomain": "4.3 Describe the business value of APIs",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [],
+    "question": "A bank has old core systems that are hard to change. It wants new mobile apps to use these systems' data without rewriting them. How can APIs help?",
+    "options": [
+     "APIs replace the need for any kind of security in the bank.",
+     "APIs require rewriting all of the legacy systems before they work for the team.",
+     "APIs give legacy systems a modern interface, so new apps can use their data.",
+     "APIs only work with spreadsheets and cannot reach a core system in production."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "APIs can wrap legacy systems with a modern interface, enabling new digital services while the core systems remain unchanged.",
+    "distractor_summary": "They don't require rewriting, don't replace security, and aren't limited to spreadsheets.",
+    "section": 35,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What is Apigee?",
+      "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee-old"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-086",
+    "source_id": "CDL-086",
+    "exam_code": "CDL",
+    "domain": "4. Modernize Infrastructure and Applications with Google Cloud",
+    "subdomain": "4.3 Describe the business value of APIs",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Apigee"
+    ],
+    "tags": [
+     "data-analytics"
+    ],
+    "question": "A retailer's API traffic is growing quickly, and it wants to see which partners use which APIs, detect unusual spikes, and enforce rate limits to protect backend systems. Which Apigee capabilities provide the most value?",
+    "options": [
+     "Storage lifecycle policies that move old objects to cheaper classes overall.",
+     "API analytics and traffic management, such as quotas and rate limiting.",
+     "Virtual machine snapshots that back up the disks of the servers.",
+     "Speech transcription that turns the audio of calls into text."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Apigee provides analytics on API usage and traffic controls such as quotas and spike arrest to protect backends.",
+    "distractor_summary": "The other options are unrelated to API management.",
+    "section": 35,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What is Apigee?",
+      "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee-old"
+     },
+     {
+      "title": "Apigee API Management",
+      "url": "https://cloud.google.com/apigee"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-087",
+    "source_id": "CDL-087",
+    "exam_code": "CDL",
+    "domain": "5. Trust and Security with Google Cloud",
+    "subdomain": "5.1 Describe fundamental cloud security concepts",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "security"
+    ],
+    "question": "An online retailer's website goes offline because attackers flood it with massive amounts of fake traffic from many sources. What type of attack is this?",
+    "options": [
+     "Ransomware, which encrypts files and demands a payment.",
+     "Cryptomining, which uses stolen compute to mine currency in that case.",
+     "Phishing, which tricks people with fake emails and sites.",
+     "A distributed denial-of-service (DDoS) attack on the site."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "A DDoS attack overwhelms a service with traffic from many sources to make it unavailable.",
+    "distractor_summary": "Phishing tricks people into revealing information, ransomware encrypts data for ransom, and cryptomining steals computing resources.",
+    "section": 38,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Cloud Armor overview",
+      "url": "https://docs.cloud.google.com/armor/docs/cloud-armor-overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-088",
+    "source_id": "CDL-088",
+    "exam_code": "CDL",
+    "domain": "5. Trust and Security with Google Cloud",
+    "subdomain": "5.1 Describe fundamental cloud security concepts",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "security",
+     "cryptography"
+    ],
+    "question": "Attackers encrypt a hospital's files and demand payment to unlock them. What type of attack is this, and what's a key business implication?",
+    "options": [
+     "Ransomware; it can halt operations and damage finances and reputation.",
+     "Phishing, an attack that only affects the email of the hospital overall.",
+     "A DDoS attack, which permanently deletes data from the hospital overall.",
+     "A misconfiguration, which is always harmless to the hospital."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Ransomware encrypts data and demands payment, disrupting operations and causing major financial and reputational harm.",
+    "distractor_summary": "The other pairings are incorrect.",
+    "section": 38,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Mitigate ransomware attacks using Google Cloud",
+      "url": "https://docs.cloud.google.com/docs/security/mitigating-ransomware-attacks"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-089",
+    "source_id": "CDL-089",
+    "exam_code": "CDL",
+    "domain": "5. Trust and Security with Google Cloud",
+    "subdomain": "5.1 Describe fundamental cloud security concepts",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "storage",
+     "risk-compliance"
+    ],
+    "question": "A company's sensitive files were exposed because an employee accidentally made a storage bucket publicly accessible. Which security risk caused this?",
+    "options": [
+     "Cryptomining, which uses stolen compute to mine currency.",
+     "Physical damage to the equipment in the data center.",
+     "Misconfiguration, such as a bucket that was left public.",
+     "A DDoS attack that floods a site with fake traffic."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Misconfiguration, such as unintended public access, is a leading cause of cloud data exposure.",
+    "distractor_summary": "Physical damage, DDoS, and cryptomining aren't what happened here.",
+    "section": 38,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Security Command Center overview",
+      "url": "https://docs.cloud.google.com/security-command-center/docs/security-command-center-overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-090",
+    "source_id": "CDL-090",
+    "exam_code": "CDL",
+    "domain": "5. Trust and Security with Google Cloud",
+    "subdomain": "5.1 Describe fundamental cloud security concepts",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "security",
+     "devops"
+    ],
+    "question": "A company deploys a customer-facing AI chatbot. Attackers try to craft inputs that trick the model into ignoring its instructions and revealing confidential information. What type of threat is this?",
+    "options": [
+     "A hardware failure in the server that hosts the chatbot.",
+     "The physical theft of a server from the data center.",
+     "A power outage in the data center that hosts the chatbot.",
+     "An LLM attack, such as prompt injection."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Prompt injection and similar LLM attacks manipulate model inputs to bypass safeguards or leak data.",
+    "distractor_summary": "The other options aren't attacks on AI models.",
+    "section": 38,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Model Armor overview",
+      "url": "https://docs.cloud.google.com/model-armor/overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-091",
+    "source_id": "CDL-091",
+    "exam_code": "CDL",
+    "domain": "5. Trust and Security with Google Cloud",
+    "subdomain": "5.1 Describe fundamental cloud security concepts",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [],
+    "question": "A company is comparing security in its own data center with security in Google Cloud. Which statement best describes the cloud security model?",
+    "options": [
+     "Security is shared: Google secures the infrastructure; the customer secures its data and access.",
+     "Cloud security is identical to on-premises security in every way.",
+     "In the cloud, the provider is responsible for everything, including customer permissions in Azure.",
+     "In the cloud, the customer is responsible for everything, including the data centers for the team."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Under the shared responsibility model, the provider secures the infrastructure and the customer secures what it puts in and configures in the cloud.",
+    "distractor_summary": "On-premises, the organization is responsible for everything, including physical security.",
+    "section": 38,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Shared responsibility and shared fate on Google Cloud",
+      "url": "https://docs.cloud.google.com/architecture/framework/security/shared-responsibility-shared-fate"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-094",
+    "source_id": "CDL-094",
+    "exam_code": "CDL",
+    "domain": "5. Trust and Security with Google Cloud",
+    "subdomain": "5.1 Describe fundamental cloud security concepts",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "security",
+     "databases",
+     "cryptography"
+    ],
+    "question": "A company wants to protect customer data while it's sent between users and its application, while it's stored in databases, and while it's being processed in memory. Which encryption states should it consider?",
+    "options": [
+     "Encryption only for backups that are stored offline.",
+     "Encryption in transit, at rest, and in use for the customer data.",
+     "Encryption only for emails that employees send each day.",
+     "Encryption only on the printed reports that are kept in the office."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Data needs protection in transit (moving across networks), at rest (stored), and in use (being processed), which Confidential Computing addresses.",
+    "distractor_summary": "The other options cover only narrow cases.",
+    "section": 38,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Encryption in transit for Google Cloud",
+      "url": "https://docs.cloud.google.com/docs/security/encryption-in-transit"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-095",
+    "source_id": "CDL-095",
+    "exam_code": "CDL",
+    "domain": "5. Trust and Security with Google Cloud",
+    "subdomain": "5.1 Describe fundamental cloud security concepts",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "governance",
+     "observability",
+     "risk-compliance"
+    ],
+    "question": "An employee signs in with a password and then confirms the sign-in with a code on their phone. After signing in, the system checks which resources the employee may access, and all actions are recorded in logs. Which three concepts does this describe, in order?",
+    "options": [
+     "Backup, restore, and archive throughout the organization overall.",
+     "Authorization, authentication, and auditing in every region.",
+     "Encryption, decryption, and compression for the application.",
+     "Authentication with MFA, then authorization, and auditing."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Authentication verifies who someone is (strengthened by MFA), authorization determines what they can access, and auditing records what they did.",
+    "distractor_summary": "The other sequences mislabel or omit these concepts.",
+    "section": 38,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Cloud Identity",
+      "url": "https://cloud.google.com/identity"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-096",
+    "source_id": "CDL-096",
+    "exam_code": "CDL",
+    "domain": "5. Trust and Security with Google Cloud",
+    "subdomain": "5.1 Describe fundamental cloud security concepts",
+    "question_type": "concept",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "security"
+    ],
+    "question": "In cloud security operations, what is \"threat intelligence\"?",
+    "options": [
+     "A type of firewall rule that blocks traffic from known bad addresses.",
+     "A billing report that shows the cost of the security tools by month.",
+     "A storage class used for security logs that are rarely read.",
+     "Information on threats and attacker tactics that helps teams defend against attacks."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Threat intelligence provides context about adversaries and their methods so organizations can prioritize defenses and respond faster.",
+    "distractor_summary": "It isn't a firewall rule, storage class, or billing report.",
+    "section": 38,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Google Threat Intelligence",
+      "url": "https://cloud.google.com/security/products/threat-intelligence"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-097",
+    "source_id": "CDL-097",
+    "exam_code": "CDL",
+    "domain": "5. Trust and Security with Google Cloud",
+    "subdomain": "5.2 Describe the business value of Google's multilayered approach to cloud security",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Google Threat Intelligence",
+     "Mandiant",
+     "VirusTotal",
+     "Cloud Storage",
+     "Cloud Billing",
+     "Looker"
+    ],
+    "tags": [
+     "security",
+     "incident-response"
+    ],
+    "question": "A company wants proactive insight into which threat actors are targeting its industry. It values intelligence drawn from Google's global visibility, frontline incident response experience, and crowdsourced malware analysis. Which offering fits?",
+    "options": [
+     "Google Threat Intelligence, built on Google's visibility, Mandiant's expertise, and VirusTotal.",
+     "Cloud Storage Nearline, a class for data read about once a month.",
+     "Cloud Billing reports that break down the cost of each project.",
+     "Looker dashboards that show business metrics for the leadership team at that point in the project."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Google Threat Intelligence combines Google's global visibility, Mandiant frontline expertise, and VirusTotal's crowdsourced detection.",
+    "distractor_summary": "The other products don't provide threat intelligence.",
+    "section": 38,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Google Threat Intelligence",
+      "url": "https://cloud.google.com/security/products/threat-intelligence"
+     },
+     {
+      "title": "Mandiant Threat Intelligence services",
+      "url": "https://cloud.google.com/security/consulting/threat-intelligence-services"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-098",
+    "source_id": "CDL-098",
+    "exam_code": "CDL",
+    "domain": "5. Trust and Security with Google Cloud",
+    "subdomain": "5.2 Describe the business value of Google's multilayered approach to cloud security",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "BigQuery ML",
+     "BigQuery",
+     "Cloud CDN",
+     "Cloud Translation API",
+     "Security Command Center"
+    ],
+    "tags": [
+     "security",
+     "risk-compliance"
+    ],
+    "question": "A company's security team wants to automatically find misconfigurations, vulnerabilities, and threats across its Google Cloud resources and prioritize which risks to fix first. Which product fits?",
+    "options": [
+     "BigQuery ML, which builds and runs models with SQL.",
+     "Cloud CDN, which caches web content close to users.",
+     "Cloud Translation API, which translates text between languages in every region.",
+     "Security Command Center, which finds and ranks risks across cloud resources."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Security Command Center discovers, prioritizes, and helps remediate security risks and misconfigurations in Google Cloud.",
+    "distractor_summary": "The other products don't assess security posture.",
+    "section": 38,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Security Command Center overview",
+      "url": "https://docs.cloud.google.com/security-command-center/docs/security-command-center-overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-099",
+    "source_id": "CDL-099",
+    "exam_code": "CDL",
+    "domain": "5. Trust and Security with Google Cloud",
+    "subdomain": "5.2 Describe the business value of Google's multilayered approach to cloud security",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Cloud Run",
+     "Cloud Storage",
+     "Apigee",
+     "Google Security Operations"
+    ],
+    "tags": [
+     "networking",
+     "security",
+     "observability"
+    ],
+    "question": "A company collects security logs from cloud services, laptops, and network devices. Analysts struggle to correlate events and respond quickly. Which Google Cloud offering provides a unified platform to ingest telemetry and accelerate threat detection and response?",
+    "options": [
+     "Cloud Run, which runs containers without server management.",
+     "Cloud Storage Archive, which holds data that is rarely read.",
+     "Apigee, which manages and secures APIs for developers.",
+     "Google Security Operations, which correlates events and speeds up response."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Google Security Operations brings SIEM and SOAR capabilities together to ingest security telemetry, detect threats, and automate response.",
+    "distractor_summary": "The other products aren't security operations platforms.",
+    "section": 38,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Google Security Operations (SecOps)",
+      "url": "https://cloud.google.com/security/products/security-operations"
+     },
+     {
+      "title": "SIEM platform overview (Google Security Operations)",
+      "url": "https://docs.cloud.google.com/chronicle/docs/overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-100",
+    "source_id": "CDL-100",
+    "exam_code": "CDL",
+    "domain": "5. Trust and Security with Google Cloud",
+    "subdomain": "5.2 Describe the business value of Google's multilayered approach to cloud security",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Gemini",
+     "Gemini in Google Security Operations",
+     "Google Security Operations",
+     "Cloud Interconnect",
+     "Cloud SQL",
+     "Cloud Storage",
+     "Autoclass"
+    ],
+    "tags": [],
+    "question": "Security analysts spend hours writing queries and summarizing investigations. The company wants AI to help analysts search data in natural language, summarize cases, and recommend next steps. Which offering fits?",
+    "options": [
+     "Gemini in Google Security Operations, which helps analysts search in plain language.",
+     "Cloud Interconnect, which links on-premises networks with Google across the subscriptions.",
+     "Cloud SQL, which hosts managed relational databases throughout the organization overall.",
+     "Cloud Storage Autoclass, which moves objects between storage classes for the application."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Gemini in Google Security Operations helps analysts with natural-language search, case summaries, and recommendations, speeding up investigations.",
+    "distractor_summary": "The other products don't assist security analysts.",
+    "section": 38,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Google Security Operations (SecOps)",
+      "url": "https://cloud.google.com/security/products/security-operations"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-103",
+    "source_id": "CDL-103",
+    "exam_code": "CDL",
+    "domain": "5. Trust and Security with Google Cloud",
+    "subdomain": "5.2 Describe the business value of Google's multilayered approach to cloud security",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "networking"
+    ],
+    "question": "A CISO asks why Google Cloud's infrastructure is considered secure by design. Which answer is most accurate?",
+    "options": [
+     "Google uses only off-the-shelf hardware with no custom security of its own.",
+     "Google builds security into every layer: its data centers, custom hardware, and software.",
+     "Google doesn't encrypt customer data by default in any of its services.",
+     "Google relies on its customers to secure the data centers themselves."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Google designs its own data centers, servers, network, and security chips, building security into each layer, and encrypts data at rest by default.",
+    "distractor_summary": "The other statements are incorrect.",
+    "section": 38,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Google infrastructure security design overview",
+      "url": "https://docs.cloud.google.com/docs/security/infrastructure/design"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-104",
+    "source_id": "CDL-104",
+    "exam_code": "CDL",
+    "domain": "5. Trust and Security with Google Cloud",
+    "subdomain": "5.2 Describe the business value of Google's multilayered approach to cloud security",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Cloud Translation API",
+     "Identity-Aware Proxy",
+     "BigQuery",
+     "Cloud Storage"
+    ],
+    "tags": [
+     "hybrid-connectivity",
+     "iam"
+    ],
+    "question": "A company wants employees to access internal web applications securely from anywhere without a VPN, with access granted based on user identity and context. Which Google Cloud product fits?",
+    "options": [
+     "Cloud Translation API, which translates text between languages.",
+     "Identity-Aware Proxy (IAP), which gates app access by identity and context.",
+     "BigQuery, the data warehouse that is used for analytics.",
+     "Cloud Storage, which stores objects such as files and media."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "IAP controls access to applications based on identity and context, supporting a zero-trust approach without a VPN.",
+    "distractor_summary": "The other products don't control application access.",
+    "section": 38,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Identity-Aware Proxy overview",
+      "url": "https://docs.cloud.google.com/iap/docs/concepts-overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-105",
+    "source_id": "CDL-105",
+    "exam_code": "CDL",
+    "domain": "5. Trust and Security with Google Cloud",
+    "subdomain": "5.2 Describe the business value of Google's multilayered approach to cloud security",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Cloud Run",
+     "Cloud Run functions",
+     "Sensitive Data Protection",
+     "Cloud CDN"
+    ],
+    "tags": [],
+    "question": "A company stores customer support transcripts and must find and mask sensitive information such as credit card numbers and national ID numbers before analysts use the data. Which product fits?",
+    "options": [
+     "Cloud Run functions only, with no inspection of the transcripts.",
+     "Sensitive Data Protection, which finds and masks items such as card numbers.",
+     "Cloud CDN, which caches static content at the network edge.",
+     "Cloud Load Balancing, which spreads traffic across many servers."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Sensitive Data Protection discovers, classifies, and de-identifies sensitive data such as card and ID numbers.",
+    "distractor_summary": "The other products don't inspect or mask sensitive content.",
+    "section": 38,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Sensitive Data Protection overview",
+      "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/sensitive-data-protection-overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-106",
+    "source_id": "CDL-106",
+    "exam_code": "CDL",
+    "domain": "5. Trust and Security with Google Cloud",
+    "subdomain": "5.2 Describe the business value of Google's multilayered approach to cloud security",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Cloud Armor",
+     "Cloud SQL",
+     "Looker",
+     "Firestore"
+    ],
+    "tags": [
+     "networking",
+     "security"
+    ],
+    "question": "A public website is targeted by DDoS attacks and web exploits such as SQL injection. The company wants protection at Google's network edge. Which product fits?",
+    "options": [
+     "Cloud Armor, which protects against DDoS attacks and web exploits at the edge.",
+     "Cloud SQL, the managed relational database for applications for the application.",
+     "Looker, the tool for business intelligence dashboards throughout the organization.",
+     "Firestore, the document database for apps throughout the organization as needed."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Cloud Armor provides DDoS protection and web application firewall capabilities at Google's edge.",
+    "distractor_summary": "Cloud SQL and Firestore are databases, and Looker is a BI tool.",
+    "section": 38,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Cloud Armor overview",
+      "url": "https://docs.cloud.google.com/armor/docs/cloud-armor-overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-108",
+    "source_id": "CDL-108",
+    "exam_code": "CDL",
+    "domain": "5. Trust and Security with Google Cloud",
+    "subdomain": "5.2 Describe the business value of Google's multilayered approach to cloud security",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "security",
+     "governance",
+     "risk-compliance"
+    ],
+    "question": "A European company must ensure its data stays in the EU and wants evidence that Google Cloud meets regulatory standards. How does Google Cloud help earn and maintain this trust?",
+    "options": [
+     "Data residency controls, sovereignty options, audits, and compliance and transparency reports.",
+     "By letting customers inspect the data centers whenever they like to.",
+     "By storing all of the data in one global location with no choice.",
+     "By keeping all of the audit results secret from every customer."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Google Cloud supports data residency and sovereignty and provides independent audit reports, certifications, and transparency reports.",
+    "distractor_summary": "Secret audits, single-location storage, and unrestricted physical inspections aren't how trust is established.",
+    "section": 38,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Overview of Assured Workloads",
+      "url": "https://docs.cloud.google.com/assured-workloads/docs/overview"
+     },
+     {
+      "title": "Compliance resource center",
+      "url": "https://cloud.google.com/compliance"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-124",
+    "source_id": "CDL-124",
+    "exam_code": "CDL",
+    "domain": "5. Trust and Security with Google Cloud",
+    "subdomain": "5.2 Describe the business value of Google's multilayered approach to cloud security",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [],
+    "tags": [
+     "security",
+     "cryptography"
+    ],
+    "question": "A German public agency tells its cloud provider: \"Our data must be stored only in Germany, and we must also keep control over who can access it, including holding our own encryption keys, so that it is subject only to German and EU law.\" The project manager thinks storing data in a German region satisfies everything. What should the agency understand?",
+    "options": [
+     "Residency and sovereignty mean the same thing, so a German region is enough at that point.",
+     "Sovereignty is only about the region of storage; residency is about encryption for the team.",
+     "Residency is where data is stored; sovereignty adds who controls access and the laws.",
+     "Neither concept applies to public sector organizations, so none is needed."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Data residency is about the geographic location of data, while data sovereignty concerns control, access, and legal jurisdiction over that data, which is why sovereignty requirements often add measures like customer-managed or externally held keys and sovereign cloud offerings.",
+    "distractor_summary": "Choosing a region addresses residency only, and the other options reverse or dismiss the concepts.",
+    "section": 38,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Overview of Assured Workloads",
+      "url": "https://docs.cloud.google.com/assured-workloads/docs/overview"
+     },
+     {
+      "title": "Assured Workloads data boundaries",
+      "url": "https://docs.cloud.google.com/assured-workloads/docs/data-boundaries"
+     },
+     {
+      "title": "Sovereign cloud",
+      "url": "https://cloud.google.com/sovereign-cloud"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-109",
+    "source_id": "CDL-109",
+    "exam_code": "CDL",
+    "domain": "6. Scaling with Google Cloud Operations",
+    "subdomain": "6.1 Recognize how Google Cloud supports controlling cloud costs",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "cost-optimization"
+    ],
+    "question": "A company is moving from buying servers every few years to paying monthly for cloud resources. How does this affect its finances?",
+    "options": [
+     "It eliminates all IT costs for the company in every year.",
+     "It shifts spending from OpEx to CapEx, with higher upfront costs.",
+     "It requires buying more hardware upfront than the company did before.",
+     "It shifts spending from CapEx to OpEx, avoiding upfront purchases and idle capacity."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Cloud consumption turns large upfront purchases (CapEx) into ongoing, usage-based costs (OpEx), which can reduce TCO when capacity is used efficiently.",
+    "distractor_summary": "It doesn't eliminate IT costs or require more upfront hardware.",
+    "section": 39,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Advantages of cloud computing",
+      "url": "https://cloud.google.com/learn/advantages-of-cloud-computing"
+     },
+     {
+      "title": "Well-Architected Framework: Cost optimization",
+      "url": "https://docs.cloud.google.com/architecture/framework/cost-optimization"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-110",
+    "source_id": "CDL-110",
+    "exam_code": "CDL",
+    "domain": "6. Scaling with Google Cloud Operations",
+    "subdomain": "6.1 Recognize how Google Cloud supports controlling cloud costs",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "cost-optimization",
+     "observability"
+    ],
+    "question": "A company's cloud bill grew unexpectedly because no one was clearly responsible for monitoring spending. What does Google recommend as a first step in cloud financial governance?",
+    "options": [
+     "Stop using the cloud until the costs are under control throughout the organization overall.",
+     "Name who manages cloud costs, often a cross-functional team, and give them cost tools.",
+     "Let each developer spend without any limits on cloud resources across the subscriptions.",
+     "Review the costs only once a year, at the end of the year throughout the organization overall."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Effective cloud financial governance starts with clear ownership and collaboration across finance, technology, and business teams, supported by cost tools.",
+    "distractor_summary": "Abandoning the cloud, unlimited spending, or annual reviews don't control costs.",
+    "section": 39,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What is Cloud FinOps?",
+      "url": "https://cloud.google.com/learn/what-is-finops"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-111",
+    "source_id": "CDL-111",
+    "exam_code": "CDL",
+    "domain": "6. Scaling with Google Cloud Operations",
+    "subdomain": "6.1 Recognize how Google Cloud supports controlling cloud costs",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [],
+    "tags": [
+     "cost-optimization"
+    ],
+    "question": "A company has the right cost tools, but costs still rise because teams leave test resources running and nobody reviews spending regularly. What does this illustrate about controlling cloud costs?",
+    "options": [
+     "Technology alone is enough to control the costs of the cloud for the team.",
+     "Cost control needs the combination of people, processes, and technology.",
+     "Only the cloud provider can control the costs of the customer for the team.",
+     "Costs can't be controlled in the cloud by the customer."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Tools need accountable people and regular processes, such as reviews and cleanup, to be effective.",
+    "distractor_summary": "Costs can be controlled, and customers share that responsibility with the provider's tools.",
+    "section": 39,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "What is Cloud FinOps?",
+      "url": "https://cloud.google.com/learn/what-is-finops"
+     },
+     {
+      "title": "Optimize costs with FinOps hub",
+      "url": "https://docs.cloud.google.com/billing/docs/how-to/finops-hub"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-112",
+    "source_id": "CDL-112",
+    "exam_code": "CDL",
+    "domain": "6. Scaling with Google Cloud Operations",
+    "subdomain": "6.1 Recognize how Google Cloud supports controlling cloud costs",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Cloud Translation API",
+     "Cloud Storage",
+     "Autoclass",
+     "resource hierarchy",
+     "Pub/Sub"
+    ],
+    "tags": [
+     "governance",
+     "cost-optimization"
+    ],
+    "question": "A company wants to organize its Google Cloud resources by department, apply access policies once and have them inherited, and see costs by department. Which feature supports this?",
+    "options": [
+     "Cloud Translation API, which translates text between languages for the team.",
+     "Cloud Storage Autoclass, which manages storage classes.",
+     "The resource hierarchy of organization, folders, projects, and resources.",
+     "Pub/Sub, the messaging service for event-driven systems."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "The resource hierarchy lets organizations group projects into folders, apply policies that are inherited downward, and gain visibility and control by area.",
+    "distractor_summary": "The other products don't organize resources.",
+    "section": 39,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "About resource hierarchy",
+      "url": "https://docs.cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-113",
+    "source_id": "CDL-113",
+    "exam_code": "CDL",
+    "domain": "6. Scaling with Google Cloud Operations",
+    "subdomain": "6.1 Recognize how Google Cloud supports controlling cloud costs",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [
+     "Cloud Billing budgets",
+     "Cloud Billing",
+     "Cloud CDN",
+     "Bigtable",
+     "Identity-Aware Proxy"
+    ],
+    "tags": [
+     "cost-optimization",
+     "observability"
+    ],
+    "question": "A finance team wants to be alerted when a project's monthly spending reaches 50%, 90%, and 100% of a planned amount. Which feature fits?",
+    "options": [
+     "Cloud Billing budgets with threshold alerts.",
+     "Cloud CDN, which caches web content close to users.",
+     "Bigtable, the wide-column NoSQL database for large workloads.",
+     "Identity-Aware Proxy, which controls access to web apps."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Billing budgets send alerts when spending reaches set thresholds of a planned amount.",
+    "distractor_summary": "The other products don't track spending.",
+    "section": 39,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Create, edit, or delete budgets and budget alerts",
+      "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-114",
+    "source_id": "CDL-114",
+    "exam_code": "CDL",
+    "domain": "6. Scaling with Google Cloud Operations",
+    "subdomain": "6.1 Recognize how Google Cloud supports controlling cloud costs",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Cloud Translation API",
+     "Cloud Armor"
+    ],
+    "tags": [],
+    "question": "A company wants to prevent a development project from accidentally creating hundreds of expensive virtual machines. Which control limits how many resources the project can consume?",
+    "options": [
+     "Cloud Translation API, which translates text between languages in every region.",
+     "Cloud Armor, which protects sites from DDoS and web exploits for the application.",
+     "A larger budget for the project to cover the extra costs.",
+     "Resource quota policies, which limit how many resources a project can create."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Quotas cap the amount of specific resources a project can use, preventing runaway consumption.",
+    "distractor_summary": "Budgets alert on spending but don't cap resources, and the other products are unrelated.",
+    "section": 39,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Cloud Quotas overview",
+      "url": "https://docs.cloud.google.com/docs/quotas/overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-115",
+    "source_id": "CDL-115",
+    "exam_code": "CDL",
+    "domain": "6. Scaling with Google Cloud Operations",
+    "subdomain": "6.1 Recognize how Google Cloud supports controlling cloud costs",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Cloud Storage",
+     "Looker",
+     "Dynamic Workload Scheduler",
+     "Cloud DNS",
+     "TPUs"
+    ],
+    "tags": [],
+    "question": "An AI team needs GPUs for a training job that can start whenever capacity is available, and wants to obtain accelerators efficiently rather than holding expensive capacity idle. Which Google Cloud capability helps?",
+    "options": [
+     "Cloud Storage Archive, a class for data that is rarely read.",
+     "Looker, the tool for business intelligence and dashboards.",
+     "Dynamic Workload Scheduler, which obtains accelerators when capacity allows.",
+     "Cloud DNS, the managed domain name service for websites."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "Dynamic Workload Scheduler helps teams obtain GPUs and TPUs for jobs when capacity is available, improving access and controlling cost.",
+    "distractor_summary": "The other products don't schedule accelerator capacity.",
+    "section": 39,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "About Flex-start VMs",
+      "url": "https://docs.cloud.google.com/compute/docs/instances/about-flex-start-vms"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-116",
+    "source_id": "CDL-116",
+    "exam_code": "CDL",
+    "domain": "6. Scaling with Google Cloud Operations",
+    "subdomain": "6.2 Describe fundamental concepts of modern operations, reliability, and resilience",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [
+     "BigQuery Omni",
+     "BigQuery",
+     "Cloud Storage",
+     "Apigee",
+     "Google Cloud Observability",
+     "Cloud Monitoring",
+     "Cloud Logging",
+     "Cloud Trace"
+    ],
+    "tags": [
+     "observability"
+    ],
+    "question": "Customers report that a web application is slow, but the operations team has no visibility into what's happening. The team wants to collect metrics, set up alerts, and view logs in one place. Which Google Cloud capabilities help?",
+    "options": [
+     "BigQuery Omni, which analyzes data held in other clouds.",
+     "Cloud Storage Nearline, a class for data read about monthly as needed.",
+     "Apigee monetization, which bills partners for API usage.",
+     "Google Cloud Observability, with Cloud Monitoring and Cloud Logging."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Google Cloud Observability provides monitoring, alerting, and logging, plus tools like Cloud Trace and Cloud Profiler for deeper analysis.",
+    "distractor_summary": "The other products don't provide operational visibility.",
+    "section": 39,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Google Cloud Observability documentation",
+      "url": "https://docs.cloud.google.com/stackdriver/docs/observability"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-119",
+    "source_id": "CDL-119",
+    "exam_code": "CDL",
+    "domain": "6. Scaling with Google Cloud Operations",
+    "subdomain": "6.2 Describe fundamental concepts of modern operations, reliability, and resilience",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "high-availability",
+     "disaster-recovery"
+    ],
+    "question": "A company wants its order system to keep running if a server or zone fails, and to recover data if it's accidentally deleted. Which practices support resilient infrastructure?",
+    "options": [
+     "Storing the backups on the same server as the data itself.",
+     "Redundancy across zones or regions, scalable infrastructure, and regular backups.",
+     "Disabling monitoring on the order system to save some costs.",
+     "Running everything on a single server to keep the design simple."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Redundancy and replication remove single points of failure, scalability handles load, and backups enable recovery from deletion.",
+    "distractor_summary": "The other options increase risk.",
+    "section": 39,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Geography and regions",
+      "url": "https://docs.cloud.google.com/docs/geography-and-regions"
+     },
+     {
+      "title": "Disaster recovery planning guide",
+      "url": "https://docs.cloud.google.com/architecture/dr-scenarios-planning-guide"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-120",
+    "source_id": "CDL-120",
+    "exam_code": "CDL",
+    "domain": "6. Scaling with Google Cloud Operations",
+    "subdomain": "6.2 Describe fundamental concepts of modern operations, reliability, and resilience",
+    "question_type": "scenario",
+    "difficulty": "easy",
+    "services": [],
+    "tags": [
+     "devops"
+    ],
+    "question": "A company wants development and operations teams to work together more closely, release changes more frequently and reliably, and use engineering practices to manage reliability. Which approaches describe this?",
+    "options": [
+     "Separating the teams so they never communicate by default.",
+     "Manual deployments only, with a change review each month.",
+     "DevOps and Site Reliability Engineering (SRE) practices.",
+     "Waterfall development with one release every year overall."
+    ],
+    "correct_index": 2,
+    "correct_rationale": "DevOps emphasizes collaboration and frequent, reliable delivery, and SRE applies engineering practices such as SLOs and error budgets to reliability.",
+    "distractor_summary": "The other options slow delivery or reduce reliability.",
+    "section": 39,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "DevOps capabilities (DORA)",
+      "url": "https://docs.cloud.google.com/architecture/devops"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-121",
+    "source_id": "CDL-121",
+    "exam_code": "CDL",
+    "domain": "6. Scaling with Google Cloud Operations",
+    "subdomain": "6.1 Recognize how Google Cloud supports controlling cloud costs",
+    "question_type": "scenario",
+    "difficulty": "medium",
+    "services": [
+     "Compute Engine",
+     "Sustained use discounts",
+     "Spot VMs",
+     "Committed use discounts"
+    ],
+    "tags": [
+     "cost-optimization",
+     "databases"
+    ],
+    "question": "A company runs a production database server on Compute Engine 24 hours a day and is confident it will keep running at the same size for the next three years. Finance wants the largest discount available in exchange for a commitment. Which option fits?",
+    "options": [
+     "Sustained use discounts, which apply automatically to long-running usage.",
+     "Spot VMs, which are cheap but can be stopped by Google at any time.",
+     "On-demand pricing with no commitment of any length for the VM.",
+     "Committed use discounts (CUDs) with a three-year term for the VM."
+    ],
+    "correct_index": 3,
+    "correct_rationale": "Committed use discounts give deep savings in exchange for committing to a level of usage for one or three years, which suits steady, predictable workloads.",
+    "distractor_summary": "Sustained use discounts apply automatically but are smaller, Spot VMs can be reclaimed and don't suit a production database, and on-demand pricing has no discount.",
+    "section": 39,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Committed use discounts (CUDs) for Compute Engine",
+      "url": "https://docs.cloud.google.com/compute/docs/instances/committed-use-discounts-overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-122",
+    "source_id": "CDL-122",
+    "exam_code": "CDL",
+    "domain": "6. Scaling with Google Cloud Operations",
+    "subdomain": "6.1 Recognize how Google Cloud supports controlling cloud costs",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Committed use discounts",
+     "Spot VMs"
+    ],
+    "tags": [
+     "cost-optimization"
+    ],
+    "question": "A company has three workloads: a steady production application that runs all year, a nightly data-processing job that can be interrupted and restarted, and several test VMs that run for most of each month but whose future is uncertain. Which pricing approach best matches each workload?",
+    "options": [
+     "Committed use for the steady app, Spot for the interruptible job, on-demand for the tests.",
+     "Spot VMs for all three of the workloads, to get the lowest price.",
+     "Committed use discounts for all three of the workloads, for the same term.",
+     "On-demand for the steady app, committed use for the nightly job, Spot for tests in the project."
+    ],
+    "correct_index": 0,
+    "correct_rationale": "Commitments fit predictable long-term use, Spot VMs fit fault-tolerant work that can be interrupted, and sustained use discounts reward eligible VMs that run for much of the month without any commitment.",
+    "distractor_summary": "Spot for everything risks interrupting production, committing to uncertain test VMs can waste money, and option D reverses the fits.",
+    "section": 39,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Committed use discounts (CUDs) for Compute Engine",
+      "url": "https://docs.cloud.google.com/compute/docs/instances/committed-use-discounts-overview"
+     }
+    ]
+   },
+   {
+    "id": "gcp-cdl-123",
+    "source_id": "CDL-123",
+    "exam_code": "CDL",
+    "domain": "6. Scaling with Google Cloud Operations",
+    "subdomain": "6.1 Recognize how Google Cloud supports controlling cloud costs",
+    "question_type": "scenario",
+    "difficulty": "hard",
+    "services": [
+     "Cloud Billing"
+    ],
+    "tags": [
+     "cost-optimization",
+     "observability"
+    ],
+    "question": "A finance team set a Cloud Billing budget of $10,000 for a development project with an alert at 100%. Spending reached $14,000 anyway, because a script created far more virtual machines than intended. The team assumed the budget would stop the spending. What should they understand?",
+    "options": [
+     "Budgets automatically shut down all of the resources at 100% in the project as a result across the setup.",
+     "Budgets only alert and don't cap spending; quotas limit how many resources a project can use.",
+     "Quotas send the cost alerts, while budgets limit the number of VMs as a result across the setup.",
+     "Neither budgets nor quotas can help to control the cloud usage in that case for the team at that point."
+    ],
+    "correct_index": 1,
+    "correct_rationale": "Budgets track spending and notify people (and can trigger automation), but on their own they don't stop resources, while quotas put a hard ceiling on resource consumption.",
+    "distractor_summary": "Budgets don't shut resources down automatically, option C reverses the roles, and both tools do help control usage.",
+    "section": 39,
+    "difficulty_source": "provided",
+    "origin": "reserve",
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     {
+      "title": "Manage spend cap budgets",
+      "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets-spend-caps"
+     },
+     {
+      "title": "Create, edit, or delete budgets and budget alerts",
+      "url": "https://docs.cloud.google.com/billing/docs/how-to/budgets"
+     }
+    ]
+   }
+  ],
+  "lessons": [],
+  "examProfiles": []
+ }
+}
