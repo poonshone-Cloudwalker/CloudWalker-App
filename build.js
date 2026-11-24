@@ -11,7 +11,7 @@ const ROOT = __dirname, SRC = path.resolve(arg('--src') || path.join(ROOT, 'src'
 const M = JSON.parse(fs.readFileSync(path.join(SRC, 'manifest.json'), 'utf8'));
 const read = rel => { const f = path.join(SRC, rel); if (!fs.existsSync(f)) throw new Error(`manifest lists a missing file: src/${rel}`); return fs.readFileSync(f, 'utf8'); };
 const errs = [];
-const json = rel => { const t = read(rel); try { JSON.parse(t); } catch (e) { errs.push(`src/${rel}: invalid JSON (${e.message})`); } return t; };
+const json = rel => { const t = read(rel); try { JSON.parse(t); } catch (e) { errs.push(`src/${rel}: invalid JSON (${e.message})`); } return t.replace(/<\/(script)/gi, '<\\/$1'); };
 
 const css = M.css.map(read).join('');
 const bank = [`<script type="application/json" id="bank-data">${json(M.bank.head)}</script>\n`,

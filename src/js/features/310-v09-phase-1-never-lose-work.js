@@ -22,7 +22,7 @@ S.userBank = { exams: {}, questions: {} };
 function persistOK() { return PERSIST.status === 'ok' || PERSIST.status === 'saving'; }
 
 /* ---------- IndexedDB, promise-wrapped, every call guarded */
-function withTimeout(p, ms, what) { return Promise.race([p, new Promise((_, rej) => setTimeout(() => rej(new Error(`${what} timed out`)), ms))]); }
+function withTimeout(p, ms, what) { let t; const timeout = new Promise((_, rej) => { t = setTimeout(() => rej(new Error(`${what} timed out`)), ms); }); return Promise.race([p, timeout]).finally(() => clearTimeout(t)); }
 function idbOpen() {
   return withTimeout(new Promise((res, rej) => {
     let rq; try { if (!('indexedDB' in window) || !indexedDB) throw new Error('IndexedDB is not available in this browser'); rq = indexedDB.open(IDB_NAME, 1); } catch (e) { rej(e); return; }
@@ -93,7 +93,7 @@ importBank = function (data) {
     const items = Array.isArray(data) ? data : data.questions;
     (items || []).forEach((q, i) => { if (q && q.id && S.bank.has(q.id) && !validateQuestion(q, i).length) S.userBank.questions[q.id] = q; });
     if (!Array.isArray(data) && Array.isArray(data.exams)) data.exams.forEach(e => { if (e && e.code && e.name) S.userBank.exams[e.code] = e; });
-  } catch { /* the import itself already succeeded or reported its errors */ }
+  } catch (e) { logIssue('Backup after import', e); }
   persistSoon(SAVE_QUICK); return r;
 };
 function restoreUserBank(ub) {
@@ -103,14 +103,13 @@ function restoreUserBank(ub) {
 }
 
 /* ---------- Workspace import: migrate first, then the existing merge-by-id */
-const _smartImportP1 = smartImport;
-smartImport = data => {
-  const m = migrateWorkspace(data); const d = m.data;
-  const r = _smartImportP1(d);
+registerImportHook({ id: 'p1-migrate', order: 30,
+  pre: data => { const m = migrateWorkspace(data); return { data: m.data, state: m }; },
+  post: (r, { cur: d, state: m }) => {
   if (d && d.format === 'cloudwalker-workspace' && d.userBank) { try { restoreUserBank(d.userBank); } catch (e) { (r.list ||= []).push('Imported questions in this file could not be loaded: ' + e.message); } }
   if (m.notes.length) r.body = `${m.notes.join(' ')} ${r.body || ''}`.trim();
-  persistSoon(SAVE_QUICK); return r;
-};
+  persistSoon(SAVE_QUICK);
+} });
 
 /* ---------- Apply a saved record (boot restore and daily-backup restore) */
 function applyLocal(rec) {
@@ -139,7 +138,7 @@ function persistSoon(delay) {
   /* Debounced, but never postponed past SAVE_MAX_WAIT by a stream of renders or keystrokes. */
   const now = Date.now(); PERSIST.pendingSince ||= now;
   const wait = Math.max(0, Math.min(typeof delay === 'number' ? delay : SAVE_DEBOUNCE, SAVE_MAX_WAIT - (now - PERSIST.pendingSince)));
-  clearTimeout(PERSIST.timer); PERSIST.timer = setTimeout(() => persistNow('auto'), wait);
+  clearTimeout(PERSIST.timer); PERSIST.timer = setTimeout(() => { if (typeof requestIdleCallback === 'function') requestIdleCallback(() => persistNow('auto'), { timeout: 2000 }); else persistNow('auto'); }, wait);
 }
 async function persistNow(why) {
   clearTimeout(PERSIST.timer); PERSIST.timer = null; PERSIST.pendingSince = 0;
@@ -164,15 +163,15 @@ async function persistNow(why) {
 async function writeBackup(key, json) {
   await idbPut(key, { t: Date.now(), json });
   PERSIST.backups = PERSIST.backups.filter(b => b.key !== key).concat([{ key, t: Date.now(), size: json.length }]).sort((a, b) => b.key.localeCompare(a.key));
-  for (const old of PERSIST.backups.slice(BACKUP_KEEP)) { try { await idbDel(old.key); } catch { /* left for next time */ } }
+  for (const old of PERSIST.backups.slice(BACKUP_KEEP)) { try { await idbDel(old.key); } catch (e) { logIssue('Old backup cleanup', e); } }
   PERSIST.backups = PERSIST.backups.slice(0, BACKUP_KEEP);
 }
 async function loadBackupIndex() {
   const keys = (await idbKeys()).filter(k => typeof k === 'string' && k.startsWith('backup:')).sort().reverse();
   const list = [];
-  for (const key of keys) { try { const v = await idbGet(key); if (v && typeof v.json === 'string') list.push({ key, t: v.t, size: v.json.length }); } catch { /* skip unreadable */ } }
+  for (const key of keys) { try { const v = await idbGet(key); if (v && typeof v.json === 'string') list.push({ key, t: v.t, size: v.json.length }); } catch (e) { logIssue('Reading a backup', e); } }
   PERSIST.backups = list;
-  for (const old of list.slice(BACKUP_KEEP)) { try { await idbDel(old.key); } catch { /* ignore */ } }
+  for (const old of list.slice(BACKUP_KEEP)) { try { await idbDel(old.key); } catch (e) { logIssue('Old backup cleanup', e); } }
   PERSIST.backups = list.slice(0, BACKUP_KEEP);
 }
 async function requestPersist(fromUser) {
@@ -190,7 +189,8 @@ async function refreshEstimate() {
 async function persistBoot() {
   PERSIST.tab = Math.random().toString(36).slice(2);
   try { PERSIST.pristine = JSON.stringify(localRecord()); } catch { PERSIST.pristine = null; }
-  try { PERSIST.db = await idbOpen(); }
+  const opening = idbOpen(); PERSIST.opening = opening.then(() => null, () => null);
+  try { PERSIST.db = await opening; }
   catch (e) { PERSIST.status = 'blocked'; PERSIST.reason = e && e.message || 'Storage is blocked'; return; }
   PERSIST.status = 'restoring';
   try {
@@ -201,12 +201,12 @@ async function persistBoot() {
       try { applyLocal(JSON.parse(rec.json)); PERSIST.lastJson = JSON.stringify(localRecord()); PERSIST.savedAt = rec.t || Date.now(); PERSIST.bytes = rec.json.length; PERSIST.restoredFrom = rec.t || null; }
       catch (e) {
         /* Corrupt current record: keep it aside, try the newest daily backup. */
-        try { await idbPut('state:unreadable:' + Date.now(), rec); } catch { /* ignore */ }
+        try { await idbPut('state:unreadable:' + Date.now(), rec); } catch (e) { logIssue('Saving an unreadable-state copy', e); }
         const b = PERSIST.backups[0]; let ok = false;
-        if (b) { try { const v = await idbGet(b.key); applyLocal(JSON.parse(v.json)); ok = true; PERSIST.restoredFrom = v.t; S.p1notice = `Your last save could not be read, so the daily backup from ${humanTime(v.t)} was restored instead.`; } catch { /* fall through */ } }
+        if (b) { try { const v = await idbGet(b.key); applyLocal(JSON.parse(v.json)); ok = true; PERSIST.restoredFrom = v.t; S.p1notice = `Your last save could not be read, so the daily backup from ${humanTime(v.t)} was restored instead.`; } catch (e) { logIssue('Restoring from a backup', e); } }
         if (!ok) S.p1notice = 'Your last save on this device could not be read. If you have a workspace file, restore it from Settings.';
       }
-      if (!PERSIST.backups.some(b => b.key === dayKey()) && PERSIST.lastJson && PERSIST.lastJson !== PERSIST.pristine) { try { await writeBackup(dayKey(), PERSIST.lastJson); } catch { /* not fatal */ } }
+      if (!PERSIST.backups.some(b => b.key === dayKey()) && PERSIST.lastJson && PERSIST.lastJson !== PERSIST.pristine) { try { await writeBackup(dayKey(), PERSIST.lastJson); } catch (e) { logIssue('Writing the daily backup', e); } }
     }
     PERSIST.status = 'ok';
   } catch (e) { PERSIST.status = 'error'; PERSIST.reason = e && e.message || 'Saved data could not be read'; }
@@ -280,7 +280,7 @@ function p1CardHtml() {
 }
 function renderP1Card() { const el = $('#p1card'); if (el) el.outerHTML = p1CardHtml(); }
 const _settingsP1 = VIEWS.settings;
-VIEWS.settings = arg => { const h = _settingsP1(arg); const i = h.indexOf('<section'); refreshEstimate().then(renderP1Card); return i < 0 ? h + p1CardHtml() : h.slice(0, i) + p1CardHtml() + h.slice(i); };
+VIEWS.settings = arg => { const h = _settingsP1(arg); const i = h.indexOf('<section'); refreshEstimate().then(renderP1Card); return i < 0 ? h + p1CardHtml() + diagHtml() : h.slice(0, i) + p1CardHtml() + diagHtml() + h.slice(i); };
 
 async function deleteAllLocal() {
   PERSIST.disabled = true; clearTimeout(PERSIST.timer);

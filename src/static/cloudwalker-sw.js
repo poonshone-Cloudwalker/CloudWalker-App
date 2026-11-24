@@ -8,7 +8,7 @@ self.addEventListener('fetch', e => {
   const u = new URL(r.url); if (u.origin !== self.location.origin) return;
   if (r.mode === 'navigate') {
     e.respondWith(fetch(r).then(res => { if (res.ok) { const copy = res.clone(); caches.open(CACHE).then(c => c.put(r, copy)); } return res; })
-      .catch(() => caches.match(r, { ignoreSearch: true }).then(m => m || caches.open(CACHE).then(c => c.keys().then(ks => ks.length ? c.match(ks[0]) : Response.error())))));
+      .catch(() => caches.match(r, { ignoreSearch: true }).then(m => m || caches.open(CACHE).then(c => c.keys().then(ks => { const k = ks.find(x => { try { return /\/$|\.html?$/i.test(new URL(x.url).pathname); } catch { return false; } }); return k ? c.match(k) : Response.error(); })))));
     return;
   }
   e.respondWith(caches.match(r).then(m => { const net = fetch(r).then(res => { if (res.ok) { const copy = res.clone(); caches.open(CACHE).then(c => c.put(r, copy)); } return res; }).catch(() => m); return m || net; }));

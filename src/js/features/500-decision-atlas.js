@@ -376,7 +376,7 @@ function atlasSourceView(id) {
   if (!src) return `<div class="run-head">${back}</div><div class="page-head"><div><h1>${esc(id)}</h1></div></div>
     <section class="card"><p><strong>Source details unavailable.</strong> This ID is cited somewhere in the Atlas, but this release's transcription of the Field Reference's Source register does not include an entry for it. Nothing is substituted or invented here; treat this citation as unresolved until the register is extended to cover it.</p></section>`;
   const tierLabel = (reg.legend && reg.legend[String(src.tier)]) || `Tier ${src.tier}`;
-  const safeUrl = /^https?:\/\//i.test(src.url || '') ? src.url : null;
+  const safeUrl = /^https:\/\//i.test(src.url || '') ? src.url : null;
   return `<div class="run-head">${back}</div><div class="page-head"><div><h1>${esc(id)}</h1></div></div>
   <section class="card"><dl class="atlas-dl">
     <dt>Title</dt><dd>${esc(src.title)}</dd>

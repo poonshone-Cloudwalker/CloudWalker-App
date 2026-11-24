@@ -264,7 +264,7 @@ function p8Apply() {
   for (const s of Object.values(c.labs)) { const i = LAB_SCENARIOS.findIndex(x => x.id === s.id); if (i >= 0) { if (!LAB_BASE.has(s.id)) LAB_BASE.set(s.id, LAB_SCENARIOS[i]); LAB_SCENARIOS[i] = s; } else LAB_SCENARIOS.push(s); }
   for (const [code, p] of Object.entries(c.examProfiles)) { if (!PROFILE_BASE.has(code)) PROFILE_BASE.set(code, EXAM_PROFILES[code] || null); EXAM_PROFILES[code] = { ...(EXAM_PROFILES[code] || {}), ...p }; }
   if (typeof LT_CACHE !== 'undefined') LT_CACHE = null;
-  try { applyContentEdits(true); } catch { /* edits apply on next render */ }
+  try { applyContentEdits(true); } catch (e) { logIssue('Applying content edits', e); }
 }
 function mergePack(rep) {
   const c = PKC(); const p = rep.pack; const t = rep.types; const now = Date.now();
@@ -281,14 +281,14 @@ function mergePack(rep) {
 }
 const _applyLocalP8 = applyLocal;
 applyLocal = function (rec) { const r = _applyLocalP8(rec); try { p8Apply(); } catch (e) { console.warn('Content pack could not be applied', e); } return r; };
-const _smartImportP8 = smartImport;
-smartImport = data => {
-  if (data && data.format === PACK_FORMAT) { const rep = analyzePack(data, 'file'); S.p8.preview = rep; setTimeout(() => go('packs'), 0); return { ok: rep.ok, title: rep.ok ? 'Content pack ready to review.' : 'This content pack has problems.', body: rep.ok ? 'Nothing is merged until you choose Merge on the Content updates page.' : rep.errors.join(' ') }; }
-  const r = _smartImportP8(data); const w = data && (data.workspace || data); if (!w || data.format !== 'cloudwalker-workspace') return r;
+registerImportHook({ id: 'p8-packs', order: 80,
+  pre: data => { if (data && data.format === PACK_FORMAT) { const rep = analyzePack(data, 'file'); S.p8.preview = rep; setTimeout(() => go('packs'), 0); return { result: { ok: rep.ok, title: rep.ok ? 'Content pack ready to review.' : 'This content pack has problems.', body: rep.ok ? 'Nothing is merged until you choose Merge on the Content updates page.' : rep.errors.join(' ') } }; } return null; },
+  post: (r, { orig: data }) => {
+  const w = data && (data.workspace || data); if (!w || data.format !== 'cloudwalker-workspace') return;
   if (w.packContent && typeof w.packContent === 'object') { const c = PKC(); for (const k of ['questions', 'lessons', 'labs', 'examProfiles', 'exams']) for (const [id, v] of Object.entries(w.packContent[k] || {})) if (!c[k][id]) c[k][id] = v; for (const k of ['questions', 'lessons']) for (const id of (w.packContent.retired?.[k] || [])) if (!c.retired[k].includes(id)) c.retired[k].push(id); }
   if (Array.isArray(w.packs)) { const m = new Map((S.ws.packs ||= []).map(p => [p.packId, p])); for (const p of w.packs) if (p && p.packId && (!m.has(p.packId) || vcmp(p.packVersion, m.get(p.packId).packVersion) > 0)) m.set(p.packId, p); S.ws.packs = [...m.values()]; }
-  p8Apply(); return r;
-};
+  p8Apply();
+} });
 
 /* ---------- Contributor tools: CSV template, validation report, pack builder */
 const CSV_COLS = ['id', 'exam_code', 'domain', 'subdomain', 'question', 'option_a', 'option_b', 'option_c', 'option_d', 'option_e', 'option_f', 'correct', 'correct_rationale', 'why_a', 'why_b', 'why_c', 'why_d', 'why_e', 'why_f', 'difficulty', 'question_type', 'services', 'tags', 'doc_links', 'origin', 'reviewStatus', 'lastReviewed', 'reviewedBy', 'examGuideVersion'];

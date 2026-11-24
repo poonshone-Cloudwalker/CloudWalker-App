@@ -33,7 +33,7 @@ function move(d) { const r = S.runner; if (!r) return; const n = r.idx + d; if (
 function finishRunner(force) {
   const r = S.runner; if (!r || r.finished) return;
   const unanswered = r.ids.filter(id => !r.resp[id]).length;
-  if (!force && !r.readOnly && unanswered && r.mode === 'exam' && !confirm(`${unanswered} question(s) are unanswered and will be scored as incorrect. Submit now?`)) return;
+  if (!force && !r.readOnly && unanswered && r.mode === 'exam') { confirmModal('Submit with unanswered questions?', `${unanswered} question(s) are unanswered and will be scored as incorrect.`, 'Submit now', () => finishRunner(true)); return; }
   r.finished = true; clearInterval(timerHandle);
   if (r.readOnly) { S.runner = null; go('results'); return; }
   const answered = r.ids.filter(id => r.resp[id]);

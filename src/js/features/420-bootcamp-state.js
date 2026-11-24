@@ -111,7 +111,7 @@ function bcImportText(text) {
   else throw new Error(`Expected a bootcamp progress file (format "${BC_FORMAT}") or a workspace file. This file's format is ${data.format ? '"' + String(data.format).slice(0, 40) + '"' : 'not stated'}, so nothing was imported.`);
   if (x === undefined) throw new Error('The file has no bootcamp progress in it, so nothing was imported.');
   if (!x || typeof x !== 'object' || Array.isArray(x) || (x.labs !== undefined && (typeof x.labs !== 'object' || x.labs === null || Array.isArray(x.labs)))) throw new Error('The bootcamp section of the file is malformed ("labs" must be an object keyed by lab id), so nothing was imported.');
-  if (typeof snapshot === 'function') { try { snapshot('Before bootcamp import'); } catch (e) { /* backups are best-effort */ } }
+  if (typeof snapshot === 'function') { try { snapshot('Before bootcamp import'); } catch (e) { logIssue('Backup before bootcamp import', e); } }
   return bcMerge(x);
 }
 const bcCsvCell = v => { const s = v === null || v === undefined ? '' : String(v); return /[",\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
