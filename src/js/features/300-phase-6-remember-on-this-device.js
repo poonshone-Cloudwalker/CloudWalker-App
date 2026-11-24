@@ -56,8 +56,7 @@ function prefsBoot() {
 const _afterRender6 = afterRender;
 afterRender = function () { _afterRender6(); savePrefs(); };
 /* A workspace restore keeps the focus you chose on this device. */
-const _smartImport6 = smartImport;
-smartImport = data => { const r = _smartImport6(data); if (PREFS.remember && PREFS.focusExam && examMetaFor(PREFS.focusExam)) S.ws.career.profile.focusExam = PREFS.focusExam; return r; };
+registerImportHook({ id: 'remember-focus', order: 20, post: () => { if (PREFS.remember && PREFS.focusExam && examMetaFor(PREFS.focusExam)) S.ws.career.profile.focusExam = PREFS.focusExam; } });
 
 /* ---------- Dashboard: quick focus switcher + restore hint on a fresh open */
 const _dash6 = VIEWS.dashboard;

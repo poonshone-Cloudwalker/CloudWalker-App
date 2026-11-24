@@ -326,15 +326,13 @@ const _privacyP6 = VIEWS.privacy;
 VIEWS.privacy = arg => _privacyP6(arg) + `<section class="card" style="margin-top:16px"><h2>Optional AI feedback</h2><p>Off unless you add your own endpoint and key in Settings. When it is on and you ask for feedback, the app sends that one piece of work (your answer, its rubric, and its reference) to the address you entered, directly from your browser. Nothing is sent automatically, and nothing else from your workspace is included. The key is stored in this browser's storage on this device only and is never included in workspace files or backups. Removing it in Settings, or using "Delete all my data", erases it. The AI provider's own terms apply to what you send.</p></section>`;
 
 /* ---------- Workspace import: merge by permanent id / key, newer wins */
-const _smartImportP6 = smartImport;
-smartImport = data => {
-  const r = _smartImportP6(data); const w = data && (data.workspace || data); if (!w || data.format !== 'cloudwalker-workspace') return r;
+registerImportHook({ id: 'p6-feedback-log', order: 60, post: (r, { orig: data }) => {
+  const w = data && (data.workspace || data); if (!w || data.format !== 'cloudwalker-workspace') return;
   if (w.aiFeedback && typeof w.aiFeedback === 'object') for (const [k, v] of Object.entries(w.aiFeedback)) { if (v && v.scores && (!AIF()[k] || (v.updated || 0) > (AIF()[k].updated || 0))) AIF()[k] = v; }
   if (Array.isArray(w.calibLog)) { const seen = new Set(CAL().map(x => x.key + '@' + x.t)); for (const x of w.calibLog) if (x && x.key && !seen.has(x.key + '@' + x.t)) CAL().push(x); CAL().sort((a, b) => a.t - b.t); }
   if (Array.isArray(w.outcomes)) { const m = new Map(OUT().map(o => [o.id, o])); for (const o of w.outcomes) if (o && /^OUT-\d{3,}$/.test(o.id || '') && (!m.has(o.id) || (o.updated || 0) > (m.get(o.id).updated || 0))) m.set(o.id, o); S.ws.outcomes = [...m.values()]; }
   if (Array.isArray(w.readinessLog)) { const m = new Map(RLOG().map(x => [x.d + '|' + x.code, x])); for (const x of w.readinessLog) if (x && x.d && x.code && (!m.has(x.d + '|' + x.code) || (x.t || 0) > (m.get(x.d + '|' + x.code).t || 0))) m.set(x.d + '|' + x.code, x); S.ws.readinessLog = [...m.values()].sort((a, b) => a.d < b.d ? -1 : 1); }
-  return r;
-};
+}});
 
 /* ---------- Chrome and events */
 ICON.calibration = '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>';

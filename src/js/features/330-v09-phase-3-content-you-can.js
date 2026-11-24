@@ -249,14 +249,12 @@ document.addEventListener('click', e => {
 });
 
 /* ---------- Workspace import also merges Phase 2–3 records (study plan, reports, content edits) */
-const _smartImportP3 = smartImport;
-smartImport = data => {
-  const r = _smartImportP3(data); const w = data && (data.workspace || data); if (!w || data.format !== 'cloudwalker-workspace') return r;
+registerImportHook({ id: 'p3-content-edits', order: 40, post: (r, { orig: data }) => {
+  const w = data && (data.workspace || data); if (!w || data.format !== 'cloudwalker-workspace') return;
   ensureP3Ws();
   if (w.plan && w.plan.weeks && (!S.ws.plan || (w.plan.created || 0) > (S.ws.plan.created || 0))) S.ws.plan = w.plan;
   if (Array.isArray(w.reports)) { const m = new Map(S.ws.reports.map(x => [x.id, x])); for (const x of w.reports) if (x && /^RPT-\d{3,}$/.test(x.id || '') && (!m.has(x.id) || (x.updated || 0) > (m.get(x.id).updated || 0))) m.set(x.id, x); S.ws.reports = [...m.values()]; }
   if (w.contentEdits && typeof w.contentEdits === 'object') { for (const [id, e] of Object.entries(w.contentEdits)) if (e && e.fields && (!S.ws.contentEdits[id] || (e.updated || 0) > (S.ws.contentEdits[id].updated || 0))) S.ws.contentEdits[id] = e; S.ws.contentEditsV++; applyContentEdits(true); }
-  return r;
-};
+}});
 
 

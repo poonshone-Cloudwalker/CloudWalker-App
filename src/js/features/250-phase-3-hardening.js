@@ -252,7 +252,7 @@ function mergeValidated(kind, cur, inc, norm, rep) {
   });
   return [...map.values()];
 }
-function smartImport(data) {
+function smartImportCore(data) {
   if (!data || typeof data !== 'object' || Array.isArray(data)) throw new Error('The file is not a JSON object.');
   if (data.format === 'blueprint-progress') { snapshot('Before progress import'); const r = importProgress(data); S.meta2.lastImport = Date.now(); return r; }
   if (!['cloudwalker-workspace', 'cloudwalker-artifacts'].includes(data.format)) throw new Error(`Unrecognised file format "${data.format || 'none'}". Expected a CloudWalker workspace, artifacts, or progress file.`);
