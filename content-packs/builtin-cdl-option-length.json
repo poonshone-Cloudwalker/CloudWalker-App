@@ -7,7 +7,7 @@
  "minAppSchema": 1,
  "checksum": {
   "alg": "SHA-256",
-  "value": "2615ef7e106f22d5998ab86e3077bed79ad6f0b31b2f466035873fa8bfadecf2"
+  "value": "d255fd7d98ccc762186ae74b4de0f5d76f8ca73bf55cb6588db30ae4043616a6"
  },
  "content": {
   "exams": [],
@@ -411,7 +411,7 @@
     ],
     "correct_index": 3,
     "correct_rationale": "Data creates value when it's analyzed to reveal trends and inform decisions, and it also fuels AI. Deleting data, printing reports, or isolating data in stores limits its value.",
-    "distractor_summary": "",
+    "distractor_summary": "Monthly reporting doesn't provide real-time insights; storing data without analysis creates no value; and visualization alone doesn't drive staffing or promotion decisions.",
     "section": 31,
     "difficulty_source": "provided",
     "origin": "reserve",
@@ -1913,7 +1913,7 @@
     ],
     "correct_index": 1,
     "correct_rationale": "IAP controls access to applications based on identity and context, supporting a zero-trust approach without a VPN. The other products don't control application access.",
-    "distractor_summary": "",
+    "distractor_summary": "VPNs give broad network access rather than per-app identity control; firewalls filter traffic but don't verify user identity; and password-only portals lack context-aware access.",
     "section": 38,
     "difficulty_source": "provided",
     "origin": "reserve",
