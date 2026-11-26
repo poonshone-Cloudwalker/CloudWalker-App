@@ -7,7 +7,7 @@
  "minAppSchema": 1,
  "checksum": {
   "alg": "SHA-256",
-  "value": "48be57bc827efb670ed2dc0e0262f00cbd310b0bb39a2240dda6197c62d0b705"
+  "value": "d335a77c064bca0a66051b1093383a91177a467539af633d17e6989f2647d333"
  },
  "content": {
   "exams": [],
@@ -35,7 +35,11 @@
     "section": 45,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-005",
@@ -60,7 +64,11 @@
     "section": 45,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-008",
@@ -85,7 +93,11 @@
     "section": 45,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-009",
@@ -110,7 +122,11 @@
     "section": 45,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-012",
@@ -135,7 +151,11 @@
     "section": 45,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-014",
@@ -160,7 +180,11 @@
     "section": 45,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-017",
@@ -185,7 +209,11 @@
     "section": 45,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-020",
@@ -210,7 +238,11 @@
     "section": 45,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-021",
@@ -235,7 +267,11 @@
     "section": 46,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-022",
@@ -260,7 +296,11 @@
     "section": 46,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-023",
@@ -285,7 +325,11 @@
     "section": 46,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-025",
@@ -310,7 +354,11 @@
     "section": 46,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-026",
@@ -335,7 +383,11 @@
     "section": 46,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-028",
@@ -360,7 +412,11 @@
     "section": 46,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-029",
@@ -385,7 +441,11 @@
     "section": 46,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-030",
@@ -410,7 +470,11 @@
     "section": 46,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-032",
@@ -435,7 +499,11 @@
     "section": 46,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-033",
@@ -460,7 +528,11 @@
     "section": 46,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-034",
@@ -485,7 +557,11 @@
     "section": 46,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-035",
@@ -510,7 +586,11 @@
     "section": 46,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-040",
@@ -535,7 +615,11 @@
     "section": 46,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-041",
@@ -560,7 +644,11 @@
     "section": 47,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-044",
@@ -585,7 +673,11 @@
     "section": 47,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-046",
@@ -610,7 +702,11 @@
     "section": 47,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-047",
@@ -635,7 +731,11 @@
     "section": 47,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-048",
@@ -660,7 +760,11 @@
     "section": 47,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/what-is/artificial-intelligence/",
+     "https://docs.aws.amazon.com/machine-learning/latest/dg/machine-learning-concepts.html"
+    ]
    },
    {
     "id": "aws-aib-049",
@@ -685,7 +789,11 @@
     "section": 47,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-050",
@@ -710,7 +818,11 @@
     "section": 47,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-051",
@@ -735,7 +847,11 @@
     "section": 47,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-052",
@@ -760,7 +876,11 @@
     "section": 47,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-053",
@@ -785,7 +905,11 @@
     "section": 47,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-054",
@@ -810,7 +934,11 @@
     "section": 47,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-055",
@@ -835,7 +963,11 @@
     "section": 47,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-057",
@@ -860,7 +992,11 @@
     "section": 47,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-058",
@@ -885,7 +1021,11 @@
     "section": 47,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-059",
@@ -910,7 +1050,11 @@
     "section": 47,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-060",
@@ -935,7 +1079,11 @@
     "section": 47,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-061",
@@ -960,7 +1108,11 @@
     "section": 48,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-062",
@@ -985,7 +1137,11 @@
     "section": 48,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-063",
@@ -1010,7 +1166,11 @@
     "section": 48,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-064",
@@ -1035,7 +1195,11 @@
     "section": 48,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-065",
@@ -1060,7 +1224,11 @@
     "section": 48,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-066",
@@ -1085,7 +1253,11 @@
     "section": 48,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-068",
@@ -1110,7 +1282,11 @@
     "section": 48,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-069",
@@ -1135,7 +1311,11 @@
     "section": 48,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-070",
@@ -1160,7 +1340,11 @@
     "section": 48,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-072",
@@ -1185,7 +1369,11 @@
     "section": 48,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-073",
@@ -1210,7 +1398,11 @@
     "section": 48,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-074",
@@ -1235,7 +1427,11 @@
     "section": 48,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-075",
@@ -1260,7 +1456,11 @@
     "section": 48,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-076",
@@ -1285,7 +1485,11 @@
     "section": 48,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-079",
@@ -1310,7 +1514,11 @@
     "section": 48,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-080",
@@ -1335,7 +1543,11 @@
     "section": 48,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-081",
@@ -1360,7 +1572,11 @@
     "section": 49,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-083",
@@ -1385,7 +1601,11 @@
     "section": 49,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-084",
@@ -1410,7 +1630,11 @@
     "section": 49,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-086",
@@ -1435,7 +1659,11 @@
     "section": 49,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-087",
@@ -1460,7 +1688,11 @@
     "section": 49,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-089",
@@ -1485,7 +1717,11 @@
     "section": 49,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-090",
@@ -1510,7 +1746,11 @@
     "section": 49,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-091",
@@ -1535,7 +1775,11 @@
     "section": 49,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-092",
@@ -1560,7 +1804,11 @@
     "section": 49,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-093",
@@ -1585,7 +1833,11 @@
     "section": 49,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-094",
@@ -1610,7 +1862,11 @@
     "section": 49,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-095",
@@ -1635,7 +1891,11 @@
     "section": 49,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-096",
@@ -1660,7 +1920,11 @@
     "section": 49,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-097",
@@ -1685,7 +1949,11 @@
     "section": 49,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-099",
@@ -1710,7 +1978,11 @@
     "section": 49,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-100",
@@ -1735,7 +2007,11 @@
     "section": 49,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-102",
@@ -1760,7 +2036,11 @@
     "section": 50,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-103",
@@ -1785,7 +2065,11 @@
     "section": 50,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-104",
@@ -1810,7 +2094,11 @@
     "section": 50,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-108",
@@ -1835,7 +2123,11 @@
     "section": 50,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-109",
@@ -1860,7 +2152,11 @@
     "section": 50,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-110",
@@ -1885,7 +2181,11 @@
     "section": 50,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-112",
@@ -1910,7 +2210,11 @@
     "section": 50,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-114",
@@ -1935,7 +2239,11 @@
     "section": 50,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-115",
@@ -1960,7 +2268,11 @@
     "section": 50,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-116",
@@ -1985,7 +2297,11 @@
     "section": 50,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-117",
@@ -2010,7 +2326,11 @@
     "section": 50,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-118",
@@ -2035,7 +2355,11 @@
     "section": 50,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-119",
@@ -2060,7 +2384,11 @@
     "section": 50,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-122",
@@ -2085,7 +2413,11 @@
     "section": 51,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-123",
@@ -2110,7 +2442,11 @@
     "section": 51,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-124",
@@ -2135,7 +2471,11 @@
     "section": 51,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-125",
@@ -2160,7 +2500,11 @@
     "section": 51,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-126",
@@ -2185,7 +2529,11 @@
     "section": 51,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-128",
@@ -2210,7 +2558,11 @@
     "section": 51,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-129",
@@ -2235,7 +2587,11 @@
     "section": 51,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-130",
@@ -2260,7 +2616,11 @@
     "section": 51,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-131",
@@ -2285,7 +2645,11 @@
     "section": 51,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-132",
@@ -2310,7 +2674,11 @@
     "section": 51,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-133",
@@ -2335,7 +2703,11 @@
     "section": 51,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-134",
@@ -2360,7 +2732,11 @@
     "section": 51,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-135",
@@ -2385,7 +2761,11 @@
     "section": 51,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-136",
@@ -2410,7 +2790,11 @@
     "section": 51,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-137",
@@ -2435,7 +2819,11 @@
     "section": 51,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-138",
@@ -2460,7 +2848,11 @@
     "section": 51,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-141",
@@ -2485,7 +2877,11 @@
     "section": 52,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-142",
@@ -2510,7 +2906,11 @@
     "section": 52,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-143",
@@ -2535,7 +2935,11 @@
     "section": 52,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-144",
@@ -2560,7 +2964,11 @@
     "section": 52,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-145",
@@ -2585,7 +2993,11 @@
     "section": 52,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-147",
@@ -2610,7 +3022,11 @@
     "section": 52,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-148",
@@ -2635,7 +3051,11 @@
     "section": 52,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-149",
@@ -2660,7 +3080,11 @@
     "section": 52,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-150",
@@ -2685,7 +3109,11 @@
     "section": 52,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-151",
@@ -2710,7 +3138,11 @@
     "section": 52,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/responsible-ai/",
+     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+    ]
    },
    {
     "id": "aws-aib-153",
@@ -2735,7 +3167,11 @@
     "section": 52,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-154",
@@ -2760,7 +3196,11 @@
     "section": 52,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-156",
@@ -2785,7 +3225,11 @@
     "section": 52,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-157",
@@ -2810,7 +3254,11 @@
     "section": 52,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-158",
@@ -2835,7 +3283,11 @@
     "section": 52,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-161",
@@ -2860,7 +3312,11 @@
     "section": 53,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-163",
@@ -2885,7 +3341,11 @@
     "section": 53,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-164",
@@ -2910,7 +3370,11 @@
     "section": 53,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-165",
@@ -2935,7 +3399,11 @@
     "section": 53,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-166",
@@ -2960,7 +3428,11 @@
     "section": 53,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-167",
@@ -2985,7 +3457,11 @@
     "section": 53,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-168",
@@ -3010,7 +3486,11 @@
     "section": 53,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-170",
@@ -3035,7 +3515,11 @@
     "section": 53,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-171",
@@ -3060,7 +3544,11 @@
     "section": 53,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-172",
@@ -3085,7 +3573,11 @@
     "section": 53,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-173",
@@ -3110,7 +3602,11 @@
     "section": 53,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-174",
@@ -3135,7 +3631,11 @@
     "section": 53,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-175",
@@ -3160,7 +3660,11 @@
     "section": 53,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-177",
@@ -3185,7 +3689,11 @@
     "section": 53,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-178",
@@ -3210,7 +3718,11 @@
     "section": 53,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-179",
@@ -3235,7 +3747,11 @@
     "section": 53,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-181",
@@ -3260,7 +3776,11 @@
     "section": 54,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-182",
@@ -3285,7 +3805,11 @@
     "section": 54,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-183",
@@ -3310,7 +3834,11 @@
     "section": 54,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-184",
@@ -3335,7 +3863,11 @@
     "section": 54,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-185",
@@ -3360,7 +3892,11 @@
     "section": 54,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-186",
@@ -3385,7 +3921,11 @@
     "section": 54,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-187",
@@ -3410,7 +3950,11 @@
     "section": 54,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-188",
@@ -3435,7 +3979,11 @@
     "section": 54,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-189",
@@ -3460,7 +4008,11 @@
     "section": 54,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-191",
@@ -3485,7 +4037,11 @@
     "section": 54,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-192",
@@ -3510,7 +4066,11 @@
     "section": 54,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-193",
@@ -3535,7 +4095,11 @@
     "section": 54,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-194",
@@ -3560,7 +4124,11 @@
     "section": 54,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-195",
@@ -3585,7 +4153,11 @@
     "section": 54,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-196",
@@ -3610,7 +4182,11 @@
     "section": 54,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-197",
@@ -3635,7 +4211,11 @@
     "section": 54,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-198",
@@ -3660,7 +4240,11 @@
     "section": 54,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    },
    {
     "id": "aws-aib-199",
@@ -3685,7 +4269,11 @@
     "section": 54,
     "difficulty_source": "provided",
     "origin": "reserve",
-    "reviewStatus": "needs-review"
+    "reviewStatus": "needs-review",
+    "docLinks": [
+     "https://aws.amazon.com/ai/",
+     "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html"
+    ]
    }
   ],
   "lessons": [],
