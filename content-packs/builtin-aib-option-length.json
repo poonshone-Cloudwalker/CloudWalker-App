@@ -7,7 +7,7 @@
  "minAppSchema": 1,
  "checksum": {
   "alg": "SHA-256",
-  "value": "d335a77c064bca0a66051b1093383a91177a467539af633d17e6989f2647d333"
+  "value": "8d0c5e65a38906aff98bb4601e71ff839dd94caee47f51f41e673719f9f5fb98"
  },
  "content": {
   "exams": [],
@@ -2126,7 +2126,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2155,7 +2155,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2184,7 +2184,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2213,7 +2213,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2242,7 +2242,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2271,7 +2271,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2300,7 +2300,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2329,7 +2329,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2358,7 +2358,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2387,7 +2387,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2416,7 +2416,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2445,7 +2445,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2474,7 +2474,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2503,7 +2503,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2532,7 +2532,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2561,7 +2561,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2590,7 +2590,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2619,7 +2619,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2648,7 +2648,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2677,7 +2677,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2706,7 +2706,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2735,7 +2735,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2764,7 +2764,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2793,7 +2793,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2822,7 +2822,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2851,7 +2851,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2880,7 +2880,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2909,7 +2909,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2938,7 +2938,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2967,7 +2967,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -2996,7 +2996,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -3025,7 +3025,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -3054,7 +3054,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -3083,7 +3083,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -3112,7 +3112,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
@@ -3141,7 +3141,7 @@
     "reviewStatus": "needs-review",
     "docLinks": [
      "https://aws.amazon.com/ai/responsible-ai/",
-     "https://docs.aws.amazon.com/whitepapers/latest/responsible-use-of-ai-and-ml/responsible-use-of-ai-and-ml.html"
+     "https://aws.amazon.com/ai/responsible-ai/"
     ]
    },
    {
